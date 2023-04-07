@@ -19,7 +19,9 @@ namespace DarkSun.Network.Protocol.Builders
     {
         private readonly ILogger _logger;
         private readonly Dictionary<DarkSunMessageType, Type> _messageTypes = new();
+        private readonly byte[] _separatorBytes = new byte[] { 0xff, 0xff, 0xff };
 
+        public byte[] GetMessageSeparators  => _separatorBytes;
 
         public MessagePackMessageBuilder(ILogger<MessagePackMessageBuilder> logger)
         {
@@ -27,14 +29,16 @@ namespace DarkSun.Network.Protocol.Builders
             PrepareMessageTypesConversionMap();
         }
 
+       
+
         public NetworkMessageData ParseMessage(byte[] buffer)
         {
             _logger.LogDebug("Parsing message buffer of length {Length}", buffer.Length);
 
-            var messageLength = BufferUtils.GetIntFromByteArray(buffer);
-            _logger.LogDebug("Message length is {Length}", messageLength);
 
-            var messageBuffer = buffer.Skip(BufferUtils.LengthHeaderSize).Take(messageLength).ToArray();
+
+
+            var messageBuffer = buffer.Take(buffer.Length - _separatorBytes.Length).ToArray();
 
             var message = MessagePackSerializer.Deserialize<NetworkMessage>(messageBuffer);
             _logger.LogDebug("Message type is {MessageType}", message.MessageType);
@@ -62,7 +66,7 @@ namespace DarkSun.Network.Protocol.Builders
                 Message = messageContent
             });
             _logger.LogDebug("Full message buffer length: {MessageBufferLength}", serializedMessage.Length);
-            var fullBufferArray = BufferUtils.Combine(BufferUtils.GetByteArrayFromInt(serializedMessage.Length), serializedMessage);
+            var fullBufferArray = BufferUtils.Combine(serializedMessage, _separatorBytes);
             _logger.LogDebug("Completed message buffer is {Length}", fullBufferArray.Length);
 
             return fullBufferArray;
@@ -70,7 +74,7 @@ namespace DarkSun.Network.Protocol.Builders
 
         public int GetMessageLength(byte[] buffer)
         {
-            return BufferUtils.GetIntFromByteArray(buffer); 
+            return BufferUtils.GetIntFromByteArray(buffer);
         }
 
 

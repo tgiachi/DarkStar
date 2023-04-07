@@ -10,6 +10,7 @@ namespace DarkSun.Network.Protocol.Interfaces.Builders
 {
     public interface INetworkMessageBuilder
     {
+        byte[] GetMessageSeparators { get; }
         NetworkMessageData ParseMessage(byte[] buffer);
 
         byte[] BuildMessage<T>(T message) where T : IDarkSunNetworkMessage;

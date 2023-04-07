@@ -34,6 +34,9 @@ namespace DarkSun.Network.Server
             _sessionManager = sessionManager;
             _messageBuilder = messageBuilder;
             _networkServerConfig = networkServerConfig;
+
+            OptionReceiveBufferSize = 512;
+            
         }
 
         protected override TcpSession CreateSession()

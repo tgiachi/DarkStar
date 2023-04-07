@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Buffers;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 using DarkSun.Api.Utils;
@@ -14,52 +16,73 @@ namespace DarkSun.Network.Server
     {
         private readonly INetworkMessageBuilder _messageBuilder;
         private readonly IDarkSunNetworkServer _networkServer;
-        private bool _isMessageReading;
-        private bool _isOrphanedBuffer;
+
         private int _currentIndex;
-        private int _messageLength;
-        private Memory<byte> _buffer = new();
+
+        private readonly byte[] _separators;
+        private int _tokenIndex = 0;
+        private readonly int _bufferChunk = 1024;
+        private readonly byte[] _tempBuffer = new byte[1];
+        private byte[] _buffer = Array.Empty<byte>();
+        private int readIndex;
         public DarkSunTcpSession(TcpServer server, INetworkMessageBuilder messageBuilder, IDarkSunNetworkServer networkServer) : base(server)
         {
             _messageBuilder = messageBuilder;
             _networkServer = networkServer;
+            _separators = messageBuilder.GetMessageSeparators;
+            _currentIndex = 0;
+
         }
+
+
+
 
         protected override void OnReceived(byte[] buffer, long offset, long size)
         {
-            if (!_isMessageReading)
+           
+            if (_currentIndex + size >= _buffer.Length)
             {
-                _isMessageReading = true;
-                if (!_isOrphanedBuffer)
+                _buffer = BufferUtils.Combine(_buffer, new byte[_bufferChunk]);
+            }
+
+            for (var i = 0; i < size; i++)
+            {
+                if (_currentIndex + size >= _buffer.Length)
                 {
-                    _messageLength = _messageBuilder.GetMessageLength(buffer);
-                    _buffer = new Memory<byte>(buffer, 0, _messageLength);
+                    _buffer = BufferUtils.Combine(_buffer, new byte[_bufferChunk]);
+                }
+
+                _buffer[_currentIndex] = buffer[i];
+                _tempBuffer[0] = buffer[i];
+                _currentIndex++;
+
+                if (_tempBuffer[0] == _separators[_tokenIndex])
+                {
+                    _tokenIndex++;
+
+                    if (_tokenIndex != _separators.Length)
+                    {
+                        continue;
+                    }
+
+                    ParseMessage(_buffer[.._currentIndex]);
+                    _buffer = new byte[_bufferChunk];
+                    _currentIndex = 0;
+                    readIndex = 0;
+                    _tokenIndex = 0;
                 }
                 else
                 {
-                    _messageLength = _messageBuilder.GetMessageLength(_buffer.ToArray());
-                    _isOrphanedBuffer = false;
+                    _tokenIndex = 0;
                 }
-            }
-            else
-            {
-                _currentIndex += (int)size;
-                if (_currentIndex >= _messageLength)
-                {
-                    ParseMessage(_buffer[.._messageLength].ToArray());
-                    if (_currentIndex - _messageLength > 0)
-                    {
-                        var orphanedBuffer = _buffer.Slice(_messageLength, _currentIndex - _messageLength);
-                        _buffer = new Memory<byte>(orphanedBuffer.ToArray());
-                        _isOrphanedBuffer = true;
-                    }
 
-                    _isMessageReading = false;
-                }
-                _buffer = BufferUtils.Combine(_buffer.ToArray(), buffer);
+                
             }
 
-            base.OnReceived(buffer, offset, size);
+           
+
+            
+            //base.OnReceived(buffer, offset, size);
         }
 
         private void ParseMessage(Memory<byte> buffer)

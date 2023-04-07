@@ -1,5 +1,10 @@
-﻿using DarkSun.Network.Protocol.Builders;
+﻿using System.Net;
+using System.Net.Sockets;
+using DarkSun.Network.Data;
+using DarkSun.Network.Protocol.Builders;
 using DarkSun.Network.Protocol.Messages;
+using DarkSun.Network.Server;
+using DarkSun.Network.Session;
 using Microsoft.Extensions.Logging.Abstractions;
 
 namespace DarkSun.Tests
@@ -29,6 +34,50 @@ namespace DarkSun.Tests
             var pingMessage = (PingMessageResponse)message.Message;
 
             Assert.IsTrue(randomTimeStamp == pingMessage.Timestamp);
+        }
+
+        [TestMethod]
+        public void TestTcpServer()
+        {
+            var server = new MessagePackNetworkServer(new NullLogger<MessagePackNetworkServer>(),
+                new InMemoryNetworkSessionManager(),
+                new MessagePackMessageBuilder(new NullLogger<MessagePackMessageBuilder>()),
+                new NetworkServerConfig() { Address = IPAddress.Any.ToString(), Port = 9000 });
+
+            server.Start().GetAwaiter().GetResult();
+            Assert.IsTrue(server.IsStarted);
+
+            server.Stop().GetAwaiter().GetResult();
+
+            Assert.IsFalse(server.IsStarted);
+        }
+
+        [TestMethod]
+        public async Task TestTcpServerWithMessages()
+        {
+            var messageBuilder = new MessagePackMessageBuilder(new NullLogger<MessagePackMessageBuilder>());
+            var messagesToSend = new List<byte[]>
+            {
+                    messageBuilder.BuildMessage(new PingMessageResponse() { Timestamp = 1 }),
+                    messageBuilder.BuildMessage(new PingMessageResponse() { Timestamp = 1 })
+            };
+
+            var server = new MessagePackNetworkServer(new NullLogger<MessagePackNetworkServer>(),
+                new InMemoryNetworkSessionManager(),
+                new MessagePackMessageBuilder(new NullLogger<MessagePackMessageBuilder>()),
+                new NetworkServerConfig() { Address = IPAddress.Any.ToString(), Port = 9000 });
+
+            server.Start().GetAwaiter().GetResult();
+            Assert.IsTrue(server.IsStarted);
+            var tcpClient = new TcpClient();
+            tcpClient.Connect("127.0.0.1", 9000);
+
+            foreach (var message in messagesToSend)
+            {
+                tcpClient.Client.Send(message);
+            }
+
+            await Task.Delay(3000);
         }
     }
 }
