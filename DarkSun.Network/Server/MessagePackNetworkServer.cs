@@ -129,8 +129,6 @@ namespace DarkSun.Network.Server
             return Task.CompletedTask;
         }
 
-
-
         public new Task Start()
         {
             base.Start();

@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkSun.Engine.Runner", "Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkSun.Tests", "DarkSun.Tests\DarkSun.Tests.csproj", "{38714701-606F-4F97-BA51-7E5418996664}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkSun.Database", "DarkSun.Database\DarkSun.Database.csproj", "{1617AEA2-D8CA-47B6-B5EE-36E60BF88E0C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{38714701-606F-4F97-BA51-7E5418996664}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38714701-606F-4F97-BA51-7E5418996664}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38714701-606F-4F97-BA51-7E5418996664}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1617AEA2-D8CA-47B6-B5EE-36E60BF88E0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1617AEA2-D8CA-47B6-B5EE-36E60BF88E0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1617AEA2-D8CA-47B6-B5EE-36E60BF88E0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1617AEA2-D8CA-47B6-B5EE-36E60BF88E0C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
