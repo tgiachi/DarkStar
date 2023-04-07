@@ -17,7 +17,7 @@ namespace DarkSun.Tests
         public void TestMessageBuilder()
         {
             var messageBuilder = new MessagePackMessageBuilder(new NullLogger<MessagePackMessageBuilder>());
-            var buffer = messageBuilder.BuildMessage(new PingMessageResponse() { Timestamp = 1 });
+            var buffer = messageBuilder.BuildMessage(new PingMessageResponse() { TimeStamp = 1 });
 
             Assert.IsTrue(buffer.Length > 0);
 
@@ -28,12 +28,12 @@ namespace DarkSun.Tests
         {
             var randomTimeStamp = new Random().Next();
             var messageBuilder = new MessagePackMessageBuilder(new NullLogger<MessagePackMessageBuilder>());
-            var buffer = messageBuilder.BuildMessage(new PingMessageResponse() { Timestamp = randomTimeStamp });
+            var buffer = messageBuilder.BuildMessage(new PingMessageResponse() { TimeStamp = randomTimeStamp });
 
             var message = messageBuilder.ParseMessage(buffer);
             var pingMessage = (PingMessageResponse)message.Message;
 
-            Assert.IsTrue(randomTimeStamp == pingMessage.Timestamp);
+            Assert.IsTrue(randomTimeStamp == pingMessage.TimeStamp);
         }
 
         [TestMethod]
@@ -58,8 +58,8 @@ namespace DarkSun.Tests
             var messageBuilder = new MessagePackMessageBuilder(new NullLogger<MessagePackMessageBuilder>());
             var messagesToSend = new List<byte[]>
             {
-                    messageBuilder.BuildMessage(new PingMessageResponse() { Timestamp = 1 }),
-                    messageBuilder.BuildMessage(new PingMessageResponse() { Timestamp = 1 })
+                    messageBuilder.BuildMessage(new PingMessageResponse() { TimeStamp = 1 }),
+                    messageBuilder.BuildMessage(new PongMessageResponse() { TimeStamp = 1})
             };
 
             var server = new MessagePackNetworkServer(new NullLogger<MessagePackNetworkServer>(),

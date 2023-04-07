@@ -20,8 +20,4 @@
     <ProjectReference Include="..\DarkSun.Api\DarkSun.Api.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Client\Interfaces\" />
-  </ItemGroup>
-
 </Project>

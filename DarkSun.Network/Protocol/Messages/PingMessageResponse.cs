@@ -14,6 +14,6 @@ namespace DarkSun.Network.Protocol.Messages
     [NetworkMessage(DarkSunMessageType.Ping)]
     public struct PingMessageResponse : IDarkSunNetworkMessage
     {
-        public long Timestamp { get; set; }
+        public long TimeStamp { get; set; }
     }
 }

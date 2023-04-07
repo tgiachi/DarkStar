@@ -24,7 +24,7 @@ namespace DarkSun.Network.Server
         private readonly int _bufferChunk = 1024;
         private readonly byte[] _tempBuffer = new byte[1];
         private byte[] _buffer = Array.Empty<byte>();
-        private int readIndex;
+
         public DarkSunTcpSession(TcpServer server, INetworkMessageBuilder messageBuilder, IDarkSunNetworkServer networkServer) : base(server)
         {
             _messageBuilder = messageBuilder;
@@ -33,9 +33,6 @@ namespace DarkSun.Network.Server
             _currentIndex = 0;
 
         }
-
-
-
 
         protected override void OnReceived(byte[] buffer, long offset, long size)
         {
@@ -68,21 +65,15 @@ namespace DarkSun.Network.Server
                     ParseMessage(_buffer[.._currentIndex]);
                     _buffer = new byte[_bufferChunk];
                     _currentIndex = 0;
-                    readIndex = 0;
+                  
                     _tokenIndex = 0;
                 }
                 else
                 {
                     _tokenIndex = 0;
                 }
-
-                
             }
-
-           
-
-            
-            //base.OnReceived(buffer, offset, size);
+            base.OnReceived(buffer, offset, size);
         }
 
         private void ParseMessage(Memory<byte> buffer)
