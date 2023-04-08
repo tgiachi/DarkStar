@@ -6,4 +6,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="FreeSql" Version="3.2.693" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DarkSun.Api\DarkSun.Api.csproj" />
+  </ItemGroup>
+
 </Project>
