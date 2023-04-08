@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DarkSun.Network.Data;
+using DarkSun.Network.Interfaces;
 using DarkSun.Network.Protocol.Interfaces.Builders;
 using DarkSun.Network.Protocol.Interfaces.Messages;
 using DarkSun.Network.Protocol.Types;
@@ -25,6 +26,8 @@ namespace DarkSun.Network.Server
         public event IDarkSunNetworkServer.ClientConnectedMessages? OnClientConnected;
         public event IDarkSunNetworkServer.ClientDisconnectedDelegate? OnClientDisconnected;
 
+        private readonly Dictionary<DarkSunMessageType, INetworkMessageListener> _messageListeners = new();
+
         public MessagePackNetworkServer(ILogger<MessagePackNetworkServer> logger,
             INetworkSessionManager sessionManager,
             INetworkMessageBuilder messageBuilder,
@@ -36,7 +39,7 @@ namespace DarkSun.Network.Server
             _networkServerConfig = networkServerConfig;
 
             OptionReceiveBufferSize = 512;
-            
+
         }
 
         protected override TcpSession CreateSession()
@@ -126,10 +129,18 @@ namespace DarkSun.Network.Server
             }
         }
 
-        public Task DispatchMessageReceived(Guid sessionId, DarkSunMessageType messageType, IDarkSunNetworkMessage message)
+        public async Task DispatchMessageReceived(Guid sessionId, DarkSunMessageType messageType, IDarkSunNetworkMessage message)
         {
             OnMessageReceived?.Invoke(sessionId, messageType, message);
-            return Task.CompletedTask;
+            if (_messageListeners.TryGetValue(messageType, out var listener))
+            {
+                await listener.OnMessageReceived(sessionId, messageType, message);
+            }
+        }
+
+        public void RegisterMessageListener(DarkSunMessageType messageType, INetworkMessageListener messageListener)
+        {
+            _messageListeners.Add(messageType, messageListener);
         }
 
         public new Task Start()

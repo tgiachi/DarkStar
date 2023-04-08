@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DarkSun.Network.Interfaces;
 using DarkSun.Network.Protocol.Interfaces.Messages;
 using DarkSun.Network.Protocol.Types;
 
@@ -25,5 +26,7 @@ namespace DarkSun.Network.Server.Interfaces
         Task SendMessageAsync(Guid sessionId, List<IDarkSunNetworkMessage> message);
         Task BroadcastMessageAsync(IDarkSunNetworkMessage message);
         Task DispatchMessageReceived(Guid sessionId, DarkSunMessageType messageType, IDarkSunNetworkMessage message);
+
+        void RegisterMessageListener(DarkSunMessageType messageType, INetworkMessageListener messageListener);
     }
 }
