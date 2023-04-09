@@ -16,7 +16,6 @@ namespace DarkSun.Database.Entities.Objects
         public string Name { get; set; } = null!;
         public string Description { get; set; } = null!;
         public TileType TileId { get; set; }
-
         public GameObjectType Type { get; set; }
     }
 }

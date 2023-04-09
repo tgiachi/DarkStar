@@ -8,11 +8,12 @@ using DarkSun.Network.Protocol.Interfaces.Messages;
 using DarkSun.Network.Protocol.Types;
 using MessagePack;
 
-namespace DarkSun.Network.Protocol.Messages
+namespace DarkSun.Network.Protocol.Live
 {
+
     [MessagePackObject(keyAsPropertyName: true)]
-    [NetworkMessage(DarkSunMessageType.Ping)]
-    public struct PingMessageResponse : IDarkSunNetworkMessage
+    [NetworkMessage(DarkSunMessageType.Pong)]
+    public class PongMessageResponse : IDarkSunNetworkMessage
     {
         public long TimeStamp { get; set; }
     }

@@ -2,6 +2,7 @@
 using System.Net.Sockets;
 using DarkSun.Network.Data;
 using DarkSun.Network.Protocol.Builders;
+using DarkSun.Network.Protocol.Live;
 using DarkSun.Network.Protocol.Messages;
 using DarkSun.Network.Server;
 using DarkSun.Network.Session;
