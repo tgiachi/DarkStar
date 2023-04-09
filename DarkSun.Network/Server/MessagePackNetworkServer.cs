@@ -129,12 +129,12 @@ namespace DarkSun.Network.Server
             }
         }
 
-        public async Task DispatchMessageReceived(Guid sessionId, DarkSunMessageType messageType, IDarkSunNetworkMessage message)
+        public async Task DispatchMessageReceivedAsync(Guid sessionId, DarkSunMessageType messageType, IDarkSunNetworkMessage message)
         {
             OnMessageReceived?.Invoke(sessionId, messageType, message);
             if (_messageListeners.TryGetValue(messageType, out var listener))
             {
-                await listener.OnMessageReceived(sessionId, messageType, message);
+                await listener.OnMessageReceivedAsync(sessionId, messageType, message);
             }
         }
 
@@ -143,14 +143,14 @@ namespace DarkSun.Network.Server
             _messageListeners.Add(messageType, messageListener);
         }
 
-        public new Task Start()
+        public  Task StartAsync()
         {
             base.Start();
 
             return Task.CompletedTask;
         }
 
-        public new Task Stop()
+        public  Task StopAsync()
         {
             base.Stop();
 

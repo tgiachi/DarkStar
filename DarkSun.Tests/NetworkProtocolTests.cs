@@ -44,10 +44,10 @@ namespace DarkSun.Tests
                 new MessagePackMessageBuilder(new NullLogger<MessagePackMessageBuilder>()),
                 new NetworkServerConfig() { Address = IPAddress.Any.ToString(), Port = 9000 });
 
-            server.Start().GetAwaiter().GetResult();
+            server.StartAsync().GetAwaiter().GetResult();
             Assert.IsTrue(server.IsStarted);
 
-            server.Stop().GetAwaiter().GetResult();
+            server.StopAsync().GetAwaiter().GetResult();
 
             Assert.IsFalse(server.IsStarted);
         }
@@ -67,7 +67,7 @@ namespace DarkSun.Tests
                 new MessagePackMessageBuilder(new NullLogger<MessagePackMessageBuilder>()),
                 new NetworkServerConfig() { Address = IPAddress.Any.ToString(), Port = 9000 });
 
-            server.Start().GetAwaiter().GetResult();
+            server.StartAsync().GetAwaiter().GetResult();
             Assert.IsTrue(server.IsStarted);
             var tcpClient = new TcpClient();
             tcpClient.Connect("127.0.0.1", 9000);

@@ -10,6 +10,6 @@ namespace DarkSun.Network.Interfaces
 {
     public interface INetworkMessageListener
     {
-        Task OnMessageReceived(Guid sessionId, DarkSunMessageType messageType, IDarkSunNetworkMessage message);
+        Task OnMessageReceivedAsync(Guid sessionId, DarkSunMessageType messageType, IDarkSunNetworkMessage message);
     }
 }

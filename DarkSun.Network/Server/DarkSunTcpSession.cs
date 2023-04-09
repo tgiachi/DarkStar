@@ -81,7 +81,7 @@ namespace DarkSun.Network.Server
             try
             {
                 var message = _messageBuilder.ParseMessage(buffer.ToArray());
-                _networkServer.DispatchMessageReceived(Id, message.MessageType, message.Message);
+                _networkServer.DispatchMessageReceivedAsync(Id, message.MessageType, message.Message);
             }
             catch (Exception e)
             {

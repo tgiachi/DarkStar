@@ -10,7 +10,7 @@ namespace DarkSun.Engine.Interfaces.Services
     {
         string Name { get; }
         int LoadOrder { get; }
-        Task<bool> Start();
-        Task<bool> Stop();
+        Task<bool> StartAsync();
+        Task<bool> StopAsync();
     }
 }

@@ -20,12 +20,12 @@ namespace DarkSun.Network.Server.Interfaces
         event ClientConnectedMessages OnClientConnected;
         event ClientDisconnectedDelegate OnClientDisconnected;
 
-        Task Start();
-        Task Stop();
+        Task StartAsync();
+        Task StopAsync();
         Task SendMessageAsync(Guid sessionId, IDarkSunNetworkMessage message);
         Task SendMessageAsync(Guid sessionId, List<IDarkSunNetworkMessage> message);
         Task BroadcastMessageAsync(IDarkSunNetworkMessage message);
-        Task DispatchMessageReceived(Guid sessionId, DarkSunMessageType messageType, IDarkSunNetworkMessage message);
+        Task DispatchMessageReceivedAsync(Guid sessionId, DarkSunMessageType messageType, IDarkSunNetworkMessage message);
 
         void RegisterMessageListener(DarkSunMessageType messageType, INetworkMessageListener messageListener);
     }
