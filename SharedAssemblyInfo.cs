@@ -1,4 +1,4 @@
-// <copyright file="SharedAssemblyInfo.cs" company="tgiachi">
+﻿// <copyright file="SharedAssemblyInfo.cs" company="tgiachi">
 // Licensed under the MIT License. See LICENSE file in the project root for full license information.
 // </copyright>
 
@@ -29,5 +29,5 @@ using System.Runtime.InteropServices;
 //
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
-//[assembly: AssemblyVersion("0.0.0.1")]
-//[assembly: AssemblyFileVersion("0.0.0.1")]
+[assembly: AssemblyVersion("0.0.0.1")]
+[assembly: AssemblyFileVersion("0.0.0.1")]

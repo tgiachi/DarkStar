@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DarkSun.Engine.Interfaces.Services;
+﻿using DarkSun.Api.Engine.Interfaces.Services;
 using DarkSun.Network.Server.Interfaces;
 
-namespace DarkSun.Engine.Interfaces.Core
+namespace DarkSun.Api.Engine.Interfaces.Core
 {
     public interface IDarkSunEngine
     {
@@ -15,5 +10,8 @@ namespace DarkSun.Engine.Interfaces.Core
         ISchedulerService SchedulerService { get; }
         IScriptEngineService ScriptEngineService { get; }
         IDarkSunNetworkServer NetworkServer { get; }
+
+        ValueTask<bool> StartAsync();
+        ValueTask<bool> StopAsync();
     }
 }

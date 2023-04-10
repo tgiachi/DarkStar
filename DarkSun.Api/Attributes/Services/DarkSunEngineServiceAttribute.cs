@@ -9,9 +9,11 @@ namespace DarkSun.Api.Attributes.Services
     [AttributeUsage(AttributeTargets.Class)]
     public class DarkSunEngineServiceAttribute : Attribute
     {
+        public string Name { get; set; }
         public int LoadOrder { get; set; } = 0;
-        public DarkSunEngineServiceAttribute(int loadOrder)
+        public DarkSunEngineServiceAttribute(string name, int loadOrder)
         {
+            Name = name;
             LoadOrder = loadOrder;
         }
     }

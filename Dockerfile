@@ -17,5 +17,6 @@ RUN dotnet publish "DarkSun.Engine.Runner.csproj" -c Release -r linux-x64 -p:Pub
 
 FROM base AS final
 WORKDIR /app
+ENV DOCKER_CONTAINER=true
 COPY --from=publish /app/publish .
 ENTRYPOINT ["./DarkSun.Engine.Runner"]
