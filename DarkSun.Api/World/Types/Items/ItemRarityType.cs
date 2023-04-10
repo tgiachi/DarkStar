@@ -14,6 +14,4 @@ namespace DarkSun.Api.World.Types.Items
         Epic,
         Legendary
     }
-
-
 }

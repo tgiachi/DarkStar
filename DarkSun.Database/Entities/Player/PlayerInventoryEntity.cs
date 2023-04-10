@@ -10,7 +10,7 @@ using FreeSql.DataAnnotations;
 namespace DarkSun.Database.Entities.Player
 {
     [Table(Name = "player_inventories")]
-    public class PlayerInventory : BaseEntity
+    public class PlayerInventoryEntity : BaseEntity
     {
         public ItemEntity Item { get; set; } = null!;
         public Guid ItemId { get; set; }

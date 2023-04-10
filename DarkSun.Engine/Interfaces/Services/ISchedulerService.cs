@@ -3,14 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DarkSun.Engine.Interfaces.Services.Base;
 
 namespace DarkSun.Engine.Interfaces.Services
 {
-    public interface IDarkSunEngineService
+    public interface ISchedulerService : IDarkSunEngineService
     {
-        string Name { get; }
-        int LoadOrder { get; }
-        Task<bool> StartAsync();
-        Task<bool> StopAsync();
     }
 }
