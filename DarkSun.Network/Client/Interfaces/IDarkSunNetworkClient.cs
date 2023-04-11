@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DarkSun.Network.Client.Interfaces
+namespace DarkSun.Network.Client.Interfaces;
+
+public interface IDarkSunNetworkClient
 {
-    public interface IDarkSunNetworkClient
-    {
-    }
 }

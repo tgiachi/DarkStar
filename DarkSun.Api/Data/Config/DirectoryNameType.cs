@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DarkSun.Api.Data.Config
+namespace DarkSun.Api.Data.Config;
+
+public enum DirectoryNameType
 {
-    public enum DirectoryNameType
-    {
-        Root,
-        Assets,
-        Database,
-        Config,
-        Scripts,
-        Maps,
-    }
+    Root,
+    Assets,
+    Database,
+    Config,
+    Scripts,
+    ScriptModules,
+    Maps
 }

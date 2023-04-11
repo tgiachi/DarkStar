@@ -4,20 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DarkSun.Api.Engine.Data.Config.Sections
+namespace DarkSun.Api.Engine.Data.Config.Sections;
+
+public class DatabaseConfig
 {
-    public class DatabaseConfig
-    {
-        public string ConnectionString { get; set; } = "Data Source={DATABASE_DIRECTORY}darksun.db;Version=3;";
-        public DatabaseType DatabaseType { get; set; } = DatabaseType.SqlLite;
+    public string ConnectionString { get; set; } = "Data Source={DATABASE_DIRECTORY}darksun.db;Version=3;";
+    public DatabaseType DatabaseType { get; set; } = DatabaseType.SqlLite;
 
-        public bool RecreateDatabase { get; set; } = true;
-    }
-
-    public enum DatabaseType
-    {
-        SqlLite,
-        PostgresSql,
-        MySql,
-    }
+    public bool RecreateDatabase { get; set; } = true;
 }

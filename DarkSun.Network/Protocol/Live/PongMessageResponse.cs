@@ -8,13 +8,11 @@ using DarkSun.Network.Protocol.Interfaces.Messages;
 using DarkSun.Network.Protocol.Types;
 using MessagePack;
 
-namespace DarkSun.Network.Protocol.Live
-{
+namespace DarkSun.Network.Protocol.Live;
 
-    [MessagePackObject(keyAsPropertyName: true)]
-    [NetworkMessage(DarkSunMessageType.Pong)]
-    public class PongMessageResponse : IDarkSunNetworkMessage
-    {
-        public long TimeStamp { get; set; }
-    }
+[MessagePackObject(true)]
+[NetworkMessage(DarkSunMessageType.Pong)]
+public class PongMessageResponse : IDarkSunNetworkMessage
+{
+    public long TimeStamp { get; set; }
 }

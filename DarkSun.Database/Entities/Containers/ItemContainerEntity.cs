@@ -7,14 +7,12 @@ using DarkSun.Database.Entities.Base;
 using DarkSun.Database.Entities.Player;
 using FreeSql.DataAnnotations;
 
-namespace DarkSun.Database.Entities.Containers
-{
+namespace DarkSun.Database.Entities.Containers;
 
-    [Table(Name = "item_containers")]
-    public class ItemContainerEntity : BaseEntity
-    {
-        public string Name { get; set; } = null!;
-        public Guid? PlayerId { get; set; }
-        public PlayerEntity? Player { get; set; }
-    }
+[Table(Name = "item_containers")]
+public class ItemContainerEntity : BaseEntity
+{
+    public string Name { get; set; } = null!;
+    public Guid? PlayerId { get; set; }
+    public PlayerEntity? Player { get; set; }
 }

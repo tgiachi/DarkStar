@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 using DarkSun.Database.Entities.Base;
 using FreeSql.DataAnnotations;
 
-namespace DarkSun.Database.Entities.Template
+namespace DarkSun.Database.Entities.Template;
+
+[Table(Name = "item_template")]
+public class ItemDropTemplateEntity : BaseEntity
 {
-    [Table(Name = "item_template")]
-    public class ItemDropTemplateEntity : BaseEntity
-    {
-        public string Name { get; set; } = null!;
-    }
+    public string Name { get; set; } = null!;
 }

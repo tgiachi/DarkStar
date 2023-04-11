@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DarkSun.Network.Protocol.Types
+namespace DarkSun.Network.Protocol.Types;
+
+public enum DarkSunMessageType
 {
-    public enum DarkSunMessageType
-    {
-        Ping,
-        Pong
-    }
+    Ping,
+    Pong,
+    ServerVersionResponse
 }

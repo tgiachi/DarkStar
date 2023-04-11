@@ -7,23 +7,22 @@ using DarkSun.Api.Engine.Attributes;
 using DarkSun.Api.Utils;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace DarkSun.Engine.Utils
+namespace DarkSun.Engine.Utils;
+
+public static class NetworkListenerRegistrationEx
 {
-    public static class NetworkListenerRegistrationEx
+    public static IServiceCollection RegisterMessageListeners(this IServiceCollection services)
     {
-        public static IServiceCollection RegisterMessageListeners(this IServiceCollection services)
+        foreach (var service in AssemblyUtils.GetAttribute<NetworkMessageListenerAttribute>())
         {
-            foreach (var service in AssemblyUtils.GetAttribute<NetworkMessageListenerAttribute>())
-            {
-                services.AddSingleton(service);
-            }
-
-            foreach (var service in AssemblyUtils.GetAttribute<NetworkConnectionHandlerAttribute>())
-            {
-                services.AddSingleton(service);
-            }
-
-            return services;
+            services.AddSingleton(service);
         }
+
+        foreach (var service in AssemblyUtils.GetAttribute<NetworkConnectionHandlerAttribute>())
+        {
+            services.AddSingleton(service);
+        }
+
+        return services;
     }
 }

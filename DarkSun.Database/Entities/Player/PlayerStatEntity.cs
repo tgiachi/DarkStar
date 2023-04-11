@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 using DarkSun.Database.Entities.Base;
 using FreeSql.DataAnnotations;
 
-namespace DarkSun.Database.Entities.Player
+namespace DarkSun.Database.Entities.Player;
+
+[Table(Name = "player_stats")]
+public class PlayerStatEntity : BaseStatEntity
 {
-    [Table(Name = "player_stats")]
-    public class PlayerStatEntity : BaseStatEntity
-    {
-        public PlayerEntity Player { get; set; } = null!;
-        public Guid PlayerId { get; set; }
-    }
+    public PlayerEntity Player { get; set; } = null!;
+    public Guid PlayerId { get; set; }
 }

@@ -16,99 +16,102 @@ using DarkSun.Network.Session.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
-using Tomlyn;
 
-namespace DarkSun.Engine.Runner
+namespace DarkSun.Engine.Runner;
+
+internal class Program
 {
-    internal class Program
+    private static async Task Main(string[] args)
     {
-        static async Task Main(string[] args)
+        AssemblyUtils.AddAssembly(typeof(DarkSunEngine).Assembly);
+
+        Log.Logger = new LoggerConfiguration()
+            .Enrich.FromLogContext()
+            .WriteTo.Console()
+            .CreateLogger();
+
+        var directoryConfig = EnsureDirectories();
+        var engineConfig = LoadConfig(directoryConfig);
+
+        if (engineConfig.Logger.EnableDebug)
         {
-
-            AssemblyUtils.AddAssembly(typeof(DarkSunEngine).Assembly);
-
             Log.Logger = new LoggerConfiguration()
                 .Enrich.FromLogContext()
+                .MinimumLevel.Debug()
                 .WriteTo.Console()
                 .CreateLogger();
+        }
 
-            var directoryConfig = EnsureDirectories();
-            var engineConfig = LoadConfig(directoryConfig);
-
-            using var host = Host.CreateDefaultBuilder(args)
-                .ConfigureServices(services =>
-                {
-                    services.AddSingleton<IDarkSunEngine, DarkSunEngine>()
+        using var host = Host.CreateDefaultBuilder(args)
+            .ConfigureServices(services =>
+            {
+                services.AddSingleton<IDarkSunEngine, DarkSunEngine>()
                     .AddSingleton<IDarkSunNetworkServer, MessagePackNetworkServer>()
                     .AddSingleton<INetworkSessionManager, InMemoryNetworkSessionManager>()
                     .AddSingleton<INetworkMessageBuilder, MessagePackMessageBuilder>()
                     .AddSingleton(new DarkSunNetworkServerConfig()
                     {
-                        Address = engineConfig.NetworkServer.Address,
-                        Port = engineConfig.NetworkServer.Port
+                        Address = engineConfig.NetworkServer.Address, Port = engineConfig.NetworkServer.Port
                     })
                     .AddSingleton(engineConfig)
                     .AddSingleton(directoryConfig)
                     .RegisterDarkSunServices()
                     .RegisterMessageListeners()
-
                     .AddHostedService<DarkEngineHostedService>();
+            })
+            .UseSerilog()
+            .Build();
 
-                })
-                .UseSerilog()
+        await host.RunAsync();
+        Log.Logger.Information("Engine has stopped");
+    }
 
-                .Build();
+    private static DirectoriesConfig EnsureDirectories()
+    {
+        var rootDirectory = Environment.GetEnvironmentVariable("DARKSUN_ROOT_DIRECTORY")
+                            ?? Path.Join(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+                                "DarkSun");
 
-            await host.RunAsync();
-            Log.Logger.Information("Engine has stopped");
-        }
+        Log.Logger.Information("Root directory is: {Root}", rootDirectory);
 
-        private static DirectoriesConfig EnsureDirectories()
+        var directoriesConfig = new DirectoriesConfig { [DirectoryNameType.Root] = rootDirectory };
+
+        Directory.CreateDirectory(directoriesConfig[DirectoryNameType.Root]);
+
+        foreach (var type in Enum.GetValues(typeof(DirectoryNameType)).Cast<DirectoryNameType>())
         {
-            var rootDirectory = Environment.GetEnvironmentVariable("DARKSUN_ROOT_DIRECTORY")
-                                ?? Path.Join(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-                                    "DarkSun");
-
-            Log.Logger.Information("Root directory is: {Root}", rootDirectory);
-
-            var directoriesConfig = new DirectoriesConfig { [DirectoryNameType.Root] = rootDirectory };
-
-            Directory.CreateDirectory(directoriesConfig[DirectoryNameType.Root]);
-
-            foreach (var type in Enum.GetValues(typeof(DirectoryNameType)).Cast<DirectoryNameType>())
-                if (type != DirectoryNameType.Root)
-                {
-                    directoriesConfig[type] = Path.Join(directoriesConfig[DirectoryNameType.Root], type.ToString());
-                    Log.Logger.Debug("{Type} directory is: {Directory}", type, directoriesConfig[type]);
-                    Directory.CreateDirectory(directoriesConfig[type]);
-                }
-
-            return directoriesConfig;
+            if (type != DirectoryNameType.Root)
+            {
+                directoriesConfig[type] = Path.Join(directoriesConfig[DirectoryNameType.Root], type.ToString());
+                Log.Logger.Debug("{Type} directory is: {Directory}", type, directoriesConfig[type]);
+                Directory.CreateDirectory(directoriesConfig[type]);
+            }
         }
 
-        private static EngineConfig LoadConfig(DirectoriesConfig directoriesConfig)
+        return directoriesConfig;
+    }
+
+    private static EngineConfig LoadConfig(DirectoriesConfig directoriesConfig)
+    {
+        var jsonOptions = new JsonSerializerOptions()
         {
-            var jsonOptions = new JsonSerializerOptions()
-            {
-                WriteIndented = true,
-                Converters = { new JsonStringEnumConverter() }
-            };
-            var config = new EngineConfig();
-            var configPath = Path.Join(directoriesConfig[DirectoryNameType.Config], "darksun.json");
-            if (File.Exists(configPath))
-            {
-                Log.Logger.Information("Loading config from {Path}", configPath);
-                var source = File.ReadAllText(configPath);
-                config = JsonSerializer.Deserialize<EngineConfig>(source, jsonOptions);
-            }
-            else
-            {
-                Log.Logger.Information("Creating default config at {Path}", configPath);
-                var source = JsonSerializer.Serialize(config, jsonOptions);
-                File.WriteAllText(configPath, source);
-            }
-            return config!;
-
+            WriteIndented = true, Converters = { new JsonStringEnumConverter() }
+        };
+        var config = new EngineConfig();
+        var configPath = Path.Join(directoriesConfig[DirectoryNameType.Config], "darksun.json");
+        if (File.Exists(configPath))
+        {
+            Log.Logger.Information("Loading config from {Path}", configPath);
+            var source = File.ReadAllText(configPath);
+            config = JsonSerializer.Deserialize<EngineConfig>(source, jsonOptions);
         }
+        else
+        {
+            Log.Logger.Information("Creating default config at {Path}", configPath);
+            var source = JsonSerializer.Serialize(config, jsonOptions);
+            File.WriteAllText(configPath, source);
+        }
+
+        return config!;
     }
 }

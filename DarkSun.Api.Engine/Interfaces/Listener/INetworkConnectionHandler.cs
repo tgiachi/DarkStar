@@ -5,11 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using DarkSun.Network.Protocol.Interfaces.Messages;
 
-namespace DarkSun.Api.Engine.Interfaces.Listener
+namespace DarkSun.Api.Engine.Interfaces.Listener;
+
+public interface INetworkConnectionHandler
 {
-    public interface INetworkConnectionHandler
-    {
-        Task<List<IDarkSunNetworkMessage>> ClientConnectedMessagesAsync(Guid sessionId);
-        Task ClientDisconnectedAsync(Guid sessionId);
-    }
+    Task<List<IDarkSunNetworkMessage>> ClientConnectedMessagesAsync(Guid sessionId);
+    Task ClientDisconnectedAsync(Guid sessionId);
 }

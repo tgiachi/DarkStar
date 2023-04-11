@@ -9,37 +9,36 @@ using DarkSun.Network.Protocol.Interfaces.Messages;
 using DarkSun.Network.Protocol.Types;
 using Microsoft.Extensions.Logging;
 
-namespace DarkSun.Api.Engine.MessageListeners
+namespace DarkSun.Api.Engine.MessageListeners;
+
+public class BaseNetworkMessageListener<TMessage> : INetworkMessageListener where TMessage : IDarkSunNetworkMessage
 {
-    public class BaseNetworkMessageListener<TMessage> : INetworkMessageListener where TMessage : IDarkSunNetworkMessage
+    protected ILogger Logger { get; }
+    protected IDarkSunEngine Engine { get; }
+
+    public BaseNetworkMessageListener(ILogger<BaseNetworkMessageListener<TMessage>> logger, IDarkSunEngine engine)
     {
-        protected ILogger Logger { get; }
-        protected IDarkSunEngine Engine { get; }
+        Logger = logger;
+        Engine = engine;
+    }
 
-        public BaseNetworkMessageListener(ILogger<BaseNetworkMessageListener<TMessage>> logger, IDarkSunEngine engine)
+    public Task OnMessageReceivedAsync(Guid sessionId, DarkSunMessageType messageType, IDarkSunNetworkMessage message)
+    {
+        try
         {
-            Logger = logger;
-            Engine = engine;
+            return OnMessageReceivedAsync(sessionId, messageType, (TMessage)message);
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, "Error while processing message {MessageType} for session {SessionId}", messageType,
+                sessionId);
         }
 
-        public Task OnMessageReceivedAsync(Guid sessionId, DarkSunMessageType messageType, IDarkSunNetworkMessage message)
-        {
-            try
-            {
-                return OnMessageReceivedAsync(sessionId, messageType, (TMessage)message);
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError(ex, "Error while processing message {MessageType} for session {SessionId}", messageType, sessionId);
-            }
+        return Task.CompletedTask;
+    }
 
-            return Task.CompletedTask;
-
-        }
-
-        public virtual Task OnMessageReceivedAsync(Guid sessionId, DarkSunMessageType messageType, TMessage message)
-        {
-            return Task.CompletedTask;
-        }
+    public virtual Task OnMessageReceivedAsync(Guid sessionId, DarkSunMessageType messageType, TMessage message)
+    {
+        return Task.CompletedTask;
     }
 }
