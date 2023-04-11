@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DarkSun.Api.World.Types.Map;
 
-public enum MapType
+public enum MapType : short
 {
     World,
     Dungeon,

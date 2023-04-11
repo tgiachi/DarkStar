@@ -37,6 +37,7 @@ public class DarkSunEngine : IDarkSunEngine
     public IScriptEngineService ScriptEngineService { get; }
     public IDarkSunNetworkServer NetworkServer { get; }
     public IPlayerSessionService PlayerSessionService { get; }
+    public IDatabaseService DatabaseService { get; }
 
 
     public DarkSunEngine(ILogger<DarkSunEngine> logger,
@@ -47,6 +48,7 @@ public class DarkSunEngine : IDarkSunEngine
         IDarkSunNetworkServer networkServer,
         IWorldService worldService,
         IPlayerSessionService playerSessionService,
+        IDatabaseService databaseService,
         EngineConfig engineConfig,
         IServiceProvider container)
     {
@@ -58,6 +60,7 @@ public class DarkSunEngine : IDarkSunEngine
         ScriptEngineService = scriptEngineService;
         NetworkServer = networkServer;
         PlayerSessionService = playerSessionService;
+        DatabaseService = databaseService;
         _engineConfig = engineConfig;
         _container = container;
     }

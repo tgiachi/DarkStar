@@ -11,6 +11,7 @@ public interface IDarkSunEngine
     IScriptEngineService ScriptEngineService { get; }
     IDarkSunNetworkServer NetworkServer { get; }
     IPlayerSessionService PlayerSessionService { get; }
+    IDatabaseService DatabaseService { get; }
     ValueTask<bool> StartAsync();
     ValueTask<bool> StopAsync();
 }

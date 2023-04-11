@@ -11,5 +11,12 @@ public enum DarkSunMessageType
 {
     Ping,
     Pong,
-    ServerVersionResponse
+    // Server messages
+    ServerVersionResponse,
+
+    // Account messages
+    AccountLoginRequest,
+    AccountLoginResponse,
+    AccountCreateRequest,
+    AccountCreateResponse,
 }
