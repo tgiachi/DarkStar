@@ -54,7 +54,7 @@ public class MessagePackNetworkServer : TcpServer, IDarkSunNetworkServer
 
         _sessionManager.AddSession(session.Id);
 
-        var messagesToSend = await OnClientConnected?.Invoke(session.Id);
+        var messagesToSend = await OnClientConnected?.Invoke(session.Id)!;
         if (messagesToSend != null)
         {
             await SendMessageAsync(session.Id, messagesToSend);
