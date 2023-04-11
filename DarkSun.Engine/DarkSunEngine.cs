@@ -23,6 +23,7 @@ namespace DarkSun.Engine
         private readonly DirectoriesConfig _directoriesConfig;
         private readonly IServiceProvider _container;
         private readonly EngineConfig _engineConfig;
+        private readonly SortedDictionary<int, IDarkSunEngineService> _servicesLoadOrder = new();
 
         public IWorldService WorldService { get; }
         public IBlueprintService BlueprintService { get; }
@@ -30,11 +31,7 @@ namespace DarkSun.Engine
         public IScriptEngineService ScriptEngineService { get; }
         public IDarkSunNetworkServer NetworkServer { get; }
 
-        
-
-        private readonly SortedDictionary<int, IDarkSunEngineService> _servicesLoadOrder = new();
-
-
+       
         public DarkSunEngine(ILogger<DarkSunEngine> logger,
             DirectoriesConfig directoriesConfig,
             IBlueprintService blueprintService,
@@ -58,22 +55,30 @@ namespace DarkSun.Engine
 
         public async ValueTask<bool> StartAsync()
         {
-            await BuildServicesOrder();
+            await BuildServicesOrderAsync();
 
             foreach (var service in _servicesLoadOrder)
             {
                 await service.Value.StartAsync();
             }
 
+            await NetworkServer.StartAsync();
+
             return true;
         }
 
-        public ValueTask<bool> StopAsync()
+        public async ValueTask<bool> StopAsync()
         {
-            return new ValueTask<bool>(true);
+            await NetworkServer.StopAsync();
+            foreach (var service in _servicesLoadOrder.Reverse())
+            {
+                await service.Value.StopAsync();
+            }
+
+            return true;
         }
 
-        private ValueTask BuildServicesOrder()
+        private ValueTask BuildServicesOrderAsync()
         {
             _logger.LogDebug("Building services load order");
             var services = AssemblyUtils.GetAttribute<DarkSunEngineServiceAttribute>();
@@ -81,8 +86,9 @@ namespace DarkSun.Engine
             {
                 var attr = serviceType.GetCustomAttribute<DarkSunEngineServiceAttribute>()!;
                 var interf = AssemblyUtils.GetInterfacesOfType(serviceType)!.First(k => k.Name.EndsWith(serviceType.Name));
-                _servicesLoadOrder.Add(attr.LoadOrder, (IDarkSunEngineService)_container.GetService(interf)! );
+                _servicesLoadOrder.Add(attr.LoadOrder, (IDarkSunEngineService)_container.GetService(interf)!);
             }
+
 
             return ValueTask.CompletedTask;
         }

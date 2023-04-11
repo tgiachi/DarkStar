@@ -1,4 +1,6 @@
-﻿using DarkSun.Api.Data.Config;
+﻿using System.Text.Json;
+using System.Text.Json.Serialization;
+using DarkSun.Api.Data.Config;
 using DarkSun.Api.Engine.Data.Config;
 using DarkSun.Api.Engine.Interfaces.Core;
 using DarkSun.Api.Engine.Interfaces.Services.Base;
@@ -47,12 +49,15 @@ namespace DarkSun.Engine.Runner
                     })
                     .AddSingleton(engineConfig)
                     .AddSingleton(directoryConfig)
-                    .RegisterDarkSunServices();
+                    .RegisterDarkSunServices()
+
+                    .AddHostedService<DarkEngineHostedService>();
 
                 })
                 .UseSerilog()
+                
                 .Build();
-            await host.Services.GetRequiredService<IDarkSunEngine>().StartAsync();
+            
             await host.RunAsync();
             Log.Logger.Information("Engine has stopped");
         }
@@ -82,21 +87,26 @@ namespace DarkSun.Engine.Runner
 
         private static EngineConfig LoadConfig(DirectoriesConfig directoriesConfig)
         {
+            var jsonOptions = new JsonSerializerOptions()
+            {
+                WriteIndented = true,
+                Converters = { new JsonStringEnumConverter() }
+            };
             var config = new EngineConfig();
-            var configPath = Path.Join(directoriesConfig[DirectoryNameType.Config], "darksun.toml");
+            var configPath = Path.Join(directoriesConfig[DirectoryNameType.Config], "darksun.json");
             if (File.Exists(configPath))
             {
                 Log.Logger.Information("Loading config from {Path}", configPath);
                 var source = File.ReadAllText(configPath);
-                config = Toml.ToModel<EngineConfig>(source);
+                config = JsonSerializer.Deserialize<EngineConfig>(source, jsonOptions);
             }
             else
             {
                 Log.Logger.Information("Creating default config at {Path}", configPath);
-                var source = Toml.FromModel(config);
+                var source = JsonSerializer.Serialize(config, jsonOptions);
                 File.WriteAllText(configPath, source);
             }
-            return config;
+            return config!;
 
         }
     }
