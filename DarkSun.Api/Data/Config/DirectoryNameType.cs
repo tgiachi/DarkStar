@@ -10,6 +10,7 @@ namespace DarkSun.Api.Data.Config
     {
         Root,
         Assets,
+        Database,
         Config,
         Scripts,
         Maps,

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DarkSun.Network.Data
 {
-    public class NetworkServerConfig
+    public class DarkSunNetworkServerConfig
     {
         public string Address { get; set; } = IPAddress.Any.ToString();
 

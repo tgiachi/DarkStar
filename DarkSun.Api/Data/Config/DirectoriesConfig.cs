@@ -15,6 +15,8 @@ namespace DarkSun.Api.Data.Config
         public DirectoriesConfig()
         {
             Directories = new Dictionary<DirectoryNameType, string>();
+            foreach (var type in Enum.GetValues(typeof(DirectoryNameType)).Cast<DirectoryNameType>())
+                Directories.Add(type, type.ToString());
         }
 
         public string this[DirectoryNameType index]

@@ -8,5 +8,16 @@ namespace DarkSun.Api.Engine.Data.Config.Sections
 {
     public class DatabaseConfig
     {
+        public string ConnectionString { get; set; } = "Data Source={DATABASE_DIRECTORY}darksun.db;Version=3;";
+        public DatabaseType DatabaseType { get; set; } = DatabaseType.SqlLite;
+
+        public bool RecreateDatabase { get; set; } = true;
+    }
+
+    public enum DatabaseType
+    {
+        SqlLite,
+        PostgresSql,
+        MySql,
     }
 }

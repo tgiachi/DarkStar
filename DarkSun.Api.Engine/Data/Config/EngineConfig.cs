@@ -11,7 +11,6 @@ namespace DarkSun.Api.Engine.Data.Config
     {
         public DatabaseConfig Database { get; set; } = new ();
         public NetworkServerConfig NetworkServer { get; set; } = new ();
-
         public LoggerConfig Logger { get; set; } = new ();
     }
 }

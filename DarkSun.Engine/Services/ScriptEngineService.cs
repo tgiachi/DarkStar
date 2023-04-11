@@ -11,11 +11,11 @@ using NLua;
 
 namespace DarkSun.Engine.Services
 {
-    [DarkSunEngineService("ScriptEngine", 1)]
+    [DarkSunEngineService("ScriptEngine", 4)]
     public class ScriptEngineService : BaseService<IScriptEngineService> , IScriptEngineService
     {
         private readonly Lua _scriptEngine;
-        protected ScriptEngineService(ILogger<IScriptEngineService> logger) : base(logger)
+        public ScriptEngineService(ILogger<IScriptEngineService> logger) : base(logger)
         {
             _scriptEngine = new Lua() { UseTraceback = true };
         }

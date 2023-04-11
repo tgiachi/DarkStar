@@ -43,7 +43,7 @@ namespace DarkSun.Tests
             var server = new MessagePackNetworkServer(new NullLogger<MessagePackNetworkServer>(),
                 new InMemoryNetworkSessionManager(),
                 new MessagePackMessageBuilder(new NullLogger<MessagePackMessageBuilder>()),
-                new NetworkServerConfig() { Address = IPAddress.Any.ToString(), Port = 9000 });
+                new DarkSunNetworkServerConfig() { Address = IPAddress.Any.ToString(), Port = 9000 });
 
             server.StartAsync().GetAwaiter().GetResult();
             Assert.IsTrue(server.IsStarted);
@@ -66,7 +66,7 @@ namespace DarkSun.Tests
             var server = new MessagePackNetworkServer(new NullLogger<MessagePackNetworkServer>(),
                 new InMemoryNetworkSessionManager(),
                 new MessagePackMessageBuilder(new NullLogger<MessagePackMessageBuilder>()),
-                new NetworkServerConfig() { Address = IPAddress.Any.ToString(), Port = 9000 });
+                new DarkSunNetworkServerConfig() { Address = IPAddress.Any.ToString(), Port = 9000 });
 
             server.StartAsync().GetAwaiter().GetResult();
             Assert.IsTrue(server.IsStarted);

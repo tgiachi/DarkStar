@@ -20,7 +20,7 @@ namespace DarkSun.Network.Server
         private readonly ILogger _logger;
         private readonly INetworkSessionManager _sessionManager;
         private readonly INetworkMessageBuilder _messageBuilder;
-        private readonly NetworkServerConfig _networkServerConfig;
+        private readonly DarkSunNetworkServerConfig _darkSunNetworkServerConfig;
 
         public event IDarkSunNetworkServer.MessageReceivedDelegate? OnMessageReceived;
         public event IDarkSunNetworkServer.ClientConnectedMessages? OnClientConnected;
@@ -31,12 +31,12 @@ namespace DarkSun.Network.Server
         public MessagePackNetworkServer(ILogger<MessagePackNetworkServer> logger,
             INetworkSessionManager sessionManager,
             INetworkMessageBuilder messageBuilder,
-            NetworkServerConfig networkServerConfig) : base(networkServerConfig.Address, networkServerConfig.Port)
+            DarkSunNetworkServerConfig darkSunNetworkServerConfig) : base(darkSunNetworkServerConfig.Address, darkSunNetworkServerConfig.Port)
         {
             _logger = logger;
             _sessionManager = sessionManager;
             _messageBuilder = messageBuilder;
-            _networkServerConfig = networkServerConfig;
+            _darkSunNetworkServerConfig = darkSunNetworkServerConfig;
 
             OptionReceiveBufferSize = 512;
 
@@ -71,7 +71,7 @@ namespace DarkSun.Network.Server
 
         protected override void OnStarted()
         {
-            _logger.LogInformation("Server started on {Ip}:{Port}", _networkServerConfig.Address, _networkServerConfig.Port);
+            _logger.LogInformation("Server started on {Ip}:{Port}", _darkSunNetworkServerConfig.Address, _darkSunNetworkServerConfig.Port);
 
             base.OnStarted();
         }
