@@ -11,5 +11,8 @@ public enum MapLayer : short
     Terrain,
     Objects,
     Items,
-    Creatures
+    Creatures,
+    Players,
+    Effects,
+    Weather,
 }

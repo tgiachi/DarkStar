@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="Redbus" Version="1.0.8" />
+    <PackageReference Include="GoRogue" Version="2.6.4" />
   </ItemGroup>
 
   <ItemGroup>
