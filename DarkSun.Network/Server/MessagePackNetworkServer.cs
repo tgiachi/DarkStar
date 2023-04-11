@@ -52,6 +52,7 @@ namespace DarkSun.Network.Server
             _logger.LogInformation("Client {IpAddress} connected with sessionId: {SessionId}", session.Socket.RemoteEndPoint, session.Id);
 
             _sessionManager.AddSession(session.Id);
+
             var messagesToSend = OnClientConnected?.Invoke(session.Id).GetAwaiter().GetResult();
             if (messagesToSend != null)
             {
@@ -143,14 +144,14 @@ namespace DarkSun.Network.Server
             _messageListeners.Add(messageType, messageListener);
         }
 
-        public  Task StartAsync()
+        public Task StartAsync()
         {
             base.Start();
 
             return Task.CompletedTask;
         }
 
-        public  Task StopAsync()
+        public Task StopAsync()
         {
             base.Stop();
 

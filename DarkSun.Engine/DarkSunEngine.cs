@@ -6,11 +6,16 @@ using System.Text;
 using System.Threading.Tasks;
 using DarkSun.Api.Attributes.Services;
 using DarkSun.Api.Data.Config;
+using DarkSun.Api.Engine.Attributes;
 using DarkSun.Api.Engine.Data.Config;
 using DarkSun.Api.Engine.Interfaces.Core;
+using DarkSun.Api.Engine.Interfaces.Listener;
 using DarkSun.Api.Engine.Interfaces.Services;
 using DarkSun.Api.Engine.Interfaces.Services.Base;
 using DarkSun.Api.Utils;
+using DarkSun.Network.Interfaces;
+using DarkSun.Network.Protocol.Interfaces.Messages;
+using DarkSun.Network.Protocol.Types;
 using DarkSun.Network.Server.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -24,6 +29,8 @@ namespace DarkSun.Engine
         private readonly IServiceProvider _container;
         private readonly EngineConfig _engineConfig;
         private readonly SortedDictionary<int, IDarkSunEngineService> _servicesLoadOrder = new();
+        private readonly HashSet<INetworkConnectionHandler> _connectionHandlers = new();
+
 
         public IWorldService WorldService { get; }
         public IBlueprintService BlueprintService { get; }
@@ -31,7 +38,7 @@ namespace DarkSun.Engine
         public IScriptEngineService ScriptEngineService { get; }
         public IDarkSunNetworkServer NetworkServer { get; }
 
-       
+
         public DarkSunEngine(ILogger<DarkSunEngine> logger,
             DirectoriesConfig directoriesConfig,
             IBlueprintService blueprintService,
@@ -53,9 +60,60 @@ namespace DarkSun.Engine
             _container = container;
         }
 
+        private ValueTask PrepareMessageListenersAsync()
+        {
+            var messageListenersTypes = AssemblyUtils.GetAttribute<NetworkMessageListenerAttribute>();
+            foreach (var messageListenerType in messageListenersTypes)
+            {
+                var attribute = messageListenerType.GetCustomAttribute<NetworkMessageListenerAttribute>()!;
+                _logger.LogDebug("Adding message listener {Type} from message type: {MessageType}", messageListenerType.Name, attribute.MessageType);
+                if (_container.GetService(messageListenerType) is INetworkMessageListener service)
+                {
+                    NetworkServer.RegisterMessageListener(attribute.MessageType, service);
+                }
+            }
+            return ValueTask.CompletedTask;
+        }
+
+        private ValueTask PrepareConnectionHandlersAsync()
+        {
+            NetworkServer.OnClientConnected += NetworkServerOnOnClientConnectedAsync;
+            NetworkServer.OnClientDisconnected += NetworkServerOnClientDisconnectedAsync;
+
+            foreach (var connectionHandler in AssemblyUtils.GetAttribute<NetworkConnectionHandlerAttribute>())
+            {
+                if (_container.GetService(connectionHandler) is INetworkConnectionHandler handler)
+                {
+                    _connectionHandlers.Add(handler);
+                }
+            }
+
+            return ValueTask.CompletedTask;
+        }
+
+        private async Task NetworkServerOnClientDisconnectedAsync(Guid sessionId)
+        {
+            foreach (var handler in _connectionHandlers)
+            {
+                await handler.ClientDisconnectedAsync(sessionId);
+            }
+        }
+
+        private async Task<List<IDarkSunNetworkMessage>> NetworkServerOnOnClientConnectedAsync(Guid sessionId)
+        {
+            var messages = new List<IDarkSunNetworkMessage>();
+            foreach (var handler in _connectionHandlers)
+            {
+                messages.AddRange(await handler.ClientConnectedMessagesAsync(sessionId));
+            }
+            return messages;
+        }
+
         public async ValueTask<bool> StartAsync()
         {
             await BuildServicesOrderAsync();
+            await PrepareMessageListenersAsync();
+            await PrepareConnectionHandlersAsync();
 
             foreach (var service in _servicesLoadOrder)
             {
@@ -92,5 +150,7 @@ namespace DarkSun.Engine
 
             return ValueTask.CompletedTask;
         }
+
+
     }
 }

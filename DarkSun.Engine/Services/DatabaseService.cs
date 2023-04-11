@@ -40,6 +40,7 @@ namespace DarkSun.Engine.Services
 
             if (_config.Database.RecreateDatabase)
             {
+                Logger.LogInformation("Deleting database");
                 await DeleteDatabaseAsync();
             }
 
@@ -58,6 +59,7 @@ namespace DarkSun.Engine.Services
 
             if (_config.Database.RecreateDatabase)
             {
+                Logger.LogInformation("Recreating database migrations");
                 await MigrateAsync();
             }
 

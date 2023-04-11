@@ -16,7 +16,9 @@ namespace DarkSun.Engine.Runner
         private readonly ILogger _logger;
         private readonly IHostApplicationLifetime _applicationLifetime;
         private readonly IServiceProvider _serviceProvider;
-        public DarkEngineHostedService(ILogger<DarkEngineHostedService> logger, IHostApplicationLifetime lifetime, IServiceProvider serviceProvider)
+        public DarkEngineHostedService(ILogger<DarkEngineHostedService> logger,
+            IHostApplicationLifetime lifetime,
+            IServiceProvider serviceProvider)
         {
             _applicationLifetime = lifetime;
             _logger = logger;

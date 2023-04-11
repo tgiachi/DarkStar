@@ -50,14 +50,15 @@ namespace DarkSun.Engine.Runner
                     .AddSingleton(engineConfig)
                     .AddSingleton(directoryConfig)
                     .RegisterDarkSunServices()
+                    .RegisterMessageListeners()
 
                     .AddHostedService<DarkEngineHostedService>();
 
                 })
                 .UseSerilog()
-                
+
                 .Build();
-            
+
             await host.RunAsync();
             Log.Logger.Information("Engine has stopped");
         }

@@ -8,5 +8,6 @@ namespace DarkSun.Api.Engine.Data.Config.Sections
 {
     public class LoggerConfig
     {
+        public bool EnableDebug { get; set; } = false;
     }
 }
