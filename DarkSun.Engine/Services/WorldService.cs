@@ -5,7 +5,7 @@ using Microsoft.Extensions.Logging;
 
 namespace DarkSun.Engine.Services;
 
-[DarkSunEngineService("WorldService", 5)]
+[DarkSunEngineService("WorldService", 10)]
 public class WorldService : BaseService<IWorldService>, IWorldService
 {
     public WorldService(ILogger<WorldService> logger) : base(logger)

@@ -15,6 +15,9 @@ using DarkSun.Network.Session;
 using DarkSun.Network.Session.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Redbus;
+using Redbus.Configuration;
+using Redbus.Interfaces;
 using Serilog;
 
 namespace DarkSun.Engine.Runner;
@@ -49,9 +52,14 @@ internal class Program
                     .AddSingleton<IDarkSunNetworkServer, MessagePackNetworkServer>()
                     .AddSingleton<INetworkSessionManager, InMemoryNetworkSessionManager>()
                     .AddSingleton<INetworkMessageBuilder, MessagePackMessageBuilder>()
+                    .AddSingleton<IEventBus>(new EventBus(new EventBusConfiguration()
+                    {
+                        ThrowSubscriberException = true
+                    }))
                     .AddSingleton(new DarkSunNetworkServerConfig()
                     {
-                        Address = engineConfig.NetworkServer.Address, Port = engineConfig.NetworkServer.Port
+                        Address = engineConfig.NetworkServer.Address,
+                        Port = engineConfig.NetworkServer.Port
                     })
                     .AddSingleton(engineConfig)
                     .AddSingleton(directoryConfig)
@@ -95,7 +103,8 @@ internal class Program
     {
         var jsonOptions = new JsonSerializerOptions()
         {
-            WriteIndented = true, Converters = { new JsonStringEnumConverter() }
+            WriteIndented = true,
+            Converters = { new JsonStringEnumConverter() }
         };
         var config = new EngineConfig();
         var configPath = Path.Join(directoriesConfig[DirectoryNameType.Config], "darksun.json");

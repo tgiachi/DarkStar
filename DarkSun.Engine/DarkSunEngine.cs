@@ -8,6 +8,7 @@ using DarkSun.Api.Attributes.Services;
 using DarkSun.Api.Data.Config;
 using DarkSun.Api.Engine.Attributes;
 using DarkSun.Api.Engine.Data.Config;
+using DarkSun.Api.Engine.Events.Engine;
 using DarkSun.Api.Engine.Interfaces.Core;
 using DarkSun.Api.Engine.Interfaces.Listener;
 using DarkSun.Api.Engine.Interfaces.Services;
@@ -19,6 +20,7 @@ using DarkSun.Network.Protocol.Types;
 using DarkSun.Network.Server.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Redbus.Interfaces;
 
 namespace DarkSun.Engine;
 
@@ -38,6 +40,7 @@ public class DarkSunEngine : IDarkSunEngine
     public IDarkSunNetworkServer NetworkServer { get; }
     public IPlayerSessionService PlayerSessionService { get; }
     public IDatabaseService DatabaseService { get; }
+    public IEventBus EventBus { get; }
 
 
     public DarkSunEngine(ILogger<DarkSunEngine> logger,
@@ -50,7 +53,8 @@ public class DarkSunEngine : IDarkSunEngine
         IPlayerSessionService playerSessionService,
         IDatabaseService databaseService,
         EngineConfig engineConfig,
-        IServiceProvider container)
+        IServiceProvider container,
+        IEventBus eventBus)
     {
         _logger = logger;
         _directoriesConfig = directoriesConfig;
@@ -61,8 +65,10 @@ public class DarkSunEngine : IDarkSunEngine
         NetworkServer = networkServer;
         PlayerSessionService = playerSessionService;
         DatabaseService = databaseService;
+        EventBus = eventBus;
         _engineConfig = engineConfig;
         _container = container;
+
     }
 
     private ValueTask PrepareMessageListenersAsync()
@@ -129,6 +135,7 @@ public class DarkSunEngine : IDarkSunEngine
         }
 
         await NetworkServer.StartAsync();
+        EventBus.PublishAsync(new EngineReadyEvent());
 
         return true;
     }

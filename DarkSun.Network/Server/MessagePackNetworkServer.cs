@@ -74,7 +74,7 @@ public class MessagePackNetworkServer : TcpServer, IDarkSunNetworkServer
 
     protected override void OnStarted()
     {
-        _logger.LogInformation("Server started on {Ip}:{Port}", _darkSunNetworkServerConfig.Address,
+        _logger.LogInformation("Tcp Server started on {Ip}:{Port}", _darkSunNetworkServerConfig.Address,
             _darkSunNetworkServerConfig.Port);
 
         base.OnStarted();

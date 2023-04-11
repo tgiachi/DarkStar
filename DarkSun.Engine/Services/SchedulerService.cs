@@ -13,6 +13,8 @@ public class SchedulerService : BaseService<SchedulerService>, ISchedulerService
 {
     private const short Tick = 30;
 
+    public event ISchedulerService.OnTickDelegate? OnTick;
+
     private static readonly CancellationTokenSource s_schedulerCancellationTokenSource = new();
     private readonly CancellationToken _schedulerCancellationToken = s_schedulerCancellationTokenSource.Token;
 
@@ -35,6 +37,7 @@ public class SchedulerService : BaseService<SchedulerService>, ISchedulerService
             var stopWatch = new Stopwatch();
             stopWatch.Start();
             await Task.Delay(Tick, _schedulerCancellationToken);
+            await OnTick?.Invoke(stopWatch.Elapsed.TotalMilliseconds);
             stopWatch.Stop();
         }
     }
@@ -44,4 +47,6 @@ public class SchedulerService : BaseService<SchedulerService>, ISchedulerService
         s_schedulerCancellationTokenSource.Cancel();
         return base.StopAsync();
     }
+
+
 }
