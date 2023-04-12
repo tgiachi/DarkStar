@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
 using DarkSun.Api.Attributes.Services;
 using DarkSun.Api.Data.Config;
+using DarkSun.Api.Engine.Data.ScriptEngine;
 using DarkSun.Api.Engine.Interfaces.Services;
 using DarkSun.Api.Utils;
 using DarkSun.Api.World.Types.Tiles;
@@ -128,5 +129,19 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
         _scriptEngine.Dispose();
 
         return base.StopAsync();
+    }
+
+    public ScriptEngineExecutionResult ExecuteCommand(string command)
+    {
+        try
+        {
+            var result = new ScriptEngineExecutionResult { Result = _scriptEngine.DoString(command) };
+
+            return result;
+        }
+        catch (Exception ex)
+        {
+            return new ScriptEngineExecutionResult() { Exception = ex };
+        }
     }
 }

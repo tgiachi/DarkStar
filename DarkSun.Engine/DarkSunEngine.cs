@@ -47,6 +47,7 @@ public class DarkSunEngine : IDarkSunEngine
     public IPlayerService PlayerService { get; }
     public IDatabaseService DatabaseService { get; }
     public ICommandService CommandService { get; }
+    public INamesService NamesService { get; }
     public IEventBus EventBus { get; }
 
 
@@ -62,7 +63,7 @@ public class DarkSunEngine : IDarkSunEngine
         IDatabaseService databaseService,
         ICommandService commandService,
         IServiceProvider container,
-        IEventBus eventBus, IDarkSunNetworkClient networkClient)
+        IEventBus eventBus, IDarkSunNetworkClient networkClient, INamesService namesService)
     {
         _logger = logger;
         WorldService = worldService;
@@ -74,6 +75,7 @@ public class DarkSunEngine : IDarkSunEngine
         DatabaseService = databaseService;
         EventBus = eventBus;
         _networkClient = networkClient;
+        NamesService = namesService;
         CommandService = commandService;
         _container = container;
 
@@ -156,6 +158,7 @@ public class DarkSunEngine : IDarkSunEngine
             });
             await _networkClient.SendMessageAsync(new AccountLoginRequestMessage("test@test.com", "12345"));
             await _networkClient.SendMessageAsync(new AccountLoginRequestMessage("test@test.com", "1234"));
+            //await _networkClient.DisconnectAsync();
         });
        
         EventBus.PublishAsync(new EngineReadyEvent());
@@ -172,7 +175,6 @@ public class DarkSunEngine : IDarkSunEngine
             {
                 await service.StopAsync();
             }
-
         }
 
         return true;
@@ -186,9 +188,9 @@ public class DarkSunEngine : IDarkSunEngine
         {
             var attr = serviceType.GetCustomAttribute<DarkSunEngineServiceAttribute>()!;
             var interf = AssemblyUtils.GetInterfacesOfType(serviceType)!.First(k => k.Name.EndsWith(serviceType.Name));
-            if (_servicesLoadOrder.ContainsKey(attr.LoadOrder))
+            if (_servicesLoadOrder.TryGetValue(attr.LoadOrder, out var value))
             {
-                _servicesLoadOrder[attr.LoadOrder].Add((IDarkSunEngineService)_container.GetService(interf)!);
+                value.Add((IDarkSunEngineService)_container.GetService(interf)!);
             }
             else
             {

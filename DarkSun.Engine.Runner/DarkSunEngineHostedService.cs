@@ -13,13 +13,13 @@ using ILogger = Microsoft.Extensions.Logging.ILogger;
 
 namespace DarkSun.Engine.Runner;
 
-public class DarkEngineHostedService : IHostedService
+public class DarkSunEngineHostedService : IHostedService
 {
     private readonly ILogger _logger;
     private readonly IHostApplicationLifetime _applicationLifetime;
     private readonly IServiceProvider _serviceProvider;
 
-    public DarkEngineHostedService(ILogger<DarkEngineHostedService> logger,
+    public DarkSunEngineHostedService(ILogger<DarkSunEngineHostedService> logger,
         IHostApplicationLifetime lifetime,
         IServiceProvider serviceProvider)
     {

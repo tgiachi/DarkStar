@@ -18,9 +18,7 @@ public interface IDarkSunNetworkClient
     bool IsConnected { get; }
     ValueTask ConnectAsync();
     ValueTask DisconnectAsync();
-
     Task SendMessageAsync(IDarkSunNetworkMessage message);
     Task SendMessageAsync(List<IDarkSunNetworkMessage> message);
-
     void RegisterMessageListener(DarkSunMessageType messageType, INetworkClientMessageListener serverMessageListener);
 }

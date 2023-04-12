@@ -88,8 +88,7 @@ internal class Program
                     }))
                     .AddSingleton(new DarkSunNetworkServerConfig()
                     {
-                        Address = engineConfig.NetworkServer.Address,
-                        Port = engineConfig.NetworkServer.Port
+                        Address = engineConfig.NetworkServer.Address, Port = engineConfig.NetworkServer.Port
                     })
                     // Only for test
                     .AddSingleton(new DarkSunNetworkClientConfig())
@@ -99,7 +98,8 @@ internal class Program
                     .RegisterDarkSunServices()
                     .RegisterMessageListeners()
                     .RegisterScriptEngineFunctions()
-                    .AddHostedService<DarkEngineHostedService>();
+                    .AddHostedService<DarkSunEngineHostedService>()
+                    .AddHostedService<DarkSunTerminalHostedService>();
             })
             .UseSerilog()
             .Build();
