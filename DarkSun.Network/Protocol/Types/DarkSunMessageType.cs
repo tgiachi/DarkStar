@@ -14,6 +14,7 @@ public enum DarkSunMessageType : short
     // Server messages
     ServerVersionResponse,
     ServerMotdResponse,
+    ServerNameResponse,
 
     // Account messages
     AccountLoginRequest,

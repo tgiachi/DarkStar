@@ -23,7 +23,8 @@ public class DefaultConnectionHandler : BaseNetworkConnectionHandler
         Engine.PlayerService.AddSession(sessionId);
         return Task.FromResult(new List<IDarkSunNetworkMessage>
         {
-            new ServerVersionResponseMessage(0,0,1), 
+            new ServerNameResponseMessage(Engine.ServerName),
+            new ServerVersionResponseMessage(0,0,1),
             new ServerMotdResponseMessage(Engine.ServerMotd)
         });
     }

@@ -20,8 +20,7 @@ public class ProtoBufMessageBuilder : INetworkMessageBuilder
 {
     private readonly ILogger _logger;
     private readonly Dictionary<DarkSunMessageType, Type> _messageTypes = new();
-    private readonly byte[] _separatorBytes = new byte[] { 0xff, 0xff, 0xff };
-    // private readonly IFormatterResolver _formatterResolver;
+    private readonly byte[] _separatorBytes = { 0xff, 0xff, 0xff };
 
     public byte[] GetMessageSeparators => _separatorBytes;
 
@@ -43,7 +42,7 @@ public class ProtoBufMessageBuilder : INetworkMessageBuilder
         var innerMessage = Serializer.Deserialize(_messageTypes[message.MessageType],
             new MemoryStream(message.Message));
 
-        return new NetworkMessageData { MessageType = message.MessageType, Message = innerMessage as IDarkSunNetworkMessage };
+        return new NetworkMessageData { MessageType = message.MessageType, Message = (innerMessage as IDarkSunNetworkMessage)! };
     }
 
     public byte[] BuildMessage<T>(T message) where T : IDarkSunNetworkMessage
@@ -76,14 +75,6 @@ public class ProtoBufMessageBuilder : INetworkMessageBuilder
         return BufferUtils.GetIntFromByteArray(buffer);
     }
 
-
-    private DarkSunMessageType GetMessageTypeAttribute(Type message)
-    {
-        var attribute = message.GetCustomAttribute<NetworkMessageAttribute>();
-
-        return attribute?.MessageType ??
-               throw new Exception($"Message {message.Name} does not have a NetworkMessageAttribute");
-    }
 
     private void PrepareMessageTypesConversionMap()
     {
