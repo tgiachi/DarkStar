@@ -14,6 +14,7 @@ using DarkSun.Api.Engine.Interfaces.Listener;
 using DarkSun.Api.Engine.Interfaces.Services;
 using DarkSun.Api.Engine.Interfaces.Services.Base;
 using DarkSun.Api.Utils;
+using DarkSun.Network.Client.Interfaces;
 using DarkSun.Network.Interfaces;
 using DarkSun.Network.Protocol.Interfaces.Messages;
 using DarkSun.Network.Protocol.Types;
@@ -27,46 +28,52 @@ namespace DarkSun.Engine;
 public class DarkSunEngine : IDarkSunEngine
 {
     private readonly ILogger _logger;
-    private readonly DirectoriesConfig _directoriesConfig;
     private readonly IServiceProvider _container;
-    private readonly EngineConfig _engineConfig;
-    private readonly SortedDictionary<int, IDarkSunEngineService> _servicesLoadOrder = new();
+    private readonly SortedDictionary<int, HashSet<IDarkSunEngineService>> _servicesLoadOrder = new();
     private readonly HashSet<INetworkConnectionHandler> _connectionHandlers = new();
+
+    //Only for test
+    private readonly IDarkSunNetworkClient _networkClient;
+
+    public string ServerName { get; set; } = null!;
+    public string ServerMotd { get; set; } = null!;
 
     public IWorldService WorldService { get; }
     public IBlueprintService BlueprintService { get; }
     public ISchedulerService SchedulerService { get; }
     public IScriptEngineService ScriptEngineService { get; }
     public IDarkSunNetworkServer NetworkServer { get; }
-    public IPlayerSessionService PlayerSessionService { get; }
+    public IPlayerService PlayerService { get; }
     public IDatabaseService DatabaseService { get; }
+    public ICommandService CommandService { get; }
     public IEventBus EventBus { get; }
 
 
+
+
     public DarkSunEngine(ILogger<DarkSunEngine> logger,
-        DirectoriesConfig directoriesConfig,
         IBlueprintService blueprintService,
         ISchedulerService schedulerService,
         IScriptEngineService scriptEngineService,
         IDarkSunNetworkServer networkServer,
         IWorldService worldService,
-        IPlayerSessionService playerSessionService,
+        IPlayerService playerService,
         IDatabaseService databaseService,
-        EngineConfig engineConfig,
+        ICommandService commandService,
         IServiceProvider container,
-        IEventBus eventBus)
+        IEventBus eventBus, IDarkSunNetworkClient networkClient)
     {
         _logger = logger;
-        _directoriesConfig = directoriesConfig;
         WorldService = worldService;
         BlueprintService = blueprintService;
         SchedulerService = schedulerService;
         ScriptEngineService = scriptEngineService;
         NetworkServer = networkServer;
-        PlayerSessionService = playerSessionService;
+        PlayerService = playerService;
         DatabaseService = databaseService;
         EventBus = eventBus;
-        _engineConfig = engineConfig;
+        _networkClient = networkClient;
+        CommandService = commandService;
         _container = container;
 
     }
@@ -79,7 +86,7 @@ public class DarkSunEngine : IDarkSunEngine
             var attribute = messageListenerType.GetCustomAttribute<NetworkMessageListenerAttribute>()!;
             _logger.LogDebug("Adding message listener {Type} from message type: {MessageType}",
                 messageListenerType.Name, attribute.MessageType);
-            if (_container.GetService(messageListenerType) is INetworkMessageListener service)
+            if (_container.GetService(messageListenerType) is INetworkServerMessageListener service)
             {
                 NetworkServer.RegisterMessageListener(attribute.MessageType, service);
             }
@@ -129,12 +136,18 @@ public class DarkSunEngine : IDarkSunEngine
         await PrepareMessageListenersAsync();
         await PrepareConnectionHandlersAsync();
 
-        foreach (var service in _servicesLoadOrder)
+        foreach (var services in _servicesLoadOrder)
         {
-            await service.Value.StartAsync(this);
+            foreach (var service in services.Value)
+            {
+                await service.StartAsync(this);
+            }
+
         }
 
         await NetworkServer.StartAsync();
+      
+        await _networkClient.ConnectAsync();
         EventBus.PublishAsync(new EngineReadyEvent());
 
         return true;
@@ -143,9 +156,13 @@ public class DarkSunEngine : IDarkSunEngine
     public async ValueTask<bool> StopAsync()
     {
         await NetworkServer.StopAsync();
-        foreach (var service in _servicesLoadOrder.Reverse())
+        foreach (var services in _servicesLoadOrder.Reverse())
         {
-            await service.Value.StopAsync();
+            foreach (var service in services.Value)
+            {
+                await service.StopAsync();
+            }
+
         }
 
         return true;
@@ -159,7 +176,15 @@ public class DarkSunEngine : IDarkSunEngine
         {
             var attr = serviceType.GetCustomAttribute<DarkSunEngineServiceAttribute>()!;
             var interf = AssemblyUtils.GetInterfacesOfType(serviceType)!.First(k => k.Name.EndsWith(serviceType.Name));
-            _servicesLoadOrder.Add(attr.LoadOrder, (IDarkSunEngineService)_container.GetService(interf)!);
+            if (_servicesLoadOrder.ContainsKey(attr.LoadOrder))
+            {
+                _servicesLoadOrder[attr.LoadOrder].Add((IDarkSunEngineService)_container.GetService(interf)!);
+            }
+            else
+            {
+                _servicesLoadOrder.Add(attr.LoadOrder, new HashSet<IDarkSunEngineService>());
+                _servicesLoadOrder[attr.LoadOrder].Add((IDarkSunEngineService)_container.GetService(interf)!);
+            }
         }
 
 

@@ -13,4 +13,6 @@ public class PlayerStatEntity : BaseStatEntity
 {
     public PlayerEntity Player { get; set; } = null!;
     public Guid PlayerId { get; set; }
+
+
 }

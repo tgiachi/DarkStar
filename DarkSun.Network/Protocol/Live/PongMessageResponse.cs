@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 using DarkSun.Network.Attributes;
 using DarkSun.Network.Protocol.Interfaces.Messages;
 using DarkSun.Network.Protocol.Types;
-using MessagePack;
+using ProtoBuf;
+
 
 namespace DarkSun.Network.Protocol.Live;
 
-[MessagePackObject(true)]
+[ProtoContract]
 [NetworkMessage(DarkSunMessageType.Pong)]
 public class PongMessageResponse : IDarkSunNetworkMessage
 {
+    [ProtoMember(1)]
     public long TimeStamp { get; set; }
 }

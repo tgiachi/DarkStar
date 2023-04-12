@@ -6,14 +6,19 @@ namespace DarkSun.Api.Engine.Interfaces.Core;
 
 public interface IDarkSunEngine
 {
+    string ServerName { get;set;  }
+    string ServerMotd { get; set; }
     IWorldService WorldService { get; }
     IBlueprintService BlueprintService { get; }
     ISchedulerService SchedulerService { get; }
     IScriptEngineService ScriptEngineService { get; }
     IDarkSunNetworkServer NetworkServer { get; }
-    IPlayerSessionService PlayerSessionService { get; }
+    IPlayerService PlayerService { get; }
     IDatabaseService DatabaseService { get; }
+    ICommandService CommandService { get; }
     IEventBus EventBus { get; }
     ValueTask<bool> StartAsync();
     ValueTask<bool> StopAsync();
+
+
 }

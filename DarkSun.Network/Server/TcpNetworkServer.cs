@@ -15,7 +15,7 @@ using NetCoreServer;
 
 namespace DarkSun.Network.Server;
 
-public class MessagePackNetworkServer : TcpServer, IDarkSunNetworkServer
+public class TcpNetworkServer : TcpServer, IDarkSunNetworkServer
 {
     private readonly ILogger _logger;
     private readonly INetworkSessionManager _sessionManager;
@@ -26,9 +26,9 @@ public class MessagePackNetworkServer : TcpServer, IDarkSunNetworkServer
     public event IDarkSunNetworkServer.ClientConnectedMessages? OnClientConnected;
     public event IDarkSunNetworkServer.ClientDisconnectedDelegate? OnClientDisconnected;
 
-    private readonly Dictionary<DarkSunMessageType, INetworkMessageListener> _messageListeners = new();
+    private readonly Dictionary<DarkSunMessageType, INetworkServerMessageListener> _messageListeners = new();
 
-    public MessagePackNetworkServer(ILogger<MessagePackNetworkServer> logger,
+    public TcpNetworkServer(ILogger<TcpNetworkServer> logger,
         INetworkSessionManager sessionManager,
         INetworkMessageBuilder messageBuilder,
         DarkSunNetworkServerConfig darkSunNetworkServerConfig) : base(darkSunNetworkServerConfig.Address,
@@ -65,8 +65,7 @@ public class MessagePackNetworkServer : TcpServer, IDarkSunNetworkServer
 
     protected override void OnDisconnected(TcpSession session)
     {
-        _logger.LogInformation("Client {IpAddress} disconnected with sessionId: {SessionId}",
-            session.Socket.RemoteEndPoint, session.Id);
+        _logger.LogInformation("Client disconnected with sessionId: {SessionId}", session.Id);
         OnClientDisconnected?.Invoke(session.Id);
         _sessionManager.RemoveSession(session.Id);
         base.OnDisconnected(session);
@@ -112,7 +111,7 @@ public class MessagePackNetworkServer : TcpServer, IDarkSunNetworkServer
         {
             try
             {
-                Sessions[session.SessionId].SendAsync(_messageBuilder.BuildMessage(messageItem));
+                var status = Sessions[session.SessionId].SendAsync(_messageBuilder.BuildMessage(messageItem));
             }
             catch (Exception ex)
 
@@ -142,9 +141,9 @@ public class MessagePackNetworkServer : TcpServer, IDarkSunNetworkServer
         }
     }
 
-    public void RegisterMessageListener(DarkSunMessageType messageType, INetworkMessageListener messageListener)
+    public void RegisterMessageListener(DarkSunMessageType messageType, INetworkServerMessageListener serverMessageListener)
     {
-        _messageListeners.Add(messageType, messageListener);
+        _messageListeners.Add(messageType, serverMessageListener);
     }
 
     public Task StartAsync()

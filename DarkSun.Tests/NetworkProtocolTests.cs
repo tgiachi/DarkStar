@@ -4,6 +4,7 @@ using DarkSun.Network.Data;
 using DarkSun.Network.Protocol.Builders;
 using DarkSun.Network.Protocol.Live;
 using DarkSun.Network.Protocol.Messages;
+using DarkSun.Network.Protocol.Messages.Server;
 using DarkSun.Network.Server;
 using DarkSun.Network.Session;
 using Microsoft.Extensions.Logging.Abstractions;
@@ -16,7 +17,7 @@ public class NetworkProtocolTests
     [TestMethod]
     public void TestMessageBuilder()
     {
-        var messageBuilder = new MessagePackMessageBuilder(new NullLogger<MessagePackMessageBuilder>());
+        var messageBuilder = new ProtoBufMessageBuilder(new NullLogger<ProtoBufMessageBuilder>());
         var buffer = messageBuilder.BuildMessage(new PingMessageResponse() { TimeStamp = 1 });
 
         Assert.IsTrue(buffer.Length > 0);
@@ -26,7 +27,7 @@ public class NetworkProtocolTests
     public void TestMessageParser()
     {
         var randomTimeStamp = new Random().Next();
-        var messageBuilder = new MessagePackMessageBuilder(new NullLogger<MessagePackMessageBuilder>());
+        var messageBuilder = new ProtoBufMessageBuilder(new NullLogger<ProtoBufMessageBuilder>());
         var buffer = messageBuilder.BuildMessage(new PingMessageResponse() { TimeStamp = randomTimeStamp });
 
         var message = messageBuilder.ParseMessage(buffer);
@@ -38,9 +39,9 @@ public class NetworkProtocolTests
     [TestMethod]
     public async Task TestTcpServerAsync()
     {
-        var server = new MessagePackNetworkServer(new NullLogger<MessagePackNetworkServer>(),
+        var server = new TcpNetworkServer(new NullLogger<TcpNetworkServer>(),
             new InMemoryNetworkSessionManager(),
-            new MessagePackMessageBuilder(new NullLogger<MessagePackMessageBuilder>()),
+            new ProtoBufMessageBuilder(new NullLogger<ProtoBufMessageBuilder>()),
             new DarkSunNetworkServerConfig() { Address = IPAddress.Any.ToString(), Port = 9000 });
 
         await server.StartAsync();
@@ -54,16 +55,17 @@ public class NetworkProtocolTests
     [TestMethod]
     public async Task TestTcpServerWithMessagesAsync()
     {
-        var messageBuilder = new MessagePackMessageBuilder(new NullLogger<MessagePackMessageBuilder>());
+        var messageBuilder = new ProtoBufMessageBuilder(new NullLogger<ProtoBufMessageBuilder>());
         var messagesToSend = new List<byte[]>
         {
             messageBuilder.BuildMessage(new PingMessageResponse() { TimeStamp = 1 }),
-            messageBuilder.BuildMessage(new PongMessageResponse() { TimeStamp = 1 })
+            messageBuilder.BuildMessage(new PongMessageResponse() { TimeStamp = 1 }),
+            messageBuilder.BuildMessage(new ServerVersionResponseMessage() {Minor = 0, Build = 0, Major = 1} ),
         };
 
-        var server = new MessagePackNetworkServer(new NullLogger<MessagePackNetworkServer>(),
+        var server = new TcpNetworkServer(new NullLogger<TcpNetworkServer>(),
             new InMemoryNetworkSessionManager(),
-            new MessagePackMessageBuilder(new NullLogger<MessagePackMessageBuilder>()),
+            new ProtoBufMessageBuilder(new NullLogger<ProtoBufMessageBuilder>()),
             new DarkSunNetworkServerConfig() { Address = IPAddress.Any.ToString(), Port = 9000 });
 
         server.StartAsync().GetAwaiter().GetResult();

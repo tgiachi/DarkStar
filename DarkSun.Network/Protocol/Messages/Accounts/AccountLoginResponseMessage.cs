@@ -6,15 +6,17 @@ using System.Threading.Tasks;
 using DarkSun.Network.Attributes;
 using DarkSun.Network.Protocol.Interfaces.Messages;
 using DarkSun.Network.Protocol.Types;
-using MessagePack;
+
+using ProtoBuf;
 
 namespace DarkSun.Network.Protocol.Messages.Accounts
 {
 
     [NetworkMessage(DarkSunMessageType.AccountLoginResponse)]
-    [MessagePackObject(keyAsPropertyName:true)]
+    [ProtoContract]
     public class AccountLoginResponseMessage : IDarkSunNetworkMessage
     {
+        [ProtoMember(1)]
         public bool Success { get; set; }
 
         public AccountLoginResponseMessage()

@@ -28,6 +28,5 @@ public interface IDarkSunNetworkServer
     Task SendMessageAsync(Guid sessionId, List<IDarkSunNetworkMessage> message);
     Task BroadcastMessageAsync(IDarkSunNetworkMessage message);
     Task DispatchMessageReceivedAsync(Guid sessionId, DarkSunMessageType messageType, IDarkSunNetworkMessage message);
-
-    void RegisterMessageListener(DarkSunMessageType messageType, INetworkMessageListener messageListener);
+    void RegisterMessageListener(DarkSunMessageType messageType, INetworkServerMessageListener serverMessageListener);
 }

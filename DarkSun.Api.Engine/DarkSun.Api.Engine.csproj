@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DarkSun.Api\DarkSun.Api.csproj" />
+    <ProjectReference Include="..\DarkSun.Database\DarkSun.Database.csproj" />
     <ProjectReference Include="..\DarkSun.Network\DarkSun.Network.csproj" />
   </ItemGroup>
 

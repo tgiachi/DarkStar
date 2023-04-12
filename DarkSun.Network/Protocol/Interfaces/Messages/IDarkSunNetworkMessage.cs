@@ -4,8 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace DarkSun.Network.Protocol.Interfaces.Messages;
+
 
 public interface IDarkSunNetworkMessage
 {
+
 }

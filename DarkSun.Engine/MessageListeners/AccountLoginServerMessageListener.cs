@@ -8,7 +8,9 @@ using DarkSun.Api.Engine.Interfaces.Core;
 using DarkSun.Api.Engine.MessageListeners;
 using DarkSun.Api.Utils;
 using DarkSun.Database.Entities.Account;
+using DarkSun.Network.Protocol.Interfaces.Messages;
 using DarkSun.Network.Protocol.Messages.Accounts;
+using DarkSun.Network.Protocol.Messages.Server;
 using DarkSun.Network.Protocol.Types;
 using Microsoft.Extensions.Logging;
 
@@ -21,21 +23,26 @@ namespace DarkSun.Engine.MessageListeners
         {
         }
 
-        public override async Task OnMessageReceivedAsync(Guid sessionId, DarkSunMessageType messageType, AccountLoginRequestMessage message)
+        public override async Task<List<IDarkSunNetworkMessage>> OnMessageReceivedAsync(Guid sessionId, DarkSunMessageType messageType, AccountLoginRequestMessage message)
         {
             Logger.LogInformation("Received login request from {Id}", sessionId);
             var account = await Engine.DatabaseService.QueryAsSingleAsync<AccountEntity>(entity =>
                 entity.Email == message.Email && message.Password == message.Password.CreateMd5Hash());
-            if (account == null)
+            if (account == null!)
             {
                 Logger.LogWarning("Invalid login attempt from {Id}", sessionId);
-                await Engine.NetworkServer.SendMessageAsync(sessionId, new AccountLoginResponseMessage(false));
+                return SingleMessage(new AccountLoginResponseMessage(false));
             }
             else
             {
                 Logger.LogInformation("Login successful for {Id}", sessionId);
-                Engine.PlayerSessionService.GetPlayerSession(sessionId).AccountId = account.Id;
-                await Engine.NetworkServer.SendMessageAsync(sessionId, new AccountLoginResponseMessage(true));
+                Engine.PlayerService.GetSession(sessionId).AccountId = account.Id;
+                Engine.PlayerService.GetSession(sessionId).IsLogged = true;
+                return MultipleMessages(
+                    new AccountLoginResponseMessage(true),
+                    new ServerMotdResponseMessage(Engine.ServerMotd)
+                );
+
             }
         }
     }

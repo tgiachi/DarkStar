@@ -14,9 +14,11 @@ namespace DarkSun.Database.Entities.Player;
 [Table(Name = "players")]
 public class PlayerEntity : BaseEntity
 {
-    public Guid UserId { get; set; }
-    public AccountEntity User { get; set; } = null!;
+    public Guid AccountId { get; set; }
+    public AccountEntity Account { get; set; } = null!;
     public string Name { get; set; } = null!;
+
+    public Guid RaceId { get; set; }
     public RaceEntity Race { get; set; } = null!;
     public int X { get; set; }
     public int Y { get; set; }

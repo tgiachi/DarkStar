@@ -37,7 +37,11 @@ public class SchedulerService : BaseService<SchedulerService>, ISchedulerService
             var stopWatch = new Stopwatch();
             stopWatch.Start();
             await Task.Delay(Tick, _schedulerCancellationToken);
-            await OnTick?.Invoke(stopWatch.Elapsed.TotalMilliseconds);
+            if (OnTick != null)
+            {
+                await OnTick?.Invoke(stopWatch.Elapsed.TotalMilliseconds)!;
+            }
+         
             stopWatch.Stop();
         }
     }

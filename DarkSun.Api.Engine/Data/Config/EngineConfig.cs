@@ -12,4 +12,6 @@ public class EngineConfig
     public DatabaseConfig Database { get; set; } = new();
     public NetworkServerConfig NetworkServer { get; set; } = new();
     public LoggerConfig Logger { get; set; } = new();
+
+    public AssemblyConfig Assemblies { get; set; } = new();
 }

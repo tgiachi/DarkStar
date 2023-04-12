@@ -8,6 +8,8 @@ using DarkSun.Api.Engine.Interfaces.Services.Base;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Serilog;
+using ILogger = Microsoft.Extensions.Logging.ILogger;
 
 namespace DarkSun.Engine.Runner;
 
@@ -29,6 +31,9 @@ public class DarkEngineHostedService : IHostedService
     public async Task StartAsync(CancellationToken cancellationToken)
     {
         await _serviceProvider.GetRequiredService<IDarkSunEngine>().StartAsync();
+
+        Program.StartupStopwatch.Stop();
+        Log.Logger.Information("Engine startup in {0} ms", Program.StartupStopwatch.ElapsedMilliseconds);
     }
 
     public async Task StopAsync(CancellationToken cancellationToken)

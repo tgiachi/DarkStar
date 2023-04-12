@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 using DarkSun.Network.Protocol.Interfaces.Messages;
 using DarkSun.Network.Protocol.Types;
 
-namespace DarkSun.Network.Interfaces;
-
-public interface INetworkMessageListener
+namespace DarkSun.Network.Interfaces
 {
-    Task OnMessageReceivedAsync(Guid sessionId, DarkSunMessageType messageType, IDarkSunNetworkMessage message);
+    public interface INetworkClientMessageListener
+    {
+        Task OnMessageReceivedAsync(DarkSunMessageType messageType, IDarkSunNetworkMessage message);
+    }
+
 }

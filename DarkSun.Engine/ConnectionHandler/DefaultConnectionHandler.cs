@@ -2,7 +2,9 @@
 using DarkSun.Api.Engine.ConnectionHandlers;
 using DarkSun.Api.Engine.Interfaces.Core;
 using DarkSun.Network.Protocol.Interfaces.Messages;
-using DarkSun.Network.Protocol.Server;
+using DarkSun.Network.Protocol.Live;
+using DarkSun.Network.Protocol.Messages.Server;
+
 using Microsoft.Extensions.Logging;
 
 namespace DarkSun.Engine.ConnectionHandler;
@@ -18,13 +20,17 @@ public class DefaultConnectionHandler : BaseNetworkConnectionHandler
     public override Task<List<IDarkSunNetworkMessage>> ClientConnectedMessagesAsync(Guid sessionId)
     {
         Logger.LogInformation("New connection: {Id}", sessionId);
-        Engine.PlayerSessionService.AddPlayerSession(sessionId);
-        return Task.FromResult(new List<IDarkSunNetworkMessage>() { new ServerVersionResponseMessage(0, 1, 0) });
+        Engine.PlayerService.AddSession(sessionId);
+        return Task.FromResult(new List<IDarkSunNetworkMessage>
+        {
+            new ServerVersionResponseMessage(0,0,1), 
+            new ServerMotdResponseMessage(Engine.ServerMotd)
+        });
     }
 
     public override Task ClientDisconnectedAsync(Guid sessionId)
     {
-        Engine.PlayerSessionService.RemovePlayerSession(sessionId);
+        Engine.PlayerService.RemoveSession(sessionId);
         return Task.CompletedTask;
     }
 }

@@ -7,16 +7,26 @@ using System.Threading.Tasks;
 
 namespace DarkSun.Network.Protocol.Types;
 
-public enum DarkSunMessageType
+public enum DarkSunMessageType : short
 {
     Ping,
     Pong,
     // Server messages
     ServerVersionResponse,
+    ServerMotdResponse,
 
     // Account messages
     AccountLoginRequest,
     AccountLoginResponse,
     AccountCreateRequest,
     AccountCreateResponse,
+
+    PlayerRacesRequest,
+    PlayerRacesResponse,
+    PlayerListRequest,
+    PlayerListResponse,
+    PlayerCreateRequest,
+    PlayerCreateResponse,
+    PlayerSelectRequest,
+    PlayerSelectResponse,
 }

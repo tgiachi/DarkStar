@@ -5,6 +5,11 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Authors>tgiachi (squid@stormwind.it)</Authors>
+    <PackageProjectUrl>https://github.com/tgiachi/darksun</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/tgiachi/darksun</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>

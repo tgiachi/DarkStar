@@ -10,20 +10,22 @@ using DarkSun.Network.Data;
 using DarkSun.Network.Protocol.Interfaces.Builders;
 using DarkSun.Network.Protocol.Interfaces.Messages;
 using DarkSun.Network.Protocol.Types;
-using MessagePack;
+
 using Microsoft.Extensions.Logging;
+using ProtoBuf;
 
 namespace DarkSun.Network.Protocol.Builders;
 
-public class MessagePackMessageBuilder : INetworkMessageBuilder
+public class ProtoBufMessageBuilder : INetworkMessageBuilder
 {
     private readonly ILogger _logger;
     private readonly Dictionary<DarkSunMessageType, Type> _messageTypes = new();
     private readonly byte[] _separatorBytes = new byte[] { 0xff, 0xff, 0xff };
+    // private readonly IFormatterResolver _formatterResolver;
 
     public byte[] GetMessageSeparators => _separatorBytes;
 
-    public MessagePackMessageBuilder(ILogger<MessagePackMessageBuilder> logger)
+    public ProtoBufMessageBuilder(ILogger<ProtoBufMessageBuilder> logger)
     {
         _logger = logger;
         PrepareMessageTypesConversionMap();
@@ -34,34 +36,39 @@ public class MessagePackMessageBuilder : INetworkMessageBuilder
     {
         _logger.LogDebug("Parsing message buffer of length {Length}", buffer.Length);
 
-
         var messageBuffer = buffer.Take(buffer.Length - _separatorBytes.Length).ToArray();
 
-        var message = MessagePackSerializer.Deserialize<NetworkMessage>(messageBuffer);
+        var message = Serializer.Deserialize<NetworkMessage>(new ReadOnlyMemory<byte>(messageBuffer));
         _logger.LogDebug("Message type is {MessageType}", message.MessageType);
-        var innerMessage =
-            MessagePackSerializer.Deserialize(_messageTypes[message.MessageType], message.Message) as
-                IDarkSunNetworkMessage;
+        var innerMessage = Serializer.Deserialize(_messageTypes[message.MessageType],
+            new MemoryStream(message.Message));
 
-        return new NetworkMessageData { MessageType = message.MessageType, Message = innerMessage! };
+        return new NetworkMessageData { MessageType = message.MessageType, Message = innerMessage as IDarkSunNetworkMessage };
     }
 
     public byte[] BuildMessage<T>(T message) where T : IDarkSunNetworkMessage
     {
-        // Message structure is [MessageLength] - [[MessageType]-[MessageContent]]
-        var messageType = GetMessageTypeAttribute(message.GetType());
-        _logger.LogDebug("Building message buffer for message type: {MessageType}", messageType);
-        var messageContent = MessagePackSerializer.Serialize(message);
-        _logger.LogDebug("Inner message content length: {MessageContentLength}", messageContent.Length);
-        var serializedMessage = MessagePackSerializer.Serialize(new NetworkMessage
-        {
-            MessageType = messageType, Message = messageContent
-        });
-        _logger.LogDebug("Full message buffer length: {MessageBufferLength}", serializedMessage.Length);
-        var fullBufferArray = BufferUtils.Combine(serializedMessage, _separatorBytes);
-        _logger.LogDebug("Completed message buffer is {Length}", fullBufferArray.Length);
+        var messageType = message.GetType().GetCustomAttribute<NetworkMessageAttribute>();
 
-        return fullBufferArray;
+        if (messageType != null)
+        {
+            var innerMessageStream = new MemoryStream();
+            var messageStream = new MemoryStream();
+            Serializer.Serialize(innerMessageStream, message);
+            var innerMessageBuffer = innerMessageStream.GetBuffer();
+            innerMessageBuffer = innerMessageBuffer.Take((int)innerMessageStream.Length).ToArray();
+
+            var netMessage =
+                new NetworkMessage() { Message = innerMessageBuffer, MessageType = messageType.MessageType };
+            Serializer.Serialize(messageStream, netMessage);
+
+            var netMessageBuffer = messageStream.GetBuffer();
+            netMessageBuffer = netMessageBuffer.Take((int)messageStream.Length).ToArray();
+            return
+                new ReadOnlyMemory<byte>(netMessageBuffer.Concat(_separatorBytes).ToArray()).ToArray();
+        }
+
+        throw new Exception($"Missing attribute [NetworkMessageAttribute] on message ${typeof(T)}");
     }
 
     public int GetMessageLength(byte[] buffer)

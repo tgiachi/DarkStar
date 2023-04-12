@@ -10,9 +10,10 @@ using Microsoft.Extensions.Logging;
 
 namespace DarkSun.Engine.Services;
 
-[DarkSunEngineService("BluePrintService", 2)]
+[DarkSunEngineService(nameof(BlueprintService), 2)]
 public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
 {
+
     public BlueprintService(ILogger<BlueprintService> logger) : base(logger)
     {
     }

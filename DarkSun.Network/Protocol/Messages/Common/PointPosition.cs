@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MessagePack;
+
+using ProtoBuf;
 
 namespace DarkSun.Network.Protocol.Messages.Common;
 
-[MessagePackObject(true)]
+[ProtoContract]
 public struct PointPosition
 {
+    [ProtoMember(1)]
     public int X { get; set; }
+    [ProtoMember(2)]
     public int Y { get; set; }
 
     public PointPosition(int x, int y)
