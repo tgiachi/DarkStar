@@ -26,7 +26,10 @@ public class PlayerService : BaseService<PlayerService>, IPlayerService
 
     public void AddSession(Guid networkSessionId)
     {
-        _playerSessions.Add(networkSessionId, new PlayerSession());
+        _playerSessions.Add(networkSessionId, new PlayerSession()
+        {
+            SessionId = networkSessionId
+        });
     }
 
     public void RemoveSession(Guid networkSessionId)

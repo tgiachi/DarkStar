@@ -21,6 +21,5 @@ namespace DarkSun.Network.Protocol.Messages.Server
         {
             ServerName = serverName;
         }
-
     }
 }

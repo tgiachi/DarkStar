@@ -10,6 +10,7 @@ public enum DirectoryNameType
 {
     Root,
     Assets,
+    Cache,
     Database,
     Config,
     Scripts,

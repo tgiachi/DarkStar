@@ -24,8 +24,7 @@ public class DefaultConnectionHandler : BaseNetworkConnectionHandler
         return Task.FromResult(new List<IDarkSunNetworkMessage>
         {
             new ServerNameResponseMessage(Engine.ServerName),
-            new ServerVersionResponseMessage(0,0,1),
-            new ServerMotdResponseMessage(Engine.ServerMotd)
+            new ServerVersionResponseMessage(0,0,1)
         });
     }
 

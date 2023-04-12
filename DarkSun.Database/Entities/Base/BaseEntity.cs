@@ -10,7 +10,7 @@ namespace DarkSun.Database.Entities.Base;
 
 public class BaseEntity : IBaseEntity
 {
-    [Column(IsPrimary = false)] public Guid Id { get; set; }
+    [Column(IsPrimary = true)] public Guid Id { get; set; }
     public DateTime CreatedAt { get; set; }
     public DateTime UpdatedAt { get; set; }
 

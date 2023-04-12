@@ -27,7 +27,7 @@ namespace DarkSun.Engine.MessageListeners
         {
             Logger.LogInformation("Received login request from {Id}", sessionId);
             var account = await Engine.DatabaseService.QueryAsSingleAsync<AccountEntity>(entity =>
-                entity.Email == message.Email && message.Password == message.Password.CreateMd5Hash());
+                entity.Email == message.Email && entity.PasswordHash == message.Password.CreateMd5Hash());
             if (account == null!)
             {
                 Logger.LogWarning("Invalid login attempt from {Id}", sessionId);
@@ -35,7 +35,7 @@ namespace DarkSun.Engine.MessageListeners
             }
             else
             {
-                Logger.LogInformation("Login successful for {Id}", sessionId);
+                Logger.LogInformation("Login successful for {Email}", account.Email);
                 Engine.PlayerService.GetSession(sessionId).AccountId = account.Id;
                 Engine.PlayerService.GetSession(sessionId).IsLogged = true;
                 return MultipleMessages(

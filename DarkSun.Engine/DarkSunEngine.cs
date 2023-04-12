@@ -17,6 +17,7 @@ using DarkSun.Api.Utils;
 using DarkSun.Network.Client.Interfaces;
 using DarkSun.Network.Interfaces;
 using DarkSun.Network.Protocol.Interfaces.Messages;
+using DarkSun.Network.Protocol.Messages.Accounts;
 using DarkSun.Network.Protocol.Types;
 using DarkSun.Network.Server.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
@@ -146,8 +147,17 @@ public class DarkSunEngine : IDarkSunEngine
         }
 
         await NetworkServer.StartAsync();
-      
-        await _networkClient.ConnectAsync();
+        _ = Task.Run(async () =>
+        {
+            await _networkClient.ConnectAsync();
+            await _networkClient.SendMessageAsync(new AccountCreateRequestMessage()
+            {
+                Email = "test@test.com", Password = "1234"
+            });
+            await _networkClient.SendMessageAsync(new AccountLoginRequestMessage("test@test.com", "12345"));
+            await _networkClient.SendMessageAsync(new AccountLoginRequestMessage("test@test.com", "1234"));
+        });
+       
         EventBus.PublishAsync(new EngineReadyEvent());
 
         return true;

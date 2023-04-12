@@ -22,8 +22,8 @@ namespace DarkSun.Engine.MessageListeners
         {
         }
 
-      
-        public override async  Task<List<IDarkSunNetworkMessage>> OnMessageReceivedAsync(Guid sessionId, DarkSunMessageType messageType, AccountCreateRequestMessage message)
+
+        public override async Task<List<IDarkSunNetworkMessage>> OnMessageReceivedAsync(Guid sessionId, DarkSunMessageType messageType, AccountCreateRequestMessage message)
         {
             var userExists = await Engine.DatabaseService.QueryAsSingleAsync<AccountEntity>(entity =>
                 entity.Email.ToLower() == message.Email.ToLower());
@@ -33,7 +33,7 @@ namespace DarkSun.Engine.MessageListeners
 
                 return SingleMessage(new AccountCreateResponseMessage(false, "Account already exists"));
             }
-            
+
             await Engine.DatabaseService.InsertAsync(new AccountEntity
             {
                 Email = message.Email,
@@ -41,6 +41,8 @@ namespace DarkSun.Engine.MessageListeners
                 RegistrationDate = DateTime.UtcNow,
                 IsEnabled = true,
             });
+
+            Logger.LogInformation("Account registered: {Email}", message.Email);
 
             return SingleMessage(new AccountCreateResponseMessage(true, "Account created"));
         }
