@@ -7,13 +7,15 @@ using DarkSun.Api.Engine.Map.Entities.Base;
 using DarkSun.Api.World.Types.Map;
 using GoRogue;
 using GoRogue.GameFramework;
+using SadRogue.Primitives;
 
 namespace DarkSun.Api.Engine.Map.Entities
 {
     public class WorldGameObject : BaseGameObject
     {
-        public WorldGameObject(Coord position) : base(position, (int)MapLayer.Objects, null!, true, false, false)
+        public WorldGameObject(Point position) : base(position, (int)MapLayer.Objects, true, false, false)
         {
+
         }
     }
 }

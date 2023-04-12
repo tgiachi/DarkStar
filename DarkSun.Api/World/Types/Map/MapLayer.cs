@@ -16,3 +16,4 @@ public enum MapLayer : short
     Effects,
     Weather,
 }
+
