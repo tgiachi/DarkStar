@@ -90,7 +90,8 @@ internal class Program
                     }))
                     .AddSingleton(new DarkSunNetworkServerConfig()
                     {
-                        Address = engineConfig.NetworkServer.Address, Port = engineConfig.NetworkServer.Port
+                        Address = engineConfig.NetworkServer.Address,
+                        Port = engineConfig.NetworkServer.Port
                     })
                     // Only for test
                     .AddSingleton(new DarkSunNetworkClientConfig())
@@ -100,27 +101,33 @@ internal class Program
                     .RegisterDarkSunServices()
                     .RegisterMessageListeners()
                     .RegisterScriptEngineFunctions()
-                    .AddHostedService<DarkSunEngineHostedService>()
-                    .AddHostedService<DarkSunTerminalHostedService>();
+                    .AddHostedService<DarkSunEngineHostedService>();
+
+                if (string.IsNullOrEmpty(Environment.GetEnvironmentVariable("DOCKER_CONTAINER")))
+                {
+                    services.AddHostedService<DarkSunTerminalHostedService>();
+                }
 
                 if (engineConfig.HttpServer.Enabled)
                 {
                     services.ConfigureWebServer();
                 }
-                
+
             })
             .UseSerilog()
             .UseConsoleLifetime()
             .ConfigureWebHostDefaults(builder =>
             {
-                if (engineConfig.HttpServer.Enabled)
+                if (!engineConfig.HttpServer.Enabled)
                 {
-                    Log.Logger.Information("Starting HTTP server - http root Directory is: {RootDirectory}", directoryConfig[DirectoryNameType.HttpRoot]);
-                    builder.Configure(applicationBuilder =>
-                    {
-                        applicationBuilder.ConfigureWebServerApp(directoryConfig[DirectoryNameType.HttpRoot]);
-                    });
+                    return;
                 }
+
+                Log.Logger.Information("Starting HTTP server - http root Directory is: {RootDirectory}", directoryConfig[DirectoryNameType.HttpRoot]);
+                builder.Configure(applicationBuilder =>
+                {
+                    applicationBuilder.ConfigureWebServerApp(directoryConfig[DirectoryNameType.HttpRoot]);
+                });
 
             })
 
@@ -136,6 +143,11 @@ internal class Program
                             ?? Path.Join(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
                                 "DarkSun");
 
+        if (string.IsNullOrEmpty(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)))
+        {
+            rootDirectory = Path.Join(Directory.GetCurrentDirectory(), "DarkSun");
+        }
+
         Log.Logger.Information("Root directory is: {Root}", rootDirectory);
 
         var directoriesConfig = new DirectoriesConfig { [DirectoryNameType.Root] = rootDirectory };
@@ -144,12 +156,14 @@ internal class Program
 
         foreach (var type in Enum.GetValues(typeof(DirectoryNameType)).Cast<DirectoryNameType>())
         {
-            if (type != DirectoryNameType.Root)
+            if (type == DirectoryNameType.Root)
             {
-                directoriesConfig[type] = Path.Join(directoriesConfig[DirectoryNameType.Root], type.ToString());
-                Log.Logger.Debug("{Type} directory is: {Directory}", type, directoriesConfig[type]);
-                Directory.CreateDirectory(directoriesConfig[type]);
+                continue;
             }
+
+            directoriesConfig[type] = Path.Join(directoriesConfig[DirectoryNameType.Root], type.ToString());
+            Log.Logger.Debug("{Type} directory is: {Directory}", type, directoriesConfig[type]);
+            Directory.CreateDirectory(directoriesConfig[type]);
         }
 
         return directoriesConfig;

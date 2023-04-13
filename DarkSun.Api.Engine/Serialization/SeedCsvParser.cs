@@ -1,5 +1,6 @@
 ﻿
 
+using System.Text;
 using TinyCsv;
 
 namespace DarkSun.Api.Engine.Serialization

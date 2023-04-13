@@ -6,14 +6,14 @@ WORKDIR /src
 
 COPY [".", "."]
 
-RUN cd Void.Server/
+RUN cd DarkSun.Engine.Runner/
 RUN dotnet restore "DarkSun.Engine.Runner/DarkSun.Engine.Runner.csproj"
 COPY . .
 WORKDIR "/src/DarkSun.Engine.Runner"
 RUN dotnet build "DarkSun.Engine.Runner.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "DarkSun.Engine.Runner.csproj" -c Release -r linux-x64 -p:PublishReadyToRun=true -p:PublishSingleFile=true --self-contained true -o /app/publish
+RUN dotnet publish "DarkSun.Engine.Runner.csproj" -c Release -r linux-x64 -p:PublishReadyToRun=true --self-contained true -o /app/publish
 
 FROM base AS final
 WORKDIR /app

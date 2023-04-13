@@ -1,29 +1,29 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <Version>0.0.1</Version>
+    </PropertyGroup>
 
-  <ItemGroup>
-      <PackageReference Include="Mafe.TinyCsv" Version="1.6.1" />
-      <PackageReference Include="Redbus" Version="1.0.8" />
-    <PackageReference Include="GoRogue" Version="3.0.0-beta04-debug" />
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Mafe.TinyCsv" Version="1.6.1" />
+        <PackageReference Include="Redbus" Version="1.0.8" />
+        <PackageReference Include="GoRogue" Version="3.0.0-beta04-debug" />
+    </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\DarkSun.Api\DarkSun.Api.csproj" />
-    <ProjectReference Include="..\DarkSun.Database\DarkSun.Database.csproj" />
-    <ProjectReference Include="..\DarkSun.Network\DarkSun.Network.csproj" />
-  </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\DarkSun.Api\DarkSun.Api.csproj" />
+        <ProjectReference Include="..\DarkSun.Database\DarkSun.Database.csproj" />
+        <ProjectReference Include="..\DarkSun.Network\DarkSun.Network.csproj" />
+    </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Update="Microsoft.VisualStudio.Threading.Analyzers" Version="17.5.22">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Update="Microsoft.VisualStudio.Threading.Analyzers" Version="17.5.22">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
 
 </Project>
