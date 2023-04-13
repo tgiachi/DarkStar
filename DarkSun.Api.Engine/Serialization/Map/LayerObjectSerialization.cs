@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DarkSun.Api.World.Types.Map;
 using DarkSun.Api.World.Types.Tiles;
 using DarkSun.Network.Protocol.Messages.Common;
 
@@ -18,7 +19,7 @@ namespace DarkSun.Api.Engine.Serialization.Map
         [ProtoMember(2)]
         public TileType Tile { get; set; }
         [ProtoMember(3)]
-        public LayerObjectType Type { get; set; }
+        public MapLayer Type { get; set; }
         [ProtoMember(4)]
         public PointPosition Position { get; set; }
     }

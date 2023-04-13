@@ -18,5 +18,10 @@ namespace DarkSun.Api.Engine.Map.Entities.Base
         public BaseGameObject(Point position, int layer, bool isStatic = false, bool isWalkable = true, bool isTransparent = true) : base(position, layer, isStatic, isWalkable)
         {
         }
+
+        public override string ToString()
+        {
+            return $"{Tile} - Id: {ObjectId}";
+        }
     }
 }
