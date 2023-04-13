@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DarkSun.Api.World.Types.Equippable;
 using DarkSun.Api.World.Types.Items;
+using DarkSun.Api.World.Types.Tiles;
 using DarkSun.Database.Entities.Base;
 using FreeSql.DataAnnotations;
 
@@ -16,6 +17,9 @@ public class ItemEntity : BaseEntity
     public string Name { get; set; } = null!;
     public string Description { get; set; } = null!;
     public int Weight { get; set; }
+
+    public TileType TileType { get; set; } 
+
     public ItemCategoryType Category { get; set; }
     public ItemType Type { get; set; }
     public EquipLocationType EquipLocation { get; set; }

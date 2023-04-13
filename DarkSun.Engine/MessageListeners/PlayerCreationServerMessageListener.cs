@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DarkSun.Api.Engine.Attributes;
+using DarkSun.Api.Engine.Attributes.Network;
 using DarkSun.Api.Engine.Interfaces.Core;
 using DarkSun.Api.Engine.MessageListeners;
 using DarkSun.Database.Entities.Base;
@@ -18,11 +19,13 @@ namespace DarkSun.Engine.MessageListeners
     [NetworkMessageListener(DarkSunMessageType.PlayerCreateRequest)]
     public class PlayerCreationMessageListener : BaseNetworkMessageListener<PlayerCreateRequestMessage>
     {
-        public PlayerCreationMessageListener(ILogger<BaseNetworkMessageListener<PlayerCreateRequestMessage>> logger, IDarkSunEngine engine) : base(logger, engine)
+        public PlayerCreationMessageListener(ILogger<BaseNetworkMessageListener<PlayerCreateRequestMessage>> logger,
+            IDarkSunEngine engine) : base(logger, engine)
         {
         }
 
-        public override async Task<List<IDarkSunNetworkMessage>> OnMessageReceivedAsync(Guid sessionId, DarkSunMessageType messageType, PlayerCreateRequestMessage message)
+        public override async Task<List<IDarkSunNetworkMessage>> OnMessageReceivedAsync(Guid sessionId,
+            DarkSunMessageType messageType, PlayerCreateRequestMessage message)
         {
             if (Engine.PlayerService.GetSession(sessionId).IsLogged == false)
             {
@@ -31,13 +34,15 @@ namespace DarkSun.Engine.MessageListeners
             }
 
 
-            var player = await Engine.PlayerService.CreatePlayerAsync(Engine.PlayerService.GetSession(sessionId).AccountId, message.TileId,
-                message.RaceId, new BaseStatEntity()
+            var player = await Engine.PlayerService.CreatePlayerAsync(
+                Engine.PlayerService.GetSession(sessionId).AccountId, message.TileId,
+                message.RaceId,
+                new BaseStatEntity()
                 {
                     Dexterity = message.Dexterity,
                     Intelligence = message.Intelligence,
                     Luck = message.Luck,
-                    Strength = message.Strength,
+                    Strength = message.Strength
                 });
 
 

@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DarkSun.Api.Engine.Serialization.Seeds.Converters.Base;
-using DarkSun.Api.World.Types.GameObjects;
+using DarkSun.Api.World.Types.Items;
 using TinyCsv.Conversions;
 
 namespace DarkSun.Api.Engine.Serialization.Seeds.Converters
 {
-    public class GameObjectTypeConverter : BaseEnumConverter<GameObjectType>
+    public class ItemTypeConverter : BaseEnumConverter<ItemType>
     {
-      
+
     }
 }

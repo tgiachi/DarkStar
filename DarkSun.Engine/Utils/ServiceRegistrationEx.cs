@@ -7,18 +7,19 @@ using DarkSun.Api.Attributes.Services;
 using DarkSun.Api.Utils;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace DarkSun.Engine.Utils;
-
-public static class ServiceRegistrationEx
+namespace DarkSun.Engine.Utils
 {
-    public static IServiceCollection RegisterDarkSunServices(this IServiceCollection services)
+    public static class ServiceRegistrationEx
     {
-        AssemblyUtils.GetAttribute<DarkSunEngineServiceAttribute>().ForEach(s =>
+        public static IServiceCollection RegisterDarkSunServices(this IServiceCollection services)
         {
-            var interf = AssemblyUtils.GetInterfacesOfType(s)!.First(k => k.Name.EndsWith(s.Name));
-            services.AddSingleton(interf, s);
-        });
+            AssemblyUtils.GetAttribute<DarkSunEngineServiceAttribute>().ForEach(s =>
+            {
+                var interf = AssemblyUtils.GetInterfacesOfType(s)!.First(k => k.Name.EndsWith(s.Name));
+                services.AddSingleton(interf, s);
+            });
 
-        return services;
+            return services;
+        }
     }
 }

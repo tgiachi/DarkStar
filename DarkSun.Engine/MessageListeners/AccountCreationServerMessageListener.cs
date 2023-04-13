@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DarkSun.Api.Engine.Attributes;
+using DarkSun.Api.Engine.Attributes.Network;
 using DarkSun.Api.Engine.Interfaces.Core;
 using DarkSun.Api.Engine.MessageListeners;
 using DarkSun.Api.Utils;
@@ -18,19 +19,20 @@ namespace DarkSun.Engine.MessageListeners
     [NetworkMessageListener(DarkSunMessageType.AccountCreateRequest)]
     public class AccountCreationMessageListener : BaseNetworkMessageListener<AccountCreateRequestMessage>
     {
-        public AccountCreationMessageListener(ILogger<BaseNetworkMessageListener<AccountCreateRequestMessage>> logger, IDarkSunEngine engine) : base(logger, engine)
+        public AccountCreationMessageListener(ILogger<BaseNetworkMessageListener<AccountCreateRequestMessage>> logger,
+            IDarkSunEngine engine) : base(logger, engine)
         {
         }
 
 
-        public override async Task<List<IDarkSunNetworkMessage>> OnMessageReceivedAsync(Guid sessionId, DarkSunMessageType messageType, AccountCreateRequestMessage message)
+        public override async Task<List<IDarkSunNetworkMessage>> OnMessageReceivedAsync(Guid sessionId,
+            DarkSunMessageType messageType, AccountCreateRequestMessage message)
         {
             var userExists = await Engine.DatabaseService.QueryAsSingleAsync<AccountEntity>(entity =>
                 entity.Email.ToLower() == message.Email.ToLower());
 
             if (userExists != null!)
             {
-
                 return SingleMessage(new AccountCreateResponseMessage(false, "Account already exists"));
             }
 
@@ -39,7 +41,7 @@ namespace DarkSun.Engine.MessageListeners
                 Email = message.Email,
                 PasswordHash = message.Password.CreateMd5Hash(),
                 RegistrationDate = DateTime.UtcNow,
-                IsEnabled = true,
+                IsEnabled = true
             });
 
             Logger.LogInformation("Account registered: {Email}", message.Email);

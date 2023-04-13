@@ -11,7 +11,8 @@ namespace DarkSun.Engine.MessageListeners.Helpers
 {
     public class PlayerDataHelper
     {
-        public static async Task<PlayerListResponseMessage> BuildPlayerListForPlayerAsync(IDarkSunEngine engine, Guid accountId)
+        public static async Task<PlayerListResponseMessage> BuildPlayerListForPlayerAsync(IDarkSunEngine engine,
+            Guid accountId)
         {
             var playerList = await engine.PlayerService.GetPlayersByAccountIdAsync(accountId);
             return new PlayerListResponseMessage()
@@ -41,8 +42,7 @@ namespace DarkSun.Engine.MessageListeners.Helpers
                     Strength = r.Strength,
                     Name = r.Name,
                     Luck = r.Luck,
-                    TileId = r.TileId,
-
+                    TileId = r.TileId
                 }).ToList()
             };
         }

@@ -13,79 +13,78 @@ using DarkSun.Database.Entities.Races;
 using DarkSun.Engine.Services.Base;
 using Microsoft.Extensions.Logging;
 
-namespace DarkSun.Engine.Services;
-
-[DarkSunEngineService("PlayerService", 6)]
-public class PlayerService : BaseService<PlayerService>, IPlayerService
+namespace DarkSun.Engine.Services
 {
-    private readonly Dictionary<Guid, PlayerSession> _playerSessions = new();
-
-    public PlayerService(ILogger<PlayerService> logger) : base(logger)
+    [DarkSunEngineService("PlayerService", 6)]
+    public class PlayerService : BaseService<PlayerService>, IPlayerService
     {
-    }
+        private readonly Dictionary<Guid, PlayerSession> _playerSessions = new();
 
-    public void AddSession(Guid networkSessionId)
-    {
-        _playerSessions.Add(networkSessionId, new PlayerSession()
+        public PlayerService(ILogger<PlayerService> logger) : base(logger)
         {
-            SessionId = networkSessionId
-        });
-    }
-
-    public void RemoveSession(Guid networkSessionId)
-    {
-        _playerSessions.Remove(networkSessionId);
-    }
-
-    public PlayerSession GetSession(Guid networkSessionId)
-    {
-        if (_playerSessions.TryGetValue(networkSessionId, out var session))
-        {
-            return session;
         }
 
-        throw new Exception($"Can't find network sessionId {networkSessionId}");
-    }
-
-    public async Task<List<PlayerEntity>> GetPlayersByAccountIdAsync(Guid accountId)
-    {
-        var players =
-            await Engine.DatabaseService.QueryAsListAsync<PlayerEntity>(entity => entity.AccountId == accountId);
-
-        foreach (var player in players)
+        public void AddSession(Guid networkSessionId)
         {
-            player.Stats = await Engine.DatabaseService.QueryAsSingleAsync<PlayerStatEntity>(entity =>
-                               entity.PlayerId == player.Id);
+            _playerSessions.Add(networkSessionId, new PlayerSession() { SessionId = networkSessionId });
         }
 
-        return players;
-    }
-
-    public async Task<PlayerEntity> CreatePlayerAsync(Guid accountId, TileType tileId, Guid raceId, BaseStatEntity stats)
-    {
-        var race = await Engine.DatabaseService.QueryAsSingleAsync<RaceEntity>(entity => entity.Id == raceId);
-        var playerEntity = new PlayerEntity() { AccountId = accountId, RaceId = race.Id, Gold = 100 };
-        await Engine.DatabaseService.InsertAsync(playerEntity);
-
-        var statEntity = new PlayerStatEntity()
+        public void RemoveSession(Guid networkSessionId)
         {
-            PlayerId = playerEntity.Id,
-            Strength = stats.Strength,
-            Dexterity = stats.Dexterity,
-            Intelligence = stats.Intelligence,
-            Health = 10,
-            MaxHealth = 10,
-            Luck = stats.Luck,
-            Mana = 10,
-            MaxMana = 10,
-            Level = 1,
-            Experience = 0,
-        };
+            _playerSessions.Remove(networkSessionId);
+        }
 
-        await Engine.DatabaseService.InsertAsync(statEntity);
+        public PlayerSession GetSession(Guid networkSessionId)
+        {
+            if (_playerSessions.TryGetValue(networkSessionId, out var session))
+            {
+                return session;
+            }
 
-        playerEntity.Stats = statEntity;
+            throw new Exception($"Can't find network sessionId {networkSessionId}");
+        }
 
-        return playerEntity;
+        public async Task<List<PlayerEntity>> GetPlayersByAccountIdAsync(Guid accountId)
+        {
+            var players =
+                await Engine.DatabaseService.QueryAsListAsync<PlayerEntity>(entity => entity.AccountId == accountId);
+
+            foreach (var player in players)
+            {
+                player.Stats = await Engine.DatabaseService.QueryAsSingleAsync<PlayerStatEntity>(entity =>
+                    entity.PlayerId == player.Id);
+            }
+
+            return players;
+        }
+
+        public async Task<PlayerEntity> CreatePlayerAsync(Guid accountId, TileType tileId, Guid raceId,
+            BaseStatEntity stats)
+        {
+            var race = await Engine.DatabaseService.QueryAsSingleAsync<RaceEntity>(entity => entity.Id == raceId);
+            var playerEntity = new PlayerEntity() { AccountId = accountId, RaceId = race.Id, Gold = 100 };
+            await Engine.DatabaseService.InsertAsync(playerEntity);
+
+            var statEntity = new PlayerStatEntity()
+            {
+                PlayerId = playerEntity.Id,
+                Strength = stats.Strength,
+                Dexterity = stats.Dexterity,
+                Intelligence = stats.Intelligence,
+                Health = 10,
+                MaxHealth = 10,
+                Luck = stats.Luck,
+                Mana = 10,
+                MaxMana = 10,
+                Level = 1,
+                Experience = 0
+            };
+
+            await Engine.DatabaseService.InsertAsync(statEntity);
+
+            playerEntity.Stats = statEntity;
+
+            return playerEntity;
+        }
     }
 }

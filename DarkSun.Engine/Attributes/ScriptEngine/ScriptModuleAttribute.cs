@@ -9,6 +9,5 @@ namespace DarkSun.Engine.Attributes.ScriptEngine
     [AttributeUsage(AttributeTargets.Class)]
     public class ScriptModuleAttribute : Attribute
     {
-
     }
 }

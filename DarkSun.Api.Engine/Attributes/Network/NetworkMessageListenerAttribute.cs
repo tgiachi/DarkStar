@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DarkSun.Network.Protocol.Types;
 
-namespace DarkSun.Api.Engine.Attributes;
+namespace DarkSun.Api.Engine.Attributes.Network;
 
 [AttributeUsage(AttributeTargets.Class)]
 public class NetworkMessageListenerAttribute : Attribute

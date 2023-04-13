@@ -7,6 +7,7 @@ using DarkSun.Api.Engine.Data.Config;
 using DarkSun.Api.Engine.Interfaces.Core;
 using DarkSun.Api.Engine.Interfaces.Services.Base;
 using DarkSun.Api.Utils;
+using DarkSun.Engine.Http;
 using DarkSun.Engine.Utils;
 using DarkSun.Network.Client;
 using DarkSun.Network.Client.Interfaces;
@@ -17,6 +18,7 @@ using DarkSun.Network.Server;
 using DarkSun.Network.Server.Interfaces;
 using DarkSun.Network.Session;
 using DarkSun.Network.Session.Interfaces;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Redbus;
@@ -100,8 +102,28 @@ internal class Program
                     .RegisterScriptEngineFunctions()
                     .AddHostedService<DarkSunEngineHostedService>()
                     .AddHostedService<DarkSunTerminalHostedService>();
+
+                if (engineConfig.HttpServer.Enabled)
+                {
+                    services.ConfigureWebServer();
+                }
+                
             })
             .UseSerilog()
+            .UseConsoleLifetime()
+            .ConfigureWebHostDefaults(builder =>
+            {
+                if (engineConfig.HttpServer.Enabled)
+                {
+                    Log.Logger.Information("Starting HTTP server - http root Directory is: {RootDirectory}", directoryConfig[DirectoryNameType.HttpRoot]);
+                    builder.Configure(applicationBuilder =>
+                    {
+                        applicationBuilder.ConfigureWebServerApp(directoryConfig[DirectoryNameType.HttpRoot]);
+                    });
+                }
+
+            })
+
             .Build();
 
         await host.RunAsync();

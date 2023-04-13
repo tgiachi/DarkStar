@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DarkSun.Api.Engine.Attributes.Seed;
+using DarkSun.Api.Engine.Serialization.Seeds.Converters;
 using DarkSun.Api.World.Types.Equippable;
 using DarkSun.Api.World.Types.Items;
+using DarkSun.Api.World.Types.Tiles;
 using TinyCsv.Attributes;
 
 namespace DarkSun.Api.Engine.Serialization.Seeds
 {
+    [SeedObject("Items")]
     [HasHeaderRecord(true)]
     [Delimiter(";")]
     public class ItemObjectSeedEntity
@@ -19,13 +23,17 @@ namespace DarkSun.Api.Engine.Serialization.Seeds
         public string Description { get; set; } = null!;
         [Column] 
         public int Weight { get; set; } = 1;
-        [Column]
+
+        [Column(converter:typeof(TileTypeConverter))]
+        public TileType TileType { get; set; }
+
+        [Column(converter:typeof(ItemCategoryTypeConverter))]
         public ItemCategoryType Category { get; set; }
-        [Column]
+        [Column(converter:typeof(ItemTypeConverter))]
         public ItemType Type { get; set; }
-        [Column]
+        [Column(converter:typeof(EquipLocationTypeConverter))]
         public EquipLocationType EquipLocation { get; set; }
-        [Column]
+        [Column(converter:typeof(ItemRarityConverter))]
         public ItemRarityType ItemRarity { get; set; }
         [Column]
         public string SellDice { get; set; } = null!;

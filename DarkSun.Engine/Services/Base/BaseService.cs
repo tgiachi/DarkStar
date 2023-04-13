@@ -7,39 +7,40 @@ using DarkSun.Api.Engine.Interfaces.Core;
 using DarkSun.Api.Engine.Interfaces.Services.Base;
 using Microsoft.Extensions.Logging;
 
-namespace DarkSun.Engine.Services.Base;
-
-public class BaseService<TService> : IDarkSunEngineService where TService : IDarkSunEngineService
+namespace DarkSun.Engine.Services.Base
 {
-    protected ILogger Logger { get; }
-    protected IDarkSunEngine Engine { get; private set; } = null!;
-
-    protected BaseService(ILogger<TService> logger)
+    public class BaseService<TService> : IDarkSunEngineService where TService : IDarkSunEngineService
     {
-        Logger = logger;
-    }
+        protected ILogger Logger { get; }
+        protected IDarkSunEngine Engine { get; private set; } = null!;
 
-    public virtual ValueTask DisposeAsync()
-    {
-        Logger.LogDebug("Disposing service {Service}", GetType().Name);
-        return ValueTask.CompletedTask;
-    }
+        public BaseService(ILogger<TService> logger)
+        {
+            Logger = logger;
+        }
 
-    public ValueTask<bool> StartAsync(IDarkSunEngine engine)
-    {
-        Logger.LogDebug("Starting service {Service}", GetType().Name);
-        Engine = engine;
-        return StartAsync();
-    }
+        public virtual ValueTask DisposeAsync()
+        {
+            Logger.LogDebug("Disposing service {Service}", GetType().Name);
+            return ValueTask.CompletedTask;
+        }
 
-    protected virtual ValueTask<bool> StartAsync()
-    {
-        return ValueTask.FromResult(true);
-    }
+        public ValueTask<bool> StartAsync(IDarkSunEngine engine)
+        {
+            Logger.LogDebug("Starting service {Service}", GetType().Name);
+            Engine = engine;
+            return StartAsync();
+        }
 
-    public virtual ValueTask<bool> StopAsync()
-    {
-        Logger.LogDebug("Stopping service {Service}", GetType().Name);
-        return new ValueTask<bool>(true);
+        protected virtual ValueTask<bool> StartAsync()
+        {
+            return ValueTask.FromResult(true);
+        }
+
+        public virtual ValueTask<bool> StopAsync()
+        {
+            Logger.LogDebug("Stopping service {Service}", GetType().Name);
+            return new ValueTask<bool>(true);
+        }
     }
 }

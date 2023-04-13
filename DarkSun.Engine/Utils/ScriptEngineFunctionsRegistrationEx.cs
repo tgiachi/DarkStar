@@ -6,7 +6,6 @@ namespace DarkSun.Engine.Utils
 {
     public static class ScriptEngineFunctionsRegistrationEx
     {
-
         public static IServiceCollection RegisterScriptEngineFunctions(this IServiceCollection services)
         {
             foreach (var module in AssemblyUtils.GetAttribute<ScriptModuleAttribute>())

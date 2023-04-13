@@ -15,5 +15,8 @@ public enum DirectoryNameType
     Config,
     Scripts,
     ScriptModules,
+    HttpRoot,
+    SeedTemplates,
+    Seeds,
     Maps
 }

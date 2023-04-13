@@ -17,6 +17,7 @@ public interface IDarkSunEngine
     IDatabaseService DatabaseService { get; }
     ICommandService CommandService { get; }
     INamesService NamesService { get; }
+    ISeedService SeedService { get; }
     IEventBus EventBus { get; }
     ValueTask<bool> StartAsync();
     ValueTask<bool> StopAsync();

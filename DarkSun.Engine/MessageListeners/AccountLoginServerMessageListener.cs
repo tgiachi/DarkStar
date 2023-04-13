@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DarkSun.Api.Engine.Attributes;
+using DarkSun.Api.Engine.Attributes.Network;
 using DarkSun.Api.Engine.Interfaces.Core;
 using DarkSun.Api.Engine.MessageListeners;
 using DarkSun.Api.Utils;
@@ -19,11 +20,13 @@ namespace DarkSun.Engine.MessageListeners
     [NetworkMessageListener(DarkSunMessageType.AccountLoginRequest)]
     public class AccountLoginMessageListener : BaseNetworkMessageListener<AccountLoginRequestMessage>
     {
-        public AccountLoginMessageListener(ILogger<BaseNetworkMessageListener<AccountLoginRequestMessage>> logger, IDarkSunEngine engine) : base(logger, engine)
+        public AccountLoginMessageListener(ILogger<BaseNetworkMessageListener<AccountLoginRequestMessage>> logger,
+            IDarkSunEngine engine) : base(logger, engine)
         {
         }
 
-        public override async Task<List<IDarkSunNetworkMessage>> OnMessageReceivedAsync(Guid sessionId, DarkSunMessageType messageType, AccountLoginRequestMessage message)
+        public override async Task<List<IDarkSunNetworkMessage>> OnMessageReceivedAsync(Guid sessionId,
+            DarkSunMessageType messageType, AccountLoginRequestMessage message)
         {
             Logger.LogInformation("Received login request from {Id}", sessionId);
             var account = await Engine.DatabaseService.QueryAsSingleAsync<AccountEntity>(entity =>
@@ -42,7 +45,6 @@ namespace DarkSun.Engine.MessageListeners
                     new AccountLoginResponseMessage(true),
                     new ServerMotdResponseMessage(Engine.ServerMotd)
                 );
-
             }
         }
     }

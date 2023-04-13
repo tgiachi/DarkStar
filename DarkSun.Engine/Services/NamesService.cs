@@ -61,6 +61,7 @@ namespace DarkSun.Engine.Services
 
             Logger.LogInformation("Cache built in {Time} ms", stopWatch.ElapsedMilliseconds);
         }
+
         private async Task<List<string>?> DownloadLinkAsync(string animalType, string sex, int count = 10)
         {
             var link = GetAnimalLink(animalType, sex);
@@ -133,7 +134,5 @@ namespace DarkSun.Engine.Services
         {
             [JsonPropertyName("name")] public string Name { get; } = null!;
         }
-
-       
     }
 }

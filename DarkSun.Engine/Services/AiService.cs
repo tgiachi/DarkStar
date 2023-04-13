@@ -15,7 +15,6 @@ namespace DarkSun.Engine.Services
     {
         public AiService(ILogger<AiService> logger) : base(logger)
         {
-            
         }
 
         protected override ValueTask<bool> StartAsync()
