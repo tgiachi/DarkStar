@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DarkSun.Api.Engine.Data.Config.Sections
+namespace DarkSun.Api.Engine.Data.Config.Sections;
+
+public class LoggerConfig
 {
-    public class LoggerConfig
-    {
-    }
+    public bool EnableDebug { get; set; } = false;
 }

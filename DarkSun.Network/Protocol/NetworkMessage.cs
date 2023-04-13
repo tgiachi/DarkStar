@@ -4,14 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DarkSun.Network.Protocol.Types;
-using MessagePack;
 
-namespace DarkSun.Network.Protocol
+using ProtoBuf;
+
+namespace DarkSun.Network.Protocol;
+
+[ProtoContract]
+public class NetworkMessage
 {
-    [MessagePackObject(keyAsPropertyName: true)]
-    public class NetworkMessage
-    {
-        public DarkSunMessageType MessageType { get; set; }
-        public byte[] Message { get; set; } = null!;
-    }
+    [ProtoMember(1)]
+    public DarkSunMessageType MessageType { get; set; }
+    [ProtoMember(2)]
+    public byte[] Message { get; set; } = null!;
 }

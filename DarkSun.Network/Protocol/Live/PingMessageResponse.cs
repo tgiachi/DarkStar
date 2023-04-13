@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 using DarkSun.Network.Attributes;
 using DarkSun.Network.Protocol.Interfaces.Messages;
 using DarkSun.Network.Protocol.Types;
-using MessagePack;
 
-namespace DarkSun.Network.Protocol.Live
+using ProtoBuf;
+
+namespace DarkSun.Network.Protocol.Live;
+
+[ProtoContract]
+[NetworkMessage(DarkSunMessageType.Ping)]
+public class PingMessageResponse : IDarkSunNetworkMessage
 {
-    [MessagePackObject(keyAsPropertyName: true)]
-    [NetworkMessage(DarkSunMessageType.Ping)]
-    public struct PingMessageResponse : IDarkSunNetworkMessage
-    {
-        public long TimeStamp { get; set; }
-    }
+    [ProtoMember(1)]
+    public long TimeStamp { get; set; }
 }

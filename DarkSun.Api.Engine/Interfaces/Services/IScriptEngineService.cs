@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DarkSun.Api.Engine.Data.ScriptEngine;
 using DarkSun.Api.Engine.Interfaces.Services.Base;
 
-namespace DarkSun.Api.Engine.Interfaces.Services
+namespace DarkSun.Api.Engine.Interfaces.Services;
+
+public interface IScriptEngineService : IDarkSunEngineService
 {
-    public interface IScriptEngineService : IDarkSunEngineService
-    {
-    }
+
+    ScriptEngineExecutionResult ExecuteCommand(string command);
 }

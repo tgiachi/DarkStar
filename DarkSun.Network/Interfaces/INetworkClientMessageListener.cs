@@ -8,8 +8,9 @@ using DarkSun.Network.Protocol.Types;
 
 namespace DarkSun.Network.Interfaces
 {
-    public interface INetworkMessageListener
+    public interface INetworkClientMessageListener
     {
-        Task OnMessageReceivedAsync(Guid sessionId, DarkSunMessageType messageType, IDarkSunNetworkMessage message);
+        Task OnMessageReceivedAsync(DarkSunMessageType messageType, IDarkSunNetworkMessage message);
     }
+
 }

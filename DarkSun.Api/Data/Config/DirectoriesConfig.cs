@@ -3,35 +3,37 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DarkSun.Api.Utils;
 
-namespace DarkSun.Api.Data.Config
+namespace DarkSun.Api.Data.Config;
+
+public class DirectoriesConfig
 {
-  
-    public class DirectoriesConfig
+    public int Length => Directories.Count;
+    public Dictionary<DirectoryNameType, string> Directories { get; }
+
+    public DirectoriesConfig()
     {
-        public int Length => Directories.Count;
-        public Dictionary<DirectoryNameType, string> Directories { get; }
-
-        public DirectoriesConfig()
+        Directories = new Dictionary<DirectoryNameType, string>();
+        foreach (var type in Enum.GetValues(typeof(DirectoryNameType)).Cast<DirectoryNameType>())
         {
-            Directories = new Dictionary<DirectoryNameType, string>();
+            Directories.Add(type, type.ToString());
         }
+    }
 
-        public string this[DirectoryNameType index]
-        {
-            get => Directories[index];
-            set => Directories[index] = value;
-        }
+    public string this[DirectoryNameType index]
+    {
+        get => Directories[index];
+        set => Directories[index] = value;
+    }
 
-        public void AddDirectory(DirectoryNameType type, string directory)
-        {
-            Directories.Add(type, directory);
-        }
+    public void AddDirectory(DirectoryNameType type, string directory)
+    {
+        Directories.Add(type, directory);
+    }
 
-        public string GetDirectory(DirectoryNameType type)
-        {
-            return Directories[type];
-        }
-
+    public string GetDirectory(DirectoryNameType type)
+    {
+        return Directories[type];
     }
 }

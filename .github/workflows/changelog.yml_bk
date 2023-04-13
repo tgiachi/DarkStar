@@ -1,0 +1,14 @@
+name: Docker push
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Release Changelog Builder
+      uses: mikepenz/release-changelog-builder-action@v3.7.0  
+

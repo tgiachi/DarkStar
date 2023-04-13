@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DarkSun.Api.World.Types.Items
+namespace DarkSun.Api.World.Types.Items;
+
+public enum ItemType : short
 {
-    public enum ItemType : short
-    {
-    }
 }

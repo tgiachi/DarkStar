@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DarkSun.Api.World.Types.GameObjects
+namespace DarkSun.Api.World.Types.GameObjects;
+
+public enum GameObjectType : short
 {
-    public enum GameObjectType : short
-    {
-    }
 }

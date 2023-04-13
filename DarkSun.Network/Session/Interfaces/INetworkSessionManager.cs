@@ -5,12 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using DarkSun.Network.Session.Data;
 
-namespace DarkSun.Network.Session.Interfaces
+namespace DarkSun.Network.Session.Interfaces;
+
+public interface INetworkSessionManager
 {
-    public interface INetworkSessionManager
-    {
-        Guid AddSession(Guid? sessionGuid);
-        bool RemoveSession(Guid sessionGuid);
-        DarkSunSession GetSession(Guid sessionGuid);
-    }
+    Guid AddSession(Guid? sessionGuid);
+    bool RemoveSession(Guid sessionGuid);
+    DarkSunSession GetSession(Guid sessionGuid);
 }

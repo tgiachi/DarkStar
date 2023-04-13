@@ -15,7 +15,8 @@ namespace DarkSun.Engine.Utils
         {
             AssemblyUtils.GetAttribute<DarkSunEngineServiceAttribute>().ForEach(s =>
             {
-                services.AddSingleton(AssemblyUtils.GetInterfaceOfType(s)!, s);
+                var interf = AssemblyUtils.GetInterfacesOfType(s)!.First(k => k.Name.EndsWith(s.Name));
+                services.AddSingleton(interf, s);
             });
 
             return services;

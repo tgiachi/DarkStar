@@ -7,17 +7,16 @@ using DarkSun.Api.World.Types.Tiles;
 using DarkSun.Database.Entities.Base;
 using FreeSql.DataAnnotations;
 
-namespace DarkSun.Database.Entities.Races
+namespace DarkSun.Database.Entities.Races;
+
+[Table(Name = "races")]
+public class RaceEntity : BaseStatEntity
 {
-    [Table(Name = "races")]
-    public class RaceEntity : BaseStatEntity
-    {
-        public string Name { get; set; } = null!;
+    public string Name { get; set; } = null!;
 
-        public string Description { get; set; } = null!;
+    public string Description { get; set; } = null!;
 
-        public TileType TileId { get; set; }
+    public TileType TileId { get; set; }
 
-        public bool IsVisible { get; set; }
-    }
+    public bool IsVisible { get; set; }
 }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DarkSun.Api.World.Types.Tiles
+namespace DarkSun.Api.World.Types.Tiles;
+
+public enum TileType : short
 {
-    public enum TileType
-    {
-    }
+    Null
 }

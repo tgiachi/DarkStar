@@ -4,14 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DarkSun.Api.World.Types.Items
+namespace DarkSun.Api.World.Types.Items;
+
+public enum ItemRarityType : short
 {
-    public enum ItemRarityType : short
-    {
-        Common,
-        Uncommon,
-        Rare,
-        Epic,
-        Legendary
-    }
+    Common,
+    Uncommon,
+    Rare,
+    Epic,
+    Legendary
 }

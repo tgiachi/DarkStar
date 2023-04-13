@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 using DarkSun.Network.Data;
 using DarkSun.Network.Protocol.Interfaces.Messages;
 
-namespace DarkSun.Network.Protocol.Interfaces.Builders
+namespace DarkSun.Network.Protocol.Interfaces.Builders;
+
+public interface INetworkMessageBuilder
 {
-    public interface INetworkMessageBuilder
-    {
-        byte[] GetMessageSeparators { get; }
-        NetworkMessageData ParseMessage(byte[] buffer);
+    byte[] GetMessageSeparators { get; }
+    NetworkMessageData ParseMessage(byte[] buffer);
 
-        byte[] BuildMessage<T>(T message) where T : IDarkSunNetworkMessage;
+    byte[] BuildMessage<T>(T message) where T : IDarkSunNetworkMessage;
 
-        int GetMessageLength(byte[] buffer);
-    }
+    int GetMessageLength(byte[] buffer);
 }

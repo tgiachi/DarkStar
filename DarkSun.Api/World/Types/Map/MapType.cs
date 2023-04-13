@@ -4,18 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DarkSun.Api.World.Types.Map
+namespace DarkSun.Api.World.Types.Map;
+
+public enum MapType : short
 {
-    public enum MapType
-    {
-        World,
-        Dungeon,
-        City,
-        Town,
-        Village,
-        Camp,
-        Ruins,
-        Cave,
-        Forest,
-    }
+    World,
+    Dungeon,
+    City,
+    Town,
+    Village,
+    Camp,
+    Ruins,
+    Cave,
+    Forest
 }

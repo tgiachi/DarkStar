@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using DarkSun.Api.Engine.Data.Config.Sections;
 
-namespace DarkSun.Api.Engine.Data.Config
-{
-    public class EngineConfig
-    {
-        public DatabaseConfig Database { get; set; } = new ();
-        public NetworkServerConfig NetworkServer { get; set; } = new ();
+namespace DarkSun.Api.Engine.Data.Config;
 
-        public LoggerConfig Logger { get; set; } = new ();
-    }
+public class EngineConfig
+{
+    public DatabaseConfig Database { get; set; } = new();
+    public NetworkServerConfig NetworkServer { get; set; } = new();
+    public LoggerConfig Logger { get; set; } = new();
+    public AssemblyConfig Assemblies { get; set; } = new();
+    public HttpServerConfig HttpServer { get; set; } = new();
+    public MapConfig Maps { get; set; } = new();
 }
