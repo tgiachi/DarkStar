@@ -100,6 +100,7 @@ internal class Program
                     .AddSingleton(directoryConfig)
                     .RegisterDarkSunServices()
                     .RegisterMessageListeners()
+                    .RegisterCommandExecutors()
                     .RegisterScriptEngineFunctions()
                     .AddHostedService<DarkSunEngineHostedService>();
 

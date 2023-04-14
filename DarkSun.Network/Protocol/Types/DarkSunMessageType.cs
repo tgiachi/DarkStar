@@ -30,4 +30,7 @@ public enum DarkSunMessageType : short
     PlayerCreateResponse,
     PlayerSelectRequest,
     PlayerSelectResponse,
+
+    MapRequest,
+    MapResponse,
 }

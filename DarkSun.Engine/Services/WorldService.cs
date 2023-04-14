@@ -159,15 +159,12 @@ namespace DarkSun.Engine.Services
         {
             var id = GenerateMapId();
             Logger.LogDebug("Generating map type {MapType}", mapType);
-            switch (mapType)
+            return mapType switch
             {
-                case MapType.City:
-                    return (id, await GenerateCityMapAsync());
-                case MapType.Dungeon:
-                    return (id, await GenerateDungeonMapAsync());
-            }
-
-            throw new Exception($"Can't find map type generator {mapType}");
+                MapType.City => (id, await GenerateCityMapAsync()),
+                MapType.Dungeon => (id, await GenerateDungeonMapAsync()),
+                _ => throw new Exception($"Can't find map type generator {mapType}")
+            };
         }
 
         private ValueTask<Map> GenerateCityMapAsync()
@@ -207,7 +204,6 @@ namespace DarkSun.Engine.Services
                 Logger.LogDebug("Removed {GameObject} to map {MapId} Layer: {Layer}", args.Item, id, ((MapLayer)args.Item.Layer).FastToString());
                 HandleGameObjectRemoved(id, args.Item, args.Position.ToPointPosition());
             };
-
         }
 
         public PointPosition GetRandomWalkablePosition(string mapId)
@@ -220,6 +216,45 @@ namespace DarkSun.Engine.Services
                 randomPosition = RandPointUtils.RandomPoint(map.Width, map.Height);
             }
             return randomPosition.ToPointPosition();
+        }
+
+        public bool AddPlayerOnMap(string mapId, Guid playerId, PointPosition position, TileType tile)
+        {
+            var map = _maps[mapId].Item1;
+            
+            map.AddEntity(new PlayerGameObject(position.ToPoint())
+            {
+                Tile = tile,
+                ObjectId = playerId
+            });
+            return true;
+        }
+
+        public bool RemovePlayerFromMap(string mapId, Guid playerId)
+        {
+            var map = GetMap(mapId);
+            var player = map.Entities.Items.FirstOrDefault(x => x is PlayerGameObject playerGameObject && playerGameObject.ObjectId == playerId);
+            if (player is null)
+            {
+                return false;
+            }
+            map.RemoveEntity(player);
+            return true;
+        }
+
+        public Map GetMap(string mapId)
+        {
+            if (_maps.TryGetValue(mapId, out var map))
+            {
+                return map.Item1;
+            }
+            throw new Exception($"Map {mapId} not found");
+        }
+
+        public void AddEntity<TEntity>(string mapId, TEntity entity) where TEntity : IGameObject
+        {
+            var map = GetMap(mapId);
+            map.AddEntity(entity);
         }
 
         private void HandleGameObjectAdded(string mapId, IGameObject gameObject, PointPosition position)
@@ -263,7 +298,7 @@ namespace DarkSun.Engine.Services
             return ValueTask.FromResult(map);
         }
 
-        private string GenerateMapId()
+        private static string GenerateMapId()
         {
             return Guid.NewGuid().ToString().Replace("-", "");
         }
