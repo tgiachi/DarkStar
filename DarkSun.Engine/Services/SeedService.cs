@@ -95,7 +95,7 @@ namespace DarkSun.Engine.Services
                 $"{typeof(TEntity).Name.Replace("Entity", "").ToUnderscoreCase()}.csv");
             if (!File.Exists(fileName))
             {
-                await SeedCsvParser.Instance.WriteHeaderToFileAsync(fileName, new List<TEntity>() { new() });
+                await SeedCsvParser.Instance.WriteHeaderToFileAsync(fileName, Enumerable.Empty<TEntity>());
             }
         }
 

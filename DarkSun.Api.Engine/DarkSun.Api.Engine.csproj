@@ -8,7 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Mafe.TinyCsv" Version="1.6.1" />
+        <PackageReference Include="Mafe.TinyCsv" Version="2.0.0-rc1" />
         <PackageReference Include="Redbus" Version="1.0.8" />
         <PackageReference Include="GoRogue" Version="3.0.0-beta04-debug" />
     </ItemGroup>

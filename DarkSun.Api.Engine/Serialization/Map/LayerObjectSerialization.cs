@@ -22,5 +22,8 @@ namespace DarkSun.Api.Engine.Serialization.Map
         public MapLayer Type { get; set; }
         [ProtoMember(4)]
         public PointPosition Position { get; set; }
+
+        [ProtoMember(5)]
+        public Dictionary<string, string> Properties { get; set; } = new();
     }
 }

@@ -49,6 +49,7 @@ namespace DarkSun.Engine
         public ICommandService CommandService { get; }
         public INamesService NamesService { get; }
         public ISeedService SeedService { get; }
+        public IJobSchedulerService JobSchedulerService { get; }
         public IEventBus EventBus { get; }
 
 
@@ -65,7 +66,7 @@ namespace DarkSun.Engine
             IEventBus eventBus,
             IDarkSunNetworkClient networkClient,
             INamesService namesService,
-            ISeedService seedService)
+            ISeedService seedService, IJobSchedulerService jobSchedulerService)
         {
             _logger = logger;
             WorldService = worldService;
@@ -79,6 +80,7 @@ namespace DarkSun.Engine
             _networkClient = networkClient;
             NamesService = namesService;
             SeedService = seedService;
+            JobSchedulerService = jobSchedulerService;
             CommandService = commandService;
             _container = container;
         }
