@@ -14,7 +14,7 @@ namespace DarkSun.Api.Engine.Serialization
         public async Task<IEnumerable<TEntity>> ParseAsync<TEntity>(string fileName) where TEntity : class, new()
         {
             var csvReader = new TinyCsv<TEntity>();
-            return await csvReader.LoadFromFileAsync(fileName).ToListAsync();
+            return await csvReader.LoadFromFileAsync(fileName);
         }
 
         public async Task<bool> WriteHeaderToFileAsync<TEntity>(string fileName, IEnumerable<TEntity> entities) where TEntity : class, new()

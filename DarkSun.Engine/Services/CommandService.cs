@@ -44,7 +44,6 @@ namespace DarkSun.Engine.Services
 
         public void EnqueuePlayerAction<ActionEntity>(ActionEntity entity) where ActionEntity : ICommandAction
         {
-
             _actionListLock.Wait();
             _playersActionsQueue.Add(entity);
             _actionListLock.Release();
@@ -59,14 +58,14 @@ namespace DarkSun.Engine.Services
 
         private async Task SchedulerServiceOnOnTickAsync(double deltaTime)
         {
-            var stopWatch = new Stopwatch();
-            stopWatch.Start();
+
+
             await _actionListLock.WaitAsync();
 
             var actionsToRemove = new List<ICommandAction>();
             foreach (var action in _playersActionsQueue)
             {
-                action.Tick -= stopWatch.ElapsedMilliseconds;
+                action.Tick -= deltaTime;
 
                 if (action.Tick <= 0)
                 {
@@ -79,7 +78,7 @@ namespace DarkSun.Engine.Services
 
             foreach (var action in _npcsActionsQueue)
             {
-                action.Tick -= stopWatch.ElapsedMilliseconds;
+                action.Tick -= deltaTime;
                 if (action.Tick <= 0)
                 {
                     // await ProcessPlayerAction(action);

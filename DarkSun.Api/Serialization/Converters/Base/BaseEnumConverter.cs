@@ -7,7 +7,7 @@ using DarkSun.Api.Utils;
 using FastEnumUtility;
 using TinyCsv.Conversions;
 
-namespace DarkSun.Api.Engine.Serialization.Seeds.Converters.Base
+namespace DarkSun.Api.Serialization.Converters.Base
 {
     public class BaseEnumConverter<TEnum> : IValueConverter where TEnum : struct, Enum
     {
