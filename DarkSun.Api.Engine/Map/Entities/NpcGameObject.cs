@@ -13,7 +13,7 @@ namespace DarkSun.Api.Engine.Map.Entities
 {
     public class NpcGameObject : BaseGameObject
     {
-        public NpcGameObject(Point position) : base(position, (int)MapLayer.Creatures, false, true, false)
+        public NpcGameObject(Point position) : base(position, (int)MapLayer.Creatures, false, false)
         {
         }
     }

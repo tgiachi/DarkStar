@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using DarkSun.Api.Attributes.Services;
 using DarkSun.Api.Data.Config;
@@ -10,6 +11,7 @@ using DarkSun.Api.Engine.Attributes.Seed;
 using DarkSun.Api.Engine.Interfaces.Services;
 using DarkSun.Api.Engine.Serialization.Seeds;
 using DarkSun.Api.Engine.Serialization;
+using DarkSun.Api.Serialization.TileSets;
 using DarkSun.Api.Utils;
 using DarkSun.Api.World.Types.GameObjects;
 using DarkSun.Api.World.Types.Tiles;
@@ -18,6 +20,7 @@ using DarkSun.Database.Entities.Base;
 using DarkSun.Database.Entities.Item;
 using DarkSun.Database.Entities.Objects;
 using DarkSun.Database.Entities.Races;
+using DarkSun.Database.Entities.TileSets;
 using DarkSun.Engine.Services.Base;
 using Microsoft.Extensions.Logging;
 
@@ -42,6 +45,7 @@ namespace DarkSun.Engine.Services
             await CheckSeedTemplatesAsync();
             await CheckSeedDirectoriesAsync();
             await LoadCsvSeedsAsync();
+            await ScanTileSetsAsync();
             return true;
         }
 
@@ -95,7 +99,7 @@ namespace DarkSun.Engine.Services
                 $"{typeof(TEntity).Name.Replace("Entity", "").ToUnderscoreCase()}.csv");
             if (!File.Exists(fileName))
             {
-                await SeedCsvParser.Instance.WriteHeaderToFileAsync(fileName, new List<TEntity>() { new() });
+                await SeedCsvParser.Instance.WriteHeaderToFileAsync(fileName, Enumerable.Empty<TEntity>());
             }
         }
 
@@ -119,8 +123,61 @@ namespace DarkSun.Engine.Services
         {
             _gameObjectSeed.Add(new GameObjectEntity()
             {
-                Name = name, Description = description, TileId = tileType, Type = gameObjectType
+                Name = name,
+                Description = description,
+                TileId = tileType,
+                Type = gameObjectType
             });
+        }
+
+        private async Task ScanTileSetsAsync()
+        {
+            var files = Directory.GetFiles(_directoriesConfig[DirectoryNameType.Assets], "*.tileset");
+            Logger.LogInformation("Scanning TileSets");
+            foreach (var tileSet in files)
+            {
+                await LoadTileSetDefinitionAsync(tileSet);
+            }
+        }
+
+        private async Task LoadTileSetDefinitionAsync(string tileSet)
+        {
+            var tileSetDefinition = JsonSerializer.Deserialize<TileSetSerializableEntity>(await File.ReadAllTextAsync(tileSet));
+            var tilesDirectory = new FileInfo(tileSet);
+            var tileEntity = await Engine.DatabaseService.QueryAsSingleAsync<TileSetEntity>(entity => entity.Name == tileSetDefinition!.Name);
+
+            if (tileEntity == null!)
+            {
+                tileEntity = new TileSetEntity()
+                {
+                    Name = tileSetDefinition!.Name,
+                    Source = tileSetDefinition!.Source,
+                    TileHeight = tileSetDefinition!.TileHeight,
+                    TileWidth = tileSetDefinition!.TileWidth,
+                    TileSetMapFileName = Path.Join(tilesDirectory.DirectoryName!, tileSetDefinition!.TileSetMapFileName),
+                };
+                await Engine.DatabaseService.InsertAsync(tileEntity);
+            }
+
+            var tileMap =
+                await SeedCsvParser.Instance.ParseAsync<TileSetMapSerializable>(Path.Join(tilesDirectory.DirectoryName!,
+                    tileSetDefinition!.TileSetMapFileName));
+
+            foreach (var tile in tileMap)
+            {
+                var tileMapEntity = await Engine.DatabaseService.QueryAsSingleAsync<TileSetMapEntity>(entity => entity.TileSetId == tileEntity.Id && entity.TileId == tile.Id);
+                if (tileMapEntity == null!)
+                {
+                    tileMapEntity = new TileSetMapEntity()
+                    {
+                        TileSetId = tileEntity.Id,
+                        TileId = tile.Id,
+                        TileType = tile.Type,
+                        IsBlocked = tile.IsBlocked
+                    };
+                    await Engine.DatabaseService.InsertAsync(tileMapEntity);
+                }
+            }
         }
     }
 }

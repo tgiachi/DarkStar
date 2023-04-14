@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DarkSun.Api.Utils;
+using FastEnumUtility;
 using TinyCsv.Conversions;
 
-namespace DarkSun.Api.Engine.Serialization.Seeds.Converters.Base
+namespace DarkSun.Api.Serialization.Converters.Base
 {
-    public class BaseEnumConverter<TEnum> : IValueConverter where TEnum : Enum
+    public class BaseEnumConverter<TEnum> : IValueConverter where TEnum : struct, Enum
     {
         public virtual string Convert(object value, object parameter, IFormatProvider provider)
         {
@@ -26,11 +27,11 @@ namespace DarkSun.Api.Engine.Serialization.Seeds.Converters.Base
             if (value.ToLower() == "random")
             {
 
-                return Enum.GetValues(typeof(TEnum)).Cast<TEnum>().ToList().RandomItem().ToString();
+                return FastEnum.GetValues<TEnum>().ToList().RandomItem().ToString();
             }
             else
             {
-                var enumValues = Enum.GetValues(typeof(TEnum)).Cast<TEnum>().ToList();
+                var enumValues = FastEnum.GetValues<TEnum>().ToList();
                 if (value.Contains("*"))
                 {
                     // Replace * and search value in enum 

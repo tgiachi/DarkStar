@@ -17,6 +17,7 @@ using DarkSun.Api.Utils;
 using DarkSun.Network.Client.Interfaces;
 using DarkSun.Network.Interfaces;
 using DarkSun.Network.Protocol.Interfaces.Messages;
+using DarkSun.Network.Protocol.Live;
 using DarkSun.Network.Protocol.Messages.Accounts;
 using DarkSun.Network.Protocol.Types;
 using DarkSun.Network.Server.Interfaces;
@@ -49,8 +50,9 @@ namespace DarkSun.Engine
         public ICommandService CommandService { get; }
         public INamesService NamesService { get; }
         public ISeedService SeedService { get; }
+        public IJobSchedulerService JobSchedulerService { get; }
+        public IItemService ItemService { get; }
         public IEventBus EventBus { get; }
-
 
         public DarkSunEngine(ILogger<DarkSunEngine> logger,
             IBlueprintService blueprintService,
@@ -65,7 +67,9 @@ namespace DarkSun.Engine
             IEventBus eventBus,
             IDarkSunNetworkClient networkClient,
             INamesService namesService,
-            ISeedService seedService)
+            ISeedService seedService,
+            IJobSchedulerService jobSchedulerService,
+            IItemService itemService)
         {
             _logger = logger;
             WorldService = worldService;
@@ -79,6 +83,8 @@ namespace DarkSun.Engine
             _networkClient = networkClient;
             NamesService = namesService;
             SeedService = seedService;
+            JobSchedulerService = jobSchedulerService;
+            ItemService = itemService;
             CommandService = commandService;
             _container = container;
         }
@@ -150,12 +156,19 @@ namespace DarkSun.Engine
             }
 
             await NetworkServer.StartAsync();
+            JobSchedulerService.AddJob("PingClients",  () =>
+            {
+                _ = Task.Run(() => NetworkServer.BroadcastMessageAsync(new PingMessageResponse { TimeStamp = DateTime.Now.Ticks }));
+
+            }, (int)TimeSpan.FromMinutes(5).TotalSeconds, false);
+
             _ = Task.Run(async () =>
             {
                 await _networkClient.ConnectAsync();
                 await _networkClient.SendMessageAsync(new AccountCreateRequestMessage()
                 {
-                    Email = "test@test.com", Password = "1234"
+                    Email = "test@test.com",
+                    Password = "1234"
                 });
                 await _networkClient.SendMessageAsync(new AccountLoginRequestMessage("test@test.com", "12345"));
                 await _networkClient.SendMessageAsync(new AccountLoginRequestMessage("test@test.com", "1234"));

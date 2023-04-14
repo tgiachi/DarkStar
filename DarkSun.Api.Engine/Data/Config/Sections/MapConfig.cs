@@ -15,6 +15,7 @@ namespace DarkSun.Api.Engine.Data.Config.Sections
 
     public class MapConfig
     {
+        public int SaveEveryMinutes { get; set; } = 1;
         public WorldMapConfig Worlds { get; set; } = new();
         public CityMapConfig Cities { get; set; } = new();
         public DungeonMapConfig Dungeons { get; set; } = new();

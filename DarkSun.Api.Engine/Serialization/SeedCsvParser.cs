@@ -2,6 +2,7 @@
 
 using System.Text;
 using TinyCsv;
+using TinyCsv.Extensions;
 
 namespace DarkSun.Api.Engine.Serialization
 {
@@ -12,13 +13,13 @@ namespace DarkSun.Api.Engine.Serialization
 
         public async Task<IEnumerable<TEntity>> ParseAsync<TEntity>(string fileName) where TEntity : class, new()
         {
-            var csvReader = new TinyCsv.TinyCsv<TEntity>();
+            var csvReader = new TinyCsv<TEntity>();
             return await csvReader.LoadFromFileAsync(fileName);
         }
 
         public async Task<bool> WriteHeaderToFileAsync<TEntity>(string fileName, IEnumerable<TEntity> entities) where TEntity : class, new()
         {
-            var csvReader = new TinyCsv.TinyCsv<TEntity>(new CsvOptions<TEntity>() { HasHeaderRecord = true });
+            var csvReader = new TinyCsv<TEntity>(new CsvOptions<TEntity>());
             await csvReader.SaveAsync(fileName, entities);
 
             return true;
@@ -26,7 +27,7 @@ namespace DarkSun.Api.Engine.Serialization
 
         public async Task<bool> WriteHeaderToFileAsync(string fileName, IEnumerable<object> entities)
         {
-            var csvReader = new TinyCsv.TinyCsv<object>(new CsvOptions<object>() { HasHeaderRecord = true });
+            var csvReader = new TinyCsv<object>(new CsvOptions<object>());
             await csvReader.SaveAsync(fileName, entities);
 
             return true;
@@ -34,7 +35,7 @@ namespace DarkSun.Api.Engine.Serialization
 
         public async Task<string> WriteHeaderToStringAsync<TEntity>(IEnumerable<TEntity> entities) where TEntity : class, new()
         {
-            var csvReader = new TinyCsv.TinyCsv<TEntity>();
+            var csvReader = new TinyCsv<TEntity>();
             using var csvDumpStream = new MemoryStream();
             await csvReader.SaveAsync(csvDumpStream, entities);
 

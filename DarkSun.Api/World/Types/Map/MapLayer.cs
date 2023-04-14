@@ -8,7 +8,7 @@ namespace DarkSun.Api.World.Types.Map;
 
 public enum MapLayer : short
 {
-    Terrain,
+    Terrain = 0,
     Objects,
     Items,
     Creatures,

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DarkSun.Api.World.Types.Tiles;
+using FastEnumUtility;
 
 namespace DarkSun.Api.World.Types.Utils
 {
@@ -11,7 +12,7 @@ namespace DarkSun.Api.World.Types.Utils
     {
         public static TileType ParseTileType(this short tileId)
         {
-            return Enum.IsDefined(typeof(TileType), tileId) ? (TileType)tileId : TileType.Null;
+            return FastEnum.IsDefined<TileType>(tileId) ? (TileType)tileId : TileType.Null;
         }
     }
 }

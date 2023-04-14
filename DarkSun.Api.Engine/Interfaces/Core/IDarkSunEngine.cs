@@ -18,6 +18,8 @@ public interface IDarkSunEngine
     ICommandService CommandService { get; }
     INamesService NamesService { get; }
     ISeedService SeedService { get; }
+    IJobSchedulerService JobSchedulerService { get; }
+    IItemService ItemService { get; }
     IEventBus EventBus { get; }
     ValueTask<bool> StartAsync();
     ValueTask<bool> StopAsync();
