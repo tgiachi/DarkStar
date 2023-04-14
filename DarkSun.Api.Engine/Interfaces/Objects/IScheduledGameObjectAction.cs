@@ -1,4 +1,4 @@
-﻿namespace DarkSun.Api.Engine.Interfaces.Objects
+﻿namespace DarkStar.Api.Engine.Interfaces.Objects
 {
     public interface IScheduledGameObjectAction : IGameObjectAction
     {

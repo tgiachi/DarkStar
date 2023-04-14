@@ -6,21 +6,22 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Api.Attributes.Services;
-using DarkSun.Api.Data.Config;
-using DarkSun.Api.Engine.Data.Config;
-using DarkSun.Api.Engine.Data.Config.Sections;
-using DarkSun.Api.Engine.Interfaces.Services;
-using DarkSun.Api.Interfaces.Entities;
-using DarkSun.Database.Entities.Account;
-using DarkSun.Engine.Services.Base;
+using DarkStar.Api.Attributes.Services;
+using DarkStar.Api.Data.Config;
+using DarkStar.Api.Engine.Data.Config;
+using DarkStar.Api.Engine.Data.Config.Sections;
+using DarkStar.Api.Engine.Interfaces.Services;
+using DarkStar.Api.Interfaces.Entities;
+using DarkStar.Database.Entities.Account;
+using DarkStar.Engine.Services.Base;
+
 using FreeSql;
 using FreeSql.DataAnnotations;
 using Microsoft.Extensions.Logging;
 
-namespace DarkSun.Engine.Services
+namespace DarkStar.Engine.Services
 {
-    [DarkSunEngineService("DatabaseService", 1)]
+    [DarkStarEngineService("DatabaseService", 1)]
     public class DatabaseService : BaseService<IDatabaseService>, IDatabaseService
     {
         private IFreeSql _connectionFactory = null!;
@@ -194,16 +195,16 @@ namespace DarkSun.Engine.Services
         {
             var tableAssembies = new List<Type>();
             foreach (var type in Assembly.GetAssembly(typeof(AccountEntity))!.GetExportedTypes())
-            foreach (var attribute in type.GetCustomAttributes())
-            {
-                if (attribute is TableAttribute tableAttribute)
+                foreach (var attribute in type.GetCustomAttributes())
                 {
-                    if (tableAttribute.DisableSyncStructure == false)
+                    if (attribute is TableAttribute tableAttribute)
                     {
-                        tableAssembies.Add(type);
+                        if (tableAttribute.DisableSyncStructure == false)
+                        {
+                            tableAssembies.Add(type);
+                        }
                     }
                 }
-            }
 
             return tableAssembies.ToArray();
         }

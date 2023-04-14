@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using DarkSun.Api.Attributes.Services;
-using DarkSun.Api.Engine.Interfaces.Services;
-using DarkSun.Engine.Services.Base;
+using DarkStar.Api.Attributes.Services;
+using DarkStar.Api.Engine.Interfaces.Services;
+using DarkStar.Engine.Services.Base;
+
 using Microsoft.Extensions.Logging;
 
-namespace DarkSun.Engine.Services
+namespace DarkStar.Engine.Services
 {
-    [DarkSunEngineService("SchedulerService", 3)]
+    [DarkStarEngineService("SchedulerService", 3)]
     public class SchedulerService : BaseService<SchedulerService>, ISchedulerService
     {
         private const short Tick = 30;

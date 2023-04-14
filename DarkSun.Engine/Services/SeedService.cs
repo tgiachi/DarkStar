@@ -5,28 +5,29 @@ using System.Reflection;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-using DarkSun.Api.Attributes.Services;
-using DarkSun.Api.Data.Config;
-using DarkSun.Api.Engine.Attributes.Seed;
-using DarkSun.Api.Engine.Interfaces.Services;
-using DarkSun.Api.Engine.Serialization.Seeds;
-using DarkSun.Api.Engine.Serialization;
-using DarkSun.Api.Serialization.TileSets;
-using DarkSun.Api.Utils;
-using DarkSun.Api.World.Types.GameObjects;
-using DarkSun.Api.World.Types.Tiles;
-using DarkSun.Api.World.Types.Utils;
-using DarkSun.Database.Entities.Base;
-using DarkSun.Database.Entities.Item;
-using DarkSun.Database.Entities.Objects;
-using DarkSun.Database.Entities.Races;
-using DarkSun.Database.Entities.TileSets;
-using DarkSun.Engine.Services.Base;
-using Microsoft.Extensions.Logging;
+using DarkStar.Api.Attributes.Services;
 
-namespace DarkSun.Engine.Services
+using Microsoft.Extensions.Logging;
+using DarkStar.Api.Utils;
+using DarkStar.Api.Serialization.TileSets;
+using DarkStar.Api.World.Types.GameObjects;
+using DarkStar.Api.Engine.Serialization.Seeds;
+using DarkStar.Api.Engine.Interfaces.Services;
+using DarkStar.Engine.Services.Base;
+using DarkStar.Api.World.Types.Utils;
+using DarkStar.Api.Data.Config;
+using DarkStar.Api.Engine.Serialization;
+using DarkStar.Api.Engine.Attributes.Seed;
+using DarkStar.Database.Entities.Races;
+using DarkStar.Database.Entities.Base;
+using DarkStar.Database.Entities.Item;
+using DarkStar.Database.Entities.TileSets;
+using DarkStar.Api.World.Types.Tiles;
+using DarkStar.Database.Entities.Objects;
+
+namespace DarkStar.Engine.Services
 {
-    [DarkSunEngineService(nameof(SeedService), 8)]
+    [DarkStarEngineService(nameof(SeedService), 8)]
     public class SeedService : BaseService<SeedService>, ISeedService
     {
         private readonly HashSet<RaceEntity> _racesSeed = new();

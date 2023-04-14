@@ -5,9 +5,9 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DarkSun.Network.Protocol.Types;
+namespace DarkStar.Network.Protocol.Types;
 
-public enum DarkSunMessageType : short
+public enum DarkStarMessageType : short
 {
     Ping,
     Pong,

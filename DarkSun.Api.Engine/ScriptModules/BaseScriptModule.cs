@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Api.Engine.Interfaces.Core;
+using DarkStar.Api.Engine.Interfaces.Core;
 using Microsoft.Extensions.Logging;
 
-namespace DarkSun.Api.Engine.ScriptModules
+namespace DarkStar.Api.Engine.ScriptModules
 {
     public class BaseScriptModule
     {

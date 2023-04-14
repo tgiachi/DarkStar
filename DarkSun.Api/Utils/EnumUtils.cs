@@ -1,6 +1,6 @@
 ﻿using FastEnumUtility;
 
-namespace DarkSun.Api.Utils;
+namespace DarkStar.Api.Utils;
 
 public static class EnumUtils
 {

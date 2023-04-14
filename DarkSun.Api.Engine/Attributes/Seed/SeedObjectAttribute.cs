@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DarkSun.Api.Engine.Attributes.Seed
+namespace DarkStar.Api.Engine.Attributes.Seed
 {
     [AttributeUsage(AttributeTargets.Class)]
     public class SeedObjectAttribute : Attribute

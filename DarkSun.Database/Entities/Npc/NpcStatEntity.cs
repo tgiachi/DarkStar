@@ -1,8 +1,8 @@
-﻿using DarkSun.Database.Entities.Base;
-using DarkSun.Database.Entities.Player;
+﻿using DarkStar.Database.Entities.Base;
+
 using FreeSql.DataAnnotations;
 
-namespace DarkSun.Database.Entities.Npc;
+namespace DarkStar.Database.Entities.Npc;
 
 [Table(Name = "npc_stats")]
 public class NpcStatEntity : BaseStatEntity

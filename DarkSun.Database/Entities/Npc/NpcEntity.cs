@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Api.World.Types.Npc;
-using DarkSun.Api.World.Types.Tiles;
-using DarkSun.Database.Entities.Base;
+using DarkStar.Api.World.Types.Npc;
+using DarkStar.Api.World.Types.Tiles;
+using DarkStar.Database.Entities.Base;
 using FreeSql.DataAnnotations;
 
-namespace DarkSun.Database.Entities.Npc;
+namespace DarkStar.Database.Entities.Npc;
 
 [Table(Name = "npcs")]
 public class NpcEntity : BaseEntity

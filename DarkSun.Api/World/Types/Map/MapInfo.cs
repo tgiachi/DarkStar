@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DarkSun.Api.World.Types.Map
+namespace DarkStar.Api.World.Types.Map
 {
     public class MapInfo
     {

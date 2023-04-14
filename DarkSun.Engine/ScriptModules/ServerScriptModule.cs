@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Api.Engine.Interfaces.Core;
-using DarkSun.Api.Engine.ScriptModules;
-using DarkSun.Engine.Attributes.ScriptEngine;
+using DarkStar.Api.Engine.Interfaces.Core;
+using DarkStar.Api.Engine.ScriptModules;
+using DarkStar.Engine.Attributes.ScriptEngine;
+
 using Microsoft.Extensions.Logging;
 
-namespace DarkSun.Engine.ScriptModules
+namespace DarkStar.Engine.ScriptModules
 {
     [ScriptModule]
     public class ServerScriptModule : BaseScriptModule

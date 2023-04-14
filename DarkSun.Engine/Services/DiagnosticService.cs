@@ -4,17 +4,18 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Api.Attributes.Services;
-using DarkSun.Api.Data.Config;
-using DarkSun.Api.Engine.Events.Engine;
-using DarkSun.Api.Engine.Interfaces.Services;
-using DarkSun.Engine.Services.Base;
+using DarkStar.Api.Attributes.Services;
+using DarkStar.Api.Data.Config;
+using DarkStar.Api.Engine.Events.Engine;
+using DarkStar.Api.Engine.Interfaces.Services;
+using DarkStar.Engine.Services.Base;
+
 using Humanizer;
 using Microsoft.Extensions.Logging;
 
-namespace DarkSun.Engine.Services
+namespace DarkStar.Engine.Services
 {
-    [DarkSunEngineService("DiagnosticService", 1000)]
+    [DarkStarEngineService("DiagnosticService", 1000)]
     public class DiagnosticService : BaseService<DiagnosticService>, IDiagnosticService
     {
         private readonly string _pidFileName;

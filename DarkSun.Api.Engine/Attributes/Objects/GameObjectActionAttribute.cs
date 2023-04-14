@@ -1,6 +1,6 @@
-﻿using DarkSun.Api.World.Types.GameObjects;
+﻿using DarkStar.Api.World.Types.GameObjects;
 
-namespace DarkSun.Api.Engine.Attributes.Objects
+namespace DarkStar.Api.Engine.Attributes.Objects
 {
 
     [AttributeUsage(AttributeTargets.Class)]

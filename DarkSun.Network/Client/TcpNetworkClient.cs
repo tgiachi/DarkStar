@@ -5,17 +5,17 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Api.Utils;
-using DarkSun.Network.Client.Interfaces;
-using DarkSun.Network.Data;
-using DarkSun.Network.Interfaces;
-using DarkSun.Network.Protocol.Interfaces.Builders;
-using DarkSun.Network.Protocol.Interfaces.Messages;
-using DarkSun.Network.Protocol.Types;
+using DarkStar.Api.Utils;
+using DarkStar.Network.Client.Interfaces;
+using DarkStar.Network.Data;
+using DarkStar.Network.Interfaces;
+using DarkStar.Network.Protocol.Interfaces.Builders;
+using DarkStar.Network.Protocol.Interfaces.Messages;
+using DarkStar.Network.Protocol.Types;
 using Microsoft.Extensions.Logging;
 using TcpClient = NetCoreServer.TcpClient;
 
-namespace DarkSun.Network.Client
+namespace DarkStar.Network.Client
 {
     public class TcpNetworkClient : TcpClient, IDarkSunNetworkClient
     {
@@ -23,7 +23,7 @@ namespace DarkSun.Network.Client
 
         private readonly ILogger _logger;
         private readonly INetworkMessageBuilder _messageBuilder;
-        private readonly Dictionary<DarkSunMessageType, INetworkClientMessageListener> _messageListeners = new();
+        private readonly Dictionary<DarkStarMessageType, INetworkClientMessageListener> _messageListeners = new();
 
         private int _currentIndex;
 
@@ -33,17 +33,17 @@ namespace DarkSun.Network.Client
         private readonly byte[] _tempBuffer = new byte[1];
         private byte[] _buffer = Array.Empty<byte>();
 
-        public TcpNetworkClient(ILogger<TcpNetworkClient> logger, 
-            DarkSunNetworkClientConfig config, 
+        public TcpNetworkClient(ILogger<TcpNetworkClient> logger,
+            DarkStarNetworkClientConfig config,
             INetworkMessageBuilder messageBuilder) : base(config.Address, config.Port)
         {
             _logger = logger;
             _messageBuilder = messageBuilder;
-         //   OptionReceiveBufferSize = 512;
+            //   OptionReceiveBufferSize = 512;
             _separators = messageBuilder.GetMessageSeparators;
             _currentIndex = 0;
-          
-            
+
+
         }
 
         protected override void OnConnected()
@@ -104,15 +104,15 @@ namespace DarkSun.Network.Client
             base.OnReceived(buffer, offset, size);
         }
 
-        public async Task DispatchMessageReceivedAsync( DarkSunMessageType messageType,
+        public async Task DispatchMessageReceivedAsync(DarkStarMessageType messageType,
             IDarkSunNetworkMessage message)
         {
             _logger.LogDebug("Received message: {MessageType}", messageType);
             OnMessageReceived?.Invoke(messageType, message);
-            
+
             if (_messageListeners.TryGetValue(messageType, out var listener))
             {
-                await listener.OnMessageReceivedAsync( messageType, message);
+                await listener.OnMessageReceivedAsync(messageType, message);
             }
         }
 
@@ -135,7 +135,7 @@ namespace DarkSun.Network.Client
             try
             {
                 SendAsync(_messageBuilder.BuildMessage(message));
- 
+
             }
             catch (Exception ex)
 
@@ -148,7 +148,7 @@ namespace DarkSun.Network.Client
 
         public Task SendMessageAsync(List<IDarkSunNetworkMessage> message)
         {
-            
+
             foreach (var messageItem in message)
             {
                 try
@@ -165,12 +165,12 @@ namespace DarkSun.Network.Client
             return Task.CompletedTask;
         }
 
-        public void RegisterMessageListener(DarkSunMessageType messageType, INetworkClientMessageListener serverMessageListener)
+        public void RegisterMessageListener(DarkStarMessageType messageType, INetworkClientMessageListener serverMessageListener)
         {
             _messageListeners.Add(messageType, serverMessageListener);
         }
 
-      
+
 
         public new ValueTask ConnectAsync()
         {

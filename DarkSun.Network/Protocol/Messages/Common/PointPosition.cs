@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ProtoBuf;
 
-namespace DarkSun.Network.Protocol.Messages.Common;
+namespace DarkStar.Network.Protocol.Messages.Common;
 
 [ProtoContract]
 public struct PointPosition

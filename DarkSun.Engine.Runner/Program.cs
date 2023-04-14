@@ -2,22 +2,22 @@
 using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using DarkSun.Api.Data.Config;
-using DarkSun.Api.Engine.Data.Config;
-using DarkSun.Api.Engine.Interfaces.Core;
-using DarkSun.Api.Engine.Interfaces.Services.Base;
-using DarkSun.Api.Utils;
-using DarkSun.Engine.Http;
-using DarkSun.Engine.Utils;
-using DarkSun.Network.Client;
-using DarkSun.Network.Client.Interfaces;
-using DarkSun.Network.Data;
-using DarkSun.Network.Protocol.Builders;
-using DarkSun.Network.Protocol.Interfaces.Builders;
-using DarkSun.Network.Server;
-using DarkSun.Network.Server.Interfaces;
-using DarkSun.Network.Session;
-using DarkSun.Network.Session.Interfaces;
+using DarkStar.Api.Data.Config;
+using DarkStar.Api.Engine.Data.Config;
+using DarkStar.Api.Engine.Interfaces.Core;
+using DarkStar.Api.Utils;
+using DarkStar.Engine.Http;
+using DarkStar.Engine.Utils;
+using DarkStar.Network.Client;
+using DarkStar.Network.Client.Interfaces;
+using DarkStar.Network.Data;
+using DarkStar.Network.Protocol.Builders;
+using DarkStar.Network.Protocol.Interfaces.Builders;
+using DarkStar.Network.Server;
+using DarkStar.Network.Server.Interfaces;
+using DarkStar.Network.Session;
+using DarkStar.Network.Session.Interfaces;
+
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -29,7 +29,7 @@ using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 
 
-namespace DarkSun.Engine.Runner;
+namespace DarkStar.Engine.Runner;
 
 internal class Program
 {
@@ -88,13 +88,13 @@ internal class Program
                     {
                         ThrowSubscriberException = true
                     }))
-                    .AddSingleton(new DarkSunNetworkServerConfig()
+                    .AddSingleton(new DarkStarNetworkServerConfig()
                     {
                         Address = engineConfig.NetworkServer.Address,
                         Port = engineConfig.NetworkServer.Port
                     })
                     // Only for test
-                    .AddSingleton(new DarkSunNetworkClientConfig())
+                    .AddSingleton(new DarkStarNetworkClientConfig())
                     .AddSingleton<IDarkSunNetworkClient, TcpNetworkClient>()
                     .AddSingleton(engineConfig)
                     .AddSingleton(directoryConfig)

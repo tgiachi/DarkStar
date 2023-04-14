@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Api.World.Types.Equippable;
-using DarkSun.Api.World.Types.Items;
-using DarkSun.Api.World.Types.Tiles;
-using DarkSun.Database.Entities.Base;
+using DarkStar.Api.World.Types.Equippable;
+using DarkStar.Api.World.Types.Items;
+using DarkStar.Api.World.Types.Tiles;
+using DarkStar.Database.Entities.Base;
 using FreeSql.DataAnnotations;
 
-namespace DarkSun.Database.Entities.Item;
+namespace DarkStar.Database.Entities.Item;
 
 [Table(Name = "items")]
 public class ItemEntity : BaseEntity
@@ -18,7 +18,7 @@ public class ItemEntity : BaseEntity
     public string Description { get; set; } = null!;
     public int Weight { get; set; }
 
-    public TileType TileType { get; set; } 
+    public TileType TileType { get; set; }
 
     public ItemCategoryType Category { get; set; }
     public ItemType Type { get; set; }

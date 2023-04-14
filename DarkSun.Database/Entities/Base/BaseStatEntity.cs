@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DarkSun.Database.Entities.Base;
+namespace DarkStar.Database.Entities.Base;
 
 public class BaseStatEntity : BaseEntity
 {

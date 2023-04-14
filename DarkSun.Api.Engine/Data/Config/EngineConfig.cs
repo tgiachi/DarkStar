@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Api.Engine.Data.Config.Sections;
+using DarkStar.Api.Engine.Data.Config.Sections;
 
-namespace DarkSun.Api.Engine.Data.Config;
+namespace DarkStar.Api.Engine.Data.Config;
 
 public class EngineConfig
 {

@@ -1,6 +1,4 @@
-﻿
-
-namespace DarkSun.Api.World.Types.Npc
+﻿namespace DarkStar.Api.World.Types.Npc
 {
     public enum NpcSubType : short
     {

@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Network.Interfaces;
-using DarkSun.Network.Protocol.Interfaces.Messages;
-using DarkSun.Network.Protocol.Types;
+using DarkStar.Network.Interfaces;
+using DarkStar.Network.Protocol.Interfaces.Messages;
+using DarkStar.Network.Protocol.Types;
 
-namespace DarkSun.Network.Client.Interfaces;
+namespace DarkStar.Network.Client.Interfaces;
 
 public interface IDarkSunNetworkClient
 {
 
-    delegate Task MessageReceivedDelegate(DarkSunMessageType messageType, IDarkSunNetworkMessage message);
+    delegate Task MessageReceivedDelegate(DarkStarMessageType messageType, IDarkSunNetworkMessage message);
     event MessageReceivedDelegate OnMessageReceived;
 
     bool IsConnected { get; }
@@ -20,5 +20,5 @@ public interface IDarkSunNetworkClient
     ValueTask DisconnectAsync();
     Task SendMessageAsync(IDarkSunNetworkMessage message);
     Task SendMessageAsync(List<IDarkSunNetworkMessage> message);
-    void RegisterMessageListener(DarkSunMessageType messageType, INetworkClientMessageListener serverMessageListener);
+    void RegisterMessageListener(DarkStarMessageType messageType, INetworkClientMessageListener serverMessageListener);
 }

@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Api.Engine.Attributes;
-using DarkSun.Api.Engine.Attributes.Network;
-using DarkSun.Api.Engine.Interfaces.Core;
-using DarkSun.Api.Engine.MessageListeners;
-using DarkSun.Api.Utils;
-using DarkSun.Database.Entities.Account;
-using DarkSun.Network.Protocol.Interfaces.Messages;
-using DarkSun.Network.Protocol.Messages.Accounts;
-using DarkSun.Network.Protocol.Types;
+using DarkStar.Api.Engine.Attributes.Network;
+using DarkStar.Api.Engine.Interfaces.Core;
+using DarkStar.Api.Engine.MessageListeners;
+using DarkStar.Api.Utils;
+using DarkStar.Database.Entities.Account;
+using DarkStar.Network.Protocol.Interfaces.Messages;
+using DarkStar.Network.Protocol.Messages.Accounts;
+using DarkStar.Network.Protocol.Types;
+
 using Microsoft.Extensions.Logging;
 
-namespace DarkSun.Engine.MessageListeners
+namespace DarkStar.Engine.MessageListeners
 {
-    [NetworkMessageListener(DarkSunMessageType.AccountCreateRequest)]
+    [NetworkMessageListener(DarkStarMessageType.AccountCreateRequest)]
     public class AccountCreationMessageListener : BaseNetworkMessageListener<AccountCreateRequestMessage>
     {
         public AccountCreationMessageListener(ILogger<BaseNetworkMessageListener<AccountCreateRequestMessage>> logger,
@@ -26,7 +26,7 @@ namespace DarkSun.Engine.MessageListeners
 
 
         public override async Task<List<IDarkSunNetworkMessage>> OnMessageReceivedAsync(Guid sessionId,
-            DarkSunMessageType messageType, AccountCreateRequestMessage message)
+            DarkStarMessageType messageType, AccountCreateRequestMessage message)
         {
             var userExists = await Engine.DatabaseService.QueryAsSingleAsync<AccountEntity>(entity =>
                 entity.Email.ToLower() == message.Email.ToLower());

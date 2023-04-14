@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Api.Engine.Attributes;
-using DarkSun.Api.Engine.Attributes.Network;
-using DarkSun.Api.Engine.Interfaces.Core;
-using DarkSun.Api.Engine.MessageListeners;
-using DarkSun.Network.Protocol.Interfaces.Messages;
-using DarkSun.Network.Protocol.Live;
-using DarkSun.Network.Protocol.Types;
+using DarkStar.Api.Engine.Attributes.Network;
+using DarkStar.Api.Engine.Interfaces.Core;
+using DarkStar.Api.Engine.MessageListeners;
+using DarkStar.Network.Protocol.Interfaces.Messages;
+using DarkStar.Network.Protocol.Live;
+using DarkStar.Network.Protocol.Types;
+
 using Microsoft.Extensions.Logging;
 
-namespace DarkSun.Engine.MessageListeners
+namespace DarkStar.Engine.MessageListeners
 {
-    [NetworkMessageListener(DarkSunMessageType.Pong)]
+    [NetworkMessageListener(DarkStarMessageType.Pong)]
     public class PongMessageListener : BaseNetworkMessageListener<PongMessageResponse>
     {
         public PongMessageListener(ILogger<BaseNetworkMessageListener<PongMessageResponse>> logger,
@@ -24,7 +24,7 @@ namespace DarkSun.Engine.MessageListeners
         }
 
         public override Task<List<IDarkSunNetworkMessage>> OnMessageReceivedAsync(Guid sessionId,
-            DarkSunMessageType messageType,
+            DarkStarMessageType messageType,
             PongMessageResponse message)
         {
             Logger.LogInformation("Received PONG from session {Session}", sessionId);

@@ -1,8 +1,8 @@
-﻿using DarkSun.Api.Engine.Interfaces.Commands;
-using DarkSun.Api.Engine.Interfaces.Core;
+﻿using DarkStar.Api.Engine.Interfaces.Commands;
+using DarkStar.Api.Engine.Interfaces.Core;
 using Microsoft.Extensions.Logging;
 
-namespace DarkSun.Api.Engine.Commands.Base;
+namespace DarkStar.Api.Engine.Commands.Base;
 
 public abstract class BaseCommandActionExecutor<TAction> : ICommandActionExecutor where TAction : ICommandAction
 {

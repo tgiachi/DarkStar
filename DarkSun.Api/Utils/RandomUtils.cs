@@ -1,7 +1,7 @@
 ﻿
 using System.Numerics;
 
-namespace DarkSun.Api.Utils;
+namespace DarkStar.Api.Utils;
 
 public static class RandomUtils
 {
@@ -26,7 +26,9 @@ public static class RandomUtils
     {
         return new Vector3
         {
-            X = Range((int)min.X, (int)max.X), Y = Range((int)min.Y, (int)max.Y), Z = Range((int)min.Z, (int)max.Z)
+            X = Range((int)min.X, (int)max.X),
+            Y = Range((int)min.Y, (int)max.Y),
+            Z = Range((int)min.Z, (int)max.Z)
         };
     }
 
@@ -35,7 +37,7 @@ public static class RandomUtils
         return Enumerable.Range(min, Range(min, max));
     }
 
- 
+
 
     public static T RandomEnumValue<T>() where T : Enum
     {

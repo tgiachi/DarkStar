@@ -1,8 +1,8 @@
-﻿using DarkSun.Api.World.Types.Map;
-using DarkSun.Database.Entities.Base;
+﻿using DarkStar.Api.World.Types.Map;
+using DarkStar.Database.Entities.Base;
 using FreeSql.DataAnnotations;
 
-namespace DarkSun.Database.Entities.Maps;
+namespace DarkStar.Database.Entities.Maps;
 
 [Table(Name = "maps")]
 public class MapEntity : BaseEntity

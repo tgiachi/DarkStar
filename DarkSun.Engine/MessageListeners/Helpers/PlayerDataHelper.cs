@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Api.Engine.Interfaces.Core;
-using DarkSun.Database.Entities.Races;
-using DarkSun.Network.Protocol.Messages.Players;
+using DarkStar.Api.Engine.Interfaces.Core;
+using DarkStar.Database.Entities.Races;
+using DarkStar.Network.Protocol.Messages.Players;
 
-namespace DarkSun.Engine.MessageListeners.Helpers
+namespace DarkStar.Engine.MessageListeners.Helpers
 {
     public class PlayerDataHelper
     {

@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Api.Engine.Interfaces.Core;
-using DarkSun.Network.Interfaces;
-using DarkSun.Network.Protocol.Interfaces.Messages;
-using DarkSun.Network.Protocol.Types;
+using DarkStar.Api.Engine.Interfaces.Core;
+using DarkStar.Network.Interfaces;
+using DarkStar.Network.Protocol.Interfaces.Messages;
+using DarkStar.Network.Protocol.Types;
 using Microsoft.Extensions.Logging;
 
-namespace DarkSun.Api.Engine.MessageListeners;
+namespace DarkStar.Api.Engine.MessageListeners;
 
 public class BaseNetworkMessageListener<TMessage> : INetworkServerMessageListener where TMessage : IDarkSunNetworkMessage
 {
@@ -22,7 +22,7 @@ public class BaseNetworkMessageListener<TMessage> : INetworkServerMessageListene
         Engine = engine;
     }
 
-    public async Task OnMessageReceivedAsync(Guid sessionId, DarkSunMessageType messageType, IDarkSunNetworkMessage message)
+    public async Task OnMessageReceivedAsync(Guid sessionId, DarkStarMessageType messageType, IDarkSunNetworkMessage message)
     {
         try
         {
@@ -39,7 +39,7 @@ public class BaseNetworkMessageListener<TMessage> : INetworkServerMessageListene
         }
     }
 
-    public virtual Task<List<IDarkSunNetworkMessage>> OnMessageReceivedAsync(Guid sessionId, DarkSunMessageType messageType, TMessage message)
+    public virtual Task<List<IDarkSunNetworkMessage>> OnMessageReceivedAsync(Guid sessionId, DarkStarMessageType messageType, TMessage message)
     {
         return Task.FromResult(new List<IDarkSunNetworkMessage>());
     }

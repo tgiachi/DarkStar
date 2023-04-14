@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Api.Engine.Attributes.Network;
-using DarkSun.Api.Utils;
+using DarkStar.Api.Engine.Attributes.Network;
+using DarkStar.Api.Utils;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace DarkSun.Engine.Utils
+namespace DarkStar.Engine.Utils
 {
     public static class NetworkListenerRegistrationEx
     {

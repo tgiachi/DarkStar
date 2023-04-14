@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DarkSun.Engine.Attributes.ScriptEngine
+namespace DarkStar.Engine.Attributes.ScriptEngine
 {
     [AttributeUsage(AttributeTargets.Method, Inherited = false)]
     public class ScriptFunctionAttribute : Attribute

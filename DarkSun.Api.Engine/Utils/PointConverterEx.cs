@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Network.Protocol.Messages.Common;
+using DarkStar.Network.Protocol.Messages.Common;
 using SadRogue.Primitives;
 
-namespace DarkSun.Api.Engine.Utils
+namespace DarkStar.Api.Engine.Utils
 {
     public static class PointConverterEx
     {

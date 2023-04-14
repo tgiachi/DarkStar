@@ -1,7 +1,7 @@
-﻿using DarkSun.Api.World.Types.Map;
+﻿using DarkStar.Api.World.Types.Map;
 using ProtoBuf;
 
-namespace DarkSun.Api.Engine.Serialization.Map
+namespace DarkStar.Api.Engine.Serialization.Map
 {
     [ProtoContract]
     public class MapObjectSerialization

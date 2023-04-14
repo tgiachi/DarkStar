@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DarkSun.Api.World.Types.Items;
+namespace DarkStar.Api.World.Types.Items;
 
 public enum ItemRarityType : short
 {

@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-using DarkSun.Api.Serialization.Converters.Base;
-using DarkSun.Api.World.Types.Items;
+using DarkStar.Api.Serialization.Converters.Base;
+using DarkStar.Api.World.Types.Items;
 using TinyCsv.Conversions;
 
-namespace DarkSun.Api.Engine.Serialization.Seeds.Converters
+namespace DarkStar.Api.Engine.Serialization.Seeds.Converters
 {
     public class ItemRarityConverter : BaseEnumConverter<ItemRarityType>
     {

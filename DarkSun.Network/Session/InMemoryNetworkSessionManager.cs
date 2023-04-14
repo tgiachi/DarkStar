@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Network.Session.Data;
-using DarkSun.Network.Session.Interfaces;
+using DarkStar.Network.Session.Data;
+using DarkStar.Network.Session.Interfaces;
 
-namespace DarkSun.Network.Session;
+namespace DarkStar.Network.Session;
 
 public class InMemoryNetworkSessionManager : INetworkSessionManager
 {

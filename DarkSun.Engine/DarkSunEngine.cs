@@ -4,28 +4,25 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Api.Attributes.Services;
-using DarkSun.Api.Data.Config;
-using DarkSun.Api.Engine.Attributes.Network;
-using DarkSun.Api.Engine.Data.Config;
-using DarkSun.Api.Engine.Events.Engine;
-using DarkSun.Api.Engine.Interfaces.Core;
-using DarkSun.Api.Engine.Interfaces.Listener;
-using DarkSun.Api.Engine.Interfaces.Services;
-using DarkSun.Api.Engine.Interfaces.Services.Base;
-using DarkSun.Api.Utils;
-using DarkSun.Network.Client.Interfaces;
-using DarkSun.Network.Interfaces;
-using DarkSun.Network.Protocol.Interfaces.Messages;
-using DarkSun.Network.Protocol.Live;
-using DarkSun.Network.Protocol.Messages.Accounts;
-using DarkSun.Network.Protocol.Types;
-using DarkSun.Network.Server.Interfaces;
-using Microsoft.Extensions.DependencyInjection;
+using DarkStar.Api.Attributes.Services;
+using DarkStar.Api.Engine.Attributes.Network;
+using DarkStar.Api.Engine.Events.Engine;
+using DarkStar.Api.Engine.Interfaces.Core;
+using DarkStar.Api.Engine.Interfaces.Listener;
+using DarkStar.Api.Engine.Interfaces.Services;
+using DarkStar.Api.Engine.Interfaces.Services.Base;
+using DarkStar.Api.Utils;
+using DarkStar.Network.Client.Interfaces;
+using DarkStar.Network.Interfaces;
+using DarkStar.Network.Protocol.Interfaces.Messages;
+using DarkStar.Network.Protocol.Live;
+using DarkStar.Network.Protocol.Messages.Accounts;
+using DarkStar.Network.Server.Interfaces;
+
 using Microsoft.Extensions.Logging;
 using Redbus.Interfaces;
 
-namespace DarkSun.Engine
+namespace DarkStar.Engine
 {
     public class DarkSunEngine : IDarkSunEngine
     {
@@ -156,7 +153,7 @@ namespace DarkSun.Engine
             }
 
             await NetworkServer.StartAsync();
-            JobSchedulerService.AddJob("PingClients",  () =>
+            JobSchedulerService.AddJob("PingClients", () =>
             {
                 _ = Task.Run(() => NetworkServer.BroadcastMessageAsync(new PingMessageResponse { TimeStamp = DateTime.Now.Ticks }));
 
@@ -197,10 +194,10 @@ namespace DarkSun.Engine
         private ValueTask BuildServicesOrderAsync()
         {
             _logger.LogDebug("Building services load order");
-            var services = AssemblyUtils.GetAttribute<DarkSunEngineServiceAttribute>();
+            var services = AssemblyUtils.GetAttribute<DarkStarEngineServiceAttribute>();
             foreach (var serviceType in services)
             {
-                var attr = serviceType.GetCustomAttribute<DarkSunEngineServiceAttribute>()!;
+                var attr = serviceType.GetCustomAttribute<DarkStarEngineServiceAttribute>()!;
                 var interf =
                     AssemblyUtils.GetInterfacesOfType(serviceType)!.First(k => k.Name.EndsWith(serviceType.Name));
                 if (_servicesLoadOrder.TryGetValue(attr.LoadOrder, out var value))

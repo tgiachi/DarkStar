@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Api.World.Types.Map;
-using DarkSun.Network.Protocol.Messages.Common;
+using DarkStar.Api.World.Types.Map;
+using DarkStar.Network.Protocol.Messages.Common;
 using Redbus.Events;
 
-namespace DarkSun.Api.Engine.Events.Map
+namespace DarkStar.Api.Engine.Events.Map
 {
     public class GameObjectAddedEvent : EventBase
     {

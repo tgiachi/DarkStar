@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Api.World.Types.GameObjects;
-using DarkSun.Api.World.Types.Tiles;
-using DarkSun.Database.Entities.Base;
+using DarkStar.Api.World.Types.GameObjects;
+using DarkStar.Api.World.Types.Tiles;
+using DarkStar.Database.Entities.Base;
 using FreeSql.DataAnnotations;
 
-namespace DarkSun.Database.Entities.Objects;
+namespace DarkStar.Database.Entities.Objects;
 
 [Table(Name = "game_objects")]
 public class GameObjectEntity : BaseEntity

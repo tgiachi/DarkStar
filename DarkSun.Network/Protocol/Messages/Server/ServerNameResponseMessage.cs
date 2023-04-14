@@ -1,12 +1,13 @@
-﻿using DarkSun.Network.Attributes;
-using DarkSun.Network.Protocol.Interfaces.Messages;
-using DarkSun.Network.Protocol.Types;
+﻿using DarkStar.Network.Attributes;
+using DarkStar.Network.Protocol.Interfaces.Messages;
+using DarkStar.Network.Protocol.Types;
+
 using ProtoBuf;
 
-namespace DarkSun.Network.Protocol.Messages.Server
+namespace DarkStar.Network.Protocol.Messages.Server
 {
     [ProtoContract]
-    [NetworkMessage(DarkSunMessageType.ServerNameResponse)]
+    [NetworkMessage(DarkStarMessageType.ServerNameResponse)]
     public class ServerNameResponseMessage : IDarkSunNetworkMessage
     {
         [ProtoMember(1)]

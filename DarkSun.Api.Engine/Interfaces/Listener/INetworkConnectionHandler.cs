@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Network.Protocol.Interfaces.Messages;
+using DarkStar.Network.Protocol.Interfaces.Messages;
 
-namespace DarkSun.Api.Engine.Interfaces.Listener;
+namespace DarkStar.Api.Engine.Interfaces.Listener;
 
 public interface INetworkConnectionHandler
 {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DarkSun.Api.Engine.Data.Sessions;
+namespace DarkStar.Api.Engine.Data.Sessions;
 
 public class PlayerSession
 {

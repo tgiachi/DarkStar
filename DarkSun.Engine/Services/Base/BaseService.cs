@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Api.Engine.Interfaces.Core;
-using DarkSun.Api.Engine.Interfaces.Services.Base;
+using DarkStar.Api.Engine.Interfaces.Core;
+using DarkStar.Api.Engine.Interfaces.Services.Base;
 using Microsoft.Extensions.Logging;
 
-namespace DarkSun.Engine.Services.Base
+namespace DarkStar.Engine.Services.Base
 {
     public class BaseService<TService> : IDarkSunEngineService where TService : IDarkSunEngineService
     {

@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Api.Attributes.Services;
-using DarkSun.Api.Engine.Interfaces.Services;
-using DarkSun.Engine.Services.Base;
+using DarkStar.Api.Attributes.Services;
+using DarkStar.Api.Engine.Interfaces.Services;
+using DarkStar.Engine.Services.Base;
+
 using FluentScheduler;
 using Humanizer;
 using Microsoft.Extensions.Logging;
 
-namespace DarkSun.Engine.Services
+namespace DarkStar.Engine.Services
 {
 
-    [DarkSunEngineService(nameof(JobSchedulerService), 3)]
+    [DarkStarEngineService(nameof(JobSchedulerService), 3)]
     public class JobSchedulerService : BaseService<JobSchedulerService>, IJobSchedulerService
     {
         public JobSchedulerService(ILogger<JobSchedulerService> logger) : base(logger)

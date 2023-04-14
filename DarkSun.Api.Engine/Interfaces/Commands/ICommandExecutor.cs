@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DarkSun.Api.Engine.Interfaces.Commands
+namespace DarkStar.Api.Engine.Interfaces.Commands
 {
     public interface ICommandExecutor
     {

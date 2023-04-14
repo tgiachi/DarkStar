@@ -4,10 +4,10 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Api.Engine.Interfaces.Services.Base;
-using DarkSun.Api.Interfaces.Entities;
+using DarkStar.Api.Engine.Interfaces.Services.Base;
+using DarkStar.Api.Interfaces.Entities;
 
-namespace DarkSun.Api.Engine.Interfaces.Services;
+namespace DarkStar.Api.Engine.Interfaces.Services;
 
 public interface IDatabaseService : IDarkSunEngineService
 {

@@ -1,4 +1,4 @@
-﻿namespace DarkSun.Api.Interfaces.Entities;
+﻿namespace DarkStar.Api.Interfaces.Entities;
 
 public interface IBaseEntity
 {

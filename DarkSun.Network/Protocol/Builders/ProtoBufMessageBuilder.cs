@@ -4,22 +4,23 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Api.Utils;
-using DarkSun.Network.Attributes;
-using DarkSun.Network.Data;
-using DarkSun.Network.Protocol.Interfaces.Builders;
-using DarkSun.Network.Protocol.Interfaces.Messages;
-using DarkSun.Network.Protocol.Types;
+using DarkStar.Api.Utils;
+using DarkStar.Network.Attributes;
+using DarkStar.Network.Data;
+using DarkStar.Network.Protocol;
+using DarkStar.Network.Protocol.Interfaces.Builders;
+using DarkStar.Network.Protocol.Interfaces.Messages;
+using DarkStar.Network.Protocol.Types;
 
 using Microsoft.Extensions.Logging;
 using ProtoBuf;
 
-namespace DarkSun.Network.Protocol.Builders;
+namespace DarkStar.Network.Protocol.Builders;
 
 public class ProtoBufMessageBuilder : INetworkMessageBuilder
 {
     private readonly ILogger _logger;
-    private readonly Dictionary<DarkSunMessageType, Type> _messageTypes = new();
+    private readonly Dictionary<DarkStarMessageType, Type> _messageTypes = new();
     private readonly byte[] _separatorBytes = { 0xff, 0xff, 0xff };
 
     public byte[] GetMessageSeparators => _separatorBytes;

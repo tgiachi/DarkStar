@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Api.Utils;
+using DarkStar.Api.Utils;
 using FastEnumUtility;
 using TinyCsv.Conversions;
 
-namespace DarkSun.Api.Serialization.Converters.Base
+namespace DarkStar.Api.Serialization.Converters.Base
 {
     public class BaseEnumConverter<TEnum> : IValueConverter where TEnum : struct, Enum
     {

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Api.World.Types.Tiles;
+using DarkStar.Api.World.Types.Tiles;
 using FastEnumUtility;
 
-namespace DarkSun.Api.World.Types.Utils
+namespace DarkStar.Api.World.Types.Utils
 {
     public static class TilesEnumEx
     {

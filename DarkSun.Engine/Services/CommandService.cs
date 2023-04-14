@@ -1,17 +1,18 @@
 ﻿using System.Diagnostics;
 using System.Reflection;
-using DarkSun.Api.Attributes.Services;
-using DarkSun.Api.Engine.Attributes.Commands;
-using DarkSun.Api.Engine.Interfaces.Commands;
-using DarkSun.Api.Engine.Interfaces.Services;
-using DarkSun.Api.Engine.Types.Commands;
-using DarkSun.Api.Utils;
-using DarkSun.Engine.Services.Base;
+using DarkStar.Api.Attributes.Services;
+using DarkStar.Api.Engine.Attributes.Commands;
+using DarkStar.Api.Engine.Interfaces.Commands;
+using DarkStar.Api.Engine.Interfaces.Services;
+using DarkStar.Api.Engine.Types.Commands;
+using DarkStar.Api.Utils;
+using DarkStar.Engine.Services.Base;
+
 using Microsoft.Extensions.Logging;
 
-namespace DarkSun.Engine.Services
+namespace DarkStar.Engine.Services
 {
-    [DarkSunEngineService(nameof(CommandService), 13)]
+    [DarkStarEngineService(nameof(CommandService), 13)]
     public class CommandService : BaseService<ICommandService>, ICommandService
     {
         private readonly Dictionary<CommandActionType, ICommandActionExecutor> _actionExecutors = new();

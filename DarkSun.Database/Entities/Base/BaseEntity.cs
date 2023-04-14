@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Api.Interfaces.Entities;
+using DarkStar.Api.Interfaces.Entities;
 using FreeSql.DataAnnotations;
 
-namespace DarkSun.Database.Entities.Base;
+namespace DarkStar.Database.Entities.Base;
 
 public class BaseEntity : IBaseEntity
 {

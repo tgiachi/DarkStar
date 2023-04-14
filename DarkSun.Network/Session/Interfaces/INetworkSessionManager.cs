@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Network.Session.Data;
+using DarkStar.Network.Session.Data;
 
-namespace DarkSun.Network.Session.Interfaces;
+namespace DarkStar.Network.Session.Interfaces;
 
 public interface INetworkSessionManager
 {

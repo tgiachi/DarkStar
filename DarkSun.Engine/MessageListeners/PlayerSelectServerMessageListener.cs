@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Api.Engine.Attributes;
-using DarkSun.Api.Engine.Attributes.Network;
-using DarkSun.Api.Engine.Interfaces.Core;
-using DarkSun.Api.Engine.MessageListeners;
-using DarkSun.Network.Protocol.Interfaces.Messages;
-using DarkSun.Network.Protocol.Messages.Players;
-using DarkSun.Network.Protocol.Types;
+using DarkStar.Api.Engine.Attributes.Network;
+using DarkStar.Api.Engine.Interfaces.Core;
+using DarkStar.Api.Engine.MessageListeners;
+using DarkStar.Network.Protocol.Interfaces.Messages;
+using DarkStar.Network.Protocol.Messages.Players;
+using DarkStar.Network.Protocol.Types;
+
 using Microsoft.Extensions.Logging;
 
-namespace DarkSun.Engine.MessageListeners
+namespace DarkStar.Engine.MessageListeners
 {
-    [NetworkMessageListener(DarkSunMessageType.PlayerSelectRequest)]
+    [NetworkMessageListener(DarkStarMessageType.PlayerSelectRequest)]
     public class PlayerSelectMessageListener : BaseNetworkMessageListener<PlayerSelectRequestMessage>
     {
         public PlayerSelectMessageListener(ILogger<BaseNetworkMessageListener<PlayerSelectRequestMessage>> logger,
@@ -23,7 +23,7 @@ namespace DarkSun.Engine.MessageListeners
         }
 
         public override Task<List<IDarkSunNetworkMessage>> OnMessageReceivedAsync(Guid sessionId,
-            DarkSunMessageType messageType, PlayerSelectRequestMessage message)
+            DarkStarMessageType messageType, PlayerSelectRequestMessage message)
         {
             return base.OnMessageReceivedAsync(sessionId, messageType, message);
         }

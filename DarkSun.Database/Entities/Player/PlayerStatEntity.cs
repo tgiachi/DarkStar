@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Database.Entities.Base;
+using DarkStar.Database.Entities.Base;
 using FreeSql.DataAnnotations;
 
-namespace DarkSun.Database.Entities.Player;
+namespace DarkStar.Database.Entities.Player;
 
 [Table(Name = "player_stats")]
 public class PlayerStatEntity : BaseStatEntity

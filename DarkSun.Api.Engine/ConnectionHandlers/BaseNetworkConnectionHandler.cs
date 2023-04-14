@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Api.Engine.Interfaces.Core;
-using DarkSun.Api.Engine.Interfaces.Listener;
-using DarkSun.Network.Protocol.Interfaces.Messages;
+using DarkStar.Api.Engine.Interfaces.Core;
+using DarkStar.Api.Engine.Interfaces.Listener;
+using DarkStar.Network.Protocol.Interfaces.Messages;
 using Microsoft.Extensions.Logging;
 
-namespace DarkSun.Api.Engine.ConnectionHandlers;
+namespace DarkStar.Api.Engine.ConnectionHandlers;
 
 public class BaseNetworkConnectionHandler : INetworkConnectionHandler
 {
