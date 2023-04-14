@@ -51,8 +51,8 @@ namespace DarkSun.Engine
         public INamesService NamesService { get; }
         public ISeedService SeedService { get; }
         public IJobSchedulerService JobSchedulerService { get; }
+        public IItemService ItemService { get; }
         public IEventBus EventBus { get; }
-
 
         public DarkSunEngine(ILogger<DarkSunEngine> logger,
             IBlueprintService blueprintService,
@@ -67,7 +67,9 @@ namespace DarkSun.Engine
             IEventBus eventBus,
             IDarkSunNetworkClient networkClient,
             INamesService namesService,
-            ISeedService seedService, IJobSchedulerService jobSchedulerService)
+            ISeedService seedService,
+            IJobSchedulerService jobSchedulerService,
+            IItemService itemService)
         {
             _logger = logger;
             WorldService = worldService;
@@ -82,6 +84,7 @@ namespace DarkSun.Engine
             NamesService = namesService;
             SeedService = seedService;
             JobSchedulerService = jobSchedulerService;
+            ItemService = itemService;
             CommandService = commandService;
             _container = container;
         }

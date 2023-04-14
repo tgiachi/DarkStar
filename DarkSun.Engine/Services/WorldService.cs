@@ -135,12 +135,12 @@ namespace DarkSun.Engine.Services
             foreach (var gameObject in map.Item1.Entities.Items)
             {
                 var baseGameObject = gameObject as BaseGameObject;
-                mapEntity.Layers.Add(new LayerObjectSerialization()
+                mapEntity.Layers.Add(new ()
                 {
                     Type = (MapLayer)gameObject.Layer,
                     Tile = baseGameObject!.Tile,
                     ObjectId = baseGameObject.ObjectId,
-                    Position = new PointPosition(gameObject.Position.X, gameObject.Position.Y)
+                    Position = new (gameObject.Position.X, gameObject.Position.Y)
                 });
             }
 

@@ -23,7 +23,13 @@ namespace DarkSun.Engine.Services
         protected override ValueTask<bool> StartAsync()
         {
             JobManager.Start();
+            JobManager.JobStart += JobManagerOnJobStart;
             return base.StartAsync();
+        }
+
+        private void JobManagerOnJobStart(JobStartInfo obj)
+        {
+            Logger.LogDebug("Job {Name} started", obj.Name);
         }
 
         public void AddJob(string name, Action action, int seconds, bool runOnce)
