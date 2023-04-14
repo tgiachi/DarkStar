@@ -156,9 +156,10 @@ namespace DarkSun.Engine
             }
 
             await NetworkServer.StartAsync();
-            JobSchedulerService.AddJob("PingClients", async () =>
+            JobSchedulerService.AddJob("PingClients",  () =>
             {
-                await NetworkServer.BroadcastMessageAsync(new PingMessageResponse { TimeStamp = DateTime.Now.Ticks });
+                _ = Task.Run(() => NetworkServer.BroadcastMessageAsync(new PingMessageResponse { TimeStamp = DateTime.Now.Ticks }));
+
             }, (int)TimeSpan.FromMinutes(5).TotalSeconds, false);
 
             _ = Task.Run(async () =>

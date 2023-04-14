@@ -1,4 +1,5 @@
-﻿using System.Numerics;
+﻿
+using System.Numerics;
 
 namespace DarkSun.Api.Utils;
 
@@ -33,6 +34,8 @@ public static class RandomUtils
     {
         return Enumerable.Range(min, Range(min, max));
     }
+
+ 
 
     public static T RandomEnumValue<T>() where T : Enum
     {

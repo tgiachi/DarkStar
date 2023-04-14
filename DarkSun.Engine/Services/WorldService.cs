@@ -10,6 +10,7 @@ using DarkSun.Api.Engine.Map.Entities.Base;
 using DarkSun.Api.Engine.Serialization;
 using DarkSun.Api.Engine.Serialization.Map;
 using DarkSun.Api.Engine.Utils;
+using DarkSun.Api.Utils;
 using DarkSun.Api.World.Types.Map;
 using DarkSun.Api.World.Types.Tiles;
 using DarkSun.Database.Entities.Maps;
@@ -51,7 +52,11 @@ namespace DarkSun.Engine.Services
             await GenerateMapsAsync();
             await SaveMapsAsync();
             Engine.JobSchedulerService.AddJob("SaveMaps",
-                async () => { await SaveMapsAsync(); }, (int)TimeSpan.FromMinutes(_engineConfig.Maps.SaveEveryMinutes).TotalSeconds, false);
+                () =>
+                {
+                    _ = Task.Run(SaveMapsAsync);
+
+                }, (int)TimeSpan.FromMinutes(_engineConfig.Maps.SaveEveryMinutes).TotalSeconds, false);
 
             return true;
         }
@@ -135,12 +140,12 @@ namespace DarkSun.Engine.Services
             foreach (var gameObject in map.Item1.Entities.Items)
             {
                 var baseGameObject = gameObject as BaseGameObject;
-                mapEntity.Layers.Add(new ()
+                mapEntity.Layers.Add(new()
                 {
                     Type = (MapLayer)gameObject.Layer,
                     Tile = baseGameObject!.Tile,
                     ObjectId = baseGameObject.ObjectId,
-                    Position = new (gameObject.Position.X, gameObject.Position.Y)
+                    Position = new(gameObject.Position.X, gameObject.Position.Y)
                 });
             }
 
@@ -157,15 +162,15 @@ namespace DarkSun.Engine.Services
             switch (mapType)
             {
                 case MapType.City:
-                    return (id, await GenerateCityMapAsync(id));
+                    return (id, await GenerateCityMapAsync());
                 case MapType.Dungeon:
-                    return (id, await GenerateDungeonMapAsync(id));
+                    return (id, await GenerateDungeonMapAsync());
             }
 
             throw new Exception($"Can't find map type generator {mapType}");
         }
 
-        private ValueTask<Map> GenerateCityMapAsync(string id)
+        private ValueTask<Map> GenerateCityMapAsync()
         {
             var cityMapGenerator = new Generator(_engineConfig.Maps.Cities.Width, _engineConfig.Maps.Cities.Height)
                 .ConfigAndGenerateSafe(generator =>
@@ -205,6 +210,18 @@ namespace DarkSun.Engine.Services
 
         }
 
+        public PointPosition GetRandomWalkablePosition(string mapId)
+        {
+            var map = _maps[mapId].Item1;
+            var randomPosition = RandPointUtils.RandomPoint(map.Width, map.Height);
+            while (map.GetTerrainAt(randomPosition) is not IGameObject terrainGameObject ||
+                   !terrainGameObject.IsWalkable)
+            {
+                randomPosition = RandPointUtils.RandomPoint(map.Width, map.Height);
+            }
+            return randomPosition.ToPointPosition();
+        }
+
         private void HandleGameObjectAdded(string mapId, IGameObject gameObject, PointPosition position)
         {
             var baseGameObject = gameObject as BaseGameObject;
@@ -226,7 +243,7 @@ namespace DarkSun.Engine.Services
                                baseGameObject!.ObjectId));
         }
 
-        private ValueTask<Map> GenerateDungeonMapAsync(string id)
+        private ValueTask<Map> GenerateDungeonMapAsync()
         {
             var dungeonGenerator = new Generator(_engineConfig.Maps.Dungeons.Width, _engineConfig.Maps.Dungeons.Height)
                 .ConfigAndGenerateSafe(generator =>

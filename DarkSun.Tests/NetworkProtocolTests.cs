@@ -68,7 +68,7 @@ public class NetworkProtocolTests
             new ProtoBufMessageBuilder(new NullLogger<ProtoBufMessageBuilder>()),
             new DarkSunNetworkServerConfig() { Address = IPAddress.Any.ToString(), Port = 9000 });
 
-        server.StartAsync().GetAwaiter().GetResult();
+        await server.StartAsync();
         Assert.IsTrue(server.IsStarted);
         var tcpClient = new TcpClient();
         await tcpClient.ConnectAsync("127.0.0.1", 9000);

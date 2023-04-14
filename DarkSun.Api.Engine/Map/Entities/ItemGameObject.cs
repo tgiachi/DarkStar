@@ -13,7 +13,7 @@ namespace DarkSun.Api.Engine.Map.Entities
 {
     public class ItemGameObject : BaseGameObject
     {
-        public ItemGameObject(Point position) : base(position, (int)MapLayer.Items,  true, false, false)
+        public ItemGameObject(Point position) : base(position, (int)MapLayer.Items,  true, false)
         {
         }
     }
