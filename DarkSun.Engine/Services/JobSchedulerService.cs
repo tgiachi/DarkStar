@@ -7,6 +7,7 @@ using DarkSun.Api.Attributes.Services;
 using DarkSun.Api.Engine.Interfaces.Services;
 using DarkSun.Engine.Services.Base;
 using FluentScheduler;
+using Humanizer;
 using Microsoft.Extensions.Logging;
 
 namespace DarkSun.Engine.Services
@@ -27,7 +28,7 @@ namespace DarkSun.Engine.Services
 
         public void AddJob(string name, Action action, int seconds, bool runOnce)
         {
-            Logger.LogDebug("Adding scheduled job: {Name} every {Seconds} seconds, runOne: {RunOnce}", name, seconds, runOnce);
+            Logger.LogDebug("Adding scheduled job: {Name} every {Seconds} seconds, runOne: {RunOnce}", name, seconds.Seconds(), runOnce);
             JobManager.AddJob(action, schedule => schedule.WithName(name).ToRunEvery(seconds).Seconds());
         }
 

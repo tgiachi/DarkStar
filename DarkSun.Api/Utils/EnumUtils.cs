@@ -1,4 +1,6 @@
-﻿namespace DarkSun.Api.Utils;
+﻿using FastEnumUtility;
+
+namespace DarkSun.Api.Utils;
 
 public static class EnumUtils
 {
@@ -6,13 +8,13 @@ public static class EnumUtils
 
     public static TEnum RandomEnumValue<TEnum>(this TEnum _) where TEnum : struct, Enum
     {
-        var v = Enum.GetValues(typeof(TEnum));
-        return (TEnum)v.GetValue(s_random.Next(v.Length))!;
+        var v = FastEnum.GetValues<TEnum>();
+        return v[s_random.Next(v.Count)];
     }
 
     public static List<T> SearchType<T>(this T _, string tileType) where T : struct, Enum
     {
-        return Enum.GetValues<T>().Where(s => s.ToString().ToLower().StartsWith(tileType.ToLower()))
+        return FastEnum.GetValues<T>().Where(s => s.ToString().ToLower().StartsWith(tileType.ToLower()))
             .ToList();
     }
 }

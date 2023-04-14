@@ -3,11 +3,13 @@ using System.Diagnostics;
 using DarkSun.Api.Attributes.Services;
 using DarkSun.Api.Data.Config;
 using DarkSun.Api.Engine.Data.Config;
+using DarkSun.Api.Engine.Events.Map;
 using DarkSun.Api.Engine.Interfaces.Services;
 using DarkSun.Api.Engine.Map.Entities;
 using DarkSun.Api.Engine.Map.Entities.Base;
 using DarkSun.Api.Engine.Serialization;
 using DarkSun.Api.Engine.Serialization.Map;
+using DarkSun.Api.Engine.Utils;
 using DarkSun.Api.World.Types.Map;
 using DarkSun.Api.World.Types.Tiles;
 using DarkSun.Database.Entities.Maps;
@@ -31,7 +33,6 @@ namespace DarkSun.Engine.Services
 
         private readonly ConcurrentDictionary<string, (Map, MapType, MapInfo)> _maps = new();
 
-
         public WorldService(ILogger<WorldService> logger, EngineConfig engineConfig, DirectoriesConfig directoriesConfig) : base(logger)
         {
             _engineConfig = engineConfig;
@@ -50,12 +51,12 @@ namespace DarkSun.Engine.Services
             await GenerateMapsAsync();
             await SaveMapsAsync();
             Engine.JobSchedulerService.AddJob("SaveMaps",
-                async () => { await SaveMapsAsync();}, (int)TimeSpan.FromMinutes(_engineConfig.Maps.SaveEveryMinutes).TotalSeconds, false);
+                async () => { await SaveMapsAsync(); }, (int)TimeSpan.FromMinutes(_engineConfig.Maps.SaveEveryMinutes).TotalSeconds, false);
 
             return true;
         }
 
-        
+
 
         private async ValueTask GenerateMapsAsync()
         {
@@ -174,13 +175,11 @@ namespace DarkSun.Engine.Services
 
             var wallsFloors = cityMapGenerator.Context.GetFirst<ArrayView<bool>>("WallFloor");
             var map = new Map(_engineConfig.Maps.Cities.Width, _engineConfig.Maps.Cities.Height,
-                Enum.GetValues<MapLayer>().Length, Distance.Chebyshev);
+                FastEnum.GetValues<MapLayer>().Count, Distance.Chebyshev);
 
             map.ApplyTerrainOverlay(wallsFloors, (pos, val) => val
                 ? new TerrainGameObject(pos) { IsWalkable = true, IsTransparent = true, Tile = TileType.Null }
                 : new TerrainGameObject(pos, false, false) { Tile = TileType.Null });
-
-
 
             return ValueTask.FromResult(map);
 
@@ -188,18 +187,43 @@ namespace DarkSun.Engine.Services
 
         private void HandleMapEvents(string id, Map map)
         {
-            map.ObjectAdded += (sender, args) =>
+            map.ObjectAdded += (_, args) =>
             {
-                Logger.LogDebug("Added {GameObject} to map {MapId}", args.Item, id);
+                Logger.LogDebug("Added {GameObject} to map {MapId} Layer: {Layer}", args.Item, id, ((MapLayer)args.Item.Layer).FastToString());
+                HandleGameObjectAdded(id, args.Item, args.Position.ToPointPosition());
             };
-            map.ObjectMoved += (sender, args) =>
+            map.ObjectMoved += (_, args) =>
             {
-                Logger.LogDebug("Moved {GameObject} to map {MapId}", args.Item, id);
+                Logger.LogDebug("Moved {GameObject} to map {MapId} Layer: {Layer}", args.Item, id, ((MapLayer)args.Item.Layer).FastToString());
+                HandleGameObjectMoved(id, args.Item, args.OldPosition.ToPointPosition(), args.NewPosition.ToPointPosition());
             };
-            map.ObjectRemoved += (sender, args) =>
+            map.ObjectRemoved += (_, args) =>
             {
-                Logger.LogDebug("Removed {GameObject} from map {MapId}", args.Item, id);
+                Logger.LogDebug("Removed {GameObject} to map {MapId} Layer: {Layer}", args.Item, id, ((MapLayer)args.Item.Layer).FastToString());
+                HandleGameObjectRemoved(id, args.Item, args.Position.ToPointPosition());
             };
+
+        }
+
+        private void HandleGameObjectAdded(string mapId, IGameObject gameObject, PointPosition position)
+        {
+            var baseGameObject = gameObject as BaseGameObject;
+            Engine.EventBus.PublishAsync(new GameObjectAddedEvent(mapId, (MapLayer)gameObject.Layer, position,
+                baseGameObject!.ObjectId));
+        }
+
+        private void HandleGameObjectMoved(string mapId, IGameObject gameObject, PointPosition oldPosition, PointPosition newPosition)
+        {
+            var baseGameObject = gameObject as BaseGameObject;
+            Engine.EventBus.PublishAsync(new GameObjectMovedEvent(mapId, (MapLayer)gameObject.Layer, oldPosition, newPosition,
+                               baseGameObject!.ObjectId));
+        }
+
+        private void HandleGameObjectRemoved(string mapId, IGameObject gameObject, PointPosition position)
+        {
+            var baseGameObject = gameObject as BaseGameObject;
+            Engine.EventBus.PublishAsync(new GameObjectRemovedEvent(mapId, (MapLayer)gameObject.Layer, position,
+                               baseGameObject!.ObjectId));
         }
 
         private ValueTask<Map> GenerateDungeonMapAsync(string id)
@@ -211,7 +235,7 @@ namespace DarkSun.Engine.Services
                 }, 3);
 
             var map = new Map(_engineConfig.Maps.Dungeons.Width, _engineConfig.Maps.Dungeons.Height,
-                Enum.GetValues<MapLayer>().Length, Distance.Chebyshev);
+                FastEnum.GetValues<MapLayer>().Count, Distance.Chebyshev);
 
             var wallsFloors = dungeonGenerator.Context.GetFirst<ArrayView<bool>>("WallFloor");
 

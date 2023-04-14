@@ -17,6 +17,7 @@ using DarkSun.Api.Utils;
 using DarkSun.Network.Client.Interfaces;
 using DarkSun.Network.Interfaces;
 using DarkSun.Network.Protocol.Interfaces.Messages;
+using DarkSun.Network.Protocol.Live;
 using DarkSun.Network.Protocol.Messages.Accounts;
 using DarkSun.Network.Protocol.Types;
 using DarkSun.Network.Server.Interfaces;
@@ -152,12 +153,18 @@ namespace DarkSun.Engine
             }
 
             await NetworkServer.StartAsync();
+            JobSchedulerService.AddJob("PingClients", async () =>
+            {
+                await NetworkServer.BroadcastMessageAsync(new PingMessageResponse { TimeStamp = DateTime.Now.Ticks });
+            }, (int)TimeSpan.FromMinutes(5).TotalSeconds, false);
+
             _ = Task.Run(async () =>
             {
                 await _networkClient.ConnectAsync();
                 await _networkClient.SendMessageAsync(new AccountCreateRequestMessage()
                 {
-                    Email = "test@test.com", Password = "1234"
+                    Email = "test@test.com",
+                    Password = "1234"
                 });
                 await _networkClient.SendMessageAsync(new AccountLoginRequestMessage("test@test.com", "12345"));
                 await _networkClient.SendMessageAsync(new AccountLoginRequestMessage("test@test.com", "1234"));
