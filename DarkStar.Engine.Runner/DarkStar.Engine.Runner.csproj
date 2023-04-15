@@ -13,8 +13,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\DarkSun.Engine.Http\DarkStar.Engine.Http.csproj" />
-        <ProjectReference Include="..\DarkSun.Engine\DarkStar.Engine.csproj" />
+        <ProjectReference Include="..\DarkStar.Engine.Http\DarkStar.Engine.Http.csproj" />
+        <ProjectReference Include="..\DarkStar.Engine\DarkStar.Engine.csproj" />
     </ItemGroup>
 
     <ItemGroup>

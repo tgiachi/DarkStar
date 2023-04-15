@@ -22,7 +22,7 @@ namespace DarkStar.Engine.Services
 
         public DiagnosticService(ILogger<DiagnosticService> logger, DirectoriesConfig directoriesConfig) : base(logger)
         {
-            _pidFileName = Path.Join(directoriesConfig[DirectoryNameType.Root], "darksun.pid");
+            _pidFileName = Path.Join(directoriesConfig[DirectoryNameType.Root], "DarkStar.pid");
         }
 
         protected override ValueTask<bool> StartAsync()

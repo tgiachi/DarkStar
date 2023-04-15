@@ -21,7 +21,7 @@ You can find me on linkedin [Tommaso Giachi | LinkedIn](https://www.linkedin.com
 
 **The project is still in the early stage**
 
-Dark Sun is a fantasy roguelike game where the entire game world is procedurally generated. In this game, the player has to go through the underworld of the game,
+Dark Star is a fantasy roguelike game where the entire game world is procedurally generated. In this game, the player has to go through the underworld of the game,
 
 encountering monsters and exploring procedurally generated dungeons. The game is known for its difficulty, as the player has to fight for survival in a hostile world, where even one wrong choice can lead to the death of his character.
 
@@ -56,7 +56,7 @@ In Dark Star, the player has the choice between different character classes, eac
 
 # Inspirations
 
-For the creation of Dark Sun I was inspired by
+For the creation of Dark Star I was inspired by
 
 - NetHack
 - Tales of Maj'Eyal

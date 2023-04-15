@@ -19,9 +19,9 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\DarkSun.Api.Engine\DarkStar.Api.Engine.csproj" />
-        <ProjectReference Include="..\DarkSun.Api\DarkStar.Api.csproj" />
-        <ProjectReference Include="..\DarkSun.Network\DarkStar.Network.csproj" />
+        <ProjectReference Include="..\DarkStar.Api.Engine\DarkStar.Api.Engine.csproj" />
+        <ProjectReference Include="..\DarkStar.Api\DarkStar.Api.csproj" />
+        <ProjectReference Include="..\DarkStar.Network\DarkStar.Network.csproj" />
     </ItemGroup>
 
     <ItemGroup>

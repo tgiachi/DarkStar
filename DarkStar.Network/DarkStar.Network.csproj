@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DarkSun.Api\DarkStar.Api.csproj" />
+    <ProjectReference Include="..\DarkStar.Api\DarkStar.Api.csproj" />
   </ItemGroup>
 
   <ItemGroup>
