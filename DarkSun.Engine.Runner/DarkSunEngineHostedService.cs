@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Api.Engine.Interfaces.Core;
-using DarkSun.Api.Engine.Interfaces.Services.Base;
+using DarkStar.Api.Engine.Interfaces.Core;
+
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Serilog;
 using ILogger = Microsoft.Extensions.Logging.ILogger;
 
-namespace DarkSun.Engine.Runner;
+namespace DarkStar.Engine.Runner;
 
 public class DarkSunEngineHostedService : IHostedService
 {

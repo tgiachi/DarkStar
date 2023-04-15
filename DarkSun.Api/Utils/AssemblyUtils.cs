@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace DarkSun.Api.Utils;
+namespace DarkStar.Api.Utils;
 
 public class AssemblyUtils
 {

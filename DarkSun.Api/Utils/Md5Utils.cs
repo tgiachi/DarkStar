@@ -1,7 +1,7 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
 
-namespace DarkSun.Api.Utils;
+namespace DarkStar.Api.Utils;
 
 public static class Md5Utils
 {

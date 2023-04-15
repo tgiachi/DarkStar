@@ -1,10 +1,10 @@
-﻿using DarkSun.Engine.Http.Controllers;
+﻿using DarkStar.Engine.Http.Controllers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 
-namespace DarkSun.Engine.Http
+namespace DarkStar.Engine.Http
 {
     public static class WebModuleLoaderExtension
     {

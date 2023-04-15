@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Network.Interfaces;
-using DarkSun.Network.Protocol.Interfaces.Messages;
-using DarkSun.Network.Protocol.Types;
+using DarkStar.Network.Interfaces;
+using DarkStar.Network.Protocol.Interfaces.Messages;
+using DarkStar.Network.Protocol.Types;
 
-namespace DarkSun.Network.Server.Interfaces;
+namespace DarkStar.Network.Server.Interfaces;
 
 public interface IDarkSunNetworkServer
 {
-    delegate Task MessageReceivedDelegate(Guid sessionId, DarkSunMessageType messageType,
+    delegate Task MessageReceivedDelegate(Guid sessionId, DarkStarMessageType messageType,
         IDarkSunNetworkMessage message);
 
     delegate Task<List<IDarkSunNetworkMessage>> ClientConnectedMessages(Guid sessionId);
@@ -27,6 +27,6 @@ public interface IDarkSunNetworkServer
     Task SendMessageAsync(Guid sessionId, IDarkSunNetworkMessage message);
     Task SendMessageAsync(Guid sessionId, List<IDarkSunNetworkMessage> message);
     Task BroadcastMessageAsync(IDarkSunNetworkMessage message);
-    Task DispatchMessageReceivedAsync(Guid sessionId, DarkSunMessageType messageType, IDarkSunNetworkMessage message);
-    void RegisterMessageListener(DarkSunMessageType messageType, INetworkServerMessageListener serverMessageListener);
+    Task DispatchMessageReceivedAsync(Guid sessionId, DarkStarMessageType messageType, IDarkSunNetworkMessage message);
+    void RegisterMessageListener(DarkStarMessageType messageType, INetworkServerMessageListener serverMessageListener);
 }

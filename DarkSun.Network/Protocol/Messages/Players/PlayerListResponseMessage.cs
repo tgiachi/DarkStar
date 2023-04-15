@@ -1,14 +1,14 @@
-﻿
-using DarkSun.Api.World.Types.Tiles;
-using DarkSun.Network.Attributes;
-using DarkSun.Network.Protocol.Interfaces.Messages;
-using DarkSun.Network.Protocol.Types;
+﻿using DarkStar.Api.World.Types.Tiles;
+using DarkStar.Network.Attributes;
+using DarkStar.Network.Protocol.Interfaces.Messages;
+using DarkStar.Network.Protocol.Types;
+
 using ProtoBuf;
 
 
-namespace DarkSun.Network.Protocol.Messages.Players
+namespace DarkStar.Network.Protocol.Messages.Players
 {
-    [NetworkMessage(DarkSunMessageType.PlayerListResponse)]
+    [NetworkMessage(DarkStarMessageType.PlayerListResponse)]
     [ProtoContract]
     public class PlayerListResponseMessage : IDarkSunNetworkMessage
     {

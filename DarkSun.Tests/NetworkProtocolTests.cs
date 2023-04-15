@@ -1,15 +1,14 @@
 ﻿using System.Net;
 using System.Net.Sockets;
-using DarkSun.Network.Data;
-using DarkSun.Network.Protocol.Builders;
-using DarkSun.Network.Protocol.Live;
-using DarkSun.Network.Protocol.Messages;
-using DarkSun.Network.Protocol.Messages.Server;
-using DarkSun.Network.Server;
-using DarkSun.Network.Session;
+using DarkStar.Network.Data;
+using DarkStar.Network.Protocol.Builders;
+using DarkStar.Network.Protocol.Live;
+using DarkStar.Network.Protocol.Messages.Server;
+using DarkStar.Network.Server;
+using DarkStar.Network.Session;
 using Microsoft.Extensions.Logging.Abstractions;
 
-namespace DarkSun.Tests;
+namespace DarkStar.Tests;
 
 [TestClass]
 public class NetworkProtocolTests
@@ -42,7 +41,7 @@ public class NetworkProtocolTests
         var server = new TcpNetworkServer(new NullLogger<TcpNetworkServer>(),
             new InMemoryNetworkSessionManager(),
             new ProtoBufMessageBuilder(new NullLogger<ProtoBufMessageBuilder>()),
-            new DarkSunNetworkServerConfig() { Address = IPAddress.Any.ToString(), Port = 9000 });
+            new DarkStarNetworkServerConfig() { Address = IPAddress.Any.ToString(), Port = 9000 });
 
         await server.StartAsync();
         Assert.IsTrue(server.IsStarted);
@@ -66,7 +65,7 @@ public class NetworkProtocolTests
         var server = new TcpNetworkServer(new NullLogger<TcpNetworkServer>(),
             new InMemoryNetworkSessionManager(),
             new ProtoBufMessageBuilder(new NullLogger<ProtoBufMessageBuilder>()),
-            new DarkSunNetworkServerConfig() { Address = IPAddress.Any.ToString(), Port = 9000 });
+            new DarkStarNetworkServerConfig() { Address = IPAddress.Any.ToString(), Port = 9000 });
 
         await server.StartAsync();
         Assert.IsTrue(server.IsStarted);

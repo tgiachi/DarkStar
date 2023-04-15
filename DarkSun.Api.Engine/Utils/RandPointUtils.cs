@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Api.Utils;
+using DarkStar.Api.Utils;
 using SadRogue.Primitives;
 
-namespace DarkSun.Api.Engine.Utils
+namespace DarkStar.Api.Engine.Utils
 {
     public static class RandPointUtils
     {

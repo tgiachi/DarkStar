@@ -1,9 +1,9 @@
-﻿using DarkSun.Api.Engine.Interfaces.Services.Base;
-using DarkSun.Api.World.Types.Tiles;
-using DarkSun.Network.Protocol.Messages.Common;
+﻿using DarkStar.Api.Engine.Interfaces.Services.Base;
+using DarkStar.Api.World.Types.Tiles;
+using DarkStar.Network.Protocol.Messages.Common;
 using GoRogue.GameFramework;
 
-namespace DarkSun.Api.Engine.Interfaces.Services;
+namespace DarkStar.Api.Engine.Interfaces.Services;
 
 public interface IWorldService : IDarkSunEngineService
 {

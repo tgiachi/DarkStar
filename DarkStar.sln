@@ -3,21 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkSun.Api", "DarkSun.Api\DarkSun.Api.csproj", "{E25815E1-C81D-4CD2-9F69-3948198DEC2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkStar.Api", "DarkSun.Api\DarkStar.Api.csproj", "{E25815E1-C81D-4CD2-9F69-3948198DEC2C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkSun.Network", "DarkSun.Network\DarkSun.Network.csproj", "{CE83DEE6-FEA9-4840-9E1A-BA6F28781964}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkStar.Network", "DarkSun.Network\DarkStar.Network.csproj", "{CE83DEE6-FEA9-4840-9E1A-BA6F28781964}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkSun.Engine", "DarkSun.Engine\DarkSun.Engine.csproj", "{B27CB66D-7116-4D8F-A80B-A21742339A58}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkStar.Engine", "DarkSun.Engine\DarkStar.Engine.csproj", "{B27CB66D-7116-4D8F-A80B-A21742339A58}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkSun.Engine.Runner", "DarkSun.Engine.Runner\DarkSun.Engine.Runner.csproj", "{9F4EF0FD-BABC-4F17-B2CC-715850F097A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkStar.Engine.Runner", "DarkSun.Engine.Runner\DarkStar.Engine.Runner.csproj", "{9F4EF0FD-BABC-4F17-B2CC-715850F097A8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkSun.Tests", "DarkSun.Tests\DarkSun.Tests.csproj", "{38714701-606F-4F97-BA51-7E5418996664}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkStar.Tests", "DarkSun.Tests\DarkStar.Tests.csproj", "{38714701-606F-4F97-BA51-7E5418996664}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkSun.Database", "DarkSun.Database\DarkSun.Database.csproj", "{1617AEA2-D8CA-47B6-B5EE-36E60BF88E0C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkStar.Database", "DarkSun.Database\DarkStar.Database.csproj", "{1617AEA2-D8CA-47B6-B5EE-36E60BF88E0C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkSun.Api.Engine", "DarkSun.Api.Engine\DarkSun.Api.Engine.csproj", "{4B6D193E-EB3E-4B53-B85A-BC57DF0282F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkStar.Api.Engine", "DarkSun.Api.Engine\DarkStar.Api.Engine.csproj", "{4B6D193E-EB3E-4B53-B85A-BC57DF0282F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkSun.Engine.Http", "DarkSun.Engine.Http\DarkSun.Engine.Http.csproj", "{04B44144-4297-4860-A93A-465D17FB287E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkStar.Engine.Http", "DarkSun.Engine.Http\DarkStar.Engine.Http.csproj", "{04B44144-4297-4860-A93A-465D17FB287E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

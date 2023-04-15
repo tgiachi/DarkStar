@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ProtoBuf;
 
-namespace DarkSun.Api.Engine.Serialization
+namespace DarkStar.Api.Engine.Serialization
 {
     public class BinarySerialization
     {

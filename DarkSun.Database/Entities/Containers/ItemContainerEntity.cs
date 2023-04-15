@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Database.Entities.Base;
-using DarkSun.Database.Entities.Player;
+using DarkStar.Database.Entities.Base;
+using DarkStar.Database.Entities.Player;
 using FreeSql.DataAnnotations;
 
-namespace DarkSun.Database.Entities.Containers;
+namespace DarkStar.Database.Entities.Containers;
 
 [Table(Name = "item_containers")]
 public class ItemContainerEntity : BaseEntity

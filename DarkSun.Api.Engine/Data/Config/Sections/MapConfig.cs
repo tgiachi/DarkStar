@@ -1,6 +1,4 @@
-﻿
-
-namespace DarkSun.Api.Engine.Data.Config.Sections
+﻿namespace DarkStar.Api.Engine.Data.Config.Sections
 {
     public class MapDefaultSizes
     {

@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Api.Engine.Attributes.Seed;
-using DarkSun.Api.Engine.Serialization.Seeds.Converters;
-using DarkSun.Api.World.Types.Map;
+using DarkStar.Api.Engine.Attributes.Seed;
+using DarkStar.Api.Engine.Serialization.Seeds.Converters;
+using DarkStar.Api.World.Types.Map;
+
 using TinyCsv.Attributes;
 
-namespace DarkSun.Api.Engine.Serialization.Seeds
+namespace DarkStar.Api.Engine.Serialization.Seeds
 {
     [SeedObject("ItemDrops")]
     [HasHeaderRecord(true)]

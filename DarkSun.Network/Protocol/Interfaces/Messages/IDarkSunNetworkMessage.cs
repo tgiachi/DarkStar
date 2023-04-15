@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace DarkSun.Network.Protocol.Interfaces.Messages;
+namespace DarkStar.Network.Protocol.Interfaces.Messages;
 
 
 public interface IDarkSunNetworkMessage

@@ -1,6 +1,6 @@
-﻿using DarkSun.Api.Engine.Map.Entities;
+﻿using DarkStar.Api.Engine.Map.Entities;
 
-namespace DarkSun.Api.Engine.Interfaces.Objects;
+namespace DarkStar.Api.Engine.Interfaces.Objects;
 
 public interface IItemAction
 {

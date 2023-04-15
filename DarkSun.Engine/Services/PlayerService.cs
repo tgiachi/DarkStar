@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Api.Attributes.Services;
-using DarkSun.Api.Engine.Data.Sessions;
-using DarkSun.Api.Engine.Interfaces.Services;
-using DarkSun.Api.World.Types.Tiles;
-using DarkSun.Database.Entities.Base;
-using DarkSun.Database.Entities.Player;
-using DarkSun.Database.Entities.Races;
-using DarkSun.Engine.Services.Base;
+using DarkStar.Api.Attributes.Services;
+using DarkStar.Api.Engine.Data.Sessions;
+using DarkStar.Api.Engine.Interfaces.Services;
+using DarkStar.Api.World.Types.Tiles;
+using DarkStar.Database.Entities.Base;
+using DarkStar.Database.Entities.Player;
+using DarkStar.Database.Entities.Races;
+using DarkStar.Engine.Services.Base;
+
 using Microsoft.Extensions.Logging;
 
-namespace DarkSun.Engine.Services
+namespace DarkStar.Engine.Services
 {
-    [DarkSunEngineService("PlayerService", 6)]
+    [DarkStarEngineService("PlayerService", 6)]
     public class PlayerService : BaseService<PlayerService>, IPlayerService
     {
         private readonly Dictionary<Guid, PlayerSession> _playerSessions = new();

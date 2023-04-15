@@ -1,12 +1,12 @@
-﻿using DarkSun.Api.Engine.Interfaces.Services;
-using DarkSun.Network.Server.Interfaces;
+﻿using DarkStar.Api.Engine.Interfaces.Services;
+using DarkStar.Network.Server.Interfaces;
 using Redbus.Interfaces;
 
-namespace DarkSun.Api.Engine.Interfaces.Core;
+namespace DarkStar.Api.Engine.Interfaces.Core;
 
 public interface IDarkSunEngine
 {
-    string ServerName { get;set;  }
+    string ServerName { get; set; }
     string ServerMotd { get; set; }
     IWorldService WorldService { get; }
     IBlueprintService BlueprintService { get; }

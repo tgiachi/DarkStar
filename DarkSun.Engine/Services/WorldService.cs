@@ -1,21 +1,21 @@
 ﻿using System.Collections.Concurrent;
 using System.Diagnostics;
-using DarkSun.Api.Attributes.Services;
-using DarkSun.Api.Data.Config;
-using DarkSun.Api.Engine.Data.Config;
-using DarkSun.Api.Engine.Events.Map;
-using DarkSun.Api.Engine.Interfaces.Services;
-using DarkSun.Api.Engine.Map.Entities;
-using DarkSun.Api.Engine.Map.Entities.Base;
-using DarkSun.Api.Engine.Serialization;
-using DarkSun.Api.Engine.Serialization.Map;
-using DarkSun.Api.Engine.Utils;
-using DarkSun.Api.Utils;
-using DarkSun.Api.World.Types.Map;
-using DarkSun.Api.World.Types.Tiles;
-using DarkSun.Database.Entities.Maps;
-using DarkSun.Engine.Services.Base;
-using DarkSun.Network.Protocol.Messages.Common;
+using DarkStar.Api.Attributes.Services;
+using DarkStar.Api.Data.Config;
+using DarkStar.Api.Engine.Data.Config;
+using DarkStar.Api.Engine.Events.Map;
+using DarkStar.Api.Engine.Interfaces.Services;
+using DarkStar.Api.Engine.Map.Entities;
+using DarkStar.Api.Engine.Map.Entities.Base;
+using DarkStar.Api.Engine.Serialization;
+using DarkStar.Api.Engine.Serialization.Map;
+using DarkStar.Api.Engine.Utils;
+using DarkStar.Api.World.Types.Map;
+using DarkStar.Api.World.Types.Tiles;
+using DarkStar.Database.Entities.Maps;
+using DarkStar.Engine.Services.Base;
+using DarkStar.Network.Protocol.Messages.Common;
+
 using FastEnumUtility;
 using GoRogue;
 using GoRogue.GameFramework;
@@ -24,9 +24,9 @@ using Microsoft.Extensions.Logging;
 using SadRogue.Primitives;
 using SadRogue.Primitives.GridViews;
 
-namespace DarkSun.Engine.Services
+namespace DarkStar.Engine.Services
 {
-    [DarkSunEngineService("WorldService", 10)]
+    [DarkStarEngineService("WorldService", 10)]
     public class WorldService : BaseService<IWorldService>, IWorldService
     {
         private readonly EngineConfig _engineConfig;
@@ -98,7 +98,7 @@ namespace DarkSun.Engine.Services
             {
                 var map = maps.Value;
                 var mapId = maps.Key;
-                await Engine.DatabaseService.InsertAsync<MapEntity>(new MapEntity()
+                await Engine.DatabaseService.InsertAsync(new MapEntity()
                 {
                     Name = map.Item3.Name,
                     MapId = mapId,
@@ -221,7 +221,7 @@ namespace DarkSun.Engine.Services
         public bool AddPlayerOnMap(string mapId, Guid playerId, PointPosition position, TileType tile)
         {
             var map = _maps[mapId].Item1;
-            
+
             map.AddEntity(new PlayerGameObject(position.ToPoint())
             {
                 Tile = tile,

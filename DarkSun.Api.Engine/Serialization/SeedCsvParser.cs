@@ -4,7 +4,7 @@ using System.Text;
 using TinyCsv;
 using TinyCsv.Extensions;
 
-namespace DarkSun.Api.Engine.Serialization
+namespace DarkStar.Api.Engine.Serialization
 {
     public class SeedCsvParser
     {

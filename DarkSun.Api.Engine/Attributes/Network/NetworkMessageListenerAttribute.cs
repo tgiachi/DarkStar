@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Network.Protocol.Types;
+using DarkStar.Network.Protocol.Types;
 
-namespace DarkSun.Api.Engine.Attributes.Network;
+namespace DarkStar.Api.Engine.Attributes.Network;
 
 [AttributeUsage(AttributeTargets.Class)]
 public class NetworkMessageListenerAttribute : Attribute
 {
-    public DarkSunMessageType MessageType { get; set; }
+    public DarkStarMessageType MessageType { get; set; }
 
-    public NetworkMessageListenerAttribute(DarkSunMessageType messageType)
+    public NetworkMessageListenerAttribute(DarkStarMessageType messageType)
     {
         MessageType = messageType;
     }

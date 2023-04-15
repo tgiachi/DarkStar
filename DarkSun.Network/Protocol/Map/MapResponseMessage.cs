@@ -1,14 +1,15 @@
-﻿using DarkSun.Api.World.Types.Map;
-using DarkSun.Network.Attributes;
-using DarkSun.Network.Protocol.Interfaces.Messages;
-using DarkSun.Network.Protocol.Messages.Common;
-using DarkSun.Network.Protocol.Types;
+﻿using DarkStar.Api.World.Types.Map;
+using DarkStar.Network.Attributes;
+using DarkStar.Network.Protocol.Interfaces.Messages;
+using DarkStar.Network.Protocol.Messages.Common;
+using DarkStar.Network.Protocol.Types;
+
 using ProtoBuf;
 
-namespace DarkSun.Network.Protocol.Map
+namespace DarkStar.Network.Protocol.Map
 {
     [ProtoContract]
-    [NetworkMessage(DarkSunMessageType.MapResponse)]
+    [NetworkMessage(DarkStarMessageType.MapResponse)]
     public class MapResponseMessage : IDarkSunNetworkMessage
     {
         [ProtoMember(1)]

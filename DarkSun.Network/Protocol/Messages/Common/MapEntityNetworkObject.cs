@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Api.World.Types.Tiles;
+using DarkStar.Api.World.Types.Tiles;
 using ProtoBuf;
 
-namespace DarkSun.Network.Protocol.Messages.Common
+namespace DarkStar.Network.Protocol.Messages.Common
 {
     [ProtoContract]
     public class MapEntityNetworkObject

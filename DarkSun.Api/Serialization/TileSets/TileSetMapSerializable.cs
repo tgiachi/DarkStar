@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Api.Serialization.Converters;
-using DarkSun.Api.World.Types.Tiles;
+using DarkStar.Api.Serialization.Converters;
+using DarkStar.Api.World.Types.Tiles;
 using TinyCsv.Attributes;
 
-namespace DarkSun.Api.Serialization.TileSets
+namespace DarkStar.Api.Serialization.TileSets
 {
     [HasHeaderRecord(true)]
     [Delimiter(";")]

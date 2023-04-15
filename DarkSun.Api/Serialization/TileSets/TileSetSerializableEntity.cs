@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DarkSun.Api.Serialization.TileSets
+namespace DarkStar.Api.Serialization.TileSets
 {
     public class TileSetSerializableEntity
     {

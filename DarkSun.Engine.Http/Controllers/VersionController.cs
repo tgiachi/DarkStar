@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace DarkSun.Engine.Http.Controllers
+namespace DarkStar.Engine.Http.Controllers
 {
 
     [Route("version")]

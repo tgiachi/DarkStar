@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Api.World.Types.Tiles;
-using DarkSun.Network.Attributes;
-using DarkSun.Network.Protocol.Interfaces.Messages;
-using DarkSun.Network.Protocol.Types;
+using DarkStar.Api.World.Types.Tiles;
+using DarkStar.Network.Attributes;
+using DarkStar.Network.Protocol.Interfaces.Messages;
+using DarkStar.Network.Protocol.Types;
+
 
 using ProtoBuf;
 
-namespace DarkSun.Network.Protocol.Messages.Players
+namespace DarkStar.Network.Protocol.Messages.Players
 {
-    [NetworkMessage(DarkSunMessageType.PlayerCreateRequest)]
+    [NetworkMessage(DarkStarMessageType.PlayerCreateRequest)]
     [ProtoContract]
     public class PlayerCreateRequestMessage : IDarkSunNetworkMessage
     {

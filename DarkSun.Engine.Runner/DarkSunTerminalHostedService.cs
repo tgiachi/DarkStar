@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Api.Engine.Interfaces.Core;
+using DarkStar.Api.Engine.Interfaces.Core;
 using Microsoft.Extensions.Hosting;
 
-namespace DarkSun.Engine.Runner
+namespace DarkStar.Engine.Runner
 {
     public class DarkSunTerminalHostedService : IHostedService
     {

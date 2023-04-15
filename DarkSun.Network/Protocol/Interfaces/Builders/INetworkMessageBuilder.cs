@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Network.Data;
-using DarkSun.Network.Protocol.Interfaces.Messages;
+using DarkStar.Network.Data;
+using DarkStar.Network.Protocol.Interfaces.Messages;
 
-namespace DarkSun.Network.Protocol.Interfaces.Builders;
+namespace DarkStar.Network.Protocol.Interfaces.Builders;
 
 public interface INetworkMessageBuilder
 {

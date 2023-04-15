@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Api.World.Types.Equippable;
-using DarkSun.Database.Entities.Base;
-using DarkSun.Database.Entities.Item;
+using DarkStar.Api.World.Types.Equippable;
+using DarkStar.Database.Entities.Base;
+using DarkStar.Database.Entities.Item;
 using FreeSql.DataAnnotations;
 
-namespace DarkSun.Database.Entities.Player;
+namespace DarkStar.Database.Entities.Player;
 
 [Table(Name = "player_equipments")]
 public class PlayerEquipmentEntity : BaseEntity

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DarkSun.Api.Engine.Serialization.Map
+namespace DarkStar.Api.Engine.Serialization.Map
 {
     public enum LayerObjectType : short
     {

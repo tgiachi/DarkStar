@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Api.World.Types.Tiles;
-using DarkSun.Database.Entities.Account;
-using DarkSun.Database.Entities.Base;
-using DarkSun.Database.Entities.Races;
+using DarkStar.Api.World.Types.Tiles;
+using DarkStar.Database.Entities.Account;
+using DarkStar.Database.Entities.Base;
+using DarkStar.Database.Entities.Races;
 using FreeSql.DataAnnotations;
 
-namespace DarkSun.Database.Entities.Player;
+namespace DarkStar.Database.Entities.Player;
 
 [Table(Name = "players")]
 public class PlayerEntity : BaseEntity

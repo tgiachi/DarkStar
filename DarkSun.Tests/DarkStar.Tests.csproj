@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DarkSun.Network\DarkSun.Network.csproj" />
+    <ProjectReference Include="..\DarkSun.Network\DarkStar.Network.csproj" />
   </ItemGroup>
 
   <ItemGroup>

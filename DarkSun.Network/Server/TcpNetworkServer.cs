@@ -3,41 +3,41 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Network.Data;
-using DarkSun.Network.Interfaces;
-using DarkSun.Network.Protocol.Interfaces.Builders;
-using DarkSun.Network.Protocol.Interfaces.Messages;
-using DarkSun.Network.Protocol.Types;
-using DarkSun.Network.Server.Interfaces;
-using DarkSun.Network.Session.Interfaces;
+using DarkStar.Network.Data;
+using DarkStar.Network.Interfaces;
+using DarkStar.Network.Protocol.Interfaces.Builders;
+using DarkStar.Network.Protocol.Interfaces.Messages;
+using DarkStar.Network.Protocol.Types;
+using DarkStar.Network.Server.Interfaces;
+using DarkStar.Network.Session.Interfaces;
 using Microsoft.Extensions.Logging;
 using NetCoreServer;
 
-namespace DarkSun.Network.Server;
+namespace DarkStar.Network.Server;
 
 public class TcpNetworkServer : TcpServer, IDarkSunNetworkServer
 {
     private readonly ILogger _logger;
     private readonly INetworkSessionManager _sessionManager;
     private readonly INetworkMessageBuilder _messageBuilder;
-    private readonly DarkSunNetworkServerConfig _darkSunNetworkServerConfig;
+    private readonly DarkStarNetworkServerConfig _darkStarNetworkServerConfig;
 
     public event IDarkSunNetworkServer.MessageReceivedDelegate? OnMessageReceived;
     public event IDarkSunNetworkServer.ClientConnectedMessages? OnClientConnected;
     public event IDarkSunNetworkServer.ClientDisconnectedDelegate? OnClientDisconnected;
 
-    private readonly Dictionary<DarkSunMessageType, INetworkServerMessageListener> _messageListeners = new();
+    private readonly Dictionary<DarkStarMessageType, INetworkServerMessageListener> _messageListeners = new();
 
     public TcpNetworkServer(ILogger<TcpNetworkServer> logger,
         INetworkSessionManager sessionManager,
         INetworkMessageBuilder messageBuilder,
-        DarkSunNetworkServerConfig darkSunNetworkServerConfig) : base(darkSunNetworkServerConfig.Address,
-        darkSunNetworkServerConfig.Port)
+        DarkStarNetworkServerConfig darkStarNetworkServerConfig) : base(darkStarNetworkServerConfig.Address,
+        darkStarNetworkServerConfig.Port)
     {
         _logger = logger;
         _sessionManager = sessionManager;
         _messageBuilder = messageBuilder;
-        _darkSunNetworkServerConfig = darkSunNetworkServerConfig;
+        _darkStarNetworkServerConfig = darkStarNetworkServerConfig;
 
         OptionReceiveBufferSize = 512;
     }
@@ -73,8 +73,8 @@ public class TcpNetworkServer : TcpServer, IDarkSunNetworkServer
 
     protected override void OnStarted()
     {
-        _logger.LogInformation("Tcp Server started on {Ip}:{Port}", _darkSunNetworkServerConfig.Address,
-            _darkSunNetworkServerConfig.Port);
+        _logger.LogInformation("Tcp Server started on {Ip}:{Port}", _darkStarNetworkServerConfig.Address,
+            _darkStarNetworkServerConfig.Port);
 
         base.OnStarted();
     }
@@ -131,7 +131,7 @@ public class TcpNetworkServer : TcpServer, IDarkSunNetworkServer
         }
     }
 
-    public async Task DispatchMessageReceivedAsync(Guid sessionId, DarkSunMessageType messageType,
+    public async Task DispatchMessageReceivedAsync(Guid sessionId, DarkStarMessageType messageType,
         IDarkSunNetworkMessage message)
     {
         OnMessageReceived?.Invoke(sessionId, messageType, message);
@@ -141,7 +141,7 @@ public class TcpNetworkServer : TcpServer, IDarkSunNetworkServer
         }
     }
 
-    public void RegisterMessageListener(DarkSunMessageType messageType, INetworkServerMessageListener serverMessageListener)
+    public void RegisterMessageListener(DarkStarMessageType messageType, INetworkServerMessageListener serverMessageListener)
     {
         _messageListeners.Add(messageType, serverMessageListener);
     }

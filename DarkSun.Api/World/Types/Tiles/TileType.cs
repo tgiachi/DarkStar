@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 // ReSharper disable All
 
-namespace DarkSun.Api.World.Types.Tiles;
+namespace DarkStar.Api.World.Types.Tiles;
 
 public enum TileType : short
 {

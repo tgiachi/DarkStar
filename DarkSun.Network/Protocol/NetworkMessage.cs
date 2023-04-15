@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Network.Protocol.Types;
+using DarkStar.Network.Protocol.Types;
 
 using ProtoBuf;
 
-namespace DarkSun.Network.Protocol;
+namespace DarkStar.Network.Protocol;
 
 [ProtoContract]
 public class NetworkMessage
 {
     [ProtoMember(1)]
-    public DarkSunMessageType MessageType { get; set; }
+    public DarkStarMessageType MessageType { get; set; }
     [ProtoMember(2)]
     public byte[] Message { get; set; } = null!;
 }

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkSun.Api.Engine.Map.Entities;
+using DarkStar.Api.Engine.Map.Entities;
 
-namespace DarkSun.Api.Engine.Interfaces.Objects
+namespace DarkStar.Api.Engine.Interfaces.Objects
 {
     public interface IGameObjectAction
     {

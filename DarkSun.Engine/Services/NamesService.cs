@@ -8,16 +8,17 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-using DarkSun.Api.Attributes.Services;
-using DarkSun.Api.Data.Config;
-using DarkSun.Api.Engine.Interfaces.Services;
-using DarkSun.Api.Utils;
-using DarkSun.Engine.Services.Base;
+using DarkStar.Api.Attributes.Services;
+using DarkStar.Api.Data.Config;
+using DarkStar.Api.Engine.Interfaces.Services;
+using DarkStar.Api.Utils;
+using DarkStar.Engine.Services.Base;
+
 using Microsoft.Extensions.Logging;
 
-namespace DarkSun.Engine.Services
+namespace DarkStar.Engine.Services
 {
-    [DarkSunEngineService(nameof(NamesService), 11)]
+    [DarkStarEngineService(nameof(NamesService), 11)]
     public class NamesService : BaseService<NamesService>, INamesService
     {
         private const string RandomGeneratorBaseUrl =

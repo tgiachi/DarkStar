@@ -1,9 +1,9 @@
-﻿using DarkSun.Api.Utils;
-using DarkSun.Network.Protocol.Interfaces.Builders;
-using DarkSun.Network.Server.Interfaces;
+﻿using DarkStar.Api.Utils;
+using DarkStar.Network.Protocol.Interfaces.Builders;
+using DarkStar.Network.Server.Interfaces;
 using NetCoreServer;
 
-namespace DarkSun.Network.Server;
+namespace DarkStar.Network.Server;
 
 public class DarkSunTcpSession : TcpSession
 {
@@ -75,7 +75,7 @@ public class DarkSunTcpSession : TcpSession
         {
             var message = _messageBuilder.ParseMessage(buffer.ToArray());
             _networkServer.DispatchMessageReceivedAsync(Id, message.MessageType, message.Message);
-            
+
         }
         catch (Exception e)
         {

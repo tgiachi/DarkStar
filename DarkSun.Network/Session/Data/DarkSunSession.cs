@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DarkSun.Network.Session.Data;
+namespace DarkStar.Network.Session.Data;
 
 public struct DarkSunSession
 {

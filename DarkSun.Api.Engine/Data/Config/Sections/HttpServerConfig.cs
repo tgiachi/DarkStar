@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DarkSun.Api.Engine.Data.Config.Sections
+namespace DarkStar.Api.Engine.Data.Config.Sections
 {
     public class HttpServerConfig
     {

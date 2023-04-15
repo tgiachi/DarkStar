@@ -1,13 +1,12 @@
-﻿using DarkSun.Api.Engine.Attributes;
-using DarkSun.Api.Engine.Attributes.Network;
-using DarkSun.Api.Engine.ConnectionHandlers;
-using DarkSun.Api.Engine.Interfaces.Core;
-using DarkSun.Network.Protocol.Interfaces.Messages;
-using DarkSun.Network.Protocol.Live;
-using DarkSun.Network.Protocol.Messages.Server;
+﻿using DarkStar.Api.Engine.Attributes.Network;
+using DarkStar.Api.Engine.ConnectionHandlers;
+using DarkStar.Api.Engine.Interfaces.Core;
+using DarkStar.Network.Protocol.Interfaces.Messages;
+using DarkStar.Network.Protocol.Messages.Server;
+
 using Microsoft.Extensions.Logging;
 
-namespace DarkSun.Engine.ConnectionHandler
+namespace DarkStar.Engine.ConnectionHandler
 {
     [NetworkConnectionHandler]
     public class DefaultConnectionHandler : BaseNetworkConnectionHandler

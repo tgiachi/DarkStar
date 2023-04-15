@@ -1,6 +1,6 @@
-﻿using DarkSun.Api.Engine.Types.Commands;
+﻿using DarkStar.Api.Engine.Types.Commands;
 
-namespace DarkSun.Api.Engine.Attributes.Commands;
+namespace DarkStar.Api.Engine.Attributes.Commands;
 
 [AttributeUsage(AttributeTargets.Class)]
 public class CommandActionAttribute : Attribute

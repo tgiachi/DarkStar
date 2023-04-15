@@ -1,8 +1,8 @@
-﻿using DarkSun.Api.Utils;
-using DarkSun.Engine.Attributes.ScriptEngine;
+﻿using DarkStar.Api.Utils;
+using DarkStar.Engine.Attributes.ScriptEngine;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace DarkSun.Engine.Utils
+namespace DarkStar.Engine.Utils
 {
     public static class ScriptEngineFunctionsRegistrationEx
     {

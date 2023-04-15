@@ -1,7 +1,7 @@
-﻿using DarkSun.Api.Engine.Map.Entities;
-using DarkSun.Database.Entities.Npc;
+﻿using DarkStar.Api.Engine.Map.Entities;
+using DarkStar.Database.Entities.Npc;
 
-namespace DarkSun.Api.Engine.Interfaces.Ai;
+namespace DarkStar.Api.Engine.Interfaces.Ai;
 
 public interface IAiBehaviourExecutor
 {
