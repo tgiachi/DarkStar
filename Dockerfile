@@ -6,17 +6,17 @@ WORKDIR /src
 
 COPY [".", "."]
 
-RUN cd DarkSun.Engine.Runner/
-RUN dotnet restore "DarkSun.Engine.Runner/DarkSun.Engine.Runner.csproj"
+RUN cd DarkStar.Engine.Runner/
+RUN dotnet restore "DarkStar.Engine.Runner/DarkStar.Engine.Runner.csproj"
 COPY . .
-WORKDIR "/src/DarkSun.Engine.Runner"
-RUN dotnet build "DarkSun.Engine.Runner.csproj" -c Release -o /app/build
+WORKDIR "/src/DarkStar.Engine.Runner"
+RUN dotnet build "DarkStar.Engine.Runner.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "DarkSun.Engine.Runner.csproj" -c Release -r linux-x64 -p:PublishReadyToRun=true --self-contained true -o /app/publish
+RUN dotnet publish "DarkStar.Engine.Runner.csproj" -c Release -r linux-x64 -p:PublishReadyToRun=true --self-contained true -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 ENV DOCKER_CONTAINER=true
 COPY --from=publish /app/publish .
-ENTRYPOINT ["./DarkSun.Engine.Runner"]
+ENTRYPOINT ["./DarkStar.Engine.Runner"]
