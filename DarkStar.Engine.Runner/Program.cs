@@ -175,7 +175,7 @@ internal class Program
 
 
         var config = new EngineConfig();
-        var configPath = Path.Join(directoriesConfig[DirectoryNameType.Config], "darksun.yml");
+        var configPath = Path.Join(directoriesConfig[DirectoryNameType.Config], "DarkStar.yml");
         if (File.Exists(configPath))
         {
             Log.Logger.Information("Loading config from {Path}", configPath);
