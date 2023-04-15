@@ -14,7 +14,7 @@ jobs:
         run: |
           echo "BUILD_VERSION=$(date --rfc-3339=date)" >> ${GITHUB_ENV}
       - name: Extract version
-        run: export DARKSUN_VERSION=$(xmllint --shell DarkSun.Engine/DarkSun.Engine.csproj  <<< "cat //Version/text()" | grep -v "^/ >" | tail -n 1)
+        run: export DARKSUN_VERSION=$(xmllint --shell DarkStar.Engine/DarkStar.Engine.csproj  <<< "cat //Version/text()" | grep -v "^/ >" | tail -n 1)
       - name: View version
         run: echo $DARKSUN_VERSION
       - name: Set up QEMU
@@ -30,4 +30,4 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: tgiachi/darksun.server:latest
+          tags: tgiachi/DarkStar.server:latest
