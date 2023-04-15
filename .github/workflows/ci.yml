@@ -30,4 +30,4 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: tgiachi/DarkStar.server:latest
+          tags: tgiachi/darkstar.server:latest
