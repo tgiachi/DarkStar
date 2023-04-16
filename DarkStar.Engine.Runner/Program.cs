@@ -140,13 +140,13 @@ internal class Program
 
     private static DirectoriesConfig EnsureDirectories()
     {
-        var rootDirectory = Environment.GetEnvironmentVariable("DARKSUN_ROOT_DIRECTORY")
+        var rootDirectory = Environment.GetEnvironmentVariable("DARKSTAR_ROOT_DIRECTORY")
                             ?? Path.Join(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-                                "DarkSun");
+                                "DarkStar");
 
         if (string.IsNullOrEmpty(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)))
         {
-            rootDirectory = Path.Join(Directory.GetCurrentDirectory(), "DarkSun");
+            rootDirectory = Path.Join(Directory.GetCurrentDirectory(), "DarkStar");
         }
 
         Log.Logger.Information("Root directory is: {Root}", rootDirectory);
