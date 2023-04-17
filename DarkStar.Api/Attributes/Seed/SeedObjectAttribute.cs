@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DarkStar.Api.Engine.Attributes.Seed
+﻿namespace DarkStar.Api.Attributes.Seed
 {
     [AttributeUsage(AttributeTargets.Class)]
     public class SeedObjectAttribute : Attribute

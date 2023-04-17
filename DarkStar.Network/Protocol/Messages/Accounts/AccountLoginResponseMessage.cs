@@ -15,7 +15,7 @@ namespace DarkStar.Network.Protocol.Messages.Accounts
 
     [NetworkMessage(DarkStarMessageType.AccountLoginResponse)]
     [ProtoContract]
-    public class AccountLoginResponseMessage : IDarkSunNetworkMessage
+    public struct AccountLoginResponseMessage : IDarkStarNetworkMessage
     {
         [ProtoMember(1)]
         public bool Success { get; set; }

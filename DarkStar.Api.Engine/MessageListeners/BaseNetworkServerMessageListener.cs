@@ -11,7 +11,7 @@ using Microsoft.Extensions.Logging;
 
 namespace DarkStar.Api.Engine.MessageListeners;
 
-public class BaseNetworkMessageListener<TMessage> : INetworkServerMessageListener where TMessage : IDarkSunNetworkMessage
+public class BaseNetworkMessageListener<TMessage> : INetworkServerMessageListener where TMessage : IDarkStarNetworkMessage
 {
     protected ILogger Logger { get; }
     protected IDarkSunEngine Engine { get; }
@@ -22,7 +22,7 @@ public class BaseNetworkMessageListener<TMessage> : INetworkServerMessageListene
         Engine = engine;
     }
 
-    public async Task OnMessageReceivedAsync(Guid sessionId, DarkStarMessageType messageType, IDarkSunNetworkMessage message)
+    public async Task OnMessageReceivedAsync(Guid sessionId, DarkStarMessageType messageType, IDarkStarNetworkMessage message)
     {
         try
         {
@@ -39,26 +39,26 @@ public class BaseNetworkMessageListener<TMessage> : INetworkServerMessageListene
         }
     }
 
-    public virtual Task<List<IDarkSunNetworkMessage>> OnMessageReceivedAsync(Guid sessionId, DarkStarMessageType messageType, TMessage message)
+    public virtual Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(Guid sessionId, DarkStarMessageType messageType, TMessage message)
     {
-        return Task.FromResult(new List<IDarkSunNetworkMessage>());
+        return Task.FromResult(new List<IDarkStarNetworkMessage>());
     }
 
-    protected List<IDarkSunNetworkMessage> SingleMessage(IDarkSunNetworkMessage message)
+    protected List<IDarkStarNetworkMessage> SingleMessage(IDarkStarNetworkMessage message)
     {
-        return new List<IDarkSunNetworkMessage>() { message };
+        return new List<IDarkStarNetworkMessage>() { message };
     }
 
-    protected List<IDarkSunNetworkMessage> MultipleMessages(params IDarkSunNetworkMessage[] message)
+    protected List<IDarkStarNetworkMessage> MultipleMessages(params IDarkStarNetworkMessage[] message)
     {
-        var mess = new List<IDarkSunNetworkMessage>();
+        var mess = new List<IDarkStarNetworkMessage>();
         mess.AddRange(message);
 
         return mess;
     }
 
-    protected List<IDarkSunNetworkMessage> EmptyMessage()
+    protected List<IDarkStarNetworkMessage> EmptyMessage()
     {
-        return new List<IDarkSunNetworkMessage>();
+        return new List<IDarkStarNetworkMessage>();
     }
 }

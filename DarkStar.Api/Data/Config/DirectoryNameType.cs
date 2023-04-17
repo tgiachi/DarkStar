@@ -18,5 +18,6 @@ public enum DirectoryNameType
     HttpRoot,
     SeedTemplates,
     Seeds,
-    Maps
+    Maps,
+    BluePrints
 }

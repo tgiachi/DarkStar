@@ -11,6 +11,7 @@ namespace DarkStar.Api.Engine.Serialization
     {
         public static ValueTask<bool> SerializeToFileAsync<TEntity>(TEntity entity, string fileName)
         {
+
             using var fileStream = File.Create(fileName);
             Serializer.Serialize(fileStream, entity);
             return new ValueTask<bool>(true);

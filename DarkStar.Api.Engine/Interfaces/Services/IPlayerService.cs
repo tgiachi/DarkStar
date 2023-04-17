@@ -21,5 +21,5 @@ public interface IPlayerService : IDarkSunEngineService
 
     Task<List<PlayerEntity>> GetPlayersByAccountIdAsync(Guid accountId);
 
-    Task<PlayerEntity> CreatePlayerAsync(Guid accountId, TileType tileId, Guid raceId, BaseStatEntity stats);
+    Task<PlayerEntity> CreatePlayerAsync(Guid accountId, string name, TileType tileId, Guid raceId, BaseStatEntity stats);
 }

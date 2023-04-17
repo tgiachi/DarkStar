@@ -10,7 +10,7 @@ namespace DarkStar.Network.Interfaces
 {
     public interface INetworkClientMessageListener
     {
-        Task OnMessageReceivedAsync(DarkStarMessageType messageType, IDarkSunNetworkMessage message);
+        Task OnMessageReceivedAsync(DarkStarMessageType messageType, IDarkStarNetworkMessage message);
     }
 
 }

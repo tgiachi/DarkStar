@@ -11,7 +11,7 @@ using DarkStar.Network.Protocol;
 using DarkStar.Network.Protocol.Interfaces.Builders;
 using DarkStar.Network.Protocol.Interfaces.Messages;
 using DarkStar.Network.Protocol.Types;
-
+using Humanizer;
 using Microsoft.Extensions.Logging;
 using ProtoBuf;
 
@@ -34,7 +34,7 @@ public class ProtoBufMessageBuilder : INetworkMessageBuilder
 
     public NetworkMessageData ParseMessage(byte[] buffer)
     {
-        _logger.LogDebug("Parsing message buffer of length {Length}", buffer.Length);
+        _logger.LogDebug("Parsing message buffer of length {Length}", buffer.Length.Bytes());
 
         var messageBuffer = buffer.Take(buffer.Length - _separatorBytes.Length).ToArray();
 
@@ -43,11 +43,12 @@ public class ProtoBufMessageBuilder : INetworkMessageBuilder
         var innerMessage = Serializer.Deserialize(_messageTypes[message.MessageType],
             new MemoryStream(message.Message));
 
-        return new NetworkMessageData { MessageType = message.MessageType, Message = (innerMessage as IDarkSunNetworkMessage)! };
+        return new NetworkMessageData { MessageType = message.MessageType, Message = (innerMessage as IDarkStarNetworkMessage)! };
     }
 
-    public byte[] BuildMessage<T>(T message) where T : IDarkSunNetworkMessage
+    public byte[] BuildMessage<T>(T message) where T : IDarkStarNetworkMessage
     {
+        
         var messageType = message.GetType().GetCustomAttribute<NetworkMessageAttribute>();
 
         if (messageType != null)
@@ -64,8 +65,11 @@ public class ProtoBufMessageBuilder : INetworkMessageBuilder
 
             var netMessageBuffer = messageStream.GetBuffer();
             netMessageBuffer = netMessageBuffer.Take((int)messageStream.Length).ToArray();
+            var fullMessage = netMessageBuffer.Concat(_separatorBytes).ToArray();
+
+            _logger.LogDebug("Sending message type: {Type} - Length: {BufferSize}", messageType.MessageType, fullMessage.Length.Bytes());
             return
-                new ReadOnlyMemory<byte>(netMessageBuffer.Concat(_separatorBytes).ToArray()).ToArray();
+                new ReadOnlyMemory<byte>(fullMessage).ToArray();
         }
 
         throw new Exception($"Missing attribute [NetworkMessageAttribute] on message ${typeof(T)}");

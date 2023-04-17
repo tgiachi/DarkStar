@@ -14,7 +14,7 @@ namespace DarkStar.Network.Protocol.Messages.Server;
 
 [NetworkMessage(DarkStarMessageType.ServerVersionResponse)]
 [ProtoContract]
-public class ServerVersionResponseMessage : IDarkSunNetworkMessage
+public class ServerVersionResponseMessage : IDarkStarNetworkMessage
 {
     [ProtoMember(1)]
     public int Minor { get; set; }

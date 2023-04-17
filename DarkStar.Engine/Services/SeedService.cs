@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using DarkStar.Api.Attributes.Seed;
 using DarkStar.Api.Attributes.Services;
 
 using Microsoft.Extensions.Logging;
@@ -17,13 +18,13 @@ using DarkStar.Engine.Services.Base;
 using DarkStar.Api.World.Types.Utils;
 using DarkStar.Api.Data.Config;
 using DarkStar.Api.Engine.Serialization;
-using DarkStar.Api.Engine.Attributes.Seed;
 using DarkStar.Database.Entities.Races;
 using DarkStar.Database.Entities.Base;
 using DarkStar.Database.Entities.Item;
 using DarkStar.Database.Entities.TileSets;
 using DarkStar.Api.World.Types.Tiles;
 using DarkStar.Database.Entities.Objects;
+using FastEnumUtility;
 
 namespace DarkStar.Engine.Services
 {
@@ -62,10 +63,18 @@ namespace DarkStar.Engine.Services
         private async Task CheckSeedTemplatesAsync()
         {
             Logger.LogInformation("Checking Seed Templates");
+
             await CheckSeedTemplateAsync<ItemDropObjectSeedEntity>();
             await CheckSeedTemplateAsync<ItemObjectSeedEntity>();
             await CheckSeedTemplateAsync<WorldObjectSeedEntity>();
             await CheckSeedTemplateAsync<RaceObjectSeedEntity>();
+            await CheckSeedTemplateAsync(GetDefaultTileSetMap());
+        }
+
+        private IEnumerable<TileSetMapSerializable> GetDefaultTileSetMap()
+        {
+            return FastEnum.GetValues<TileType>().OrderBy(k => (short)k).Select(s =>
+                new TileSetMapSerializable() { Type = s, Id = (short)s, IsBlocked = false });
         }
 
         private Task CheckSeedDirectoriesAsync()
@@ -82,6 +91,7 @@ namespace DarkStar.Engine.Services
             return Task.CompletedTask;
         }
 
+
         private Task LoadSeedAsync<TEntity>() where TEntity : class, new()
         {
             var attribute = typeof(TEntity).GetCustomAttribute<SeedObjectAttribute>();
@@ -93,14 +103,19 @@ namespace DarkStar.Engine.Services
             return Task.CompletedTask;
         }
 
-        private async Task CheckSeedTemplateAsync<TEntity>() where TEntity : class, new()
+        private async Task CheckSeedTemplateAsync<TEntity>(IEnumerable<TEntity>? defaultData = null) where TEntity : class, new()
         {
             Logger.LogInformation("Checking Seed Template for type: {Type}", typeof(TEntity).Name);
             var fileName = Path.Join(_directoriesConfig[DirectoryNameType.SeedTemplates],
                 $"{typeof(TEntity).Name.Replace("Entity", "").ToUnderscoreCase()}.csv");
             if (!File.Exists(fileName))
             {
-                await SeedCsvParser.Instance.WriteHeaderToFileAsync(fileName, Enumerable.Empty<TEntity>());
+                if (defaultData == null)
+                {
+                    defaultData = Enumerable.Empty<TEntity>();
+                }
+
+                await SeedCsvParser.Instance.WriteHeaderToFileAsync(fileName, defaultData);
             }
         }
 
@@ -133,7 +148,7 @@ namespace DarkStar.Engine.Services
 
         private async Task ScanTileSetsAsync()
         {
-            var files = Directory.GetFiles(_directoriesConfig[DirectoryNameType.Assets], "*.tileset");
+            var files = Directory.GetFiles(_directoriesConfig[DirectoryNameType.Assets], "*.tileset", SearchOption.AllDirectories);
             Logger.LogInformation("Scanning TileSets");
             foreach (var tileSet in files)
             {
@@ -144,7 +159,12 @@ namespace DarkStar.Engine.Services
         private async Task LoadTileSetDefinitionAsync(string tileSet)
         {
             var tileSetDefinition = JsonSerializer.Deserialize<TileSetSerializableEntity>(await File.ReadAllTextAsync(tileSet));
+            Logger.LogInformation("Loading TileSet {TileSet}", tileSetDefinition!.Name);
+
+
             var tilesDirectory = new FileInfo(tileSet);
+            var tileSetImageInfo = new FileInfo(Path.Join(tilesDirectory.DirectoryName, tileSetDefinition.Source));
+
             var tileEntity = await Engine.DatabaseService.QueryAsSingleAsync<TileSetEntity>(entity => entity.Name == tileSetDefinition!.Name);
 
             if (tileEntity == null!)
@@ -152,7 +172,8 @@ namespace DarkStar.Engine.Services
                 tileEntity = new TileSetEntity()
                 {
                     Name = tileSetDefinition!.Name,
-                    Source = tileSetDefinition!.Source,
+                    Source = Path.Join(tilesDirectory.DirectoryName!, tileSetDefinition!.Source),
+                    FileSize = tileSetImageInfo.Length,
                     TileHeight = tileSetDefinition!.TileHeight,
                     TileWidth = tileSetDefinition!.TileWidth,
                     TileSetMapFileName = Path.Join(tilesDirectory.DirectoryName!, tileSetDefinition!.TileSetMapFileName),
@@ -167,17 +188,19 @@ namespace DarkStar.Engine.Services
             foreach (var tile in tileMap)
             {
                 var tileMapEntity = await Engine.DatabaseService.QueryAsSingleAsync<TileSetMapEntity>(entity => entity.TileSetId == tileEntity.Id && entity.TileId == tile.Id);
-                if (tileMapEntity == null!)
+                if (tileMapEntity != null!)
                 {
-                    tileMapEntity = new TileSetMapEntity()
-                    {
-                        TileSetId = tileEntity.Id,
-                        TileId = tile.Id,
-                        TileType = tile.Type,
-                        IsBlocked = tile.IsBlocked
-                    };
-                    await Engine.DatabaseService.InsertAsync(tileMapEntity);
+                    continue;
                 }
+
+                tileMapEntity = new TileSetMapEntity()
+                {
+                    TileSetId = tileEntity.Id,
+                    TileId = tile.Id,
+                    TileType = tile.Type,
+                    IsBlocked = tile.IsBlocked
+                };
+                await Engine.DatabaseService.InsertAsync(tileMapEntity);
             }
         }
     }

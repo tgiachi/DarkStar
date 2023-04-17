@@ -14,7 +14,7 @@ namespace DarkStar.Network.Protocol.Messages.Players
 {
     [NetworkMessage(DarkStarMessageType.PlayerSelectRequest)]
     [ProtoContract]
-    public class PlayerSelectRequestMessage : IDarkSunNetworkMessage
+    public class PlayerSelectRequestMessage : IDarkStarNetworkMessage
     {
         [ProtoMember(1)]
         public Guid PlayerId { get; set; }

@@ -13,6 +13,8 @@ namespace DarkStar.Database.Entities.TileSets
     {
         public string Name { get; set; } = null!;
         public string Source { get; set; } = null!;
+
+        public long FileSize { get; set; }
         public int TileWidth { get; set; }
         public int TileHeight { get; set; }
         public string TileSetMapFileName { get; set; } = null!;

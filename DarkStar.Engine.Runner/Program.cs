@@ -95,7 +95,7 @@ internal class Program
                     })
                     // Only for test
                     .AddSingleton(new DarkStarNetworkClientConfig())
-                    .AddSingleton<IDarkSunNetworkClient, TcpNetworkClient>()
+                    .AddSingleton<IDarkStarNetworkClient, TcpNetworkClient>()
                     .AddSingleton(engineConfig)
                     .AddSingleton(directoryConfig)
                     .RegisterDarkSunServices()

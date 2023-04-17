@@ -23,7 +23,7 @@ namespace DarkStar.Engine.MessageListeners
         {
         }
 
-        public override Task<List<IDarkSunNetworkMessage>> OnMessageReceivedAsync(Guid sessionId,
+        public override Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(Guid sessionId,
             DarkStarMessageType messageType,
             PongMessageResponse message)
         {

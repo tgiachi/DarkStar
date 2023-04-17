@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DarkStar.Api.Engine.Attributes.Seed;
+using DarkStar.Api.Attributes.Seed;
 using DarkStar.Api.Engine.Serialization.Seeds.Converters;
 using DarkStar.Api.Serialization.Converters;
 using DarkStar.Api.World.Types.Equippable;

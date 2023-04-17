@@ -10,7 +10,7 @@ namespace DarkStar.Network.Protocol.Messages.Players
 {
     [NetworkMessage(DarkStarMessageType.PlayerListResponse)]
     [ProtoContract]
-    public class PlayerListResponseMessage : IDarkSunNetworkMessage
+    public class PlayerListResponseMessage : IDarkStarNetworkMessage
     {
         [ProtoMember(1)]
         public List<PlayerObjectMessage> Players { get; set; } = null!;

@@ -17,11 +17,11 @@ namespace DarkStar.Engine.ConnectionHandler
         {
         }
 
-        public override Task<List<IDarkSunNetworkMessage>> ClientConnectedMessagesAsync(Guid sessionId)
+        public override Task<List<IDarkStarNetworkMessage>> ClientConnectedMessagesAsync(Guid sessionId)
         {
             Logger.LogInformation("New connection: {Id}", sessionId);
             Engine.PlayerService.AddSession(sessionId);
-            return Task.FromResult(new List<IDarkSunNetworkMessage>
+            return Task.FromResult(new List<IDarkStarNetworkMessage>
             {
                 new ServerNameResponseMessage(Engine.ServerName), new ServerVersionResponseMessage(0, 0, 1)
             });

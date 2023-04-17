@@ -25,7 +25,7 @@ namespace DarkStar.Engine.MessageListeners
         }
 
 
-        public override async Task<List<IDarkSunNetworkMessage>> OnMessageReceivedAsync(Guid sessionId,
+        public override async Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(Guid sessionId,
             DarkStarMessageType messageType, AccountCreateRequestMessage message)
         {
             var userExists = await Engine.DatabaseService.QueryAsSingleAsync<AccountEntity>(entity =>
@@ -39,7 +39,7 @@ namespace DarkStar.Engine.MessageListeners
             await Engine.DatabaseService.InsertAsync(new AccountEntity
             {
                 Email = message.Email,
-                PasswordHash = message.Password.CreateMd5Hash(),
+                PasswordHash = message.Password.CreateBCryptHash(),
                 RegistrationDate = DateTime.UtcNow,
                 IsEnabled = true
             });

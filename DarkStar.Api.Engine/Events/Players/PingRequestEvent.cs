@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Redbus.Events;
 
-
-namespace DarkStar.Network.Protocol.Interfaces.Messages;
-
-
-public interface IDarkSunNetworkMessage
+namespace DarkStar.Api.Engine.Events.Players
 {
-
+    public class PingRequestEvent : EventBase
+    {
+    }
 }

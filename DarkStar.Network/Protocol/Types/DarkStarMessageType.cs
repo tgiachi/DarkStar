@@ -22,6 +22,7 @@ public enum DarkStarMessageType : short
     AccountCreateRequest,
     AccountCreateResponse,
 
+    // Player messages
     PlayerRacesRequest,
     PlayerRacesResponse,
     PlayerListRequest,
@@ -30,6 +31,31 @@ public enum DarkStarMessageType : short
     PlayerCreateResponse,
     PlayerSelectRequest,
     PlayerSelectResponse,
+    PlayerLoginRequest,
+    PlayerLoginResponse,
+    PlayerLogoutRequest,
+    PlayerLogoutResponse,
+    
+    // TileSet message
+    TileSetListRequest,
+    TileSetListResponse,
+    TileSetDownloadRequest,
+    TileSetDownloadResponse,
+    TileSetMapRequest,
+    TileSetMapResponse,
+
+    // Trigger message
+    NpcAddedResponse,
+    NpcRemovedResponse,
+    NpcMovedResponse,
+
+    ItemAddedResponse,
+    ItemRemovedResponse,
+    ItemMovedResponse,
+
+    WorldGameObjectAddedResponse,
+    WorldGameObjectRemovedResponse,
+    WorldGameObjectMovedResponse,
 
     MapRequest,
     MapResponse,

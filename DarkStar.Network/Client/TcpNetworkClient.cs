@@ -17,9 +17,9 @@ using TcpClient = NetCoreServer.TcpClient;
 
 namespace DarkStar.Network.Client
 {
-    public class TcpNetworkClient : TcpClient, IDarkSunNetworkClient
+    public class TcpNetworkClient : TcpClient, IDarkStarNetworkClient
     {
-        public event IDarkSunNetworkClient.MessageReceivedDelegate? OnMessageReceived;
+        public event IDarkStarNetworkClient.MessageReceivedDelegate? OnMessageReceived;
 
         private readonly ILogger _logger;
         private readonly INetworkMessageBuilder _messageBuilder;
@@ -39,7 +39,9 @@ namespace DarkStar.Network.Client
         {
             _logger = logger;
             _messageBuilder = messageBuilder;
-            //   OptionReceiveBufferSize = 512;
+            OptionReceiveBufferSize = 1024 * 10;
+            OptionSendBufferSize = 1024 * 10;
+
             _separators = messageBuilder.GetMessageSeparators;
             _currentIndex = 0;
 
@@ -105,7 +107,7 @@ namespace DarkStar.Network.Client
         }
 
         public async Task DispatchMessageReceivedAsync(DarkStarMessageType messageType,
-            IDarkSunNetworkMessage message)
+            IDarkStarNetworkMessage message)
         {
             _logger.LogDebug("Received message: {MessageType}", messageType);
             OnMessageReceived?.Invoke(messageType, message);
@@ -130,7 +132,7 @@ namespace DarkStar.Network.Client
             }
         }
 
-        public Task SendMessageAsync(IDarkSunNetworkMessage message)
+        public Task SendMessageAsync(IDarkStarNetworkMessage message)
         {
             try
             {
@@ -146,7 +148,7 @@ namespace DarkStar.Network.Client
             return Task.CompletedTask;
         }
 
-        public Task SendMessageAsync(List<IDarkSunNetworkMessage> message)
+        public Task SendMessageAsync(List<IDarkStarNetworkMessage> message)
         {
 
             foreach (var messageItem in message)

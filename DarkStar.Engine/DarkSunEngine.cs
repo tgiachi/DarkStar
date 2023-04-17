@@ -7,16 +7,21 @@ using System.Threading.Tasks;
 using DarkStar.Api.Attributes.Services;
 using DarkStar.Api.Engine.Attributes.Network;
 using DarkStar.Api.Engine.Events.Engine;
+using DarkStar.Api.Engine.Events.Players;
 using DarkStar.Api.Engine.Interfaces.Core;
 using DarkStar.Api.Engine.Interfaces.Listener;
 using DarkStar.Api.Engine.Interfaces.Services;
 using DarkStar.Api.Engine.Interfaces.Services.Base;
 using DarkStar.Api.Utils;
+using DarkStar.Api.World.Types.Tiles;
+using DarkStar.Database.Entities.Races;
 using DarkStar.Network.Client.Interfaces;
 using DarkStar.Network.Interfaces;
 using DarkStar.Network.Protocol.Interfaces.Messages;
 using DarkStar.Network.Protocol.Live;
 using DarkStar.Network.Protocol.Messages.Accounts;
+using DarkStar.Network.Protocol.Messages.Players;
+using DarkStar.Network.Protocol.Messages.TileSet;
 using DarkStar.Network.Server.Interfaces;
 
 using Microsoft.Extensions.Logging;
@@ -32,7 +37,7 @@ namespace DarkStar.Engine
         private readonly HashSet<INetworkConnectionHandler> _connectionHandlers = new();
 
         //Only for test
-        private readonly IDarkSunNetworkClient _networkClient;
+        private readonly IDarkStarNetworkClient _networkClient;
 
         public string ServerName { get; set; } = null!;
         public string ServerMotd { get; set; } = null!;
@@ -62,7 +67,7 @@ namespace DarkStar.Engine
             ICommandService commandService,
             IServiceProvider container,
             IEventBus eventBus,
-            IDarkSunNetworkClient networkClient,
+            IDarkStarNetworkClient networkClient,
             INamesService namesService,
             ISeedService seedService,
             IJobSchedulerService jobSchedulerService,
@@ -127,9 +132,9 @@ namespace DarkStar.Engine
             }
         }
 
-        private async Task<List<IDarkSunNetworkMessage>> NetworkServerOnOnClientConnectedAsync(Guid sessionId)
+        private async Task<List<IDarkStarNetworkMessage>> NetworkServerOnOnClientConnectedAsync(Guid sessionId)
         {
-            var messages = new List<IDarkSunNetworkMessage>();
+            var messages = new List<IDarkStarNetworkMessage>();
             foreach (var handler in _connectionHandlers)
             {
                 messages.AddRange(await handler.ClientConnectedMessagesAsync(sessionId));
@@ -155,13 +160,18 @@ namespace DarkStar.Engine
             await NetworkServer.StartAsync();
             JobSchedulerService.AddJob("PingClients", () =>
             {
-                _ = Task.Run(() => NetworkServer.BroadcastMessageAsync(new PingMessageResponse { TimeStamp = DateTime.Now.Ticks }));
+                EventBus.PublishAsync(new PingRequestEvent());
 
             }, (int)TimeSpan.FromMinutes(5).TotalSeconds, false);
 
+            // TODO: This is only for testing, will be removed later
             _ = Task.Run(async () =>
             {
                 await _networkClient.ConnectAsync();
+
+                var race = new RaceEntity { TileId  = TileType.Food_Mushroom_1, Dexterity = 0, Health = 0, IsVisible = true, Luck = 0, Strength = 0, Name = "Humans"};
+                await DatabaseService.InsertAsync(race);
+
                 await _networkClient.SendMessageAsync(new AccountCreateRequestMessage()
                 {
                     Email = "test@test.com",
@@ -169,6 +179,20 @@ namespace DarkStar.Engine
                 });
                 await _networkClient.SendMessageAsync(new AccountLoginRequestMessage("test@test.com", "12345"));
                 await _networkClient.SendMessageAsync(new AccountLoginRequestMessage("test@test.com", "1234"));
+                await _networkClient.SendMessageAsync(new TileSetListRequestMessage());
+               // await _networkClient.SendMessageAsync(new TileSetDownloadRequestMessage("Tangaria"));
+                await _networkClient.SendMessageAsync(new TileSetMapRequestMessage("Tangaria"));
+                await _networkClient.SendMessageAsync(new PlayerCreateRequestMessage()
+                {
+                    Dexterity = 10,
+                    Intelligence = 10,
+                    Luck = 10,
+                    Name = "Player 1",
+                    Strength = 10,
+                    TileId = TileType.Human_Mage_1,
+                    RaceId = race.Id,
+                });
+                await _networkClient.SendMessageAsync(new PlayerLoginRequestMessage(Guid.Empty, "Player 1"));
                 //await _networkClient.DisconnectAsync();
             });
 
@@ -179,6 +203,8 @@ namespace DarkStar.Engine
 
         public async ValueTask<bool> StopAsync()
         {
+            EventBus.PublishAsync(new EngineStoppingEvent());
+
             await NetworkServer.StopAsync();
             foreach (var services in _servicesLoadOrder.Reverse())
             {

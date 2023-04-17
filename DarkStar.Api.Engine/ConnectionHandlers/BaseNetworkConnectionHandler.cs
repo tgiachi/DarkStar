@@ -21,7 +21,7 @@ public class BaseNetworkConnectionHandler : INetworkConnectionHandler
         Engine = engine;
     }
 
-    public virtual Task<List<IDarkSunNetworkMessage>> ClientConnectedMessagesAsync(Guid sessionId)
+    public virtual Task<List<IDarkStarNetworkMessage>> ClientConnectedMessagesAsync(Guid sessionId)
     {
         throw new NotImplementedException();
     }

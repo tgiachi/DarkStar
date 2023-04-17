@@ -14,11 +14,22 @@ namespace DarkStar.Network.Protocol.Messages.Accounts
 
     [NetworkMessage(DarkStarMessageType.AccountCreateRequest)]
     [ProtoContract]
-    public class AccountCreateRequestMessage : IDarkSunNetworkMessage
+    public struct AccountCreateRequestMessage : IDarkStarNetworkMessage
     {
         [ProtoMember(1)]
         public string Email { get; set; } = null!;
         [ProtoMember(2)]
         public string Password { get; set; } = null!;
+
+        public AccountCreateRequestMessage(string email, string password)
+        {
+            Email = email;
+            Password = password;
+        }
+
+        public AccountCreateRequestMessage()
+        {
+
+        }
     }
 }

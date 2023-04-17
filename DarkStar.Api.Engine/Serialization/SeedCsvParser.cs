@@ -19,7 +19,7 @@ namespace DarkStar.Api.Engine.Serialization
 
         public async Task<bool> WriteHeaderToFileAsync<TEntity>(string fileName, IEnumerable<TEntity> entities) where TEntity : class, new()
         {
-            var csvReader = new TinyCsv<TEntity>(new CsvOptions<TEntity>());
+            var csvReader = new TinyCsv<TEntity>();
             await csvReader.SaveAsync(fileName, entities);
 
             return true;
@@ -27,7 +27,7 @@ namespace DarkStar.Api.Engine.Serialization
 
         public async Task<bool> WriteHeaderToFileAsync(string fileName, IEnumerable<object> entities)
         {
-            var csvReader = new TinyCsv<object>(new CsvOptions<object>());
+            var csvReader = new TinyCsv<object>();
             await csvReader.SaveAsync(fileName, entities);
 
             return true;

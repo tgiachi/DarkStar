@@ -85,7 +85,7 @@ namespace DarkStar.Engine.Services
                 var connectionStringBuilder = new DbConnectionStringBuilder
                 {
                     ConnectionString = _config.Database.ConnectionString.Replace("{DATABASE_DIRECTORY}",
-                        _directoriesConfig[DirectoryNameType.Database])
+                        Path.Join(_directoriesConfig[DirectoryNameType.Database] + Path.DirectorySeparatorChar))
                 };
                 var databasePath = connectionStringBuilder["Data Source"]?.ToString();
                 if (databasePath != null)

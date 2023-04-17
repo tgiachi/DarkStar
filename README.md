@@ -1,6 +1,6 @@
 # Dark Star MMO
 
-![Dark Star Logo](/imgs/DarkSunLogoSmall.png)
+![Dark Star Logo](/imgs/DarkStarLogoSmall.png)
 
   
  

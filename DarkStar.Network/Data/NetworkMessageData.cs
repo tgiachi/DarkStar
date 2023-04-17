@@ -13,5 +13,5 @@ public class NetworkMessageData
 {
     public DarkStarMessageType MessageType { get; set; }
 
-    public IDarkSunNetworkMessage Message { get; set; } = null!;
+    public IDarkStarNetworkMessage Message { get; set; } = null!;
 }
