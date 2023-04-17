@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="0.1.0"></a>
+## [0.1.0](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.1.0) (2023-4-17)
+
+### Features
+
+* add new attributes and base classes for command, network, object, and seed actions ([9418148](https://www.github.com/tgiachi/DarkSun/commit/941814818728e6ccd4f08bb9a776a5f37a92f007))
+* add new attributes for game object and item actions ([e50c928](https://www.github.com/tgiachi/DarkSun/commit/e50c928c38b7a914c2f3c19380c236b1c6cb1181))
+* **commands:** add command action attribute and base command action executor ([ac953c5](https://www.github.com/tgiachi/DarkSun/commit/ac953c5738eb3a03658c6cddde25dec99f0a13ce))
+* **TileType.cs:** add new tile types for walls, items, food, props, and animals ([c37a9cc](https://www.github.com/tgiachi/DarkSun/commit/c37a9cc60f63e143aa2333d64920d36e4f2e1e88))
+* **TileType.cs:** add new tile types for walls, items, food, props, and animals ([3b01cb6](https://www.github.com/tgiachi/DarkSun/commit/3b01cb6432d9d9a875dac8b1ba14bd8eae9e3759))
+
+### Bug Fixes
+
+* **ci.yml:** change DarkSun to DarkStar in xmllint command ([1852601](https://www.github.com/tgiachi/DarkSun/commit/18526018d01ce1e40992d9a83ea09a24bae5db2a))
+* **ci.yml:** change Docker image tag from 'tgiachi/DarkStar.server:latest' to 'tgiachi/darkstar.server:latest' ([37021e3](https://www.github.com/tgiachi/DarkSun/commit/37021e3f01958996e2993c9f42707ececca49477))
+* **Program.cs:** change DARKSUN to DARKSTAR in root directory variable name and default value ([c21ac7d](https://www.github.com/tgiachi/DarkSun/commit/c21ac7d5ead1f1d63281d5d0fa0077a7a3c824a4))
+* **README.md:** change Dark Sun to Dark Star in the game description ([76e189a](https://www.github.com/tgiachi/DarkSun/commit/76e189a6af6469638d6292c12d85b6b37216d3af))
+
 <a name="0.0.1"></a>
 ## [0.0.1](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.0.1) (2023-4-13)
 
