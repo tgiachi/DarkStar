@@ -10,7 +10,7 @@ namespace DarkStar.Engine.Runner
 {
     public class DarkSunTerminalHostedService : IHostedService
     {
-        private IDarkSunEngine _darkSunEngine;
+        private readonly IDarkSunEngine _darkSunEngine;
         public DarkSunTerminalHostedService(IDarkSunEngine darkSunEngine)
         {
             _darkSunEngine = darkSunEngine;
@@ -21,7 +21,7 @@ namespace DarkStar.Engine.Runner
         {
             _ = Task.Run(() =>
              {
-                 Console.WriteLine("SHELL > ");
+                 Console.WriteLine(">> PRESS ENTER FOR START LUA SHELL");
                  var command = Console.ReadLine();
                  while (command != "EXIT")
                  {
