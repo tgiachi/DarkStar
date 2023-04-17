@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="0.1.1"></a>
+## [0.1.1](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.1.1) (2023-4-17)
+
 <a name="0.1.0"></a>
 ## [0.1.0](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.1.0) (2023-4-17)
 
