@@ -1,35 +1,36 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+        <Version>0.0.1</Version>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="FluentScheduler" Version="5.5.1" />
-    <PackageReference Include="FreeSql.Provider.PostgreSQL" Version="3.2.693" />
-    <PackageReference Include="FreeSql.Provider.Sqlite" Version="3.2.693" />
+    <ItemGroup>
+        <PackageReference Include="FluentScheduler" Version="5.5.1" />
+        <PackageReference Include="FreeSql.Provider.PostgreSQL" Version="3.2.693" />
+        <PackageReference Include="FreeSql.Provider.Sqlite" Version="3.2.693" />
 
-   
-    <PackageReference Include="NLua" Version="1.6.2" />
-    <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
-    <PackageReference Include="TiledSharp" Version="1.0.1" />
-  </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\DarkStar.Api.Engine\DarkStar.Api.Engine.csproj" />
-    <ProjectReference Include="..\DarkStar.Api\DarkStar.Api.csproj" />
-    <ProjectReference Include="..\DarkStar.Database\DarkStar.Database.csproj" />
-    <ProjectReference Include="..\DarkStar.Network\DarkStar.Network.csproj" />
-  </ItemGroup>
+        <PackageReference Include="NLua" Version="1.6.2" />
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
+        <PackageReference Include="TiledSharp" Version="1.0.1" />
+    </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Update="Microsoft.VisualStudio.Threading.Analyzers" Version="17.5.22">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\DarkStar.Api.Engine\DarkStar.Api.Engine.csproj" />
+        <ProjectReference Include="..\DarkStar.Api\DarkStar.Api.csproj" />
+        <ProjectReference Include="..\DarkStar.Database\DarkStar.Database.csproj" />
+        <ProjectReference Include="..\DarkStar.Network\DarkStar.Network.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Update="Microsoft.VisualStudio.Threading.Analyzers" Version="17.5.22">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
 
 </Project>
