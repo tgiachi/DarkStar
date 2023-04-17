@@ -14,7 +14,7 @@ namespace DarkStar.Network.Protocol.Map
 
     [ProtoContract]
     [NetworkMessage(DarkStarMessageType.MapRequest)]
-    public class MapRequestMessage : IDarkSunNetworkMessage
+    public class MapRequestMessage : IDarkStarNetworkMessage
     {
         [ProtoMember(1)]
         public string MapId { get; set; } = null!;

@@ -15,7 +15,7 @@ namespace DarkStar.Network.Protocol.Messages.Players
 {
     [NetworkMessage(DarkStarMessageType.PlayerCreateRequest)]
     [ProtoContract]
-    public class PlayerCreateRequestMessage : IDarkSunNetworkMessage
+    public class PlayerCreateRequestMessage : IDarkStarNetworkMessage
     {
         [ProtoMember(1)]
         public string Name { get; set; } = null!;

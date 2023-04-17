@@ -8,7 +8,7 @@ namespace DarkStar.Network.Protocol.Messages.Server
 {
     [ProtoContract]
     [NetworkMessage(DarkStarMessageType.ServerNameResponse)]
-    public class ServerNameResponseMessage : IDarkSunNetworkMessage
+    public class ServerNameResponseMessage : IDarkStarNetworkMessage
     {
         [ProtoMember(1)]
         public string ServerName { get; set; }

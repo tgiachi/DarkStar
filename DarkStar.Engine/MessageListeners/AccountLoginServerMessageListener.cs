@@ -25,7 +25,7 @@ namespace DarkStar.Engine.MessageListeners
         {
         }
 
-        public override async Task<List<IDarkSunNetworkMessage>> OnMessageReceivedAsync(Guid sessionId,
+        public override async Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(Guid sessionId,
             DarkStarMessageType messageType, AccountLoginRequestMessage message)
         {
             Logger.LogInformation("Received login request from {Id}", sessionId);

@@ -13,7 +13,7 @@ public interface INetworkMessageBuilder
     byte[] GetMessageSeparators { get; }
     NetworkMessageData ParseMessage(byte[] buffer);
 
-    byte[] BuildMessage<T>(T message) where T : IDarkSunNetworkMessage;
+    byte[] BuildMessage<T>(T message) where T : IDarkStarNetworkMessage;
 
     int GetMessageLength(byte[] buffer);
 }

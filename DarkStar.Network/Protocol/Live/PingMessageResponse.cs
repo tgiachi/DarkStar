@@ -13,8 +13,18 @@ namespace DarkStar.Network.Protocol.Live;
 
 [ProtoContract]
 [NetworkMessage(DarkStarMessageType.Ping)]
-public class PingMessageResponse : IDarkSunNetworkMessage
+public struct PingMessageResponse : IDarkStarNetworkMessage
 {
     [ProtoMember(1)]
     public long TimeStamp { get; set; }
+
+    public PingMessageResponse()
+    {
+        TimeStamp = DateTime.UtcNow.Ticks;
+    }
+
+    public PingMessageResponse(long timeStamp)
+    {
+        TimeStamp = timeStamp;
+    }
 }

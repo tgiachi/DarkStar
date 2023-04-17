@@ -15,7 +15,7 @@ namespace DarkStar.Network.Protocol.Messages.Server
 
     [ProtoContract]
     [NetworkMessage(DarkStarMessageType.ServerMotdResponse)]
-    public class ServerMotdResponseMessage : IDarkSunNetworkMessage
+    public class ServerMotdResponseMessage : IDarkStarNetworkMessage
     {
         [ProtoMember(1)]
         public string Motd { get; set; } = null!;

@@ -14,7 +14,7 @@ namespace DarkStar.Network.Protocol.Live;
 
 [ProtoContract]
 [NetworkMessage(DarkStarMessageType.Pong)]
-public class PongMessageResponse : IDarkSunNetworkMessage
+public class PongMessageResponse : IDarkStarNetworkMessage
 {
     [ProtoMember(1)]
     public long TimeStamp { get; set; }

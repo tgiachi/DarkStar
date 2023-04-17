@@ -17,12 +17,11 @@ public class PlayerEntity : BaseEntity
     public Guid AccountId { get; set; }
     public AccountEntity Account { get; set; } = null!;
     public string Name { get; set; } = null!;
-
     public Guid RaceId { get; set; }
     public RaceEntity Race { get; set; } = null!;
     public int X { get; set; }
     public int Y { get; set; }
-    public Guid MapId { get; set; }
+    public string MapId { get; set; } = null!;
     public TileType TileId { get; set; }
     public Guid StatsId { get; set; }
     public PlayerStatEntity Stats { get; set; } = null!;

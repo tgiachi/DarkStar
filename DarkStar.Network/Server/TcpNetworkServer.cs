@@ -39,7 +39,8 @@ public class TcpNetworkServer : TcpServer, IDarkSunNetworkServer
         _messageBuilder = messageBuilder;
         _darkStarNetworkServerConfig = darkStarNetworkServerConfig;
 
-        OptionReceiveBufferSize = 512;
+        OptionReceiveBufferSize = 1024 * 10;
+        OptionSendBufferSize = 1024 * 10;
     }
 
     protected override TcpSession CreateSession()
@@ -86,7 +87,7 @@ public class TcpNetworkServer : TcpServer, IDarkSunNetworkServer
     }
 
 
-    public Task SendMessageAsync(Guid sessionId, IDarkSunNetworkMessage message)
+    public Task SendMessageAsync(Guid sessionId, IDarkStarNetworkMessage message)
     {
         var session = _sessionManager.GetSession(sessionId);
 
@@ -103,7 +104,7 @@ public class TcpNetworkServer : TcpServer, IDarkSunNetworkServer
         return Task.CompletedTask;
     }
 
-    public Task SendMessageAsync(Guid sessionId, List<IDarkSunNetworkMessage> message)
+    public Task SendMessageAsync(Guid sessionId, List<IDarkStarNetworkMessage> message)
     {
         var session = _sessionManager.GetSession(sessionId);
 
@@ -123,7 +124,7 @@ public class TcpNetworkServer : TcpServer, IDarkSunNetworkServer
         return Task.CompletedTask;
     }
 
-    public async Task BroadcastMessageAsync(IDarkSunNetworkMessage message)
+    public async Task BroadcastMessageAsync(IDarkStarNetworkMessage message)
     {
         foreach (var sessionId in Sessions.Keys)
         {
@@ -132,7 +133,7 @@ public class TcpNetworkServer : TcpServer, IDarkSunNetworkServer
     }
 
     public async Task DispatchMessageReceivedAsync(Guid sessionId, DarkStarMessageType messageType,
-        IDarkSunNetworkMessage message)
+        IDarkStarNetworkMessage message)
     {
         OnMessageReceived?.Invoke(sessionId, messageType, message);
         if (_messageListeners.TryGetValue(messageType, out var listener))

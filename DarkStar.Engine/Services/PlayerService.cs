@@ -59,11 +59,14 @@ namespace DarkStar.Engine.Services
             return players;
         }
 
-        public async Task<PlayerEntity> CreatePlayerAsync(Guid accountId, TileType tileId, Guid raceId,
+        public async Task<PlayerEntity> CreatePlayerAsync(Guid accountId, string name, TileType tileId, Guid raceId,
             BaseStatEntity stats)
         {
             var race = await Engine.DatabaseService.QueryAsSingleAsync<RaceEntity>(entity => entity.Id == raceId);
-            var playerEntity = new PlayerEntity() { AccountId = accountId, RaceId = race.Id, Gold = 100 };
+
+            var startingPoint = await Engine.WorldService.GetRandomCityStartingPointAsync();
+
+            var playerEntity = new PlayerEntity() { AccountId = accountId, RaceId = race.Id, Gold = 100, Name = name, MapId = startingPoint.mapId, X = startingPoint.position.X, Y = startingPoint.position.Y };
             await Engine.DatabaseService.InsertAsync(playerEntity);
 
             var statEntity = new PlayerStatEntity()
@@ -84,6 +87,8 @@ namespace DarkStar.Engine.Services
             await Engine.DatabaseService.InsertAsync(statEntity);
 
             playerEntity.Stats = statEntity;
+
+            Logger.LogInformation("Created player {Name} for account {AccountId}", name, accountId);
 
             return playerEntity;
         }

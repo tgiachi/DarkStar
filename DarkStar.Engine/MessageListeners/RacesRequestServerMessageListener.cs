@@ -23,7 +23,7 @@ namespace DarkStar.Engine.MessageListeners
         {
         }
 
-        public override async Task<List<IDarkSunNetworkMessage>> OnMessageReceivedAsync(Guid sessionId,
+        public override async Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(Guid sessionId,
             DarkStarMessageType messageType, PlayerRacesRequestMessage message)
         {
             return Engine.PlayerService.GetSession(sessionId).IsLogged

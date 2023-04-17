@@ -9,6 +9,6 @@ namespace DarkStar.Api.Engine.Interfaces.Listener;
 
 public interface INetworkConnectionHandler
 {
-    Task<List<IDarkSunNetworkMessage>> ClientConnectedMessagesAsync(Guid sessionId);
+    Task<List<IDarkStarNetworkMessage>> ClientConnectedMessagesAsync(Guid sessionId);
     Task ClientDisconnectedAsync(Guid sessionId);
 }

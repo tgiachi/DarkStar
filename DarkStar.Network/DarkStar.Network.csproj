@@ -25,4 +25,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Protocol\Messages\Triggers\Players\" />
+  </ItemGroup>
+
 </Project>

@@ -12,9 +12,10 @@
     <PackageReference Include="FreeSql.Provider.PostgreSQL" Version="3.2.693" />
     <PackageReference Include="FreeSql.Provider.Sqlite" Version="3.2.693" />
 
-    <PackageReference Include="Humanizer.Core" Version="2.14.1" />
+   
     <PackageReference Include="NLua" Version="1.6.2" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
+    <PackageReference Include="TiledSharp" Version="1.0.1" />
   </ItemGroup>
 
   <ItemGroup>

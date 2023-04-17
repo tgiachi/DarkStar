@@ -9,16 +9,16 @@ using DarkStar.Network.Protocol.Types;
 
 namespace DarkStar.Network.Client.Interfaces;
 
-public interface IDarkSunNetworkClient
+public interface IDarkStarNetworkClient
 {
 
-    delegate Task MessageReceivedDelegate(DarkStarMessageType messageType, IDarkSunNetworkMessage message);
+    delegate Task MessageReceivedDelegate(DarkStarMessageType messageType, IDarkStarNetworkMessage message);
     event MessageReceivedDelegate OnMessageReceived;
 
     bool IsConnected { get; }
     ValueTask ConnectAsync();
     ValueTask DisconnectAsync();
-    Task SendMessageAsync(IDarkSunNetworkMessage message);
-    Task SendMessageAsync(List<IDarkSunNetworkMessage> message);
+    Task SendMessageAsync(IDarkStarNetworkMessage message);
+    Task SendMessageAsync(List<IDarkStarNetworkMessage> message);
     void RegisterMessageListener(DarkStarMessageType messageType, INetworkClientMessageListener serverMessageListener);
 }

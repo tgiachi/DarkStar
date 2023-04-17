@@ -23,7 +23,7 @@ namespace DarkStar.Engine.MessageListeners
         {
         }
 
-        public override async Task<List<IDarkSunNetworkMessage>> OnMessageReceivedAsync(Guid sessionId,
+        public override async Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(Guid sessionId,
             DarkStarMessageType messageType, PlayerCreateRequestMessage message)
         {
             if (Engine.PlayerService.GetSession(sessionId).IsLogged == false)
@@ -34,7 +34,7 @@ namespace DarkStar.Engine.MessageListeners
 
 
             var player = await Engine.PlayerService.CreatePlayerAsync(
-                Engine.PlayerService.GetSession(sessionId).AccountId, message.TileId,
+                Engine.PlayerService.GetSession(sessionId).AccountId, message.Name, message.TileId,
                 message.RaceId,
                 new BaseStatEntity()
                 {

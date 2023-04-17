@@ -10,7 +10,7 @@ namespace DarkStar.Network.Protocol.Map
 {
     [ProtoContract]
     [NetworkMessage(DarkStarMessageType.MapResponse)]
-    public class MapResponseMessage : IDarkSunNetworkMessage
+    public class MapResponseMessage : IDarkStarNetworkMessage
     {
         [ProtoMember(1)]
         public string MapId { get; set; } = null!;

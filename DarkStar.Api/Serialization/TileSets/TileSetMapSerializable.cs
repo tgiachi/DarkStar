@@ -23,5 +23,11 @@ namespace DarkStar.Api.Serialization.TileSets
 
         [Column]
         public bool IsBlocked { get; set; }
+
+
+        public override string ToString()
+        {
+            return $"Id: {Id}, Type: {Type}, IsBlocked: {IsBlocked}";
+        }
     }
 }

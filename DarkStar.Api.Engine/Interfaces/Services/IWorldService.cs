@@ -1,4 +1,5 @@
 ﻿using DarkStar.Api.Engine.Interfaces.Services.Base;
+using DarkStar.Api.Engine.Map.Entities;
 using DarkStar.Api.World.Types.Tiles;
 using DarkStar.Network.Protocol.Messages.Common;
 using GoRogue.GameFramework;
@@ -17,4 +18,9 @@ public interface IWorldService : IDarkSunEngineService
 
     void AddEntity<TEntity>(string mapId, TEntity entity) where TEntity : IGameObject;
 
+    void RemoveEntity<TEntity>(string mapId, TEntity entity) where TEntity : IGameObject;
+
+    ValueTask<(string mapId, PointPosition position)> GetRandomCityStartingPointAsync();
+
+    List<PlayerGameObject> GetPlayers(string mapId);
 }

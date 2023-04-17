@@ -15,7 +15,7 @@ namespace DarkStar.Network.Protocol.Messages.Players
 
     [ProtoContract]
     [NetworkMessage(DarkStarMessageType.PlayerRacesRequest)]
-    public class PlayerRacesRequestMessage : IDarkSunNetworkMessage
+    public class PlayerRacesRequestMessage : IDarkStarNetworkMessage
     {
     }
 }

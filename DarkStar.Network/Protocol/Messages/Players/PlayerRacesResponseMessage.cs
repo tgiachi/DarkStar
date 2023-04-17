@@ -15,7 +15,7 @@ namespace DarkStar.Network.Protocol.Messages.Players
 {
     [ProtoContract]
     [NetworkMessage(DarkStarMessageType.PlayerRacesResponse)]
-    public class PlayerRacesResponseMessage : IDarkSunNetworkMessage
+    public class PlayerRacesResponseMessage : IDarkStarNetworkMessage
     {
         [ProtoMember(1)]
         public List<PlayerRaceObject> Races { get; set; } = null!;

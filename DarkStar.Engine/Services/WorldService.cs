@@ -10,6 +10,7 @@ using DarkStar.Api.Engine.Map.Entities.Base;
 using DarkStar.Api.Engine.Serialization;
 using DarkStar.Api.Engine.Serialization.Map;
 using DarkStar.Api.Engine.Utils;
+using DarkStar.Api.Utils;
 using DarkStar.Api.World.Types.Map;
 using DarkStar.Api.World.Types.Tiles;
 using DarkStar.Database.Entities.Maps;
@@ -32,7 +33,7 @@ namespace DarkStar.Engine.Services
         private readonly EngineConfig _engineConfig;
         private readonly DirectoriesConfig _directoriesConfig;
 
-        private readonly ConcurrentDictionary<string, (Map, MapType, MapInfo)> _maps = new();
+        private readonly ConcurrentDictionary<string, (Map map, MapType mapType, MapInfo mapInfo)> _maps = new();
 
         public WorldService(ILogger<WorldService> logger, EngineConfig engineConfig, DirectoriesConfig directoriesConfig) : base(logger)
         {
@@ -255,6 +256,27 @@ namespace DarkStar.Engine.Services
         {
             var map = GetMap(mapId);
             map.AddEntity(entity);
+        }
+
+        public void RemoveEntity<TEntity>(string mapId, TEntity entity) where TEntity : IGameObject
+        {
+            var map = GetMap(mapId);
+            map.RemoveEntity(entity);
+        }
+
+        public ValueTask<(string mapId, PointPosition position)> GetRandomCityStartingPointAsync()
+        {
+            var map = _maps.Where(x => x.Value.Item2 == MapType.City).ToList().RandomItem();
+            var position = GetRandomWalkablePosition(map.Key);
+
+            return ValueTask.FromResult((map.Key, position));
+
+        }
+
+        public List<PlayerGameObject> GetPlayers(string mapId)
+        {
+            var map = GetMap(mapId);
+            return map.Entities.Items.Where(x => x is PlayerGameObject).Cast<PlayerGameObject>().ToList();
         }
 
         private void HandleGameObjectAdded(string mapId, IGameObject gameObject, PointPosition position)
