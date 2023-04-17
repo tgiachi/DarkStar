@@ -480,7 +480,6 @@ public enum TileType : short
     Food_Bread_2 = 262,
     Food_Meat_1 = 259,
     Food_Meat_2 = 260,
-    Food_Meat_3 = 273,
 
     Foot_Potion_1 = 1025,
     Foot_Potion_2 = 1026,
