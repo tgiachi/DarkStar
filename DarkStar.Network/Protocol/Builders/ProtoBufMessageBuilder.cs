@@ -48,6 +48,7 @@ public class ProtoBufMessageBuilder : INetworkMessageBuilder
 
     public byte[] BuildMessage<T>(T message) where T : IDarkStarNetworkMessage
     {
+        
         var messageType = message.GetType().GetCustomAttribute<NetworkMessageAttribute>();
 
         if (messageType != null)

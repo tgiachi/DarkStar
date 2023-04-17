@@ -10,7 +10,7 @@ public interface IWorldService : IDarkSunEngineService
 {
     PointPosition GetRandomWalkablePosition(string mapId);
 
-    bool AddPlayerOnMap(string mapId, Guid playerId, PointPosition position, TileType tile);
+    bool AddPlayerOnMap(string mapId, Guid playerId, Guid networkSessionId, PointPosition position, TileType tile);
 
     bool RemovePlayerFromMap(string mapId, Guid playerId);
 

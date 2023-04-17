@@ -70,6 +70,7 @@ namespace DarkStar.Engine.Services
                 .Select(_ => Task.Run(async () =>
                 {
                     var (id, map) = await BuildMapAsync(MapType.City);
+                    HandleMapEvents(id, map);
                     _maps.TryAdd(id, (map, MapType.City, new MapInfo()));
                 }))
                 .ToList();
@@ -219,14 +220,15 @@ namespace DarkStar.Engine.Services
             return randomPosition.ToPointPosition();
         }
 
-        public bool AddPlayerOnMap(string mapId, Guid playerId, PointPosition position, TileType tile)
+        public bool AddPlayerOnMap(string mapId, Guid playerId, Guid networkSessionId, PointPosition position, TileType tile)
         {
             var map = _maps[mapId].Item1;
 
             map.AddEntity(new PlayerGameObject(position.ToPoint())
             {
                 Tile = tile,
-                ObjectId = playerId
+                ObjectId = playerId,
+                NetworkSessionId = networkSessionId
             });
             return true;
         }

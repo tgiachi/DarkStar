@@ -192,6 +192,7 @@ namespace DarkStar.Engine
                     TileId = TileType.Human_Mage_1,
                     RaceId = race.Id,
                 });
+                await _networkClient.SendMessageAsync(new PlayerLoginRequestMessage(Guid.Empty, "Player 1"));
                 //await _networkClient.DisconnectAsync();
             });
 

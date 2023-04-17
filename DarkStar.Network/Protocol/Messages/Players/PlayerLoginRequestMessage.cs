@@ -18,9 +18,13 @@ namespace DarkStar.Network.Protocol.Messages.Players
         [ProtoMember(1)]
         public Guid PlayerId { get; set; }
 
-        public PlayerLoginRequestMessage(Guid playerId)
+        [ProtoMember(2)]
+        public string PlayerName { get; set; } = null!;
+
+        public PlayerLoginRequestMessage(Guid playerId, string playerName)
         {
             PlayerId = playerId;
+            PlayerName = playerName;
         }
 
         public PlayerLoginRequestMessage()

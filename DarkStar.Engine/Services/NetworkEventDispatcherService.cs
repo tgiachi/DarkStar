@@ -63,9 +63,12 @@ namespace DarkStar.Engine.Services
                     break;
             }
 
-            foreach (var player in playerToNotify)
+            if (message != null)
             {
-                await Engine.NetworkServer.SendMessageAsync(player.NetworkSessionId, message);
+                foreach (var player in playerToNotify)
+                {
+                    await Engine.NetworkServer.SendMessageAsync(player.NetworkSessionId, message);
+                }
             }
         }
 

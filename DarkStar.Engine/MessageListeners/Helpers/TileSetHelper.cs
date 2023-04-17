@@ -23,7 +23,6 @@ namespace DarkStar.Engine.MessageListeners.Helpers
             s_tileSetImageCache.Add(tileId, tileSetImage);
 
             return tileSetImage;
-
         }
 
         public static async ValueTask<List<TileSetMapEntry>> GetTileSetMapAsync(string tileId, IDarkSunEngine engine)
@@ -44,7 +43,6 @@ namespace DarkStar.Engine.MessageListeners.Helpers
             IDarkSunEngine engine)
         {
             return (await GetTileSetAsync(tileSet, engine), await GetTileSetMapAsync(tileSet, engine));
-
         }
     }
 }
