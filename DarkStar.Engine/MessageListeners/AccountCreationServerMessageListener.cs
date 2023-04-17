@@ -39,7 +39,7 @@ namespace DarkStar.Engine.MessageListeners
             await Engine.DatabaseService.InsertAsync(new AccountEntity
             {
                 Email = message.Email,
-                PasswordHash = message.Password.CreateMd5Hash(),
+                PasswordHash = message.Password.CreateBCryptHash(),
                 RegistrationDate = DateTime.UtcNow,
                 IsEnabled = true
             });

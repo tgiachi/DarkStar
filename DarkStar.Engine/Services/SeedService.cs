@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using DarkStar.Api.Attributes.Seed;
 using DarkStar.Api.Attributes.Services;
 
 using Microsoft.Extensions.Logging;
@@ -17,13 +18,13 @@ using DarkStar.Engine.Services.Base;
 using DarkStar.Api.World.Types.Utils;
 using DarkStar.Api.Data.Config;
 using DarkStar.Api.Engine.Serialization;
-using DarkStar.Api.Engine.Attributes.Seed;
 using DarkStar.Database.Entities.Races;
 using DarkStar.Database.Entities.Base;
 using DarkStar.Database.Entities.Item;
 using DarkStar.Database.Entities.TileSets;
 using DarkStar.Api.World.Types.Tiles;
 using DarkStar.Database.Entities.Objects;
+using FastEnumUtility;
 
 namespace DarkStar.Engine.Services
 {
@@ -62,10 +63,18 @@ namespace DarkStar.Engine.Services
         private async Task CheckSeedTemplatesAsync()
         {
             Logger.LogInformation("Checking Seed Templates");
+
             await CheckSeedTemplateAsync<ItemDropObjectSeedEntity>();
             await CheckSeedTemplateAsync<ItemObjectSeedEntity>();
             await CheckSeedTemplateAsync<WorldObjectSeedEntity>();
             await CheckSeedTemplateAsync<RaceObjectSeedEntity>();
+            await CheckSeedTemplateAsync<TileSetMapSerializable>(GetDefaultTileSetMap());
+        }
+
+        private IEnumerable<TileSetMapSerializable> GetDefaultTileSetMap()
+        {
+            return FastEnum.GetValues<TileType>().OrderBy(k => (short)k).Select(s =>
+                new TileSetMapSerializable() { Type = s, Id = (short)s, IsBlocked = false });
         }
 
         private Task CheckSeedDirectoriesAsync()
@@ -82,6 +91,7 @@ namespace DarkStar.Engine.Services
             return Task.CompletedTask;
         }
 
+
         private Task LoadSeedAsync<TEntity>() where TEntity : class, new()
         {
             var attribute = typeof(TEntity).GetCustomAttribute<SeedObjectAttribute>();
@@ -93,14 +103,19 @@ namespace DarkStar.Engine.Services
             return Task.CompletedTask;
         }
 
-        private async Task CheckSeedTemplateAsync<TEntity>() where TEntity : class, new()
+        private async Task CheckSeedTemplateAsync<TEntity>(IEnumerable<TEntity>? defaultData = null) where TEntity : class, new()
         {
             Logger.LogInformation("Checking Seed Template for type: {Type}", typeof(TEntity).Name);
             var fileName = Path.Join(_directoriesConfig[DirectoryNameType.SeedTemplates],
                 $"{typeof(TEntity).Name.Replace("Entity", "").ToUnderscoreCase()}.csv");
             if (!File.Exists(fileName))
             {
-                await SeedCsvParser.Instance.WriteHeaderToFileAsync(fileName, Enumerable.Empty<TEntity>());
+                if (defaultData == null)
+                {
+                    defaultData = Enumerable.Empty<TEntity>();
+                }
+
+                await SeedCsvParser.Instance.WriteHeaderToFileAsync(fileName, defaultData);
             }
         }
 

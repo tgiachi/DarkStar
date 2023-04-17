@@ -66,7 +66,7 @@ namespace DarkStar.Engine.Services
         private async Task<List<string>?> DownloadLinkAsync(string animalType, string sex, int count = 10)
         {
             var link = GetAnimalLink(animalType, sex);
-            var fileName = $"{link.CreateMd5Hash()}.json";
+            var fileName = $"{link.CreateBCryptHash()}.json";
             var fullList = new List<string>();
             if (File.Exists(Path.Join(_cacheDirectory, fileName)))
             {
@@ -93,7 +93,7 @@ namespace DarkStar.Engine.Services
         private async Task<List<string>?> DownloadLinkAsync(string category, int count = 10)
         {
             var link = GetLink(category);
-            var fileName = $"{link.CreateMd5Hash()}.json";
+            var fileName = $"{link.CreateBCryptHash()}.json";
             var fullList = new List<string>();
             if (File.Exists(Path.Join(_cacheDirectory, fileName)))
             {
