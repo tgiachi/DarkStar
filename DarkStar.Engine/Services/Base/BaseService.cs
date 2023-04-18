@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using DarkStar.Api.Engine.Interfaces.Core;
 using DarkStar.Api.Engine.Interfaces.Services.Base;
 using Microsoft.Extensions.Logging;
+using Redbus;
+using Redbus.Events;
 
 namespace DarkStar.Engine.Services.Base
 {
@@ -13,6 +15,8 @@ namespace DarkStar.Engine.Services.Base
     {
         protected ILogger Logger { get; }
         protected IDarkSunEngine Engine { get; private set; } = null!;
+
+        private readonly List<SubscriptionToken> _eventBusSubscriptions = new();
 
         public BaseService(ILogger<TService> logger)
         {
@@ -32,6 +36,11 @@ namespace DarkStar.Engine.Services.Base
             return StartAsync();
         }
 
+        protected void SubscribeToEvent<TEvent>(Action<TEvent> action) where TEvent : EventBase
+        {
+            _eventBusSubscriptions.Add(Engine.EventBus.Subscribe(action));
+        }
+
         protected virtual ValueTask<bool> StartAsync()
         {
             return ValueTask.FromResult(true);
@@ -40,6 +49,7 @@ namespace DarkStar.Engine.Services.Base
         public virtual ValueTask<bool> StopAsync()
         {
             Logger.LogDebug("Stopping service {Service}", GetType().Name);
+            _eventBusSubscriptions.ForEach(Engine.EventBus.Unsubscribe);
             return new ValueTask<bool>(true);
         }
     }

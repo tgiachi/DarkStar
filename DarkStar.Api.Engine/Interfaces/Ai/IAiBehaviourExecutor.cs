@@ -3,7 +3,9 @@ using DarkStar.Database.Entities.Npc;
 
 namespace DarkStar.Api.Engine.Interfaces.Ai;
 
-public interface IAiBehaviourExecutor
+public interface IAiBehaviourExecutor : IDisposable
 {
-    Task ProcessAsync(NpcEntity npcEntity, NpcGameObject gameObject, double delta);
+    double Interval { get; }
+    ValueTask ProcessAsync(double delta);
+    ValueTask InitializeAsync(string mapId, NpcEntity npc, NpcGameObject npcGameObject);
 }

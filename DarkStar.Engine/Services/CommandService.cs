@@ -66,9 +66,9 @@ namespace DarkStar.Engine.Services
             var actionsToRemove = new List<ICommandAction>();
             foreach (var action in _playersActionsQueue)
             {
-                action.Tick -= deltaTime;
+                action.Delay -= deltaTime;
 
-                if (action.Tick <= 0)
+                if (action.Delay <= 0)
                 {
                     await ProcessPlayerActionAsync(action);
                     actionsToRemove.Add(action);
@@ -79,8 +79,8 @@ namespace DarkStar.Engine.Services
 
             foreach (var action in _npcsActionsQueue)
             {
-                action.Tick -= deltaTime;
-                if (action.Tick <= 0)
+                action.Delay -= deltaTime;
+                if (action.Delay <= 0)
                 {
                     // await ProcessPlayerAction(action);
                 }

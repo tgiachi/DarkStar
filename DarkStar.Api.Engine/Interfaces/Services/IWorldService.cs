@@ -1,5 +1,7 @@
 ﻿using DarkStar.Api.Engine.Interfaces.Services.Base;
 using DarkStar.Api.Engine.Map.Entities;
+using DarkStar.Api.Engine.Map.Entities.Base;
+using DarkStar.Api.World.Types.Map;
 using DarkStar.Api.World.Types.Tiles;
 using DarkStar.Network.Protocol.Messages.Common;
 using GoRogue.GameFramework;
@@ -19,8 +21,16 @@ public interface IWorldService : IDarkSunEngineService
     void AddEntity<TEntity>(string mapId, TEntity entity) where TEntity : IGameObject;
 
     void RemoveEntity<TEntity>(string mapId, TEntity entity) where TEntity : IGameObject;
+    ValueTask<TEntity?> GetEntityByIdAsync<TEntity>(string mapId, Guid id) where TEntity : BaseGameObject;
 
     ValueTask<(string mapId, PointPosition position)> GetRandomCityStartingPointAsync();
+
+    bool IsLocationWalkable(GoRogue.GameFramework.Map map, PointPosition position);
+    Task<Dictionary<MapLayer, List<IGameObject>>> GetGameObjectsInRangeAsync(string mapId, PointPosition position, int range = 5);
+
+    Task<List<PointPosition>> GetNeighborCellsAsync(string mapId, PointPosition startPosition, int cellsNumber = 5);
+
+    Task<List<PointPosition>> GetFovAsync(string mapId, PointPosition sourcePosition, int radius = 5);
 
     List<PlayerGameObject> GetPlayers(string mapId);
 }

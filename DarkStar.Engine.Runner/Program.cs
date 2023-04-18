@@ -102,6 +102,8 @@ internal class Program
                     .RegisterMessageListeners()
                     .RegisterCommandExecutors()
                     .RegisterScriptEngineFunctions()
+                    .RegisterAiBehaviour()
+                    .RegisterWorldObjectAndItems()
                     .AddHostedService<DarkSunEngineHostedService>();
 
                 if (string.IsNullOrEmpty(Environment.GetEnvironmentVariable("DOCKER_CONTAINER")))

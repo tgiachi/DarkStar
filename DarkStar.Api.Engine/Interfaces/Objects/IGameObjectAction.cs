@@ -7,10 +7,10 @@ using DarkStar.Api.Engine.Map.Entities;
 
 namespace DarkStar.Api.Engine.Interfaces.Objects
 {
-    public interface IGameObjectAction
+    public interface IGameObjectAction : IDisposable
     {
-        Task OnInitializedAsync(string mapId, WorldGameObject gameObject);
+        ValueTask OnInitializedAsync(string mapId, WorldGameObject gameObject);
 
-        Task OnActivatedAsync(string mapId, WorldGameObject gameObject, Guid senderId, bool isNpc);
+        ValueTask OnActivatedAsync(string mapId, WorldGameObject gameObject, Guid senderId, bool isNpc);
     }
 }
