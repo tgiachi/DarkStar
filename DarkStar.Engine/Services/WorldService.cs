@@ -81,6 +81,34 @@ namespace DarkStar.Engine.Services
             return Task.FromResult(gameObjects);
         }
 
+        public Task<List<PointPosition>> GetNeighbourCellsAsync(string mapId, PointPosition startPosition, int cellsNumber = 5)
+        {
+            var positions = new List<PointPosition>();
+            var map = GetMap(mapId);
+            var radiusResult = _positionRadius.PositionsInRadius(startPosition.ToPoint(), cellsNumber);
+            foreach (var radius in radiusResult)
+            {
+                var isWalkable = false;
+                while (!isWalkable)
+                {
+                    isWalkable = IsLocationWalkable(map, radius.ToPointPosition());
+                    if (isWalkable)
+                    {
+                        positions.Add(radius.ToPointPosition());
+                    }
+                }
+
+            }
+            return Task.FromResult(positions);
+        }
+
+        public bool IsLocationWalkable(Map map, PointPosition position)
+        {
+            var terrainData = map.GetTerrainAt(position.X, position.Y);
+
+            return terrainData!.IsTransparent;
+        }
+
 
         private async ValueTask GenerateMapsAsync()
         {
@@ -236,6 +264,14 @@ namespace DarkStar.Engine.Services
                 randomPosition = RandPointUtils.RandomPoint(map.Width, map.Height);
             }
             return randomPosition.ToPointPosition();
+        }
+
+        public  Task<List<PointPosition>> GetFovAsync(string mapId, PointPosition sourcePosition, int radius = 5)
+        {
+            var map = GetMap(mapId);
+            map.PlayerFOV.Reset();
+            map.PlayerFOV.Calculate(sourcePosition.ToPoint(), radius);
+            return Task.FromResult(map.PlayerFOV.CurrentFOV.Select(s => s.ToPointPosition()).ToList());
         }
 
         public bool AddPlayerOnMap(string mapId, Guid playerId, Guid networkSessionId, PointPosition position, TileType tile)
