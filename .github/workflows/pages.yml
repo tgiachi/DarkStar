@@ -6,7 +6,7 @@ on:
 
 jobs:
   publish-docs:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
     - name: Chekout
       uses: actions/checkout@v3

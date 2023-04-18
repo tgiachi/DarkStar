@@ -9,5 +9,6 @@ namespace DarkStar.Api.World.Types.GameObjects;
 // ReSharper disable InconsistentNaming
 public enum GameObjectType : short
 {
-    Prop_Mushroom
+    Prop_Mushroom,
+    Internal_World_Spawner
 }

@@ -59,8 +59,6 @@ namespace DarkStar.Engine.Services
 
         private async Task SchedulerServiceOnOnTickAsync(double deltaTime)
         {
-
-
             await _actionListLock.WaitAsync();
 
             var actionsToRemove = new List<ICommandAction>();
