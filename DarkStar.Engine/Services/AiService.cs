@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Reflection;
 using DarkStar.Api.Attributes.Services;
 using DarkStar.Api.Engine.Attributes.Ai;
 using DarkStar.Api.Engine.Events.Map;
@@ -24,8 +19,8 @@ namespace DarkStar.Engine.Services
     public class AiService : BaseService<AiService>, IAiService
     {
         private readonly IServiceProvider _serviceProvider;
-        private SemaphoreSlim _aiExecutorsLock = new(1);
-        private Dictionary<uint, IAiBehaviourExecutor> _aiExecutors = new();
+        private readonly SemaphoreSlim _aiExecutorsLock = new(1);
+        private readonly Dictionary<uint, IAiBehaviourExecutor> _aiExecutors = new();
 
         private readonly List<(NpcType, NpcSubType, Type)> _aiBehaviourTypes =
             new();

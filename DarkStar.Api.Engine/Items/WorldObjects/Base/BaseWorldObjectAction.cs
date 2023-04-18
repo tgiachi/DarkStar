@@ -26,5 +26,9 @@ namespace DarkStar.Api.Engine.Items.WorldObjects.Base
         {
             return ValueTask.CompletedTask;
         }
+
+        public virtual void Dispose()
+        {
+        }
     }
 }

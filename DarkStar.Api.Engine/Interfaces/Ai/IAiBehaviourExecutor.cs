@@ -3,7 +3,7 @@ using DarkStar.Database.Entities.Npc;
 
 namespace DarkStar.Api.Engine.Interfaces.Ai;
 
-public interface IAiBehaviourExecutor
+public interface IAiBehaviourExecutor : IDisposable
 {
     double Interval { get; }
     ValueTask ProcessAsync(double delta);

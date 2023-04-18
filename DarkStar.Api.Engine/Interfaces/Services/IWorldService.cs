@@ -1,6 +1,7 @@
 ﻿using DarkStar.Api.Engine.Interfaces.Services.Base;
 using DarkStar.Api.Engine.Map.Entities;
 using DarkStar.Api.Engine.Map.Entities.Base;
+using DarkStar.Api.World.Types.Map;
 using DarkStar.Api.World.Types.Tiles;
 using DarkStar.Network.Protocol.Messages.Common;
 using GoRogue.GameFramework;
@@ -23,6 +24,8 @@ public interface IWorldService : IDarkSunEngineService
     ValueTask<TEntity?> GetEntityByIdAsync<TEntity>(string mapId, Guid id) where TEntity : BaseGameObject;
 
     ValueTask<(string mapId, PointPosition position)> GetRandomCityStartingPointAsync();
+
+    Task<Dictionary<MapLayer, List<IGameObject>>> GetGameObjectsInRangeAsync(string mapId, PointPosition position, int range = 5);
 
     List<PlayerGameObject> GetPlayers(string mapId);
 }

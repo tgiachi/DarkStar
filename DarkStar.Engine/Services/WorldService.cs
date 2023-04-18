@@ -32,6 +32,7 @@ namespace DarkStar.Engine.Services
     {
         private readonly EngineConfig _engineConfig;
         private readonly DirectoriesConfig _directoriesConfig;
+        private readonly Radius _positionRadius = new();
 
         private readonly ConcurrentDictionary<string, (Map map, MapType mapType, MapInfo mapInfo)> _maps = new();
 
@@ -62,6 +63,23 @@ namespace DarkStar.Engine.Services
             return true;
         }
 
+        public Task<Dictionary<MapLayer, List<IGameObject>>> GetGameObjectsInRangeAsync(string mapId,
+            PointPosition position, int range = 5)
+        {
+            var map = GetMap(mapId);
+            var gameObjects = FastEnum.GetValues<MapLayer>().ToDictionary(layer => layer, layer => new List<IGameObject>());
+
+            var positionsInRadius = _positionRadius.PositionsInRadius(position.ToPoint(), range);
+            foreach (var pos in positionsInRadius)
+            {
+                var foundObjects = map.Entities.GetItemsAt(pos);
+                foreach (var gameObject in foundObjects)
+                {
+                    gameObjects[(MapLayer)gameObject.Layer].Add(gameObject);
+                }
+            }
+            return Task.FromResult(gameObjects);
+        }
 
 
         private async ValueTask GenerateMapsAsync()

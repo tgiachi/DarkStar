@@ -7,7 +7,7 @@ using DarkStar.Api.Engine.Map.Entities;
 
 namespace DarkStar.Api.Engine.Interfaces.Objects
 {
-    public interface IGameObjectAction
+    public interface IGameObjectAction : IDisposable
     {
         ValueTask OnInitializedAsync(string mapId, WorldGameObject gameObject);
 

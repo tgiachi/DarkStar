@@ -62,5 +62,10 @@ namespace DarkStar.Api.Engine.Ai.Base
         {
             return ValueTask.CompletedTask;
         }
+
+        public virtual void Dispose()
+        {
+
+        }
     }
 }
