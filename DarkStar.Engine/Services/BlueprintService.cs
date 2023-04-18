@@ -4,6 +4,7 @@ using DarkStar.Api.Engine.Interfaces.Services;
 using DarkStar.Engine.Services.Base;
 
 using Microsoft.Extensions.Logging;
+using TiledSharp;
 
 namespace DarkStar.Engine.Services
 {
@@ -36,6 +37,15 @@ namespace DarkStar.Engine.Services
 
         private ValueTask LoadMapTemplateAsync(string fileName)
         {
+            try
+            {
+                var map =  new TmxMap(fileName);
+                // Check if the map is valid
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError(ex, "Failed to load map template {FileName}: {Error}", fileName, ex);
+            }
             return ValueTask.CompletedTask;
         }
     }

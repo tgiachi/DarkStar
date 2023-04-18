@@ -266,6 +266,14 @@ namespace DarkStar.Engine.Services
             map.RemoveEntity(entity);
         }
 
+        public ValueTask<TEntity?> GetEntityByIdAsync<TEntity>(string mapId, Guid id) where TEntity : BaseGameObject
+        {
+            var map = GetMap(mapId);
+            var entity = map.Entities.Items.FirstOrDefault(x => x is TEntity tEntity && tEntity.ObjectId == id);
+
+            return ValueTask.FromResult(entity as TEntity);
+        }
+
         public ValueTask<(string mapId, PointPosition position)> GetRandomCityStartingPointAsync()
         {
             var map = _maps.Where(x => x.Value.Item2 == MapType.City).ToList().RandomItem();

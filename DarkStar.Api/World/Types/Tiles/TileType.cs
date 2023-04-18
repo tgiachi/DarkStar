@@ -209,7 +209,6 @@ public enum TileType : short
     House_Wood_Window_4 = 7049,
     House_Wood_Window_5 = 7050,
     House_Wood_Window_6 = 7051,
-
     House_Wood_Window_7 = 7052,
     House_Wood_Window_8 = 7053,
     House_Wood_Window_9 = 7054,

@@ -2,6 +2,7 @@
 {
     public interface IScheduledGameObjectAction : IGameObjectAction
     {
-        Task UpdateAsync(double deltaTime);
+        double Interval { get; set; }
+        ValueTask UpdateAsync(double deltaTime);
     }
 }

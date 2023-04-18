@@ -57,6 +57,9 @@ public enum DarkStarMessageType : short
     WorldGameObjectRemovedResponse,
     WorldGameObjectMovedResponse,
 
+    WorldMessageRequest,
+    WorldMessageResponse,
+
     MapRequest,
     MapResponse,
 }

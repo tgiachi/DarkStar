@@ -9,8 +9,8 @@ namespace DarkStar.Api.Engine.Interfaces.Objects
 {
     public interface IGameObjectAction
     {
-        Task OnInitializedAsync(string mapId, WorldGameObject gameObject);
+        ValueTask OnInitializedAsync(string mapId, WorldGameObject gameObject);
 
-        Task OnActivatedAsync(string mapId, WorldGameObject gameObject, Guid senderId, bool isNpc);
+        ValueTask OnActivatedAsync(string mapId, WorldGameObject gameObject, Guid senderId, bool isNpc);
     }
 }
