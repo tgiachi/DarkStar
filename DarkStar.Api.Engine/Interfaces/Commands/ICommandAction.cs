@@ -4,6 +4,6 @@ namespace DarkStar.Api.Engine.Interfaces.Commands;
 
 public interface ICommandAction
 {
-    double Tick { get; set; }
+    double Delay { get; set; }
     CommandActionType Type { get; }
 }
