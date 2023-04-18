@@ -81,7 +81,7 @@ namespace DarkStar.Engine.Services
             return Task.FromResult(gameObjects);
         }
 
-        public Task<List<PointPosition>> GetNeighbourCellsAsync(string mapId, PointPosition startPosition, int cellsNumber = 5)
+        public Task<List<PointPosition>> GetNeighborCellsAsync(string mapId, PointPosition startPosition, int cellsNumber = 5)
         {
             var positions = new List<PointPosition>();
             var map = GetMap(mapId);

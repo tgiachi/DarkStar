@@ -28,7 +28,7 @@ public interface IWorldService : IDarkSunEngineService
     bool IsLocationWalkable(GoRogue.GameFramework.Map map, PointPosition position);
     Task<Dictionary<MapLayer, List<IGameObject>>> GetGameObjectsInRangeAsync(string mapId, PointPosition position, int range = 5);
 
-    Task<List<PointPosition>> GetNeighbourCellsAsync(string mapId, PointPosition startPosition, int cellsNumber = 5);
+    Task<List<PointPosition>> GetNeighborCellsAsync(string mapId, PointPosition startPosition, int cellsNumber = 5);
 
     Task<List<PointPosition>> GetFovAsync(string mapId, PointPosition sourcePosition, int radius = 5);
 
