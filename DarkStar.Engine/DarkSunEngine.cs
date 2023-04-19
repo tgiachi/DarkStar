@@ -165,40 +165,60 @@ namespace DarkStar.Engine
             }, (int)TimeSpan.FromMinutes(5).TotalSeconds, false);
 
             // TODO: This is only for testing, will be removed later
-            _ = Task.Run(async () =>
-            {
-                await _networkClient.ConnectAsync();
 
-                var race = new RaceEntity { TileId  = TileType.Food_Mushroom_1, Dexterity = 0, Health = 0, IsVisible = true, Luck = 0, Strength = 0, Name = "Humans"};
-                await DatabaseService.InsertAsync(race);
-
-                await _networkClient.SendMessageAsync(new AccountCreateRequestMessage()
-                {
-                    Email = "test@test.com",
-                    Password = "1234"
-                });
-                await _networkClient.SendMessageAsync(new AccountLoginRequestMessage("test@test.com", "12345"));
-                await _networkClient.SendMessageAsync(new AccountLoginRequestMessage("test@test.com", "1234"));
-                await _networkClient.SendMessageAsync(new TileSetListRequestMessage());
-               // await _networkClient.SendMessageAsync(new TileSetDownloadRequestMessage("Tangaria"));
-                await _networkClient.SendMessageAsync(new TileSetMapRequestMessage("Tangaria"));
-                await _networkClient.SendMessageAsync(new PlayerCreateRequestMessage()
-                {
-                    Dexterity = 10,
-                    Intelligence = 10,
-                    Luck = 10,
-                    Name = "Player 1",
-                    Strength = 10,
-                    TileId = TileType.Human_Mage_1,
-                    RaceId = race.Id,
-                });
-                await _networkClient.SendMessageAsync(new PlayerLoginRequestMessage(Guid.Empty, "Player 1"));
-                //await _networkClient.DisconnectAsync();
-            });
-
+            EventBus.Subscribe<EngineReadyEvent>(OnEngineReady);
             EventBus.PublishAsync(new EngineReadyEvent());
 
             return true;
+        }
+
+        private void OnEngineReady(EngineReadyEvent obj)
+        {
+            _ = Task.Run(
+                async () =>
+                {
+                    await _networkClient.ConnectAsync();
+
+                    var race = new RaceEntity
+                    {
+                        TileId = TileType.Food_Mushroom_1,
+                        Dexterity = 0,
+                        Health = 0,
+                        IsVisible = true,
+                        Luck = 0,
+                        Strength = 0,
+                        Name = "Humans"
+                    };
+                    await DatabaseService.InsertAsync(race);
+
+                    await _networkClient.SendMessageAsync(
+                        new AccountCreateRequestMessage()
+                        {
+                            Email = "test@test.com",
+                            Password = "1234"
+                        }
+                    );
+                    await _networkClient.SendMessageAsync(new AccountLoginRequestMessage("test@test.com", "12345"));
+                    await _networkClient.SendMessageAsync(new AccountLoginRequestMessage("test@test.com", "1234"));
+                    await _networkClient.SendMessageAsync(new TileSetListRequestMessage());
+                    // await _networkClient.SendMessageAsync(new TileSetDownloadRequestMessage("Tangaria"));
+                    await _networkClient.SendMessageAsync(new TileSetMapRequestMessage("Tangaria"));
+                    await _networkClient.SendMessageAsync(
+                        new PlayerCreateRequestMessage()
+                        {
+                            Dexterity = 10,
+                            Intelligence = 10,
+                            Luck = 10,
+                            Name = "Player 1",
+                            Strength = 10,
+                            TileId = TileType.Human_Mage_1,
+                            RaceId = race.Id,
+                        }
+                    );
+                    await _networkClient.SendMessageAsync(new PlayerLoginRequestMessage(Guid.Empty, "Player 1"));
+                    //await _networkClient.DisconnectAsync();
+                }
+            );
         }
 
         public async ValueTask<bool> StopAsync()
