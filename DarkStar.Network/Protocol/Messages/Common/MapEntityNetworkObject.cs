@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,5 +19,17 @@ namespace DarkStar.Network.Protocol.Messages.Common
         public TileType TileType { get; set; }
         [ProtoMember(4)]
         public PointPosition Position { get; set; }
+
+        public MapEntityNetworkObject()
+        {
+        }
+
+        public MapEntityNetworkObject(int id, Guid objectId, TileType tileType, PointPosition position)
+        {
+            Id = id;
+            ObjectId = objectId;
+            TileType = tileType;
+            Position = position;
+        }
     }
 }

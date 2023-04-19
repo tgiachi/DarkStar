@@ -331,6 +331,21 @@ namespace DarkStar.Engine.Services
             throw new Exception($"Map {mapId} not found");
         }
 
+        public MapType GetMapType(string mapId)
+        {
+            _maps.TryGetValue(mapId, out var map);
+
+            return map.mapType;
+        }
+
+        public string GetMapName(string mapId)
+        {
+            _maps.TryGetValue(mapId, out var map);
+
+            return map.mapInfo.Name;
+
+        }
+
         public void AddEntity<TEntity>(string mapId, TEntity entity) where TEntity : IGameObject
         {
             var map = GetMap(mapId);
@@ -349,6 +364,19 @@ namespace DarkStar.Engine.Services
             var entity = map.Entities.Items.FirstOrDefault(x => x is TEntity tEntity && tEntity.ObjectId == id);
 
             return ValueTask.FromResult(entity as TEntity);
+        }
+
+        public ValueTask<List<TEntity>> GetAllEntitiesInLayerAsync<TEntity>(string mapId, MapLayer layer)
+            where TEntity : BaseGameObject
+        {
+            var map = GetMap(mapId);
+            if (layer == MapLayer.Terrain)
+            {
+                return ValueTask.FromResult(map.Terrain.Positions().Select(x => map.GetTerrainAt(x)).Cast<TEntity>().ToList());
+            }
+            var entities = map.Entities.GetLayer((int)layer).Items.Cast<TEntity>().ToList();
+            return ValueTask.FromResult(entities);
+
         }
 
         public ValueTask<(string mapId, PointPosition position)> GetRandomCityStartingPointAsync()

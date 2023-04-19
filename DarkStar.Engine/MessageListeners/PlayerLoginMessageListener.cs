@@ -1,4 +1,5 @@
 using DarkStar.Api.Engine.Attributes.Network;
+using DarkStar.Api.Engine.Events.Players;
 using DarkStar.Api.Engine.Interfaces.Core;
 using DarkStar.Api.Engine.MessageListeners;
 using DarkStar.Database.Entities.Player;
@@ -35,6 +36,10 @@ namespace DarkStar.Engine.MessageListeners
 
                 Engine.WorldService.AddPlayerOnMap(player.MapId, player.Id, sessionId, new PointPosition(player.X, player.Y),
                     player.TileId);
+
+                // Send player Data see: {NetworkEventDispatcherService}
+                Engine.EventBus.PublishAsync(new PlayerLoggedEvent(sessionId, player.Id, player.MapId));
+
             }
 
             return EmptyMessage();

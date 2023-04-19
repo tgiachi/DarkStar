@@ -18,10 +18,14 @@ public interface IWorldService : IDarkSunEngineService
 
     GoRogue.GameFramework.Map GetMap(string mapId);
 
-    void AddEntity<TEntity>(string mapId, TEntity entity) where TEntity : IGameObject;
+    MapType GetMapType(string mapId);
 
+    string GetMapName(string mapId);
+
+    void AddEntity<TEntity>(string mapId, TEntity entity) where TEntity : IGameObject;
     void RemoveEntity<TEntity>(string mapId, TEntity entity) where TEntity : IGameObject;
     ValueTask<TEntity?> GetEntityByIdAsync<TEntity>(string mapId, Guid id) where TEntity : BaseGameObject;
+    ValueTask<List<TEntity>> GetAllEntitiesInLayerAsync<TEntity>(string mapId, MapLayer layer) where TEntity : BaseGameObject;
 
     ValueTask<(string mapId, PointPosition position)> GetRandomCityStartingPointAsync();
 
@@ -36,4 +40,6 @@ public interface IWorldService : IDarkSunEngineService
     Task<bool> MovePlayerAsync(string mapId, Guid playerId, PointPosition position);
 
     List<PlayerGameObject> GetPlayers(string mapId);
+
+
 }
