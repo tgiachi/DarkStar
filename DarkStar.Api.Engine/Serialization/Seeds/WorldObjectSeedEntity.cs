@@ -26,5 +26,8 @@ namespace DarkStar.Api.Engine.Serialization.Seeds
         public TileType TileId { get; set; }
         [Column(converter: typeof(GameObjectTypeConverter))]
         public GameObjectType Type { get; set; }
+
+        [Column(converter: typeof(ExtraDataConverter))]
+        public Dictionary<string, string> Data { get; set; } = null!;
     }
 }

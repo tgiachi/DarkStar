@@ -8,7 +8,23 @@ jobs:
   build:
     runs-on: self-hosted
 
+
     steps:
+      - uses: actions/checkout@v3
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: 7.0.x
+          
+      - name: Install versionize
+        run: dotnet tool install --global Versionize
+
+      - name: Bump versions
+        run: versionize
+        
+      - name: Create tags
+        run : git push --follow-tags origin main
+
       - uses: actions/checkout@v2.5.0
       - name: Set Release Version
         run: |

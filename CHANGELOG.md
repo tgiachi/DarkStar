@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="0.1.5"></a>
+## [0.1.5](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.1.5) (2023-4-19)
+
+<a name="0.1.4"></a>
+## [0.1.4](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.1.4) (2023-4-19)
+
+<a name="0.1.3"></a>
+## [0.1.3](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.1.3) (2023-4-18)
+
 <a name="0.1.2"></a>
 ## [0.1.2](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.1.2) (2023-4-18)
 
