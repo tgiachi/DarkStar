@@ -1,4 +1,4 @@
-﻿using DarkStar.Api.Engine.Interfaces.Services.Base;
+using DarkStar.Api.Engine.Interfaces.Services.Base;
 using DarkStar.Api.Engine.Map.Entities;
 using DarkStar.Api.Engine.Map.Entities.Base;
 using DarkStar.Api.World.Types.Map;
@@ -25,12 +25,15 @@ public interface IWorldService : IDarkSunEngineService
 
     ValueTask<(string mapId, PointPosition position)> GetRandomCityStartingPointAsync();
 
+    bool IsLocationWalkable(string mapId, PointPosition position);
     bool IsLocationWalkable(GoRogue.GameFramework.Map map, PointPosition position);
     Task<Dictionary<MapLayer, List<IGameObject>>> GetGameObjectsInRangeAsync(string mapId, PointPosition position, int range = 5);
 
     Task<List<PointPosition>> GetNeighborCellsAsync(string mapId, PointPosition startPosition, int cellsNumber = 5);
 
     Task<List<PointPosition>> GetFovAsync(string mapId, PointPosition sourcePosition, int radius = 5);
+
+    Task<bool> MovePlayerAsync(string mapId, Guid playerId, PointPosition position);
 
     List<PlayerGameObject> GetPlayers(string mapId);
 }

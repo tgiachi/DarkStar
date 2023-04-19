@@ -1,4 +1,4 @@
-﻿using DarkStar.Api.Attributes.Services;
+using DarkStar.Api.Attributes.Services;
 using DarkStar.Api.Engine.Data.Player;
 using DarkStar.Api.Engine.Data.Sessions;
 using DarkStar.Api.Engine.Events.Players;
@@ -9,7 +9,7 @@ using DarkStar.Database.Entities.Item;
 using DarkStar.Database.Entities.Player;
 using DarkStar.Database.Entities.Races;
 using DarkStar.Engine.Services.Base;
-
+using DarkStar.Network.Protocol.Messages.Common;
 using Microsoft.Extensions.Logging;
 
 namespace DarkStar.Engine.Services
@@ -151,6 +151,18 @@ namespace DarkStar.Engine.Services
                 await Engine.DatabaseService.UpdateAsync(inventory);
             }
             return await GetPlayerInventoryAsync(playerId);
+        }
+
+        public async Task<bool> UpdatePlayerPositionAsync(Guid playerId, string mapId, PointPosition position)
+        {
+            var player = await GetPlayerByIdAsync(playerId);
+            player.MapId = mapId;
+            player.X = position.X;
+            player.Y = position.Y;
+
+            await Engine.DatabaseService.UpdateAsync(player);
+            await Engine.WorldService.MovePlayerAsync(mapId, playerId, position);
+            return true;
         }
 
         private async Task<PlayerEntity> GetPlayerByIdAsync(Guid playerId)

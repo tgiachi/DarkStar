@@ -1,4 +1,4 @@
-﻿using DarkStar.Api.Engine.Attributes.Network;
+using DarkStar.Api.Engine.Attributes.Network;
 using DarkStar.Api.Engine.Interfaces.Core;
 using DarkStar.Api.Engine.MessageListeners;
 using DarkStar.Database.Entities.Player;
@@ -28,6 +28,8 @@ namespace DarkStar.Engine.MessageListeners
                                                                && (entity.Id == message.PlayerId || entity.Name == message.PlayerName));
 
                 Engine.PlayerService.GetSession(sessionId).PlayerId = player.Id;
+                Engine.PlayerService.GetSession(sessionId).MapId = player.MapId;
+                Engine.PlayerService.GetSession(sessionId).Position = new PointPosition(player.X, player.Y);
 
                 Logger.LogInformation("Player {Name} logged in @ {Position}", player.Name, new PointPosition(player.X, player.Y));
 

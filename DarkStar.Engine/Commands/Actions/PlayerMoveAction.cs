@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,11 +14,16 @@ namespace DarkStar.Engine.Commands.Actions
     {
         public double Delay { get; set; }
         public CommandActionType Type { get; } = CommandActionType.PlayerMove;
-
         public PlayerMoveDirectionType Direction { get; set; }
 
-        public PlayerMoveAction(PlayerMoveDirectionType direction, double delay = 1000)
+        public Guid SessionId { get; set; }
+
+        public Guid PlayerId { get; set; }
+
+        public PlayerMoveAction(Guid sessionId, Guid playerId, PlayerMoveDirectionType direction, double delay = 1000)
         {
+            SessionId = sessionId;
+            PlayerId = playerId;
             Delay = delay;
             Direction = direction;
         }
