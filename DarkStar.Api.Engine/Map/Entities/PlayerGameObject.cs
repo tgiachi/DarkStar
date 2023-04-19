@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +14,8 @@ namespace DarkStar.Api.Engine.Map.Entities
     public class PlayerGameObject : BaseGameObject
     {
         public Guid NetworkSessionId { get; set; }
+
+        public string Name { get; set; }
 
         public PlayerGameObject(Point position) : base(position, (int)MapLayer.Players, true, false)
         {

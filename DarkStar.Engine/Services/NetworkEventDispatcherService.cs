@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +9,7 @@ using DarkStar.Api.Engine.Events.Players;
 using DarkStar.Api.Engine.Interfaces.Services;
 using DarkStar.Api.World.Types.Map;
 using DarkStar.Api.World.Types.Tiles;
+using DarkStar.Engine.MessageListeners.Helpers;
 using DarkStar.Engine.Services.Base;
 using DarkStar.Network.Protocol.Interfaces.Messages;
 using DarkStar.Network.Protocol.Live;
@@ -36,7 +37,18 @@ namespace DarkStar.Engine.Services
             _subscriptionTokens.Add(Engine.EventBus.Subscribe<GameObjectMovedEvent>(OnGameObjectMoved));
             _subscriptionTokens.Add(Engine.EventBus.Subscribe<GameObjectRemovedEvent>(OnGameObjectRemoved));
             _subscriptionTokens.Add(Engine.EventBus.Subscribe<PingRequestEvent>(OnPingRequestMessage));
+            _subscriptionTokens.Add(Engine.EventBus.Subscribe<PlayerLoggedEvent>(OnPlayerLoggedMessage));
             return ValueTask.FromResult(true);
+        }
+
+        private void OnPlayerLoggedMessage(PlayerLoggedEvent obj)
+        {
+            _ = Task.Run(async () =>
+            {
+                Logger.LogDebug("Sending information of map to player {PlayerId}", obj.PlayerId);
+                //Engine.NetworkServer.SendMessageAsync(obj.SessionId, await MapDataHelper.BuildMapResponseDataAsync(Engine, obj.MapId, obj.PlayerId));
+
+            });
         }
 
         public override ValueTask<bool> StopAsync()

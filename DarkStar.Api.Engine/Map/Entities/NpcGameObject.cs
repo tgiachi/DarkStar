@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +13,8 @@ namespace DarkStar.Api.Engine.Map.Entities
 {
     public class NpcGameObject : BaseGameObject
     {
+        public string Name { get; set; }
+
         public NpcGameObject(Point position) : base(position, (int)MapLayer.Creatures, false, false)
         {
         }

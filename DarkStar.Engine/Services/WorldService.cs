@@ -1,4 +1,4 @@
-﻿using System.Collections.Concurrent;
+using System.Collections.Concurrent;
 using System.Diagnostics;
 using DarkStar.Api.Attributes.Services;
 using DarkStar.Api.Data.Config;
@@ -100,6 +100,13 @@ namespace DarkStar.Engine.Services
 
             }
             return Task.FromResult(positions);
+        }
+
+        public bool IsLocationWalkable(string mapId, PointPosition position)
+        {
+
+            return IsLocationWalkable(GetMap(mapId), position);
+
         }
 
         public bool IsLocationWalkable(Map map, PointPosition position)
@@ -266,12 +273,28 @@ namespace DarkStar.Engine.Services
             return randomPosition.ToPointPosition();
         }
 
-        public  Task<List<PointPosition>> GetFovAsync(string mapId, PointPosition sourcePosition, int radius = 5)
+        public Task<List<PointPosition>> GetFovAsync(string mapId, PointPosition sourcePosition, int radius = 5)
         {
             var map = GetMap(mapId);
             map.PlayerFOV.Reset();
             map.PlayerFOV.Calculate(sourcePosition.ToPoint(), radius);
             return Task.FromResult(map.PlayerFOV.CurrentFOV.Select(s => s.ToPointPosition()).ToList());
+        }
+
+        public async Task<bool> MovePlayerAsync(string mapId, Guid playerId, PointPosition position)
+        {
+            var player = await GetPlayerOnMapAsync(mapId, playerId);
+
+            player.Position = position.ToPoint();
+
+            return true;
+        }
+
+        private async Task<PlayerGameObject?> GetPlayerOnMapAsync(string mapId, Guid playerId)
+        {
+            var map = GetMap(mapId);
+            return map.Entities.GetLayer((int)MapLayer.Players).Items.Cast<PlayerGameObject>()
+                .FirstOrDefault(s => s.ObjectId == playerId);
         }
 
         public bool AddPlayerOnMap(string mapId, Guid playerId, Guid networkSessionId, PointPosition position, TileType tile)
@@ -308,6 +331,21 @@ namespace DarkStar.Engine.Services
             throw new Exception($"Map {mapId} not found");
         }
 
+        public MapType GetMapType(string mapId)
+        {
+            _maps.TryGetValue(mapId, out var map);
+
+            return map.mapType;
+        }
+
+        public string GetMapName(string mapId)
+        {
+            _maps.TryGetValue(mapId, out var map);
+
+            return map.mapInfo.Name;
+
+        }
+
         public void AddEntity<TEntity>(string mapId, TEntity entity) where TEntity : IGameObject
         {
             var map = GetMap(mapId);
@@ -326,6 +364,19 @@ namespace DarkStar.Engine.Services
             var entity = map.Entities.Items.FirstOrDefault(x => x is TEntity tEntity && tEntity.ObjectId == id);
 
             return ValueTask.FromResult(entity as TEntity);
+        }
+
+        public ValueTask<List<TEntity>> GetAllEntitiesInLayerAsync<TEntity>(string mapId, MapLayer layer)
+            where TEntity : BaseGameObject
+        {
+            var map = GetMap(mapId);
+            if (layer == MapLayer.Terrain)
+            {
+                return ValueTask.FromResult(map.Terrain.Positions().Select(x => map.GetTerrainAt(x)).Cast<TEntity>().ToList());
+            }
+            var entities = map.Entities.GetLayer((int)layer).Items.Cast<TEntity>().ToList();
+            return ValueTask.FromResult(entities);
+
         }
 
         public ValueTask<(string mapId, PointPosition position)> GetRandomCityStartingPointAsync()
@@ -353,15 +404,13 @@ namespace DarkStar.Engine.Services
         private void HandleGameObjectMoved(string mapId, IGameObject gameObject, PointPosition oldPosition, PointPosition newPosition)
         {
             var baseGameObject = gameObject as BaseGameObject;
-            Engine.EventBus.PublishAsync(new GameObjectMovedEvent(mapId, (MapLayer)gameObject.Layer, oldPosition, newPosition,
-                               baseGameObject!.ObjectId));
+            Engine.EventBus.PublishAsync(new GameObjectMovedEvent(mapId, (MapLayer)gameObject.Layer, oldPosition, newPosition, baseGameObject!.ObjectId));
         }
 
         private void HandleGameObjectRemoved(string mapId, IGameObject gameObject, PointPosition position)
         {
             var baseGameObject = gameObject as BaseGameObject;
-            Engine.EventBus.PublishAsync(new GameObjectRemovedEvent(mapId, (MapLayer)gameObject.Layer, position,
-                               baseGameObject!.ObjectId));
+            Engine.EventBus.PublishAsync(new GameObjectRemovedEvent(mapId, (MapLayer)gameObject.Layer, position, baseGameObject!.ObjectId));
         }
 
         private ValueTask<Map> GenerateDungeonMapAsync()

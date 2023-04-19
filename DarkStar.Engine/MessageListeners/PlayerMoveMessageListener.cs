@@ -1,4 +1,4 @@
-﻿
+
 using DarkStar.Api.Engine.Attributes.Network;
 using DarkStar.Api.Engine.Interfaces.Core;
 using DarkStar.Api.Engine.MessageListeners;
@@ -21,7 +21,7 @@ namespace DarkStar.Engine.MessageListeners
         {
             if (Engine.PlayerService.GetSession(sessionId).IsLogged)
             {
-                Engine.CommandService.EnqueuePlayerAction(new PlayerMoveAction(message.Direction));
+                Engine.CommandService.EnqueuePlayerAction(new PlayerMoveAction(sessionId, Engine.PlayerService.GetSession(sessionId).PlayerId, message.Direction));
             }
 
             return Task.FromResult(EmptyMessage());

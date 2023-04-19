@@ -115,7 +115,7 @@ namespace DarkStar.Engine.Services
             {
                 await scheduledGameObjectAction.Value.UpdateAsync(deltaTime);
             }
-            await _gameObjectActionLock.WaitAsync();
+            _gameObjectActionLock.Release();
         }
     }
 }

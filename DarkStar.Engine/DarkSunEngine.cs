@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -20,6 +20,7 @@ using DarkStar.Network.Interfaces;
 using DarkStar.Network.Protocol.Interfaces.Messages;
 using DarkStar.Network.Protocol.Live;
 using DarkStar.Network.Protocol.Messages.Accounts;
+using DarkStar.Network.Protocol.Messages.Common;
 using DarkStar.Network.Protocol.Messages.Players;
 using DarkStar.Network.Protocol.Messages.TileSet;
 using DarkStar.Network.Server.Interfaces;
@@ -216,6 +217,12 @@ namespace DarkStar.Engine
                         }
                     );
                     await _networkClient.SendMessageAsync(new PlayerLoginRequestMessage(Guid.Empty, "Player 1"));
+                    foreach (var _ in Enumerable.Range(0, 10))
+                    {
+                        await Task.Delay(1000);
+                        await _networkClient.SendMessageAsync(new PlayerMoveRequestMessage(PlayerMoveDirectionType.North.RandomEnumValue()));
+                    }
+
                     //await _networkClient.DisconnectAsync();
                 }
             );

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -21,7 +21,7 @@ public class ProtoBufMessageBuilder : INetworkMessageBuilder
 {
     private readonly ILogger _logger;
     private readonly Dictionary<DarkStarMessageType, Type> _messageTypes = new();
-    private readonly byte[] _separatorBytes = { 0xff, 0xff, 0xff };
+    private readonly byte[] _separatorBytes = { 0xff, 0xff, 0xff, 0xff };
 
     public byte[] GetMessageSeparators => _separatorBytes;
 
@@ -48,28 +48,35 @@ public class ProtoBufMessageBuilder : INetworkMessageBuilder
 
     public byte[] BuildMessage<T>(T message) where T : IDarkStarNetworkMessage
     {
-        
+
         var messageType = message.GetType().GetCustomAttribute<NetworkMessageAttribute>();
 
         if (messageType != null)
         {
-            var innerMessageStream = new MemoryStream();
-            var messageStream = new MemoryStream();
-            Serializer.Serialize(innerMessageStream, message);
-            var innerMessageBuffer = innerMessageStream.GetBuffer();
-            innerMessageBuffer = innerMessageBuffer.Take((int)innerMessageStream.Length).ToArray();
+            try
+            {
+                var innerMessageStream = new MemoryStream();
+                var messageStream = new MemoryStream();
+                Serializer.Serialize(innerMessageStream, message);
+                var innerMessageBuffer = innerMessageStream.GetBuffer();
+                innerMessageBuffer = innerMessageBuffer.Take((int)innerMessageStream.Length).ToArray();
 
-            var netMessage =
-                new NetworkMessage() { Message = innerMessageBuffer, MessageType = messageType.MessageType };
-            Serializer.Serialize(messageStream, netMessage);
+                var netMessage =
+                    new NetworkMessage() { Message = innerMessageBuffer, MessageType = messageType.MessageType };
+                Serializer.Serialize(messageStream, netMessage);
 
-            var netMessageBuffer = messageStream.GetBuffer();
-            netMessageBuffer = netMessageBuffer.Take((int)messageStream.Length).ToArray();
-            var fullMessage = netMessageBuffer.Concat(_separatorBytes).ToArray();
+                var netMessageBuffer = messageStream.GetBuffer();
+                netMessageBuffer = netMessageBuffer.Take((int)messageStream.Length).ToArray();
+                var fullMessage = netMessageBuffer.Concat(_separatorBytes).ToArray();
 
-            _logger.LogDebug("Sending message type: {Type} - Length: {BufferSize}", messageType.MessageType, fullMessage.Length.Bytes());
-            return
-                new ReadOnlyMemory<byte>(fullMessage).ToArray();
+                _logger.LogDebug("Sending message type: {Type} - Length: {BufferSize}", messageType.MessageType, fullMessage.Length.Bytes());
+                return
+                    new ReadOnlyMemory<byte>(fullMessage).ToArray();
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
         }
 
         throw new Exception($"Missing attribute [NetworkMessageAttribute] on message ${typeof(T)}");
