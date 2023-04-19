@@ -15,13 +15,15 @@ jobs:
         uses: actions/setup-dotnet@v2
         with:
           dotnet-version: 7.0.x
+      - name: Fix path
+        run : export PATH="$PATH:/home/dev/.dotnet/tools"
           
       - name: Install versionize
         run: dotnet tool install --global Versionize
 
       - name: Bump versions
         run: versionize
-        
+
       - name: Create tags
         run : git push --follow-tags origin main
 
