@@ -3,7 +3,7 @@ using ProtoBuf;
 namespace DarkStar.Network.Protocol.Messages.Common;
 
 [ProtoContract]
-public enum PlayerMoveDirectionType : byte
+public enum MoveDirectionType : byte
 {
     North,
     South,

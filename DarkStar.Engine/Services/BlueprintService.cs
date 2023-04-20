@@ -163,7 +163,6 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
             {
                 NpcId = npc.Id,
                 Level = level,
-
                 Health = 1,
                 MaxHealth = 1,
                 MaxMana = 1,

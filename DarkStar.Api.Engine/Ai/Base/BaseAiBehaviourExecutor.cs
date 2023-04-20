@@ -1,7 +1,10 @@
-using DarkStar.Api.Engine.Interfaces.Ai;
+﻿using DarkStar.Api.Engine.Interfaces.Ai;
 using DarkStar.Api.Engine.Interfaces.Core;
 using DarkStar.Api.Engine.Map.Entities;
+using DarkStar.Api.Engine.Utils;
+using DarkStar.Api.World.Types.Npc;
 using DarkStar.Database.Entities.Npc;
+using DarkStar.Network.Protocol.Messages.Common;
 using Microsoft.Extensions.Logging;
 
 namespace DarkStar.Api.Engine.Ai.Base;
@@ -37,8 +40,6 @@ public class BaseAiBehaviourExecutor : IAiBehaviourExecutor
 
         _currentInterval = Interval;
         return DoAiAsync();
-
-
     }
 
     public ValueTask InitializeAsync(string mapId, NpcEntity npc, NpcGameObject npcGameObject)
@@ -56,13 +57,22 @@ public class BaseAiBehaviourExecutor : IAiBehaviourExecutor
         _currentInterval = interval;
     }
 
-    protected virtual ValueTask DoAiAsync()
-    {
-        return ValueTask.CompletedTask;
-    }
+    protected virtual ValueTask DoAiAsync() => ValueTask.CompletedTask;
 
     public virtual void Dispose()
     {
 
+    }
+
+    protected bool MoveToDirection(MoveDirectionType direction)
+    {
+        var newPosition = NpcGameObject.Position.ToPointPosition().AddMovement(direction);
+        var canMove = Engine.WorldService.IsLocationWalkable(MapId, newPosition);
+        if (canMove)
+        {
+            NpcGameObject.Position = newPosition.ToPoint();
+            return true;
+        }
+        return false;
     }
 }

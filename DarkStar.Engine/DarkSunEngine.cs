@@ -220,7 +220,7 @@ public class DarkSunEngine : IDarkSunEngine
                 foreach (var _ in Enumerable.Range(0, 10))
                 {
                     await Task.Delay(1000);
-                    await _networkClient.SendMessageAsync(new PlayerMoveRequestMessage(PlayerMoveDirectionType.North.RandomEnumValue()));
+                    await _networkClient.SendMessageAsync(new PlayerMoveRequestMessage(MoveDirectionType.North.RandomEnumValue()));
                 }
 
                 //await _networkClient.DisconnectAsync();

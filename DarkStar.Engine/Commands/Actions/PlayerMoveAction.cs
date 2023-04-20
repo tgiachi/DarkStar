@@ -14,13 +14,13 @@ public class PlayerMoveAction : ICommandAction
 {
     public double Delay { get; set; }
     public CommandActionType Type { get; } = CommandActionType.PlayerMove;
-    public PlayerMoveDirectionType Direction { get; set; }
+    public MoveDirectionType Direction { get; set; }
 
     public Guid SessionId { get; set; }
 
     public Guid PlayerId { get; set; }
 
-    public PlayerMoveAction(Guid sessionId, Guid playerId, PlayerMoveDirectionType direction, double delay = 1000)
+    public PlayerMoveAction(Guid sessionId, Guid playerId, MoveDirectionType direction, double delay = 1000)
     {
         SessionId = sessionId;
         PlayerId = playerId;

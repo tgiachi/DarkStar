@@ -17,14 +17,14 @@ namespace DarkStar.Network.Protocol.Messages.Players;
 public struct PlayerMoveRequestMessage : IDarkStarNetworkMessage
 {
     [ProtoMember(1)]
-    public PlayerMoveDirectionType Direction { get; set; }
+    public MoveDirectionType Direction { get; set; }
 
     public PlayerMoveRequestMessage()
     {
 
     }
 
-    public PlayerMoveRequestMessage(PlayerMoveDirectionType direction)
+    public PlayerMoveRequestMessage(MoveDirectionType direction)
     {
         Direction = direction;
     }
