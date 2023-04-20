@@ -4,11 +4,3761 @@
   "xrefmap": "xrefmap.yml",
   "files": [
     {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Attributes.Seed.SeedObjectAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Attributes.Seed.SeedObjectAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Attributes.Seed.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Attributes.Seed.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Attributes.Services.DarkStarEngineServiceAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Attributes.Services.DarkStarEngineServiceAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Attributes.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Attributes.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Data.Config.DirectoriesConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Data.Config.DirectoriesConfig.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Data.Config.DirectoryNameType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Data.Config.DirectoryNameType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Data.Config.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Data.Config.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Ai.Base.BaseAiBehaviourExecutor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Ai.Base.BaseAiBehaviourExecutor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Ai.Base.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Ai.Base.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Attributes.Ai.AiBehaviourAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Attributes.Ai.AiBehaviourAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Attributes.Ai.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Attributes.Ai.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Attributes.Commands.CommandActionAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Attributes.Commands.CommandActionAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Attributes.Commands.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Attributes.Commands.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Attributes.Network.NetworkConnectionHandlerAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Attributes.Network.NetworkConnectionHandlerAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Attributes.Network.NetworkMessageListenerAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Attributes.Network.NetworkMessageListenerAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Attributes.Network.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Attributes.Network.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Attributes.Objects.GameObjectActionAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Attributes.Objects.GameObjectActionAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Attributes.Objects.ItemActionAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Attributes.Objects.ItemActionAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Attributes.Objects.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Attributes.Objects.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Commands.Base.BaseCommandActionExecutor-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Commands.Base.BaseCommandActionExecutor-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Commands.Base.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Commands.Base.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.ConnectionHandlers.BaseNetworkConnectionHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.ConnectionHandlers.BaseNetworkConnectionHandler.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.ConnectionHandlers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.ConnectionHandlers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Data.Config.EngineConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Data.Config.EngineConfig.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Data.Config.Sections.AssemblyConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Data.Config.Sections.AssemblyConfig.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Data.Config.Sections.CityMapConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Data.Config.Sections.CityMapConfig.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Data.Config.Sections.DatabaseConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Data.Config.Sections.DatabaseConfig.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Data.Config.Sections.DatabaseType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Data.Config.Sections.DatabaseType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Data.Config.Sections.DungeonMapConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Data.Config.Sections.DungeonMapConfig.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Data.Config.Sections.HttpServerConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Data.Config.Sections.HttpServerConfig.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Data.Config.Sections.LoggerConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Data.Config.Sections.LoggerConfig.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Data.Config.Sections.MapConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Data.Config.Sections.MapConfig.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Data.Config.Sections.MapDefaultSizes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Data.Config.Sections.MapDefaultSizes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Data.Config.Sections.NetworkServerConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Data.Config.Sections.NetworkServerConfig.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Data.Config.Sections.WorldMapConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Data.Config.Sections.WorldMapConfig.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Data.Config.Sections.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Data.Config.Sections.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Data.Config.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Data.Config.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Data.Player.PlayerInitialInventory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Data.Player.PlayerInitialInventory.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Data.Player.PlayerInitialInventoryItem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Data.Player.PlayerInitialInventoryItem.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Data.Player.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Data.Player.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Data.ScriptEngine.ScriptEngineExecutionResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Data.ScriptEngine.ScriptEngineExecutionResult.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Data.ScriptEngine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Data.ScriptEngine.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Data.Sessions.PlayerSession.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Data.Sessions.PlayerSession.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Data.Sessions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Data.Sessions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Events.Engine.EngineReadyEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Events.Engine.EngineReadyEvent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Events.Engine.EngineStoppingEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Events.Engine.EngineStoppingEvent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Events.Engine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Events.Engine.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Events.Map.GameObjectAddedEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Events.Map.GameObjectAddedEvent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Events.Map.GameObjectMovedEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Events.Map.GameObjectMovedEvent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Events.Map.GameObjectRemovedEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Events.Map.GameObjectRemovedEvent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Events.Map.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Events.Map.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Events.Players.PingRequestEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Events.Players.PingRequestEvent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Events.Players.PlayerCreatedEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Events.Players.PlayerCreatedEvent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Events.Players.PlayerGoldChangedEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Events.Players.PlayerGoldChangedEvent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Events.Players.PlayerLoggedEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Events.Players.PlayerLoggedEvent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Events.Players.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Events.Players.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Interfaces.Ai.IAiBehaviourExecutor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Interfaces.Ai.IAiBehaviourExecutor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Interfaces.Ai.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Interfaces.Ai.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Interfaces.Commands.ICommandAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Interfaces.Commands.ICommandAction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Interfaces.Commands.ICommandActionExecutor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Interfaces.Commands.ICommandActionExecutor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Interfaces.Commands.ICommandExecutor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Interfaces.Commands.ICommandExecutor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Interfaces.Commands.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Interfaces.Commands.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Interfaces.Core.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Interfaces.Core.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Interfaces.Listener.INetworkConnectionHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Interfaces.Listener.INetworkConnectionHandler.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Interfaces.Listener.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Interfaces.Listener.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Interfaces.Objects.IGameObjectAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Interfaces.Objects.IGameObjectAction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Interfaces.Objects.IItemAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Interfaces.Objects.IItemAction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Interfaces.Objects.IScheduledGameObjectAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Interfaces.Objects.IScheduledGameObjectAction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Interfaces.Objects.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Interfaces.Objects.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Interfaces.Services.Base.IDarkSunEngineService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Interfaces.Services.Base.IDarkSunEngineService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Interfaces.Services.Base.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Interfaces.Services.Base.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Interfaces.Services.IAiService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Interfaces.Services.IAiService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Interfaces.Services.IBlueprintService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Interfaces.Services.IBlueprintService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Interfaces.Services.ICommandService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Interfaces.Services.ICommandService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Interfaces.Services.IDatabaseService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Interfaces.Services.IDatabaseService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Interfaces.Services.IDiagnosticService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Interfaces.Services.IDiagnosticService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Interfaces.Services.IItemService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Interfaces.Services.IItemService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Interfaces.Services.IJobSchedulerService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Interfaces.Services.IJobSchedulerService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Interfaces.Services.INamesService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Interfaces.Services.INamesService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Interfaces.Services.INetworkEventDispatcherService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Interfaces.Services.INetworkEventDispatcherService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Interfaces.Services.IPlayerService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Interfaces.Services.IPlayerService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Interfaces.Services.ISchedulerService.OnTickDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Interfaces.Services.ISchedulerService.OnTickDelegate.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Interfaces.Services.ISchedulerService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Interfaces.Services.ISchedulerService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Interfaces.Services.IScriptEngineService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Interfaces.Services.IScriptEngineService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Interfaces.Services.ISeedService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Interfaces.Services.ISeedService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Interfaces.Services.IWorldService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Interfaces.Services.IWorldService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Interfaces.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Interfaces.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScheduledWorldObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScheduledWorldObject.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Items.WorldObjects.Base.BaseWorldObjectAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Items.WorldObjects.Base.BaseWorldObjectAction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Items.WorldObjects.Base.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Items.WorldObjects.Base.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Map.Entities.Base.BaseGameObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Map.Entities.Base.BaseGameObject.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Map.Entities.Base.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Map.Entities.Base.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Map.Entities.ItemGameObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Map.Entities.ItemGameObject.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Map.Entities.NpcGameObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Map.Entities.NpcGameObject.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Map.Entities.PlayerGameObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Map.Entities.PlayerGameObject.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Map.Entities.TerrainGameObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Map.Entities.TerrainGameObject.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Map.Entities.WorldGameObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Map.Entities.WorldGameObject.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Map.Entities.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Map.Entities.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.MessageListeners.BaseNetworkMessageListener-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.MessageListeners.BaseNetworkMessageListener-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.MessageListeners.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.MessageListeners.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.ScriptModules.BaseScriptModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.ScriptModules.BaseScriptModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.ScriptModules.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.ScriptModules.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Serialization.BinarySerialization.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Serialization.BinarySerialization.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Serialization.Map.LayerObjectSerialization.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Serialization.Map.LayerObjectSerialization.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Serialization.Map.LayerObjectType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Serialization.Map.LayerObjectType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Serialization.Map.MapObjectSerialization.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Serialization.Map.MapObjectSerialization.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Serialization.Map.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Serialization.Map.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Serialization.SeedCsvParser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Serialization.SeedCsvParser.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Serialization.Seeds.Converters.EquipLocationTypeConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Serialization.Seeds.Converters.EquipLocationTypeConverter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Serialization.Seeds.Converters.ExtraDataConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Serialization.Seeds.Converters.ExtraDataConverter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Serialization.Seeds.Converters.GameObjectTypeConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Serialization.Seeds.Converters.GameObjectTypeConverter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Serialization.Seeds.Converters.ItemCategoryTypeConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Serialization.Seeds.Converters.ItemCategoryTypeConverter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Serialization.Seeds.Converters.ItemRarityConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Serialization.Seeds.Converters.ItemRarityConverter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Serialization.Seeds.Converters.ItemTypeConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Serialization.Seeds.Converters.ItemTypeConverter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Serialization.Seeds.Converters.MapLayerConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Serialization.Seeds.Converters.MapLayerConverter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Serialization.Seeds.Converters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Serialization.Seeds.Converters.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Serialization.Seeds.ItemDropObjectSeedEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Serialization.Seeds.ItemDropObjectSeedEntity.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Serialization.Seeds.ItemObjectSeedEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Serialization.Seeds.ItemObjectSeedEntity.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Serialization.Seeds.RaceObjectSeedEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Serialization.Seeds.RaceObjectSeedEntity.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Serialization.Seeds.WorldObjectSeedEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Serialization.Seeds.WorldObjectSeedEntity.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Serialization.Seeds.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Serialization.Seeds.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Serialization.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Serialization.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Types.Commands.CommandActionType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Types.Commands.CommandActionType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Types.Commands.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Types.Commands.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Utils.PointConverterEx.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Utils.PointConverterEx.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Utils.RandPointUtils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Utils.RandPointUtils.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Utils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Utils.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Interfaces.Entities.IBaseEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Interfaces.Entities.IBaseEntity.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Interfaces.Entities.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Interfaces.Entities.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Serialization.Converters.Base.BaseEnumConverter-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Serialization.Converters.Base.BaseEnumConverter-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Serialization.Converters.Base.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Serialization.Converters.Base.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Serialization.Converters.TileTypeConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Serialization.Converters.TileTypeConverter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Serialization.Converters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Serialization.Converters.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Serialization.TileSets.TileSetMapSerializable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Serialization.TileSets.TileSetMapSerializable.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Serialization.TileSets.TileSetSerializableEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Serialization.TileSets.TileSetSerializableEntity.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Serialization.TileSets.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Serialization.TileSets.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Utils.AssemblyUtils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Utils.AssemblyUtils.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Utils.BufferUtils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Utils.BufferUtils.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Utils.EnumUtils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Utils.EnumUtils.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Utils.HashUtils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Utils.HashUtils.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Utils.RandomListUtils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Utils.RandomListUtils.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Utils.RandomUtils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Utils.RandomUtils.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Utils.StringUtilsEx.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Utils.StringUtilsEx.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Utils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Utils.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.World.Types.Equippable.EquipLocationType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.World.Types.Equippable.EquipLocationType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.World.Types.Equippable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.World.Types.Equippable.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.World.Types.GameObjects.GameObjectType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.World.Types.GameObjects.GameObjectType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.World.Types.GameObjects.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.World.Types.GameObjects.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.World.Types.Items.ItemCategoryType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.World.Types.Items.ItemCategoryType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.World.Types.Items.ItemRarityType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.World.Types.Items.ItemRarityType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.World.Types.Items.ItemType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.World.Types.Items.ItemType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.World.Types.Items.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.World.Types.Items.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.World.Types.Map.MapInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.World.Types.Map.MapInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.World.Types.Map.MapLayer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.World.Types.Map.MapLayer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.World.Types.Map.MapType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.World.Types.Map.MapType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.World.Types.Map.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.World.Types.Map.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.World.Types.Npc.NpcAlignmentType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.World.Types.Npc.NpcAlignmentType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.World.Types.Npc.NpcSubType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.World.Types.Npc.NpcSubType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.World.Types.Npc.NpcType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.World.Types.Npc.NpcType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.World.Types.Npc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.World.Types.Npc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.World.Types.Tiles.TileType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.World.Types.Tiles.TileType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.World.Types.Tiles.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.World.Types.Tiles.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.World.Types.Utils.TilesEnumEx.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.World.Types.Utils.TilesEnumEx.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.World.Types.Utils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.World.Types.Utils.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Database.Entities.Account.AccountEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Database.Entities.Account.AccountEntity.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Database.Entities.Account.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Database.Entities.Account.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Database.Entities.Base.BaseEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Database.Entities.Base.BaseEntity.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Database.Entities.Base.BaseStatEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Database.Entities.Base.BaseStatEntity.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Database.Entities.Base.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Database.Entities.Base.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Database.Entities.Containers.ItemContainerDetailEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Database.Entities.Containers.ItemContainerDetailEntity.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Database.Entities.Containers.ItemContainerEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Database.Entities.Containers.ItemContainerEntity.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Database.Entities.Containers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Database.Entities.Containers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Database.Entities.Item.ItemEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Database.Entities.Item.ItemEntity.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Database.Entities.Item.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Database.Entities.Item.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Database.Entities.Maps.MapEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Database.Entities.Maps.MapEntity.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Database.Entities.Maps.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Database.Entities.Maps.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Database.Entities.Npc.NpcEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Database.Entities.Npc.NpcEntity.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Database.Entities.Npc.NpcEquipmentEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Database.Entities.Npc.NpcEquipmentEntity.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Database.Entities.Npc.NpcInventoryEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Database.Entities.Npc.NpcInventoryEntity.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Database.Entities.Npc.NpcStatEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Database.Entities.Npc.NpcStatEntity.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Database.Entities.Npc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Database.Entities.Npc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Database.Entities.Objects.GameObjectEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Database.Entities.Objects.GameObjectEntity.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Database.Entities.Objects.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Database.Entities.Objects.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Database.Entities.Player.PlayerEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Database.Entities.Player.PlayerEntity.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Database.Entities.Player.PlayerEquipmentEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Database.Entities.Player.PlayerEquipmentEntity.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Database.Entities.Player.PlayerInventoryEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Database.Entities.Player.PlayerInventoryEntity.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Database.Entities.Player.PlayerStatEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Database.Entities.Player.PlayerStatEntity.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Database.Entities.Player.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Database.Entities.Player.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Database.Entities.Races.RaceEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Database.Entities.Races.RaceEntity.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Database.Entities.Races.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Database.Entities.Races.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Database.Entities.Template.ItemDropTemplateDetailEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Database.Entities.Template.ItemDropTemplateDetailEntity.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Database.Entities.Template.ItemDropTemplateEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Database.Entities.Template.ItemDropTemplateEntity.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Database.Entities.Template.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Database.Entities.Template.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Database.Entities.TileSets.TileSetEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Database.Entities.TileSets.TileSetEntity.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Database.Entities.TileSets.TileSetMapEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Database.Entities.TileSets.TileSetMapEntity.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Database.Entities.TileSets.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Database.Entities.TileSets.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Ai.DummyAi.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Ai.DummyAi.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Ai.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Ai.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Attributes.ScriptEngine.ScriptFunctionAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Attributes.ScriptEngine.ScriptFunctionAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Attributes.ScriptEngine.ScriptModuleAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Attributes.ScriptEngine.ScriptModuleAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Attributes.ScriptEngine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Attributes.ScriptEngine.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Commands.Actions.PlayerMoveAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Commands.Actions.PlayerMoveAction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Commands.Actions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Commands.Actions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Commands.PlayerCommandActionExecutor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Commands.PlayerCommandActionExecutor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Commands.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Commands.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.ConnectionHandler.DefaultConnectionHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.ConnectionHandler.DefaultConnectionHandler.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.ConnectionHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.ConnectionHandler.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.DarkSunEngine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.DarkSunEngine.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Http.Controllers.VersionController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Http.Controllers.VersionController.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Http.Controllers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Http.Controllers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Http.WebModuleLoaderExtension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Http.WebModuleLoaderExtension.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Http.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Http.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Items.WorldObjects.TestGameObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Items.WorldObjects.TestGameObject.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Items.WorldObjects.TestSchedulerObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Items.WorldObjects.TestSchedulerObject.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Items.WorldObjects.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Items.WorldObjects.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.MessageListeners.AccountCreationMessageListener.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.MessageListeners.AccountCreationMessageListener.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.MessageListeners.AccountLoginMessageListener.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.MessageListeners.AccountLoginMessageListener.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.MessageListeners.Helpers.MapDataHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.MessageListeners.Helpers.MapDataHelper.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.MessageListeners.Helpers.PlayerDataHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.MessageListeners.Helpers.PlayerDataHelper.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.MessageListeners.Helpers.TileSetHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.MessageListeners.Helpers.TileSetHelper.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.MessageListeners.Helpers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.MessageListeners.Helpers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.MessageListeners.PlayerCreationMessageListener.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.MessageListeners.PlayerCreationMessageListener.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.MessageListeners.PlayerListMessageListener.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.MessageListeners.PlayerListMessageListener.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.MessageListeners.PlayerLoginMessageListener.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.MessageListeners.PlayerLoginMessageListener.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.MessageListeners.PlayerMoveMessageListener.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.MessageListeners.PlayerMoveMessageListener.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.MessageListeners.PlayerSelectMessageListener.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.MessageListeners.PlayerSelectMessageListener.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.MessageListeners.PongMessageListener.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.MessageListeners.PongMessageListener.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.MessageListeners.RacesRequestMessageListener.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.MessageListeners.RacesRequestMessageListener.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.MessageListeners.TileSetDownloadMessageListener.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.MessageListeners.TileSetDownloadMessageListener.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.MessageListeners.TileSetListMessageListener.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.MessageListeners.TileSetListMessageListener.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.MessageListeners.TileSetMapMessageListener.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.MessageListeners.TileSetMapMessageListener.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.MessageListeners.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.MessageListeners.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Runner.DarkSunEngineHostedService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Runner.DarkSunEngineHostedService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Runner.DarkSunTerminalHostedService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Runner.DarkSunTerminalHostedService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Runner.Program.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Runner.Program.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Runner.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Runner.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.ScriptModules.PlayerScriptModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.ScriptModules.PlayerScriptModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.ScriptModules.ServerScriptModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.ScriptModules.ServerScriptModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.ScriptModules.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.ScriptModules.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Services.AiService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Services.AiService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Services.Base.BaseService-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Services.Base.BaseService-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Services.Base.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Services.Base.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Services.BlueprintService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Services.BlueprintService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Services.CommandService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Services.CommandService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Services.DatabaseService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Services.DatabaseService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Services.DiagnosticService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Services.DiagnosticService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Services.ItemService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Services.ItemService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Services.JobSchedulerService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Services.JobSchedulerService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Services.NamesService.AnimalList.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Services.NamesService.AnimalList.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Services.NamesService.AnimalName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Services.NamesService.AnimalName.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Services.NamesService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Services.NamesService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Services.NetworkEventDispatcherService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Services.NetworkEventDispatcherService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Services.PlayerService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Services.PlayerService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Services.SchedulerService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Services.SchedulerService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Services.ScriptEngineService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Services.ScriptEngineService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Services.SeedService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Services.SeedService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Services.WorldService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Services.WorldService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Utils.AiBehaviourRegistrationEx.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Utils.AiBehaviourRegistrationEx.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Utils.CommandsRegistrationEx.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Utils.CommandsRegistrationEx.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Utils.NetworkListenerRegistrationEx.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Utils.NetworkListenerRegistrationEx.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Utils.ScriptEngineFunctionsRegistrationEx.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Utils.ScriptEngineFunctionsRegistrationEx.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Utils.ServiceRegistrationEx.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Utils.ServiceRegistrationEx.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Utils.WorldObjectAndItemsRegistrationEx.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Utils.WorldObjectAndItemsRegistrationEx.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Utils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Utils.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Attributes.NetworkMessageAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Attributes.NetworkMessageAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Attributes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Attributes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Client.Interfaces.IDarkStarNetworkClient.MessageReceivedDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Client.Interfaces.IDarkStarNetworkClient.MessageReceivedDelegate.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Client.Interfaces.IDarkStarNetworkClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Client.Interfaces.IDarkStarNetworkClient.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Client.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Client.Interfaces.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Client.TcpNetworkClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Client.TcpNetworkClient.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Client.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Client.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Data.DarkStarNetworkClientConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Data.DarkStarNetworkClientConfig.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Data.DarkStarNetworkServerConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Data.DarkStarNetworkServerConfig.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Data.NetworkMessageData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Data.NetworkMessageData.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Data.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Data.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Interfaces.INetworkClientMessageListener.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Interfaces.INetworkClientMessageListener.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Interfaces.INetworkServerMessageListener.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Interfaces.INetworkServerMessageListener.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Interfaces.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Builders.ProtoBufMessageBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Builders.ProtoBufMessageBuilder.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Builders.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Builders.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Interfaces.Builders.INetworkMessageBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Interfaces.Builders.INetworkMessageBuilder.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Interfaces.Builders.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Interfaces.Builders.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Interfaces.Messages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Interfaces.Messages.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Live.PingMessageResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Live.PingMessageResponse.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Live.PongMessageResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Live.PongMessageResponse.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Live.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Live.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Map.MapRequestMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Map.MapRequestMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Map.MapResponseMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Map.MapResponseMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Map.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Map.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Accounts.AccountCreateRequestMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Accounts.AccountCreateRequestMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Accounts.AccountCreateResponseMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Accounts.AccountCreateResponseMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Accounts.AccountLoginRequestMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Accounts.AccountLoginRequestMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Accounts.AccountLoginResponseMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Accounts.AccountLoginResponseMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Accounts.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Accounts.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Common.MapEntityNetworkObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Common.MapEntityNetworkObject.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Common.NamedMapEntityNetworkObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Common.NamedMapEntityNetworkObject.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Common.PlayerMoveDirectionType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Common.PlayerMoveDirectionType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Common.PointPosition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Common.PointPosition.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Common.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Common.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerCreateRequestMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerCreateRequestMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerCreateResponseMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerCreateResponseMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerDataRequestMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerDataRequestMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerDataResponseMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerDataResponseMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerListRequestMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerListRequestMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerListResponseMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerListResponseMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerLoginRequestMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerLoginRequestMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerLoginResponseMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerLoginResponseMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerLogoutRequestMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerLogoutRequestMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerLogoutResponseMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerLogoutResponseMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerMoveRequestMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerMoveRequestMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerMoveResponseMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerMoveResponseMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerObjectMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerObjectMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerRaceObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerRaceObject.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerRacesRequestMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerRacesRequestMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerRacesResponseMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerRacesResponseMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerSelectRequestMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerSelectRequestMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerSelectResponseMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerSelectResponseMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Players.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Players.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Server.ServerMotdResponseMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Server.ServerMotdResponseMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Server.ServerNameResponseMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Server.ServerNameResponseMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Server.ServerVersionResponseMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Server.ServerVersionResponseMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Server.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Server.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.TileSet.TileSetDownloadRequestMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.TileSet.TileSetDownloadRequestMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.TileSet.TileSetDownloadResponseMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.TileSet.TileSetDownloadResponseMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.TileSet.TileSetEntryMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.TileSet.TileSetEntryMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.TileSet.TileSetListRequestMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.TileSet.TileSetListRequestMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.TileSet.TileSetListResponseMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.TileSet.TileSetListResponseMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.TileSet.TileSetMapEntry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.TileSet.TileSetMapEntry.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.TileSet.TileSetMapRequestMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.TileSet.TileSetMapRequestMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.TileSet.TileSetMapResponseMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.TileSet.TileSetMapResponseMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.TileSet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.TileSet.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Triggers.Items.ItemAddedResponseMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Triggers.Items.ItemAddedResponseMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Triggers.Items.ItemMovedResponseMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Triggers.Items.ItemMovedResponseMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Triggers.Items.ItemRemovedResponseMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Triggers.Items.ItemRemovedResponseMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Triggers.Items.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Triggers.Items.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Triggers.Npc.NpcAddedResponseMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Triggers.Npc.NpcAddedResponseMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Triggers.Npc.NpcMovedResponseMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Triggers.Npc.NpcMovedResponseMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Triggers.Npc.NpcRemovedResponseMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Triggers.Npc.NpcRemovedResponseMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Triggers.Npc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Triggers.Npc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Triggers.WorldObject.WorldObjectAddedResponseMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Triggers.WorldObject.WorldObjectAddedResponseMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Triggers.WorldObject.WorldObjectMovedResponseMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Triggers.WorldObject.WorldObjectMovedResponseMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Triggers.WorldObject.WorldObjectRemovedResponseMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Triggers.WorldObject.WorldObjectRemovedResponseMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Triggers.WorldObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Triggers.WorldObject.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.World.WorldMessageRequestMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.World.WorldMessageRequestMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.World.WorldMessageResponseMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.World.WorldMessageResponseMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.World.WorldMessageType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.World.WorldMessageType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.World.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.World.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.NetworkMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.NetworkMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Types.DarkStarMessageType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Types.DarkStarMessageType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Types.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Types.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Server.DarkSunTcpSession.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Server.DarkSunTcpSession.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Server.Interfaces.IDarkSunNetworkServer.ClientConnectedMessages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Server.Interfaces.IDarkSunNetworkServer.ClientConnectedMessages.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Server.Interfaces.IDarkSunNetworkServer.ClientDisconnectedDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Server.Interfaces.IDarkSunNetworkServer.ClientDisconnectedDelegate.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Server.Interfaces.IDarkSunNetworkServer.MessageReceivedDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Server.Interfaces.IDarkSunNetworkServer.MessageReceivedDelegate.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Server.Interfaces.IDarkSunNetworkServer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Server.Interfaces.IDarkSunNetworkServer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Server.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Server.Interfaces.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Server.TcpNetworkServer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Server.TcpNetworkServer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Server.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Server.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Session.Data.DarkSunSession.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Session.Data.DarkSunSession.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Session.Data.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Session.Data.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Session.InMemoryNetworkSessionManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Session.InMemoryNetworkSessionManager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Session.Interfaces.INetworkSessionManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Session.Interfaces.INetworkSessionManager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Session.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Session.Interfaces.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Session.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Session.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Tests.NetworkProtocolTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Tests.NetworkProtocolTests.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Tests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Tests.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastEnumToString.ToStringAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastEnumToString.ToStringAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastEnumToString.ToStringDefault.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastEnumToString.ToStringDefault.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/FastEnumToString.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/FastEnumToString.html"
+        }
+      },
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "api/index.md",
       "output": {
         ".html": {
           "relative_path": "api/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
         }
       },
       "version": ""
@@ -29,9 +3779,6 @@
       "output": {
         ".html": {
           "relative_path": "articles/toc.html"
-        },
-        ".json": {
-          "relative_path": "articles/toc.json"
         }
       },
       "version": ""
@@ -52,9 +3799,6 @@
       "output": {
         ".html": {
           "relative_path": "toc.html"
-        },
-        ".json": {
-          "relative_path": "toc.json"
         }
       },
       "version": ""
