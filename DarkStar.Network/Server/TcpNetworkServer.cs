@@ -22,6 +22,7 @@ public class TcpNetworkServer : TcpServer, IDarkSunNetworkServer
     private readonly INetworkMessageBuilder _messageBuilder;
     private readonly DarkStarNetworkServerConfig _darkStarNetworkServerConfig;
 
+    private readonly SemaphoreSlim _sendLock = new(1);
     public event IDarkSunNetworkServer.MessageReceivedDelegate? OnMessageReceived;
     public event IDarkSunNetworkServer.ClientConnectedMessages? OnClientConnected;
     public event IDarkSunNetworkServer.ClientDisconnectedDelegate? OnClientDisconnected;
@@ -89,6 +90,7 @@ public class TcpNetworkServer : TcpServer, IDarkSunNetworkServer
 
     public Task SendMessageAsync(Guid sessionId, IDarkStarNetworkMessage message)
     {
+        _sendLock.Wait();
         var session = _sessionManager.GetSession(sessionId);
 
         try
@@ -99,15 +101,17 @@ public class TcpNetworkServer : TcpServer, IDarkSunNetworkServer
 
         {
             _logger.LogError("Error during send message to sessionId: {SessionId}: {Error}", sessionId, ex);
+
         }
 
+        _sendLock.Release();
         return Task.CompletedTask;
     }
 
     public Task SendMessageAsync(Guid sessionId, List<IDarkStarNetworkMessage> message)
     {
         var session = _sessionManager.GetSession(sessionId);
-
+        _sendLock.Wait();
         foreach (var messageItem in message)
         {
             try
@@ -120,6 +124,7 @@ public class TcpNetworkServer : TcpServer, IDarkSunNetworkServer
                 _logger.LogError("Error during send message to sessionId: {SessionId}: {Error}", sessionId, ex);
             }
         }
+        _sendLock.Release();
 
         return Task.CompletedTask;
     }
