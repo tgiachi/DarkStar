@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="0.1.8"></a>
+## [0.1.8](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.1.8) (2023-4-20)
+
+### Other
+
+* ✨ feat(.versionize): add configuration for changelogAll and changelog sections ([db61fef](https://www.github.com/tgiachi/DarkSun/commit/db61fef4588280fd0b8d5f0bb74f7e57360eced7))
+
 <a name="0.1.7"></a>
 ## [0.1.7](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.1.7) (2023-4-20)
 
