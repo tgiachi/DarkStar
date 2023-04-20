@@ -6,10 +6,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class DummyAi
+    <title>Class MushroomFinderAi
  </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class DummyAi
+    <meta name="title" content="Class MushroomFinderAi
  ">
     <meta name="generator" content="docfx ">
   
@@ -93,11 +93,11 @@
                           </div>
                         </div>
 
-                    <article class="content wrap" id="_content" data-uid="DarkStar.Engine.Ai.DummyAi">
+                    <article class="content wrap" id="_content" data-uid="DarkStar.Engine.Ai.Humans.MushroomFinderAi">
 
 
 
-  <h1 id="DarkStar_Engine_Ai_DummyAi" data-uid="DarkStar.Engine.Ai.DummyAi" class="text-break">Class DummyAi
+  <h1 id="DarkStar_Engine_Ai_Humans_MushroomFinderAi" data-uid="DarkStar.Engine.Ai.Humans.MushroomFinderAi" class="text-break">Class MushroomFinderAi
 </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
@@ -105,7 +105,7 @@
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
     <div class="level1"><a class="xref" href="DarkStar.Api.Engine.Ai.Base.BaseAiBehaviourExecutor.html">BaseAiBehaviourExecutor</a></div>
-    <div class="level2"><span class="xref">DummyAi</span></div>
+    <div class="level2"><span class="xref">MushroomFinderAi</span></div>
   </div>
   <div class="implements">
     <h5>Implements</h5>
@@ -145,10 +145,22 @@
       <a class="xref" href="DarkStar.Api.Engine.Ai.Base.BaseAiBehaviourExecutor.html#DarkStar_Api_Engine_Ai_Base_BaseAiBehaviourExecutor_SetInterval_System_Double_">BaseAiBehaviourExecutor.SetInterval(double)</a>
     </div>
     <div>
-      <a class="xref" href="DarkStar.Api.Engine.Ai.Base.BaseAiBehaviourExecutor.html#DarkStar_Api_Engine_Ai_Base_BaseAiBehaviourExecutor_DoAiAsync">BaseAiBehaviourExecutor.DoAiAsync()</a>
+      <a class="xref" href="DarkStar.Api.Engine.Ai.Base.BaseAiBehaviourExecutor.html#DarkStar_Api_Engine_Ai_Base_BaseAiBehaviourExecutor_Dispose">BaseAiBehaviourExecutor.Dispose()</a>
     </div>
     <div>
-      <a class="xref" href="DarkStar.Api.Engine.Ai.Base.BaseAiBehaviourExecutor.html#DarkStar_Api_Engine_Ai_Base_BaseAiBehaviourExecutor_Dispose">BaseAiBehaviourExecutor.Dispose()</a>
+      <a class="xref" href="DarkStar.Api.Engine.Ai.Base.BaseAiBehaviourExecutor.html#DarkStar_Api_Engine_Ai_Base_BaseAiBehaviourExecutor_MoveToDirection_DarkStar_Network_Protocol_Messages_Common_MoveDirectionType_">BaseAiBehaviourExecutor.MoveToDirection(MoveDirectionType)</a>
+    </div>
+    <div>
+      <a class="xref" href="DarkStar.Api.Engine.Ai.Base.BaseAiBehaviourExecutor.html#DarkStar_Api_Engine_Ai_Base_BaseAiBehaviourExecutor_MoveRandomDirection">BaseAiBehaviourExecutor.MoveRandomDirection()</a>
+    </div>
+    <div>
+      <a class="xref" href="DarkStar.Api.Engine.Ai.Base.BaseAiBehaviourExecutor.html#DarkStar_Api_Engine_Ai_Base_BaseAiBehaviourExecutor_GetEntitiesInRangeAsync__1_DarkStar_Api_World_Types_Map_MapLayer_System_Int32_">BaseAiBehaviourExecutor.GetEntitiesInRangeAsync&lt;TEntity&gt;(MapLayer, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="DarkStar.Api.Engine.Ai.Base.BaseAiBehaviourExecutor.html#DarkStar_Api_Engine_Ai_Base_BaseAiBehaviourExecutor_GetPathToPosition_DarkStar_Network_Protocol_Messages_Common_PointPosition_">BaseAiBehaviourExecutor.GetPathToPosition(PointPosition)</a>
+    </div>
+    <div>
+      <a class="xref" href="DarkStar.Api.Engine.Ai.Base.BaseAiBehaviourExecutor.html#DarkStar_Api_Engine_Ai_Base_BaseAiBehaviourExecutor_MoveToPosition_DarkStar_Network_Protocol_Messages_Common_PointPosition_">BaseAiBehaviourExecutor.MoveToPosition(PointPosition)</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
@@ -172,29 +184,29 @@
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="DarkStar.html">DarkStar</a>.<a class="xref" href="DarkStar.Engine.html">Engine</a>.<a class="xref" href="DarkStar.Engine.Ai.html">Ai</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="DarkStar.html">DarkStar</a>.<a class="xref" href="DarkStar.Engine.html">Engine</a>.<a class="xref" href="DarkStar.Engine.Ai.html">Ai</a>.<a class="xref" href="DarkStar.Engine.Ai.Humans.html">Humans</a></h6>
   <h6><strong>Assembly</strong>: DarkStar.Engine.dll</h6>
-  <h5 id="DarkStar_Engine_Ai_DummyAi_syntax">Syntax</h5>
+  <h5 id="DarkStar_Engine_Ai_Humans_MushroomFinderAi_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[AiBehaviour(NpcType.Animal, NpcSubType.Cat)]
-public class DummyAi : BaseAiBehaviourExecutor, IAiBehaviourExecutor, IDisposable</code></pre>
+    <pre><code class="lang-csharp hljs">[AiBehaviour(NpcType.Human, NpcSubType.MushroomFinder)]
+public class MushroomFinderAi : BaseAiBehaviourExecutor, IAiBehaviourExecutor, IDisposable</code></pre>
   </div>
   <h3 id="constructors">Constructors
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Ai_DummyAi__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Engine_Ai_DummyAi__DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Ai.DummyAi.%23ctor(Microsoft.Extensions.Logging.ILogger%7BDarkStar.Engine.Ai.DummyAi%7D%2CDarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Ai_Humans_MushroomFinderAi__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Api_Engine_Ai_Base_BaseAiBehaviourExecutor__DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Ai.Humans.MushroomFinderAi.%23ctor(Microsoft.Extensions.Logging.ILogger%7BDarkStar.Api.Engine.Ai.Base.BaseAiBehaviourExecutor%7D%2CDarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Ai/DummyAi.cs/#L18">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Ai/Humans/MushroomFinderAi.cs/#L28">View Source</a>
   </span>
-  <a id="DarkStar_Engine_Ai_DummyAi__ctor_" data-uid="DarkStar.Engine.Ai.DummyAi.#ctor*"></a>
-  <h4 id="DarkStar_Engine_Ai_DummyAi__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Engine_Ai_DummyAi__DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_" data-uid="DarkStar.Engine.Ai.DummyAi.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.Ai.DummyAi},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)">DummyAi(ILogger&lt;DummyAi&gt;, IDarkSunEngine)</h4>
+  <a id="DarkStar_Engine_Ai_Humans_MushroomFinderAi__ctor_" data-uid="DarkStar.Engine.Ai.Humans.MushroomFinderAi.#ctor*"></a>
+  <h4 id="DarkStar_Engine_Ai_Humans_MushroomFinderAi__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Api_Engine_Ai_Base_BaseAiBehaviourExecutor__DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_" data-uid="DarkStar.Engine.Ai.Humans.MushroomFinderAi.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Api.Engine.Ai.Base.BaseAiBehaviourExecutor},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)">MushroomFinderAi(ILogger&lt;BaseAiBehaviourExecutor&gt;, IDarkSunEngine)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public DummyAi(ILogger&lt;DummyAi&gt; logger, IDarkSunEngine engine)</code></pre>
+    <pre><code class="lang-csharp hljs">public MushroomFinderAi(ILogger&lt;BaseAiBehaviourExecutor&gt; logger, IDarkSunEngine engine)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -207,7 +219,7 @@ public class DummyAi : BaseAiBehaviourExecutor, IAiBehaviourExecutor, IDisposabl
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1">ILogger</a>&lt;<a class="xref" href="DarkStar.Engine.Ai.DummyAi.html">DummyAi</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1">ILogger</a>&lt;<a class="xref" href="DarkStar.Api.Engine.Ai.Base.BaseAiBehaviourExecutor.html">BaseAiBehaviourExecutor</a>&gt;</td>
         <td><span class="parametername">logger</span></td>
         <td></td>
       </tr>
@@ -218,6 +230,100 @@ public class DummyAi : BaseAiBehaviourExecutor, IAiBehaviourExecutor, IDisposabl
       </tr>
     </tbody>
   </table>
+  <h3 id="fields">Fields
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Ai_Humans_MushroomFinderAi__currentStep.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Ai.Humans.MushroomFinderAi._currentStep%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Ai/Humans/MushroomFinderAi.cs/#L25">View Source</a>
+  </span>
+  <h4 id="DarkStar_Engine_Ai_Humans_MushroomFinderAi__currentStep" data-uid="DarkStar.Engine.Ai.Humans.MushroomFinderAi._currentStep">_currentStep</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private int _currentStep</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Ai_Humans_MushroomFinderAi__path.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Ai.Humans.MushroomFinderAi._path%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Ai/Humans/MushroomFinderAi.cs/#L26">View Source</a>
+  </span>
+  <h4 id="DarkStar_Engine_Ai_Humans_MushroomFinderAi__path" data-uid="DarkStar.Engine.Ai.Humans.MushroomFinderAi._path">_path</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private List&lt;PointPosition&gt; _path</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="DarkStar.Network.Protocol.Messages.Common.PointPosition.html">PointPosition</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Ai_Humans_MushroomFinderAi_DoAiAsync.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Ai.Humans.MushroomFinderAi.DoAiAsync%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Ai/Humans/MushroomFinderAi.cs/#L33">View Source</a>
+  </span>
+  <a id="DarkStar_Engine_Ai_Humans_MushroomFinderAi_DoAiAsync_" data-uid="DarkStar.Engine.Ai.Humans.MushroomFinderAi.DoAiAsync*"></a>
+  <h4 id="DarkStar_Engine_Ai_Humans_MushroomFinderAi_DoAiAsync" data-uid="DarkStar.Engine.Ai.Humans.MushroomFinderAi.DoAiAsync">DoAiAsync()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override ValueTask DoAiAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask">ValueTask</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="DarkStar.Api.Engine.Ai.Base.BaseAiBehaviourExecutor.html#DarkStar_Api_Engine_Ai_Base_BaseAiBehaviourExecutor_DoAiAsync">BaseAiBehaviourExecutor.DoAiAsync()</a></div>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="DarkStar.Api.Engine.Interfaces.Ai.IAiBehaviourExecutor.html">IAiBehaviourExecutor</a>

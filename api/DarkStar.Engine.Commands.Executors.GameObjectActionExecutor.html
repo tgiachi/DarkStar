@@ -6,10 +6,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class HashUtils
+    <title>Class GameObjectActionExecutor
  </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class HashUtils
+    <meta name="title" content="Class GameObjectActionExecutor
  ">
     <meta name="generator" content="docfx ">
   
@@ -93,21 +93,35 @@
                           </div>
                         </div>
 
-                    <article class="content wrap" id="_content" data-uid="DarkStar.Api.Utils.HashUtils">
+                    <article class="content wrap" id="_content" data-uid="DarkStar.Engine.Commands.Executors.GameObjectActionExecutor">
 
 
 
-  <h1 id="DarkStar_Api_Utils_HashUtils" data-uid="DarkStar.Api.Utils.HashUtils" class="text-break">Class HashUtils
+  <h1 id="DarkStar_Engine_Commands_Executors_GameObjectActionExecutor" data-uid="DarkStar.Engine.Commands.Executors.GameObjectActionExecutor" class="text-break">Class GameObjectActionExecutor
 </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><span class="xref">HashUtils</span></div>
+    <div class="level1"><a class="xref" href="DarkStar.Api.Engine.Commands.Base.BaseCommandActionExecutor-1.html">BaseCommandActionExecutor</a>&lt;<a class="xref" href="DarkStar.Engine.Commands.Actions.GameObjectAction.html">GameObjectAction</a>&gt;</div>
+    <div class="level2"><span class="xref">GameObjectActionExecutor</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="DarkStar.Api.Engine.Interfaces.Commands.ICommandActionExecutor.html">ICommandActionExecutor</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="DarkStar.Api.Engine.Commands.Base.BaseCommandActionExecutor-1.html#DarkStar_Api_Engine_Commands_Base_BaseCommandActionExecutor_1_Logger">BaseCommandActionExecutor&lt;GameObjectAction&gt;.Logger</a>
+    </div>
+    <div>
+      <a class="xref" href="DarkStar.Api.Engine.Commands.Base.BaseCommandActionExecutor-1.html#DarkStar_Api_Engine_Commands_Base_BaseCommandActionExecutor_1_Engine">BaseCommandActionExecutor&lt;GameObjectAction&gt;.Engine</a>
+    </div>
+    <div>
+      <a class="xref" href="DarkStar.Api.Engine.Commands.Base.BaseCommandActionExecutor-1.html#DarkStar_Api_Engine_Commands_Base_BaseCommandActionExecutor_1_ProcessAsync_DarkStar_Api_Engine_Interfaces_Commands_ICommandAction_">BaseCommandActionExecutor&lt;GameObjectAction&gt;.ProcessAsync(ICommandAction)</a>
+    </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
     </div>
@@ -130,28 +144,68 @@
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="DarkStar.html">DarkStar</a>.<a class="xref" href="DarkStar.Api.html">Api</a>.<a class="xref" href="DarkStar.Api.Utils.html">Utils</a></h6>
-  <h6><strong>Assembly</strong>: DarkStar.Api.dll</h6>
-  <h5 id="DarkStar_Api_Utils_HashUtils_syntax">Syntax</h5>
+  <h6><strong>Namespace</strong>: <a class="xref" href="DarkStar.html">DarkStar</a>.<a class="xref" href="DarkStar.Engine.html">Engine</a>.<a class="xref" href="DarkStar.Engine.Commands.html">Commands</a>.<a class="xref" href="DarkStar.Engine.Commands.Executors.html">Executors</a></h6>
+  <h6><strong>Assembly</strong>: DarkStar.Engine.dll</h6>
+  <h5 id="DarkStar_Engine_Commands_Executors_GameObjectActionExecutor_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class HashUtils</code></pre>
+    <pre><code class="lang-csharp hljs">[CommandAction(CommandActionType.GameObjectAction)]
+public class GameObjectActionExecutor : BaseCommandActionExecutor&lt;GameObjectAction&gt;, ICommandActionExecutor</code></pre>
   </div>
+  <h3 id="constructors">Constructors
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Commands_Executors_GameObjectActionExecutor__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Api_Engine_Commands_Base_BaseCommandActionExecutor_DarkStar_Engine_Commands_Actions_GameObjectAction___DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Commands.Executors.GameObjectActionExecutor.%23ctor(Microsoft.Extensions.Logging.ILogger%7BDarkStar.Api.Engine.Commands.Base.BaseCommandActionExecutor%7BDarkStar.Engine.Commands.Actions.GameObjectAction%7D%7D%2CDarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Commands/Executors/GameObjectActionExecutor.cs/#L13">View Source</a>
+  </span>
+  <a id="DarkStar_Engine_Commands_Executors_GameObjectActionExecutor__ctor_" data-uid="DarkStar.Engine.Commands.Executors.GameObjectActionExecutor.#ctor*"></a>
+  <h4 id="DarkStar_Engine_Commands_Executors_GameObjectActionExecutor__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Api_Engine_Commands_Base_BaseCommandActionExecutor_DarkStar_Engine_Commands_Actions_GameObjectAction___DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_" data-uid="DarkStar.Engine.Commands.Executors.GameObjectActionExecutor.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Api.Engine.Commands.Base.BaseCommandActionExecutor{DarkStar.Engine.Commands.Actions.GameObjectAction}},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)">GameObjectActionExecutor(ILogger&lt;BaseCommandActionExecutor&lt;GameObjectAction&gt;&gt;, IDarkSunEngine)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObjectActionExecutor(ILogger&lt;BaseCommandActionExecutor&lt;GameObjectAction&gt;&gt; logger, IDarkSunEngine engine)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1">ILogger</a>&lt;<a class="xref" href="DarkStar.Api.Engine.Commands.Base.BaseCommandActionExecutor-1.html">BaseCommandActionExecutor</a>&lt;<a class="xref" href="DarkStar.Engine.Commands.Actions.GameObjectAction.html">GameObjectAction</a>&gt;&gt;</td>
+        <td><span class="parametername">logger</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine.html">IDarkSunEngine</a></td>
+        <td><span class="parametername">engine</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Api_Utils_HashUtils_CreateBCryptHash_System_String_.md&amp;value=---%0Auid%3A%20DarkStar.Api.Utils.HashUtils.CreateBCryptHash(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Commands_Executors_GameObjectActionExecutor_ProcessAsync_DarkStar_Engine_Commands_Actions_GameObjectAction_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Commands.Executors.GameObjectActionExecutor.ProcessAsync(DarkStar.Engine.Commands.Actions.GameObjectAction)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api/Utils/HashUtils.cs/#L8">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Commands/Executors/GameObjectActionExecutor.cs/#L18">View Source</a>
   </span>
-  <a id="DarkStar_Api_Utils_HashUtils_CreateBCryptHash_" data-uid="DarkStar.Api.Utils.HashUtils.CreateBCryptHash*"></a>
-  <h4 id="DarkStar_Api_Utils_HashUtils_CreateBCryptHash_System_String_" data-uid="DarkStar.Api.Utils.HashUtils.CreateBCryptHash(System.String)">CreateBCryptHash(string)</h4>
+  <a id="DarkStar_Engine_Commands_Executors_GameObjectActionExecutor_ProcessAsync_" data-uid="DarkStar.Engine.Commands.Executors.GameObjectActionExecutor.ProcessAsync*"></a>
+  <h4 id="DarkStar_Engine_Commands_Executors_GameObjectActionExecutor_ProcessAsync_DarkStar_Engine_Commands_Actions_GameObjectAction_" data-uid="DarkStar.Engine.Commands.Executors.GameObjectActionExecutor.ProcessAsync(DarkStar.Engine.Commands.Actions.GameObjectAction)">ProcessAsync(GameObjectAction)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string CreateBCryptHash(this string input)</code></pre>
+    <pre><code class="lang-csharp hljs">public override Task ProcessAsync(GameObjectAction action)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -164,8 +218,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">input</span></td>
+        <td><a class="xref" href="DarkStar.Engine.Commands.Actions.GameObjectAction.html">GameObjectAction</a></td>
+        <td><span class="parametername">action</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -180,58 +234,17 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Api_Utils_HashUtils_Sha1Hash_System_String_.md&amp;value=---%0Auid%3A%20DarkStar.Api.Utils.HashUtils.Sha1Hash(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api/Utils/HashUtils.cs/#L10">View Source</a>
-  </span>
-  <a id="DarkStar_Api_Utils_HashUtils_Sha1Hash_" data-uid="DarkStar.Api.Utils.HashUtils.Sha1Hash*"></a>
-  <h4 id="DarkStar_Api_Utils_HashUtils_Sha1Hash_System_String_" data-uid="DarkStar.Api.Utils.HashUtils.Sha1Hash(System.String)">Sha1Hash(string)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string Sha1Hash(this string input)</code></pre>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="DarkStar.Engine.Commands.Actions.GameObjectAction.html">BaseCommandActionExecutor&lt;GameObjectAction&gt;.ProcessAsync(GameObjectAction)</a></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="DarkStar.Api.Engine.Interfaces.Commands.ICommandActionExecutor.html">ICommandActionExecutor</a>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">input</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
 
 </article>
               

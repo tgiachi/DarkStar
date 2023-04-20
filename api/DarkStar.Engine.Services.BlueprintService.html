@@ -169,18 +169,18 @@ public class BlueprintService : BaseService&lt;BlueprintService&gt;, IBlueprintS
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_BlueprintService__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Engine_Services_BlueprintService__DarkStar_Api_Data_Config_DirectoriesConfig_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.BlueprintService.%23ctor(Microsoft.Extensions.Logging.ILogger%7BDarkStar.Engine.Services.BlueprintService%7D%2CDarkStar.Api.Data.Config.DirectoriesConfig)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_BlueprintService__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Engine_Services_BlueprintService__DarkStar_Api_Data_Config_DirectoriesConfig_DarkStar_Api_Engine_Interfaces_Services_INamesService_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.BlueprintService.%23ctor(Microsoft.Extensions.Logging.ILogger%7BDarkStar.Engine.Services.BlueprintService%7D%2CDarkStar.Api.Data.Config.DirectoriesConfig%2CDarkStar.Api.Engine.Interfaces.Services.INamesService)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/BlueprintService.cs/#L17">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/BlueprintService.cs/#L30">View Source</a>
   </span>
   <a id="DarkStar_Engine_Services_BlueprintService__ctor_" data-uid="DarkStar.Engine.Services.BlueprintService.#ctor*"></a>
-  <h4 id="DarkStar_Engine_Services_BlueprintService__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Engine_Services_BlueprintService__DarkStar_Api_Data_Config_DirectoriesConfig_" data-uid="DarkStar.Engine.Services.BlueprintService.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.Services.BlueprintService},DarkStar.Api.Data.Config.DirectoriesConfig)">BlueprintService(ILogger&lt;BlueprintService&gt;, DirectoriesConfig)</h4>
+  <h4 id="DarkStar_Engine_Services_BlueprintService__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Engine_Services_BlueprintService__DarkStar_Api_Data_Config_DirectoriesConfig_DarkStar_Api_Engine_Interfaces_Services_INamesService_" data-uid="DarkStar.Engine.Services.BlueprintService.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.Services.BlueprintService},DarkStar.Api.Data.Config.DirectoriesConfig,DarkStar.Api.Engine.Interfaces.Services.INamesService)">BlueprintService(ILogger&lt;BlueprintService&gt;, DirectoriesConfig, INamesService)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public BlueprintService(ILogger&lt;BlueprintService&gt; logger, DirectoriesConfig directoriesConfig)</code></pre>
+    <pre><code class="lang-csharp hljs">public BlueprintService(ILogger&lt;BlueprintService&gt; logger, DirectoriesConfig directoriesConfig, INamesService namesService)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -202,16 +202,50 @@ public class BlueprintService : BaseService&lt;BlueprintService&gt;, IBlueprintS
         <td><span class="parametername">directoriesConfig</span></td>
         <td></td>
       </tr>
+      <tr>
+        <td><a class="xref" href="DarkStar.Api.Engine.Interfaces.Services.INamesService.html">INamesService</a></td>
+        <td><span class="parametername">namesService</span></td>
+        <td></td>
+      </tr>
     </tbody>
   </table>
   <h3 id="fields">Fields
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_BlueprintService__bluePrintTemplates.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.BlueprintService._bluePrintTemplates%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/BlueprintService.cs/#L28">View Source</a>
+  </span>
+  <h4 id="DarkStar_Engine_Services_BlueprintService__bluePrintTemplates" data-uid="DarkStar.Engine.Services.BlueprintService._bluePrintTemplates">_bluePrintTemplates</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private readonly List&lt;BluePrintTemplate&gt; _bluePrintTemplates</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="DarkStar.Api.Engine.Data.Templates.BluePrintTemplate.html">BluePrintTemplate</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_BlueprintService__directoriesConfig.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.BlueprintService._directoriesConfig%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/BlueprintService.cs/#L15">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/BlueprintService.cs/#L26">View Source</a>
   </span>
   <h4 id="DarkStar_Engine_Services_BlueprintService__directoriesConfig" data-uid="DarkStar.Engine.Services.BlueprintService._directoriesConfig">_directoriesConfig</h4>
   <div class="markdown level1 summary"></div>
@@ -235,14 +269,437 @@ public class BlueprintService : BaseService&lt;BlueprintService&gt;, IBlueprintS
       </tr>
     </tbody>
   </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_BlueprintService__namesService.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.BlueprintService._namesService%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/BlueprintService.cs/#L27">View Source</a>
+  </span>
+  <h4 id="DarkStar_Engine_Services_BlueprintService__namesService" data-uid="DarkStar.Engine.Services.BlueprintService._namesService">_namesService</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private readonly INamesService _namesService</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DarkStar.Api.Engine.Interfaces.Services.INamesService.html">INamesService</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
 </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_BlueprintService_BuildBluePrintTemplateFromObject_TiledSharp_TmxMap_System_String_System_String_System_Collections_Generic_List_DarkStar_Network_Protocol_Messages_Common_PointPosition__.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.BlueprintService.BuildBluePrintTemplateFromObject(TiledSharp.TmxMap%2CSystem.String%2CSystem.String%2CSystem.Collections.Generic.List%7BDarkStar.Network.Protocol.Messages.Common.PointPosition%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/BlueprintService.cs/#L99">View Source</a>
+  </span>
+  <a id="DarkStar_Engine_Services_BlueprintService_BuildBluePrintTemplateFromObject_" data-uid="DarkStar.Engine.Services.BlueprintService.BuildBluePrintTemplateFromObject*"></a>
+  <h4 id="DarkStar_Engine_Services_BlueprintService_BuildBluePrintTemplateFromObject_TiledSharp_TmxMap_System_String_System_String_System_Collections_Generic_List_DarkStar_Network_Protocol_Messages_Common_PointPosition__" data-uid="DarkStar.Engine.Services.BlueprintService.BuildBluePrintTemplateFromObject(TiledSharp.TmxMap,System.String,System.String,System.Collections.Generic.List{DarkStar.Network.Protocol.Messages.Common.PointPosition})">BuildBluePrintTemplateFromObject(TmxMap, string, string, List&lt;PointPosition&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private BluePrintTemplate BuildBluePrintTemplateFromObject(TmxMap map, string objectName, string className, List&lt;PointPosition&gt; points)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TmxMap</span></td>
+        <td><span class="parametername">map</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">objectName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">className</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="DarkStar.Network.Protocol.Messages.Common.PointPosition.html">PointPosition</a>&gt;</td>
+        <td><span class="parametername">points</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DarkStar.Api.Engine.Data.Templates.BluePrintTemplate.html">BluePrintTemplate</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_BlueprintService_GenerateNpcEntityAsync_DarkStar_Api_World_Types_Npc_NpcType_DarkStar_Api_World_Types_Npc_NpcSubType_System_Int32_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.BlueprintService.GenerateNpcEntityAsync(DarkStar.Api.World.Types.Npc.NpcType%2CDarkStar.Api.World.Types.Npc.NpcSubType%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/BlueprintService.cs/#L143">View Source</a>
+  </span>
+  <a id="DarkStar_Engine_Services_BlueprintService_GenerateNpcEntityAsync_" data-uid="DarkStar.Engine.Services.BlueprintService.GenerateNpcEntityAsync*"></a>
+  <h4 id="DarkStar_Engine_Services_BlueprintService_GenerateNpcEntityAsync_DarkStar_Api_World_Types_Npc_NpcType_DarkStar_Api_World_Types_Npc_NpcSubType_System_Int32_" data-uid="DarkStar.Engine.Services.BlueprintService.GenerateNpcEntityAsync(DarkStar.Api.World.Types.Npc.NpcType,DarkStar.Api.World.Types.Npc.NpcSubType,System.Int32)">GenerateNpcEntityAsync(NpcType, NpcSubType, int)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;NpcEntity&gt; GenerateNpcEntityAsync(NpcType npcType, NpcSubType subType, int level = 1)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DarkStar.Api.World.Types.Npc.NpcType.html">NpcType</a></td>
+        <td><span class="parametername">npcType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="DarkStar.Api.World.Types.Npc.NpcSubType.html">NpcSubType</a></td>
+        <td><span class="parametername">subType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">level</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="DarkStar.Database.Entities.Npc.NpcEntity.html">NpcEntity</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_BlueprintService_GenerateNpcGameObjectAsync_DarkStar_Network_Protocol_Messages_Common_PointPosition_DarkStar_Api_World_Types_Npc_NpcType_DarkStar_Api_World_Types_Npc_NpcSubType_System_Int32_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.BlueprintService.GenerateNpcGameObjectAsync(DarkStar.Network.Protocol.Messages.Common.PointPosition%2CDarkStar.Api.World.Types.Npc.NpcType%2CDarkStar.Api.World.Types.Npc.NpcSubType%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/BlueprintService.cs/#L201">View Source</a>
+  </span>
+  <a id="DarkStar_Engine_Services_BlueprintService_GenerateNpcGameObjectAsync_" data-uid="DarkStar.Engine.Services.BlueprintService.GenerateNpcGameObjectAsync*"></a>
+  <h4 id="DarkStar_Engine_Services_BlueprintService_GenerateNpcGameObjectAsync_DarkStar_Network_Protocol_Messages_Common_PointPosition_DarkStar_Api_World_Types_Npc_NpcType_DarkStar_Api_World_Types_Npc_NpcSubType_System_Int32_" data-uid="DarkStar.Engine.Services.BlueprintService.GenerateNpcGameObjectAsync(DarkStar.Network.Protocol.Messages.Common.PointPosition,DarkStar.Api.World.Types.Npc.NpcType,DarkStar.Api.World.Types.Npc.NpcSubType,System.Int32)">GenerateNpcGameObjectAsync(PointPosition, NpcType, NpcSubType, int)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;NpcGameObject&gt; GenerateNpcGameObjectAsync(PointPosition position, NpcType npcType, NpcSubType subType, int level = 1)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DarkStar.Network.Protocol.Messages.Common.PointPosition.html">PointPosition</a></td>
+        <td><span class="parametername">position</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="DarkStar.Api.World.Types.Npc.NpcType.html">NpcType</a></td>
+        <td><span class="parametername">npcType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="DarkStar.Api.World.Types.Npc.NpcSubType.html">NpcSubType</a></td>
+        <td><span class="parametername">subType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">level</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="DarkStar.Api.Engine.Map.Entities.NpcGameObject.html">NpcGameObject</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_BlueprintService_GenerateWorldGameObjectAsync_DarkStar_Api_World_Types_GameObjects_GameObjectType_DarkStar_Network_Protocol_Messages_Common_PointPosition_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.BlueprintService.GenerateWorldGameObjectAsync(DarkStar.Api.World.Types.GameObjects.GameObjectType%2CDarkStar.Network.Protocol.Messages.Common.PointPosition)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/BlueprintService.cs/#L234">View Source</a>
+  </span>
+  <a id="DarkStar_Engine_Services_BlueprintService_GenerateWorldGameObjectAsync_" data-uid="DarkStar.Engine.Services.BlueprintService.GenerateWorldGameObjectAsync*"></a>
+  <h4 id="DarkStar_Engine_Services_BlueprintService_GenerateWorldGameObjectAsync_DarkStar_Api_World_Types_GameObjects_GameObjectType_DarkStar_Network_Protocol_Messages_Common_PointPosition_" data-uid="DarkStar.Engine.Services.BlueprintService.GenerateWorldGameObjectAsync(DarkStar.Api.World.Types.GameObjects.GameObjectType,DarkStar.Network.Protocol.Messages.Common.PointPosition)">GenerateWorldGameObjectAsync(GameObjectType, PointPosition)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;WorldGameObject&gt; GenerateWorldGameObjectAsync(GameObjectType type, PointPosition position)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DarkStar.Api.World.Types.GameObjects.GameObjectType.html">GameObjectType</a></td>
+        <td><span class="parametername">type</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="DarkStar.Network.Protocol.Messages.Common.PointPosition.html">PointPosition</a></td>
+        <td><span class="parametername">position</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="DarkStar.Api.Engine.Map.Entities.WorldGameObject.html">WorldGameObject</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_BlueprintService_GenerateWorldGameObjectAsync_DarkStar_Api_World_Types_GameObjects_GameObjectType_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.BlueprintService.GenerateWorldGameObjectAsync(DarkStar.Api.World.Types.GameObjects.GameObjectType)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/BlueprintService.cs/#L220">View Source</a>
+  </span>
+  <a id="DarkStar_Engine_Services_BlueprintService_GenerateWorldGameObjectAsync_" data-uid="DarkStar.Engine.Services.BlueprintService.GenerateWorldGameObjectAsync*"></a>
+  <h4 id="DarkStar_Engine_Services_BlueprintService_GenerateWorldGameObjectAsync_DarkStar_Api_World_Types_GameObjects_GameObjectType_" data-uid="DarkStar.Engine.Services.BlueprintService.GenerateWorldGameObjectAsync(DarkStar.Api.World.Types.GameObjects.GameObjectType)">GenerateWorldGameObjectAsync(GameObjectType)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;GameObjectEntity&gt; GenerateWorldGameObjectAsync(GameObjectType type)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DarkStar.Api.World.Types.GameObjects.GameObjectType.html">GameObjectType</a></td>
+        <td><span class="parametername">type</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="DarkStar.Database.Entities.Objects.GameObjectEntity.html">GameObjectEntity</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_BlueprintService_GetPointsFromRect_System_Double_System_Double_System_Double_System_Double_TiledSharp_TmxTileset_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.BlueprintService.GetPointsFromRect(System.Double%2CSystem.Double%2CSystem.Double%2CSystem.Double%2CTiledSharp.TmxTileset)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/BlueprintService.cs/#L86">View Source</a>
+  </span>
+  <a id="DarkStar_Engine_Services_BlueprintService_GetPointsFromRect_" data-uid="DarkStar.Engine.Services.BlueprintService.GetPointsFromRect*"></a>
+  <h4 id="DarkStar_Engine_Services_BlueprintService_GetPointsFromRect_System_Double_System_Double_System_Double_System_Double_TiledSharp_TmxTileset_" data-uid="DarkStar.Engine.Services.BlueprintService.GetPointsFromRect(System.Double,System.Double,System.Double,System.Double,TiledSharp.TmxTileset)">GetPointsFromRect(double, double, double, double, TmxTileset)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private List&lt;PointPosition&gt; GetPointsFromRect(double x, double y, double width, double height, TmxTileset tileSet)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></td>
+        <td><span class="parametername">x</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></td>
+        <td><span class="parametername">y</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></td>
+        <td><span class="parametername">width</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></td>
+        <td><span class="parametername">height</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TmxTileset</span></td>
+        <td><span class="parametername">tileSet</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="DarkStar.Network.Protocol.Messages.Common.PointPosition.html">PointPosition</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_BlueprintService_GetTileIdFromNpcType_DarkStar_Api_World_Types_Npc_NpcSubType_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.BlueprintService.GetTileIdFromNpcType(DarkStar.Api.World.Types.Npc.NpcSubType)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/BlueprintService.cs/#L250">View Source</a>
+  </span>
+  <a id="DarkStar_Engine_Services_BlueprintService_GetTileIdFromNpcType_" data-uid="DarkStar.Engine.Services.BlueprintService.GetTileIdFromNpcType*"></a>
+  <h4 id="DarkStar_Engine_Services_BlueprintService_GetTileIdFromNpcType_DarkStar_Api_World_Types_Npc_NpcSubType_" data-uid="DarkStar.Engine.Services.BlueprintService.GetTileIdFromNpcType(DarkStar.Api.World.Types.Npc.NpcSubType)">GetTileIdFromNpcType(NpcSubType)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private static TileType GetTileIdFromNpcType(NpcSubType npcType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DarkStar.Api.World.Types.Npc.NpcSubType.html">NpcSubType</a></td>
+        <td><span class="parametername">npcType</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DarkStar.Api.World.Types.Tiles.TileType.html">TileType</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_BlueprintService_LoadMapTemplateAsync_System_String_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.BlueprintService.LoadMapTemplateAsync(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/BlueprintService.cs/#L39">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/BlueprintService.cs/#L56">View Source</a>
   </span>
   <a id="DarkStar_Engine_Services_BlueprintService_LoadMapTemplateAsync_" data-uid="DarkStar.Engine.Services.BlueprintService.LoadMapTemplateAsync*"></a>
   <h4 id="DarkStar_Engine_Services_BlueprintService_LoadMapTemplateAsync_System_String_" data-uid="DarkStar.Engine.Services.BlueprintService.LoadMapTemplateAsync(System.String)">LoadMapTemplateAsync(string)</h4>
@@ -289,7 +746,7 @@ public class BlueprintService : BaseService&lt;BlueprintService&gt;, IBlueprintS
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_BlueprintService_ScanForMapTemplatesAsync.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.BlueprintService.ScanForMapTemplatesAsync%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/BlueprintService.cs/#L29">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/BlueprintService.cs/#L44">View Source</a>
   </span>
   <a id="DarkStar_Engine_Services_BlueprintService_ScanForMapTemplatesAsync_" data-uid="DarkStar.Engine.Services.BlueprintService.ScanForMapTemplatesAsync*"></a>
   <h4 id="DarkStar_Engine_Services_BlueprintService_ScanForMapTemplatesAsync" data-uid="DarkStar.Engine.Services.BlueprintService.ScanForMapTemplatesAsync">ScanForMapTemplatesAsync()</h4>
@@ -319,7 +776,7 @@ public class BlueprintService : BaseService&lt;BlueprintService&gt;, IBlueprintS
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_BlueprintService_StartAsync.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.BlueprintService.StartAsync%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/BlueprintService.cs/#L22">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/BlueprintService.cs/#L37">View Source</a>
   </span>
   <a id="DarkStar_Engine_Services_BlueprintService_StartAsync_" data-uid="DarkStar.Engine.Services.BlueprintService.StartAsync*"></a>
   <h4 id="DarkStar_Engine_Services_BlueprintService_StartAsync" data-uid="DarkStar.Engine.Services.BlueprintService.StartAsync">StartAsync()</h4>

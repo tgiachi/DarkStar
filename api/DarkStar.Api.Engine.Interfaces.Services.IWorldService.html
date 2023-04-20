@@ -126,7 +126,7 @@
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Api_Engine_Interfaces_Services_IWorldService_AddEntity__1_System_String___0_.md&amp;value=---%0Auid%3A%20DarkStar.Api.Engine.Interfaces.Services.IWorldService.AddEntity%60%601(System.String%2C%60%600)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Interfaces/Services/IWorldService.cs/#L25">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Interfaces/Services/IWorldService.cs/#L21">View Source</a>
   </span>
   <a id="DarkStar_Api_Engine_Interfaces_Services_IWorldService_AddEntity_" data-uid="DarkStar.Api.Engine.Interfaces.Services.IWorldService.AddEntity*"></a>
   <h4 id="DarkStar_Api_Engine_Interfaces_Services_IWorldService_AddEntity__1_System_String___0_" data-uid="DarkStar.Api.Engine.Interfaces.Services.IWorldService.AddEntity``1(System.String,``0)">AddEntity&lt;TEntity&gt;(string, TEntity)</h4>
@@ -242,10 +242,67 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Api_Engine_Interfaces_Services_IWorldService_CalculateAStarPath_System_String_DarkStar_Network_Protocol_Messages_Common_PointPosition_DarkStar_Network_Protocol_Messages_Common_PointPosition_.md&amp;value=---%0Auid%3A%20DarkStar.Api.Engine.Interfaces.Services.IWorldService.CalculateAStarPath(System.String%2CDarkStar.Network.Protocol.Messages.Common.PointPosition%2CDarkStar.Network.Protocol.Messages.Common.PointPosition)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Interfaces/Services/IWorldService.cs/#L37">View Source</a>
+  </span>
+  <a id="DarkStar_Api_Engine_Interfaces_Services_IWorldService_CalculateAStarPath_" data-uid="DarkStar.Api.Engine.Interfaces.Services.IWorldService.CalculateAStarPath*"></a>
+  <h4 id="DarkStar_Api_Engine_Interfaces_Services_IWorldService_CalculateAStarPath_System_String_DarkStar_Network_Protocol_Messages_Common_PointPosition_DarkStar_Network_Protocol_Messages_Common_PointPosition_" data-uid="DarkStar.Api.Engine.Interfaces.Services.IWorldService.CalculateAStarPath(System.String,DarkStar.Network.Protocol.Messages.Common.PointPosition,DarkStar.Network.Protocol.Messages.Common.PointPosition)">CalculateAStarPath(string, PointPosition, PointPosition)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">List&lt;PointPosition&gt; CalculateAStarPath(string mapId, PointPosition sourcePosition, PointPosition destinationPosition)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">mapId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="DarkStar.Network.Protocol.Messages.Common.PointPosition.html">PointPosition</a></td>
+        <td><span class="parametername">sourcePosition</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="DarkStar.Network.Protocol.Messages.Common.PointPosition.html">PointPosition</a></td>
+        <td><span class="parametername">destinationPosition</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="DarkStar.Network.Protocol.Messages.Common.PointPosition.html">PointPosition</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Api_Engine_Interfaces_Services_IWorldService_GetAllEntitiesInLayerAsync__1_System_String_DarkStar_Api_World_Types_Map_MapLayer_.md&amp;value=---%0Auid%3A%20DarkStar.Api.Engine.Interfaces.Services.IWorldService.GetAllEntitiesInLayerAsync%60%601(System.String%2CDarkStar.Api.World.Types.Map.MapLayer)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Interfaces/Services/IWorldService.cs/#L28">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Interfaces/Services/IWorldService.cs/#L24">View Source</a>
   </span>
   <a id="DarkStar_Api_Engine_Interfaces_Services_IWorldService_GetAllEntitiesInLayerAsync_" data-uid="DarkStar.Api.Engine.Interfaces.Services.IWorldService.GetAllEntitiesInLayerAsync*"></a>
   <h4 id="DarkStar_Api_Engine_Interfaces_Services_IWorldService_GetAllEntitiesInLayerAsync__1_System_String_DarkStar_Api_World_Types_Map_MapLayer_" data-uid="DarkStar.Api.Engine.Interfaces.Services.IWorldService.GetAllEntitiesInLayerAsync``1(System.String,DarkStar.Api.World.Types.Map.MapLayer)">GetAllEntitiesInLayerAsync&lt;TEntity&gt;(string, MapLayer)</h4>
@@ -309,10 +366,87 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Api_Engine_Interfaces_Services_IWorldService_GetEntitiesInRangeAsync__1_System_String_DarkStar_Api_World_Types_Map_MapLayer_DarkStar_Network_Protocol_Messages_Common_PointPosition_System_Int32_.md&amp;value=---%0Auid%3A%20DarkStar.Api.Engine.Interfaces.Services.IWorldService.GetEntitiesInRangeAsync%60%601(System.String%2CDarkStar.Api.World.Types.Map.MapLayer%2CDarkStar.Network.Protocol.Messages.Common.PointPosition%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Interfaces/Services/IWorldService.cs/#L31">View Source</a>
+  </span>
+  <a id="DarkStar_Api_Engine_Interfaces_Services_IWorldService_GetEntitiesInRangeAsync_" data-uid="DarkStar.Api.Engine.Interfaces.Services.IWorldService.GetEntitiesInRangeAsync*"></a>
+  <h4 id="DarkStar_Api_Engine_Interfaces_Services_IWorldService_GetEntitiesInRangeAsync__1_System_String_DarkStar_Api_World_Types_Map_MapLayer_DarkStar_Network_Protocol_Messages_Common_PointPosition_System_Int32_" data-uid="DarkStar.Api.Engine.Interfaces.Services.IWorldService.GetEntitiesInRangeAsync``1(System.String,DarkStar.Api.World.Types.Map.MapLayer,DarkStar.Network.Protocol.Messages.Common.PointPosition,System.Int32)">GetEntitiesInRangeAsync&lt;TEntity&gt;(string, MapLayer, PointPosition, int)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;List&lt;TEntity&gt;&gt; GetEntitiesInRangeAsync&lt;TEntity&gt;(string mapId, MapLayer layer, PointPosition position, int range = 5) where TEntity : BaseGameObject</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">mapId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="DarkStar.Api.World.Types.Map.MapLayer.html">MapLayer</a></td>
+        <td><span class="parametername">layer</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="DarkStar.Network.Protocol.Messages.Common.PointPosition.html">PointPosition</a></td>
+        <td><span class="parametername">position</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">range</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;TEntity&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TEntity</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Api_Engine_Interfaces_Services_IWorldService_GetEntityByIdAsync__1_System_String_System_Guid_.md&amp;value=---%0Auid%3A%20DarkStar.Api.Engine.Interfaces.Services.IWorldService.GetEntityByIdAsync%60%601(System.String%2CSystem.Guid)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Interfaces/Services/IWorldService.cs/#L27">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Interfaces/Services/IWorldService.cs/#L23">View Source</a>
   </span>
   <a id="DarkStar_Api_Engine_Interfaces_Services_IWorldService_GetEntityByIdAsync_" data-uid="DarkStar.Api.Engine.Interfaces.Services.IWorldService.GetEntityByIdAsync*"></a>
   <h4 id="DarkStar_Api_Engine_Interfaces_Services_IWorldService_GetEntityByIdAsync__1_System_String_System_Guid_" data-uid="DarkStar.Api.Engine.Interfaces.Services.IWorldService.GetEntityByIdAsync``1(System.String,System.Guid)">GetEntityByIdAsync&lt;TEntity&gt;(string, Guid)</h4>
@@ -379,7 +513,7 @@
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Api_Engine_Interfaces_Services_IWorldService_GetFovAsync_System_String_DarkStar_Network_Protocol_Messages_Common_PointPosition_System_Int32_.md&amp;value=---%0Auid%3A%20DarkStar.Api.Engine.Interfaces.Services.IWorldService.GetFovAsync(System.String%2CDarkStar.Network.Protocol.Messages.Common.PointPosition%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Interfaces/Services/IWorldService.cs/#L38">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Interfaces/Services/IWorldService.cs/#L34">View Source</a>
   </span>
   <a id="DarkStar_Api_Engine_Interfaces_Services_IWorldService_GetFovAsync_" data-uid="DarkStar.Api.Engine.Interfaces.Services.IWorldService.GetFovAsync*"></a>
   <h4 id="DarkStar_Api_Engine_Interfaces_Services_IWorldService_GetFovAsync_System_String_DarkStar_Network_Protocol_Messages_Common_PointPosition_System_Int32_" data-uid="DarkStar.Api.Engine.Interfaces.Services.IWorldService.GetFovAsync(System.String,DarkStar.Network.Protocol.Messages.Common.PointPosition,System.Int32)">GetFovAsync(string, PointPosition, int)</h4>
@@ -436,7 +570,7 @@
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Api_Engine_Interfaces_Services_IWorldService_GetGameObjectsInRangeAsync_System_String_DarkStar_Network_Protocol_Messages_Common_PointPosition_System_Int32_.md&amp;value=---%0Auid%3A%20DarkStar.Api.Engine.Interfaces.Services.IWorldService.GetGameObjectsInRangeAsync(System.String%2CDarkStar.Network.Protocol.Messages.Common.PointPosition%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Interfaces/Services/IWorldService.cs/#L34">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Interfaces/Services/IWorldService.cs/#L29">View Source</a>
   </span>
   <a id="DarkStar_Api_Engine_Interfaces_Services_IWorldService_GetGameObjectsInRangeAsync_" data-uid="DarkStar.Api.Engine.Interfaces.Services.IWorldService.GetGameObjectsInRangeAsync*"></a>
   <h4 id="DarkStar_Api_Engine_Interfaces_Services_IWorldService_GetGameObjectsInRangeAsync_System_String_DarkStar_Network_Protocol_Messages_Common_PointPosition_System_Int32_" data-uid="DarkStar.Api.Engine.Interfaces.Services.IWorldService.GetGameObjectsInRangeAsync(System.String,DarkStar.Network.Protocol.Messages.Common.PointPosition,System.Int32)">GetGameObjectsInRangeAsync(string, PointPosition, int)</h4>
@@ -493,7 +627,7 @@
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Api_Engine_Interfaces_Services_IWorldService_GetMap_System_String_.md&amp;value=---%0Auid%3A%20DarkStar.Api.Engine.Interfaces.Services.IWorldService.GetMap(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Interfaces/Services/IWorldService.cs/#L19">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Interfaces/Services/IWorldService.cs/#L17">View Source</a>
   </span>
   <a id="DarkStar_Api_Engine_Interfaces_Services_IWorldService_GetMap_" data-uid="DarkStar.Api.Engine.Interfaces.Services.IWorldService.GetMap*"></a>
   <h4 id="DarkStar_Api_Engine_Interfaces_Services_IWorldService_GetMap_System_String_" data-uid="DarkStar.Api.Engine.Interfaces.Services.IWorldService.GetMap(System.String)">GetMap(string)</h4>
@@ -540,7 +674,7 @@
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Api_Engine_Interfaces_Services_IWorldService_GetMapName_System_String_.md&amp;value=---%0Auid%3A%20DarkStar.Api.Engine.Interfaces.Services.IWorldService.GetMapName(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Interfaces/Services/IWorldService.cs/#L23">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Interfaces/Services/IWorldService.cs/#L19">View Source</a>
   </span>
   <a id="DarkStar_Api_Engine_Interfaces_Services_IWorldService_GetMapName_" data-uid="DarkStar.Api.Engine.Interfaces.Services.IWorldService.GetMapName*"></a>
   <h4 id="DarkStar_Api_Engine_Interfaces_Services_IWorldService_GetMapName_System_String_" data-uid="DarkStar.Api.Engine.Interfaces.Services.IWorldService.GetMapName(System.String)">GetMapName(string)</h4>
@@ -587,7 +721,7 @@
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Api_Engine_Interfaces_Services_IWorldService_GetMapType_System_String_.md&amp;value=---%0Auid%3A%20DarkStar.Api.Engine.Interfaces.Services.IWorldService.GetMapType(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Interfaces/Services/IWorldService.cs/#L21">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Interfaces/Services/IWorldService.cs/#L18">View Source</a>
   </span>
   <a id="DarkStar_Api_Engine_Interfaces_Services_IWorldService_GetMapType_" data-uid="DarkStar.Api.Engine.Interfaces.Services.IWorldService.GetMapType*"></a>
   <h4 id="DarkStar_Api_Engine_Interfaces_Services_IWorldService_GetMapType_System_String_" data-uid="DarkStar.Api.Engine.Interfaces.Services.IWorldService.GetMapType(System.String)">GetMapType(string)</h4>
@@ -634,7 +768,7 @@
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Api_Engine_Interfaces_Services_IWorldService_GetNeighborCellsAsync_System_String_DarkStar_Network_Protocol_Messages_Common_PointPosition_System_Int32_.md&amp;value=---%0Auid%3A%20DarkStar.Api.Engine.Interfaces.Services.IWorldService.GetNeighborCellsAsync(System.String%2CDarkStar.Network.Protocol.Messages.Common.PointPosition%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Interfaces/Services/IWorldService.cs/#L36">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Interfaces/Services/IWorldService.cs/#L33">View Source</a>
   </span>
   <a id="DarkStar_Api_Engine_Interfaces_Services_IWorldService_GetNeighborCellsAsync_" data-uid="DarkStar.Api.Engine.Interfaces.Services.IWorldService.GetNeighborCellsAsync*"></a>
   <h4 id="DarkStar_Api_Engine_Interfaces_Services_IWorldService_GetNeighborCellsAsync_System_String_DarkStar_Network_Protocol_Messages_Common_PointPosition_System_Int32_" data-uid="DarkStar.Api.Engine.Interfaces.Services.IWorldService.GetNeighborCellsAsync(System.String,DarkStar.Network.Protocol.Messages.Common.PointPosition,System.Int32)">GetNeighborCellsAsync(string, PointPosition, int)</h4>
@@ -691,7 +825,7 @@
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Api_Engine_Interfaces_Services_IWorldService_GetPlayers_System_String_.md&amp;value=---%0Auid%3A%20DarkStar.Api.Engine.Interfaces.Services.IWorldService.GetPlayers(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Interfaces/Services/IWorldService.cs/#L42">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Interfaces/Services/IWorldService.cs/#L36">View Source</a>
   </span>
   <a id="DarkStar_Api_Engine_Interfaces_Services_IWorldService_GetPlayers_" data-uid="DarkStar.Api.Engine.Interfaces.Services.IWorldService.GetPlayers*"></a>
   <h4 id="DarkStar_Api_Engine_Interfaces_Services_IWorldService_GetPlayers_System_String_" data-uid="DarkStar.Api.Engine.Interfaces.Services.IWorldService.GetPlayers(System.String)">GetPlayers(string)</h4>
@@ -738,7 +872,7 @@
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Api_Engine_Interfaces_Services_IWorldService_GetRandomCityStartingPointAsync.md&amp;value=---%0Auid%3A%20DarkStar.Api.Engine.Interfaces.Services.IWorldService.GetRandomCityStartingPointAsync%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Interfaces/Services/IWorldService.cs/#L30">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Interfaces/Services/IWorldService.cs/#L25">View Source</a>
   </span>
   <a id="DarkStar_Api_Engine_Interfaces_Services_IWorldService_GetRandomCityStartingPointAsync_" data-uid="DarkStar.Api.Engine.Interfaces.Services.IWorldService.GetRandomCityStartingPointAsync*"></a>
   <h4 id="DarkStar_Api_Engine_Interfaces_Services_IWorldService_GetRandomCityStartingPointAsync" data-uid="DarkStar.Api.Engine.Interfaces.Services.IWorldService.GetRandomCityStartingPointAsync">GetRandomCityStartingPointAsync()</h4>
@@ -815,7 +949,7 @@
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Api_Engine_Interfaces_Services_IWorldService_IsLocationWalkable_GoRogue_GameFramework_Map_DarkStar_Network_Protocol_Messages_Common_PointPosition_.md&amp;value=---%0Auid%3A%20DarkStar.Api.Engine.Interfaces.Services.IWorldService.IsLocationWalkable(GoRogue.GameFramework.Map%2CDarkStar.Network.Protocol.Messages.Common.PointPosition)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Interfaces/Services/IWorldService.cs/#L33">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Interfaces/Services/IWorldService.cs/#L28">View Source</a>
   </span>
   <a id="DarkStar_Api_Engine_Interfaces_Services_IWorldService_IsLocationWalkable_" data-uid="DarkStar.Api.Engine.Interfaces.Services.IWorldService.IsLocationWalkable*"></a>
   <h4 id="DarkStar_Api_Engine_Interfaces_Services_IWorldService_IsLocationWalkable_GoRogue_GameFramework_Map_DarkStar_Network_Protocol_Messages_Common_PointPosition_" data-uid="DarkStar.Api.Engine.Interfaces.Services.IWorldService.IsLocationWalkable(GoRogue.GameFramework.Map,DarkStar.Network.Protocol.Messages.Common.PointPosition)">IsLocationWalkable(Map, PointPosition)</h4>
@@ -867,7 +1001,7 @@
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Api_Engine_Interfaces_Services_IWorldService_IsLocationWalkable_System_String_DarkStar_Network_Protocol_Messages_Common_PointPosition_.md&amp;value=---%0Auid%3A%20DarkStar.Api.Engine.Interfaces.Services.IWorldService.IsLocationWalkable(System.String%2CDarkStar.Network.Protocol.Messages.Common.PointPosition)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Interfaces/Services/IWorldService.cs/#L32">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Interfaces/Services/IWorldService.cs/#L27">View Source</a>
   </span>
   <a id="DarkStar_Api_Engine_Interfaces_Services_IWorldService_IsLocationWalkable_" data-uid="DarkStar.Api.Engine.Interfaces.Services.IWorldService.IsLocationWalkable*"></a>
   <h4 id="DarkStar_Api_Engine_Interfaces_Services_IWorldService_IsLocationWalkable_System_String_DarkStar_Network_Protocol_Messages_Common_PointPosition_" data-uid="DarkStar.Api.Engine.Interfaces.Services.IWorldService.IsLocationWalkable(System.String,DarkStar.Network.Protocol.Messages.Common.PointPosition)">IsLocationWalkable(string, PointPosition)</h4>
@@ -919,7 +1053,7 @@
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Api_Engine_Interfaces_Services_IWorldService_MovePlayerAsync_System_String_System_Guid_DarkStar_Network_Protocol_Messages_Common_PointPosition_.md&amp;value=---%0Auid%3A%20DarkStar.Api.Engine.Interfaces.Services.IWorldService.MovePlayerAsync(System.String%2CSystem.Guid%2CDarkStar.Network.Protocol.Messages.Common.PointPosition)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Interfaces/Services/IWorldService.cs/#L40">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Interfaces/Services/IWorldService.cs/#L35">View Source</a>
   </span>
   <a id="DarkStar_Api_Engine_Interfaces_Services_IWorldService_MovePlayerAsync_" data-uid="DarkStar.Api.Engine.Interfaces.Services.IWorldService.MovePlayerAsync*"></a>
   <h4 id="DarkStar_Api_Engine_Interfaces_Services_IWorldService_MovePlayerAsync_System_String_System_Guid_DarkStar_Network_Protocol_Messages_Common_PointPosition_" data-uid="DarkStar.Api.Engine.Interfaces.Services.IWorldService.MovePlayerAsync(System.String,System.Guid,DarkStar.Network.Protocol.Messages.Common.PointPosition)">MovePlayerAsync(string, Guid, PointPosition)</h4>
@@ -976,7 +1110,7 @@
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Api_Engine_Interfaces_Services_IWorldService_RemoveEntity__1_System_String___0_.md&amp;value=---%0Auid%3A%20DarkStar.Api.Engine.Interfaces.Services.IWorldService.RemoveEntity%60%601(System.String%2C%60%600)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Interfaces/Services/IWorldService.cs/#L26">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Interfaces/Services/IWorldService.cs/#L22">View Source</a>
   </span>
   <a id="DarkStar_Api_Engine_Interfaces_Services_IWorldService_RemoveEntity_" data-uid="DarkStar.Api.Engine.Interfaces.Services.IWorldService.RemoveEntity*"></a>
   <h4 id="DarkStar_Api_Engine_Interfaces_Services_IWorldService_RemoveEntity__1_System_String___0_" data-uid="DarkStar.Api.Engine.Interfaces.Services.IWorldService.RemoveEntity``1(System.String,``0)">RemoveEntity&lt;TEntity&gt;(string, TEntity)</h4>
@@ -1028,7 +1162,7 @@
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Api_Engine_Interfaces_Services_IWorldService_RemovePlayerFromMap_System_String_System_Guid_.md&amp;value=---%0Auid%3A%20DarkStar.Api.Engine.Interfaces.Services.IWorldService.RemovePlayerFromMap(System.String%2CSystem.Guid)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Interfaces/Services/IWorldService.cs/#L17">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Interfaces/Services/IWorldService.cs/#L16">View Source</a>
   </span>
   <a id="DarkStar_Api_Engine_Interfaces_Services_IWorldService_RemovePlayerFromMap_" data-uid="DarkStar.Api.Engine.Interfaces.Services.IWorldService.RemovePlayerFromMap*"></a>
   <h4 id="DarkStar_Api_Engine_Interfaces_Services_IWorldService_RemovePlayerFromMap_System_String_System_Guid_" data-uid="DarkStar.Api.Engine.Interfaces.Services.IWorldService.RemovePlayerFromMap(System.String,System.Guid)">RemovePlayerFromMap(string, Guid)</h4>
