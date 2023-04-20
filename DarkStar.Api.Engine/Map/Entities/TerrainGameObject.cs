@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,12 +9,11 @@ using GoRogue;
 using GoRogue.GameFramework;
 using SadRogue.Primitives;
 
-namespace DarkStar.Api.Engine.Map.Entities
+namespace DarkStar.Api.Engine.Map.Entities;
+
+public class TerrainGameObject : BaseGameObject
 {
-    public class TerrainGameObject : BaseGameObject
+    public TerrainGameObject(Point position, bool isWalkable = true, bool isTransparent = true) : base(position, (int)MapLayer.Terrain, isWalkable, isTransparent)
     {
-        public TerrainGameObject(Point position, bool isWalkable = true, bool isTransparent = true) : base(position, (int)MapLayer.Terrain, isWalkable, isTransparent)
-        {
-        }
     }
 }

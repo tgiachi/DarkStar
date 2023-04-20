@@ -8,11 +8,10 @@ using DarkStar.Network.Protocol.Interfaces.Messages;
 using DarkStar.Network.Protocol.Types;
 using ProtoBuf;
 
-namespace DarkStar.Network.Protocol.Messages.Players
+namespace DarkStar.Network.Protocol.Messages.Players;
+
+[NetworkMessage(DarkStarMessageType.PlayerDataRequest)]
+[ProtoContract]
+public class PlayerDataRequestMessage : IDarkStarNetworkMessage
 {
-    [NetworkMessage(DarkStarMessageType.PlayerDataRequest)]
-    [ProtoContract]
-    public class PlayerDataRequestMessage : IDarkStarNetworkMessage
-    {
-    }
 }

@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DarkStar.Api.Engine.Data.Player
+namespace DarkStar.Api.Engine.Data.Player;
+
+public class PlayerInitialInventory
 {
-    public class PlayerInitialInventory
-    {
-        public int Gold { get; set; }
-        public List<PlayerInitialInventoryItem> Items { get; set; } = new();
-    }
+    public int Gold { get; set; }
+    public List<PlayerInitialInventoryItem> Items { get; set; } = new();
 }

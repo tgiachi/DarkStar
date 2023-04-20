@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,39 +13,38 @@ using DarkStar.Network.Protocol.Types;
 
 using Microsoft.Extensions.Logging;
 
-namespace DarkStar.Engine.MessageListeners
+namespace DarkStar.Engine.MessageListeners;
+
+[NetworkMessageListener(DarkStarMessageType.PlayerCreateRequest)]
+public class PlayerCreationMessageListener : BaseNetworkMessageListener<PlayerCreateRequestMessage>
 {
-    [NetworkMessageListener(DarkStarMessageType.PlayerCreateRequest)]
-    public class PlayerCreationMessageListener : BaseNetworkMessageListener<PlayerCreateRequestMessage>
+    public PlayerCreationMessageListener(ILogger<BaseNetworkMessageListener<PlayerCreateRequestMessage>> logger,
+        IDarkSunEngine engine) : base(logger, engine)
     {
-        public PlayerCreationMessageListener(ILogger<BaseNetworkMessageListener<PlayerCreateRequestMessage>> logger,
-            IDarkSunEngine engine) : base(logger, engine)
+    }
+
+    public override async Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(Guid sessionId,
+        DarkStarMessageType messageType, PlayerCreateRequestMessage message)
+    {
+        if (Engine.PlayerService.GetSession(sessionId).IsLogged == false)
         {
+            Logger.LogWarning("Player creation request from unlogged session {Id}", sessionId);
+            return SingleMessage(new PlayerCreateResponseMessage(false, Guid.Empty));
         }
 
-        public override async Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(Guid sessionId,
-            DarkStarMessageType messageType, PlayerCreateRequestMessage message)
-        {
-            if (Engine.PlayerService.GetSession(sessionId).IsLogged == false)
+
+        var player = await Engine.PlayerService.CreatePlayerAsync(
+            Engine.PlayerService.GetSession(sessionId).AccountId, message.Name, message.TileId,
+            message.RaceId,
+            new BaseStatEntity()
             {
-                Logger.LogWarning("Player creation request from unlogged session {Id}", sessionId);
-                return SingleMessage(new PlayerCreateResponseMessage(false, Guid.Empty));
-            }
+                Dexterity = message.Dexterity,
+                Intelligence = message.Intelligence,
+                Luck = message.Luck,
+                Strength = message.Strength
+            });
 
 
-            var player = await Engine.PlayerService.CreatePlayerAsync(
-                Engine.PlayerService.GetSession(sessionId).AccountId, message.Name, message.TileId,
-                message.RaceId,
-                new BaseStatEntity()
-                {
-                    Dexterity = message.Dexterity,
-                    Intelligence = message.Intelligence,
-                    Luck = message.Luck,
-                    Strength = message.Strength
-                });
-
-
-            return SingleMessage(new PlayerCreateResponseMessage(true, player.Id));
-        }
+        return SingleMessage(new PlayerCreateResponseMessage(true, player.Id));
     }
 }

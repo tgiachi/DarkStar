@@ -1,4 +1,4 @@
-﻿using DarkStar.Api.Engine.Interfaces.Commands;
+using DarkStar.Api.Engine.Interfaces.Commands;
 using DarkStar.Api.Engine.Interfaces.Core;
 using Microsoft.Extensions.Logging;
 
@@ -15,12 +15,7 @@ public abstract class BaseCommandActionExecutor<TAction> : ICommandActionExecuto
         Engine = engine;
     }
 
-    public Task ProcessAsync(ICommandAction action)
-    {
-        return ProcessAsync((TAction)action);
-    }
-    public virtual Task ProcessAsync(TAction action)
-    {
-        return Task.CompletedTask;
-    }
+    public Task ProcessAsync(ICommandAction action) => ProcessAsync((TAction)action);
+
+    public virtual Task ProcessAsync(TAction action) => Task.CompletedTask;
 }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,27 +13,26 @@ using DarkStar.Network.Protocol.Types;
 
 using Microsoft.Extensions.Logging;
 
-namespace DarkStar.Engine.MessageListeners
+namespace DarkStar.Engine.MessageListeners;
+
+[NetworkMessageListener(DarkStarMessageType.PlayerListResponse)]
+public class PlayerListMessageListener : BaseNetworkMessageListener<PlayerListResponseMessage>
 {
-    [NetworkMessageListener(DarkStarMessageType.PlayerListResponse)]
-    public class PlayerListMessageListener : BaseNetworkMessageListener<PlayerListResponseMessage>
+    public PlayerListMessageListener(ILogger<BaseNetworkMessageListener<PlayerListResponseMessage>> logger,
+        IDarkSunEngine engine) : base(logger, engine)
     {
-        public PlayerListMessageListener(ILogger<BaseNetworkMessageListener<PlayerListResponseMessage>> logger,
-            IDarkSunEngine engine) : base(logger, engine)
+    }
+
+    public override async Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(Guid sessionId,
+        DarkStarMessageType messageType, PlayerListResponseMessage message)
+    {
+        var playerSession = Engine.PlayerService.GetSession(sessionId);
+        if (playerSession.IsLogged)
         {
+            return SingleMessage(
+                await PlayerDataHelper.BuildPlayerListForPlayerAsync(Engine, playerSession.PlayerId));
         }
 
-        public override async Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(Guid sessionId,
-            DarkStarMessageType messageType, PlayerListResponseMessage message)
-        {
-            var playerSession = Engine.PlayerService.GetSession(sessionId);
-            if (playerSession.IsLogged)
-            {
-                return SingleMessage(
-                    await PlayerDataHelper.BuildPlayerListForPlayerAsync(Engine, playerSession.PlayerId));
-            }
-
-            return EmptyMessage();
-        }
+        return EmptyMessage();
     }
 }

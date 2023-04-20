@@ -1,4 +1,4 @@
-﻿using DarkStar.Api.Engine.Interfaces.Services;
+using DarkStar.Api.Engine.Interfaces.Services;
 using DarkStar.Network.Server.Interfaces;
 using Redbus.Interfaces;
 

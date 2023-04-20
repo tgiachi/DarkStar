@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -26,182 +26,225 @@ using DarkStar.Api.World.Types.Tiles;
 using DarkStar.Database.Entities.Objects;
 using FastEnumUtility;
 
-namespace DarkStar.Engine.Services
+namespace DarkStar.Engine.Services;
+
+[DarkStarEngineService(nameof(SeedService), 8)]
+public class SeedService : BaseService<SeedService>, ISeedService
 {
-    [DarkStarEngineService(nameof(SeedService), 8)]
-    public class SeedService : BaseService<SeedService>, ISeedService
+    private readonly HashSet<RaceEntity> _racesSeed = new();
+    private readonly HashSet<GameObjectEntity> _gameObjectSeed = new();
+    private readonly HashSet<ItemEntity> _itemsSeed = new();
+
+    private readonly DirectoriesConfig _directoriesConfig;
+
+    public SeedService(ILogger<SeedService> logger, DirectoriesConfig directoriesConfig) : base(logger)
     {
-        private readonly HashSet<RaceEntity> _racesSeed = new();
-        private readonly HashSet<GameObjectEntity> _gameObjectSeed = new();
-        private readonly HashSet<ItemEntity> _itemsSeed = new();
+        _directoriesConfig = directoriesConfig;
+    }
 
-        private readonly DirectoriesConfig _directoriesConfig;
+    protected override async ValueTask<bool> StartAsync()
+    {
+        await CheckSeedTemplatesAsync();
+        await CheckSeedDirectoriesAsync();
+        await LoadCsvSeedsAsync();
+        await ScanTileSetsAsync();
+        await InsertDbSeedsAsync();
+        return true;
+    }
 
-        public SeedService(ILogger<SeedService> logger, DirectoriesConfig directoriesConfig) : base(logger)
+    private async Task LoadCsvSeedsAsync()
+    {
+        Logger.LogInformation("Loading seeds");
+        await LoadSeedAsync<WorldObjectSeedEntity>();
+        await LoadSeedAsync<RaceObjectSeedEntity>();
+        await LoadSeedAsync<ItemObjectSeedEntity>();
+        await LoadSeedAsync<ItemDropObjectSeedEntity>();
+    }
+
+    private async Task CheckSeedTemplatesAsync()
+    {
+        Logger.LogInformation("Checking Seed Templates");
+
+        await CheckSeedTemplateAsync<ItemDropObjectSeedEntity>();
+        await CheckSeedTemplateAsync<ItemObjectSeedEntity>();
+        await CheckSeedTemplateAsync<WorldObjectSeedEntity>();
+        await CheckSeedTemplateAsync<RaceObjectSeedEntity>();
+        await CheckSeedTemplateAsync(GetDefaultTileSetMap());
+    }
+
+    private IEnumerable<TileSetMapSerializable> GetDefaultTileSetMap()
+    {
+        return FastEnum.GetValues<TileType>().OrderBy(k => (short)k).Select(s =>
+            new TileSetMapSerializable() { Type = s, Id = (short)s, IsBlocked = false });
+    }
+
+    private Task CheckSeedDirectoriesAsync()
+    {
+        var attributes = AssemblyUtils.GetAttribute<SeedObjectAttribute>();
+        foreach (var dir in attributes.Select(type =>
+                         type.GetCustomAttribute<SeedObjectAttribute>()!)
+                     .Select(attr => Path.Join(_directoriesConfig[DirectoryNameType.Seeds], attr.TemplateDirectory))
+                     .Where(dir => !Directory.Exists(dir)))
         {
-            _directoriesConfig = directoriesConfig;
+            Directory.CreateDirectory(dir);
         }
 
-        protected override async ValueTask<bool> StartAsync()
+        return Task.CompletedTask;
+    }
+
+
+    private async Task LoadSeedAsync<TEntity>() where TEntity : class, new()
+    {
+        var attribute = typeof(TEntity).GetCustomAttribute<SeedObjectAttribute>();
+        var directory = Path.Join(_directoriesConfig[DirectoryNameType.Seeds], attribute!.TemplateDirectory);
+        var files = Directory.GetFiles(directory, "*.csv");
+
+        Logger.LogInformation("Found {Files} for {Type} seed", files.Length, attribute.TemplateDirectory);
+        foreach (var file in files)
         {
-            await CheckSeedTemplatesAsync();
-            await CheckSeedDirectoriesAsync();
-            await LoadCsvSeedsAsync();
-            await ScanTileSetsAsync();
-            return true;
+            await LoadSeedFileAsync<TEntity>(file);
         }
 
-        private async Task LoadCsvSeedsAsync()
-        {
-            Logger.LogInformation("Loading seeds");
-            await LoadSeedAsync<WorldObjectSeedEntity>();
-            await LoadSeedAsync<RaceObjectSeedEntity>();
-            await LoadSeedAsync<ItemObjectSeedEntity>();
-            await LoadSeedAsync<ItemDropObjectSeedEntity>();
-        }
 
-        private async Task CheckSeedTemplatesAsync()
-        {
-            Logger.LogInformation("Checking Seed Templates");
+    }
 
-            await CheckSeedTemplateAsync<ItemDropObjectSeedEntity>();
-            await CheckSeedTemplateAsync<ItemObjectSeedEntity>();
-            await CheckSeedTemplateAsync<WorldObjectSeedEntity>();
-            await CheckSeedTemplateAsync<RaceObjectSeedEntity>();
-            await CheckSeedTemplateAsync(GetDefaultTileSetMap());
-        }
-
-        private IEnumerable<TileSetMapSerializable> GetDefaultTileSetMap()
+    private async Task LoadSeedFileAsync<TEntity>(string fileName) where TEntity : class, new()
+    {
+        if (typeof(TEntity) == typeof(WorldObjectSeedEntity))
         {
-            return FastEnum.GetValues<TileType>().OrderBy(k => (short)k).Select(s =>
-                new TileSetMapSerializable() { Type = s, Id = (short)s, IsBlocked = false });
-        }
-
-        private Task CheckSeedDirectoriesAsync()
-        {
-            var attributes = AssemblyUtils.GetAttribute<SeedObjectAttribute>();
-            foreach (var dir in attributes.Select(type =>
-                             type.GetCustomAttribute<SeedObjectAttribute>()!)
-                         .Select(attr => Path.Join(_directoriesConfig[DirectoryNameType.Seeds], attr.TemplateDirectory))
-                         .Where(dir => !Directory.Exists(dir)))
+            var gameObjects = await SeedCsvParser.Instance.ParseAsync<WorldObjectSeedEntity>(fileName);
+            gameObjects.ToList().ForEach(go => _gameObjectSeed.Add(new GameObjectEntity()
             {
-                Directory.CreateDirectory(dir);
+                Name = go.Name,
+                Description = go.Description,
+                TileId = go.TileId,
+                Type = go.Type,
+                Data = JsonSerializer.Serialize(go.Data)
+            }));
+        }
+
+    }
+
+
+    private async Task CheckSeedTemplateAsync<TEntity>(IEnumerable<TEntity>? defaultData = null) where TEntity : class, new()
+    {
+        Logger.LogInformation("Checking Seed Template for type: {Type}", typeof(TEntity).Name);
+        var fileName = Path.Join(_directoriesConfig[DirectoryNameType.SeedTemplates],
+            $"{typeof(TEntity).Name.Replace("Entity", "").ToUnderscoreCase()}.csv");
+        if (!File.Exists(fileName))
+        {
+            if (defaultData == null)
+            {
+                defaultData = Enumerable.Empty<TEntity>();
             }
 
-            return Task.CompletedTask;
+            await SeedCsvParser.Instance.WriteHeaderToFileAsync(fileName, defaultData);
         }
+    }
 
-
-        private Task LoadSeedAsync<TEntity>() where TEntity : class, new()
+    public void AddRaceToSeed(string race, string description, short tileId, BaseStatEntity stat)
+    {
+        Logger.LogInformation("Adding Race {Race} to seed", race);
+        _racesSeed.Add(new RaceEntity()
         {
-            var attribute = typeof(TEntity).GetCustomAttribute<SeedObjectAttribute>();
-            var directory = Path.Join(_directoriesConfig[DirectoryNameType.Seeds], attribute!.TemplateDirectory);
-            var files = Directory.GetFiles(directory, "*.csv");
+            Name = race,
+            Description = description,
+            Dexterity = stat.Dexterity,
+            Intelligence = stat.Intelligence,
+            Luck = stat.Luck,
+            Strength = stat.Strength,
+            TileId = tileId.ParseTileType()
+        });
+    }
 
-            Logger.LogInformation("Found {Files} for {Type} seed", files.Length, attribute.TemplateDirectory);
+    public void AddGameObjectToSeed(string name, string description, TileType tileType,
+        GameObjectType gameObjectType)
+    {
+        _gameObjectSeed.Add(new GameObjectEntity()
+        {
+            Name = name,
+            Description = description,
+            TileId = tileType,
+            Type = gameObjectType
+        });
+    }
 
-            return Task.CompletedTask;
+    private async Task ScanTileSetsAsync()
+    {
+        var files = Directory.GetFiles(_directoriesConfig[DirectoryNameType.Assets], "*.tileset", SearchOption.AllDirectories);
+        Logger.LogInformation("Scanning TileSets");
+        foreach (var tileSet in files)
+        {
+            await LoadTileSetDefinitionAsync(tileSet);
         }
+    }
 
-        private async Task CheckSeedTemplateAsync<TEntity>(IEnumerable<TEntity>? defaultData = null) where TEntity : class, new()
+    private async Task InsertDbSeedsAsync()
+    {
+        foreach (var go in _gameObjectSeed)
         {
-            Logger.LogInformation("Checking Seed Template for type: {Type}", typeof(TEntity).Name);
-            var fileName = Path.Join(_directoriesConfig[DirectoryNameType.SeedTemplates],
-                $"{typeof(TEntity).Name.Replace("Entity", "").ToUnderscoreCase()}.csv");
-            if (!File.Exists(fileName))
+            var gameObject = await Engine.DatabaseService.QueryAsSingleAsync<GameObjectEntity>(entity => entity.Name == go.Name);
+            if (gameObject == null!)
             {
-                if (defaultData == null)
-                {
-                    defaultData = Enumerable.Empty<TEntity>();
-                }
-
-                await SeedCsvParser.Instance.WriteHeaderToFileAsync(fileName, defaultData);
+                await Engine.DatabaseService.InsertAsync(go);
+            }
+            else
+            {
+                gameObject.Name = go.Name;
+                gameObject.Description = go.Description;
+                gameObject.TileId = go.TileId;
+                gameObject.Type = go.Type;
+                gameObject.Data = go.Data;
+                await Engine.DatabaseService.UpdateAsync(gameObject);
             }
         }
+    }
 
-        public void AddRaceToSeed(string race, string description, short tileId, BaseStatEntity stat)
+    private async Task LoadTileSetDefinitionAsync(string tileSet)
+    {
+        var tileSetDefinition = JsonSerializer.Deserialize<TileSetSerializableEntity>(await File.ReadAllTextAsync(tileSet));
+        Logger.LogInformation("Loading TileSet {TileSet}", tileSetDefinition!.Name);
+
+
+        var tilesDirectory = new FileInfo(tileSet);
+        var tileSetImageInfo = new FileInfo(Path.Join(tilesDirectory.DirectoryName, tileSetDefinition.Source));
+
+        var tileEntity = await Engine.DatabaseService.QueryAsSingleAsync<TileSetEntity>(entity => entity.Name == tileSetDefinition!.Name);
+
+        if (tileEntity == null!)
         {
-            Logger.LogInformation("Adding Race {Race} to seed", race);
-            _racesSeed.Add(new RaceEntity()
+            tileEntity = new TileSetEntity()
             {
-                Name = race,
-                Description = description,
-                Dexterity = stat.Dexterity,
-                Intelligence = stat.Intelligence,
-                Luck = stat.Luck,
-                Strength = stat.Strength,
-                TileId = tileId.ParseTileType()
-            });
+                Name = tileSetDefinition!.Name,
+                Source = Path.Join(tilesDirectory.DirectoryName!, tileSetDefinition!.Source),
+                FileSize = tileSetImageInfo.Length,
+                TileHeight = tileSetDefinition!.TileHeight,
+                TileWidth = tileSetDefinition!.TileWidth,
+                TileSetMapFileName = Path.Join(tilesDirectory.DirectoryName!, tileSetDefinition!.TileSetMapFileName),
+            };
+            await Engine.DatabaseService.InsertAsync(tileEntity);
         }
 
-        public void AddGameObjectToSeed(string name, string description, TileType tileType,
-            GameObjectType gameObjectType)
+        var tileMap =
+            await SeedCsvParser.Instance.ParseAsync<TileSetMapSerializable>(Path.Join(tilesDirectory.DirectoryName!,
+                tileSetDefinition!.TileSetMapFileName));
+
+        foreach (var tile in tileMap)
         {
-            _gameObjectSeed.Add(new GameObjectEntity()
+            var tileMapEntity = await Engine.DatabaseService.QueryAsSingleAsync<TileSetMapEntity>(entity => entity.TileSetId == tileEntity.Id && entity.TileId == tile.Id);
+            if (tileMapEntity != null!)
             {
-                Name = name,
-                Description = description,
-                TileId = tileType,
-                Type = gameObjectType
-            });
-        }
-
-        private async Task ScanTileSetsAsync()
-        {
-            var files = Directory.GetFiles(_directoriesConfig[DirectoryNameType.Assets], "*.tileset", SearchOption.AllDirectories);
-            Logger.LogInformation("Scanning TileSets");
-            foreach (var tileSet in files)
-            {
-                await LoadTileSetDefinitionAsync(tileSet);
-            }
-        }
-
-        private async Task LoadTileSetDefinitionAsync(string tileSet)
-        {
-            var tileSetDefinition = JsonSerializer.Deserialize<TileSetSerializableEntity>(await File.ReadAllTextAsync(tileSet));
-            Logger.LogInformation("Loading TileSet {TileSet}", tileSetDefinition!.Name);
-
-
-            var tilesDirectory = new FileInfo(tileSet);
-            var tileSetImageInfo = new FileInfo(Path.Join(tilesDirectory.DirectoryName, tileSetDefinition.Source));
-
-            var tileEntity = await Engine.DatabaseService.QueryAsSingleAsync<TileSetEntity>(entity => entity.Name == tileSetDefinition!.Name);
-
-            if (tileEntity == null!)
-            {
-                tileEntity = new TileSetEntity()
-                {
-                    Name = tileSetDefinition!.Name,
-                    Source = Path.Join(tilesDirectory.DirectoryName!, tileSetDefinition!.Source),
-                    FileSize = tileSetImageInfo.Length,
-                    TileHeight = tileSetDefinition!.TileHeight,
-                    TileWidth = tileSetDefinition!.TileWidth,
-                    TileSetMapFileName = Path.Join(tilesDirectory.DirectoryName!, tileSetDefinition!.TileSetMapFileName),
-                };
-                await Engine.DatabaseService.InsertAsync(tileEntity);
+                continue;
             }
 
-            var tileMap =
-                await SeedCsvParser.Instance.ParseAsync<TileSetMapSerializable>(Path.Join(tilesDirectory.DirectoryName!,
-                    tileSetDefinition!.TileSetMapFileName));
-
-            foreach (var tile in tileMap)
+            tileMapEntity = new TileSetMapEntity()
             {
-                var tileMapEntity = await Engine.DatabaseService.QueryAsSingleAsync<TileSetMapEntity>(entity => entity.TileSetId == tileEntity.Id && entity.TileId == tile.Id);
-                if (tileMapEntity != null!)
-                {
-                    continue;
-                }
-
-                tileMapEntity = new TileSetMapEntity()
-                {
-                    TileSetId = tileEntity.Id,
-                    TileId = tile.Id,
-                    TileType = tile.Type,
-                    IsBlocked = tile.IsBlocked
-                };
-                await Engine.DatabaseService.InsertAsync(tileMapEntity);
-            }
+                TileSetId = tileEntity.Id,
+                TileId = tile.Id,
+                TileType = tile.Type,
+                IsBlocked = tile.IsBlocked
+            };
+            await Engine.DatabaseService.InsertAsync(tileMapEntity);
         }
     }
 }

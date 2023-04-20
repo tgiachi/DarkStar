@@ -1,4 +1,4 @@
-﻿using DarkStar.Api.Engine.Map.Entities;
+using DarkStar.Api.Engine.Map.Entities;
 
 namespace DarkStar.Api.Engine.Interfaces.Objects;
 

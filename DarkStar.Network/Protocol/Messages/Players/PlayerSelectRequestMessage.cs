@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,13 +10,12 @@ using DarkStar.Network.Protocol.Types;
 using ProtoBuf;
 
 
-namespace DarkStar.Network.Protocol.Messages.Players
+namespace DarkStar.Network.Protocol.Messages.Players;
+
+[NetworkMessage(DarkStarMessageType.PlayerSelectRequest)]
+[ProtoContract]
+public class PlayerSelectRequestMessage : IDarkStarNetworkMessage
 {
-    [NetworkMessage(DarkStarMessageType.PlayerSelectRequest)]
-    [ProtoContract]
-    public class PlayerSelectRequestMessage : IDarkStarNetworkMessage
-    {
-        [ProtoMember(1)]
-        public Guid PlayerId { get; set; }
-    }
+    [ProtoMember(1)]
+    public Guid PlayerId { get; set; }
 }

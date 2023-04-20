@@ -1,4 +1,4 @@
-﻿
+
 using System.Reflection;
 using DarkStar.Api.Attributes.Services;
 using DarkStar.Api.Engine.Attributes.Objects;
@@ -13,109 +13,108 @@ using DarkStar.Database.Entities.Objects;
 using DarkStar.Engine.Services.Base;
 using Microsoft.Extensions.Logging;
 
-namespace DarkStar.Engine.Services
+namespace DarkStar.Engine.Services;
+
+
+[DarkStarEngineService(nameof(ItemService), 6)]
+public class ItemService : BaseService<ItemService>, IItemService
 {
+    private readonly SemaphoreSlim _gameObjectActionLock = new(1);
+    private readonly IServiceProvider _serviceProvider;
+    private readonly Dictionary<GameObjectType, Type> _gameObjectActionTypes = new();
+    private readonly Dictionary<uint, IGameObjectAction> _gameObjectActions = new();
+    private readonly Dictionary<uint, IScheduledGameObjectAction> _scheduledGameObjectActions = new();
 
-    [DarkStarEngineService(nameof(ItemService), 6)]
-    public class ItemService : BaseService<ItemService>, IItemService
+
+    public ItemService(ILogger<ItemService> logger, IServiceProvider serviceProvider) : base(logger)
     {
-        private readonly SemaphoreSlim _gameObjectActionLock = new(1);
-        private readonly IServiceProvider _serviceProvider;
-        private readonly Dictionary<GameObjectType, Type> _gameObjectActionTypes = new();
-        private readonly Dictionary<uint, IGameObjectAction> _gameObjectActions = new();
-        private readonly Dictionary<uint, IScheduledGameObjectAction> _scheduledGameObjectActions = new();
+        _serviceProvider = serviceProvider;
+    }
 
+    protected override async ValueTask<bool> StartAsync()
+    {
+        await ScanGameObjectActionsAsync();
+        Engine.SchedulerService.OnTick += SchedulerService_OnTickAsync;
+        Engine.EventBus.Subscribe<GameObjectAddedEvent>(OnGameObjectAdded);
 
-        public ItemService(ILogger<ItemService> logger, IServiceProvider serviceProvider) : base(logger)
+        return true;
+    }
+
+    private void OnGameObjectAdded(GameObjectAddedEvent obj)
+    {
+        if (obj.Layer == MapLayer.Objects)
         {
-            _serviceProvider = serviceProvider;
+            _ = Task.Run(() => AddGameObjectActionAsync(obj));
         }
+    }
 
-        protected override async ValueTask<bool> StartAsync()
+    private async ValueTask AddGameObjectActionAsync(GameObjectAddedEvent @event)
+    {
+        var gameObjectEntity =
+            await Engine.DatabaseService.QueryAsSingleAsync<GameObjectEntity>(
+                entity => entity.Id == @event.ObjectId);
+
+        if (_gameObjectActionTypes.TryGetValue(gameObjectEntity.Type, out var type))
         {
-            await ScanGameObjectActionsAsync();
-            Engine.SchedulerService.OnTick += SchedulerService_OnTickAsync;
-            Engine.EventBus.Subscribe<GameObjectAddedEvent>(OnGameObjectAdded);
-
-            return true;
-        }
-
-        private void OnGameObjectAdded(GameObjectAddedEvent obj)
-        {
-            if (obj.Layer == MapLayer.Objects)
+            var worldGameObject =
+                await Engine.WorldService.GetEntityByIdAsync<WorldGameObject>(@event.MapId, @event.ObjectId);
+            if (_serviceProvider.GetService(type) is IGameObjectAction gameObjectAction)
             {
-                _ = Task.Run(() => AddGameObjectActionAsync(obj));
-            }
-        }
-
-        private async ValueTask AddGameObjectActionAsync(GameObjectAddedEvent @event)
-        {
-            var gameObjectEntity =
-                await Engine.DatabaseService.QueryAsSingleAsync<GameObjectEntity>(
-                    entity => entity.Id == @event.ObjectId);
-
-            if (_gameObjectActionTypes.TryGetValue(gameObjectEntity.Type, out var type))
-            {
-                var worldGameObject =
-                    await Engine.WorldService.GetEntityByIdAsync<WorldGameObject>(@event.MapId, @event.ObjectId);
-                if (_serviceProvider.GetService(type) is IGameObjectAction gameObjectAction)
-                {
-                    await _gameObjectActionLock.WaitAsync();
-                    try
-                    {
-                        if (gameObjectAction is IScheduledGameObjectAction scheduledGameObjectAction)
-                        {
-                            _scheduledGameObjectActions.Add(worldGameObject!.ID, scheduledGameObjectAction);
-                        }
-
-                        await gameObjectAction.OnInitializedAsync(@event.MapId, worldGameObject!);
-                        _gameObjectActions.Add(worldGameObject!.ID, gameObjectAction);
-                    }
-                    finally
-                    {
-                        _gameObjectActionLock.Release();
-                    }
-                }
-            }
-        }
-
-        private ValueTask ScanGameObjectActionsAsync()
-        {
-            foreach (var type in AssemblyUtils.GetAttribute<GameObjectActionAttribute>())
-            {
+                await _gameObjectActionLock.WaitAsync();
                 try
                 {
-                    var attr = type.GetCustomAttribute<GameObjectActionAttribute>();
+                    if (gameObjectAction is IScheduledGameObjectAction scheduledGameObjectAction)
+                    {
+                        _scheduledGameObjectActions.Add(worldGameObject!.ID, scheduledGameObjectAction);
+                    }
 
-                    // I try to initialize the gemeObject action here, but it fails
-                    if (_serviceProvider.GetService(type) is IGameObjectAction gameObjectAction)
-                    {
-                        _gameObjectActionTypes.Add(attr!.Type, type);
-                        Logger.LogDebug("Added game object action {Type}", type);
-                        GC.SuppressFinalize(gameObjectAction);
-                    }
-                    else
-                    {
-                        Logger.LogError("Failed to add game object action {Type}, maybe not implement interface IGameObjectAction?", type);
-                    }
+                    await gameObjectAction.OnInitializedAsync(@event.MapId, worldGameObject!);
+                    _gameObjectActions.Add(worldGameObject!.ID, gameObjectAction);
                 }
-                catch (Exception e)
+                finally
                 {
-                    Logger.LogError("Error during add game object action {Type}: {Error}", type, e);
+                    _gameObjectActionLock.Release();
                 }
             }
-
-            return ValueTask.CompletedTask;
         }
+    }
 
-        private async Task SchedulerService_OnTickAsync(double deltaTime)
+    private ValueTask ScanGameObjectActionsAsync()
+    {
+        foreach (var type in AssemblyUtils.GetAttribute<GameObjectActionAttribute>())
         {
-            await _gameObjectActionLock.WaitAsync();
-            foreach (var scheduledGameObjectAction in _scheduledGameObjectActions)
+            try
             {
-                await scheduledGameObjectAction.Value.UpdateAsync(deltaTime);
+                var attr = type.GetCustomAttribute<GameObjectActionAttribute>();
+
+                // I try to initialize the gemeObject action here, but it fails
+                if (_serviceProvider.GetService(type) is IGameObjectAction gameObjectAction)
+                {
+                    _gameObjectActionTypes.Add(attr!.Type, type);
+                    Logger.LogDebug("Added game object action {Type}", type.Name);
+                    GC.SuppressFinalize(gameObjectAction);
+                }
+                else
+                {
+                    Logger.LogError("Failed to add game object action {Type}, maybe not implement interface IGameObjectAction?", type);
+                }
             }
-            _gameObjectActionLock.Release();
+            catch (Exception e)
+            {
+                Logger.LogError("Error during add game object action {Type}: {Error}", type, e);
+            }
         }
+
+        return ValueTask.CompletedTask;
+    }
+
+    private async Task SchedulerService_OnTickAsync(double deltaTime)
+    {
+        await _gameObjectActionLock.WaitAsync();
+        foreach (var scheduledGameObjectAction in _scheduledGameObjectActions)
+        {
+            await scheduledGameObjectAction.Value.UpdateAsync(deltaTime);
+        }
+        _gameObjectActionLock.Release();
     }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -13,50 +13,50 @@ using DarkStar.Engine.Services.Base;
 using Humanizer;
 using Microsoft.Extensions.Logging;
 
-namespace DarkStar.Engine.Services
+namespace DarkStar.Engine.Services;
+
+[DarkStarEngineService("DiagnosticService", 1000)]
+public class DiagnosticService : BaseService<DiagnosticService>, IDiagnosticService
 {
-    [DarkStarEngineService("DiagnosticService", 1000)]
-    public class DiagnosticService : BaseService<DiagnosticService>, IDiagnosticService
+    private readonly string _pidFileName;
+
+    public DiagnosticService(ILogger<DiagnosticService> logger, DirectoriesConfig directoriesConfig) : base(logger)
     {
-        private readonly string _pidFileName;
+        _pidFileName = Path.Join(directoriesConfig[DirectoryNameType.Root], "DarkStar.pid");
+    }
 
-        public DiagnosticService(ILogger<DiagnosticService> logger, DirectoriesConfig directoriesConfig) : base(logger)
+    protected override ValueTask<bool> StartAsync()
+    {
+
+        if (File.Exists(_pidFileName))
         {
-            _pidFileName = Path.Join(directoriesConfig[DirectoryNameType.Root], "DarkStar.pid");
+            Logger.LogWarning("!!! PID Exists, server did't shutdown correctly!");
         }
 
-        protected override ValueTask<bool> StartAsync()
-        {
+        Engine.EventBus.Subscribe<EngineReadyEvent>(OnEngineReady);
+        Engine.JobSchedulerService.AddJob("DiagnosticService", StartDiagnosticJob, 60, false);
+        return base.StartAsync();
+    }
 
-            if (File.Exists(_pidFileName))
-            {
-                Logger.LogWarning("!!! PID Exists, server did't shutdown correctly!");
-            }
+    public override ValueTask<bool> StopAsync()
+    {
+        File.Delete(_pidFileName);
+        return base.StopAsync();
+    }
 
-            Engine.EventBus.Subscribe<EngineReadyEvent>(OnEngineReady);
-            Engine.JobSchedulerService.AddJob("DiagnosticService", StartDiagnosticJob, 60, false);
-            return base.StartAsync();
-        }
+    private void OnEngineReady(EngineReadyEvent obj)
+    {
+        File.WriteAllText(_pidFileName, Process.GetCurrentProcess().Id.ToString());
+    }
 
-        public override ValueTask<bool> StopAsync()
-        {
-            File.Delete(_pidFileName);
-            return base.StopAsync();
-        }
+    private void StartDiagnosticJob()
+    {
+        var currentProcess = Process.GetCurrentProcess();
 
-        private void OnEngineReady(EngineReadyEvent obj)
-        {
-            File.WriteAllText(_pidFileName, Process.GetCurrentProcess().Id.ToString());
-        }
+        Logger.LogInformation("Memory usage private: {Private} Paged: {Paged} Total Threads: {Threads} PID: {Pid}",
+            currentProcess.PrivateMemorySize64.Bytes(), currentProcess.PagedMemorySize64.Bytes(),
+            currentProcess.Threads.Count, currentProcess.Id);
+        GC.Collect(2, GCCollectionMode.Optimized);
 
-        private void StartDiagnosticJob()
-        {
-            var currentProcess = Process.GetCurrentProcess();
-
-            Logger.LogInformation("Memory usage private: {Private} Paged: {Paged} Total Threads: {Threads} PID: {Pid}",
-                currentProcess.PrivateMemorySize64.Bytes(), currentProcess.PagedMemorySize64.Bytes(),
-                currentProcess.Threads.Count, currentProcess.Id);
-
-        }
     }
 }

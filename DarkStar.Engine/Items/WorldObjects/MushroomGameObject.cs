@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,15 +8,14 @@ using DarkStar.Api.Engine.Items.WorldObjects.Base;
 using DarkStar.Api.World.Types.GameObjects;
 using Microsoft.Extensions.Logging;
 
-namespace DarkStar.Engine.Items.WorldObjects
+namespace DarkStar.Engine.Items.WorldObjects;
+
+
+[GameObjectAction(GameObjectType.Prop_Mushroom)]
+public class MushroomGameObject : BaseWorldObjectAction
 {
-
-    [GameObjectAction(GameObjectType.Prop_Mushroom)]
-    public class TestGameObject : BaseWorldObjectAction
+    public MushroomGameObject(ILogger<BaseWorldObjectAction> logger) : base(logger)
     {
-        public TestGameObject(ILogger<BaseWorldObjectAction> logger) : base(logger)
-        {
 
-        }
     }
 }

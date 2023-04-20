@@ -1,4 +1,4 @@
-﻿using System.Net;
+using System.Net;
 using System.Net.Sockets;
 using DarkStar.Network.Data;
 using DarkStar.Network.Protocol.Builders;

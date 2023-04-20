@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,22 +13,21 @@ using DarkStar.Network.Protocol.Types;
 
 using Microsoft.Extensions.Logging;
 
-namespace DarkStar.Engine.MessageListeners
-{
-    [NetworkMessageListener(DarkStarMessageType.PlayerRacesRequest)]
-    public class RacesRequestMessageListener : BaseNetworkMessageListener<PlayerRacesRequestMessage>
-    {
-        public RacesRequestMessageListener(ILogger<BaseNetworkMessageListener<PlayerRacesRequestMessage>> logger,
-            IDarkSunEngine engine) : base(logger, engine)
-        {
-        }
+namespace DarkStar.Engine.MessageListeners;
 
-        public override async Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(Guid sessionId,
-            DarkStarMessageType messageType, PlayerRacesRequestMessage message)
-        {
-            return Engine.PlayerService.GetSession(sessionId).IsLogged
-                ? SingleMessage(await PlayerDataHelper.BuildPlayerRacesAsync(Engine))
-                : EmptyMessage();
-        }
+[NetworkMessageListener(DarkStarMessageType.PlayerRacesRequest)]
+public class RacesRequestMessageListener : BaseNetworkMessageListener<PlayerRacesRequestMessage>
+{
+    public RacesRequestMessageListener(ILogger<BaseNetworkMessageListener<PlayerRacesRequestMessage>> logger,
+        IDarkSunEngine engine) : base(logger, engine)
+    {
+    }
+
+    public override async Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(Guid sessionId,
+        DarkStarMessageType messageType, PlayerRacesRequestMessage message)
+    {
+        return Engine.PlayerService.GetSession(sessionId).IsLogged
+            ? SingleMessage(await PlayerDataHelper.BuildPlayerRacesAsync(Engine))
+            : EmptyMessage();
     }
 }

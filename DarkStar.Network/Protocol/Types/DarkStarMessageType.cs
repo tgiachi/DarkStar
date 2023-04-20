@@ -15,6 +15,7 @@ public enum DarkStarMessageType : short
     ServerVersionResponse,
     ServerMotdResponse,
     ServerNameResponse,
+    ServerMessageResponse,
 
     // Account messages
     AccountLoginRequest,
@@ -39,7 +40,7 @@ public enum DarkStarMessageType : short
     PlayerDataResponse,
     PlayerMoveRequest,
     PlayerMoveResponse,
-    
+
     // TileSet message
     TileSetListRequest,
     TileSetListResponse,

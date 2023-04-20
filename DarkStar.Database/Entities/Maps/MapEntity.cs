@@ -1,4 +1,4 @@
-﻿using DarkStar.Api.World.Types.Map;
+using DarkStar.Api.World.Types.Map;
 using DarkStar.Database.Entities.Base;
 using FreeSql.DataAnnotations;
 

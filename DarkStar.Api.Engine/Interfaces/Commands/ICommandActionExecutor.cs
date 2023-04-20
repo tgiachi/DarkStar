@@ -1,4 +1,4 @@
-﻿namespace DarkStar.Api.Engine.Interfaces.Commands;
+namespace DarkStar.Api.Engine.Interfaces.Commands;
 
 public interface ICommandActionExecutor
 {

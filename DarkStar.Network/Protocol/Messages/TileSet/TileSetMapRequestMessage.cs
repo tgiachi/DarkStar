@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,24 +9,21 @@ using DarkStar.Network.Protocol.Interfaces.Messages;
 using DarkStar.Network.Protocol.Types;
 using ProtoBuf;
 
-namespace DarkStar.Network.Protocol.Messages.TileSet
+namespace DarkStar.Network.Protocol.Messages.TileSet;
+
+[NetworkMessage(DarkStarMessageType.TileSetMapRequest)]
+[ProtoContract]
+public class TileSetMapRequestMessage : IDarkStarNetworkMessage
 {
-    [NetworkMessage(DarkStarMessageType.TileSetMapRequest)]
-    [ProtoContract]
-    public class TileSetMapRequestMessage : IDarkStarNetworkMessage
+    [ProtoMember(1)] public string TileSetName { get; set; } = null!;
+
+    public TileSetMapRequestMessage(string tileSetName)
     {
-        [ProtoMember(1)] public string TileSetName { get; set; } = null!;
-
-        public TileSetMapRequestMessage(string tileSetName)
-        {
-            TileSetName = tileSetName;
-        }
-
-        public TileSetMapRequestMessage()
-        {
-        }
-
+        TileSetName = tileSetName;
     }
 
+    public TileSetMapRequestMessage()
+    {
+    }
 
 }

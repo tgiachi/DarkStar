@@ -2,6 +2,41 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="0.1.12"></a>
+## [0.1.12](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.1.12) (2023-4-20)
+
+### Other
+
+* 🐛 fix(BaseAiBehaviourExecutor.cs): change CalculatePath to CalculateAStarPath ([8b18fd2](https://www.github.com/tgiachi/DarkSun/commit/8b18fd213758ca09550eda47c6ad5946423c3305))
+
+<a name="0.1.11"></a>
+## [0.1.11](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.1.11) (2023-4-20)
+
+### Other
+
+* 🐛 fix(BaseEnumConverter.cs): fix enum value search with wildcard ([8113bbd](https://www.github.com/tgiachi/DarkSun/commit/8113bbd0de0c2355b7971ee1416e67579395d50c))
+
+<a name="0.1.10"></a>
+## [0.1.10](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.1.10) (2023-4-20)
+
+### Other
+
+* 🔨 refactor(PointConverterEx.cs): rename PlayerMoveDirectionType to MoveDirectionType ([e88d597](https://www.github.com/tgiachi/DarkSun/commit/e88d597e1029665b2fe1c0baf6165e9efa50c7d7))
+
+<a name="0.1.9"></a>
+## [0.1.9](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.1.9) (2023-4-20)
+
+### Other
+
+* namespace filescoped ([97d2e07](https://www.github.com/tgiachi/DarkSun/commit/97d2e072c713706b683bb3fc441bc721d126aca8))
+
+<a name="0.1.8"></a>
+## [0.1.8](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.1.8) (2023-4-20)
+
+### Other
+
+* ✨ feat(.versionize): add configuration for changelogAll and changelog sections ([db61fef](https://www.github.com/tgiachi/DarkSun/commit/db61fef4588280fd0b8d5f0bb74f7e57360eced7))
+
 <a name="0.1.7"></a>
 ## [0.1.7](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.1.7) (2023-4-20)
 

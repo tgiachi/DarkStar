@@ -1,4 +1,4 @@
-﻿using DarkStar.Database.Entities.Base;
+using DarkStar.Database.Entities.Base;
 
 using FreeSql.DataAnnotations;
 

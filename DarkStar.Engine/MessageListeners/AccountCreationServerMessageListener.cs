@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,39 +14,38 @@ using DarkStar.Network.Protocol.Types;
 
 using Microsoft.Extensions.Logging;
 
-namespace DarkStar.Engine.MessageListeners
+namespace DarkStar.Engine.MessageListeners;
+
+[NetworkMessageListener(DarkStarMessageType.AccountCreateRequest)]
+public class AccountCreationMessageListener : BaseNetworkMessageListener<AccountCreateRequestMessage>
 {
-    [NetworkMessageListener(DarkStarMessageType.AccountCreateRequest)]
-    public class AccountCreationMessageListener : BaseNetworkMessageListener<AccountCreateRequestMessage>
+    public AccountCreationMessageListener(ILogger<BaseNetworkMessageListener<AccountCreateRequestMessage>> logger,
+        IDarkSunEngine engine) : base(logger, engine)
     {
-        public AccountCreationMessageListener(ILogger<BaseNetworkMessageListener<AccountCreateRequestMessage>> logger,
-            IDarkSunEngine engine) : base(logger, engine)
+    }
+
+
+    public override async Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(Guid sessionId,
+        DarkStarMessageType messageType, AccountCreateRequestMessage message)
+    {
+        var userExists = await Engine.DatabaseService.QueryAsSingleAsync<AccountEntity>(entity =>
+            entity.Email.ToLower() == message.Email.ToLower());
+
+        if (userExists != null!)
         {
+            return SingleMessage(new AccountCreateResponseMessage(false, "Account already exists"));
         }
 
-
-        public override async Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(Guid sessionId,
-            DarkStarMessageType messageType, AccountCreateRequestMessage message)
+        await Engine.DatabaseService.InsertAsync(new AccountEntity
         {
-            var userExists = await Engine.DatabaseService.QueryAsSingleAsync<AccountEntity>(entity =>
-                entity.Email.ToLower() == message.Email.ToLower());
+            Email = message.Email,
+            PasswordHash = message.Password.CreateBCryptHash(),
+            RegistrationDate = DateTime.UtcNow,
+            IsEnabled = true
+        });
 
-            if (userExists != null!)
-            {
-                return SingleMessage(new AccountCreateResponseMessage(false, "Account already exists"));
-            }
+        Logger.LogInformation("Account registered: {Email}", message.Email);
 
-            await Engine.DatabaseService.InsertAsync(new AccountEntity
-            {
-                Email = message.Email,
-                PasswordHash = message.Password.CreateBCryptHash(),
-                RegistrationDate = DateTime.UtcNow,
-                IsEnabled = true
-            });
-
-            Logger.LogInformation("Account registered: {Email}", message.Email);
-
-            return SingleMessage(new AccountCreateResponseMessage(true, "Account created"));
-        }
+        return SingleMessage(new AccountCreateResponseMessage(true, "Account created"));
     }
 }

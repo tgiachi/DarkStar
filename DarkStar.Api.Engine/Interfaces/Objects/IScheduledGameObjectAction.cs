@@ -1,8 +1,7 @@
-﻿namespace DarkStar.Api.Engine.Interfaces.Objects
+namespace DarkStar.Api.Engine.Interfaces.Objects;
+
+public interface IScheduledGameObjectAction : IGameObjectAction
 {
-    public interface IScheduledGameObjectAction : IGameObjectAction
-    {
-        double Interval { get; set; }
-        ValueTask UpdateAsync(double deltaTime);
-    }
+    double Interval { get; set; }
+    ValueTask UpdateAsync(double deltaTime);
 }

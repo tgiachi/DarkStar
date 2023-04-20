@@ -1,19 +1,18 @@
-﻿using DarkStar.Api.World.Types.Npc;
+using DarkStar.Api.World.Types.Npc;
 
-namespace DarkStar.Api.Engine.Attributes.Ai
+namespace DarkStar.Api.Engine.Attributes.Ai;
+
+
+[AttributeUsage(AttributeTargets.Class)]
+public class AiBehaviourAttribute : Attribute
 {
+    public NpcType Type { get; }
 
-    [AttributeUsage(AttributeTargets.Class)]
-    public class AiBehaviourAttribute : Attribute
+    public NpcSubType SubType { get; }
+
+    public AiBehaviourAttribute(NpcType type, NpcSubType subType)
     {
-        public NpcType Type { get; }
-
-        public NpcSubType SubType { get; }
-
-        public AiBehaviourAttribute(NpcType type, NpcSubType subType)
-        {
-            Type = type;
-            SubType = subType;
-        }
+        Type = type;
+        SubType = subType;
     }
 }

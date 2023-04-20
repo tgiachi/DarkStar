@@ -5,23 +5,22 @@ using System.Text;
 using System.Threading.Tasks;
 using Redbus.Events;
 
-namespace DarkStar.Api.Engine.Events.Players
+namespace DarkStar.Api.Engine.Events.Players;
+
+public class PlayerLoggedEvent : EventBase
 {
-    public class PlayerLoggedEvent : EventBase
+    public Guid SessionId { get; set; }
+    public Guid PlayerId { get; set; }
+    public string MapId { get; set; } = null!;
+
+    public PlayerLoggedEvent(Guid sessionId, Guid playerId, string mapId)
     {
-        public Guid SessionId { get; set; }
-        public Guid PlayerId { get; set; }
-        public string MapId { get; set; } = null!;
+        SessionId = sessionId;
+        PlayerId = playerId;
+        MapId = mapId;
+    }
 
-        public PlayerLoggedEvent(Guid sessionId, Guid playerId, string mapId)
-        {
-            SessionId = sessionId;
-            PlayerId = playerId;
-            MapId = mapId;
-        }
-
-        public PlayerLoggedEvent()
-        {
-        }
+    public PlayerLoggedEvent()
+    {
     }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,17 +8,16 @@ using DarkStar.Network.Protocol.Interfaces.Messages;
 using DarkStar.Network.Protocol.Types;
 using ProtoBuf;
 
-namespace DarkStar.Network.Protocol.Messages.Players
-{
-    [ProtoContract]
-    [NetworkMessage(DarkStarMessageType.PlayerLoginResponse)]
-    public class PlayerLoginResponseMessage : IDarkStarNetworkMessage
-    {
-        public bool Success { get; set; }
+namespace DarkStar.Network.Protocol.Messages.Players;
 
-        public PlayerLoginResponseMessage(bool success)
-        {
-            Success = success;
-        }
+[ProtoContract]
+[NetworkMessage(DarkStarMessageType.PlayerLoginResponse)]
+public class PlayerLoginResponseMessage : IDarkStarNetworkMessage
+{
+    public bool Success { get; set; }
+
+    public PlayerLoginResponseMessage(bool success)
+    {
+        Success = success;
     }
- }
+}

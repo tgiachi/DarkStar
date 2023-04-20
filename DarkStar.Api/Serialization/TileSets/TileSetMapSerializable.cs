@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,26 +8,25 @@ using DarkStar.Api.Serialization.Converters;
 using DarkStar.Api.World.Types.Tiles;
 using TinyCsv.Attributes;
 
-namespace DarkStar.Api.Serialization.TileSets
+namespace DarkStar.Api.Serialization.TileSets;
+
+[HasHeaderRecord(true)]
+[Delimiter(";")]
+[SeedObject("tileSetMap")]
+public class TileSetMapSerializable
 {
-    [HasHeaderRecord(true)]
-    [Delimiter(";")]
-    [SeedObject("tileSetMap")]
-    public class TileSetMapSerializable
+    [Column]
+    public int Id { get; set; }
+
+    [Column(converter: typeof(TileTypeConverter))]
+    public TileType Type { get; set; }
+
+    [Column]
+    public bool IsBlocked { get; set; }
+
+
+    public override string ToString()
     {
-        [Column]
-        public int Id { get; set; }
-
-        [Column(converter: typeof(TileTypeConverter))]
-        public TileType Type { get; set; }
-
-        [Column]
-        public bool IsBlocked { get; set; }
-
-
-        public override string ToString()
-        {
-            return $"Id: {Id}, Type: {Type}, IsBlocked: {IsBlocked}";
-        }
+        return $"Id: {Id}, Type: {Type}, IsBlocked: {IsBlocked}";
     }
 }

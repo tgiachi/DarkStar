@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,9 +7,8 @@ using DarkStar.Api.Serialization.Converters.Base;
 using DarkStar.Api.World.Types.Items;
 using TinyCsv.Conversions;
 
-namespace DarkStar.Api.Engine.Serialization.Seeds.Converters
+namespace DarkStar.Api.Engine.Serialization.Seeds.Converters;
+
+public class ItemRarityConverter : BaseEnumConverter<ItemRarityType>
 {
-    public class ItemRarityConverter : BaseEnumConverter<ItemRarityType>
-    {
-    }
 }

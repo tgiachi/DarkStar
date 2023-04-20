@@ -1,13 +1,12 @@
-﻿namespace DarkStar.Api.Attributes.Seed
-{
-    [AttributeUsage(AttributeTargets.Class)]
-    public class SeedObjectAttribute : Attribute
-    {
-        public string TemplateDirectory { get; set; }
+namespace DarkStar.Api.Attributes.Seed;
 
-        public SeedObjectAttribute(string templateDirectory)
-        {
-            TemplateDirectory = templateDirectory;
-        }
+[AttributeUsage(AttributeTargets.Class)]
+public class SeedObjectAttribute : Attribute
+{
+    public string TemplateDirectory { get; set; }
+
+    public SeedObjectAttribute(string templateDirectory)
+    {
+        TemplateDirectory = templateDirectory;
     }
 }

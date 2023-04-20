@@ -8,23 +8,22 @@ using DarkStar.Network.Protocol.Messages.Players;
 using DarkStar.Network.Protocol.Types;
 using Microsoft.Extensions.Logging;
 
-namespace DarkStar.Engine.MessageListeners
+namespace DarkStar.Engine.MessageListeners;
+
+[NetworkMessageListener(DarkStarMessageType.PlayerMoveRequest)]
+public class PlayerMoveMessageListener : BaseNetworkMessageListener<PlayerMoveRequestMessage>
 {
-    [NetworkMessageListener(DarkStarMessageType.PlayerMoveRequest)]
-    public class PlayerMoveMessageListener : BaseNetworkMessageListener<PlayerMoveRequestMessage>
+    public PlayerMoveMessageListener(ILogger<BaseNetworkMessageListener<PlayerMoveRequestMessage>> logger, IDarkSunEngine engine) : base(logger, engine)
     {
-        public PlayerMoveMessageListener(ILogger<BaseNetworkMessageListener<PlayerMoveRequestMessage>> logger, IDarkSunEngine engine) : base(logger, engine)
+    }
+
+    public override Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(Guid sessionId, DarkStarMessageType messageType, PlayerMoveRequestMessage message)
+    {
+        if (Engine.PlayerService.GetSession(sessionId).IsLogged)
         {
+            Engine.CommandService.EnqueuePlayerAction(new PlayerMoveAction(sessionId, Engine.PlayerService.GetSession(sessionId).PlayerId, message.Direction));
         }
 
-        public override Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(Guid sessionId, DarkStarMessageType messageType, PlayerMoveRequestMessage message)
-        {
-            if (Engine.PlayerService.GetSession(sessionId).IsLogged)
-            {
-                Engine.CommandService.EnqueuePlayerAction(new PlayerMoveAction(sessionId, Engine.PlayerService.GetSession(sessionId).PlayerId, message.Direction));
-            }
-
-            return Task.FromResult(EmptyMessage());
-        }
+        return Task.FromResult(EmptyMessage());
     }
 }
