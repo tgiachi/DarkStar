@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="0.1.10"></a>
+## [0.1.10](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.1.10) (2023-4-20)
+
+### Other
+
+* 🔨 refactor(PointConverterEx.cs): rename PlayerMoveDirectionType to MoveDirectionType ([e88d597](https://www.github.com/tgiachi/DarkSun/commit/e88d597e1029665b2fe1c0baf6165e9efa50c7d7))
+
 <a name="0.1.9"></a>
 ## [0.1.9](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.1.9) (2023-4-20)
 
