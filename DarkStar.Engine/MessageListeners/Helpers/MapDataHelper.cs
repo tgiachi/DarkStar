@@ -25,7 +25,7 @@ namespace DarkStar.Engine.MessageListeners.Helpers
                 MapType = engine.WorldService.GetMapType(mapId),
             };
 
-            message.TerrainsLayer = (await engine.WorldService.GetAllEntitiesInLayerAsync<TerrainGameObject>(mapId, MapLayer.Terrain)).Where(k => !k.IsTransparent).Select(
+            message.TerrainsLayer = (await engine.WorldService.GetAllEntitiesInLayerAsync<TerrainGameObject>(mapId, MapLayer.Terrain)).Select(
                 o => new MapEntityNetworkObject((int)o.ID, o.ObjectId, o.Tile, new PointPosition(o.Position.X, o.Position.Y))) .ToList();
 
             message.GameObjectsLayer = (await engine.WorldService.GetAllEntitiesInLayerAsync<WorldGameObject>(mapId, MapLayer.Objects)).Select(
@@ -49,9 +49,7 @@ namespace DarkStar.Engine.MessageListeners.Helpers
                 o => new NamedMapEntityNetworkObject((int)o.ID, o.ObjectId, o.Tile, new PointPosition(o.Position.X, o.Position.Y), o.Name)).ToList();
 
 
-
             return message;
-
         }
     }
 }
