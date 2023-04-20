@@ -1,4 +1,4 @@
-﻿using DarkStar.Api.Engine.Interfaces.Commands;
+using DarkStar.Api.Engine.Interfaces.Commands;
 using DarkStar.Api.Engine.Interfaces.Core;
 using Microsoft.Extensions.Logging;
 

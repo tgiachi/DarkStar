@@ -1,4 +1,4 @@
-﻿using DarkStar.Api.Engine.Types.Commands;
+using DarkStar.Api.Engine.Types.Commands;
 
 namespace DarkStar.Api.Engine.Attributes.Commands;
 

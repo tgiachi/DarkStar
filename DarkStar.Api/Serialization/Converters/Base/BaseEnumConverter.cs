@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,49 +7,48 @@ using DarkStar.Api.Utils;
 using FastEnumUtility;
 using TinyCsv.Conversions;
 
-namespace DarkStar.Api.Serialization.Converters.Base
+namespace DarkStar.Api.Serialization.Converters.Base;
+
+public class BaseEnumConverter<TEnum> : IValueConverter where TEnum : struct, Enum
 {
-    public class BaseEnumConverter<TEnum> : IValueConverter where TEnum : struct, Enum
+    public virtual string Convert(object value, object parameter, IFormatProvider provider)
     {
-        public virtual string Convert(object value, object parameter, IFormatProvider provider)
+        return value.ToString()!;
+    }
+
+
+    public virtual object ConvertBack(string value, Type targetType, object parameter, IFormatProvider provider)
+    {
+        if (value == null)
         {
-            return value.ToString()!;
+            throw new Exception("Null value in enum converter");
         }
 
-
-        public virtual object ConvertBack(string value, Type targetType, object parameter, IFormatProvider provider)
+        if (value.ToLower() == "random")
         {
-            if (value == null)
-            {
-                throw new Exception("Null value in enum converter");
-            }
 
-            if (value.ToLower() == "random")
+            return FastEnum.GetValues<TEnum>().ToList().RandomItem().ToString();
+        }
+        else
+        {
+            var enumValues = FastEnum.GetValues<TEnum>().ToList();
+            if (value.Contains("*"))
             {
+                // Replace * and search value in enum 
 
-                return FastEnum.GetValues<TEnum>().ToList().RandomItem().ToString();
+                var enumValue = enumValues.FirstOrDefault(x =>
+                    x.ToString().ToLower().Contains(value[value.IndexOf("*", StringComparison.Ordinal)]));
+
+                return enumValue!;
             }
             else
             {
-                var enumValues = FastEnum.GetValues<TEnum>().ToList();
-                if (value.Contains("*"))
-                {
-                    // Replace * and search value in enum 
-
-                    var enumValue = enumValues.FirstOrDefault(x =>
-                        x.ToString().ToLower().Contains(value[value.IndexOf("*", StringComparison.Ordinal)]));
-
-                    return enumValue!;
-                }
-                else
-                {
-                    var enumValue = enumValues.FirstOrDefault(x => x.ToString().ToLower() == value.ToLower());
-                    return enumValue!;
-                }
-
+                var enumValue = enumValues.FirstOrDefault(x => x.ToString().ToLower() == value.ToLower());
+                return enumValue!;
             }
 
         }
 
     }
+
 }

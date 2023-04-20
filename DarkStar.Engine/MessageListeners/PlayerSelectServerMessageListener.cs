@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,20 +12,19 @@ using DarkStar.Network.Protocol.Types;
 
 using Microsoft.Extensions.Logging;
 
-namespace DarkStar.Engine.MessageListeners
-{
-    [NetworkMessageListener(DarkStarMessageType.PlayerSelectRequest)]
-    public class PlayerSelectMessageListener : BaseNetworkMessageListener<PlayerSelectRequestMessage>
-    {
-        public PlayerSelectMessageListener(ILogger<BaseNetworkMessageListener<PlayerSelectRequestMessage>> logger,
-            IDarkSunEngine engine) : base(logger, engine)
-        {
-        }
+namespace DarkStar.Engine.MessageListeners;
 
-        public override Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(Guid sessionId,
-            DarkStarMessageType messageType, PlayerSelectRequestMessage message)
-        {
-            return base.OnMessageReceivedAsync(sessionId, messageType, message);
-        }
+[NetworkMessageListener(DarkStarMessageType.PlayerSelectRequest)]
+public class PlayerSelectMessageListener : BaseNetworkMessageListener<PlayerSelectRequestMessage>
+{
+    public PlayerSelectMessageListener(ILogger<BaseNetworkMessageListener<PlayerSelectRequestMessage>> logger,
+        IDarkSunEngine engine) : base(logger, engine)
+    {
+    }
+
+    public override Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(Guid sessionId,
+        DarkStarMessageType messageType, PlayerSelectRequestMessage message)
+    {
+        return base.OnMessageReceivedAsync(sessionId, messageType, message);
     }
 }

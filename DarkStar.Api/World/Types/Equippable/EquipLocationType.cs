@@ -1,4 +1,4 @@
-﻿namespace DarkStar.Api.World.Types.Equippable;
+namespace DarkStar.Api.World.Types.Equippable;
 
 [Flags]
 public enum EquipLocationType : int

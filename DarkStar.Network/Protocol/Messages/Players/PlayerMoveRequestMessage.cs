@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,25 +9,24 @@ using DarkStar.Network.Protocol.Messages.Common;
 using DarkStar.Network.Protocol.Types;
 using ProtoBuf;
 
-namespace DarkStar.Network.Protocol.Messages.Players
+namespace DarkStar.Network.Protocol.Messages.Players;
+
+
+[NetworkMessage(DarkStarMessageType.PlayerMoveRequest)]
+[ProtoContract]
+public struct PlayerMoveRequestMessage : IDarkStarNetworkMessage
 {
+    [ProtoMember(1)]
+    public PlayerMoveDirectionType Direction { get; set; }
 
-    [NetworkMessage(DarkStarMessageType.PlayerMoveRequest)]
-    [ProtoContract]
-    public struct PlayerMoveRequestMessage : IDarkStarNetworkMessage
+    public PlayerMoveRequestMessage()
     {
-        [ProtoMember(1)]
-        public PlayerMoveDirectionType Direction { get; set; }
-
-        public PlayerMoveRequestMessage()
-        {
-
-        }
-
-        public PlayerMoveRequestMessage(PlayerMoveDirectionType direction)
-        {
-            Direction = direction;
-        }
 
     }
+
+    public PlayerMoveRequestMessage(PlayerMoveDirectionType direction)
+    {
+        Direction = direction;
+    }
+
 }

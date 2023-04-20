@@ -1,4 +1,4 @@
-﻿using DarkStar.Api.World.Types.Equippable;
+using DarkStar.Api.World.Types.Equippable;
 using DarkStar.Database.Entities.Base;
 using DarkStar.Database.Entities.Item;
 

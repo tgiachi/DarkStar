@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,20 +10,19 @@ using DarkStar.Network.Protocol.Types;
 using ProtoBuf;
 
 
-namespace DarkStar.Network.Protocol.Messages.Server
+namespace DarkStar.Network.Protocol.Messages.Server;
+
+
+[ProtoContract]
+[NetworkMessage(DarkStarMessageType.ServerMotdResponse)]
+public class ServerMotdResponseMessage : IDarkStarNetworkMessage
 {
+    [ProtoMember(1)]
+    public string Motd { get; set; } = null!;
+    public ServerMotdResponseMessage() { }
 
-    [ProtoContract]
-    [NetworkMessage(DarkStarMessageType.ServerMotdResponse)]
-    public class ServerMotdResponseMessage : IDarkStarNetworkMessage
+    public ServerMotdResponseMessage(string motd)
     {
-        [ProtoMember(1)]
-        public string Motd { get; set; } = null!;
-        public ServerMotdResponseMessage() { }
-
-        public ServerMotdResponseMessage(string motd)
-        {
-            Motd = motd;
-        }
+        Motd = motd;
     }
 }

@@ -1,4 +1,4 @@
-﻿using DarkStar.Api.World.Types.Items;
+using DarkStar.Api.World.Types.Items;
 
 namespace DarkStar.Api.Engine.Attributes.Objects;
 

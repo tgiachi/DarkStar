@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,38 +11,37 @@ using DarkStar.Network.Protocol.Messages.Common;
 using DarkStar.Network.Protocol.Types;
 using ProtoBuf;
 
-namespace DarkStar.Network.Protocol.Messages.Triggers.Npc
+namespace DarkStar.Network.Protocol.Messages.Triggers.Npc;
+
+
+[NetworkMessage(DarkStarMessageType.NpcAddedResponse)]
+[ProtoContract]
+public struct NpcAddedResponseMessage : IDarkStarNetworkMessage
 {
+    [ProtoMember(1)] public string MapId { get; set; } = null!;
 
-    [NetworkMessage(DarkStarMessageType.NpcAddedResponse)]
-    [ProtoContract]
-    public struct NpcAddedResponseMessage : IDarkStarNetworkMessage
+    [ProtoMember(2)]
+    public string NpcId { get; set; } = null!;
+    [ProtoMember(3)]
+    public string Name { get; set; } = null!;
+
+    [ProtoMember(4)]
+    public PointPosition Position { get; set; }
+
+    [ProtoMember(5)]
+    public TileType TileType { get; set; }
+
+    public NpcAddedResponseMessage()
     {
-        [ProtoMember(1)] public string MapId { get; set; } = null!;
 
-        [ProtoMember(2)]
-        public string NpcId { get; set; } = null!;
-        [ProtoMember(3)]
-        public string Name { get; set; } = null!;
+    }
 
-        [ProtoMember(4)]
-        public PointPosition Position { get; set; }
-
-        [ProtoMember(5)]
-        public TileType TileType { get; set; }
-
-        public NpcAddedResponseMessage()
-        {
-
-        }
-
-        public NpcAddedResponseMessage(string mapId, string npcId, string name, PointPosition position, TileType tileType)
-        {
-            MapId = mapId;
-            NpcId = npcId;
-            Name = name;
-            Position = position;
-            TileType = tileType;
-        }
+    public NpcAddedResponseMessage(string mapId, string npcId, string name, PointPosition position, TileType tileType)
+    {
+        MapId = mapId;
+        NpcId = npcId;
+        Name = name;
+        Position = position;
+        TileType = tileType;
     }
 }

@@ -9,16 +9,15 @@ using GoRogue;
 using GoRogue.GameFramework;
 using SadRogue.Primitives;
 
-namespace DarkStar.Api.Engine.Map.Entities
+namespace DarkStar.Api.Engine.Map.Entities;
+
+public class PlayerGameObject : BaseGameObject
 {
-    public class PlayerGameObject : BaseGameObject
+    public Guid NetworkSessionId { get; set; }
+
+    public string Name { get; set; }
+
+    public PlayerGameObject(Point position) : base(position, (int)MapLayer.Players, true, false)
     {
-        public Guid NetworkSessionId { get; set; }
-
-        public string Name { get; set; }
-
-        public PlayerGameObject(Point position) : base(position, (int)MapLayer.Players, true, false)
-        {
-        }
     }
 }

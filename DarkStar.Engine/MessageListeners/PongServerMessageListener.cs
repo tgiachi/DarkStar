@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,24 +12,23 @@ using DarkStar.Network.Protocol.Types;
 
 using Microsoft.Extensions.Logging;
 
-namespace DarkStar.Engine.MessageListeners
-{
-    [NetworkMessageListener(DarkStarMessageType.Pong)]
-    public class PongMessageListener : BaseNetworkMessageListener<PongMessageResponse>
-    {
-        public PongMessageListener(ILogger<BaseNetworkMessageListener<PongMessageResponse>> logger,
-            IDarkSunEngine engine) :
-            base(logger, engine)
-        {
-        }
+namespace DarkStar.Engine.MessageListeners;
 
-        public override Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(Guid sessionId,
-            DarkStarMessageType messageType,
-            PongMessageResponse message)
-        {
-            Logger.LogInformation("Received PONG from session {Session}", sessionId);
-            Engine.PlayerService.GetSession(sessionId).LastPingDateTime = DateTime.Now;
-            return Task.FromResult(EmptyMessage());
-        }
+[NetworkMessageListener(DarkStarMessageType.Pong)]
+public class PongMessageListener : BaseNetworkMessageListener<PongMessageResponse>
+{
+    public PongMessageListener(ILogger<BaseNetworkMessageListener<PongMessageResponse>> logger,
+        IDarkSunEngine engine) :
+        base(logger, engine)
+    {
+    }
+
+    public override Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(Guid sessionId,
+        DarkStarMessageType messageType,
+        PongMessageResponse message)
+    {
+        Logger.LogInformation("Received PONG from session {Session}", sessionId);
+        Engine.PlayerService.GetSession(sessionId).LastPingDateTime = DateTime.Now;
+        return Task.FromResult(EmptyMessage());
     }
 }

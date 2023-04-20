@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,23 +10,22 @@ using DarkStar.Network.Protocol.Types;
 
 using ProtoBuf;
 
-namespace DarkStar.Network.Protocol.Messages.Accounts
+namespace DarkStar.Network.Protocol.Messages.Accounts;
+
+
+[NetworkMessage(DarkStarMessageType.AccountLoginResponse)]
+[ProtoContract]
+public struct AccountLoginResponseMessage : IDarkStarNetworkMessage
 {
+    [ProtoMember(1)]
+    public bool Success { get; set; }
 
-    [NetworkMessage(DarkStarMessageType.AccountLoginResponse)]
-    [ProtoContract]
-    public struct AccountLoginResponseMessage : IDarkStarNetworkMessage
+    public AccountLoginResponseMessage()
     {
-        [ProtoMember(1)]
-        public bool Success { get; set; }
+    }
 
-        public AccountLoginResponseMessage()
-        {
-        }
-
-        public AccountLoginResponseMessage(bool success)
-        {
-            Success = success;
-        }
+    public AccountLoginResponseMessage(bool success)
+    {
+        Success = success;
     }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,51 +10,50 @@ using DarkStar.Database.Entities.Item;
 using DarkStar.Engine.Attributes.ScriptEngine;
 using Microsoft.Extensions.Logging;
 
-namespace DarkStar.Engine.ScriptModules
+namespace DarkStar.Engine.ScriptModules;
+
+[ScriptModule]
+public class PlayerScriptModule : BaseScriptModule
 {
-    [ScriptModule]
-    public class PlayerScriptModule : BaseScriptModule
+
+    public PlayerScriptModule(ILogger<BaseScriptModule> logger, IDarkSunEngine engine) : base(logger, engine)
     {
 
-        public PlayerScriptModule(ILogger<BaseScriptModule> logger, IDarkSunEngine engine) : base(logger, engine)
-        {
+    }
 
-        }
+    [ScriptFunction("set_player_initial_gold")]
+    public void SetInitialGold(int gold)
+    {
+        Engine.PlayerService.InitialInventory.Gold = gold;
+        Logger.LogInformation("Players Initial gold set: {Gold}", gold);
 
-        [ScriptFunction("set_player_initial_gold")]
-        public void SetInitialGold(int gold)
-        {
-            Engine.PlayerService.InitialInventory.Gold = gold;
-            Logger.LogInformation("Players Initial gold set: {Gold}", gold);
+    }
 
-        }
-
-        [ScriptFunction("set_player_initial_item")]
-        public void SetInitialItem(string itemName, int quantity)
-        {
-            _ = Task.Run(
-                async () =>
+    [ScriptFunction("set_player_initial_item")]
+    public void SetInitialItem(string itemName, int quantity)
+    {
+        _ = Task.Run(
+            async () =>
+            {
+                var item = await Engine.DatabaseService.QueryAsSingleAsync<ItemEntity>(
+                    entity => entity.Name.ToLower().Contains(itemName)
+                );
+                if (item == null)
                 {
-                    var item = await Engine.DatabaseService.QueryAsSingleAsync<ItemEntity>(
-                        entity => entity.Name.ToLower().Contains(itemName)
-                    );
-                    if (item == null)
-                    {
-                        Logger.LogWarning("Item {ItemName} not found", itemName);
-                        return;
-                    }
-
-                    Engine.PlayerService.InitialInventory.Items.Add(
-                        new PlayerInitialInventoryItem()
-                        {
-                            ItemId = item.Id,
-                            Quantity = quantity
-                        }
-                    );
-                    Logger.LogInformation("Players Initial item set: {ItemId} x {Quantity}", item.Name, quantity);
+                    Logger.LogWarning("Item {ItemName} not found", itemName);
+                    return;
                 }
-            );
 
-        }
+                Engine.PlayerService.InitialInventory.Items.Add(
+                    new PlayerInitialInventoryItem()
+                    {
+                        ItemId = item.Id,
+                        Quantity = quantity
+                    }
+                );
+                Logger.LogInformation("Players Initial item set: {ItemId} x {Quantity}", item.Name, quantity);
+            }
+        );
+
     }
 }

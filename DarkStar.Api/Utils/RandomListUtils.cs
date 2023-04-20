@@ -1,4 +1,4 @@
-﻿namespace DarkStar.Api.Utils;
+namespace DarkStar.Api.Utils;
 
 public static class RandomListUtils
 {

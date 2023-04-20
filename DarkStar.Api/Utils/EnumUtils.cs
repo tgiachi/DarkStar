@@ -1,4 +1,4 @@
-﻿using FastEnumUtility;
+using FastEnumUtility;
 
 namespace DarkStar.Api.Utils;
 

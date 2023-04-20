@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,26 +12,25 @@ using DarkStar.Network.Protocol.Messages.TileSet;
 using DarkStar.Network.Protocol.Types;
 using Microsoft.Extensions.Logging;
 
-namespace DarkStar.Engine.MessageListeners
+namespace DarkStar.Engine.MessageListeners;
+
+
+[NetworkMessageListener(DarkStarMessageType.TileSetDownloadRequest)]
+public class TileSetDownloadMessageListener : BaseNetworkMessageListener<TileSetDownloadRequestMessage>
 {
-
-    [NetworkMessageListener(DarkStarMessageType.TileSetDownloadRequest)]
-    public class TileSetDownloadMessageListener : BaseNetworkMessageListener<TileSetDownloadRequestMessage>
+    public TileSetDownloadMessageListener(ILogger<BaseNetworkMessageListener<TileSetDownloadRequestMessage>> logger, IDarkSunEngine engine) : base(logger, engine)
     {
-        public TileSetDownloadMessageListener(ILogger<BaseNetworkMessageListener<TileSetDownloadRequestMessage>> logger, IDarkSunEngine engine) : base(logger, engine)
+    }
+
+    public override async Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(Guid sessionId, DarkStarMessageType messageType, TileSetDownloadRequestMessage message)
+    {
+        if (!Engine.PlayerService.GetSession(sessionId).IsLogged)
         {
+            return EmptyMessage();
         }
 
-        public override async Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(Guid sessionId, DarkStarMessageType messageType, TileSetDownloadRequestMessage message)
-        {
-            if (!Engine.PlayerService.GetSession(sessionId).IsLogged)
-            {
-                return EmptyMessage();
-            }
+        var result = await TileSetHelper.GetTileSetAsync(message.TileName, Engine);
+        return SingleMessage(new TileSetDownloadResponseMessage(message.TileName, result));
 
-            var result = await TileSetHelper.GetTileSetAsync(message.TileName, Engine);
-            return SingleMessage(new TileSetDownloadResponseMessage(message.TileName, result));
-
-        }
     }
 }

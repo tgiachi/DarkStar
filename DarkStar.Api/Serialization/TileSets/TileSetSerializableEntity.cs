@@ -1,17 +1,16 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DarkStar.Api.Serialization.TileSets
+namespace DarkStar.Api.Serialization.TileSets;
+
+public class TileSetSerializableEntity
 {
-    public class TileSetSerializableEntity
-    {
-        public string Name { get; set; } = null!;
-        public string Source { get; set; } = null!;
-        public int TileWidth { get; set; }
-        public int TileHeight { get; set; }
-        public string TileSetMapFileName { get; set; } = null!;
-    }
+    public string Name { get; set; } = null!;
+    public string Source { get; set; } = null!;
+    public int TileWidth { get; set; }
+    public int TileHeight { get; set; }
+    public string TileSetMapFileName { get; set; } = null!;
 }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,14 +9,13 @@ using DarkStar.Network.Protocol.Types;
 
 using ProtoBuf;
 
-namespace DarkStar.Network.Protocol.Map
-{
+namespace DarkStar.Network.Protocol.Map;
 
-    [ProtoContract]
-    [NetworkMessage(DarkStarMessageType.MapRequest)]
-    public class MapRequestMessage : IDarkStarNetworkMessage
-    {
-        [ProtoMember(1)]
-        public string MapId { get; set; } = null!;
-    }
+
+[ProtoContract]
+[NetworkMessage(DarkStarMessageType.MapRequest)]
+public class MapRequestMessage : IDarkStarNetworkMessage
+{
+    [ProtoMember(1)]
+    public string MapId { get; set; } = null!;
 }

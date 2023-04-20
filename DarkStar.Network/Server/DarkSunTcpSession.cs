@@ -1,4 +1,4 @@
-﻿using DarkStar.Api.Utils;
+using DarkStar.Api.Utils;
 using DarkStar.Network.Protocol.Interfaces.Builders;
 using DarkStar.Network.Server.Interfaces;
 using NetCoreServer;

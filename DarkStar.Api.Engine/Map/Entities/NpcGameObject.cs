@@ -9,14 +9,13 @@ using GoRogue;
 using GoRogue.GameFramework;
 using SadRogue.Primitives;
 
-namespace DarkStar.Api.Engine.Map.Entities
-{
-    public class NpcGameObject : BaseGameObject
-    {
-        public string Name { get; set; }
+namespace DarkStar.Api.Engine.Map.Entities;
 
-        public NpcGameObject(Point position) : base(position, (int)MapLayer.Creatures, false, false)
-        {
-        }
+public class NpcGameObject : BaseGameObject
+{
+    public string Name { get; set; }
+
+    public NpcGameObject(Point position) : base(position, (int)MapLayer.Creatures, false, false)
+    {
     }
 }

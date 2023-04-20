@@ -1,4 +1,4 @@
-﻿
+
 using System.Numerics;
 
 namespace DarkStar.Api.Utils;
