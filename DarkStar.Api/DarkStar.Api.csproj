@@ -10,7 +10,7 @@
         <PackageProjectUrl>https://github.com/tgiachi/darksun</PackageProjectUrl>
         <RepositoryUrl>https://github.com/tgiachi/darksun</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
-        <Version>0.1.8</Version>
+        <Version>0.1.9</Version>
     </PropertyGroup>
 
     <ItemGroup>

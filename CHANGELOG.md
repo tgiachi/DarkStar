@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="0.1.9"></a>
+## [0.1.9](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.1.9) (2023-4-20)
+
+### Other
+
+* namespace filescoped ([97d2e07](https://www.github.com/tgiachi/DarkSun/commit/97d2e072c713706b683bb3fc441bc721d126aca8))
+
 <a name="0.1.8"></a>
 ## [0.1.8](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.1.8) (2023-4-20)
 
