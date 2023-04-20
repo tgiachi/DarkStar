@@ -46,7 +46,7 @@ namespace DarkStar.Engine.Services
             _ = Task.Run(async () =>
             {
                 Logger.LogDebug("Sending information of map to player {PlayerId}", obj.PlayerId);
-                //Engine.NetworkServer.SendMessageAsync(obj.SessionId, await MapDataHelper.BuildMapResponseDataAsync(Engine, obj.MapId, obj.PlayerId));
+                Engine.NetworkServer.SendMessageAsync(obj.SessionId, await MapDataHelper.BuildMapResponseDataAsync(Engine, obj.MapId, obj.PlayerId));
 
             });
         }

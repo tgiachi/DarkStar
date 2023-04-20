@@ -21,7 +21,10 @@ public class ProtoBufMessageBuilder : INetworkMessageBuilder
 {
     private readonly ILogger _logger;
     private readonly Dictionary<DarkStarMessageType, Type> _messageTypes = new();
-    private readonly byte[] _separatorBytes = { 0xff, 0xff, 0xff, 0xff };
+    /// <summary>
+    /// Each message is separated by this string
+    /// </summary>
+    private readonly byte[] _separatorBytes = "end_msg"u8.ToArray();
 
     public byte[] GetMessageSeparators => _separatorBytes;
 
@@ -55,8 +58,8 @@ public class ProtoBufMessageBuilder : INetworkMessageBuilder
         {
             try
             {
-                var innerMessageStream = new MemoryStream();
-                var messageStream = new MemoryStream();
+                using var innerMessageStream = new MemoryStream();
+                using var messageStream = new MemoryStream();
                 Serializer.Serialize(innerMessageStream, message);
                 var innerMessageBuffer = innerMessageStream.GetBuffer();
                 innerMessageBuffer = innerMessageBuffer.Take((int)innerMessageStream.Length).ToArray();

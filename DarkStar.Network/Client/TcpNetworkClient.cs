@@ -44,8 +44,6 @@ namespace DarkStar.Network.Client
 
             _separators = messageBuilder.GetMessageSeparators;
             _currentIndex = 0;
-
-
         }
 
         protected override void OnConnected()
