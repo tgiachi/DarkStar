@@ -230,7 +230,7 @@ public class WorldService : BaseService<IWorldService>, IWorldService
                 Type = (MapLayer)gameObject.Layer,
                 Tile = baseGameObject!.Tile,
                 ObjectId = baseGameObject.ObjectId,
-                Position = new(gameObject.Position.X, gameObject.Position.Y)
+                Position = gameObject.Position.ToPointPosition()
             });
         }
 
@@ -455,7 +455,7 @@ public class WorldService : BaseService<IWorldService>, IWorldService
         return map.Entities.Items.Where(x => x is PlayerGameObject).Cast<PlayerGameObject>().ToList();
     }
 
-    public List<PointPosition> CalculatePath(string mapId, PointPosition sourcePosition, PointPosition destinationPosition)
+    public List<PointPosition> CalculateAStarPath(string mapId, PointPosition sourcePosition, PointPosition destinationPosition)
     {
         var map = GetMap(mapId);
         var path = map.AStar.ShortestPath(sourcePosition.ToPoint(), destinationPosition.ToPoint());

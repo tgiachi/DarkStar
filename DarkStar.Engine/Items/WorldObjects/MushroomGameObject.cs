@@ -12,9 +12,9 @@ namespace DarkStar.Engine.Items.WorldObjects;
 
 
 [GameObjectAction(GameObjectType.Prop_Mushroom)]
-public class TestGameObject : BaseWorldObjectAction
+public class MushroomGameObject : BaseWorldObjectAction
 {
-    public TestGameObject(ILogger<BaseWorldObjectAction> logger) : base(logger)
+    public MushroomGameObject(ILogger<BaseWorldObjectAction> logger) : base(logger)
     {
 
     }

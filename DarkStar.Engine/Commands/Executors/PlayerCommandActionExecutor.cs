@@ -12,7 +12,7 @@ using DarkStar.Engine.Commands.Actions;
 using DarkStar.Network.Protocol.Messages.Players;
 using Microsoft.Extensions.Logging;
 
-namespace DarkStar.Engine.Commands;
+namespace DarkStar.Engine.Commands.Executors;
 
 [CommandAction(CommandActionType.PlayerMove)]
 public class PlayerCommandActionExecutor : BaseCommandActionExecutor<PlayerMoveAction>

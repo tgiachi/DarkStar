@@ -92,7 +92,7 @@ public class BaseAiBehaviourExecutor : IAiBehaviourExecutor
         );
 
     protected List<PointPosition> GetPathToPosition(PointPosition position) =>
-        Engine.WorldService.CalculatePath(MapId, NpcGameObject.Position.ToPointPosition(), position);
+        Engine.WorldService.CalculateAStarPath(MapId, NpcGameObject.Position.ToPointPosition(), position);
 
     protected bool MoveToPosition(PointPosition position)
     {

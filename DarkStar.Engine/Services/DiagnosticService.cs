@@ -56,6 +56,7 @@ public class DiagnosticService : BaseService<DiagnosticService>, IDiagnosticServ
         Logger.LogInformation("Memory usage private: {Private} Paged: {Paged} Total Threads: {Threads} PID: {Pid}",
             currentProcess.PrivateMemorySize64.Bytes(), currentProcess.PagedMemorySize64.Bytes(),
             currentProcess.Threads.Count, currentProcess.Id);
+        GC.Collect(2, GCCollectionMode.Optimized);
 
     }
 }

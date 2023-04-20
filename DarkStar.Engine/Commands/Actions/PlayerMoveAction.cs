@@ -10,7 +10,7 @@ using DarkStar.Network.Protocol.Messages.Common;
 
 namespace DarkStar.Engine.Commands.Actions;
 
-public class PlayerMoveAction : ICommandAction
+public struct PlayerMoveAction : ICommandAction
 {
     public double Delay { get; set; }
     public CommandActionType Type { get; } = CommandActionType.PlayerMove;
@@ -27,4 +27,5 @@ public class PlayerMoveAction : ICommandAction
         Delay = delay;
         Direction = direction;
     }
+
 }

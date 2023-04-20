@@ -13,6 +13,7 @@ using DarkStar.Api.World.Types.GameObjects;
 using DarkStar.Api.World.Types.Map;
 using DarkStar.Api.World.Types.Npc;
 using DarkStar.Api.World.Types.Tiles;
+using DarkStar.Engine.Commands.Actions;
 using DarkStar.Network.Protocol.Messages.Common;
 using Microsoft.Extensions.Logging;
 
@@ -26,7 +27,7 @@ public class MushroomFinderAi : BaseAiBehaviourExecutor
 
     public MushroomFinderAi(ILogger<BaseAiBehaviourExecutor> logger, IDarkSunEngine engine) : base(logger, engine)
     {
-        SetInterval(2000);
+        SetInterval(1000);
     }
 
     protected override async ValueTask DoAiAsync()
@@ -36,10 +37,23 @@ public class MushroomFinderAi : BaseAiBehaviourExecutor
             if (_currentStep >= _path.Count)
             {
                 Logger.LogInformation("MMMhh, yummy mushroom!");
+
+                Engine.CommandService.EnqueueNpcAction(new GameObjectAction()
+                {
+                    IsNpc = true,
+                    NpcId = NpcGameObject.ID,
+                    NpcObjectId = NpcEntity.Id,
+                    Position = NpcGameObject.PointPosition(),
+                });
+
+                _path.Clear();
+                _currentStep = 0;
+
                 return;
             }
 
             var nextStep = _path[_currentStep];
+            Logger.LogInformation("I'm {Name} and i'm moving to {NewPos} - Step remaining: {StepRemain}", NpcEntity.Name, nextStep, _path.Count - _currentStep);
             if (MoveToPosition(nextStep))
             {
                 _currentStep++;
