@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="0.1.12"></a>
+## [0.1.12](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.1.12) (2023-4-20)
+
+### Other
+
+* 🐛 fix(BaseAiBehaviourExecutor.cs): change CalculatePath to CalculateAStarPath ([8b18fd2](https://www.github.com/tgiachi/DarkSun/commit/8b18fd213758ca09550eda47c6ad5946423c3305))
+
 <a name="0.1.11"></a>
 ## [0.1.11](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.1.11) (2023-4-20)
 
