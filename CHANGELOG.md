@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="0.1.11"></a>
+## [0.1.11](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.1.11) (2023-4-20)
+
+### Other
+
+* 🐛 fix(BaseEnumConverter.cs): fix enum value search with wildcard ([8113bbd](https://www.github.com/tgiachi/DarkSun/commit/8113bbd0de0c2355b7971ee1416e67579395d50c))
+
 <a name="0.1.10"></a>
 ## [0.1.10](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.1.10) (2023-4-20)
 
