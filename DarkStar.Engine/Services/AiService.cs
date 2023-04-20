@@ -53,7 +53,7 @@ public class AiService : BaseService<AiService>, IAiService
             var npcGameObject = await Engine.WorldService.GetEntityByIdAsync<NpcGameObject>(@event.MapId, @event.ObjectId);
             var npcEntity = await Engine.DatabaseService.QueryAsSingleAsync<NpcEntity>(entity => entity.Id == @event.ObjectId);
             var (npcType, _, type) = _aiBehaviourTypes.FirstOrDefault(x => x.Item1 == npcEntity.Type && x.Item2 == npcEntity.SubType);
-            if (npcType == default)
+            if (npcType == null!)
             {
                 Logger.LogWarning("No ai behaviour found for {NpcType} {NpcSubType}", npcEntity.Type, npcEntity.SubType);
                 return;

@@ -1,11 +1,16 @@
 ﻿using DarkStar.Api.Engine.Interfaces.Ai;
 using DarkStar.Api.Engine.Interfaces.Core;
 using DarkStar.Api.Engine.Map.Entities;
+using DarkStar.Api.Engine.Map.Entities.Base;
 using DarkStar.Api.Engine.Utils;
+using DarkStar.Api.Utils;
+using DarkStar.Api.World.Types.Map;
 using DarkStar.Api.World.Types.Npc;
 using DarkStar.Database.Entities.Npc;
 using DarkStar.Network.Protocol.Messages.Common;
+using GoRogue.GameFramework;
 using Microsoft.Extensions.Logging;
+using SadRogue.Primitives;
 
 namespace DarkStar.Api.Engine.Ai.Base;
 
@@ -74,5 +79,29 @@ public class BaseAiBehaviourExecutor : IAiBehaviourExecutor
             return true;
         }
         return false;
+    }
+
+    protected bool MoveRandomDirection() => MoveToDirection(MoveDirectionType.East.RandomEnumValue());
+
+    protected Task<List<TEntity>> GetEntitiesInRangeAsync<TEntity>(MapLayer layer, int range = 5) where TEntity : BaseGameObject =>
+        Engine.WorldService.GetEntitiesInRangeAsync<TEntity>(
+            MapId,
+            layer,
+            NpcGameObject.Position.ToPointPosition(),
+            range
+        );
+
+    protected List<PointPosition> GetPathToPosition(PointPosition position) =>
+        Engine.WorldService.CalculatePath(MapId, NpcGameObject.Position.ToPointPosition(), position);
+
+    protected bool MoveToPosition(PointPosition position)
+    {
+        if (Engine.WorldService.IsLocationWalkable(MapId, position))
+        {
+            NpcGameObject.Position = new Point(position.X, position.Y);
+            return true;
+        }
+        return false;
+
     }
 }

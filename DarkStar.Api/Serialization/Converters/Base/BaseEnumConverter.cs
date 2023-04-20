@@ -37,7 +37,7 @@ public class BaseEnumConverter<TEnum> : IValueConverter where TEnum : struct, En
                 // Replace * and search value in enum 
 
                 var enumValue = enumValues.FirstOrDefault(x =>
-                    x.ToString().ToLower().Contains(value[value.IndexOf("*", StringComparison.Ordinal)]));
+                    x.ToString().ToLower().StartsWith(value.ToLower().Replace("*","")));
 
                 return enumValue!;
             }

@@ -5,10 +5,12 @@ using DarkStar.Api.Engine.Interfaces.Services;
 using DarkStar.Api.Engine.Map.Entities;
 using DarkStar.Api.Engine.Utils;
 using DarkStar.Api.Utils;
+using DarkStar.Api.World.Types.GameObjects;
 using DarkStar.Api.World.Types.Map;
 using DarkStar.Api.World.Types.Npc;
 using DarkStar.Api.World.Types.Tiles;
 using DarkStar.Database.Entities.Npc;
+using DarkStar.Database.Entities.Objects;
 using DarkStar.Engine.Services.Base;
 using DarkStar.Network.Protocol.Messages.Common;
 using FastEnumUtility;
@@ -153,6 +155,7 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
             Gold = npcType.ToString().ToLower().StartsWith("animal") ? 0 : RandomUtils.Range(1, 50) * level,
             TileId = GetTileIdFromNpcType(subType),
             Type = npcType,
+            SubType = subType
         };
 
         if (npcType.ToString().ToLower().StartsWith("animal"))
@@ -214,7 +217,37 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
 
     }
 
-    private TileType GetTileIdFromNpcType(NpcSubType npcType)
+    public async Task<GameObjectEntity> GenerateWorldGameObjectAsync(GameObjectType type)
+    {
+        // First of all, i search if gameObject exists
+        var entities = await Engine.DatabaseService.QueryAsListAsync<GameObjectEntity>(objectEntity => objectEntity.Type == type);
+        if (!entities.Any())
+        {
+            throw new Exception($"Can't find game object type: {type}!");
+        }
+
+        return entities.RandomItem();
+
+        //var entity = new GameObjectEntity();
+    }
+
+    public async Task<WorldGameObject> GenerateWorldGameObjectAsync(GameObjectType type, PointPosition position)
+    {
+        var entity = await GenerateWorldGameObjectAsync(type);
+
+        var gameObject = new WorldGameObject(position.ToPoint())
+        {
+            ObjectId = entity.Id,
+            IsTransparent = false,
+            IsWalkable = false,
+            Type = entity.Type,
+            Tile = entity.TileId
+        };
+
+        return gameObject;
+    }
+
+    private static TileType GetTileIdFromNpcType(NpcSubType npcType)
     {
         return npcType switch
         {

@@ -20,30 +20,30 @@ public class DarkSunTerminalHostedService : IHostedService
     public Task StartAsync(CancellationToken cancellationToken)
     {
         _ = Task.Run(() =>
-         {
-             Console.WriteLine(">> PRESS ENTER FOR START LUA SHELL");
-             var command = Console.ReadLine();
-             while (command != "EXIT")
-             {
-                 Console.Write("SHELL > ");
-                 command = Console.ReadLine();
-                 var result = _darkSunEngine.ScriptEngineService.ExecuteCommand(command!);
+        {
+            Console.WriteLine(">> PRESS ENTER FOR START LUA SHELL");
+            var command = Console.ReadLine();
+            while (command != "EXIT")
+            {
+                Console.Write("SHELL > ");
+                command = Console.ReadLine();
+                var result = _darkSunEngine.ScriptEngineService.ExecuteCommand(command!);
 
-                 if (result.Result != null)
-                 {
-                     foreach (var item in result.Result)
-                     {
-                         Console.WriteLine(item);
-                     }
-                 }
-                 if (result.Exception != null)
-                 {
-                     Console.ForegroundColor = ConsoleColor.Red;
-                     Console.WriteLine(result.Exception.Message);
-                     Console.ResetColor();
-                 }
-             }
-         }, cancellationToken);
+                if (result.Result != null)
+                {
+                    foreach (var item in result.Result)
+                    {
+                        Console.WriteLine(item);
+                    }
+                }
+                if (result.Exception != null)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine(result.Exception.Message);
+                    Console.ResetColor();
+                }
+            }
+        }, cancellationToken);
 
 
         return Task.CompletedTask;

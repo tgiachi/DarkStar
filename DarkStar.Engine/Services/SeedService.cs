@@ -48,6 +48,7 @@ public class SeedService : BaseService<SeedService>, ISeedService
         await CheckSeedDirectoriesAsync();
         await LoadCsvSeedsAsync();
         await ScanTileSetsAsync();
+        await InsertDbSeedsAsync();
         return true;
     }
 
@@ -92,16 +93,38 @@ public class SeedService : BaseService<SeedService>, ISeedService
     }
 
 
-    private Task LoadSeedAsync<TEntity>() where TEntity : class, new()
+    private async Task LoadSeedAsync<TEntity>() where TEntity : class, new()
     {
         var attribute = typeof(TEntity).GetCustomAttribute<SeedObjectAttribute>();
         var directory = Path.Join(_directoriesConfig[DirectoryNameType.Seeds], attribute!.TemplateDirectory);
         var files = Directory.GetFiles(directory, "*.csv");
 
         Logger.LogInformation("Found {Files} for {Type} seed", files.Length, attribute.TemplateDirectory);
+        foreach (var file in files)
+        {
+            await LoadSeedFileAsync<TEntity>(file);
+        }
 
-        return Task.CompletedTask;
+
     }
+
+    private async Task LoadSeedFileAsync<TEntity>(string fileName) where TEntity : class, new()
+    {
+        if (typeof(TEntity) == typeof(WorldObjectSeedEntity))
+        {
+            var gameObjects = await SeedCsvParser.Instance.ParseAsync<WorldObjectSeedEntity>(fileName);
+            gameObjects.ToList().ForEach(go => _gameObjectSeed.Add(new GameObjectEntity()
+            {
+                Name = go.Name,
+                Description = go.Description,
+                TileId = go.TileId,
+                Type = go.Type,
+                Data = JsonSerializer.Serialize(go.Data)
+            }));
+        }
+
+    }
+
 
     private async Task CheckSeedTemplateAsync<TEntity>(IEnumerable<TEntity>? defaultData = null) where TEntity : class, new()
     {
@@ -153,6 +176,27 @@ public class SeedService : BaseService<SeedService>, ISeedService
         foreach (var tileSet in files)
         {
             await LoadTileSetDefinitionAsync(tileSet);
+        }
+    }
+
+    private async Task InsertDbSeedsAsync()
+    {
+        foreach (var go in _gameObjectSeed)
+        {
+            var gameObject = await Engine.DatabaseService.QueryAsSingleAsync<GameObjectEntity>(entity => entity.Name == go.Name);
+            if (gameObject == null!)
+            {
+                await Engine.DatabaseService.InsertAsync(go);
+            }
+            else
+            {
+                gameObject.Name = go.Name;
+                gameObject.Description = go.Description;
+                gameObject.TileId = go.TileId;
+                gameObject.Type = go.Type;
+                gameObject.Data = go.Data;
+                await Engine.DatabaseService.UpdateAsync(gameObject);
+            }
         }
     }
 

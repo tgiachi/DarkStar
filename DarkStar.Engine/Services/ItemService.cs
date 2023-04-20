@@ -91,7 +91,7 @@ public class ItemService : BaseService<ItemService>, IItemService
                 if (_serviceProvider.GetService(type) is IGameObjectAction gameObjectAction)
                 {
                     _gameObjectActionTypes.Add(attr!.Type, type);
-                    Logger.LogDebug("Added game object action {Type}", type);
+                    Logger.LogDebug("Added game object action {Type}", type.Name);
                     GC.SuppressFinalize(gameObjectAction);
                 }
                 else

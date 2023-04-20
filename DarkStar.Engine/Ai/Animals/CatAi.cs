@@ -6,7 +6,7 @@ using DarkStar.Api.World.Types.Npc;
 using DarkStar.Network.Protocol.Messages.Common;
 using Microsoft.Extensions.Logging;
 
-namespace DarkStar.Engine.Ai;
+namespace DarkStar.Engine.Ai.Animals;
 
 
 [AiBehaviour(NpcType.Animal, NpcSubType.Cat)]

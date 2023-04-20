@@ -11,6 +11,7 @@ using DarkStar.Api.Engine.Serialization;
 using DarkStar.Api.Engine.Serialization.Map;
 using DarkStar.Api.Engine.Utils;
 using DarkStar.Api.Utils;
+using DarkStar.Api.World.Types.GameObjects;
 using DarkStar.Api.World.Types.Map;
 using DarkStar.Api.World.Types.Npc;
 using DarkStar.Api.World.Types.Tiles;
@@ -81,6 +82,28 @@ public class WorldService : BaseService<IWorldService>, IWorldService
         }
         return Task.FromResult(gameObjects);
     }
+
+    public Task<List<TEntity>> GetEntitiesInRangeAsync<TEntity>(string mapId, MapLayer layer, PointPosition position, int range = 5)
+        where TEntity : BaseGameObject
+    {
+        var entities = new List<TEntity>();
+        var map = GetMap(mapId);
+        var rangePositions = _positionRadius.PositionsInRadius(position.ToPoint(), range);
+        foreach (var pos in rangePositions)
+        {
+            var foundObjects = map.Entities.GetItemsAt(pos);
+            foreach (var gameObject in foundObjects)
+            {
+                if (gameObject is TEntity entity)
+                {
+                    entities.Add(entity);
+                }
+            }
+        }
+        return Task.FromResult(entities);
+
+    }
+
 
     public Task<List<PointPosition>> GetNeighborCellsAsync(string mapId, PointPosition startPosition, int cellsNumber = 5)
     {
@@ -261,9 +284,23 @@ public class WorldService : BaseService<IWorldService>, IWorldService
 
             AddEntity(mapId, cat);
             Logger.LogInformation("Spawn cat @ {Position} - Name {Name}", cat.Position, cat.Name);
-
         }
 
+        var mushroomFinder = await Engine.BlueprintService.GenerateNpcGameObjectAsync(
+            GetRandomWalkablePosition(mapId),
+            NpcType.Human,
+            NpcSubType.MushroomFinder
+        );
+
+        AddEntity(mapId, mushroomFinder);
+        Logger.LogInformation("Spawn mushroom @ {Position} - Name {Name}", mushroomFinder.Position, mushroomFinder.Name);
+
+        foreach (var _ in Enumerable.Range(1, 5))
+        {
+            var mushroom = await Engine.BlueprintService.GenerateWorldGameObjectAsync(
+                GameObjectType.Prop_Mushroom, GetRandomWalkablePosition(mapId));
+            AddEntity(mapId, mushroom);
+        }
     }
 
     private void HandleMapEvents(string id, Map map)
@@ -416,6 +453,15 @@ public class WorldService : BaseService<IWorldService>, IWorldService
     {
         var map = GetMap(mapId);
         return map.Entities.Items.Where(x => x is PlayerGameObject).Cast<PlayerGameObject>().ToList();
+    }
+
+    public List<PointPosition> CalculatePath(string mapId, PointPosition sourcePosition, PointPosition destinationPosition)
+    {
+        var map = GetMap(mapId);
+        var path = map.AStar.ShortestPath(sourcePosition.ToPoint(), destinationPosition.ToPoint());
+
+        return path.StepsWithStart.Select(s => s.ToPointPosition()).ToList();
+
     }
 
     private void HandleGameObjectAdded(string mapId, IGameObject gameObject, PointPosition position)

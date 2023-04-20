@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DarkStar.Api.Engine.Utils;
 using DarkStar.Api.World.Types.Tiles;
+using DarkStar.Network.Protocol.Messages.Common;
 using GoRogue;
 using GoRogue.GameFramework;
 using SadRogue.Primitives;
@@ -19,8 +21,7 @@ public class BaseGameObject : GameObject
     {
     }
 
-    public override string ToString()
-    {
-        return $"{Tile} - Id: {ObjectId}";
-    }
+    public override string ToString() => $"{Tile} - Id: {ObjectId}";
+
+    public PointPosition PointPosition() => Position.ToPointPosition();
 }
