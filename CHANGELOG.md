@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="0.3.0"></a>
+## [0.3.0](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.3.0) (2023-4-21)
+
+### ✨ Features
+
+* **ai:** add support for sending world messages in CatAi and MushroomFinderAi ([1af8e34](https://www.github.com/tgiachi/DarkSun/commit/1af8e3409f8b1014669497d853fcde595503d581))
+
 <a name="0.2.0"></a>
 ## [0.2.0](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.2.0) (2023-4-21)
 
