@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="0.2.0"></a>
+## [0.2.0](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.2.0) (2023-4-21)
+
+### ✨ Features
+
+* add support for removing scheduled world objects ([02a8839](https://www.github.com/tgiachi/DarkSun/commit/02a8839129ccc60a00fe5c8ee34c026e81ab2762))
+
 <a name="0.1.12"></a>
 ## [0.1.12](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.1.12) (2023-4-20)
 
