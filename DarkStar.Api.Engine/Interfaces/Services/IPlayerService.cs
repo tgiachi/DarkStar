@@ -11,6 +11,7 @@ using DarkStar.Database.Entities.Base;
 using DarkStar.Database.Entities.Item;
 using DarkStar.Database.Entities.Player;
 using DarkStar.Network.Protocol.Messages.Common;
+using DarkStar.Network.Protocol.Messages.World;
 
 namespace DarkStar.Api.Engine.Interfaces.Services;
 
@@ -23,10 +24,13 @@ public interface IPlayerService : IDarkSunEngineService
     Task<List<PlayerEntity>> GetPlayersByAccountIdAsync(Guid accountId);
     Task<PlayerEntity> CreatePlayerAsync(Guid accountId, string name, TileType tileId, Guid raceId, BaseStatEntity stats);
     Task<int> AddGoldToPlayerAsync(Guid playerId, int amount);
-
     Task<List<PlayerInventoryEntity>> GetPlayerInventoryAsync(Guid playerId);
     Task<List<PlayerInventoryEntity>> AddPlayerInventoryAsync(Guid playerId, ItemEntity item, int amount);
     Task<List<PlayerInventoryEntity>> AddPlayerInventoryAsync(Guid playerId, Guid itemId, int amount);
     Task<bool> UpdatePlayerPositionAsync(Guid playerId, string mapId, PointPosition position);
+
+    Task<bool> BroadcastChatMessageAsync(
+        string mapId, PointPosition position, string name, uint sender, string message, WorldMessageType type
+    );
 
 }

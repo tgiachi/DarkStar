@@ -11,6 +11,7 @@ namespace DarkStar.Engine.Commands.Actions;
 public class GameObjectAction : ICommandAction
 {
     public double Delay { get; set; } = 500;
+    public string MapId { get; set; } = null!;
     public CommandActionType Type { get; } = CommandActionType.GameObjectAction;
     public Guid? SessionId { get; set; }
     public Guid? PlayerId { get; set; }

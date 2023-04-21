@@ -11,6 +11,7 @@ using DarkStar.Api.World.Types.GameObjects;
 using DarkStar.Api.World.Types.Map;
 using DarkStar.Database.Entities.Objects;
 using DarkStar.Engine.Services.Base;
+using DarkStar.Network.Protocol.Messages.Common;
 using Microsoft.Extensions.Logging;
 
 namespace DarkStar.Engine.Services;
@@ -35,9 +36,18 @@ public class ItemService : BaseService<ItemService>, IItemService
     {
         await ScanGameObjectActionsAsync();
         Engine.SchedulerService.OnTick += SchedulerService_OnTickAsync;
-        Engine.EventBus.Subscribe<GameObjectAddedEvent>(OnGameObjectAdded);
+        SubscribeToEvent<GameObjectAddedEvent>(OnGameObjectAdded);
+        SubscribeToEvent<GameObjectRemovedEvent>(OnGameObjectRemoved);
 
         return true;
+    }
+
+    private void OnGameObjectRemoved(GameObjectRemovedEvent obj)
+    {
+        if (obj.Layer == MapLayer.Objects)
+        {
+            _ = Task.Run(() => RemoveGameObjectAsync(obj));
+        }
     }
 
     private void OnGameObjectAdded(GameObjectAddedEvent obj)
@@ -46,6 +56,24 @@ public class ItemService : BaseService<ItemService>, IItemService
         {
             _ = Task.Run(() => AddGameObjectActionAsync(obj));
         }
+    }
+
+    private async ValueTask RemoveGameObjectAsync(GameObjectRemovedEvent @event)
+    {
+        await _gameObjectActionLock.WaitAsync();
+        if (_gameObjectActions.TryGetValue(@event.Id, out var gameObjectAction))
+        {
+            GC.SuppressFinalize(gameObjectAction);
+            _gameObjectActions.Remove(@event.Id);
+        }
+
+        if (_scheduledGameObjectActions.TryGetValue(@event.Id, out var scheduledObjectAction))
+        {
+            GC.SuppressFinalize(scheduledObjectAction);
+            _scheduledGameObjectActions.Remove(@event.Id);
+        }
+
+        _gameObjectActionLock.Release();
     }
 
     private async ValueTask AddGameObjectActionAsync(GameObjectAddedEvent @event)
@@ -57,7 +85,7 @@ public class ItemService : BaseService<ItemService>, IItemService
         if (_gameObjectActionTypes.TryGetValue(gameObjectEntity.Type, out var type))
         {
             var worldGameObject =
-                await Engine.WorldService.GetEntityByIdAsync<WorldGameObject>(@event.MapId, @event.ObjectId);
+                await Engine.WorldService.GetEntityBySerialIdAsync<WorldGameObject>(@event.MapId, @event.Id);
             if (_serviceProvider.GetService(type) is IGameObjectAction gameObjectAction)
             {
                 await _gameObjectActionLock.WaitAsync();
@@ -116,5 +144,26 @@ public class ItemService : BaseService<ItemService>, IItemService
             await scheduledGameObjectAction.Value.UpdateAsync(deltaTime);
         }
         _gameObjectActionLock.Release();
+    }
+
+    public Task ExecuteGameObjectActionAsync(WorldGameObject gameObject, string mapId, Guid? sessionId, Guid? playerId, bool isNpc, uint? npcId, Guid? npcObjectId
+    )
+    {
+        if (_gameObjectActions.TryGetValue(gameObject.ID, out var action))
+        {
+            var senderId = Guid.NewGuid();
+            if (playerId == null)
+            {
+                senderId = npcObjectId.Value;
+            }
+            else
+            {
+                senderId = playerId.Value;
+            }
+            _ = action.OnActivatedAsync(mapId, gameObject, senderId, isNpc);
+            return Task.CompletedTask;
+        }
+        Logger.LogWarning("Can't find Game object action {GameObjectName} [{GameObjectId}] ", gameObject.Type, gameObject.ObjectId);
+        return Task.CompletedTask;
     }
 }

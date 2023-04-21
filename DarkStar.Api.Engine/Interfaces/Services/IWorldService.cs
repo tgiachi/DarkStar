@@ -21,8 +21,12 @@ public interface IWorldService : IDarkSunEngineService
     void AddEntity<TEntity>(string mapId, TEntity entity) where TEntity : IGameObject;
     void RemoveEntity<TEntity>(string mapId, TEntity entity) where TEntity : IGameObject;
     ValueTask<TEntity?> GetEntityByIdAsync<TEntity>(string mapId, Guid id) where TEntity : BaseGameObject;
+    ValueTask<TEntity?> GetEntityBySerialIdAsync<TEntity>(string mapId, uint serialId) where TEntity : BaseGameObject;
+    ValueTask<TEntity> GetEntityByPositionAsync<TEntity>(string mapId, PointPosition position) where TEntity : BaseGameObject;
     ValueTask<List<TEntity>> GetAllEntitiesInLayerAsync<TEntity>(string mapId, MapLayer layer) where TEntity : BaseGameObject;
     ValueTask<(string mapId, PointPosition position)> GetRandomCityStartingPointAsync();
+    ValueTask<List<PlayerGameObject>> GetPlayersByMapIdAsync(string mapId);
+    ValueTask RemoveEntityAsync(string mapId, uint id);
 
     bool IsLocationWalkable(string mapId, PointPosition position);
     bool IsLocationWalkable(GoRogue.GameFramework.Map map, PointPosition position);

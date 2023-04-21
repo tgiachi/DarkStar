@@ -1,4 +1,4 @@
-﻿using DarkStar.Api.Engine.Interfaces.Ai;
+using DarkStar.Api.Engine.Interfaces.Ai;
 using DarkStar.Api.Engine.Interfaces.Core;
 using DarkStar.Api.Engine.Map.Entities;
 using DarkStar.Api.Engine.Map.Entities.Base;
@@ -8,6 +8,7 @@ using DarkStar.Api.World.Types.Map;
 using DarkStar.Api.World.Types.Npc;
 using DarkStar.Database.Entities.Npc;
 using DarkStar.Network.Protocol.Messages.Common;
+using DarkStar.Network.Protocol.Messages.World;
 using GoRogue.GameFramework;
 using Microsoft.Extensions.Logging;
 using SadRogue.Primitives;
@@ -99,9 +100,19 @@ public class BaseAiBehaviourExecutor : IAiBehaviourExecutor
         if (Engine.WorldService.IsLocationWalkable(MapId, position))
         {
             NpcGameObject.Position = new Point(position.X, position.Y);
+     
             return true;
         }
         return false;
-
     }
+
+    protected Task<bool> SendWorldMessageAsync(string message, WorldMessageType type) =>
+        Engine.PlayerService.BroadcastChatMessageAsync(
+            MapId,
+            NpcGameObject.PointPosition(),
+            NpcEntity.Name,
+            NpcGameObject.ID,
+            message,
+            type
+        );
 }

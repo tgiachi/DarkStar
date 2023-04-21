@@ -1,3 +1,4 @@
+using DarkStar.Api.Engine.Interfaces.Core;
 using DarkStar.Api.Engine.Interfaces.Objects;
 using Microsoft.Extensions.Logging;
 
@@ -7,7 +8,7 @@ public class BaseScheduledWorldObject : BaseWorldObjectAction, IScheduledGameObj
 {
     private double _currentInterval = 1000;
     public double Interval { get; set; } = 1000;
-    public BaseScheduledWorldObject(ILogger<BaseWorldObjectAction> logger) : base(logger)
+    public BaseScheduledWorldObject(ILogger<BaseWorldObjectAction> logger, IDarkSunEngine engine) : base(logger, engine)
     {
     }
 

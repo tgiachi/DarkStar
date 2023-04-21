@@ -1,10 +1,12 @@
 using DarkStar.Network.Attributes;
 using DarkStar.Network.Protocol.Interfaces.Messages;
 using DarkStar.Network.Protocol.Types;
+using ProtoBuf;
 
 namespace DarkStar.Network.Protocol.Messages.World;
 
 [NetworkMessage(DarkStarMessageType.WorldMessageResponse)]
+[ProtoContract]
 public class WorldMessageResponseMessage : IDarkStarNetworkMessage
 {
     public string Message { get; set; } = null!;

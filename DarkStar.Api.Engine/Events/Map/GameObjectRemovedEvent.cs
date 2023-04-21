@@ -11,7 +11,7 @@ namespace DarkStar.Api.Engine.Events.Map;
 
 public class GameObjectRemovedEvent : GameObjectAddedEvent
 {
-    public GameObjectRemovedEvent(string mapId, MapLayer layer, PointPosition position, Guid objectId) : base(mapId, layer, position, objectId)
+    public GameObjectRemovedEvent(string mapId, MapLayer layer, PointPosition position, Guid objectId, uint id) : base(mapId, layer, position, objectId, id)
     {
 
     }
