@@ -40,6 +40,7 @@ public class MushroomFinderAi : BaseAiBehaviourExecutor
 
                 Engine.CommandService.EnqueueNpcAction(new GameObjectAction()
                 {
+                    MapId = MapId,
                     IsNpc = true,
                     NpcId = NpcGameObject.ID,
                     NpcObjectId = NpcEntity.Id,

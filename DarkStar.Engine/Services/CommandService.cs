@@ -16,8 +16,8 @@ namespace DarkStar.Engine.Services;
 public class CommandService : BaseService<ICommandService>, ICommandService
 {
     private readonly Dictionary<CommandActionType, ICommandActionExecutor> _actionExecutors = new();
-    private readonly HashSet<ICommandAction> _playersActionsQueue = new();
-    private readonly HashSet<ICommandAction> _npcsActionsQueue = new();
+    private readonly List<ICommandAction> _playersActionsQueue = new();
+    private readonly List<ICommandAction> _npcsActionsQueue = new();
     private readonly IServiceProvider _container;
     private readonly SemaphoreSlim _actionListLock = new(1);
     public CommandService(ILogger<ICommandService> logger, IServiceProvider container) : base(logger)
@@ -72,17 +72,25 @@ public class CommandService : BaseService<ICommandService>, ICommandService
                 actionsToRemove.Add(action);
             }
         }
-        actionsToRemove.ForEach(k => _playersActionsQueue.Remove(k));
 
+        foreach (var action in actionsToRemove)
+        {
+            _playersActionsQueue.Remove(action);
+        }
+        
+        actionsToRemove.Clear();
 
         foreach (var action in _npcsActionsQueue)
         {
             action.Delay -= deltaTime;
             if (action.Delay <= 0)
             {
-                // await ProcessPlayerAction(action);
+                await ProcessPlayerActionAsync(action);
+                actionsToRemove.Add(action);
             }
         }
+
+        actionsToRemove.ForEach(k => _npcsActionsQueue.Remove(k));
 
         _actionListLock.Release();
     }

@@ -1,4 +1,4 @@
-﻿using DarkStar.Api.Engine.Interfaces.Ai;
+using DarkStar.Api.Engine.Interfaces.Ai;
 using DarkStar.Api.Engine.Interfaces.Core;
 using DarkStar.Api.Engine.Map.Entities;
 using DarkStar.Api.Engine.Map.Entities.Base;
@@ -99,6 +99,7 @@ public class BaseAiBehaviourExecutor : IAiBehaviourExecutor
         if (Engine.WorldService.IsLocationWalkable(MapId, position))
         {
             NpcGameObject.Position = new Point(position.X, position.Y);
+     
             return true;
         }
         return false;

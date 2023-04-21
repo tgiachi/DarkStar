@@ -24,6 +24,7 @@ using GoRogue;
 using GoRogue.GameFramework;
 using GoRogue.MapGeneration;
 using Microsoft.Extensions.Logging;
+using Microsoft.VisualBasic.CompilerServices;
 using SadRogue.Primitives;
 using SadRogue.Primitives.GridViews;
 
@@ -124,6 +125,14 @@ public class WorldService : BaseService<IWorldService>, IWorldService
 
         }
         return Task.FromResult(positions);
+    }
+
+    public async ValueTask RemoveEntityAsync(string mapId, uint id)
+    {
+
+        var map = GetMap(mapId);
+        var entity = await GetEntityBySerialIdAsync<BaseGameObject>(mapId, id);
+        map.RemoveEntity(entity);
     }
 
     public bool IsLocationWalkable(string mapId, PointPosition position) => IsLocationWalkable(GetMap(mapId), position);
@@ -295,7 +304,7 @@ public class WorldService : BaseService<IWorldService>, IWorldService
         AddEntity(mapId, mushroomFinder);
         Logger.LogInformation("Spawn mushroom @ {Position} - Name {Name}", mushroomFinder.Position, mushroomFinder.Name);
 
-        foreach (var _ in Enumerable.Range(1, 5))
+        foreach (var _ in Enumerable.Range(1, 15))
         {
             var mushroom = await Engine.BlueprintService.GenerateWorldGameObjectAsync(
                 GameObjectType.Prop_Mushroom, GetRandomWalkablePosition(mapId));
@@ -427,6 +436,22 @@ public class WorldService : BaseService<IWorldService>, IWorldService
         return ValueTask.FromResult(entity as TEntity);
     }
 
+    public ValueTask<TEntity?> GetEntityBySerialIdAsync<TEntity>(string mapId, uint serialId) where TEntity : BaseGameObject
+    {
+        var map = GetMap(mapId);
+        var entity = map.Entities.Items.FirstOrDefault(x => x is TEntity tEntity && tEntity.ID == serialId);
+        return ValueTask.FromResult(entity as TEntity);
+
+    }
+
+    public ValueTask<TEntity> GetEntityByPositionAsync<TEntity>(string mapId, PointPosition position)
+        where TEntity : BaseGameObject
+    {
+        var map = GetMap(mapId);
+        var entity = map.GetEntityAt<TEntity>(position.ToPoint());
+        return ValueTask.FromResult(entity);
+    }
+
     public ValueTask<List<TEntity>> GetAllEntitiesInLayerAsync<TEntity>(string mapId, MapLayer layer)
         where TEntity : BaseGameObject
     {
@@ -452,8 +477,10 @@ public class WorldService : BaseService<IWorldService>, IWorldService
     public List<PlayerGameObject> GetPlayers(string mapId)
     {
         var map = GetMap(mapId);
+
         return map.Entities.Items.Where(x => x is PlayerGameObject).Cast<PlayerGameObject>().ToList();
     }
+
 
     public List<PointPosition> CalculateAStarPath(string mapId, PointPosition sourcePosition, PointPosition destinationPosition)
     {
@@ -468,19 +495,19 @@ public class WorldService : BaseService<IWorldService>, IWorldService
     {
         var baseGameObject = gameObject as BaseGameObject;
         Engine.EventBus.PublishAsync(new GameObjectAddedEvent(mapId, (MapLayer)gameObject.Layer, position,
-            baseGameObject!.ObjectId));
+            baseGameObject!.ObjectId, gameObject.ID));
     }
 
     private void HandleGameObjectMoved(string mapId, IGameObject gameObject, PointPosition oldPosition, PointPosition newPosition)
     {
         var baseGameObject = gameObject as BaseGameObject;
-        Engine.EventBus.PublishAsync(new GameObjectMovedEvent(mapId, (MapLayer)gameObject.Layer, oldPosition, newPosition, baseGameObject!.ObjectId));
+        Engine.EventBus.PublishAsync(new GameObjectMovedEvent(mapId, (MapLayer)gameObject.Layer, oldPosition, newPosition, baseGameObject!.ObjectId, baseGameObject.ID));
     }
 
     private void HandleGameObjectRemoved(string mapId, IGameObject gameObject, PointPosition position)
     {
         var baseGameObject = gameObject as BaseGameObject;
-        Engine.EventBus.PublishAsync(new GameObjectRemovedEvent(mapId, (MapLayer)gameObject.Layer, position, baseGameObject!.ObjectId));
+        Engine.EventBus.PublishAsync(new GameObjectRemovedEvent(mapId, (MapLayer)gameObject.Layer, position, baseGameObject!.ObjectId, baseGameObject.ID));
     }
 
     private ValueTask<Map> GenerateDungeonMapAsync()

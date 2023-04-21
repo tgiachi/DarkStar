@@ -16,12 +16,14 @@ public class GameObjectAddedEvent : EventBase
     public PointPosition Position { get; set; }
     public Guid ObjectId { get; set; }
 
-    public GameObjectAddedEvent(string mapId, MapLayer layer, PointPosition position, Guid objectId)
+    public uint Id { get; set; }
+    public GameObjectAddedEvent(string mapId, MapLayer layer, PointPosition position, Guid objectId, uint id)
     {
         MapId = mapId;
         Layer = layer;
         Position = position;
         ObjectId = objectId;
+        Id = id;
     }
 
     public GameObjectAddedEvent()
