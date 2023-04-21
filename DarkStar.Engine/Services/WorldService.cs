@@ -127,6 +127,14 @@ public class WorldService : BaseService<IWorldService>, IWorldService
         return Task.FromResult(positions);
     }
 
+    public ValueTask<List<PlayerGameObject>> GetPlayersByMapIdAsync(string mapId)
+    {
+        var map = GetMap(mapId);
+        return ValueTask.FromResult(
+            map.Entities.Items.Where(s => s.Layer == (int)MapLayer.Players).Cast<PlayerGameObject>().ToList()
+        );
+    }
+
     public async ValueTask RemoveEntityAsync(string mapId, uint id)
     {
 

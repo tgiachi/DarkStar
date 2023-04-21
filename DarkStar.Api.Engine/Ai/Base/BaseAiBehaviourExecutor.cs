@@ -8,6 +8,7 @@ using DarkStar.Api.World.Types.Map;
 using DarkStar.Api.World.Types.Npc;
 using DarkStar.Database.Entities.Npc;
 using DarkStar.Network.Protocol.Messages.Common;
+using DarkStar.Network.Protocol.Messages.World;
 using GoRogue.GameFramework;
 using Microsoft.Extensions.Logging;
 using SadRogue.Primitives;
@@ -103,6 +104,15 @@ public class BaseAiBehaviourExecutor : IAiBehaviourExecutor
             return true;
         }
         return false;
-
     }
+
+    protected Task<bool> SendWorldMessageAsync(string message, WorldMessageType type) =>
+        Engine.PlayerService.BroadcastChatMessageAsync(
+            MapId,
+            NpcGameObject.PointPosition(),
+            NpcEntity.Name,
+            NpcGameObject.ID,
+            message,
+            type
+        );
 }

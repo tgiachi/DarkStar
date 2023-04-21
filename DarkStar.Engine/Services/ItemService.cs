@@ -36,9 +36,18 @@ public class ItemService : BaseService<ItemService>, IItemService
     {
         await ScanGameObjectActionsAsync();
         Engine.SchedulerService.OnTick += SchedulerService_OnTickAsync;
-        Engine.EventBus.Subscribe<GameObjectAddedEvent>(OnGameObjectAdded);
+        SubscribeToEvent<GameObjectAddedEvent>(OnGameObjectAdded);
+        SubscribeToEvent<GameObjectRemovedEvent>(OnGameObjectRemoved);
 
         return true;
+    }
+
+    private void OnGameObjectRemoved(GameObjectRemovedEvent obj)
+    {
+        if (obj.Layer == MapLayer.Objects)
+        {
+            _ = Task.Run(() => RemoveGameObjectAsync(obj));
+        }
     }
 
     private void OnGameObjectAdded(GameObjectAddedEvent obj)
@@ -47,6 +56,24 @@ public class ItemService : BaseService<ItemService>, IItemService
         {
             _ = Task.Run(() => AddGameObjectActionAsync(obj));
         }
+    }
+
+    private async ValueTask RemoveGameObjectAsync(GameObjectRemovedEvent @event)
+    {
+        await _gameObjectActionLock.WaitAsync();
+        if (_gameObjectActions.TryGetValue(@event.Id, out var gameObjectAction))
+        {
+            GC.SuppressFinalize(gameObjectAction);
+            _gameObjectActions.Remove(@event.Id);
+        }
+
+        if (_scheduledGameObjectActions.TryGetValue(@event.Id, out var scheduledObjectAction))
+        {
+            GC.SuppressFinalize(scheduledObjectAction);
+            _scheduledGameObjectActions.Remove(@event.Id);
+        }
+
+        _gameObjectActionLock.Release();
     }
 
     private async ValueTask AddGameObjectActionAsync(GameObjectAddedEvent @event)

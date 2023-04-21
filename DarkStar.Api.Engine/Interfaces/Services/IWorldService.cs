@@ -25,7 +25,7 @@ public interface IWorldService : IDarkSunEngineService
     ValueTask<TEntity> GetEntityByPositionAsync<TEntity>(string mapId, PointPosition position) where TEntity : BaseGameObject;
     ValueTask<List<TEntity>> GetAllEntitiesInLayerAsync<TEntity>(string mapId, MapLayer layer) where TEntity : BaseGameObject;
     ValueTask<(string mapId, PointPosition position)> GetRandomCityStartingPointAsync();
-
+    ValueTask<List<PlayerGameObject>> GetPlayersByMapIdAsync(string mapId);
     ValueTask RemoveEntityAsync(string mapId, uint id);
 
     bool IsLocationWalkable(string mapId, PointPosition position);

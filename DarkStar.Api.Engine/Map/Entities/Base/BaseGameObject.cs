@@ -21,7 +21,7 @@ public class BaseGameObject : GameObject
     {
     }
 
-    public override string ToString() => $"{Tile} - Id: {ObjectId}";
+    public override string ToString() => $"{Tile} - ID: {ID} - ObjectId: {ObjectId}";
 
     public PointPosition PointPosition() => Position.ToPointPosition();
 }

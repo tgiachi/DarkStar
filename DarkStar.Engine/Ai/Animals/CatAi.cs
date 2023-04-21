@@ -4,6 +4,7 @@ using DarkStar.Api.Engine.Interfaces.Core;
 using DarkStar.Api.Utils;
 using DarkStar.Api.World.Types.Npc;
 using DarkStar.Network.Protocol.Messages.Common;
+using DarkStar.Network.Protocol.Messages.World;
 using Microsoft.Extensions.Logging;
 
 namespace DarkStar.Engine.Ai.Animals;
@@ -16,10 +17,13 @@ public class CatAi : BaseAiBehaviourExecutor
     {
     }
 
-    protected override ValueTask DoAiAsync()
+    protected override async ValueTask DoAiAsync()
     {
         MoveToDirection(MoveDirectionType.East.RandomEnumValue());
-
-        return ValueTask.CompletedTask;
+        if (RandomUtils.RandomBool())
+        {
+            Logger.LogInformation("Meow!");
+            await SendWorldMessageAsync("Meow!", WorldMessageType.Yell);
+        }
     }
 }

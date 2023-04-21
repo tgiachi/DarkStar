@@ -28,7 +28,6 @@ public struct WorldMessageRequestMessage : IDarkStarNetworkMessage
         Message = message;
         Sender = sender;
         MessageType = messageType;
-
     }
 
     public WorldMessageRequestMessage()

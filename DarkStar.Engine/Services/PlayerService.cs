@@ -3,6 +3,7 @@ using DarkStar.Api.Engine.Data.Player;
 using DarkStar.Api.Engine.Data.Sessions;
 using DarkStar.Api.Engine.Events.Players;
 using DarkStar.Api.Engine.Interfaces.Services;
+using DarkStar.Api.Engine.Utils;
 using DarkStar.Api.World.Types.Tiles;
 using DarkStar.Database.Entities.Base;
 using DarkStar.Database.Entities.Item;
@@ -10,7 +11,9 @@ using DarkStar.Database.Entities.Player;
 using DarkStar.Database.Entities.Races;
 using DarkStar.Engine.Services.Base;
 using DarkStar.Network.Protocol.Messages.Common;
+using DarkStar.Network.Protocol.Messages.World;
 using Microsoft.Extensions.Logging;
+using SadRogue.Primitives;
 
 namespace DarkStar.Engine.Services;
 
@@ -162,6 +165,25 @@ public class PlayerService : BaseService<PlayerService>, IPlayerService
 
         await Engine.DatabaseService.UpdateAsync(player);
         await Engine.WorldService.MovePlayerAsync(mapId, playerId, position);
+        return true;
+    }
+
+    public async Task<bool> BroadcastChatMessageAsync(
+        string mapId, PointPosition position, string name, uint sender, string message, WorldMessageType type
+    )
+    {
+        var players = await Engine.WorldService.GetPlayersByMapIdAsync(mapId);
+        var radius = new Radius();
+        var positions = radius.PositionsInRadius(position.ToPoint(), (int)type).ToList();
+        var worldMessage = new WorldMessageResponseMessage(message, sender.ToString(), name, type);
+        foreach (var player in players)
+        {
+            if (positions.Contains(player.Position))
+            {
+                await Engine.NetworkServer.SendMessageAsync(player.NetworkSessionId, worldMessage);
+            }
+        }
+
         return true;
     }
 

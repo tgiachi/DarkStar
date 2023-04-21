@@ -15,6 +15,7 @@ using DarkStar.Api.World.Types.Npc;
 using DarkStar.Api.World.Types.Tiles;
 using DarkStar.Engine.Commands.Actions;
 using DarkStar.Network.Protocol.Messages.Common;
+using DarkStar.Network.Protocol.Messages.World;
 using Microsoft.Extensions.Logging;
 
 namespace DarkStar.Engine.Ai.Humans;
@@ -37,6 +38,7 @@ public class MushroomFinderAi : BaseAiBehaviourExecutor
             if (_currentStep >= _path.Count)
             {
                 Logger.LogInformation("MMMhh, yummy mushroom!");
+                await SendWorldMessageAsync("MMMhh, yummy mushroom!", WorldMessageType.Yell);
 
                 Engine.CommandService.EnqueueNpcAction(new GameObjectAction()
                 {
@@ -75,7 +77,5 @@ public class MushroomFinderAi : BaseAiBehaviourExecutor
             _path = GetPathToPosition(mushrooms.PointPosition());
             _currentStep = 0;
         }
-
-
     }
 }
