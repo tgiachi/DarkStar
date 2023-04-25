@@ -27,7 +27,7 @@ public class ItemObjectSeedEntity
     public int Weight { get; set; } = 1;
 
     [Column(converter: typeof(TileTypeConverter))]
-    public TileType TileType { get; set; }
+    public int TileType { get; set; }
 
     [Column(converter: typeof(ItemCategoryTypeConverter))]
     public ItemCategoryType Category { get; set; }

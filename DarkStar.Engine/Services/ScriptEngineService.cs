@@ -20,10 +20,12 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
     private readonly Lua _scriptEngine;
     private readonly DirectoriesConfig _directoriesConfig;
     private readonly IServiceProvider _container;
+    private readonly ITileService _tileService;
 
-    public ScriptEngineService(ILogger<IScriptEngineService> logger, DirectoriesConfig directoriesConfig,
+    public ScriptEngineService(ILogger<IScriptEngineService> logger, DirectoriesConfig directoriesConfig, ITileService tileService,
         IServiceProvider container) : base(logger)
     {
+        _tileService = tileService;
         _container = container;
         _directoriesConfig = directoriesConfig;
         _scriptEngine = new Lua() { UseTraceback = true };
@@ -62,9 +64,9 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
         await ScanScriptModulesAsync();
 
 
-        foreach (var tileType in Enum.GetValues<TileType>())
+        foreach (var tileType in _tileService.Tiles)
         {
-            _scriptEngine[$"TILE_{tileType.ToString().ToUpper()}"] = (short)tileType;
+            _scriptEngine[tileType.FullName] = tileType.Id;
         }
 
         var files = Directory.GetFiles(_directoriesConfig[DirectoryNameType.Scripts], "*.lua");

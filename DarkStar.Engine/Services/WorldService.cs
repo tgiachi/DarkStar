@@ -282,8 +282,8 @@ public class WorldService : BaseService<IWorldService>, IWorldService
             FastEnum.GetValues<MapLayer>().Count, Distance.Chebyshev);
 
         map.ApplyTerrainOverlay(wallsFloors, (pos, val) => val
-            ? new TerrainGameObject(pos) { IsWalkable = true, IsTransparent = true, Tile = TileType.Null }
-            : new TerrainGameObject(pos, false, false) { Tile = TileType.Terrain_Grass_1 });
+            ? new TerrainGameObject(pos) { IsWalkable = true, IsTransparent = true, Tile = 0 }
+            : new TerrainGameObject(pos, false, false) { Tile = 1 });
 
         return ValueTask.FromResult(map);
 
@@ -375,7 +375,7 @@ public class WorldService : BaseService<IWorldService>, IWorldService
             .FirstOrDefault(s => s.ObjectId == playerId);
     }
 
-    public bool AddPlayerOnMap(string mapId, Guid playerId, Guid networkSessionId, PointPosition position, TileType tile)
+    public bool AddPlayerOnMap(string mapId, Guid playerId, Guid networkSessionId, PointPosition position, int tile)
     {
         var map = _maps[mapId].Item1;
 
@@ -532,8 +532,8 @@ public class WorldService : BaseService<IWorldService>, IWorldService
         var wallsFloors = dungeonGenerator.Context.GetFirst<ArrayView<bool>>("WallFloor");
 
         map.ApplyTerrainOverlay(wallsFloors, (pos, val) => val
-            ? new TerrainGameObject(pos) { IsWalkable = true, IsTransparent = true, Tile = TileType.Null }
-            : new TerrainGameObject(pos, false, false) { Tile = TileType.Null });
+            ? new TerrainGameObject(pos) { IsWalkable = true, IsTransparent = true, Tile = 0 }
+            : new TerrainGameObject(pos, false, false) { Tile = 0 });
 
         return ValueTask.FromResult(map);
     }

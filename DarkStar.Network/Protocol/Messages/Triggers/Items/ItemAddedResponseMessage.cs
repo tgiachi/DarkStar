@@ -23,14 +23,14 @@ public struct ItemAddedResponseMessage : IDarkStarNetworkMessage
     public PointPosition Position { get; set; }
 
     [ProtoMember(5)]
-    public TileType TileType { get; set; }
+    public int TileType { get; set; }
 
     public ItemAddedResponseMessage()
     {
 
     }
 
-    public ItemAddedResponseMessage(string mapId, string itemId, string name, PointPosition position, TileType tileType)
+    public ItemAddedResponseMessage(string mapId, string itemId, string name, PointPosition position, int tileType)
     {
         MapId = mapId;
         ItemId = itemId;

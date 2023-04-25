@@ -182,7 +182,7 @@ public class DarkSunEngine : IDarkSunEngine
 
                 var race = new RaceEntity
                 {
-                    TileId = TileType.Food_Mushroom_1,
+                    TileId = 0,
                     Dexterity = 0,
                     Health = 0,
                     IsVisible = true,
@@ -212,7 +212,7 @@ public class DarkSunEngine : IDarkSunEngine
                         Luck = 10,
                         Name = "Player 1",
                         Strength = 10,
-                        TileId = TileType.Human_Mage_1,
+                        TileId = 0,
                         RaceId = race.Id,
                     }
                 );

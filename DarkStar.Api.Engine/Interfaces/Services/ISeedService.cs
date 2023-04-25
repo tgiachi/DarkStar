@@ -13,5 +13,5 @@ namespace DarkStar.Api.Engine.Interfaces.Services;
 public interface ISeedService : IDarkSunEngineService
 {
     void AddRaceToSeed(string race, string description, short tileId, BaseStatEntity stat);
-    void AddGameObjectToSeed(string name, string description, TileType tileType, GameObjectType gameObjectType);
+    void AddGameObjectToSeed(string name, string description, int tileType, GameObjectType gameObjectType);
 }

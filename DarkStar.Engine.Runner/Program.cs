@@ -17,7 +17,7 @@ using DarkStar.Network.Server;
 using DarkStar.Network.Server.Interfaces;
 using DarkStar.Network.Session;
 using DarkStar.Network.Session.Interfaces;
-
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -84,15 +84,21 @@ internal class Program
                     .AddSingleton<IDarkSunNetworkServer, TcpNetworkServer>()
                     .AddSingleton<INetworkSessionManager, InMemoryNetworkSessionManager>()
                     .AddSingleton<INetworkMessageBuilder, ProtoBufMessageBuilder>()
-                    .AddSingleton<IEventBus>(new EventBus(new EventBusConfiguration()
-                    {
-                        ThrowSubscriberException = true
-                    }))
-                    .AddSingleton(new DarkStarNetworkServerConfig()
-                    {
-                        Address = engineConfig.NetworkServer.Address,
-                        Port = engineConfig.NetworkServer.Port
-                    })
+                    .AddSingleton<IEventBus>(
+                        new EventBus(
+                            new EventBusConfiguration()
+                            {
+                                ThrowSubscriberException = true
+                            }
+                        )
+                    )
+                    .AddSingleton(
+                        new DarkStarNetworkServerConfig()
+                        {
+                            Address = engineConfig.NetworkServer.Address,
+                            Port = engineConfig.NetworkServer.Port
+                        }
+                    )
                     // Only for test
                     .AddSingleton(new DarkStarNetworkClientConfig())
                     .AddSingleton<IDarkStarNetworkClient, TcpNetworkClient>()
@@ -104,7 +110,8 @@ internal class Program
                     .RegisterScriptEngineFunctions()
                     .RegisterAiBehaviour()
                     .RegisterWorldObjectAndItems()
-                    .AddHostedService<DarkSunEngineHostedService>();
+                    .AddHostedService<DarkSunEngineHostedService>()
+                    .AddSignalR();
 
                 if (string.IsNullOrEmpty(Environment.GetEnvironmentVariable("DOCKER_CONTAINER")))
                 {
@@ -121,14 +128,19 @@ internal class Program
             .UseConsoleLifetime()
             .ConfigureWebHostDefaults(builder =>
             {
-                if (!engineConfig.HttpServer.Enabled)
-                {
-                    return;
-                }
+                    
+                
+                
 
                 Log.Logger.Information("Starting HTTP server - http root Directory is: {RootDirectory}", directoryConfig[DirectoryNameType.HttpRoot]);
                 builder.Configure(applicationBuilder =>
                 {
+                    applicationBuilder.UseEndpoints(
+                        routeBuilder =>
+                        {
+                            
+                        }
+                    );
                     applicationBuilder.ConfigureWebServerApp(directoryConfig[DirectoryNameType.HttpRoot]);
                 });
 

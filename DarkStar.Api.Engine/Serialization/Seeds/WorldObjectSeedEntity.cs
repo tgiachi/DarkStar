@@ -23,7 +23,7 @@ public class WorldObjectSeedEntity
     [Column]
     public string Description { get; set; } = null!;
     [Column(converter: typeof(TileTypeConverter))]
-    public TileType TileId { get; set; }
+    public int TileId { get; set; }
     [Column(converter: typeof(GameObjectTypeConverter))]
     public GameObjectType Type { get; set; }
 

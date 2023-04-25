@@ -30,7 +30,7 @@ public class PlayerObjectMessage
     [ProtoMember(2)]
     public string Name { get; set; } = null!;
     [ProtoMember(3)]
-    public TileType Tile { get; set; }
+    public int Tile { get; set; }
     [ProtoMember(4)]
     public int Level { get; set; }
     [ProtoMember(5)]

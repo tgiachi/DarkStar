@@ -15,7 +15,7 @@ using DarkStar.Api.World.Types.GameObjects;
 using DarkStar.Api.Engine.Serialization.Seeds;
 using DarkStar.Api.Engine.Interfaces.Services;
 using DarkStar.Engine.Services.Base;
-using DarkStar.Api.World.Types.Utils;
+
 using DarkStar.Api.Data.Config;
 using DarkStar.Api.Engine.Serialization;
 using DarkStar.Database.Entities.Races;
@@ -69,14 +69,15 @@ public class SeedService : BaseService<SeedService>, ISeedService
         await CheckSeedTemplateAsync<ItemObjectSeedEntity>();
         await CheckSeedTemplateAsync<WorldObjectSeedEntity>();
         await CheckSeedTemplateAsync<RaceObjectSeedEntity>();
-        await CheckSeedTemplateAsync(GetDefaultTileSetMap());
+        await CheckSeedTemplateAsync<TileSetMapSerializable>();
+       // await CheckSeedTemplateAsync(GetDefaultTileSetMap());
     }
 
-    private IEnumerable<TileSetMapSerializable> GetDefaultTileSetMap()
+    /*private IEnumerable<TileSetMapSerializable> GetDefaultTileSetMap()
     {
         return FastEnum.GetValues<TileType>().OrderBy(k => (short)k).Select(s =>
             new TileSetMapSerializable() { Type = s, Id = (short)s, IsBlocked = false });
-    }
+    }*/
 
     private Task CheckSeedDirectoriesAsync()
     {
@@ -153,11 +154,11 @@ public class SeedService : BaseService<SeedService>, ISeedService
             Intelligence = stat.Intelligence,
             Luck = stat.Luck,
             Strength = stat.Strength,
-            TileId = tileId.ParseTileType()
+            TileId = tileId
         });
     }
 
-    public void AddGameObjectToSeed(string name, string description, TileType tileType,
+    public void AddGameObjectToSeed(string name, string description, int tileType,
         GameObjectType gameObjectType)
     {
         _gameObjectSeed.Add(new GameObjectEntity()
@@ -241,8 +242,8 @@ public class SeedService : BaseService<SeedService>, ISeedService
             {
                 TileSetId = tileEntity.Id,
                 TileId = tile.Id,
-                TileType = tile.Type,
-                IsBlocked = tile.IsBlocked
+                //TileType = tile.Type,
+                //IsBlocked = tile.IsBlocked
             };
             await Engine.DatabaseService.InsertAsync(tileMapEntity);
         }

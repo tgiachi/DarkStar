@@ -67,14 +67,14 @@ public class PlayerService : BaseService<PlayerService>, IPlayerService
         return players;
     }
 
-    public async Task<PlayerEntity> CreatePlayerAsync(Guid accountId, string name, TileType tileId, Guid raceId,
+    public async Task<PlayerEntity> CreatePlayerAsync(Guid accountId, string name, int tileId, Guid raceId,
         BaseStatEntity stats)
     {
         var race = await Engine.DatabaseService.QueryAsSingleAsync<RaceEntity>(entity => entity.Id == raceId);
 
         var startingPoint = await Engine.WorldService.GetRandomCityStartingPointAsync();
 
-        var playerEntity = new PlayerEntity() { AccountId = accountId, RaceId = race.Id, Gold = InitialInventory.Gold, Name = name, MapId = startingPoint.mapId, X = startingPoint.position.X, Y = startingPoint.position.Y };
+        var playerEntity = new PlayerEntity() { AccountId = accountId, TileId = tileId, RaceId = race.Id, Gold = InitialInventory.Gold, Name = name, MapId = startingPoint.mapId, X = startingPoint.position.X, Y = startingPoint.position.Y };
         await Engine.DatabaseService.InsertAsync(playerEntity);
 
         var statEntity = new PlayerStatEntity()

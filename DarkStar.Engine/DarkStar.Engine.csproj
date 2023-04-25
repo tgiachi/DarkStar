@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <TargetFramework>net7.0</TargetFramework>
@@ -11,6 +11,8 @@
         <PackageReference Include="FluentScheduler" Version="5.5.1" />
         <PackageReference Include="FreeSql.Provider.PostgreSQL" Version="3.2.693" />
         <PackageReference Include="FreeSql.Provider.Sqlite" Version="3.2.693" />
+        <PackageReference Include="Microsoft.AspNetCore.SignalR.Common" Version="7.0.5" />
+        <PackageReference Include="Microsoft.AspNetCore.SignalR.Protocols.Json" Version="7.0.5" />
 
 
         <PackageReference Include="NLua" Version="1.6.2" />

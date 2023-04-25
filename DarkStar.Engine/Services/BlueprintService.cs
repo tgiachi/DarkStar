@@ -115,19 +115,9 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
                 {
                     try
                     {
-                        var tileType = FastEnum.Parse<TileType>(tile.Gid.ToString());
-                        if (tileType != TileType.Null)
-                        {
-                            bluePrintTemplate.Layers[layerType].Add(new BluePrintTemplatePoint(tileType, p.X, p.Y));
-                        }
-                        else
-                        {
-                            if (tile.Gid > 0)
-                            {
-                                Logger.LogWarning("Failed to parse tile type {TileType}", tile.Gid);
-                            }
-
-                        }
+                      
+                            bluePrintTemplate.Layers[layerType].Add(new BluePrintTemplatePoint(tile.Gid, p.X, p.Y));
+                       
                     }
                     catch (Exception ex)
                     {
@@ -153,7 +143,7 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
                     ? NpcAlignmentType.Good
                     : NpcAlignmentType.Good.RandomEnumValue(),
             Gold = npcType.ToString().ToLower().StartsWith("animal") ? 0 : RandomUtils.Range(1, 50) * level,
-            TileId = GetTileIdFromNpcType(subType),
+            TileId = 0,
             Type = npcType,
             SubType = subType
         };
@@ -247,7 +237,7 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
         return gameObject;
     }
 
-    private static TileType GetTileIdFromNpcType(NpcSubType npcType)
+    /*private static TileType GetTileIdFromNpcType(NpcSubType npcType)
     {
         return npcType switch
         {
@@ -259,5 +249,5 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
             NpcSubType.Horse => TileType.Animal_Dog_1.SearchType("animal_horse").RandomItem(),
             _ => TileType.Null
         };
-    }
+    }*/
 }
