@@ -10,7 +10,8 @@ public class MessageHub : Hub
 {
     public override Task OnConnectedAsync()
     {
-        
+
+
        return Task.CompletedTask;
     }
 
