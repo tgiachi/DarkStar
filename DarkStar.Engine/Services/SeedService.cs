@@ -170,7 +170,7 @@ public class SeedService : BaseService<SeedService>, ISeedService
     {
         Logger.LogInformation("Checking Seed Template for type: {GameObjectType}", typeof(TEntity).Name);
         var fileName = Path.Join(_directoriesConfig[DirectoryNameType.SeedTemplates],
-            $"{typeof(TEntity).Name.Replace("Entity", "").ToUnderscoreCase()}.csv");
+            $"{typeof(TEntity).Name.Replace("Entity", "").Replace("Serializable", "").ToUnderscoreCase()}.csv");
         if (!File.Exists(fileName))
         {
             if (defaultData == null)

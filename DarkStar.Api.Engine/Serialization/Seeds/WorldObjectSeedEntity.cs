@@ -24,7 +24,7 @@ public class WorldObjectSeedEntity
     public string Description { get; set; } = null!;
     [Column]
     public string TileName { get; set; }
-    //[Column(converter: typeof(GameObjectTypeConverter))]
+
     [Column]
     public string GameObjectName { get; set; }
 

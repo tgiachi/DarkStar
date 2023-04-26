@@ -17,9 +17,6 @@ public class TileSetMapSerializable
 {
     [Column]
     public int Id { get; set; }
-
-    /*[Column(converter: typeof(TileTypeConverter))]
-    public TileType Type { get; set; }*/
     [Column] public string Name { get; set; }
 
     [Column] public string Category { get; set; }
