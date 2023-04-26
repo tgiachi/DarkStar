@@ -190,10 +190,6 @@ public class PlayerService : BaseService<PlayerService>, IPlayerService
     private async Task<PlayerEntity> GetPlayerByIdAsync(Guid playerId)
     {
         var player = await Engine.DatabaseService.QueryAsSingleAsync<PlayerEntity>(entity => entity.Id == playerId);
-        if (player == null)
-        {
-            throw new Exception("Player not found");
-        }
-        return player;
+        return player ?? throw new Exception("Player not found");
     }
 }
