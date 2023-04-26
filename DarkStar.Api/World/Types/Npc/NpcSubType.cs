@@ -28,11 +28,14 @@ public enum NpcSubType : short
 [StructLayout(LayoutKind.Auto)]
 public struct NpcSubType
 {
-    public ushort Id { get; set; }
+    public short NpcTypeId { get; set; }
+
+    public short Id { get; set; }
     public string Name { get; set; }
 
-    public NpcSubType(ushort id, string name)
+    public NpcSubType(short npcTypeId, short id, string name)
     {
+        NpcTypeId = npcTypeId;
         Id = id;
         Name = name;
     }

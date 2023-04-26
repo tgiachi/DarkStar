@@ -15,11 +15,11 @@ namespace DarkStar.Api.World.Types.Npc;
 
 public struct NpcType
 {
-    public ushort Id { get; set; }
+    public short Id { get; set; }
 
     public string Name { get; set; }
 
-    public NpcType(ushort id, string name)
+    public NpcType(short id, string name)
     {
         Id = id;
         Name = name;

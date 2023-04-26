@@ -20,10 +20,10 @@ public struct GameObjectType
 {
    
 
-    public ushort Id { get; }
+    public short Id { get; }
     public string Name { get; }
 
-    public GameObjectType(ushort id, string name)
+    public GameObjectType(short id, string name)
     {
         Id = id;
         Name = name;

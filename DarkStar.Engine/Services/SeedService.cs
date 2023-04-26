@@ -70,13 +70,14 @@ public class SeedService : BaseService<SeedService>, ISeedService
     {
         Logger.LogInformation("Checking Seed Templates");
 
+        await CheckSeedTemplateAsync<GameObjectTypeSerializableEntity>();
+        await CheckSeedTemplateAsync<NpcTypeAndSubTypeSerializableEntity>();
         await CheckSeedTemplateAsync<ItemDropObjectSeedEntity>();
         await CheckSeedTemplateAsync<ItemObjectSeedEntity>();
         await CheckSeedTemplateAsync<WorldObjectSeedEntity>();
         await CheckSeedTemplateAsync<RaceObjectSeedEntity>();
         await CheckSeedTemplateAsync<TileSetMapSerializable>();
-        await CheckSeedTemplateAsync<GameObjectTypeSerializableEntity>();
-        await CheckSeedTemplateAsync<NpcTypeAndSubTypeSerializableEntity>();
+      
         // await CheckSeedTemplateAsync(GetDefaultTileSetMap());
     }
 
@@ -139,7 +140,16 @@ public class SeedService : BaseService<SeedService>, ISeedService
             {
                 _typeService.AddGameObjectType(gameObjectType.Name);
             }
-            
+        }
+
+        if (typeof(TEntity) == typeof(NpcTypeAndSubTypeSerializableEntity))
+        {
+            var npcTypes = await SeedCsvParser.Instance.ParseAsync<NpcTypeAndSubTypeSerializableEntity>(fileName);
+
+            foreach (var npcType in npcTypes)
+            {
+                _typeService.AddNpcSubType(npcType.NpcName, npcType.NpcSubTypeName);
+            }
         }
 
     }

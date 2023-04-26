@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DarkStar.Api.Attributes.Services;
 using DarkStar.Api.Engine.Interfaces.Services;
 using DarkStar.Api.World.Types.GameObjects;
+using DarkStar.Api.World.Types.Npc;
 using DarkStar.Api.World.Types.Tiles;
 using DarkStar.Engine.Services.Base;
 using Microsoft.Extensions.Logging;
@@ -22,12 +23,16 @@ public class TypeService : BaseService<TypeService>, ITypeService
     private readonly Dictionary<uint, Tile> _tilesById = new();
     private readonly Dictionary<string, Tile> _tilesByName = new();
     private readonly List<Tile> _tiles = new();
+    private readonly List<NpcType> _npcTypes = new();
+    private readonly List<NpcSubType> _npcSubTypes = new();
 
     private readonly List<GameObjectType> _gameObjectTypes = new();
-    private readonly Dictionary<ushort, string> _gameObjectTypesById = new();
-    private readonly Dictionary<ushort, string> _aiBehaviour = new();
-    private readonly Dictionary<ushort, string> _npcTypes = new();
-    private readonly Dictionary<ushort, string> _itemTypes = new();
+    private readonly Dictionary<short, string> _gameObjectTypesById = new();
+    private readonly Dictionary<short, string> _aiBehaviour = new();
+    private readonly Dictionary<short, string> _npcTypesById = new();
+
+    private readonly Dictionary<short, string> _npcSubTypesById = new();
+    private readonly Dictionary<short, string> _itemTypes = new();
 
 
 
@@ -71,14 +76,14 @@ public class TypeService : BaseService<TypeService>, ITypeService
 
     public GameObjectType AddGameObjectType(string name)
     {
-        var id = (ushort)_gameObjectTypes.Count;
+        var id = (short)_gameObjectTypes.Count;
         _gameObjectTypes.Add(new GameObjectType(id, name));
         _gameObjectTypesById.Add(id, name);
 
         return _gameObjectTypes.Last();
     }
 
-    public GameObjectType AddGameObjectType(ushort id, string name)
+    public GameObjectType AddGameObjectType(short id, string name)
     {
         if (id == -1)
         {
@@ -92,5 +97,59 @@ public class TypeService : BaseService<TypeService>, ITypeService
 
     public GameObjectType GetGameObjectType(string name) => _gameObjectTypes.First(t => t.Name == name);
 
-    public GameObjectType GetGameObjectType(ushort id) => _gameObjectTypes.First(t => t.Id == id);
+    public GameObjectType GetGameObjectType(short id) => _gameObjectTypes.First(t => t.Id == id);
+
+    public NpcType AddNpcType(string name)
+    {
+
+        var id = (short)_npcTypes.Count;
+        _npcTypesById.Add(id, name);
+        _npcTypes.Add(new NpcType(id, name));
+        return _npcTypes.Last();
+
+    }
+
+    public NpcType AddNpcType(short id, string name)
+    {
+        if (id == -1)
+        {
+            return AddNpcType(name);
+        }
+
+        _npcTypesById.Add(id, name);
+        _npcTypes.Add(new NpcType(id, name));
+        return _npcTypes.Last();
+    }
+
+    public NpcSubType AddNpcSubType(string npcType, string name)
+    {
+        var type = GetNpcType(npcType);
+        if (type == null)
+        {
+            AddNpcType(npcType);
+        }
+        var id = (short)_npcSubTypes.Count;
+        _npcSubTypesById.Add(id, name);
+        _npcSubTypes.Add(new NpcSubType(type.Value.Id, id, name));
+        return _npcSubTypes.Last();
+
+    }
+
+    public NpcSubType AddNpcSubType(string npcType, short id, string name)
+    {
+        if (id == -1)
+        {
+            return AddNpcSubType(npcType, name);
+        }
+        var type = GetNpcType(npcType);
+        if (type == null)
+        {
+            AddNpcType(npcType);
+        }
+        _npcSubTypesById.Add(id, name);
+        _npcSubTypes.Add(new NpcSubType(type.Value.Id, id, name));
+        return _npcSubTypes.Last();
+
+    }
+    public NpcType? GetNpcType(string name) => _npcTypes.FirstOrDefault(t => t.Name.ToUpper() == name.ToUpper());
 }

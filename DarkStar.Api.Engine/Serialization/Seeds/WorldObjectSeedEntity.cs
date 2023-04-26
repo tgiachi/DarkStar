@@ -25,7 +25,7 @@ public class WorldObjectSeedEntity
     [Column(converter: typeof(TileTypeConverter))]
     public int TileId { get; set; }
     //[Column(converter: typeof(GameObjectTypeConverter))]
-    public ushort Type { get; set; }
+    public short Type { get; set; }
 
     [Column(converter: typeof(ExtraDataConverter))]
     public Dictionary<string, string> Data { get; set; } = null!;

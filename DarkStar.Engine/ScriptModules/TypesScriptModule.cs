@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DarkStar.Api.Engine.Interfaces.Services;
 using DarkStar.Api.World.Types.GameObjects;
+using DarkStar.Api.World.Types.Npc;
 using DarkStar.Engine.Attributes.ScriptEngine;
 using Microsoft.Extensions.Logging;
 
@@ -25,4 +26,7 @@ public class TypesScriptModule
 
     [ScriptFunction("add_game_object_type")]
     public GameObjectType AddGameObjectType(string type) => _typeService.AddGameObjectType(type);
+
+    [ScriptFunction("add_npc_type")]
+    public NpcSubType AddNpcType(string type, string subType) => _typeService.AddNpcSubType( type, subType);
 }
