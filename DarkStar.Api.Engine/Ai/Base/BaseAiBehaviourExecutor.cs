@@ -50,7 +50,7 @@ public class BaseAiBehaviourExecutor : IAiBehaviourExecutor
 
     public ValueTask InitializeAsync(string mapId, NpcEntity npc, NpcGameObject npcGameObject)
     {
-        Logger.LogDebug("Initializing {Name} AI Behaviour for {Type} {SubType} {Alignment} ID: {Id}", GetType().Name, npc.Type, npc.SubType, npc.Alignment, npcGameObject.ID);
+        Logger.LogDebug("Initializing {Name} AI Behaviour for {GameObjectType} {SubType} {Alignment} ID: {Id}", GetType().Name, npc.Type, npc.SubType, npc.Alignment, npcGameObject.ID);
         MapId = mapId;
         NpcGameObject = npcGameObject;
         NpcEntity = npc;

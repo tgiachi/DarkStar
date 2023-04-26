@@ -135,12 +135,12 @@ internal class Program
                 Log.Logger.Information("Starting HTTP server - http root Directory is: {RootDirectory}", directoryConfig[DirectoryNameType.HttpRoot]);
                 builder.Configure(applicationBuilder =>
                 {
-                    applicationBuilder.UseEndpoints(
-                        routeBuilder =>
-                        {
+                    //applicationBuilder.UseEndpoints(
+                    //    routeBuilder =>
+                    //    {
                             
-                        }
-                    );
+                    //    }
+                    //);
                     applicationBuilder.ConfigureWebServerApp(directoryConfig[DirectoryNameType.HttpRoot]);
                 });
 
@@ -177,7 +177,7 @@ internal class Program
             }
 
             directoriesConfig[type] = Path.Join(directoriesConfig[DirectoryNameType.Root], type.ToString());
-            Log.Logger.Debug("{Type} directory is: {Directory}", type, directoriesConfig[type]);
+            Log.Logger.Debug("{GameObjectType} directory is: {Directory}", type, directoriesConfig[type]);
             Directory.CreateDirectory(directoriesConfig[type]);
         }
 

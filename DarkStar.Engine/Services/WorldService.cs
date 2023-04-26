@@ -291,7 +291,7 @@ public class WorldService : BaseService<IWorldService>, IWorldService
 
     private async Task FillCityMapAsync(string mapId)
     {
-        foreach (var _ in Enumerable.Range(1, 5))
+        /*foreach (var _ in Enumerable.Range(1, 5))
         {
             var cat = await Engine.BlueprintService.GenerateNpcGameObjectAsync(
                 GetRandomWalkablePosition(mapId),
@@ -317,7 +317,7 @@ public class WorldService : BaseService<IWorldService>, IWorldService
             var mushroom = await Engine.BlueprintService.GenerateWorldGameObjectAsync(
                 GameObjectType.Prop_Mushroom, GetRandomWalkablePosition(mapId));
             AddEntity(mapId, mushroom);
-        }
+        }*/
     }
 
     private void HandleMapEvents(string id, Map map)

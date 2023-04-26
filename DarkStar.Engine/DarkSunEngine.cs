@@ -98,7 +98,7 @@ public class DarkSunEngine : IDarkSunEngine
         foreach (var messageListenerType in messageListenersTypes)
         {
             var attribute = messageListenerType.GetCustomAttribute<NetworkMessageListenerAttribute>()!;
-            _logger.LogDebug("Adding message listener {Type} from message type: {MessageType}",
+            _logger.LogDebug("Adding message listener {GameObjectType} from message type: {MessageType}",
                 messageListenerType.Name, attribute.MessageType);
             if (_container.GetService(messageListenerType) is INetworkServerMessageListener service)
             {

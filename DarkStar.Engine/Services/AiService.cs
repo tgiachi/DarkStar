@@ -22,7 +22,7 @@ public class AiService : BaseService<AiService>, IAiService
     private readonly SemaphoreSlim _aiExecutorsLock = new(1);
     private readonly Dictionary<uint, IAiBehaviourExecutor> _aiExecutors = new();
 
-    private readonly List<(NpcType, NpcSubType, Type)> _aiBehaviourTypes =
+    private readonly List<(ushort npcType, ushort npcSubType, Type)> _aiBehaviourTypes =
         new();
 
     public AiService(ILogger<AiService> logger, IServiceProvider serviceProvider) : base(logger)
@@ -68,7 +68,7 @@ public class AiService : BaseService<AiService>, IAiService
         }
         catch (Exception e)
         {
-            Logger.LogError(e, "Failed to add ai to npc {Type}: {Error}", @event.ObjectId, e);
+            Logger.LogError(e, "Failed to add ai to npc {GameObjectType}: {Error}", @event.ObjectId, e);
         }
 
     }
@@ -92,13 +92,13 @@ public class AiService : BaseService<AiService>, IAiService
 
             if (_serviceProvider.GetService(type) is not IAiBehaviourExecutor behaviour)
             {
-                Logger.LogError("Failed to create instance of {Type}, have you missing to implement IAiBehaviourExecutor interface?", type.Name);
+                Logger.LogError("Failed to create instance of {GameObjectType}, have you missing to implement IAiBehaviourExecutor interface?", type.Name);
                 continue;
             }
 
-            Logger.LogInformation("Found behaviour {Type} for {NpcType} {NpcSubType}", type.Name, attr!.Type, attr.SubType);
+            Logger.LogInformation("Found behaviour {GameObjectType} for {NpcType} {NpcSubType}", type.Name, attr!.NpcType, attr.NpcSubType);
 
-            _aiBehaviourTypes.Add((attr.Type, attr.SubType, type));
+            _aiBehaviourTypes.Add((attr.NpcType, attr.NpcSubType, type));
             GC.SuppressFinalize(behaviour);
 
         }

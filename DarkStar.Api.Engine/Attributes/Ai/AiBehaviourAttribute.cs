@@ -6,13 +6,13 @@ namespace DarkStar.Api.Engine.Attributes.Ai;
 [AttributeUsage(AttributeTargets.Class)]
 public class AiBehaviourAttribute : Attribute
 {
-    public NpcType Type { get; }
+    public ushort NpcType { get; }
 
-    public NpcSubType SubType { get; }
+    public ushort NpcSubType { get; }
 
-    public AiBehaviourAttribute(NpcType type, NpcSubType subType)
+    public AiBehaviourAttribute(ushort npcType, ushort npcSubType)
     {
-        Type = type;
-        SubType = subType;
+        NpcType = npcType;
+        NpcSubType = npcSubType;
     }
 }

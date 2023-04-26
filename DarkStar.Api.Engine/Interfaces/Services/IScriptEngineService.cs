@@ -10,6 +10,7 @@ namespace DarkStar.Api.Engine.Interfaces.Services;
 
 public interface IScriptEngineService : IDarkSunEngineService
 {
-
     ScriptEngineExecutionResult ExecuteCommand(string command);
+
+    void AddVariable(string name, object value);
 }

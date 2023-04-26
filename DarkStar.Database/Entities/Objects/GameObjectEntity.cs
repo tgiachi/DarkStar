@@ -16,6 +16,6 @@ public class GameObjectEntity : BaseEntity
     public string Name { get; set; } = null!;
     public string Description { get; set; } = null!;
     public int TileId { get; set; }
-    public GameObjectType Type { get; set; }
+    public ushort GameObjectType { get; set; }
     public string Data { get; set; } = null!;
 }

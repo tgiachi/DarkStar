@@ -20,12 +20,12 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
     private readonly Lua _scriptEngine;
     private readonly DirectoriesConfig _directoriesConfig;
     private readonly IServiceProvider _container;
-    private readonly ITileService _tileService;
+    private readonly ITypeService _typeService;
 
-    public ScriptEngineService(ILogger<IScriptEngineService> logger, DirectoriesConfig directoriesConfig, ITileService tileService,
+    public ScriptEngineService(ILogger<IScriptEngineService> logger, DirectoriesConfig directoriesConfig, ITypeService typeService,
         IServiceProvider container) : base(logger)
     {
-        _tileService = tileService;
+        _typeService = typeService;
         _container = container;
         _directoriesConfig = directoriesConfig;
         _scriptEngine = new Lua() { UseTraceback = true };
@@ -64,7 +64,7 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
         await ScanScriptModulesAsync();
 
 
-        foreach (var tileType in _tileService.Tiles)
+        foreach (var tileType in _typeService.Tiles)
         {
             _scriptEngine[tileType.FullName] = tileType.Id;
         }
@@ -145,5 +145,10 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
         {
             return new ScriptEngineExecutionResult() { Exception = ex };
         }
+    }
+
+    public void AddVariable(string name, object value)
+    {
+        _scriptEngine[name] = value;
     }
 }

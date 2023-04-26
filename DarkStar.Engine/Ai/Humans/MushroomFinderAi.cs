@@ -20,7 +20,7 @@ using Microsoft.Extensions.Logging;
 
 namespace DarkStar.Engine.Ai.Humans;
 
-[AiBehaviour(NpcType.Human, NpcSubType.MushroomFinder)]
+//[AiBehaviour(NpcType.Human, NpcSubType.MushroomFinder)]
 public class MushroomFinderAi : BaseAiBehaviourExecutor
 {
     private int _currentStep = 0;
@@ -64,7 +64,7 @@ public class MushroomFinderAi : BaseAiBehaviourExecutor
             return;
         }
 
-        var mushrooms = (await GetEntitiesInRangeAsync<WorldGameObject>(MapLayer.Objects)).FirstOrDefault(s => s.Type == GameObjectType.Prop_Mushroom);
+        WorldGameObject mushrooms = null; //(await GetEntitiesInRangeAsync<WorldGameObject>(MapLayer.Objects)).FirstOrDefault(s => s.Type == GameObjectType.Prop_Mushroom);
 
         if (mushrooms == null)
         {

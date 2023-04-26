@@ -85,7 +85,7 @@ public class NamesService : BaseService<NamesService>, INamesService
         }
 
         using var httpClient = new HttpClient();
-        Logger.LogInformation("Downloading animals {Sex} {Type} ", sex, animalType);
+        Logger.LogInformation("Downloading animals {Sex} {GameObjectType} ", sex, animalType);
         for (var i = 0; i < count; i++)
         {
             var json = await httpClient.GetStringAsync(link);
@@ -93,7 +93,7 @@ public class NamesService : BaseService<NamesService>, INamesService
             fullList.AddRange(list!.data.Select(s => s.name));
         }
 
-        Logger.LogInformation("Downloading animals {Sex} {Type} OK", sex, animalType);
+        Logger.LogInformation("Downloading animals {Sex} {GameObjectType} OK", sex, animalType);
 
         await File.WriteAllTextAsync(Path.Join(_cacheDirectory, fileName), JsonSerializer.Serialize(fullList));
 

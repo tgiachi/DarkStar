@@ -16,8 +16,8 @@ public class NpcEntity : BaseEntity
     public string Name { get; set; } = null!;
     public int TileId { get; set; }
     public NpcAlignmentType Alignment { get; set; }
-    public NpcType Type { get; set; }
-    public NpcSubType SubType { get; set; }
+    public ushort Type { get; set; }
+    public ushort SubType { get; set; }
     public List<NpcInventoryEntity> Inventory { get; set; } = null!;
     public List<NpcEquipmentEntity> Equipment { get; set; } = null!;
     public Guid StatsId { get; set; }

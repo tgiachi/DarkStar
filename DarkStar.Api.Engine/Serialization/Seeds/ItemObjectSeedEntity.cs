@@ -29,9 +29,9 @@ public class ItemObjectSeedEntity
     [Column(converter: typeof(TileTypeConverter))]
     public int TileType { get; set; }
 
-    [Column(converter: typeof(ItemCategoryTypeConverter))]
+    //[Column(converter: typeof(ItemCategoryTypeConverter))]
     public ItemCategoryType Category { get; set; }
-    [Column(converter: typeof(ItemTypeConverter))]
+    //[Column(converter: typeof(ItemTypeConverter))]
     public ItemType Type { get; set; }
     [Column(converter: typeof(EquipLocationTypeConverter))]
     public EquipLocationType EquipLocation { get; set; }

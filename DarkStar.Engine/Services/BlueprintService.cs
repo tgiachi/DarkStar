@@ -144,8 +144,8 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
                     : NpcAlignmentType.Good.RandomEnumValue(),
             Gold = npcType.ToString().ToLower().StartsWith("animal") ? 0 : RandomUtils.Range(1, 50) * level,
             TileId = 0,
-            Type = npcType,
-            SubType = subType
+            Type = npcType.Id,
+            SubType = subType.Id
         };
 
         if (npcType.ToString().ToLower().StartsWith("animal"))
@@ -210,7 +210,7 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
     public async Task<GameObjectEntity> GenerateWorldGameObjectAsync(GameObjectType type)
     {
         // First of all, i search if gameObject exists
-        var entities = await Engine.DatabaseService.QueryAsListAsync<GameObjectEntity>(objectEntity => objectEntity.Type == type);
+        var entities = await Engine.DatabaseService.QueryAsListAsync<GameObjectEntity>(objectEntity => objectEntity.GameObjectType == type.Id);
         if (!entities.Any())
         {
             throw new Exception($"Can't find game object type: {type}!");
@@ -230,7 +230,7 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
             ObjectId = entity.Id,
             IsTransparent = false,
             IsWalkable = false,
-            Type = entity.Type,
+            Type = entity.GameObjectType,
             Tile = entity.TileId
         };
 

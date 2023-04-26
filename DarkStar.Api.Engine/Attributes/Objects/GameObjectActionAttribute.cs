@@ -6,10 +6,7 @@ namespace DarkStar.Api.Engine.Attributes.Objects;
 [AttributeUsage(AttributeTargets.Class)]
 public class GameObjectActionAttribute : Attribute
 {
-    public GameObjectType Type { get; set; }
+    public string GameObjectType { get; set; }
 
-    public GameObjectActionAttribute(GameObjectType type)
-    {
-        Type = type;
-    }
+    public GameObjectActionAttribute(string type) => GameObjectType = type;
 }
