@@ -29,4 +29,6 @@ public struct NpcType
     {
 
     }
+
+    public override string ToString() => Name;
 }

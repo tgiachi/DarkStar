@@ -10,7 +10,7 @@ using Microsoft.Extensions.Logging;
 namespace DarkStar.Engine.Ai.Animals;
 
 
-//[AiBehaviour(NpcType.Animal, NpcSubType.Cat)]
+[AiBehaviour("Animal", "Cat")]
 public class CatAi : BaseAiBehaviourExecutor
 {
     public CatAi(ILogger<CatAi> logger, IDarkSunEngine engine) : base(logger, engine)

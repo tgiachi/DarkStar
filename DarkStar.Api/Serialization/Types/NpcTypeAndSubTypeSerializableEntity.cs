@@ -11,7 +11,7 @@ namespace DarkStar.Api.Serialization.Types;
 
 [HasHeaderRecord(true)]
 [Delimiter(";")]
-[SeedObject("npcTypeSubTypes")]
+[SeedObject("NpcTypeSubTypes")]
 public class NpcTypeAndSubTypeSerializableEntity 
 {
     [Column]

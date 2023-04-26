@@ -20,7 +20,7 @@ using Microsoft.Extensions.Logging;
 
 namespace DarkStar.Engine.Ai.Humans;
 
-//[AiBehaviour(NpcType.Human, NpcSubType.MushroomFinder)]
+[AiBehaviour("Human", "Mushroom_Finder")]
 public class MushroomFinderAi : BaseAiBehaviourExecutor
 {
     private int _currentStep = 0;

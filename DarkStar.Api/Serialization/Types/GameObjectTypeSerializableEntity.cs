@@ -11,12 +11,11 @@ namespace DarkStar.Api.Serialization.Types;
 
 [HasHeaderRecord(true)]
 [Delimiter(";")]
-[SeedObject("gameObjectTypes")]
+[SeedObject("GameObjectTypes")]
 public class GameObjectTypeSerializableEntity
 {
-
     [Column]
-    public ushort Id { get; set; }
+    public short Id { get; set; }
 
     [Column(converter: typeof(ToUpperCaseConverter))]
     public string Name { get; set; }

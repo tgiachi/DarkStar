@@ -17,8 +17,9 @@ namespace DarkStar.Engine.Services;
 public class TypeService : BaseService<TypeService>, ITypeService
 {
     public List<Tile> Tiles => _tiles;
+    public List<NpcType> NpcTypes  => _npcTypes;
+    public List<NpcSubType> NpcSubTypes => _npcSubTypes;
     public List<GameObjectType> GameObjectTypes => _gameObjectTypes;
-
 
     private readonly Dictionary<uint, Tile> _tilesById = new();
     private readonly Dictionary<string, Tile> _tilesByName = new();
@@ -101,12 +102,10 @@ public class TypeService : BaseService<TypeService>, ITypeService
 
     public NpcType AddNpcType(string name)
     {
-
         var id = (short)_npcTypes.Count;
         _npcTypesById.Add(id, name);
         _npcTypes.Add(new NpcType(id, name));
         return _npcTypes.Last();
-
     }
 
     public NpcType AddNpcType(short id, string name)
@@ -124,10 +123,11 @@ public class TypeService : BaseService<TypeService>, ITypeService
     public NpcSubType AddNpcSubType(string npcType, string name)
     {
         var type = GetNpcType(npcType);
-        if (type == null)
+        if (type.Value.Name == null)
         {
             AddNpcType(npcType);
         }
+        type = GetNpcType(npcType);
         var id = (short)_npcSubTypes.Count;
         _npcSubTypesById.Add(id, name);
         _npcSubTypes.Add(new NpcSubType(type.Value.Id, id, name));
@@ -151,5 +151,8 @@ public class TypeService : BaseService<TypeService>, ITypeService
         return _npcSubTypes.Last();
 
     }
+
+    public NpcSubType GetNpcSubType(string name) => _npcSubTypes.First(t => t.Name.ToUpper() == name.ToUpper());
+
     public NpcType? GetNpcType(string name) => _npcTypes.FirstOrDefault(t => t.Name.ToUpper() == name.ToUpper());
 }

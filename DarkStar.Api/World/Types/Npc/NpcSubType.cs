@@ -44,4 +44,6 @@ public struct NpcSubType
     {
 
     }
+
+    public override string ToString() => Name;
 }

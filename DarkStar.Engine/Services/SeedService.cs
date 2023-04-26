@@ -58,12 +58,13 @@ public class SeedService : BaseService<SeedService>, ISeedService
     private async Task LoadCsvSeedsAsync()
     {
         Logger.LogInformation("Loading seeds");
+        await LoadSeedAsync<GameObjectTypeSerializableEntity>();
+        await LoadSeedAsync<NpcTypeAndSubTypeSerializableEntity>();
         await LoadSeedAsync<WorldObjectSeedEntity>();
         await LoadSeedAsync<RaceObjectSeedEntity>();
         await LoadSeedAsync<ItemObjectSeedEntity>();
         await LoadSeedAsync<ItemDropObjectSeedEntity>();
-        await LoadSeedAsync<GameObjectTypeSerializableEntity>();
-        await LoadSeedAsync<NpcTypeAndSubTypeSerializableEntity>();
+       
     }
 
     private async Task CheckSeedTemplatesAsync()
@@ -113,7 +114,6 @@ public class SeedService : BaseService<SeedService>, ISeedService
         {
             await LoadSeedFileAsync<TEntity>(file);
         }
-
 
     }
 

@@ -17,6 +17,9 @@ public interface ITypeService : IDarkSunEngineService
     List<Tile> SearchTiles(string name, string? category, string? subCategory);
     List<Tile> Tiles { get; }
 
+    List<NpcType> NpcTypes { get; }
+    List<NpcSubType> NpcSubTypes { get; }
+
     List<GameObjectType> GameObjectTypes { get; }
     GameObjectType AddGameObjectType(string name);
     GameObjectType AddGameObjectType(short id, string name);
@@ -27,6 +30,7 @@ public interface ITypeService : IDarkSunEngineService
     NpcType AddNpcType(short id, string name);
     NpcSubType AddNpcSubType(string npcType, string name);
     NpcSubType AddNpcSubType(string npcType, short id, string name);
+    NpcSubType GetNpcSubType(string name);
     NpcType? GetNpcType(string name);
 
 }

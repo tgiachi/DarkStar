@@ -236,18 +236,4 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
 
         return gameObject;
     }
-
-    /*private static TileType GetTileIdFromNpcType(NpcSubType npcType)
-    {
-        return npcType switch
-        {
-            NpcSubType.Cat => TileType.Animal_Cat_1.SearchType("animal_cat").RandomItem(),
-            NpcSubType.Dog => TileType.Animal_Dog_1.SearchType("animal_dog").RandomItem(),
-            NpcSubType.Human => TileType.Animal_Dog_1.SearchType("human").RandomItem(),
-            NpcSubType.Cow => TileType.Animal_Cow_1.SearchType("animal_cow").RandomItem(),
-            NpcSubType.MushroomFinder => TileType.Animal_Dog_1.SearchType("human").RandomItem(),
-            NpcSubType.Horse => TileType.Animal_Dog_1.SearchType("animal_horse").RandomItem(),
-            _ => TileType.Null
-        };
-    }*/
 }

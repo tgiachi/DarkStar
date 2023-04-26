@@ -15,19 +15,21 @@ using Microsoft.Extensions.Logging;
 
 namespace DarkStar.Engine.Services;
 
-[DarkStarEngineService(nameof(AiService), 5)]
+[DarkStarEngineService(nameof(AiService), 9)]
 public class AiService : BaseService<AiService>, IAiService
 {
     private readonly IServiceProvider _serviceProvider;
+    private readonly ITypeService _typeService;
     private readonly SemaphoreSlim _aiExecutorsLock = new(1);
     private readonly Dictionary<uint, IAiBehaviourExecutor> _aiExecutors = new();
 
-    private readonly List<(ushort npcType, ushort npcSubType, Type)> _aiBehaviourTypes =
+    private readonly List<(short npcType, short npcSubType, Type)> _aiBehaviourTypes =
         new();
 
-    public AiService(ILogger<AiService> logger, IServiceProvider serviceProvider) : base(logger)
+    public AiService(ILogger<AiService> logger, IServiceProvider serviceProvider, ITypeService typeService) : base(logger)
     {
         _serviceProvider = serviceProvider;
+        _typeService = typeService;
     }
 
     protected override async ValueTask<bool> StartAsync()
@@ -97,8 +99,13 @@ public class AiService : BaseService<AiService>, IAiService
             }
 
             Logger.LogInformation("Found behaviour {GameObjectType} for {NpcType} {NpcSubType}", type.Name, attr!.NpcType, attr.NpcSubType);
+            var npcType = _typeService.GetNpcType(attr.NpcType);
+            var npcSubType = _typeService.GetNpcSubType(attr.NpcSubType);
 
-            _aiBehaviourTypes.Add((attr.NpcType, attr.NpcSubType, type));
+            
+
+            _aiBehaviourTypes.Add((npcType.Value.Id, npcSubType.Id, type));
+
             GC.SuppressFinalize(behaviour);
 
         }
