@@ -67,7 +67,7 @@ public class PlayerService : BaseService<PlayerService>, IPlayerService
         return players;
     }
 
-    public async Task<PlayerEntity> CreatePlayerAsync(Guid accountId, string name, int tileId, Guid raceId,
+    public async Task<PlayerEntity> CreatePlayerAsync(Guid accountId, string name, uint tileId, Guid raceId,
         BaseStatEntity stats)
     {
         var race = await Engine.DatabaseService.QueryAsSingleAsync<RaceEntity>(entity => entity.Id == raceId);

@@ -231,7 +231,7 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
             IsTransparent = false,
             IsWalkable = false,
             Type = entity.GameObjectType,
-            Tile = entity.TileId
+            Tile =entity.TileId
         };
 
         return gameObject;

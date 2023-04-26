@@ -16,7 +16,7 @@ public class MapEntityNetworkObject
     [ProtoMember(2)]
     public Guid ObjectId { get; set; }
     [ProtoMember(3)]
-    public int TileType { get; set; }
+    public uint TileType { get; set; }
     [ProtoMember(4)]
     public PointPosition Position { get; set; }
 
@@ -24,7 +24,7 @@ public class MapEntityNetworkObject
     {
     }
 
-    public MapEntityNetworkObject(int id, Guid objectId, int tileType, PointPosition position)
+    public MapEntityNetworkObject(int id, Guid objectId, uint tileType, PointPosition position)
     {
         Id = id;
         ObjectId = objectId;

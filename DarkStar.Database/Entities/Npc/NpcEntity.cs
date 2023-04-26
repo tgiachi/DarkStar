@@ -14,7 +14,7 @@ namespace DarkStar.Database.Entities.Npc;
 public class NpcEntity : BaseEntity
 {
     public string Name { get; set; } = null!;
-    public int TileId { get; set; }
+    public uint TileId { get; set; }
     public NpcAlignmentType Alignment { get; set; }
     public short Type { get; set; }
     public short SubType { get; set; }

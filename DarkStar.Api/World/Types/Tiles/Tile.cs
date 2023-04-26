@@ -15,10 +15,10 @@ public struct Tile
     public string Name { get; set; }
     public string Category { get; set; }
     public string SubCategory { get; set; }
-    public string IsTransparent { get; set; }
+    public bool IsTransparent { get; set; }
     public string? Tag { get; set; }
 
-    public Tile(string name, int id, string category, string subCategory, string isTransparent, string? tag)
+    public Tile(string name, int id, string category, string subCategory, bool isTransparent, string? tag)
     {
         Name = name;
         Id = (uint)id;

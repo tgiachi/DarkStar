@@ -16,6 +16,8 @@ namespace DarkStar.Engine.Services;
 [DarkStarEngineService(nameof(TypeService), 1)]
 public class TypeService : BaseService<TypeService>, ITypeService
 {
+  
+
     public List<Tile> Tiles => _tiles;
     public List<NpcType> NpcTypes  => _npcTypes;
     public List<NpcSubType> NpcSubTypes => _npcSubTypes;
@@ -64,7 +66,7 @@ public class TypeService : BaseService<TypeService>, ITypeService
 
     }
 
-
+    public Tile SearchTile(string name, string? category, string? subCategory) => SearchTiles(name, category, subCategory).First();
 
 
     public void AddTile(Tile tile)
@@ -99,6 +101,7 @@ public class TypeService : BaseService<TypeService>, ITypeService
     public GameObjectType GetGameObjectType(string name) => _gameObjectTypes.First(t => t.Name == name);
 
     public GameObjectType GetGameObjectType(short id) => _gameObjectTypes.First(t => t.Id == id);
+    public GameObjectType SearchGameObject(string name) => _gameObjectTypes.First(t => t.Name.Contains(name, StringComparison.OrdinalIgnoreCase));
 
     public NpcType AddNpcType(string name)
     {

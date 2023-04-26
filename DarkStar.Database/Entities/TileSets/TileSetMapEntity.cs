@@ -17,5 +17,5 @@ public class TileSetMapEntity : BaseEntity
     public int TileId { get; set; }
     public int TileType { get; set; }
 
-    public bool IsBlocked { get; set; }
+    public bool IsTransparent { get; set; }
 }

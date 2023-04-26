@@ -60,6 +60,7 @@ public class SeedService : BaseService<SeedService>, ISeedService
         Logger.LogInformation("Loading seeds");
         await LoadSeedAsync<GameObjectTypeSerializableEntity>();
         await LoadSeedAsync<NpcTypeAndSubTypeSerializableEntity>();
+        await LoadSeedAsync<TileSetMapSerializable>();
         await LoadSeedAsync<WorldObjectSeedEntity>();
         await LoadSeedAsync<RaceObjectSeedEntity>();
         await LoadSeedAsync<ItemObjectSeedEntity>();
@@ -85,7 +86,7 @@ public class SeedService : BaseService<SeedService>, ISeedService
     /*private IEnumerable<TileSetMapSerializable> GetDefaultTileSetMap()
     {
         return FastEnum.GetValues<TileType>().OrderBy(k => (short)k).Select(s =>
-            new TileSetMapSerializable() { GameObjectType = s, Id = (short)s, IsBlocked = false });
+            new TileSetMapSerializable() { GameObjectType = s, Id = (short)s, IsTransparent = false });
     }*/
 
     private Task CheckSeedDirectoriesAsync()
@@ -126,8 +127,8 @@ public class SeedService : BaseService<SeedService>, ISeedService
             {
                 Name = go.Name,
                 Description = go.Description,
-                TileId = go.TileId,
-                GameObjectType = go.Type,
+                TileId = _typeService.SearchTile(go.TileName, null, null)!.Id,
+                GameObjectType = _typeService.SearchGameObject(go.GameObjectName)!.Id,
                 Data = JsonSerializer.Serialize(go.Data)
             }));
         }
@@ -149,6 +150,16 @@ public class SeedService : BaseService<SeedService>, ISeedService
             foreach (var npcType in npcTypes)
             {
                 _typeService.AddNpcSubType(npcType.NpcName, npcType.NpcSubTypeName);
+            }
+        }
+
+        if (typeof(TEntity) == typeof(TileSetMapSerializable))
+        {
+            var tiles = await SeedCsvParser.Instance.ParseAsync<TileSetMapSerializable>(fileName);
+
+            foreach (var tile in tiles)
+            {
+                _typeService.AddTile(new Tile(tile.Name, tile.Id, tile.Category, tile.SubCategory, tile.IsTransparent,string.IsNullOrEmpty(tile.Tag) ? null : tile.Tag));
             }
         }
 
@@ -193,7 +204,7 @@ public class SeedService : BaseService<SeedService>, ISeedService
         {
             Name = name,
             Description = description,
-            TileId = tileType,
+            TileId = (uint)tileType,
             GameObjectType = gameObjectType.Id
         });
     }
@@ -271,7 +282,7 @@ public class SeedService : BaseService<SeedService>, ISeedService
                 TileSetId = tileEntity.Id,
                 TileId = tile.Id,
                 //TileType = tile.GameObjectType,
-                //IsBlocked = tile.IsBlocked
+                //IsTransparent = tile.IsTransparent
             };
             await Engine.DatabaseService.InsertAsync(tileMapEntity);
         }

@@ -375,7 +375,7 @@ public class WorldService : BaseService<IWorldService>, IWorldService
             .FirstOrDefault(s => s.ObjectId == playerId);
     }
 
-    public bool AddPlayerOnMap(string mapId, Guid playerId, Guid networkSessionId, PointPosition position, int tile)
+    public bool AddPlayerOnMap(string mapId, Guid playerId, Guid networkSessionId, PointPosition position, uint tile)
     {
         var map = _maps[mapId].Item1;
 

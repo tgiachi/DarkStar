@@ -22,10 +22,11 @@ public class WorldObjectSeedEntity
     public string Name { get; set; } = null!;
     [Column]
     public string Description { get; set; } = null!;
-    [Column(converter: typeof(TileTypeConverter))]
-    public int TileId { get; set; }
+    [Column]
+    public string TileName { get; set; }
     //[Column(converter: typeof(GameObjectTypeConverter))]
-    public short Type { get; set; }
+    [Column]
+    public string GameObjectName { get; set; }
 
     [Column(converter: typeof(ExtraDataConverter))]
     public Dictionary<string, string> Data { get; set; } = null!;

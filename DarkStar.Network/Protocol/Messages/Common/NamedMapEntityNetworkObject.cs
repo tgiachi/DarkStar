@@ -19,5 +19,5 @@ public class NamedMapEntityNetworkObject : MapEntityNetworkObject
     {
     }
 
-    public NamedMapEntityNetworkObject(int id, Guid objectId, int tileType, PointPosition position, string name) : base(id, objectId, tileType, position) => Name = name;
+    public NamedMapEntityNetworkObject(int id, Guid objectId, uint tileType, PointPosition position, string name) : base(id, objectId, tileType, position) => Name = name;
 }

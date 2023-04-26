@@ -17,7 +17,7 @@ public class LayerObjectSerialization
     [ProtoMember(1)]
     public Guid ObjectId { get; set; }
     [ProtoMember(2)]
-    public int Tile { get; set; }
+    public uint Tile { get; set; }
     [ProtoMember(3)]
     public MapLayer Type { get; set; }
     [ProtoMember(4)]

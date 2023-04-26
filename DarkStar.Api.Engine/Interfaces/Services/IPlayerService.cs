@@ -22,7 +22,7 @@ public interface IPlayerService : IDarkSunEngineService
     void RemoveSession(Guid networkSessionId);
     PlayerSession GetSession(Guid networkSessionId);
     Task<List<PlayerEntity>> GetPlayersByAccountIdAsync(Guid accountId);
-    Task<PlayerEntity> CreatePlayerAsync(Guid accountId, string name, int tileId, Guid raceId, BaseStatEntity stats);
+    Task<PlayerEntity> CreatePlayerAsync(Guid accountId, string name, uint tileId, Guid raceId, BaseStatEntity stats);
     Task<int> AddGoldToPlayerAsync(Guid playerId, int amount);
     Task<List<PlayerInventoryEntity>> GetPlayerInventoryAsync(Guid playerId);
     Task<List<PlayerInventoryEntity>> AddPlayerInventoryAsync(Guid playerId, ItemEntity item, int amount);
