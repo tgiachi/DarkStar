@@ -147,7 +147,7 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
                     ? NpcAlignmentType.Good
                     : NpcAlignmentType.Good.RandomEnumValue(),
             Gold = npcType.ToString().ToLower().StartsWith("animal") ? 0 : RandomUtils.Range(1, 50) * level,
-            TileId = 0,
+            TileId = Engine.TypeService.GetTileForNpc(npcType, subType).Id,
             Type = npcType.Id,
             SubType = subType.Id
         };

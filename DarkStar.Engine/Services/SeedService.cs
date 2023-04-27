@@ -58,14 +58,14 @@ public class SeedService : BaseService<SeedService>, ISeedService
     private async Task LoadCsvSeedsAsync()
     {
         Logger.LogInformation("Loading seeds");
+        await LoadSeedAsync<TileSetMapSerializable>();
         await LoadSeedAsync<GameObjectTypeSerializableEntity>();
         await LoadSeedAsync<NpcTypeAndSubTypeSerializableEntity>();
-        await LoadSeedAsync<TileSetMapSerializable>();
         await LoadSeedAsync<WorldObjectSeedEntity>();
         await LoadSeedAsync<RaceObjectSeedEntity>();
         await LoadSeedAsync<ItemObjectSeedEntity>();
         await LoadSeedAsync<ItemDropObjectSeedEntity>();
-       
+
     }
 
     private async Task CheckSeedTemplatesAsync()
@@ -79,7 +79,7 @@ public class SeedService : BaseService<SeedService>, ISeedService
         await CheckSeedTemplateAsync<WorldObjectSeedEntity>();
         await CheckSeedTemplateAsync<RaceObjectSeedEntity>();
         await CheckSeedTemplateAsync<TileSetMapSerializable>();
-      
+
         // await CheckSeedTemplateAsync(GetDefaultTileSetMap());
     }
 
@@ -150,6 +150,8 @@ public class SeedService : BaseService<SeedService>, ISeedService
             foreach (var npcType in npcTypes)
             {
                 _typeService.AddNpcSubType(npcType.NpcName, npcType.NpcSubTypeName);
+
+                _typeService.AddNpcTypeTile(_typeService.GetNpcType(npcType.NpcName).Value, _typeService.GetNpcSubType(npcType.NpcSubTypeName), npcType.TileName);
             }
         }
 
@@ -159,7 +161,7 @@ public class SeedService : BaseService<SeedService>, ISeedService
 
             foreach (var tile in tiles)
             {
-                _typeService.AddTile(new Tile(tile.Name, tile.Id, tile.Category, tile.SubCategory, tile.IsTransparent,string.IsNullOrEmpty(tile.Tag) ? null : tile.Tag));
+                _typeService.AddTile(new Tile(tile.Name, tile.Id, tile.Category, tile.SubCategory, tile.IsTransparent, string.IsNullOrEmpty(tile.Tag) ? null : tile.Tag));
             }
         }
 

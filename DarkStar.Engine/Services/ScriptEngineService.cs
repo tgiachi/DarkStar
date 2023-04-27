@@ -24,7 +24,7 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
     private readonly IServiceProvider _container;
     private readonly ITypeService _typeService;
 
-    public Dictionary<string, object> ContextVariables { get; } = new(); 
+    public Dictionary<string, object> ContextVariables { get; } = new();
 
 
 
@@ -90,7 +90,21 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
             var mapTypeName = $"MAP_TYPE_{mapType.ToString().ToUpper()}";
             Logger.LogDebug("Adding map type {MapTypeName}={Id} to LUA context", mapTypeName, (short)mapType);
             AddContextVariable(mapTypeName, (short)mapType);
-           
+        }
+
+        foreach (var npcType in _typeService.NpcTypes)
+        {
+            var npcTypeName = $"NPC_TYPE_{npcType.Name.ToUpper()}";
+            Logger.LogDebug("Adding npc type {NpcTypeName}={Id} to LUA context", npcTypeName, npcType.Id);
+            AddContextVariable(npcTypeName, npcType.Id);
+        }
+
+        foreach (var npcSubType in _typeService.NpcSubTypes)
+        {
+            var npcSubTypeName = $"NPC_SUBTYPE_{npcSubType.Name.ToUpper()}";
+            Logger.LogDebug("Adding npc subtype {NpcSubTypeName}={Id} to LUA context", npcSubTypeName, npcSubType.Id);
+            AddContextVariable(npcSubTypeName, npcSubType.Id);
+
         }
 
 
@@ -178,7 +192,7 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
         }
     }
 
-  
+
 
     public void AddVariable(string name, object value)
     {

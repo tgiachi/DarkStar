@@ -33,6 +33,12 @@ public interface ITypeService : IDarkSunEngineService
     NpcSubType AddNpcSubType(string npcType, string name);
     NpcSubType AddNpcSubType(string npcType, short id, string name);
     NpcSubType GetNpcSubType(string name);
+    NpcSubType GetNpcSubType(short id);
     NpcType? GetNpcType(string name);
+    NpcType GetNpcType(short id);
+    void AddNpcTypeTile(NpcType npcType, NpcSubType npcSubType, string tile);
+
+    Tile GetTileForNpc(NpcType npcType, NpcSubType npcSubType);
+    Tile GetTileForNpc(string npcType, string npcSubType);
 
 }

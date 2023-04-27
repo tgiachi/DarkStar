@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 using DarkStar.Api.Engine.Interfaces.Core;
 using DarkStar.Api.Engine.Interfaces.Services;
 using DarkStar.Api.Engine.Map.Entities;
+using DarkStar.Api.World.Types.Npc;
+using DarkStar.Network.Protocol.Messages.Common;
 
 namespace DarkStar.Api.Engine.Data.Blueprint;
 public class BlueprintGenerationMapContext
 {
+    private readonly SemaphoreSlim _listLock = new(1);
     private readonly IBlueprintService _blueprintService;
     private readonly ITypeService _typeService;
     private readonly INamesService _namesService;
@@ -17,8 +20,10 @@ public class BlueprintGenerationMapContext
     private readonly string _mapId;
 
     private readonly List<WorldGameObject> _gameObjects = new();
+    private readonly List<NpcGameObject> _npcs = new();
 
     public List<WorldGameObject> GameObjects => _gameObjects;
+    public List<NpcGameObject> Npcs => _npcs;
     protected IBlueprintService BlueprintService => _blueprintService;
     protected ITypeService TypeService => _typeService;
     protected INamesService NamesService => _namesService;
@@ -34,16 +39,18 @@ public class BlueprintGenerationMapContext
         _worldService = engine.WorldService;
     }
 
-    public void AddGameObject(short gameObjectId)
+    public async void AddGameObject(short gameObjectId)
     {
-        _ = BlueprintService.GenerateWorldGameObjectAsync(
+        await BlueprintService.GenerateWorldGameObjectAsync(
                 _typeService.GetGameObjectType(gameObjectId),
                 WorldService.GetRandomWalkablePosition(_mapId)
             )
             .ContinueWith(
                 task =>
                 {
+                    _listLock.Wait();
                     _gameObjects.Add(task.Result);
+                    _listLock.Release();
 
                 }, TaskScheduler.Current);
     }
@@ -53,6 +60,26 @@ public class BlueprintGenerationMapContext
         for (var i = 0; i < count; i++)
         {
             AddGameObject(gameObjectId);
+        }
+    }
+
+    public async void AddNpc(short npcType, short subType, int level = 1)
+    {
+        await BlueprintService.GenerateNpcGameObjectAsync(WorldService.GetRandomWalkablePosition(_mapId), _typeService.GetNpcType(npcType), _typeService.GetNpcSubType(subType), level)
+            .ContinueWith(
+                task =>
+                {
+                    _listLock.Wait();
+                    _npcs.Add(task.Result);
+                    _listLock.Release();
+                }, TaskScheduler.Current);
+    }
+
+    public void AddNpcs(int count, short npcType, short subType, int level = 1)
+    {
+        for (var i = 0; i < count; i++)
+        {
+            AddNpc(npcType, subType, level);
         }
     }
 

@@ -26,4 +26,7 @@ public class NpcTypeAndSubTypeSerializableEntity
     [Column(converter: typeof(ToUpperCaseConverter))]
     public string NpcSubTypeName { get; set; }
 
+    [Column]
+    public string TileName { get; set; }
+
 }

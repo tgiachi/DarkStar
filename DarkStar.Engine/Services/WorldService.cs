@@ -297,6 +297,11 @@ public class WorldService : BaseService<IWorldService>, IWorldService
             AddEntity(mapId, worldGameObject);
         }
 
+        foreach (var npcGameObject in context.Npcs)
+        {
+            AddEntity(mapId, npcGameObject);
+        }
+
         /*foreach (var _ in Enumerable.Range(1, 5))
         {
             var cat = await Engine.BlueprintService.GenerateNpcGameObjectAsync(

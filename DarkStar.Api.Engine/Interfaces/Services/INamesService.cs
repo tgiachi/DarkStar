@@ -11,6 +11,5 @@ public interface INamesService : IDarkSunEngineService
 {
     string RandomCityName { get; }
     string RandomAnimalName { get; }
-
     string RandomName { get; }
 }

@@ -18,7 +18,7 @@ namespace DarkStar.Engine.Services;
 public class TypeService : BaseService<TypeService>, ITypeService
 {
     public List<Tile> Tiles => _tiles;
-    public List<NpcType> NpcTypes  => _npcTypes;
+    public List<NpcType> NpcTypes => _npcTypes;
     public List<NpcSubType> NpcSubTypes => _npcSubTypes;
     public List<GameObjectType> GameObjectTypes => _gameObjectTypes;
 
@@ -36,6 +36,8 @@ public class TypeService : BaseService<TypeService>, ITypeService
     private readonly Dictionary<short, string> _npcSubTypesById = new();
     private readonly Dictionary<short, string> _itemTypes = new();
 
+    private readonly List<(NpcType, NpcSubType, string)> _npcTypeTiles = new();
+
 
 
     public Tile GetTile(uint id) => _tilesById[id];
@@ -44,7 +46,6 @@ public class TypeService : BaseService<TypeService>, ITypeService
 
     public TypeService(ILogger<TypeService> logger) : base(logger)
     {
-
 
     }
 
@@ -166,6 +167,25 @@ public class TypeService : BaseService<TypeService>, ITypeService
     }
 
     public NpcSubType GetNpcSubType(string name) => _npcSubTypes.First(t => t.Name.ToUpper() == name.ToUpper());
+    public NpcSubType GetNpcSubType(short id) => _npcSubTypes.First(t => t.Id == id);
 
     public NpcType? GetNpcType(string name) => _npcTypes.FirstOrDefault(t => t.Name.ToUpper() == name.ToUpper());
+    public NpcType GetNpcType(short id) => _npcTypes.FirstOrDefault(t => t.Id == id);
+    public void AddNpcTypeTile(NpcType npcType, NpcSubType npcSubType, string tile)
+    {
+        _npcTypeTiles.Add((npcType, npcSubType, tile));
+    }
+
+    public Tile GetTileForNpc(NpcType npcType, NpcSubType npcSubType)
+    {
+        var tileId = _npcTypeTiles.First(t => t.Item1.Id == npcType.Id && t.Item2.Id == npcSubType.Id).Item3;
+
+        return SearchTile(tileId, null, null);
+    }
+
+    public Tile GetTileForNpc(string npcType, string npcSubType)
+    {
+        var tileId = _npcTypeTiles.First(t => t.Item1.Name.ToUpper() == npcType.ToUpper() && t.Item2.Name.ToUpper() == npcSubType.ToUpper());
+        return SearchTile(tileId.Item3, null, null);
+    }
 }

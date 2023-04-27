@@ -6,13 +6,6 @@ using System.Threading.Tasks;
 
 namespace DarkStar.Api.World.Types.Npc;
 
-/*public enum NpcType : short
-{
-    Human,
-    Monster,
-    Animal
-}*/
-
 public struct NpcType
 {
     public short Id { get; set; }
