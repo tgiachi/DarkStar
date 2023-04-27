@@ -22,7 +22,7 @@ public class PlayerEntity : BaseEntity
     public int X { get; set; }
     public int Y { get; set; }
     public string MapId { get; set; } = null!;
-    public TileType TileId { get; set; }
+    public uint TileId { get; set; }
     public Guid StatsId { get; set; }
     public PlayerStatEntity Stats { get; set; } = null!;
     public List<PlayerInventoryEntity> Inventory { get; set; } = null!;

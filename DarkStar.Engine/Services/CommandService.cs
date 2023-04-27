@@ -37,7 +37,7 @@ public class CommandService : BaseService<ICommandService>, ICommandService
         AssemblyUtils.GetAttribute<CommandActionAttribute>().ForEach(s =>
         {
             var attr = s.GetCustomAttribute<CommandActionAttribute>()!;
-            Logger.LogInformation("Adding {Type} from {ActionType}", s.Name, attr.Type);
+            Logger.LogInformation("Adding {GameObjectType} from {ActionType}", s.Name, attr.Type);
             var executor = _container.GetService(s);
             _actionExecutors.Add(attr.Type, (ICommandActionExecutor)executor!);
         });
@@ -106,7 +106,7 @@ public class CommandService : BaseService<ICommandService>, ICommandService
         }
         catch (Exception ex)
         {
-            Logger.LogError("Error during executing action: {Type}: {Ex}", action.Type, ex);
+            Logger.LogError("Error during executing action: {GameObjectType}: {Ex}", action.Type, ex);
         }
     }
 }

@@ -17,16 +17,17 @@ public class TileSetMapSerializable
 {
     [Column]
     public int Id { get; set; }
+    [Column] public string Name { get; set; }
 
-    [Column(converter: typeof(TileTypeConverter))]
-    public TileType Type { get; set; }
+    [Column] public string Category { get; set; }
+    [Column] public string SubCategory { get; set; }
+
+    [Column] public string? Tag { get; set; }
 
     [Column]
-    public bool IsBlocked { get; set; }
+    public bool IsTransparent { get; set; }
 
+   
 
-    public override string ToString()
-    {
-        return $"Id: {Id}, Type: {Type}, IsBlocked: {IsBlocked}";
-    }
+    public override string ToString() => $"Id: {Id},  IsBlocked: {IsTransparent}";
 }

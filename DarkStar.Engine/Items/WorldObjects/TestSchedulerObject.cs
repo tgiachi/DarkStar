@@ -12,7 +12,7 @@ using Microsoft.Extensions.Logging;
 namespace DarkStar.Engine.Items.WorldObjects;
 
 
-[GameObjectAction(GameObjectType.Internal_World_Spawner)]
+//[GameObjectAction(GameObjectType.Internal_World_Spawner)]
 public class TestSchedulerObject : BaseScheduledWorldObject
 {
     public TestSchedulerObject(ILogger<BaseWorldObjectAction> logger, IDarkSunEngine engine) : base(logger, engine)

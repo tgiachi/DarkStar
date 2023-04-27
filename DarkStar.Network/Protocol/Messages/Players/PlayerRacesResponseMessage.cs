@@ -27,7 +27,7 @@ public class PlayerRaceObject
     [ProtoMember(1)]
     public Guid RaceId { get; set; }
     [ProtoMember(2)]
-    public TileType TileId { get; set; }
+    public int TileId { get; set; }
     [ProtoMember(3)]
     public string Name { get; set; } = null!;
     [ProtoMember(4)]

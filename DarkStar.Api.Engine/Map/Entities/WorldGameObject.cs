@@ -14,7 +14,7 @@ namespace DarkStar.Api.Engine.Map.Entities;
 
 public class WorldGameObject : BaseGameObject
 {
-    public GameObjectType Type { get; set; }
+    public short Type { get; set; }
 
     public WorldGameObject(Point position) : base(position, (int)MapLayer.Objects, true, false)
     {

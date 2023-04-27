@@ -20,7 +20,7 @@ public class PlayerCreateRequestMessage : IDarkStarNetworkMessage
     [ProtoMember(1)]
     public string Name { get; set; } = null!;
     [ProtoMember(2)]
-    public TileType TileId { get; set; }
+    public uint TileId { get; set; }
     [ProtoMember(3)]
     public Guid RaceId { get; set; }
     [ProtoMember(4)]

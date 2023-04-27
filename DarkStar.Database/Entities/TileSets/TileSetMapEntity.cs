@@ -15,7 +15,7 @@ public class TileSetMapEntity : BaseEntity
     public Guid TileSetId { get; set; }
     public TileSetEntity TileSet { get; set; } = null!;
     public int TileId { get; set; }
-    public TileType TileType { get; set; }
+    public int TileType { get; set; }
 
-    public bool IsBlocked { get; set; }
+    public bool IsTransparent { get; set; }
 }

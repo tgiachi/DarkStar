@@ -21,15 +21,18 @@ namespace DarkStar.Engine.Services;
 public class ItemService : BaseService<ItemService>, IItemService
 {
     private readonly SemaphoreSlim _gameObjectActionLock = new(1);
+    private readonly ITypeService _typeService;
     private readonly IServiceProvider _serviceProvider;
-    private readonly Dictionary<GameObjectType, Type> _gameObjectActionTypes = new();
+    private readonly Dictionary<string, Type> _gameObjectActionTypes = new();
     private readonly Dictionary<uint, IGameObjectAction> _gameObjectActions = new();
     private readonly Dictionary<uint, IScheduledGameObjectAction> _scheduledGameObjectActions = new();
+    
 
 
-    public ItemService(ILogger<ItemService> logger, IServiceProvider serviceProvider) : base(logger)
+    public ItemService(ILogger<ItemService> logger, IServiceProvider serviceProvider, ITypeService typeService) : base(logger)
     {
         _serviceProvider = serviceProvider;
+        _typeService = typeService;
     }
 
     protected override async ValueTask<bool> StartAsync()
@@ -82,7 +85,7 @@ public class ItemService : BaseService<ItemService>, IItemService
             await Engine.DatabaseService.QueryAsSingleAsync<GameObjectEntity>(
                 entity => entity.Id == @event.ObjectId);
 
-        if (_gameObjectActionTypes.TryGetValue(gameObjectEntity.Type, out var type))
+        if (_gameObjectActionTypes.TryGetValue(_typeService.GetGameObjectType(gameObjectEntity.GameObjectType)!.Name, out var type))
         {
             var worldGameObject =
                 await Engine.WorldService.GetEntityBySerialIdAsync<WorldGameObject>(@event.MapId, @event.Id);
@@ -118,18 +121,18 @@ public class ItemService : BaseService<ItemService>, IItemService
                 // I try to initialize the gemeObject action here, but it fails
                 if (_serviceProvider.GetService(type) is IGameObjectAction gameObjectAction)
                 {
-                    _gameObjectActionTypes.Add(attr!.Type, type);
-                    Logger.LogDebug("Added game object action {Type}", type.Name);
+                    _gameObjectActionTypes.Add(attr!.GameObjectType, type);
+                    Logger.LogDebug("Added game object action {GameObjectType}", type.Name);
                     GC.SuppressFinalize(gameObjectAction);
                 }
                 else
                 {
-                    Logger.LogError("Failed to add game object action {Type}, maybe not implement interface IGameObjectAction?", type);
+                    Logger.LogError("Failed to add game object action {GameObjectType}, maybe not implement interface IGameObjectAction?", type);
                 }
             }
             catch (Exception e)
             {
-                Logger.LogError("Error during add game object action {Type}: {Error}", type, e);
+                Logger.LogError("Error during add game object action {GameObjectType}: {Error}", type, e);
             }
         }
 

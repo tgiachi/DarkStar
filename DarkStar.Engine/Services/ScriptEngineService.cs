@@ -4,26 +4,34 @@ using DarkStar.Api.Data.Config;
 using DarkStar.Api.Engine.Data.ScriptEngine;
 using DarkStar.Api.Engine.Interfaces.Services;
 using DarkStar.Api.Utils;
+using DarkStar.Api.World.Types.Map;
 using DarkStar.Api.World.Types.Tiles;
 using DarkStar.Engine.Attributes.ScriptEngine;
 using DarkStar.Engine.Services.Base;
-
+using FastEnumUtility;
+using GoRogue.GameFramework;
 using Microsoft.Extensions.Logging;
 using NLua;
 using NLua.Exceptions;
 
 namespace DarkStar.Engine.Services;
 
-[DarkStarEngineService("ScriptEngine", 4)]
+[DarkStarEngineService("ScriptEngine", 9)]
 public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEngineService
 {
     private readonly Lua _scriptEngine;
     private readonly DirectoriesConfig _directoriesConfig;
     private readonly IServiceProvider _container;
+    private readonly ITypeService _typeService;
 
-    public ScriptEngineService(ILogger<IScriptEngineService> logger, DirectoriesConfig directoriesConfig,
+    public Dictionary<string, object> ContextVariables { get; } = new();
+
+
+
+    public ScriptEngineService(ILogger<IScriptEngineService> logger, DirectoriesConfig directoriesConfig, ITypeService typeService,
         IServiceProvider container) : base(logger)
     {
+        _typeService = typeService;
         _container = container;
         _directoriesConfig = directoriesConfig;
         _scriptEngine = new Lua() { UseTraceback = true };
@@ -62,10 +70,43 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
         await ScanScriptModulesAsync();
 
 
-        foreach (var tileType in Enum.GetValues<TileType>())
+        foreach (var tileType in _typeService.Tiles)
         {
-            _scriptEngine[$"TILE_{tileType.ToString().ToUpper()}"] = (short)tileType;
+            var tileName = $"TILE_{tileType.FullName.ToUpper()}";
+            Logger.LogDebug("Adding tile {TileName}={Id} to LUA context", tileName, tileType.Id);
+            AddContextVariable(tileName, tileType.Id);
         }
+
+        foreach (var gameObject in _typeService.GameObjectTypes)
+        {
+            var gameObjectName = $"GAMEOBJECT_{gameObject.Name.ToUpper()}";
+            Logger.LogDebug("Adding game object {GameObjectName}={Id} to LUA context", gameObjectName, gameObject.Id);
+            AddContextVariable(gameObjectName, gameObject.Id);
+
+        }
+
+        foreach (var mapType in FastEnum.GetValues<MapType>())
+        {
+            var mapTypeName = $"MAP_TYPE_{mapType.ToString().ToUpper()}";
+            Logger.LogDebug("Adding map type {MapTypeName}={Id} to LUA context", mapTypeName, (short)mapType);
+            AddContextVariable(mapTypeName, (short)mapType);
+        }
+
+        foreach (var npcType in _typeService.NpcTypes)
+        {
+            var npcTypeName = $"NPC_TYPE_{npcType.Name.ToUpper()}";
+            Logger.LogDebug("Adding npc type {NpcTypeName}={Id} to LUA context", npcTypeName, npcType.Id);
+            AddContextVariable(npcTypeName, npcType.Id);
+        }
+
+        foreach (var npcSubType in _typeService.NpcSubTypes)
+        {
+            var npcSubTypeName = $"NPC_SUBTYPE_{npcSubType.Name.ToUpper()}";
+            Logger.LogDebug("Adding npc subtype {NpcSubTypeName}={Id} to LUA context", npcSubTypeName, npcSubType.Id);
+            AddContextVariable(npcSubTypeName, npcSubType.Id);
+
+        }
+
 
         var files = Directory.GetFiles(_directoriesConfig[DirectoryNameType.Scripts], "*.lua");
         Logger.LogInformation("Found {Count} scripts to load", files.Count());
@@ -74,6 +115,12 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
         {
             await ExecuteScriptAsync(file);
         }
+    }
+
+    private void AddContextVariable(string name, object value)
+    {
+        _scriptEngine[name] = value;
+        ContextVariables[name] = value;
     }
 
     private ValueTask ScanScriptModulesAsync()
@@ -143,5 +190,12 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
         {
             return new ScriptEngineExecutionResult() { Exception = ex };
         }
+    }
+
+
+
+    public void AddVariable(string name, object value)
+    {
+        _scriptEngine[name] = value;
     }
 }

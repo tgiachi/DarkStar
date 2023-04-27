@@ -7,12 +7,8 @@ using DarkStar.Api.Engine.Ai.Base;
 using DarkStar.Api.Engine.Attributes.Ai;
 using DarkStar.Api.Engine.Interfaces.Core;
 using DarkStar.Api.Engine.Map.Entities;
-using DarkStar.Api.Engine.Utils;
-using DarkStar.Api.Utils;
 using DarkStar.Api.World.Types.GameObjects;
 using DarkStar.Api.World.Types.Map;
-using DarkStar.Api.World.Types.Npc;
-using DarkStar.Api.World.Types.Tiles;
 using DarkStar.Engine.Commands.Actions;
 using DarkStar.Network.Protocol.Messages.Common;
 using DarkStar.Network.Protocol.Messages.World;
@@ -20,7 +16,7 @@ using Microsoft.Extensions.Logging;
 
 namespace DarkStar.Engine.Ai.Humans;
 
-[AiBehaviour(NpcType.Human, NpcSubType.MushroomFinder)]
+[AiBehaviour("Human", "Mushroom_Finder")]
 public class MushroomFinderAi : BaseAiBehaviourExecutor
 {
     private int _currentStep = 0;
@@ -64,7 +60,7 @@ public class MushroomFinderAi : BaseAiBehaviourExecutor
             return;
         }
 
-        var mushrooms = (await GetEntitiesInRangeAsync<WorldGameObject>(MapLayer.Objects)).FirstOrDefault(s => s.Type == GameObjectType.Prop_Mushroom);
+        WorldGameObject mushrooms = (await GetEntitiesInRangeAsync<WorldGameObject>(MapLayer.Objects)).FirstOrDefault(s => s.Type == Engine.TypeService.GetGameObjectType("Prop_Mushroom").Id );
 
         if (mushrooms == null)
         {

@@ -15,7 +15,7 @@ using DarkStar.Api.World.Types.GameObjects;
 using DarkStar.Api.Engine.Serialization.Seeds;
 using DarkStar.Api.Engine.Interfaces.Services;
 using DarkStar.Engine.Services.Base;
-using DarkStar.Api.World.Types.Utils;
+
 using DarkStar.Api.Data.Config;
 using DarkStar.Api.Engine.Serialization;
 using DarkStar.Database.Entities.Races;
@@ -25,6 +25,7 @@ using DarkStar.Database.Entities.TileSets;
 using DarkStar.Api.World.Types.Tiles;
 using DarkStar.Database.Entities.Objects;
 using FastEnumUtility;
+using DarkStar.Api.Serialization.Types;
 
 namespace DarkStar.Engine.Services;
 
@@ -36,10 +37,12 @@ public class SeedService : BaseService<SeedService>, ISeedService
     private readonly HashSet<ItemEntity> _itemsSeed = new();
 
     private readonly DirectoriesConfig _directoriesConfig;
+    private readonly ITypeService _typeService;
 
-    public SeedService(ILogger<SeedService> logger, DirectoriesConfig directoriesConfig) : base(logger)
+    public SeedService(ILogger<SeedService> logger, DirectoriesConfig directoriesConfig, ITypeService typeService) : base(logger)
     {
         _directoriesConfig = directoriesConfig;
+        _typeService = typeService;
     }
 
     protected override async ValueTask<bool> StartAsync()
@@ -55,28 +58,36 @@ public class SeedService : BaseService<SeedService>, ISeedService
     private async Task LoadCsvSeedsAsync()
     {
         Logger.LogInformation("Loading seeds");
+        await LoadSeedAsync<TileSetMapSerializable>();
+        await LoadSeedAsync<GameObjectTypeSerializableEntity>();
+        await LoadSeedAsync<NpcTypeAndSubTypeSerializableEntity>();
         await LoadSeedAsync<WorldObjectSeedEntity>();
         await LoadSeedAsync<RaceObjectSeedEntity>();
         await LoadSeedAsync<ItemObjectSeedEntity>();
         await LoadSeedAsync<ItemDropObjectSeedEntity>();
+
     }
 
     private async Task CheckSeedTemplatesAsync()
     {
         Logger.LogInformation("Checking Seed Templates");
 
+        await CheckSeedTemplateAsync<GameObjectTypeSerializableEntity>();
+        await CheckSeedTemplateAsync<NpcTypeAndSubTypeSerializableEntity>();
         await CheckSeedTemplateAsync<ItemDropObjectSeedEntity>();
         await CheckSeedTemplateAsync<ItemObjectSeedEntity>();
         await CheckSeedTemplateAsync<WorldObjectSeedEntity>();
         await CheckSeedTemplateAsync<RaceObjectSeedEntity>();
-        await CheckSeedTemplateAsync(GetDefaultTileSetMap());
+        await CheckSeedTemplateAsync<TileSetMapSerializable>();
+
+        // await CheckSeedTemplateAsync(GetDefaultTileSetMap());
     }
 
-    private IEnumerable<TileSetMapSerializable> GetDefaultTileSetMap()
+    /*private IEnumerable<TileSetMapSerializable> GetDefaultTileSetMap()
     {
         return FastEnum.GetValues<TileType>().OrderBy(k => (short)k).Select(s =>
-            new TileSetMapSerializable() { Type = s, Id = (short)s, IsBlocked = false });
-    }
+            new TileSetMapSerializable() { GameObjectType = s, Id = (short)s, IsTransparent = false });
+    }*/
 
     private Task CheckSeedDirectoriesAsync()
     {
@@ -99,12 +110,11 @@ public class SeedService : BaseService<SeedService>, ISeedService
         var directory = Path.Join(_directoriesConfig[DirectoryNameType.Seeds], attribute!.TemplateDirectory);
         var files = Directory.GetFiles(directory, "*.csv");
 
-        Logger.LogInformation("Found {Files} for {Type} seed", files.Length, attribute.TemplateDirectory);
+        Logger.LogInformation("Found {Files} for {GameObjectType} seed", files.Length, attribute.TemplateDirectory);
         foreach (var file in files)
         {
             await LoadSeedFileAsync<TEntity>(file);
         }
-
 
     }
 
@@ -117,10 +127,42 @@ public class SeedService : BaseService<SeedService>, ISeedService
             {
                 Name = go.Name,
                 Description = go.Description,
-                TileId = go.TileId,
-                Type = go.Type,
+                TileId = _typeService.SearchTile(go.TileName, null, null)!.Id,
+                GameObjectType = _typeService.SearchGameObject(go.GameObjectName)!.Id,
                 Data = JsonSerializer.Serialize(go.Data)
             }));
+        }
+
+        if (typeof(TEntity) == typeof(GameObjectTypeSerializableEntity))
+        {
+            var gameObjectsTypes = await SeedCsvParser.Instance.ParseAsync<GameObjectTypeSerializableEntity>(fileName);
+
+            foreach (var gameObjectType in gameObjectsTypes)
+            {
+                _typeService.AddGameObjectType(gameObjectType.Name);
+            }
+        }
+
+        if (typeof(TEntity) == typeof(NpcTypeAndSubTypeSerializableEntity))
+        {
+            var npcTypes = await SeedCsvParser.Instance.ParseAsync<NpcTypeAndSubTypeSerializableEntity>(fileName);
+
+            foreach (var npcType in npcTypes)
+            {
+                _typeService.AddNpcSubType(npcType.NpcName, npcType.NpcSubTypeName);
+
+                _typeService.AddNpcTypeTile(_typeService.GetNpcType(npcType.NpcName).Value, _typeService.GetNpcSubType(npcType.NpcSubTypeName), npcType.TileName);
+            }
+        }
+
+        if (typeof(TEntity) == typeof(TileSetMapSerializable))
+        {
+            var tiles = await SeedCsvParser.Instance.ParseAsync<TileSetMapSerializable>(fileName);
+
+            foreach (var tile in tiles)
+            {
+                _typeService.AddTile(new Tile(tile.Name, tile.Id, tile.Category, tile.SubCategory, tile.IsTransparent, string.IsNullOrEmpty(tile.Tag) ? null : tile.Tag));
+            }
         }
 
     }
@@ -128,9 +170,9 @@ public class SeedService : BaseService<SeedService>, ISeedService
 
     private async Task CheckSeedTemplateAsync<TEntity>(IEnumerable<TEntity>? defaultData = null) where TEntity : class, new()
     {
-        Logger.LogInformation("Checking Seed Template for type: {Type}", typeof(TEntity).Name);
+        Logger.LogInformation("Checking Seed Template for type: {GameObjectType}", typeof(TEntity).Name);
         var fileName = Path.Join(_directoriesConfig[DirectoryNameType.SeedTemplates],
-            $"{typeof(TEntity).Name.Replace("Entity", "").ToUnderscoreCase()}.csv");
+            $"{typeof(TEntity).Name.Replace("Entity", "").Replace("Serializable", "").ToUnderscoreCase()}.csv");
         if (!File.Exists(fileName))
         {
             if (defaultData == null)
@@ -153,19 +195,19 @@ public class SeedService : BaseService<SeedService>, ISeedService
             Intelligence = stat.Intelligence,
             Luck = stat.Luck,
             Strength = stat.Strength,
-            TileId = tileId.ParseTileType()
+            TileId = tileId
         });
     }
 
-    public void AddGameObjectToSeed(string name, string description, TileType tileType,
+    public void AddGameObjectToSeed(string name, string description, int tileType,
         GameObjectType gameObjectType)
     {
         _gameObjectSeed.Add(new GameObjectEntity()
         {
             Name = name,
             Description = description,
-            TileId = tileType,
-            Type = gameObjectType
+            TileId = (uint)tileType,
+            GameObjectType = gameObjectType.Id
         });
     }
 
@@ -193,7 +235,7 @@ public class SeedService : BaseService<SeedService>, ISeedService
                 gameObject.Name = go.Name;
                 gameObject.Description = go.Description;
                 gameObject.TileId = go.TileId;
-                gameObject.Type = go.Type;
+                gameObject.GameObjectType = go.GameObjectType;
                 gameObject.Data = go.Data;
                 await Engine.DatabaseService.UpdateAsync(gameObject);
             }
@@ -241,8 +283,8 @@ public class SeedService : BaseService<SeedService>, ISeedService
             {
                 TileSetId = tileEntity.Id,
                 TileId = tile.Id,
-                TileType = tile.Type,
-                IsBlocked = tile.IsBlocked
+                //TileType = tile.GameObjectType,
+                //IsTransparent = tile.IsTransparent
             };
             await Engine.DatabaseService.InsertAsync(tileMapEntity);
         }

@@ -9,7 +9,15 @@ using TinyCsv.Conversions;
 
 namespace DarkStar.Api.Serialization.Converters;
 
-public class TileTypeConverter : BaseEnumConverter<TileType>
+public class TileTypeConverter : IValueConverter
 {
+    public string Convert(object value, object parameter, IFormatProvider provider)
+    {
+        return "";
+    }
 
+    public object ConvertBack(string value, Type targetType, object parameter, IFormatProvider provider)
+    {
+        return null!;
+    }
 }

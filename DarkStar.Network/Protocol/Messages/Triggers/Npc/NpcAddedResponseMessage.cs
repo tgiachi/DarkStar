@@ -29,14 +29,14 @@ public struct NpcAddedResponseMessage : IDarkStarNetworkMessage
     public PointPosition Position { get; set; }
 
     [ProtoMember(5)]
-    public TileType TileType { get; set; }
+    public int TileType { get; set; }
 
     public NpcAddedResponseMessage()
     {
 
     }
 
-    public NpcAddedResponseMessage(string mapId, string npcId, string name, PointPosition position, TileType tileType)
+    public NpcAddedResponseMessage(string mapId, string npcId, string name, PointPosition position, int tileType)
     {
         MapId = mapId;
         NpcId = npcId;

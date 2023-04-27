@@ -35,7 +35,7 @@ public struct TileSetMapResponseMessage : IDarkStarNetworkMessage
 public struct TileSetMapEntry
 {
     [ProtoMember(1)]
-    public TileType TileType { get; set; }
+    public int TileType { get; set; }
 
     [ProtoMember(2)]
     public int Id { get; set; }
@@ -45,7 +45,7 @@ public struct TileSetMapEntry
 
     }
 
-    public TileSetMapEntry(TileType tileType, int id)
+    public TileSetMapEntry(int tileType, int id)
     {
         TileType = tileType;
         Id = id;

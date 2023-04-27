@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="0.4.0"></a>
+## [0.4.0](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.4.0) (2023-4-27)
+
+### ✨ Features
+
+* **types:** add support for NpcType and NpcSubType ([b9a8a88](https://www.github.com/tgiachi/DarkSun/commit/b9a8a886e8196f4f303c33bf13b2753afa757785))
+
+### Other
+
+* ✨ feat(BlueprintGenerationMapContext.cs): add support for adding NPCs to the map ([a1a0d64](https://www.github.com/tgiachi/DarkSun/commit/a1a0d64084d507dbf7c57bcaecf6994726f1ef51))
+* 🐛 fix(MushroomFinderAi.cs): fix null reference exception when searching for mushrooms ([a8132bb](https://www.github.com/tgiachi/DarkSun/commit/a8132bb835332781bef15669f2ae85d57d78043a))
+* 🔧 fix(server.ts): change port variable case from lowercase port to uppercase PORT ([a2ac148](https://www.github.com/tgiachi/DarkSun/commit/a2ac1485d9c12a156d0f69314cd0b811f7a0d289))
+* 🔧 refactor(GameObjectType.cs): change GameObjectType from enum to struct with Id and Name properties ([03d563b](https://www.github.com/tgiachi/DarkSun/commit/03d563b9e0177d332cd86eb9606c1dbfb9f689ce))
+* change TileId type from int to uint in multiple files ([abdfcd9](https://www.github.com/tgiachi/DarkSun/commit/abdfcd96893808194f4f9d789eb9cd33293129c6))
+* refactor tiles and network ([038c4ea](https://www.github.com/tgiachi/DarkSun/commit/038c4ea3ac33c64c1a611661ad837cb951f777ad))
+* remove unused code ([1c03a30](https://www.github.com/tgiachi/DarkSun/commit/1c03a3092dbc7e2b61c5a2ca853ee7893f0ad71f))
+* **ai:** change NpcType and NpcSubType to use string instead of ushort ([482819f](https://www.github.com/tgiachi/DarkSun/commit/482819f4f6173a3e85bcbe7b2e89dc3ef19ecc61))
+* **MessageHub.cs:** remove unnecessary whitespace and add blank line ([c3fe84a](https://www.github.com/tgiachi/DarkSun/commit/c3fe84a18bae7db8cfedc873527fb5f45ebcdef4))
+* **PlayerService.cs:** simplify GetPlayerByIdAsync method with null-coalescing operator ([6c29ba9](https://www.github.com/tgiachi/DarkSun/commit/6c29ba91d2a17e5946eb4b1d13918eba6e40c5a7))
+
 <a name="0.3.0"></a>
 ## [0.3.0](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.3.0) (2023-4-21)
 

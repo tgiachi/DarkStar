@@ -1,5 +1,6 @@
 using DarkStar.Api.Attributes.Services;
 using DarkStar.Api.Data.Config;
+using DarkStar.Api.Engine.Data.Blueprint;
 using DarkStar.Api.Engine.Data.Templates;
 using DarkStar.Api.Engine.Interfaces.Services;
 using DarkStar.Api.Engine.Map.Entities;
@@ -26,6 +27,9 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
     private readonly DirectoriesConfig _directoriesConfig;
     private readonly INamesService _namesService;
     private readonly List<BluePrintTemplate> _bluePrintTemplates = new();
+
+    private readonly Dictionary<MapType, List<Func<BlueprintGenerationMapContext, BlueprintGenerationMapContext>>> _mapGenerators = new();
+
 
     public BlueprintService(ILogger<BlueprintService> logger, DirectoriesConfig directoriesConfig, INamesService namesService) : base(logger)
     {
@@ -115,19 +119,9 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
                 {
                     try
                     {
-                        var tileType = FastEnum.Parse<TileType>(tile.Gid.ToString());
-                        if (tileType != TileType.Null)
-                        {
-                            bluePrintTemplate.Layers[layerType].Add(new BluePrintTemplatePoint(tileType, p.X, p.Y));
-                        }
-                        else
-                        {
-                            if (tile.Gid > 0)
-                            {
-                                Logger.LogWarning("Failed to parse tile type {TileType}", tile.Gid);
-                            }
 
-                        }
+                        bluePrintTemplate.Layers[layerType].Add(new BluePrintTemplatePoint(tile.Gid, p.X, p.Y));
+
                     }
                     catch (Exception ex)
                     {
@@ -140,7 +134,7 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
         return bluePrintTemplate;
     }
 
-    public async Task<NpcEntity> GenerateNpcEntityAsync(NpcType npcType, NpcSubType subType,int level = 1)
+    public async Task<NpcEntity> GenerateNpcEntityAsync(NpcType npcType, NpcSubType subType, int level = 1)
     {
 
         NpcStatEntity npcStats;
@@ -153,9 +147,9 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
                     ? NpcAlignmentType.Good
                     : NpcAlignmentType.Good.RandomEnumValue(),
             Gold = npcType.ToString().ToLower().StartsWith("animal") ? 0 : RandomUtils.Range(1, 50) * level,
-            TileId = GetTileIdFromNpcType(subType),
-            Type = npcType,
-            SubType = subType
+            TileId = Engine.TypeService.GetTileForNpc(npcType, subType).Id,
+            Type = npcType.Id,
+            SubType = subType.Id
         };
 
         if (npcType.ToString().ToLower().StartsWith("animal"))
@@ -220,7 +214,7 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
     public async Task<GameObjectEntity> GenerateWorldGameObjectAsync(GameObjectType type)
     {
         // First of all, i search if gameObject exists
-        var entities = await Engine.DatabaseService.QueryAsListAsync<GameObjectEntity>(objectEntity => objectEntity.Type == type);
+        var entities = await Engine.DatabaseService.QueryAsListAsync<GameObjectEntity>(objectEntity => objectEntity.GameObjectType == type.Id);
         if (!entities.Any())
         {
             throw new Exception($"Can't find game object type: {type}!");
@@ -240,24 +234,35 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
             ObjectId = entity.Id,
             IsTransparent = false,
             IsWalkable = false,
-            Type = entity.Type,
+            Type = entity.GameObjectType,
             Tile = entity.TileId
         };
 
         return gameObject;
     }
 
-    private static TileType GetTileIdFromNpcType(NpcSubType npcType)
+    public void AddMapGenerator(MapType mapType, Func<BlueprintGenerationMapContext, BlueprintGenerationMapContext> callback)
     {
-        return npcType switch
+        if (!_mapGenerators.ContainsKey(mapType))
         {
-            NpcSubType.Cat => TileType.Animal_Cat_1.SearchType("animal_cat").RandomItem(),
-            NpcSubType.Dog => TileType.Animal_Dog_1.SearchType("animal_dog").RandomItem(),
-            NpcSubType.Human => TileType.Animal_Dog_1.SearchType("human").RandomItem(),
-            NpcSubType.Cow => TileType.Animal_Cow_1.SearchType("animal_cow").RandomItem(),
-            NpcSubType.MushroomFinder => TileType.Animal_Dog_1.SearchType("human").RandomItem(),
-            NpcSubType.Horse => TileType.Animal_Dog_1.SearchType("animal_horse").RandomItem(),
-            _ => TileType.Null
-        };
+            _mapGenerators.Add(mapType, new List<Func<BlueprintGenerationMapContext, BlueprintGenerationMapContext>>());
+        }
+
+        Logger.LogInformation("Adding map generator for {MapType}", mapType);
+
+        _mapGenerators[mapType].Add(callback);
+    }
+
+    public BlueprintGenerationMapContext GetMapGenerator(string mapId, MapType mapType)
+    {
+        if (!_mapGenerators.ContainsKey(mapType))
+        {
+            throw new Exception($"Can't find map generator for {mapType}");
+        }
+
+        var context = new BlueprintGenerationMapContext(mapId, Engine);
+        var mapGenerator = _mapGenerators[mapType].RandomItem();
+
+        return mapGenerator(context);
     }
 }

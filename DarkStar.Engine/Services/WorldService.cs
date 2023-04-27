@@ -282,8 +282,8 @@ public class WorldService : BaseService<IWorldService>, IWorldService
             FastEnum.GetValues<MapLayer>().Count, Distance.Chebyshev);
 
         map.ApplyTerrainOverlay(wallsFloors, (pos, val) => val
-            ? new TerrainGameObject(pos) { IsWalkable = true, IsTransparent = true, Tile = TileType.Null }
-            : new TerrainGameObject(pos, false, false) { Tile = TileType.Terrain_Grass_1 });
+            ? new TerrainGameObject(pos) { IsWalkable = true, IsTransparent = true, Tile = 0 }
+            : new TerrainGameObject(pos, false, false) { Tile = 1 });
 
         return ValueTask.FromResult(map);
 
@@ -291,7 +291,18 @@ public class WorldService : BaseService<IWorldService>, IWorldService
 
     private async Task FillCityMapAsync(string mapId)
     {
-        foreach (var _ in Enumerable.Range(1, 5))
+        var context = Engine.BlueprintService.GetMapGenerator(mapId, MapType.City);
+        foreach (var worldGameObject in context.GameObjects)
+        {
+            AddEntity(mapId, worldGameObject);
+        }
+
+        foreach (var npcGameObject in context.Npcs)
+        {
+            AddEntity(mapId, npcGameObject);
+        }
+
+        /*foreach (var _ in Enumerable.Range(1, 5))
         {
             var cat = await Engine.BlueprintService.GenerateNpcGameObjectAsync(
                 GetRandomWalkablePosition(mapId),
@@ -317,7 +328,7 @@ public class WorldService : BaseService<IWorldService>, IWorldService
             var mushroom = await Engine.BlueprintService.GenerateWorldGameObjectAsync(
                 GameObjectType.Prop_Mushroom, GetRandomWalkablePosition(mapId));
             AddEntity(mapId, mushroom);
-        }
+        }*/
     }
 
     private void HandleMapEvents(string id, Map map)
@@ -375,7 +386,7 @@ public class WorldService : BaseService<IWorldService>, IWorldService
             .FirstOrDefault(s => s.ObjectId == playerId);
     }
 
-    public bool AddPlayerOnMap(string mapId, Guid playerId, Guid networkSessionId, PointPosition position, TileType tile)
+    public bool AddPlayerOnMap(string mapId, Guid playerId, Guid networkSessionId, PointPosition position, uint tile)
     {
         var map = _maps[mapId].Item1;
 
@@ -427,6 +438,7 @@ public class WorldService : BaseService<IWorldService>, IWorldService
     public void AddEntity<TEntity>(string mapId, TEntity entity) where TEntity : IGameObject
     {
         var map = GetMap(mapId);
+        Logger.LogDebug("Add entity {Entity} to map {MapId} Layer: {Layer} Position: {Pos}", entity, mapId, ((MapLayer)entity.Layer).FastToString(), entity.Position);
         map.AddEntity(entity);
     }
 
@@ -532,8 +544,8 @@ public class WorldService : BaseService<IWorldService>, IWorldService
         var wallsFloors = dungeonGenerator.Context.GetFirst<ArrayView<bool>>("WallFloor");
 
         map.ApplyTerrainOverlay(wallsFloors, (pos, val) => val
-            ? new TerrainGameObject(pos) { IsWalkable = true, IsTransparent = true, Tile = TileType.Null }
-            : new TerrainGameObject(pos, false, false) { Tile = TileType.Null });
+            ? new TerrainGameObject(pos) { IsWalkable = true, IsTransparent = true, Tile = 0 }
+            : new TerrainGameObject(pos, false, false) { Tile = 0 });
 
         return ValueTask.FromResult(map);
     }

@@ -17,7 +17,7 @@ using DarkStar.Network.Server;
 using DarkStar.Network.Server.Interfaces;
 using DarkStar.Network.Session;
 using DarkStar.Network.Session.Interfaces;
-
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -25,6 +25,10 @@ using Redbus;
 using Redbus.Configuration;
 using Redbus.Interfaces;
 using Serilog;
+using Serilog.Formatting.Display;
+using Serilog.Sinks.SystemConsole.Themes;
+using Serilog.Templates;
+using Serilog.Templates.Themes;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 
@@ -46,7 +50,10 @@ internal class Program
     private static async Task Main(string[] args)
     {
         AssemblyUtils.AddAssembly(typeof(DarkSunEngine).Assembly);
-
+        // var consoleTemplate = new ExpressionTemplate(
+        //     "{@t:HH:mm:ss} - [{Substring(SourceContext, LastIndexOf(SourceContext, '.') + 1)}]:[{@l}]: {@m}\n{@x}",
+        //     theme: TemplateTheme.Code
+        //  );
         Log.Logger = new LoggerConfiguration()
             .Enrich.FromLogContext()
             .WriteTo.Console()
@@ -84,15 +91,21 @@ internal class Program
                     .AddSingleton<IDarkSunNetworkServer, TcpNetworkServer>()
                     .AddSingleton<INetworkSessionManager, InMemoryNetworkSessionManager>()
                     .AddSingleton<INetworkMessageBuilder, ProtoBufMessageBuilder>()
-                    .AddSingleton<IEventBus>(new EventBus(new EventBusConfiguration()
-                    {
-                        ThrowSubscriberException = true
-                    }))
-                    .AddSingleton(new DarkStarNetworkServerConfig()
-                    {
-                        Address = engineConfig.NetworkServer.Address,
-                        Port = engineConfig.NetworkServer.Port
-                    })
+                    .AddSingleton<IEventBus>(
+                        new EventBus(
+                            new EventBusConfiguration()
+                            {
+                                ThrowSubscriberException = true
+                            }
+                        )
+                    )
+                    .AddSingleton(
+                        new DarkStarNetworkServerConfig()
+                        {
+                            Address = engineConfig.NetworkServer.Address,
+                            Port = engineConfig.NetworkServer.Port
+                        }
+                    )
                     // Only for test
                     .AddSingleton(new DarkStarNetworkClientConfig())
                     .AddSingleton<IDarkStarNetworkClient, TcpNetworkClient>()
@@ -104,7 +117,8 @@ internal class Program
                     .RegisterScriptEngineFunctions()
                     .RegisterAiBehaviour()
                     .RegisterWorldObjectAndItems()
-                    .AddHostedService<DarkSunEngineHostedService>();
+                    .AddHostedService<DarkSunEngineHostedService>()
+                    .AddSignalR();
 
                 if (string.IsNullOrEmpty(Environment.GetEnvironmentVariable("DOCKER_CONTAINER")))
                 {
@@ -121,14 +135,19 @@ internal class Program
             .UseConsoleLifetime()
             .ConfigureWebHostDefaults(builder =>
             {
-                if (!engineConfig.HttpServer.Enabled)
-                {
-                    return;
-                }
+
+
+
 
                 Log.Logger.Information("Starting HTTP server - http root Directory is: {RootDirectory}", directoryConfig[DirectoryNameType.HttpRoot]);
                 builder.Configure(applicationBuilder =>
                 {
+                    //applicationBuilder.UseEndpoints(
+                    //    routeBuilder =>
+                    //    {
+
+                    //    }
+                    //);
                     applicationBuilder.ConfigureWebServerApp(directoryConfig[DirectoryNameType.HttpRoot]);
                 });
 
@@ -165,7 +184,7 @@ internal class Program
             }
 
             directoriesConfig[type] = Path.Join(directoriesConfig[DirectoryNameType.Root], type.ToString());
-            Log.Logger.Debug("{Type} directory is: {Directory}", type, directoriesConfig[type]);
+            Log.Logger.Debug("{GameObjectType} directory is: {Directory}", type, directoriesConfig[type]);
             Directory.CreateDirectory(directoriesConfig[type]);
         }
 

@@ -56,6 +56,7 @@ public class DarkSunEngine : IDarkSunEngine
     public IJobSchedulerService JobSchedulerService { get; }
     public IItemService ItemService { get; }
     public IEventBus EventBus { get; }
+    public ITypeService TypeService { get; }
 
     public DarkSunEngine(ILogger<DarkSunEngine> logger,
         IBlueprintService blueprintService,
@@ -72,7 +73,9 @@ public class DarkSunEngine : IDarkSunEngine
         INamesService namesService,
         ISeedService seedService,
         IJobSchedulerService jobSchedulerService,
-        IItemService itemService)
+        IItemService itemService,
+        ITypeService typeService
+    )
     {
         _logger = logger;
         WorldService = worldService;
@@ -88,6 +91,7 @@ public class DarkSunEngine : IDarkSunEngine
         SeedService = seedService;
         JobSchedulerService = jobSchedulerService;
         ItemService = itemService;
+        TypeService = typeService;
         CommandService = commandService;
         _container = container;
     }
@@ -98,7 +102,7 @@ public class DarkSunEngine : IDarkSunEngine
         foreach (var messageListenerType in messageListenersTypes)
         {
             var attribute = messageListenerType.GetCustomAttribute<NetworkMessageListenerAttribute>()!;
-            _logger.LogDebug("Adding message listener {Type} from message type: {MessageType}",
+            _logger.LogDebug("Adding message listener {GameObjectType} from message type: {MessageType}",
                 messageListenerType.Name, attribute.MessageType);
             if (_container.GetService(messageListenerType) is INetworkServerMessageListener service)
             {
@@ -182,7 +186,7 @@ public class DarkSunEngine : IDarkSunEngine
 
                 var race = new RaceEntity
                 {
-                    TileId = TileType.Food_Mushroom_1,
+                    TileId = 0,
                     Dexterity = 0,
                     Health = 0,
                     IsVisible = true,
@@ -212,7 +216,7 @@ public class DarkSunEngine : IDarkSunEngine
                         Luck = 10,
                         Name = "Player 1",
                         Strength = 10,
-                        TileId = TileType.Human_Mage_1,
+                        TileId = 0,
                         RaceId = race.Id,
                     }
                 );

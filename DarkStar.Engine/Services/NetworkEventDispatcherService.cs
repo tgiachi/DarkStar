@@ -71,7 +71,7 @@ public class NetworkEventDispatcherService : BaseService<NetworkEventDispatcherS
         switch (obj.Layer)
         {
             case MapLayer.Creatures:
-                message = new NpcAddedResponseMessage(obj.MapId, "", "", obj.Position, TileType.Null);
+                message = new NpcAddedResponseMessage(obj.MapId, "", "", obj.Position, 0);
                 break;
         }
 

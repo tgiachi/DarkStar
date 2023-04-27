@@ -24,7 +24,7 @@ public class RaceObjectSeedEntity
     public string Description { get; set; } = null!;
 
     [Column(converter: typeof(TileTypeConverter))]
-    public TileType TileType { get; set; }
+    public int TileType { get; set; }
     [Column]
     public int Strength { get; set; }
     [Column]

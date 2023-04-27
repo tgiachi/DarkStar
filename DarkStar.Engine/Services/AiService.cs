@@ -15,19 +15,21 @@ using Microsoft.Extensions.Logging;
 
 namespace DarkStar.Engine.Services;
 
-[DarkStarEngineService(nameof(AiService), 5)]
+[DarkStarEngineService(nameof(AiService), 9)]
 public class AiService : BaseService<AiService>, IAiService
 {
     private readonly IServiceProvider _serviceProvider;
+    private readonly ITypeService _typeService;
     private readonly SemaphoreSlim _aiExecutorsLock = new(1);
     private readonly Dictionary<uint, IAiBehaviourExecutor> _aiExecutors = new();
 
-    private readonly List<(NpcType, NpcSubType, Type)> _aiBehaviourTypes =
+    private readonly List<(short npcType, short npcSubType, Type)> _aiBehaviourTypes =
         new();
 
-    public AiService(ILogger<AiService> logger, IServiceProvider serviceProvider) : base(logger)
+    public AiService(ILogger<AiService> logger, IServiceProvider serviceProvider, ITypeService typeService) : base(logger)
     {
         _serviceProvider = serviceProvider;
+        _typeService = typeService;
     }
 
     protected override async ValueTask<bool> StartAsync()
@@ -68,7 +70,7 @@ public class AiService : BaseService<AiService>, IAiService
         }
         catch (Exception e)
         {
-            Logger.LogError(e, "Failed to add ai to npc {Type}: {Error}", @event.ObjectId, e);
+            Logger.LogError(e, "Failed to add ai to npc {GameObjectType}: {Error}", @event.ObjectId, e);
         }
 
     }
@@ -92,13 +94,18 @@ public class AiService : BaseService<AiService>, IAiService
 
             if (_serviceProvider.GetService(type) is not IAiBehaviourExecutor behaviour)
             {
-                Logger.LogError("Failed to create instance of {Type}, have you missing to implement IAiBehaviourExecutor interface?", type.Name);
+                Logger.LogError("Failed to create instance of {GameObjectType}, have you missing to implement IAiBehaviourExecutor interface?", type.Name);
                 continue;
             }
 
-            Logger.LogInformation("Found behaviour {Type} for {NpcType} {NpcSubType}", type.Name, attr!.Type, attr.SubType);
+            Logger.LogInformation("Found behaviour {GameObjectType} for {NpcType} {NpcSubType}", type.Name, attr!.NpcType, attr.NpcSubType);
+            var npcType = _typeService.GetNpcType(attr.NpcType);
+            var npcSubType = _typeService.GetNpcSubType(attr.NpcSubType);
 
-            _aiBehaviourTypes.Add((attr.Type, attr.SubType, type));
+            
+
+            _aiBehaviourTypes.Add((npcType.Value.Id, npcSubType.Id, type));
+
             GC.SuppressFinalize(behaviour);
 
         }

@@ -29,13 +29,13 @@ public struct WorldObjectAddedResponseMessage : IDarkStarNetworkMessage
     public PointPosition Position { get; set; } = default;
 
     [ProtoMember(5)]
-    public TileType TileType { get; set; } = TileType.Null;
+    public int TileType { get; set; } = 0;
 
     public WorldObjectAddedResponseMessage()
     {
     }
 
-    public WorldObjectAddedResponseMessage(string mapId, string itemId, string name, PointPosition position, TileType tileType)
+    public WorldObjectAddedResponseMessage(string mapId, string itemId, string name, PointPosition position, int tileType)
     {
         MapId = mapId;
         ItemId = itemId;
