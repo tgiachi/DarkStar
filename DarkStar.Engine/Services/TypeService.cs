@@ -38,8 +38,6 @@ public class TypeService : BaseService<TypeService>, ITypeService
 
     private readonly List<(NpcType, NpcSubType, string)> _npcTypeTiles = new();
 
-
-
     public Tile GetTile(uint id) => _tilesById[id];
     public Tile GetTile(string name) => _tilesByName[name.ToLower()];
 
@@ -109,7 +107,7 @@ public class TypeService : BaseService<TypeService>, ITypeService
         return _gameObjectTypes.Last();
     }
 
-    public GameObjectType GetGameObjectType(string name) => _gameObjectTypes.First(t => t.Name == name);
+    public GameObjectType GetGameObjectType(string name) => _gameObjectTypes.First(t => t.Name == name.ToUpper());
 
     public GameObjectType GetGameObjectType(short id) => _gameObjectTypes.First(t => t.Id == id);
     public GameObjectType SearchGameObject(string name) => _gameObjectTypes.First(t => SearchListUtils.MatchesWildcard(t.Name, name));

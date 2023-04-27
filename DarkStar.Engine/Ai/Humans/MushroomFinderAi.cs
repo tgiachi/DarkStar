@@ -7,6 +7,8 @@ using DarkStar.Api.Engine.Ai.Base;
 using DarkStar.Api.Engine.Attributes.Ai;
 using DarkStar.Api.Engine.Interfaces.Core;
 using DarkStar.Api.Engine.Map.Entities;
+using DarkStar.Api.World.Types.GameObjects;
+using DarkStar.Api.World.Types.Map;
 using DarkStar.Engine.Commands.Actions;
 using DarkStar.Network.Protocol.Messages.Common;
 using DarkStar.Network.Protocol.Messages.World;
@@ -58,7 +60,7 @@ public class MushroomFinderAi : BaseAiBehaviourExecutor
             return;
         }
 
-        WorldGameObject mushrooms = null; //(await GetEntitiesInRangeAsync<WorldGameObject>(MapLayer.Objects)).FirstOrDefault(s => s.Type == GameObjectType.Prop_Mushroom);
+        WorldGameObject mushrooms = (await GetEntitiesInRangeAsync<WorldGameObject>(MapLayer.Objects)).FirstOrDefault(s => s.Type == Engine.TypeService.GetGameObjectType("Prop_Mushroom").Id );
 
         if (mushrooms == null)
         {
