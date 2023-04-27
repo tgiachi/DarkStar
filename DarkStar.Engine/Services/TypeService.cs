@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DarkStar.Api.Attributes.Services;
 using DarkStar.Api.Engine.Interfaces.Services;
+using DarkStar.Api.Utils;
 using DarkStar.Api.World.Types.GameObjects;
 using DarkStar.Api.World.Types.Npc;
 using DarkStar.Api.World.Types.Tiles;
@@ -16,8 +17,6 @@ namespace DarkStar.Engine.Services;
 [DarkStarEngineService(nameof(TypeService), 1)]
 public class TypeService : BaseService<TypeService>, ITypeService
 {
-  
-
     public List<Tile> Tiles => _tiles;
     public List<NpcType> NpcTypes  => _npcTypes;
     public List<NpcSubType> NpcSubTypes => _npcSubTypes;
@@ -49,10 +48,9 @@ public class TypeService : BaseService<TypeService>, ITypeService
 
     }
 
-    // https://miro.medium.com/v2/resize:fit:4800/format:webp/1*MdhGzYo498oydx5IftXBaA.png
     public List<Tile> SearchTiles(string name, string? category, string? subCategory)
     {
-        var tiles = _tiles.Where(t => t.Name.Contains(name, StringComparison.OrdinalIgnoreCase)).ToList();
+        var tiles = _tiles.Where(t => SearchListUtils.MatchesWildcard(t.FullName, name)).ToList();
         if (category != null)
         {
             tiles = tiles.Where(t => t.Category.Contains(category, StringComparison.OrdinalIgnoreCase)).ToList();
@@ -66,14 +64,26 @@ public class TypeService : BaseService<TypeService>, ITypeService
 
     }
 
-    public Tile SearchTile(string name, string? category, string? subCategory) => SearchTiles(name, category, subCategory).First();
+    public Tile SearchTile(string name, string? category, string? subCategory)
+    {
+        var results = SearchTiles(name, category, subCategory);
+        return results.Count > 1 ? results.RandomItem() : results.First();
+    }
 
 
     public void AddTile(Tile tile)
     {
         Logger.LogInformation("Adding tile: {Id} - {Name}", tile.Id, tile);
         _tilesByName.Add(tile.FullName.ToLower(), tile);
-        _tilesById.Add(tile.Id, tile);
+        if (_tilesById.ContainsKey(tile.Id))
+        {
+            Logger.LogWarning("Tile Id {Id} already exists!", tile.Id);
+        }
+        else
+        {
+            _tilesById.Add(tile.Id, tile);
+        }
+        //_tilesById.Add(tile.Id, tile);
         _tiles.Add(tile);
     }
 
@@ -101,7 +111,7 @@ public class TypeService : BaseService<TypeService>, ITypeService
     public GameObjectType GetGameObjectType(string name) => _gameObjectTypes.First(t => t.Name == name);
 
     public GameObjectType GetGameObjectType(short id) => _gameObjectTypes.First(t => t.Id == id);
-    public GameObjectType SearchGameObject(string name) => _gameObjectTypes.First(t => t.Name.Contains(name, StringComparison.OrdinalIgnoreCase));
+    public GameObjectType SearchGameObject(string name) => _gameObjectTypes.First(t => SearchListUtils.MatchesWildcard(t.Name, name));
 
     public NpcType AddNpcType(string name)
     {

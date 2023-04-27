@@ -291,6 +291,12 @@ public class WorldService : BaseService<IWorldService>, IWorldService
 
     private async Task FillCityMapAsync(string mapId)
     {
+        var context = Engine.BlueprintService.GetMapGenerator(mapId, MapType.City);
+        foreach (var worldGameObject in context.GameObjects)
+        {
+            AddEntity(mapId, worldGameObject);
+        }
+
         /*foreach (var _ in Enumerable.Range(1, 5))
         {
             var cat = await Engine.BlueprintService.GenerateNpcGameObjectAsync(
@@ -427,6 +433,7 @@ public class WorldService : BaseService<IWorldService>, IWorldService
     public void AddEntity<TEntity>(string mapId, TEntity entity) where TEntity : IGameObject
     {
         var map = GetMap(mapId);
+        Logger.LogDebug("Add entity {Entity} to map {MapId} Layer: {Layer} Position: {Pos}", entity, mapId, ((MapLayer)entity.Layer).FastToString(), entity.Position);
         map.AddEntity(entity);
     }
 

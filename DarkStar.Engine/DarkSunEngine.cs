@@ -56,6 +56,7 @@ public class DarkSunEngine : IDarkSunEngine
     public IJobSchedulerService JobSchedulerService { get; }
     public IItemService ItemService { get; }
     public IEventBus EventBus { get; }
+    public ITypeService TypeService { get; }
 
     public DarkSunEngine(ILogger<DarkSunEngine> logger,
         IBlueprintService blueprintService,
@@ -72,7 +73,9 @@ public class DarkSunEngine : IDarkSunEngine
         INamesService namesService,
         ISeedService seedService,
         IJobSchedulerService jobSchedulerService,
-        IItemService itemService)
+        IItemService itemService,
+        ITypeService typeService
+    )
     {
         _logger = logger;
         WorldService = worldService;
@@ -88,6 +91,7 @@ public class DarkSunEngine : IDarkSunEngine
         SeedService = seedService;
         JobSchedulerService = jobSchedulerService;
         ItemService = itemService;
+        TypeService = typeService;
         CommandService = commandService;
         _container = container;
     }

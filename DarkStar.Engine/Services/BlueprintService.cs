@@ -1,5 +1,6 @@
 using DarkStar.Api.Attributes.Services;
 using DarkStar.Api.Data.Config;
+using DarkStar.Api.Engine.Data.Blueprint;
 using DarkStar.Api.Engine.Data.Templates;
 using DarkStar.Api.Engine.Interfaces.Services;
 using DarkStar.Api.Engine.Map.Entities;
@@ -26,6 +27,9 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
     private readonly DirectoriesConfig _directoriesConfig;
     private readonly INamesService _namesService;
     private readonly List<BluePrintTemplate> _bluePrintTemplates = new();
+
+    private readonly Dictionary<MapType, List<Func<BlueprintGenerationMapContext, BlueprintGenerationMapContext>>> _mapGenerators = new();
+
 
     public BlueprintService(ILogger<BlueprintService> logger, DirectoriesConfig directoriesConfig, INamesService namesService) : base(logger)
     {
@@ -115,9 +119,9 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
                 {
                     try
                     {
-                      
-                            bluePrintTemplate.Layers[layerType].Add(new BluePrintTemplatePoint(tile.Gid, p.X, p.Y));
-                       
+
+                        bluePrintTemplate.Layers[layerType].Add(new BluePrintTemplatePoint(tile.Gid, p.X, p.Y));
+
                     }
                     catch (Exception ex)
                     {
@@ -130,7 +134,7 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
         return bluePrintTemplate;
     }
 
-    public async Task<NpcEntity> GenerateNpcEntityAsync(NpcType npcType, NpcSubType subType,int level = 1)
+    public async Task<NpcEntity> GenerateNpcEntityAsync(NpcType npcType, NpcSubType subType, int level = 1)
     {
 
         NpcStatEntity npcStats;
@@ -231,9 +235,34 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
             IsTransparent = false,
             IsWalkable = false,
             Type = entity.GameObjectType,
-            Tile =entity.TileId
+            Tile = entity.TileId
         };
 
         return gameObject;
+    }
+
+    public void AddMapGenerator(MapType mapType, Func<BlueprintGenerationMapContext, BlueprintGenerationMapContext> callback)
+    {
+        if (!_mapGenerators.ContainsKey(mapType))
+        {
+            _mapGenerators.Add(mapType, new List<Func<BlueprintGenerationMapContext, BlueprintGenerationMapContext>>());
+        }
+
+        Logger.LogInformation("Adding map generator for {MapType}", mapType);
+
+        _mapGenerators[mapType].Add(callback);
+    }
+
+    public BlueprintGenerationMapContext GetMapGenerator(string mapId, MapType mapType)
+    {
+        if (!_mapGenerators.ContainsKey(mapType))
+        {
+            throw new Exception($"Can't find map generator for {mapType}");
+        }
+
+        var context = new BlueprintGenerationMapContext(mapId, Engine);
+        var mapGenerator = _mapGenerators[mapType].RandomItem();
+
+        return mapGenerator(context);
     }
 }

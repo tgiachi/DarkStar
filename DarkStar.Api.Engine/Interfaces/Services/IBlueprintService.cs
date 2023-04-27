@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DarkStar.Api.Engine.Data.Blueprint;
 using DarkStar.Api.Engine.Interfaces.Services.Base;
 using DarkStar.Api.Engine.Map.Entities;
 using DarkStar.Api.World.Types.GameObjects;
+using DarkStar.Api.World.Types.Map;
 using DarkStar.Api.World.Types.Npc;
 using DarkStar.Database.Entities.Npc;
 using DarkStar.Database.Entities.Objects;
@@ -20,9 +22,10 @@ public interface IBlueprintService : IDarkSunEngineService
 
     Task<NpcGameObject> GenerateNpcGameObjectAsync(PointPosition position, NpcType npcType, NpcSubType subType, int level = 1);
 
-    public Task<GameObjectEntity> GenerateWorldGameObjectAsync(GameObjectType type);
+    Task<GameObjectEntity> GenerateWorldGameObjectAsync(GameObjectType type);
 
+    Task<WorldGameObject> GenerateWorldGameObjectAsync(GameObjectType type, PointPosition position);
 
-    public Task<WorldGameObject> GenerateWorldGameObjectAsync(GameObjectType type, PointPosition position);
-
+    void AddMapGenerator(MapType mapType, Func<BlueprintGenerationMapContext, BlueprintGenerationMapContext> callback);
+    BlueprintGenerationMapContext GetMapGenerator(string mapId, MapType mapType);
 }

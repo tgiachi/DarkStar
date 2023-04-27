@@ -25,6 +25,10 @@ using Redbus;
 using Redbus.Configuration;
 using Redbus.Interfaces;
 using Serilog;
+using Serilog.Formatting.Display;
+using Serilog.Sinks.SystemConsole.Themes;
+using Serilog.Templates;
+using Serilog.Templates.Themes;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 
@@ -46,7 +50,10 @@ internal class Program
     private static async Task Main(string[] args)
     {
         AssemblyUtils.AddAssembly(typeof(DarkSunEngine).Assembly);
-
+        // var consoleTemplate = new ExpressionTemplate(
+        //     "{@t:HH:mm:ss} - [{Substring(SourceContext, LastIndexOf(SourceContext, '.') + 1)}]:[{@l}]: {@m}\n{@x}",
+        //     theme: TemplateTheme.Code
+        //  );
         Log.Logger = new LoggerConfiguration()
             .Enrich.FromLogContext()
             .WriteTo.Console()
@@ -128,9 +135,9 @@ internal class Program
             .UseConsoleLifetime()
             .ConfigureWebHostDefaults(builder =>
             {
-                    
-                
-                
+
+
+
 
                 Log.Logger.Information("Starting HTTP server - http root Directory is: {RootDirectory}", directoryConfig[DirectoryNameType.HttpRoot]);
                 builder.Configure(applicationBuilder =>
@@ -138,7 +145,7 @@ internal class Program
                     //applicationBuilder.UseEndpoints(
                     //    routeBuilder =>
                     //    {
-                            
+
                     //    }
                     //);
                     applicationBuilder.ConfigureWebServerApp(directoryConfig[DirectoryNameType.HttpRoot]);

@@ -21,6 +21,7 @@ public interface IDarkSunEngine
     IJobSchedulerService JobSchedulerService { get; }
     IItemService ItemService { get; }
     IEventBus EventBus { get; }
+    ITypeService TypeService { get; }
     ValueTask<bool> StartAsync();
     ValueTask<bool> StopAsync();
 

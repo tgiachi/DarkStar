@@ -18,8 +18,6 @@ namespace DarkStar.Api.World.Types.GameObjects;
 [StructLayout(LayoutKind.Auto)]
 public struct GameObjectType
 {
-   
-
     public short Id { get; }
     public string Name { get; }
 
