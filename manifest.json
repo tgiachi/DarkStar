@@ -235,6 +235,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Data.Blueprint.BlueprintGenerationMapContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Data.Blueprint.BlueprintGenerationMapContext.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Data.Blueprint.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Data.Blueprint.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/DarkStar.Api.Engine.Data.Config.EngineConfig.yml",
       "output": {
         ".html": {
@@ -895,6 +915,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Interfaces.Services.ITypeService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Interfaces.Services.ITypeService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/DarkStar.Api.Engine.Interfaces.Services.IWorldService.yml",
       "output": {
         ".html": {
@@ -1145,40 +1175,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/DarkStar.Api.Engine.Serialization.Seeds.Converters.GameObjectTypeConverter.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/DarkStar.Api.Engine.Serialization.Seeds.Converters.GameObjectTypeConverter.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/DarkStar.Api.Engine.Serialization.Seeds.Converters.ItemCategoryTypeConverter.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/DarkStar.Api.Engine.Serialization.Seeds.Converters.ItemCategoryTypeConverter.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/DarkStar.Api.Engine.Serialization.Seeds.Converters.ItemRarityConverter.yml",
       "output": {
         ".html": {
           "relative_path": "api/DarkStar.Api.Engine.Serialization.Seeds.Converters.ItemRarityConverter.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/DarkStar.Api.Engine.Serialization.Seeds.Converters.ItemTypeConverter.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/DarkStar.Api.Engine.Serialization.Seeds.Converters.ItemTypeConverter.html"
         }
       },
       "version": ""
@@ -1365,6 +1365,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Serialization.Converters.ToUpperCaseConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Serialization.Converters.ToUpperCaseConverter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/DarkStar.Api.Serialization.Converters.yml",
       "output": {
         ".html": {
@@ -1399,6 +1409,36 @@
       "output": {
         ".html": {
           "relative_path": "api/DarkStar.Api.Serialization.TileSets.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Serialization.Types.GameObjectTypeSerializableEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Serialization.Types.GameObjectTypeSerializableEntity.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Serialization.Types.NpcTypeAndSubTypeSerializableEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Serialization.Types.NpcTypeAndSubTypeSerializableEntity.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Serialization.Types.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Serialization.Types.html"
         }
       },
       "version": ""
@@ -1459,6 +1499,16 @@
       "output": {
         ".html": {
           "relative_path": "api/DarkStar.Api.Utils.RandomUtils.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Utils.SearchListUtils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Utils.SearchListUtils.html"
         }
       },
       "version": ""
@@ -1645,10 +1695,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/DarkStar.Api.World.Types.Tiles.TileType.yml",
+      "source_relative_path": "api/DarkStar.Api.World.Types.Tiles.Tile.yml",
       "output": {
         ".html": {
-          "relative_path": "api/DarkStar.Api.World.Types.Tiles.TileType.html"
+          "relative_path": "api/DarkStar.Api.World.Types.Tiles.Tile.html"
         }
       },
       "version": ""
@@ -1659,26 +1709,6 @@
       "output": {
         ".html": {
           "relative_path": "api/DarkStar.Api.World.Types.Tiles.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/DarkStar.Api.World.Types.Utils.TilesEnumEx.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/DarkStar.Api.World.Types.Utils.TilesEnumEx.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/DarkStar.Api.World.Types.Utils.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/DarkStar.Api.World.Types.Utils.html"
         }
       },
       "version": ""
@@ -2165,6 +2195,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Http.Controllers.ScriptController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Http.Controllers.ScriptController.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/DarkStar.Engine.Http.Controllers.VersionController.yml",
       "output": {
         ".html": {
@@ -2445,6 +2485,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.ScriptModules.BlueprintScriptModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.ScriptModules.BlueprintScriptModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/DarkStar.Engine.ScriptModules.PlayerScriptModule.yml",
       "output": {
         ".html": {
@@ -2455,10 +2505,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.ScriptModules.RandomUtilsScriptModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.ScriptModules.RandomUtilsScriptModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/DarkStar.Engine.ScriptModules.ServerScriptModule.yml",
       "output": {
         ".html": {
           "relative_path": "api/DarkStar.Engine.ScriptModules.ServerScriptModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.ScriptModules.TypesScriptModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.ScriptModules.TypesScriptModule.html"
         }
       },
       "version": ""
@@ -2639,6 +2709,16 @@
       "output": {
         ".html": {
           "relative_path": "api/DarkStar.Engine.Services.SeedService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Services.TypeService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Services.TypeService.html"
         }
       },
       "version": ""
@@ -2849,6 +2929,26 @@
       "output": {
         ".html": {
           "relative_path": "api/DarkStar.Network.Data.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Hubs.MessageHub.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Hubs.MessageHub.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Hubs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Hubs.html"
         }
       },
       "version": ""
@@ -3699,6 +3799,16 @@
       "output": {
         ".html": {
           "relative_path": "api/DarkStar.Network.Server.Interfaces.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Server.SignalrNetworkServer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Server.SignalrNetworkServer.html"
         }
       },
       "version": ""
