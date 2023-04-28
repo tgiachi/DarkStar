@@ -12,7 +12,9 @@ public interface IScriptEngineService : IDarkSunEngineService
 {
     ScriptEngineExecutionResult ExecuteCommand(string command);
 
+    List<ScriptFunctionDescriptor> Functions { get; }
+
     Dictionary<string, object> ContextVariables { get; }
 
-    void AddVariable(string name, object value);
+   
 }

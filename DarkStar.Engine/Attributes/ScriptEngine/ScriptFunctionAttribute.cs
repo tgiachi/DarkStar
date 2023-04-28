@@ -10,9 +10,11 @@ namespace DarkStar.Engine.Attributes.ScriptEngine;
 public class ScriptFunctionAttribute : Attribute
 {
     public string Alias { get; set; } = null!;
+    public string? Help { get; set; }
 
-    public ScriptFunctionAttribute(string? alias)
+    public ScriptFunctionAttribute(string? alias, string? help = null)
     {
         Alias = alias ?? string.Empty;
+        Help = help;
     }
 }

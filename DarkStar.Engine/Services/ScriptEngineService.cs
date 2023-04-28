@@ -1,10 +1,15 @@
 using System.Reflection;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using DarkStar.Api.Attributes.Services;
 using DarkStar.Api.Data.Config;
 using DarkStar.Api.Engine.Data.ScriptEngine;
+using DarkStar.Api.Engine.Events.Engine;
 using DarkStar.Api.Engine.Interfaces.Services;
 using DarkStar.Api.Utils;
+using DarkStar.Api.World.Types.GameObjects;
 using DarkStar.Api.World.Types.Map;
+using DarkStar.Api.World.Types.Npc;
 using DarkStar.Api.World.Types.Tiles;
 using DarkStar.Engine.Attributes.ScriptEngine;
 using DarkStar.Engine.Services.Base;
@@ -13,6 +18,7 @@ using GoRogue.GameFramework;
 using Microsoft.Extensions.Logging;
 using NLua;
 using NLua.Exceptions;
+using ProtoBuf;
 
 namespace DarkStar.Engine.Services;
 
@@ -24,6 +30,8 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
     private readonly IServiceProvider _container;
     private readonly ITypeService _typeService;
 
+    public List<ScriptFunctionDescriptor> Functions { get; } = new();
+
     public Dictionary<string, object> ContextVariables { get; } = new();
 
 
@@ -34,11 +42,17 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
         _typeService = typeService;
         _container = container;
         _directoriesConfig = directoriesConfig;
-        _scriptEngine = new Lua() { UseTraceback = true };
+        _scriptEngine = new Lua { UseTraceback = true };
     }
 
     protected override async ValueTask<bool> StartAsync()
     {
+
+        SubscribeToEvent<TileAddedEvent>(@event => AddTileToVariables(@event.Tile));
+        SubscribeToEvent<GameObjectTypeAdded>(@event => AddGameObjectTypeToVariables(@event.GameObjectType));
+        SubscribeToEvent<NpcTypeAdded>(@event => AddNpcTypeToVariables(@event.NpcType));
+        SubscribeToEvent<NpcSubTypeAdded>(@event => AddNpcSubTypeToVariables(@event.NpcSubType));
+
         await PrepareModuleDirectoryAsync();
         await PrepareScriptContextAsync();
         return true;
@@ -65,24 +79,20 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
     private async ValueTask PrepareScriptContextAsync()
     {
         Logger.LogInformation("Preparing Script Context");
-        _scriptEngine["Engine"] = Engine;
+        _scriptEngine["ENGINE"] = Engine;
+
 
         await ScanScriptModulesAsync();
 
 
         foreach (var tileType in _typeService.Tiles)
         {
-            var tileName = $"TILE_{tileType.FullName.ToUpper()}";
-            Logger.LogDebug("Adding tile {TileName}={Id} to LUA context", tileName, tileType.Id);
-            AddContextVariable(tileName, tileType.Id);
+            AddTileToVariables(tileType);
         }
 
         foreach (var gameObject in _typeService.GameObjectTypes)
         {
-            var gameObjectName = $"GAMEOBJECT_{gameObject.Name.ToUpper()}";
-            Logger.LogDebug("Adding game object {GameObjectName}={Id} to LUA context", gameObjectName, gameObject.Id);
-            AddContextVariable(gameObjectName, gameObject.Id);
-
+            AddGameObjectTypeToVariables(gameObject);
         }
 
         foreach (var mapType in FastEnum.GetValues<MapType>())
@@ -94,17 +104,12 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
 
         foreach (var npcType in _typeService.NpcTypes)
         {
-            var npcTypeName = $"NPC_TYPE_{npcType.Name.ToUpper()}";
-            Logger.LogDebug("Adding npc type {NpcTypeName}={Id} to LUA context", npcTypeName, npcType.Id);
-            AddContextVariable(npcTypeName, npcType.Id);
+            AddNpcTypeToVariables(npcType);
         }
 
         foreach (var npcSubType in _typeService.NpcSubTypes)
         {
-            var npcSubTypeName = $"NPC_SUBTYPE_{npcSubType.Name.ToUpper()}";
-            Logger.LogDebug("Adding npc subtype {NpcSubTypeName}={Id} to LUA context", npcSubTypeName, npcSubType.Id);
-            AddContextVariable(npcSubTypeName, npcSubType.Id);
-
+            AddNpcSubTypeToVariables(npcSubType);
         }
 
 
@@ -115,6 +120,34 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
         {
             await ExecuteScriptAsync(file);
         }
+    }
+
+    private void AddTileToVariables(Tile tileType)
+    {
+        var tileName = $"TILE_{tileType.FullName.ToUpper()}";
+        Logger.LogDebug("Adding tile {TileName}={Id} to LUA context", tileName, tileType.Id);
+        AddContextVariable(tileName, tileType.Id);
+    }
+
+    private void AddGameObjectTypeToVariables(GameObjectType gameObject)
+    {
+        var gameObjectName = $"GAMEOBJECT_{gameObject.Name.ToUpper()}";
+        Logger.LogDebug("Adding game object {GameObjectName}={Id} to LUA context", gameObjectName, gameObject.Id);
+        AddContextVariable(gameObjectName, gameObject.Id);
+    }
+
+    public void AddNpcTypeToVariables(NpcType npcType)
+    {
+        var npcTypeName = $"NPC_TYPE_{npcType.Name.ToUpper()}";
+        Logger.LogDebug("Adding npc type {NpcTypeName}={Id} to LUA context", npcTypeName, npcType.Id);
+        AddContextVariable(npcTypeName, npcType.Id);
+    }
+
+    private void AddNpcSubTypeToVariables(NpcSubType npcSubType)
+    {
+        var npcSubTypeName = $"NPC_SUBTYPE_{npcSubType.Name.ToUpper()}";
+        Logger.LogDebug("Adding npc subtype {NpcSubTypeName}={Id} to LUA context", npcSubTypeName, npcSubType.Id);
+        AddContextVariable(npcSubTypeName, npcSubType.Id);
     }
 
     private void AddContextVariable(string name, object value)
@@ -141,6 +174,7 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
                     {
                         continue;
                     }
+                    ExtractFunctionDescriptor(sMethodAttr, scriptMethod);
 
                     Logger.LogInformation("Adding script method {M}", sMethodAttr.Alias ?? scriptMethod.Name);
                     _scriptEngine.RegisterFunction(sMethodAttr.Alias ?? scriptMethod.Name, instance!, scriptMethod);
@@ -153,6 +187,29 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
         }
 
         return ValueTask.CompletedTask;
+    }
+
+    private void ExtractFunctionDescriptor(ScriptFunctionAttribute attribute, MethodInfo methodInfo)
+    {
+        var descriptor = new ScriptFunctionDescriptor
+        {
+            FunctionName = attribute.Alias ?? methodInfo.Name,
+            Help = attribute.Help,
+            Parameters = new List<ScriptFunctionParameterDescriptor>(),
+            ReturnType = methodInfo.ReturnType.Name
+        };
+
+        foreach (var parameter in methodInfo.GetParameters())
+        {
+
+            descriptor.Parameters.Add(new ScriptFunctionParameterDescriptor
+            {
+                ParameterName = parameter.Name,
+                ParameterType = parameter.ParameterType.Name,
+
+            });
+        }
+        Functions.Add(descriptor);
     }
 
     private ValueTask ExecuteScriptAsync(string script)
@@ -192,10 +249,4 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
         }
     }
 
-
-
-    public void AddVariable(string name, object value)
-    {
-        _scriptEngine[name] = value;
-    }
 }
