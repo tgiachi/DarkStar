@@ -108,8 +108,12 @@ internal class Program
                         }
                     )
                     // Only for test
-                    .AddSingleton(new DarkStarNetworkClientConfig())
-                    .AddSingleton<IDarkStarNetworkClient, TcpNetworkClient>()
+                    .AddSingleton(new DarkStarNetworkClientConfig()
+                    {
+                        Address = "http://localhost",
+                        Port = 5000
+                    })
+                    .AddSingleton<IDarkStarNetworkClient, SignalrNetworkClient>()
                     .AddSingleton(engineConfig)
                     .AddSingleton(directoryConfig)
                     .RegisterDarkSunServices()

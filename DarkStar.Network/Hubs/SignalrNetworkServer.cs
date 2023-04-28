@@ -50,7 +50,7 @@ public class SignalrNetworkServer : IDarkSunNetworkServer
 
     public async Task SendMessageAsync(string sessionId, IDarkStarNetworkMessage message)
     {
-        await _hubContext.Clients.Client(sessionId.ToString()).SendAsync("IncomingMessage", Encoding.UTF8.GetString(_messageBuilder.BuildMessage(message)));
+        await _hubContext.Clients.Client(sessionId).SendAsync("IncomingMessage", Encoding.UTF8.GetString(_messageBuilder.BuildMessage(message)));
 
     }
 
@@ -58,7 +58,7 @@ public class SignalrNetworkServer : IDarkSunNetworkServer
     {
         foreach (var networkMessage in message)
         {
-            await _hubContext.Clients.Client(sessionId.ToString()).SendAsync("IncomingMessage", Encoding.UTF8.GetString(_messageBuilder.BuildMessage(networkMessage)));
+            await _hubContext.Clients.Client(sessionId).SendAsync("IncomingMessage", Encoding.UTF8.GetString(_messageBuilder.BuildMessage(networkMessage)));
         }
 
     }
@@ -73,7 +73,10 @@ public class SignalrNetworkServer : IDarkSunNetworkServer
         string sessionId, DarkStarMessageType messageType, IDarkStarNetworkMessage message
     )
     {
-        await OnMessageReceived?.Invoke(sessionId, messageType, message);
+        if (OnMessageReceived != null)
+        {
+            await OnMessageReceived?.Invoke(sessionId, messageType, message);
+        }
         if (_messageListeners.TryGetValue(messageType, out var listener))
         {
             await listener.OnMessageReceivedAsync(sessionId, messageType, message);

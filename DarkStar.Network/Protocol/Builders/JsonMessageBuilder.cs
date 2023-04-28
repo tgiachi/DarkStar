@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using DarkStar.Network.Data;
 using DarkStar.Network.Protocol.Interfaces.Messages;
@@ -13,7 +14,9 @@ using DarkStar.Network.Attributes;
 using DarkStar.Network.Protocol.Types;
 using Humanizer;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using ProtoBuf;
+using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace DarkStar.Network.Protocol.Builders;
 public class JsonMessageBuilder : INetworkMessageBuilder
@@ -36,7 +39,7 @@ public class JsonMessageBuilder : INetworkMessageBuilder
 
         var message = JsonSerializer.Deserialize<NetworkMessage>(buffer);
         _logger.LogDebug("Message type is {MessageType}", message.MessageType);
-        var innerMessage = JsonSerializer.Deserialize(new MemoryStream(message.Message), _messageTypes[message.MessageType]);
+        var innerMessage = JsonConvert.DeserializeObject(Encoding.UTF8.GetString(message.Message), _messageTypes[message.MessageType]);
 
         return new NetworkMessageData { MessageType = message.MessageType, Message = (innerMessage as IDarkStarNetworkMessage)! };
     }
@@ -49,7 +52,12 @@ public class JsonMessageBuilder : INetworkMessageBuilder
         {
             try
             {
-                var innerMessage = Encoding.UTF8.GetBytes(JsonSerializer.Serialize(message));
+                var options = new JsonSerializerOptions
+                {
+                    MaxDepth = 1000,
+                };
+                
+                var innerMessage = Encoding.UTF8.GetBytes (JsonConvert.SerializeObject(message));
 
                 var netMessage =
                     new NetworkMessage() { Message = innerMessage, MessageType = messageType.MessageType };
