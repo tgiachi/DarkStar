@@ -79,7 +79,7 @@
   <h6><strong>Assembly</strong>: DarkStar.Network.dll</h6>
   <h5 id="DarkStar_Network_Server_Interfaces_IDarkSunNetworkServer_ClientConnectedMessages_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public delegate Task&lt;List&lt;IDarkStarNetworkMessage&gt;&gt; IDarkSunNetworkServer.ClientConnectedMessages(Guid sessionId)</code></pre>
+    <pre><code class="lang-csharp hljs">public delegate Task&lt;List&lt;IDarkStarNetworkMessage&gt;&gt; IDarkSunNetworkServer.ClientConnectedMessages(string sessionId)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -92,7 +92,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
         <td><span class="parametername">sessionId</span></td>
         <td></td>
       </tr>

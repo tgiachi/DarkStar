@@ -114,18 +114,18 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_ScriptModules_TypesScriptModule__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Engine_ScriptModules_TypesScriptModule__DarkStar_Api_Engine_Interfaces_Services_ITypeService_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.ScriptModules.TypesScriptModule.%23ctor(Microsoft.Extensions.Logging.ILogger%7BDarkStar.Engine.ScriptModules.TypesScriptModule%7D%2CDarkStar.Api.Engine.Interfaces.Services.ITypeService)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_ScriptModules_TypesScriptModule__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Engine_ScriptModules_TypesScriptModule__DarkStar_Api_Engine_Interfaces_Services_ITypeService_DarkStar_Api_Engine_Interfaces_Services_ISeedService_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.ScriptModules.TypesScriptModule.%23ctor(Microsoft.Extensions.Logging.ILogger%7BDarkStar.Engine.ScriptModules.TypesScriptModule%7D%2CDarkStar.Api.Engine.Interfaces.Services.ITypeService%2CDarkStar.Api.Engine.Interfaces.Services.ISeedService)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/ScriptModules/TypesScriptModule.cs/#L20">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/ScriptModules/TypesScriptModule.cs/#L22">View Source</a>
   </span>
   <a id="DarkStar_Engine_ScriptModules_TypesScriptModule__ctor_" data-uid="DarkStar.Engine.ScriptModules.TypesScriptModule.#ctor*"></a>
-  <h4 id="DarkStar_Engine_ScriptModules_TypesScriptModule__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Engine_ScriptModules_TypesScriptModule__DarkStar_Api_Engine_Interfaces_Services_ITypeService_" data-uid="DarkStar.Engine.ScriptModules.TypesScriptModule.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.ScriptModules.TypesScriptModule},DarkStar.Api.Engine.Interfaces.Services.ITypeService)">TypesScriptModule(ILogger&lt;TypesScriptModule&gt;, ITypeService)</h4>
+  <h4 id="DarkStar_Engine_ScriptModules_TypesScriptModule__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Engine_ScriptModules_TypesScriptModule__DarkStar_Api_Engine_Interfaces_Services_ITypeService_DarkStar_Api_Engine_Interfaces_Services_ISeedService_" data-uid="DarkStar.Engine.ScriptModules.TypesScriptModule.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.ScriptModules.TypesScriptModule},DarkStar.Api.Engine.Interfaces.Services.ITypeService,DarkStar.Api.Engine.Interfaces.Services.ISeedService)">TypesScriptModule(ILogger&lt;TypesScriptModule&gt;, ITypeService, ISeedService)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public TypesScriptModule(ILogger&lt;TypesScriptModule&gt; logger, ITypeService typeService)</code></pre>
+    <pre><code class="lang-csharp hljs">public TypesScriptModule(ILogger&lt;TypesScriptModule&gt; logger, ITypeService typeService, ISeedService seedService)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -147,6 +147,11 @@
         <td><span class="parametername">typeService</span></td>
         <td></td>
       </tr>
+      <tr>
+        <td><a class="xref" href="DarkStar.Api.Engine.Interfaces.Services.ISeedService.html">ISeedService</a></td>
+        <td><span class="parametername">seedService</span></td>
+        <td></td>
+      </tr>
     </tbody>
   </table>
   <h3 id="fields">Fields
@@ -156,7 +161,7 @@
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_ScriptModules_TypesScriptModule__logger.md&amp;value=---%0Auid%3A%20DarkStar.Engine.ScriptModules.TypesScriptModule._logger%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/ScriptModules/TypesScriptModule.cs/#L17">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/ScriptModules/TypesScriptModule.cs/#L18">View Source</a>
   </span>
   <h4 id="DarkStar_Engine_ScriptModules_TypesScriptModule__logger" data-uid="DarkStar.Engine.ScriptModules.TypesScriptModule._logger">_logger</h4>
   <div class="markdown level1 summary"></div>
@@ -182,10 +187,39 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_ScriptModules_TypesScriptModule__seedService.md&amp;value=---%0Auid%3A%20DarkStar.Engine.ScriptModules.TypesScriptModule._seedService%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/ScriptModules/TypesScriptModule.cs/#L20">View Source</a>
+  </span>
+  <h4 id="DarkStar_Engine_ScriptModules_TypesScriptModule__seedService" data-uid="DarkStar.Engine.ScriptModules.TypesScriptModule._seedService">_seedService</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private readonly ISeedService _seedService</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DarkStar.Api.Engine.Interfaces.Services.ISeedService.html">ISeedService</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_ScriptModules_TypesScriptModule__typeService.md&amp;value=---%0Auid%3A%20DarkStar.Engine.ScriptModules.TypesScriptModule._typeService%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/ScriptModules/TypesScriptModule.cs/#L18">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/ScriptModules/TypesScriptModule.cs/#L19">View Source</a>
   </span>
   <h4 id="DarkStar_Engine_ScriptModules_TypesScriptModule__typeService" data-uid="DarkStar.Engine.ScriptModules.TypesScriptModule._typeService">_typeService</h4>
   <div class="markdown level1 summary"></div>
@@ -213,10 +247,63 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_ScriptModules_TypesScriptModule_AddGameObject_System_String_System_String_System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.ScriptModules.TypesScriptModule.AddGameObject(System.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/ScriptModules/TypesScriptModule.cs/#L42">View Source</a>
+  </span>
+  <a id="DarkStar_Engine_ScriptModules_TypesScriptModule_AddGameObject_" data-uid="DarkStar.Engine.ScriptModules.TypesScriptModule.AddGameObject*"></a>
+  <h4 id="DarkStar_Engine_ScriptModules_TypesScriptModule_AddGameObject_System_String_System_String_System_String_System_String_System_String_" data-uid="DarkStar.Engine.ScriptModules.TypesScriptModule.AddGameObject(System.String,System.String,System.String,System.String,System.String)">AddGameObject(string, string, string, string, string)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ScriptFunction(&quot;add_game_object_seed&quot;, null)]
+public void AddGameObject(string name, string description, string tileName, string gameObjectType, string data)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">name</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">description</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">tileName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">gameObjectType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">data</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_ScriptModules_TypesScriptModule_AddGameObjectType_System_String_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.ScriptModules.TypesScriptModule.AddGameObjectType(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/ScriptModules/TypesScriptModule.cs/#L27">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/ScriptModules/TypesScriptModule.cs/#L29">View Source</a>
   </span>
   <a id="DarkStar_Engine_ScriptModules_TypesScriptModule_AddGameObjectType_" data-uid="DarkStar.Engine.ScriptModules.TypesScriptModule.AddGameObjectType*"></a>
   <h4 id="DarkStar_Engine_ScriptModules_TypesScriptModule_AddGameObjectType_System_String_" data-uid="DarkStar.Engine.ScriptModules.TypesScriptModule.AddGameObjectType(System.String)">AddGameObjectType(string)</h4>
@@ -224,7 +311,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[ScriptFunction(&quot;add_game_object_type&quot;)]
+    <pre><code class="lang-csharp hljs">[ScriptFunction(&quot;add_game_object_type&quot;, null)]
 public GameObjectType AddGameObjectType(string type)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -264,7 +351,7 @@ public GameObjectType AddGameObjectType(string type)</code></pre>
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_ScriptModules_TypesScriptModule_AddNpcType_System_String_System_String_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.ScriptModules.TypesScriptModule.AddNpcType(System.String%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/ScriptModules/TypesScriptModule.cs/#L30">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/ScriptModules/TypesScriptModule.cs/#L32">View Source</a>
   </span>
   <a id="DarkStar_Engine_ScriptModules_TypesScriptModule_AddNpcType_" data-uid="DarkStar.Engine.ScriptModules.TypesScriptModule.AddNpcType*"></a>
   <h4 id="DarkStar_Engine_ScriptModules_TypesScriptModule_AddNpcType_System_String_System_String_" data-uid="DarkStar.Engine.ScriptModules.TypesScriptModule.AddNpcType(System.String,System.String)">AddNpcType(string, string)</h4>
@@ -272,7 +359,7 @@ public GameObjectType AddGameObjectType(string type)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[ScriptFunction(&quot;add_npc_type&quot;)]
+    <pre><code class="lang-csharp hljs">[ScriptFunction(&quot;add_npc_type&quot;, null)]
 public NpcSubType AddNpcType(string type, string subType)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -312,6 +399,79 @@ public NpcSubType AddNpcType(string type, string subType)</code></pre>
       </tr>
     </tbody>
   </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_ScriptModules_TypesScriptModule_AddTile_System_Int32_System_String_System_String_System_String_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.ScriptModules.TypesScriptModule.AddTile(System.Int32%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/ScriptModules/TypesScriptModule.cs/#L35">View Source</a>
+  </span>
+  <a id="DarkStar_Engine_ScriptModules_TypesScriptModule_AddTile_" data-uid="DarkStar.Engine.ScriptModules.TypesScriptModule.AddTile*"></a>
+  <h4 id="DarkStar_Engine_ScriptModules_TypesScriptModule_AddTile_System_Int32_System_String_System_String_System_String_System_String_System_Boolean_" data-uid="DarkStar.Engine.ScriptModules.TypesScriptModule.AddTile(System.Int32,System.String,System.String,System.String,System.String,System.Boolean)">AddTile(int, string, string, string, string?, bool)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ScriptFunction(&quot;add_tile&quot;, null)]
+public Tile AddTile(int id, string name, string category, string subcategory, string? tag, bool isTransparent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">id</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">name</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">category</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">subcategory</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">tag</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isTransparent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DarkStar.Api.World.Types.Tiles.Tile.html">Tile</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
 
 </article>
           </div>
@@ -324,7 +484,7 @@ public NpcSubType AddNpcType(string type, string subType)</code></pre>
                     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_ScriptModules_TypesScriptModule.md&amp;value=---%0Auid%3A%20DarkStar.Engine.ScriptModules.TypesScriptModule%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/ScriptModules/TypesScriptModule.cs/#L14" class="contribution-link">View Source</a>
+                    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/ScriptModules/TypesScriptModule.cs/#L15" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

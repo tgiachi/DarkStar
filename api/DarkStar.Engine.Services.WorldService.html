@@ -354,18 +354,18 @@ public class WorldService : BaseService&lt;IWorldService&gt;, IWorldService, IDa
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_WorldService_AddPlayerOnMap_System_String_System_Guid_System_Guid_DarkStar_Network_Protocol_Messages_Common_PointPosition_System_UInt32_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.WorldService.AddPlayerOnMap(System.String%2CSystem.Guid%2CSystem.Guid%2CDarkStar.Network.Protocol.Messages.Common.PointPosition%2CSystem.UInt32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_WorldService_AddPlayerOnMap_System_String_System_Guid_System_String_DarkStar_Network_Protocol_Messages_Common_PointPosition_System_UInt32_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.WorldService.AddPlayerOnMap(System.String%2CSystem.Guid%2CSystem.String%2CDarkStar.Network.Protocol.Messages.Common.PointPosition%2CSystem.UInt32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/WorldService.cs/#L389">View Source</a>
   </span>
   <a id="DarkStar_Engine_Services_WorldService_AddPlayerOnMap_" data-uid="DarkStar.Engine.Services.WorldService.AddPlayerOnMap*"></a>
-  <h4 id="DarkStar_Engine_Services_WorldService_AddPlayerOnMap_System_String_System_Guid_System_Guid_DarkStar_Network_Protocol_Messages_Common_PointPosition_System_UInt32_" data-uid="DarkStar.Engine.Services.WorldService.AddPlayerOnMap(System.String,System.Guid,System.Guid,DarkStar.Network.Protocol.Messages.Common.PointPosition,System.UInt32)">AddPlayerOnMap(string, Guid, Guid, PointPosition, uint)</h4>
+  <h4 id="DarkStar_Engine_Services_WorldService_AddPlayerOnMap_System_String_System_Guid_System_String_DarkStar_Network_Protocol_Messages_Common_PointPosition_System_UInt32_" data-uid="DarkStar.Engine.Services.WorldService.AddPlayerOnMap(System.String,System.Guid,System.String,DarkStar.Network.Protocol.Messages.Common.PointPosition,System.UInt32)">AddPlayerOnMap(string, Guid, string, PointPosition, uint)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool AddPlayerOnMap(string mapId, Guid playerId, Guid networkSessionId, PointPosition position, uint tile)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool AddPlayerOnMap(string mapId, Guid playerId, string networkSessionId, PointPosition position, uint tile)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -388,7 +388,7 @@ public class WorldService : BaseService&lt;IWorldService&gt;, IWorldService, IDa
         <td></td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
         <td><span class="parametername">networkSessionId</span></td>
         <td></td>
       </tr>

@@ -435,6 +435,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Data.ScriptEngine.ScriptFunctionDescriptor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Data.ScriptEngine.ScriptFunctionDescriptor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Data.ScriptEngine.ScriptFunctionParameterDescriptor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Data.ScriptEngine.ScriptFunctionParameterDescriptor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/DarkStar.Api.Engine.Data.ScriptEngine.yml",
       "output": {
         ".html": {
@@ -509,6 +529,46 @@
       "output": {
         ".html": {
           "relative_path": "api/DarkStar.Api.Engine.Events.Engine.EngineStoppingEvent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Events.Engine.GameObjectTypeAdded.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Events.Engine.GameObjectTypeAdded.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Events.Engine.NpcSubTypeAdded.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Events.Engine.NpcSubTypeAdded.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Events.Engine.NpcTypeAdded.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Events.Engine.NpcTypeAdded.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Events.Engine.TileAddedEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Events.Engine.TileAddedEvent.html"
         }
       },
       "version": ""
@@ -2875,6 +2935,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Client.SignalrNetworkClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Client.SignalrNetworkClient.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/DarkStar.Network.Client.TcpNetworkClient.yml",
       "output": {
         ".html": {
@@ -2935,10 +3005,20 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/DarkStar.Network.Hubs.MessageHub.yml",
+      "source_relative_path": "api/DarkStar.Network.Hubs.SignalrMessageHub.yml",
       "output": {
         ".html": {
-          "relative_path": "api/DarkStar.Network.Hubs.MessageHub.html"
+          "relative_path": "api/DarkStar.Network.Hubs.SignalrMessageHub.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Hubs.SignalrNetworkServer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Hubs.SignalrNetworkServer.html"
         }
       },
       "version": ""
@@ -2979,6 +3059,16 @@
       "output": {
         ".html": {
           "relative_path": "api/DarkStar.Network.Interfaces.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Builders.JsonMessageBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Builders.JsonMessageBuilder.html"
         }
       },
       "version": ""
@@ -3799,16 +3889,6 @@
       "output": {
         ".html": {
           "relative_path": "api/DarkStar.Network.Server.Interfaces.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/DarkStar.Network.Server.SignalrNetworkServer.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/DarkStar.Network.Server.SignalrNetworkServer.html"
         }
       },
       "version": ""

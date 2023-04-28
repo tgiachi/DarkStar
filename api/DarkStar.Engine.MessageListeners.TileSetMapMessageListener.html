@@ -94,7 +94,7 @@
       <a class="xref" href="DarkStar.Api.Engine.MessageListeners.BaseNetworkMessageListener-1.html#DarkStar_Api_Engine_MessageListeners_BaseNetworkMessageListener_1_Engine">BaseNetworkMessageListener&lt;TileSetMapRequestMessage&gt;.Engine</a>
     </div>
     <div>
-      <a class="xref" href="DarkStar.Api.Engine.MessageListeners.BaseNetworkMessageListener-1.html#DarkStar_Api_Engine_MessageListeners_BaseNetworkMessageListener_1_OnMessageReceivedAsync_System_Guid_DarkStar_Network_Protocol_Types_DarkStarMessageType_DarkStar_Network_Protocol_Interfaces_Messages_IDarkStarNetworkMessage_">BaseNetworkMessageListener&lt;TileSetMapRequestMessage&gt;.OnMessageReceivedAsync(Guid, DarkStarMessageType, IDarkStarNetworkMessage)</a>
+      <a class="xref" href="DarkStar.Api.Engine.MessageListeners.BaseNetworkMessageListener-1.html#DarkStar_Api_Engine_MessageListeners_BaseNetworkMessageListener_1_OnMessageReceivedAsync_System_String_DarkStar_Network_Protocol_Types_DarkStarMessageType_DarkStar_Network_Protocol_Interfaces_Messages_IDarkStarNetworkMessage_">BaseNetworkMessageListener&lt;TileSetMapRequestMessage&gt;.OnMessageReceivedAsync(string, DarkStarMessageType, IDarkStarNetworkMessage)</a>
     </div>
     <div>
       <a class="xref" href="DarkStar.Api.Engine.MessageListeners.BaseNetworkMessageListener-1.html#DarkStar_Api_Engine_MessageListeners_BaseNetworkMessageListener_1_SingleMessage_DarkStar_Network_Protocol_Interfaces_Messages_IDarkStarNetworkMessage_">BaseNetworkMessageListener&lt;TileSetMapRequestMessage&gt;.SingleMessage(IDarkStarNetworkMessage)</a>
@@ -177,18 +177,18 @@ public class TileSetMapMessageListener : BaseNetworkMessageListener&lt;TileSetMa
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_MessageListeners_TileSetMapMessageListener_OnMessageReceivedAsync_System_Guid_DarkStar_Network_Protocol_Types_DarkStarMessageType_DarkStar_Network_Protocol_Messages_TileSet_TileSetMapRequestMessage_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.MessageListeners.TileSetMapMessageListener.OnMessageReceivedAsync(System.Guid%2CDarkStar.Network.Protocol.Types.DarkStarMessageType%2CDarkStar.Network.Protocol.Messages.TileSet.TileSetMapRequestMessage)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_MessageListeners_TileSetMapMessageListener_OnMessageReceivedAsync_System_String_DarkStar_Network_Protocol_Types_DarkStarMessageType_DarkStar_Network_Protocol_Messages_TileSet_TileSetMapRequestMessage_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.MessageListeners.TileSetMapMessageListener.OnMessageReceivedAsync(System.String%2CDarkStar.Network.Protocol.Types.DarkStarMessageType%2CDarkStar.Network.Protocol.Messages.TileSet.TileSetMapRequestMessage)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/MessageListeners/TileSetMapMessageListener.cs/#L21">View Source</a>
   </span>
   <a id="DarkStar_Engine_MessageListeners_TileSetMapMessageListener_OnMessageReceivedAsync_" data-uid="DarkStar.Engine.MessageListeners.TileSetMapMessageListener.OnMessageReceivedAsync*"></a>
-  <h4 id="DarkStar_Engine_MessageListeners_TileSetMapMessageListener_OnMessageReceivedAsync_System_Guid_DarkStar_Network_Protocol_Types_DarkStarMessageType_DarkStar_Network_Protocol_Messages_TileSet_TileSetMapRequestMessage_" data-uid="DarkStar.Engine.MessageListeners.TileSetMapMessageListener.OnMessageReceivedAsync(System.Guid,DarkStar.Network.Protocol.Types.DarkStarMessageType,DarkStar.Network.Protocol.Messages.TileSet.TileSetMapRequestMessage)">OnMessageReceivedAsync(Guid, DarkStarMessageType, TileSetMapRequestMessage)</h4>
+  <h4 id="DarkStar_Engine_MessageListeners_TileSetMapMessageListener_OnMessageReceivedAsync_System_String_DarkStar_Network_Protocol_Types_DarkStarMessageType_DarkStar_Network_Protocol_Messages_TileSet_TileSetMapRequestMessage_" data-uid="DarkStar.Engine.MessageListeners.TileSetMapMessageListener.OnMessageReceivedAsync(System.String,DarkStar.Network.Protocol.Types.DarkStarMessageType,DarkStar.Network.Protocol.Messages.TileSet.TileSetMapRequestMessage)">OnMessageReceivedAsync(string, DarkStarMessageType, TileSetMapRequestMessage)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override Task&lt;List&lt;IDarkStarNetworkMessage&gt;&gt; OnMessageReceivedAsync(Guid sessionId, DarkStarMessageType messageType, TileSetMapRequestMessage message)</code></pre>
+    <pre><code class="lang-csharp hljs">public override Task&lt;List&lt;IDarkStarNetworkMessage&gt;&gt; OnMessageReceivedAsync(string sessionId, DarkStarMessageType messageType, TileSetMapRequestMessage message)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -201,7 +201,7 @@ public class TileSetMapMessageListener : BaseNetworkMessageListener&lt;TileSetMa
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
         <td><span class="parametername">sessionId</span></td>
         <td></td>
       </tr>
@@ -233,7 +233,7 @@ public class TileSetMapMessageListener : BaseNetworkMessageListener&lt;TileSetMa
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="DarkStar.Api.Engine.MessageListeners.BaseNetworkMessageListener{DarkStar.Network.Protocol.Messages.TileSet.TileSetMapRequestMessage}.html#DarkStar.Api.Engine.MessageListeners.BaseNetworkMessageListener{DarkStar.Network.Protocol.Messages.TileSet.TileSetMapRequestMessage}.OnMessageReceivedAsync(System.Guid,DarkStar.Network.Protocol.Types.DarkStarMessageType,DarkStar.Network.Protocol.Messages.TileSet.TileSetMapRequestMessage)">BaseNetworkMessageListener&lt;TileSetMapRequestMessage&gt;.OnMessageReceivedAsync(Guid, DarkStarMessageType, TileSetMapRequestMessage)</a></div>
+  <div><a class="xref" href="DarkStar.Api.Engine.MessageListeners.BaseNetworkMessageListener{DarkStar.Network.Protocol.Messages.TileSet.TileSetMapRequestMessage}.html#DarkStar.Api.Engine.MessageListeners.BaseNetworkMessageListener{DarkStar.Network.Protocol.Messages.TileSet.TileSetMapRequestMessage}.OnMessageReceivedAsync(System.String,DarkStar.Network.Protocol.Types.DarkStarMessageType,DarkStar.Network.Protocol.Messages.TileSet.TileSetMapRequestMessage)">BaseNetworkMessageListener&lt;TileSetMapRequestMessage&gt;.OnMessageReceivedAsync(string, DarkStarMessageType, TileSetMapRequestMessage)</a></div>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="DarkStar.Network.Interfaces.INetworkServerMessageListener.html">INetworkServerMessageListener</a>
