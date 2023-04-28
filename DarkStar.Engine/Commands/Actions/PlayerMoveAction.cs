@@ -16,11 +16,11 @@ public struct PlayerMoveAction : ICommandAction
     public CommandActionType Type { get; } = CommandActionType.PlayerMove;
     public MoveDirectionType Direction { get; set; }
 
-    public Guid SessionId { get; set; }
+    public string SessionId { get; set; }
 
     public Guid PlayerId { get; set; }
 
-    public PlayerMoveAction(Guid sessionId, Guid playerId, MoveDirectionType direction, double delay = 1000)
+    public PlayerMoveAction(string sessionId, Guid playerId, MoveDirectionType direction, double delay = 1000)
     {
         SessionId = sessionId;
         PlayerId = playerId;

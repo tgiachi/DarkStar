@@ -23,7 +23,7 @@ public class RacesRequestMessageListener : BaseNetworkMessageListener<PlayerRace
     {
     }
 
-    public override async Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(Guid sessionId,
+    public override async Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(string sessionId,
         DarkStarMessageType messageType, PlayerRacesRequestMessage message)
     {
         return Engine.PlayerService.GetSession(sessionId).IsLogged

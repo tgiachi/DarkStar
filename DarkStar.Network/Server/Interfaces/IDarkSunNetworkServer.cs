@@ -11,12 +11,12 @@ namespace DarkStar.Network.Server.Interfaces;
 
 public interface IDarkSunNetworkServer
 {
-    delegate Task MessageReceivedDelegate(Guid sessionId, DarkStarMessageType messageType,
+    delegate Task MessageReceivedDelegate(string sessionId, DarkStarMessageType messageType,
         IDarkStarNetworkMessage message);
 
-    delegate Task<List<IDarkStarNetworkMessage>> ClientConnectedMessages(Guid sessionId);
+    delegate Task<List<IDarkStarNetworkMessage>> ClientConnectedMessages(string sessionId);
 
-    delegate Task ClientDisconnectedDelegate(Guid sessionId);
+    delegate Task ClientDisconnectedDelegate(string sessionId);
 
     event MessageReceivedDelegate OnMessageReceived;
     event ClientConnectedMessages OnClientConnected;
@@ -24,9 +24,9 @@ public interface IDarkSunNetworkServer
 
     Task StartAsync();
     Task StopAsync();
-    Task SendMessageAsync(Guid sessionId, IDarkStarNetworkMessage message);
-    Task SendMessageAsync(Guid sessionId, List<IDarkStarNetworkMessage> message);
+    Task SendMessageAsync(string sessionId, IDarkStarNetworkMessage message);
+    Task SendMessageAsync(string sessionId, List<IDarkStarNetworkMessage> message);
     Task BroadcastMessageAsync(IDarkStarNetworkMessage message);
-    Task DispatchMessageReceivedAsync(Guid sessionId, DarkStarMessageType messageType, IDarkStarNetworkMessage message);
+    Task DispatchMessageReceivedAsync(string sessionId, DarkStarMessageType messageType, IDarkStarNetworkMessage message);
     void RegisterMessageListener(DarkStarMessageType messageType, INetworkServerMessageListener serverMessageListener);
 }

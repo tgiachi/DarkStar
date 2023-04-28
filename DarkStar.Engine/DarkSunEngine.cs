@@ -129,7 +129,7 @@ public class DarkSunEngine : IDarkSunEngine
         return ValueTask.CompletedTask;
     }
 
-    private async Task NetworkServerOnClientDisconnectedAsync(Guid sessionId)
+    private async Task NetworkServerOnClientDisconnectedAsync(string sessionId)
     {
         foreach (var handler in _connectionHandlers)
         {
@@ -137,7 +137,7 @@ public class DarkSunEngine : IDarkSunEngine
         }
     }
 
-    private async Task<List<IDarkStarNetworkMessage>> NetworkServerOnOnClientConnectedAsync(Guid sessionId)
+    private async Task<List<IDarkStarNetworkMessage>> NetworkServerOnOnClientConnectedAsync(string sessionId)
     {
         var messages = new List<IDarkStarNetworkMessage>();
         foreach (var handler in _connectionHandlers)

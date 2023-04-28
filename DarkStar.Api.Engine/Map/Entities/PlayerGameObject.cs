@@ -13,7 +13,7 @@ namespace DarkStar.Api.Engine.Map.Entities;
 
 public class PlayerGameObject : BaseGameObject
 {
-    public Guid NetworkSessionId { get; set; }
+    public string NetworkSessionId { get; set; }
 
     public string Name { get; set; }
 

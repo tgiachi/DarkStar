@@ -25,7 +25,7 @@ public class AccountCreationMessageListener : BaseNetworkMessageListener<Account
     }
 
 
-    public override async Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(Guid sessionId,
+    public override async Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(string sessionId,
         DarkStarMessageType messageType, AccountCreateRequestMessage message)
     {
         var userExists = await Engine.DatabaseService.QueryAsSingleAsync<AccountEntity>(entity =>

@@ -9,7 +9,7 @@ namespace DarkStar.Network.Session.Interfaces;
 
 public interface INetworkSessionManager
 {
-    Guid AddSession(Guid? sessionGuid);
-    bool RemoveSession(Guid sessionGuid);
-    DarkSunSession GetSession(Guid sessionGuid);
+    string AddSession(string? sessionGuid);
+    bool RemoveSession(string sessionGuid);
+    DarkSunSession GetSession(string sessionGuid);
 }

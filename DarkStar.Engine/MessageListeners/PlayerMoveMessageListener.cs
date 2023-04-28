@@ -17,7 +17,7 @@ public class PlayerMoveMessageListener : BaseNetworkMessageListener<PlayerMoveRe
     {
     }
 
-    public override Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(Guid sessionId, DarkStarMessageType messageType, PlayerMoveRequestMessage message)
+    public override Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(string sessionId, DarkStarMessageType messageType, PlayerMoveRequestMessage message)
     {
         if (Engine.PlayerService.GetSession(sessionId).IsLogged)
         {

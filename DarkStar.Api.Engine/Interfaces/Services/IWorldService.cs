@@ -12,7 +12,7 @@ public interface IWorldService : IDarkSunEngineService
 {
     PointPosition GetRandomWalkablePosition(string mapId);
 
-    bool AddPlayerOnMap(string mapId, Guid playerId, Guid networkSessionId, PointPosition position, uint tile);
+    bool AddPlayerOnMap(string mapId, Guid playerId, string networkSessionId, PointPosition position, uint tile);
     bool RemovePlayerFromMap(string mapId, Guid playerId);
     GoRogue.GameFramework.Map GetMap(string mapId);
     MapType GetMapType(string mapId);

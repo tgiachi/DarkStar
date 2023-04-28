@@ -21,7 +21,7 @@ namespace DarkStar.Engine.Services;
 public class PlayerService : BaseService<PlayerService>, IPlayerService
 {
     private readonly SemaphoreSlim _playerLock = new(1);
-    private readonly Dictionary<Guid, PlayerSession> _playerSessions = new();
+    private readonly Dictionary<string, PlayerSession> _playerSessions = new();
 
     public PlayerInitialInventory InitialInventory { get; private set; } = new();
 
@@ -29,21 +29,21 @@ public class PlayerService : BaseService<PlayerService>, IPlayerService
     {
     }
 
-    public void AddSession(Guid networkSessionId)
+    public void AddSession(string networkSessionId)
     {
         _playerLock.Wait();
         _playerSessions.Add(networkSessionId, new PlayerSession() { SessionId = networkSessionId });
         _playerLock.Release();
     }
 
-    public void RemoveSession(Guid networkSessionId)
+    public void RemoveSession(string networkSessionId)
     {
         _playerLock.Wait();
         _playerSessions.Remove(networkSessionId);
         _playerLock.Release();
     }
 
-    public PlayerSession GetSession(Guid networkSessionId)
+    public PlayerSession GetSession(string networkSessionId)
     {
         if (_playerSessions.TryGetValue(networkSessionId, out var session))
         {

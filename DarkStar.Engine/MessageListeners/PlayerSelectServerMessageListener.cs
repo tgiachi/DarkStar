@@ -22,7 +22,7 @@ public class PlayerSelectMessageListener : BaseNetworkMessageListener<PlayerSele
     {
     }
 
-    public override Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(Guid sessionId,
+    public override Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(string sessionId,
         DarkStarMessageType messageType, PlayerSelectRequestMessage message)
     {
         return base.OnMessageReceivedAsync(sessionId, messageType, message);

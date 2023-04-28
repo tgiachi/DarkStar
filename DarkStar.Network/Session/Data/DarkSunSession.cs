@@ -8,5 +8,5 @@ namespace DarkStar.Network.Session.Data;
 
 public struct DarkSunSession
 {
-    public Guid SessionId { get; set; }
+    public string SessionId { get; set; }
 }
