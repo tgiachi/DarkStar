@@ -18,7 +18,7 @@ public class TileSetMapMessageListener : BaseNetworkMessageListener<TileSetMapRe
     {
     }
 
-    public override async Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(Guid sessionId,
+    public override async Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(string sessionId,
         DarkStarMessageType messageType, TileSetMapRequestMessage message)
     {
         if (Engine.PlayerService.GetSession(sessionId).IsLogged)

@@ -25,7 +25,7 @@ public class AccountLoginMessageListener : BaseNetworkMessageListener<AccountLog
     {
     }
 
-    public override async Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(Guid sessionId,
+    public override async Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(string sessionId,
         DarkStarMessageType messageType, AccountLoginRequestMessage message)
     {
         Logger.LogInformation("Received login request from {Id}", sessionId);

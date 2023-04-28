@@ -23,7 +23,7 @@ public class PongMessageListener : BaseNetworkMessageListener<PongMessageRespons
     {
     }
 
-    public override Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(Guid sessionId,
+    public override Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(string sessionId,
         DarkStarMessageType messageType,
         PongMessageResponse message)
     {

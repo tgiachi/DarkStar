@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DarkStar.Api.Attributes.Services;
+using DarkStar.Api.Engine.Events.Engine;
 using DarkStar.Api.Engine.Interfaces.Services;
 using DarkStar.Api.Utils;
 using DarkStar.Api.World.Types.GameObjects;
@@ -82,6 +83,7 @@ public class TypeService : BaseService<TypeService>, ITypeService
         {
             _tilesById.Add(tile.Id, tile);
         }
+        Engine.EventBus.PublishAsync(new TileAddedEvent() { Tile = tile });
         //_tilesById.Add(tile.Id, tile);
         _tiles.Add(tile);
     }
@@ -92,7 +94,9 @@ public class TypeService : BaseService<TypeService>, ITypeService
         _gameObjectTypes.Add(new GameObjectType(id, name));
         _gameObjectTypesById.Add(id, name);
 
-        return _gameObjectTypes.Last();
+        var go = _gameObjectTypes.Last();
+        Engine.EventBus.PublishAsync(new GameObjectTypeAdded() { GameObjectType = go });
+        return go;
     }
 
     public GameObjectType AddGameObjectType(short id, string name)
@@ -117,7 +121,9 @@ public class TypeService : BaseService<TypeService>, ITypeService
         var id = (short)_npcTypes.Count;
         _npcTypesById.Add(id, name);
         _npcTypes.Add(new NpcType(id, name));
-        return _npcTypes.Last();
+        var npc = _npcTypes.Last();
+        Engine.EventBus.PublishAsync(new NpcTypeAdded() { NpcType = npc });
+        return npc;
     }
 
     public NpcType AddNpcType(short id, string name)
@@ -143,7 +149,9 @@ public class TypeService : BaseService<TypeService>, ITypeService
         var id = (short)_npcSubTypes.Count;
         _npcSubTypesById.Add(id, name);
         _npcSubTypes.Add(new NpcSubType(type.Value.Id, id, name));
-        return _npcSubTypes.Last();
+        var subType = _npcSubTypes.Last();
+        Engine.EventBus.PublishAsync(new NpcSubTypeAdded() { NpcSubType = subType });
+        return subType;
 
     }
 

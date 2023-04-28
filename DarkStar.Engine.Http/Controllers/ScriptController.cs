@@ -19,4 +19,9 @@ public class ScriptController : ControllerBase
     [HttpGet]
     [Route("variables")]
     public ActionResult GetVariables() => Ok(_scriptEngineService.ContextVariables);
+
+
+    [HttpGet]
+    [Route("functions")]
+    public ActionResult GetFunctions() => Ok(_scriptEngineService.Functions);
 }

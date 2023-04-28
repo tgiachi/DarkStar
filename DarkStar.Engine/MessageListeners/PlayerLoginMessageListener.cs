@@ -19,7 +19,7 @@ public class PlayerLoginMessageListener : BaseNetworkMessageListener<PlayerLogin
 
     }
 
-    public override async Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(Guid sessionId, DarkStarMessageType messageType, PlayerLoginRequestMessage message)
+    public override async Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(string sessionId, DarkStarMessageType messageType, PlayerLoginRequestMessage message)
     {
         if (Engine.PlayerService.GetSession(sessionId).IsLogged)
         {

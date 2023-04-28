@@ -11,6 +11,7 @@ using DarkStar.Engine.Utils;
 using DarkStar.Network.Client;
 using DarkStar.Network.Client.Interfaces;
 using DarkStar.Network.Data;
+using DarkStar.Network.Hubs;
 using DarkStar.Network.Protocol.Builders;
 using DarkStar.Network.Protocol.Interfaces.Builders;
 using DarkStar.Network.Server;
@@ -88,9 +89,9 @@ internal class Program
             .ConfigureServices(services =>
             {
                 services.AddSingleton<IDarkSunEngine, DarkSunEngine>()
-                    .AddSingleton<IDarkSunNetworkServer, TcpNetworkServer>()
+                    .AddSingleton<IDarkSunNetworkServer, SignalrNetworkServer>()
                     .AddSingleton<INetworkSessionManager, InMemoryNetworkSessionManager>()
-                    .AddSingleton<INetworkMessageBuilder, ProtoBufMessageBuilder>()
+                    .AddSingleton<INetworkMessageBuilder, JsonMessageBuilder>()
                     .AddSingleton<IEventBus>(
                         new EventBus(
                             new EventBusConfiguration()
@@ -107,8 +108,12 @@ internal class Program
                         }
                     )
                     // Only for test
-                    .AddSingleton(new DarkStarNetworkClientConfig())
-                    .AddSingleton<IDarkStarNetworkClient, TcpNetworkClient>()
+                    .AddSingleton(new DarkStarNetworkClientConfig()
+                    {
+                        Address = "http://localhost",
+                        Port = 5000
+                    })
+                    .AddSingleton<IDarkStarNetworkClient, SignalrNetworkClient>()
                     .AddSingleton(engineConfig)
                     .AddSingleton(directoryConfig)
                     .RegisterDarkSunServices()

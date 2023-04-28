@@ -17,7 +17,7 @@ public class DefaultConnectionHandler : BaseNetworkConnectionHandler
     {
     }
 
-    public override Task<List<IDarkStarNetworkMessage>> ClientConnectedMessagesAsync(Guid sessionId)
+    public override Task<List<IDarkStarNetworkMessage>> ClientConnectedMessagesAsync(string sessionId)
     {
         Logger.LogInformation("New connection: {Id}", sessionId);
         Engine.PlayerService.AddSession(sessionId);
@@ -27,7 +27,7 @@ public class DefaultConnectionHandler : BaseNetworkConnectionHandler
         });
     }
 
-    public override Task ClientDisconnectedAsync(Guid sessionId)
+    public override Task ClientDisconnectedAsync(string sessionId)
     {
         Engine.PlayerService.RemoveSession(sessionId);
         return Task.CompletedTask;

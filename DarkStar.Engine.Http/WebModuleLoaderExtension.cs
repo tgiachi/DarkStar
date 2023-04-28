@@ -1,4 +1,5 @@
 using DarkStar.Engine.Http.Controllers;
+using DarkStar.Network.Hubs;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,6 +19,8 @@ public static class WebModuleLoaderExtension
                 manager.ApplicationParts.Add(new AssemblyPart(typeof(VersionController).Assembly));
             });
 
+
+        services.AddSignalR();
 
 
 
@@ -47,6 +50,7 @@ public static class WebModuleLoaderExtension
             })
             .UseEndpoints(routeBuilder =>
             {
+                routeBuilder.MapHub<SignalrMessageHub>("/messages");
                 routeBuilder.MapControllers();
             });
         return builder;

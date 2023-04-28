@@ -22,7 +22,7 @@ public class BaseNetworkMessageListener<TMessage> : INetworkServerMessageListene
         Engine = engine;
     }
 
-    public async Task OnMessageReceivedAsync(Guid sessionId, DarkStarMessageType messageType, IDarkStarNetworkMessage message)
+    public async Task OnMessageReceivedAsync(string sessionId, DarkStarMessageType messageType, IDarkStarNetworkMessage message)
     {
         try
         {
@@ -39,7 +39,7 @@ public class BaseNetworkMessageListener<TMessage> : INetworkServerMessageListene
         }
     }
 
-    public virtual Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(Guid sessionId, DarkStarMessageType messageType, TMessage message)
+    public virtual Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(string sessionId, DarkStarMessageType messageType, TMessage message)
     {
         return Task.FromResult(new List<IDarkStarNetworkMessage>());
     }

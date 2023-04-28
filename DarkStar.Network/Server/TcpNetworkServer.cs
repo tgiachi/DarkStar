@@ -51,12 +51,12 @@ public class TcpNetworkServer : TcpServer, IDarkSunNetworkServer
         _logger.LogInformation("Client {IpAddress} connected with sessionId: {SessionId}",
             session.Socket.RemoteEndPoint, session.Id);
 
-        _sessionManager.AddSession(session.Id);
+        _sessionManager.AddSession(session.Id.ToString());
 
-        var messagesToSend = await OnClientConnected?.Invoke(session.Id)!;
+        var messagesToSend = await OnClientConnected?.Invoke(session.Id.ToString())!;
         if (messagesToSend != null)
         {
-            await SendMessageAsync(session.Id, messagesToSend);
+            await SendMessageAsync(session.Id.ToString(), messagesToSend);
         }
 
         base.OnConnected(session);
@@ -65,8 +65,8 @@ public class TcpNetworkServer : TcpServer, IDarkSunNetworkServer
     protected override void OnDisconnected(TcpSession session)
     {
         _logger.LogInformation("Client disconnected with sessionId: {SessionId}", session.Id);
-        OnClientDisconnected?.Invoke(session.Id);
-        _sessionManager.RemoveSession(session.Id);
+        OnClientDisconnected?.Invoke(session.Id.ToString());
+        _sessionManager.RemoveSession(session.Id.ToString());
         base.OnDisconnected(session);
     }
 
@@ -85,14 +85,14 @@ public class TcpNetworkServer : TcpServer, IDarkSunNetworkServer
     }
 
 
-    public async Task SendMessageAsync(Guid sessionId, IDarkStarNetworkMessage message)
+    public async Task SendMessageAsync(string sessionId, IDarkStarNetworkMessage message)
     {
         await _sendLock.WaitAsync();
         var session = _sessionManager.GetSession(sessionId);
 
         try
         {
-            Sessions[session.SessionId].SendAsync(_messageBuilder.BuildMessage(message));
+            Sessions[Guid.Parse(session.SessionId)].SendAsync(_messageBuilder.BuildMessage(message));
         }
         catch (Exception ex)
 
@@ -104,7 +104,7 @@ public class TcpNetworkServer : TcpServer, IDarkSunNetworkServer
         _sendLock.Release();
     }
 
-    public async Task SendMessageAsync(Guid sessionId, List<IDarkStarNetworkMessage> message)
+    public async Task SendMessageAsync(string sessionId, List<IDarkStarNetworkMessage> message)
     {
         var session = _sessionManager.GetSession(sessionId);
         await _sendLock.WaitAsync();
@@ -112,7 +112,7 @@ public class TcpNetworkServer : TcpServer, IDarkSunNetworkServer
         {
             try
             {
-                var status = Sessions[session.SessionId].SendAsync(_messageBuilder.BuildMessage(messageItem));
+                var status = Sessions[Guid.Parse(session.SessionId)].SendAsync(_messageBuilder.BuildMessage(messageItem));
             }
             catch (Exception ex)
 
@@ -127,11 +127,11 @@ public class TcpNetworkServer : TcpServer, IDarkSunNetworkServer
     {
         foreach (var sessionId in Sessions.Keys)
         {
-            await SendMessageAsync(sessionId, message);
+            await SendMessageAsync(sessionId.ToString(), message);
         }
     }
 
-    public async Task DispatchMessageReceivedAsync(Guid sessionId, DarkStarMessageType messageType,
+    public async Task DispatchMessageReceivedAsync(string sessionId, DarkStarMessageType messageType,
         IDarkStarNetworkMessage message)
     {
         OnMessageReceived?.Invoke(sessionId, messageType, message);

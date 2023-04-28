@@ -10,5 +10,5 @@ namespace DarkStar.Network.Interfaces;
 
 public interface INetworkServerMessageListener
 {
-    Task OnMessageReceivedAsync(Guid sessionId, DarkStarMessageType messageType, IDarkStarNetworkMessage message);
+    Task OnMessageReceivedAsync(string sessionId, DarkStarMessageType messageType, IDarkStarNetworkMessage message);
 }

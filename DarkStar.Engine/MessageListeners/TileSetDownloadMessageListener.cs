@@ -22,7 +22,7 @@ public class TileSetDownloadMessageListener : BaseNetworkMessageListener<TileSet
     {
     }
 
-    public override async Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(Guid sessionId, DarkStarMessageType messageType, TileSetDownloadRequestMessage message)
+    public override async Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(string sessionId, DarkStarMessageType messageType, TileSetDownloadRequestMessage message)
     {
         if (!Engine.PlayerService.GetSession(sessionId).IsLogged)
         {

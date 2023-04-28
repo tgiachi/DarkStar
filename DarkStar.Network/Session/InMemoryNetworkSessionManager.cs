@@ -12,21 +12,21 @@ namespace DarkStar.Network.Session;
 public class InMemoryNetworkSessionManager : INetworkSessionManager
 {
     private readonly SemaphoreSlim _sessionLock = new(1);
-    private readonly Dictionary<Guid, DarkSunSession> _sessions = new();
+    private readonly Dictionary<string, DarkSunSession> _sessions = new();
 
 
-    public Guid AddSession(Guid? sessionGuid)
+    public string AddSession(string? sessionGuid)
     {
         _sessionLock.Wait();
-        sessionGuid ??= Guid.NewGuid();
+        sessionGuid ??= Guid.NewGuid().ToString();
 
-        _sessions.Add(sessionGuid.Value, new DarkSunSession { SessionId = sessionGuid.Value });
+        _sessions.Add(sessionGuid, new DarkSunSession { SessionId = sessionGuid });
         _sessionLock.Release();
 
-        return sessionGuid.Value;
+        return sessionGuid;
     }
 
-    public bool RemoveSession(Guid sessionGuid)
+    public bool RemoveSession(string sessionGuid)
     {
         _sessionLock.Wait();
         _sessions.Remove(sessionGuid);
@@ -35,7 +35,7 @@ public class InMemoryNetworkSessionManager : INetworkSessionManager
         return true;
     }
 
-    public DarkSunSession GetSession(Guid sessionGuid)
+    public DarkSunSession GetSession(string sessionGuid)
     {
         if (_sessions.TryGetValue(sessionGuid, out var session))
         {

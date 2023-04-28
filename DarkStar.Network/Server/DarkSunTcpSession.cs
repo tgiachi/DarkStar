@@ -74,7 +74,7 @@ public class DarkSunTcpSession : TcpSession
         try
         {
             var message = _messageBuilder.ParseMessage(buffer.ToArray());
-            _networkServer.DispatchMessageReceivedAsync(Id, message.MessageType, message.Message);
+            _networkServer.DispatchMessageReceivedAsync(Id.ToString(), message.MessageType, message.Message);
 
         }
         catch (Exception e)

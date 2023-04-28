@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="0.5.0"></a>
+## [0.5.0](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.5.0) (2023-4-28)
+
+### ✨ Features
+
+* **network:** add SignalR network client implementation ([e2239ee](https://www.github.com/tgiachi/DarkSun/commit/e2239ee98a0c9f00f52ac1fb86630e1c01f0c5f6))
+
+### Other
+
+* ✨ feat(typesScriptModule.cs): add support for adding tiles, game object seeds and get functions ([16c490a](https://www.github.com/tgiachi/DarkSun/commit/16c490ad6e24d6ab9e86864293a462eef1fe6d86))
+* 🔥 chore(DarkStar.Network.csproj): remove unused SignalR packages ([c0984af](https://www.github.com/tgiachi/DarkSun/commit/c0984af682d4ede448ffa1d4604f5fbdba0065ff))
+* 🔧 chore(BaseNetworkConnectionHandler.cs, PlayerSession.cs, PlayerLoggedEvent.cs, INetworkConnectionHandler.cs, IPlayerService.cs, IWorldService.cs, PlayerGameObject.cs, BaseNetworkServerMessageListener.cs, WebModuleLoaderExtension.cs, Program.cs, PlayerMoveAction.cs, DefaultConnectionHandler.cs, DarkSunEngine.cs, AccountCreationServerMessageListener.cs, AccountLoginServerMessageListener.cs, PlayerCreationServerMessageListener.cs, PlayerListServerMessageListener.cs): change Guid sessionId to string sessionId in all relevant files ([f4db356](https://www.github.com/tgiachi/DarkSun/commit/f4db3565abf870b96beea9b5f7edab64eee6f5a8))
+
 <a name="0.4.0"></a>
 ## [0.4.0](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.4.0) (2023-4-27)
 

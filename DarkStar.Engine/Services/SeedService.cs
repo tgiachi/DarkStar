@@ -118,6 +118,18 @@ public class SeedService : BaseService<SeedService>, ISeedService
 
     }
 
+    public void AddGameObjectSeed(string name, string description, string tileNAme, string gameObjectName, object data)
+    {
+        _gameObjectSeed.Add(new GameObjectEntity()
+        {
+            Name = name,
+            Description = description,
+            TileId = _typeService.SearchTile(tileNAme, null, null)!.Id,
+            GameObjectType = _typeService.SearchGameObject(gameObjectName)!.Id,
+            Data = JsonSerializer.Serialize(data)
+        });
+    }
+
     private async Task LoadSeedFileAsync<TEntity>(string fileName) where TEntity : class, new()
     {
         if (typeof(TEntity) == typeof(WorldObjectSeedEntity))

@@ -18,9 +18,9 @@ namespace DarkStar.Api.Engine.Interfaces.Services;
 public interface IPlayerService : IDarkSunEngineService
 {
     PlayerInitialInventory InitialInventory { get; }
-    void AddSession(Guid networkSessionId);
-    void RemoveSession(Guid networkSessionId);
-    PlayerSession GetSession(Guid networkSessionId);
+    void AddSession(string networkSessionId);
+    void RemoveSession(string networkSessionId);
+    PlayerSession GetSession(string networkSessionId);
     Task<List<PlayerEntity>> GetPlayersByAccountIdAsync(Guid accountId);
     Task<PlayerEntity> CreatePlayerAsync(Guid accountId, string name, uint tileId, Guid raceId, BaseStatEntity stats);
     Task<int> AddGoldToPlayerAsync(Guid playerId, int amount);

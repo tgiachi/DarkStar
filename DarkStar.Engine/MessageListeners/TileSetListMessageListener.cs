@@ -16,7 +16,7 @@ public class TileSetListMessageListener : BaseNetworkMessageListener<TileSetList
     {
     }
 
-    public override async Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(Guid sessionId, DarkStarMessageType messageType, TileSetListRequestMessage message)
+    public override async Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(string sessionId, DarkStarMessageType messageType, TileSetListRequestMessage message)
     {
         var tileSets = await Engine.DatabaseService.FindAllAsync<TileSetEntity>();
 
