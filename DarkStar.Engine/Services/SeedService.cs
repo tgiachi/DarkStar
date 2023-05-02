@@ -52,8 +52,8 @@ public class SeedService : BaseService<SeedService>, ISeedService
         await CheckSeedTemplatesAsync();
         await CheckSeedDirectoriesAsync();
         await ScanTileSetsAsync();
-        await InsertDbSeedsAsync();
         await LoadCsvSeedsAsync();
+        await InsertDbSeedsAsync();
 
         return true;
     }

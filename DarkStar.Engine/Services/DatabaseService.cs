@@ -29,7 +29,7 @@ public class DatabaseService : BaseService<IDatabaseService>, IDatabaseService
 
     private readonly EngineConfig _config;
 
-    public DatabaseService(ILogger<IDatabaseService> logger, EngineConfig engineConfig,
+    public DatabaseService(ILogger<DatabaseService> logger, EngineConfig engineConfig,
         DirectoriesConfig directoriesConfig) : base(logger)
     {
         _config = engineConfig;
