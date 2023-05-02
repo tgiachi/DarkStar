@@ -17,9 +17,7 @@ public class ItemEntity : BaseEntity
     public string Name { get; set; } = null!;
     public string Description { get; set; } = null!;
     public int Weight { get; set; }
-
     public uint TileType { get; set; }
-
     public ItemCategoryType Category { get; set; }
     public ItemType Type { get; set; }
     public EquipLocationType EquipLocation { get; set; }
@@ -30,4 +28,8 @@ public class ItemEntity : BaseEntity
     public string Defense { get; set; } = null!;
     public string Speed { get; set; } = null!;
     public int MinLevel { get; set; }
+
+    public bool IsTextScroll { get; set; }
+
+    public Guid? TextId { get; set; }
 }

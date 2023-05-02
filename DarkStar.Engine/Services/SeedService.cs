@@ -34,6 +34,7 @@ public class SeedService : BaseService<SeedService>, ISeedService
     private readonly HashSet<RaceEntity> _racesSeed = new();
     private readonly HashSet<GameObjectEntity> _gameObjectSeed = new();
     private readonly HashSet<ItemEntity> _itemsSeed = new();
+    private readonly HashSet<TextContentEntity> _textContentSeed = new();
 
     private readonly DirectoriesConfig _directoriesConfig;
     private readonly ITypeService _typeService;
@@ -51,8 +52,9 @@ public class SeedService : BaseService<SeedService>, ISeedService
         await CheckSeedTemplatesAsync();
         await CheckSeedDirectoriesAsync();
         await ScanTileSetsAsync();
-        await LoadCsvSeedsAsync();
         await InsertDbSeedsAsync();
+        await LoadCsvSeedsAsync();
+
         return true;
     }
 
@@ -129,6 +131,17 @@ public class SeedService : BaseService<SeedService>, ISeedService
                 TileId = _typeService.SearchTile(tileNAme, null, null)!.Id,
                 GameObjectType = _typeService.SearchGameObject(gameObjectName)!.Id,
                 Data = JsonSerializer.Serialize(data)
+            }
+        );
+    }
+
+    public void AddTextContentSeed(string name, string content)
+    {
+        _textContentSeed.Add(
+            new TextContentEntity
+            {
+                Name = name.ToUpper(),
+                Content = content
             }
         );
     }
@@ -291,6 +304,23 @@ public class SeedService : BaseService<SeedService>, ISeedService
                 gameObject.GameObjectType = go.GameObjectType;
                 gameObject.Data = go.Data;
                 await Engine.DatabaseService.UpdateAsync(gameObject);
+            }
+        }
+
+        foreach (var contentEntity in _textContentSeed)
+        {
+            var existTextSeed =
+                await Engine.DatabaseService.QueryAsSingleAsync<TextContentEntity>(
+                    entity => entity.Name == contentEntity.Name
+                );
+            if (existTextSeed == null!)
+            {
+                await Engine.DatabaseService.InsertAsync(contentEntity);
+            }
+            else
+            {
+                existTextSeed.Content = contentEntity.Content;
+                await Engine.DatabaseService.UpdateAsync(existTextSeed);
             }
         }
     }

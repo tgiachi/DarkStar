@@ -14,6 +14,6 @@ public interface ISeedService : IDarkSunEngineService
 {
     void AddRaceToSeed(string race, string description, short tileId, BaseStatEntity stat);
     void AddGameObjectToSeed(string name, string description, int tileType, GameObjectType gameObjectType);
-
     void AddGameObjectSeed(string name, string description, string tileNAme, string gameObjectName, object data);
+    void AddTextContentSeed(string name, string content);
 }

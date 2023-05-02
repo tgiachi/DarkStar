@@ -1,14 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using DarkStar.Api.Attributes.Seed;
 using DarkStar.Api.Engine.Serialization.Seeds.Converters;
-using DarkStar.Api.Serialization.Converters;
+
 using DarkStar.Api.World.Types.Equippable;
 using DarkStar.Api.World.Types.Items;
-using DarkStar.Api.World.Types.Tiles;
+
 using TinyCsv.Attributes;
 
 namespace DarkStar.Api.Engine.Serialization.Seeds;
@@ -21,7 +17,6 @@ public class ItemObjectSeedEntity
     [Column] public string Name { get; set; } = null!;
     [Column] public string Description { get; set; } = null!;
     [Column] public int Weight { get; set; } = 1;
-
     [Column] public string TileName { get; set; }
     [Column] public string Category { get; set; }
     [Column] public string Type { get; set; }
@@ -31,7 +26,6 @@ public class ItemObjectSeedEntity
 
     [Column(converter: typeof(ItemRarityConverter))]
     public ItemRarityType ItemRarity { get; set; }
-
     [Column] public string SellDice { get; set; } = null!;
     [Column] public string BuyDice { get; set; } = null!;
     [Column] public string Attack { get; set; } = null!;
