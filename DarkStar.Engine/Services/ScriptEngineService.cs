@@ -7,7 +7,9 @@ using DarkStar.Api.Engine.Data.ScriptEngine;
 using DarkStar.Api.Engine.Events.Engine;
 using DarkStar.Api.Engine.Interfaces.Services;
 using DarkStar.Api.Utils;
+using DarkStar.Api.World.Types.Equippable;
 using DarkStar.Api.World.Types.GameObjects;
+using DarkStar.Api.World.Types.Items;
 using DarkStar.Api.World.Types.Map;
 using DarkStar.Api.World.Types.Npc;
 using DarkStar.Api.World.Types.Tiles;
@@ -110,6 +112,24 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
             var messageType = "MESSAGE_TYPE_" + messageTypeValue.ToString().ToUpper();
             Logger.LogDebug("Adding message type {MessageType}={Id} to LUA context", messageType, (short)messageTypeValue);
             AddContextVariable(messageType, (short)messageTypeValue);
+        }
+
+        foreach (var equipLocation in FastEnum.GetValues<EquipLocationType>())
+        {
+            var equipLocationName = $"EQUIP_LOCATION_{equipLocation.ToString().ToUpper()}";
+            Logger.LogDebug(
+                "Adding equip location {EquipLocationName}={Id} to LUA context",
+                equipLocationName,
+                (short)equipLocation
+            );
+            AddContextVariable(equipLocationName, (short)equipLocation);
+        }
+
+        foreach (var itemRarity in FastEnum.GetValues<ItemRarityType>())
+        {
+            var itemRarityName = $"ITEM_RARITY_{itemRarity.ToString().ToUpper()}";
+            Logger.LogDebug("Adding item rarity {ItemRarityName}={Id} to LUA context", itemRarityName, (short)itemRarity);
+            AddContextVariable(itemRarityName, (short)itemRarity);
         }
 
         foreach (var npcType in _typeService.NpcTypes)

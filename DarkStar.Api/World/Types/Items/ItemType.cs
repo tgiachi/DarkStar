@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace DarkStar.Api.World.Types.Items;
 
 [StructLayout(LayoutKind.Auto)]
-public struct ItemType 
+public struct ItemType
 {
     public ushort Id { get; set; }
     public string Name { get; set; }
@@ -21,6 +21,7 @@ public struct ItemType
 
     public ItemType()
     {
-
     }
+
+    public override string ToString() => $"{Id} - {Name}";
 }

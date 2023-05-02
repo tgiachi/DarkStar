@@ -24,6 +24,7 @@ using DarkStar.Api.World.Types.Tiles;
 using DarkStar.Database.Entities.Objects;
 using FastEnumUtility;
 using DarkStar.Api.Serialization.Types;
+using DarkStar.Api.World.Types.Items;
 
 namespace DarkStar.Engine.Services;
 
@@ -175,6 +176,33 @@ public class SeedService : BaseService<SeedService>, ISeedService
                     _typeService.GetNpcSubType(npcType.NpcSubTypeName),
                     npcType.TileName
                 );
+            }
+        }
+
+        if (typeof(TEntity) == typeof(ItemObjectSeedEntity))
+        {
+            var itemsTypes = await SeedCsvParser.Instance.ParseAsync<ItemObjectSeedEntity>(fileName);
+            foreach (var importItem in itemsTypes)
+            {
+                var itemEntity = new ItemEntity
+                {
+                    Name = importItem.Name,
+                    Description = importItem.Description,
+                    EquipLocation = importItem.EquipLocation,
+                    Attack = importItem.Attack,
+                    Defense = importItem.Defense,
+                    Weight = importItem.Weight,
+                    MinLevel = importItem.MinLevel,
+                    Speed = importItem.Speed,
+                    BuyDice = importItem.BuyDice,
+                    SellDice = importItem.SellDice,
+                    TileType = _typeService.SearchTile(importItem.TileName, null, null).Id,
+                    ItemRarity = importItem.ItemRarity,
+                    Category = _typeService.AddItemCategoryType(importItem.Category),
+                    Type = _typeService.AddItemType(importItem.Type)
+                };
+
+                await Engine.DatabaseService.InsertAsync(itemEntity);
             }
         }
     }

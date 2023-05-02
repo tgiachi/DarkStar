@@ -18,7 +18,7 @@ public class ItemEntity : BaseEntity
     public string Description { get; set; } = null!;
     public int Weight { get; set; }
 
-    public int TileType { get; set; }
+    public uint TileType { get; set; }
 
     public ItemCategoryType Category { get; set; }
     public ItemType Type { get; set; }

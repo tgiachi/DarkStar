@@ -8,6 +8,7 @@ using DarkStar.Api.Engine.Events.Engine;
 using DarkStar.Api.Engine.Interfaces.Services;
 using DarkStar.Api.Utils;
 using DarkStar.Api.World.Types.GameObjects;
+using DarkStar.Api.World.Types.Items;
 using DarkStar.Api.World.Types.Npc;
 using DarkStar.Api.World.Types.Tiles;
 using DarkStar.Engine.Services.Base;
@@ -28,6 +29,8 @@ public class TypeService : BaseService<TypeService>, ITypeService
     private readonly List<Tile> _tiles = new();
     private readonly List<NpcType> _npcTypes = new();
     private readonly List<NpcSubType> _npcSubTypes = new();
+    private readonly List<ItemType> _itemTypes = new();
+    private readonly List<ItemCategoryType> _itemCategoryTypes = new();
 
     private readonly List<GameObjectType> _gameObjectTypes = new();
     private readonly Dictionary<short, string> _gameObjectTypesById = new();
@@ -35,7 +38,7 @@ public class TypeService : BaseService<TypeService>, ITypeService
     private readonly Dictionary<short, string> _npcTypesById = new();
 
     private readonly Dictionary<short, string> _npcSubTypesById = new();
-    private readonly Dictionary<short, string> _itemTypes = new();
+    private readonly Dictionary<short, string> _itemTypesById = new();
 
     private readonly List<(NpcType, NpcSubType, string)> _npcTypeTiles = new();
 
@@ -45,7 +48,6 @@ public class TypeService : BaseService<TypeService>, ITypeService
 
     public TypeService(ILogger<TypeService> logger) : base(logger)
     {
-
     }
 
     public List<Tile> SearchTiles(string name, string? category, string? subCategory)
@@ -60,8 +62,8 @@ public class TypeService : BaseService<TypeService>, ITypeService
         {
             tiles = tiles.Where(t => t.SubCategory.Contains(subCategory, StringComparison.OrdinalIgnoreCase)).ToList();
         }
-        return tiles;
 
+        return tiles;
     }
 
     public Tile SearchTile(string name, string? category, string? subCategory)
@@ -83,6 +85,7 @@ public class TypeService : BaseService<TypeService>, ITypeService
         {
             _tilesById.Add(tile.Id, tile);
         }
+
         Engine.EventBus.PublishAsync(new TileAddedEvent() { Tile = tile });
         //_tilesById.Add(tile.Id, tile);
         _tiles.Add(tile);
@@ -114,7 +117,9 @@ public class TypeService : BaseService<TypeService>, ITypeService
     public GameObjectType GetGameObjectType(string name) => _gameObjectTypes.First(t => t.Name == name.ToUpper());
 
     public GameObjectType GetGameObjectType(short id) => _gameObjectTypes.First(t => t.Id == id);
-    public GameObjectType SearchGameObject(string name) => _gameObjectTypes.First(t => SearchListUtils.MatchesWildcard(t.Name, name));
+
+    public GameObjectType SearchGameObject(string name) =>
+        _gameObjectTypes.First(t => SearchListUtils.MatchesWildcard(t.Name, name));
 
     public NpcType AddNpcType(string name)
     {
@@ -145,6 +150,7 @@ public class TypeService : BaseService<TypeService>, ITypeService
         {
             AddNpcType(npcType);
         }
+
         type = GetNpcType(npcType);
         var id = (short)_npcSubTypes.Count;
         _npcSubTypesById.Add(id, name);
@@ -152,7 +158,6 @@ public class TypeService : BaseService<TypeService>, ITypeService
         var subType = _npcSubTypes.Last();
         Engine.EventBus.PublishAsync(new NpcSubTypeAdded() { NpcSubType = subType });
         return subType;
-
     }
 
     public NpcSubType AddNpcSubType(string npcType, short id, string name)
@@ -161,15 +166,16 @@ public class TypeService : BaseService<TypeService>, ITypeService
         {
             return AddNpcSubType(npcType, name);
         }
+
         var type = GetNpcType(npcType);
         if (type == null)
         {
             AddNpcType(npcType);
         }
+
         _npcSubTypesById.Add(id, name);
         _npcSubTypes.Add(new NpcSubType(type.Value.Id, id, name));
         return _npcSubTypes.Last();
-
     }
 
     public NpcSubType GetNpcSubType(string name) => _npcSubTypes.First(t => t.Name.ToUpper() == name.ToUpper());
@@ -177,6 +183,7 @@ public class TypeService : BaseService<TypeService>, ITypeService
 
     public NpcType? GetNpcType(string name) => _npcTypes.FirstOrDefault(t => t.Name.ToUpper() == name.ToUpper());
     public NpcType GetNpcType(short id) => _npcTypes.FirstOrDefault(t => t.Id == id);
+
     public void AddNpcTypeTile(NpcType npcType, NpcSubType npcSubType, string tile)
     {
         _npcTypeTiles.Add((npcType, npcSubType, tile));
@@ -191,7 +198,77 @@ public class TypeService : BaseService<TypeService>, ITypeService
 
     public Tile GetTileForNpc(string npcType, string npcSubType)
     {
-        var tileId = _npcTypeTiles.First(t => t.Item1.Name.ToUpper() == npcType.ToUpper() && t.Item2.Name.ToUpper() == npcSubType.ToUpper());
+        var tileId = _npcTypeTiles.First(
+            t => t.Item1.Name.ToUpper() == npcType.ToUpper() && t.Item2.Name.ToUpper() == npcSubType.ToUpper()
+        );
         return SearchTile(tileId.Item3, null, null);
+    }
+
+    public ItemType AddItemType(string name)
+    {
+
+        var exists = _itemTypes.FirstOrDefault(s => s.Name == name.ToUpper());
+        if (!string.IsNullOrEmpty(exists.Name))
+        {
+            return exists;
+        }
+
+        _itemTypes.Add(
+            new ItemType
+            {
+                Id = (ushort)_itemTypes.Count,
+                Name = name.ToUpper()
+            }
+        );
+
+        return _itemTypes.Last();
+    }
+
+    public ItemType AddItemType(short id, string name)
+    {
+        _itemTypes.Add(new ItemType((ushort)id, name.ToUpper()));
+        return _itemTypes.Last();
+    }
+
+    public ItemType SearchItemType(string name)
+    {
+        return _itemTypes.Where(s => SearchListUtils.MatchesWildcard(s.Name, name)).ToList().RandomItem();
+    }
+
+    public ItemCategoryType AddItemCategoryType(string name)
+    {
+        var exists = _itemCategoryTypes.FirstOrDefault(s => s.Name == name.ToUpper());
+        if (!string.IsNullOrEmpty(exists.Name))
+        {
+            return exists;
+        }
+
+        _itemCategoryTypes.Add(
+            new ItemCategoryType
+            {
+                Id = (ushort)_itemCategoryTypes.Count,
+                Name = name.ToUpper()
+            }
+        );
+
+        return _itemCategoryTypes.Last();
+    }
+
+    public ItemCategoryType AddItemCategoryType(short id, string name)
+    {
+        _itemCategoryTypes.Add(
+            new ItemCategoryType
+            {
+                Id = (ushort)id,
+                Name = name.ToUpper()
+            }
+        );
+
+        return _itemCategoryTypes.Last();
+    }
+
+    public ItemCategoryType SearchItemCategoryType(string name)
+    {
+        return _itemCategoryTypes.Where(s => SearchListUtils.MatchesWildcard(s.Name, name)).ToList().RandomItem();
     }
 }

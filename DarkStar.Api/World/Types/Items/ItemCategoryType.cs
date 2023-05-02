@@ -24,4 +24,6 @@ public struct ItemCategoryType
     {
 
     }
+
+    public override string ToString() => $"{Id} - {Name}";
 }
