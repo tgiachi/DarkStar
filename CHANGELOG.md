@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="0.6.0"></a>
+## [0.6.0](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.6.0) (2023-5-2)
+
+### ✨ Features
+
+* add support for item types and item category types ([1b52abf](https://www.github.com/tgiachi/DarkSun/commit/1b52abf9981b9ec040758b7f817dfe53c3e3e940))
+* added base project for client ([34ba796](https://www.github.com/tgiachi/DarkSun/commit/34ba796d166428f187ee5ecf6dd63095e296e59c))
+* **ai:** add support for adding AI scripts by NPC type and name ([8d687ff](https://www.github.com/tgiachi/DarkSun/commit/8d687ff96c05b5cda5abed04b1e193b5693e26c3))
+* **SeedService.cs:** add method to add text content seed ([62694d0](https://www.github.com/tgiachi/DarkSun/commit/62694d0517a01c2f9db598dad016a05c8268d4b7))
+
+### Other
+
+* remove unused TileSetMapSerializable class ([1cc4bc3](https://www.github.com/tgiachi/DarkSun/commit/1cc4bc370f75c6c3ae17f68e8a503596b0f4a663))
+
 <a name="0.5.0"></a>
 ## [0.5.0](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.5.0) (2023-4-28)
 
