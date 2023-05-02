@@ -50,7 +50,7 @@ In Dark Star, the player has the choice between different character classes, eac
 
 
 # How collaborate?
-- Catch me in https://discord.gg/kwGYvVeC
+- Catch me in https://discord.gg/DkNBQg8Etv
 - Open a PR
 
 

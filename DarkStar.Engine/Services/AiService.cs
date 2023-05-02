@@ -80,7 +80,7 @@ public class AiService : BaseService<AiService>, IAiService
         }
     }
 
-    private async ValueTask AddScriptNpc(GameObjectAddedEvent @event)
+    private async ValueTask AddScriptNpcAsync(GameObjectAddedEvent @event)
     {
         try
         {
@@ -120,7 +120,7 @@ public class AiService : BaseService<AiService>, IAiService
     private async ValueTask AddNpcAiAsync(GameObjectAddedEvent @event)
     {
         await AddClassNpcAiAsync(@event);
-        await AddScriptNpc(@event);
+        await AddScriptNpcAsync(@event);
     }
 
     private async Task SchedulerOnOnTickAsync(double deltaTime)
