@@ -17,8 +17,7 @@ public struct TileSetMapResponseMessage : IDarkStarNetworkMessage
 {
     [ProtoMember(1)] public string TileSetName { get; set; } = null!;
 
-    [ProtoMember(2)]
-    public List<TileSetMapEntry> TileSetMap { get; set; } = new();
+    [ProtoMember(2)] public List<TileSetMapEntry> TileSetMap { get; set; } = new();
 
     public TileSetMapResponseMessage(string tileSetName, List<TileSetMapEntry> tileSetMap)
     {
@@ -34,20 +33,17 @@ public struct TileSetMapResponseMessage : IDarkStarNetworkMessage
 [ProtoContract]
 public struct TileSetMapEntry
 {
-    [ProtoMember(1)]
-    public int TileType { get; set; }
+    [ProtoMember(1)] public int TileId { get; set; }
 
-    [ProtoMember(2)]
-    public int Id { get; set; }
+    [ProtoMember(2)] public string Name { get; set; } = null!;
 
     public TileSetMapEntry()
     {
-
     }
 
-    public TileSetMapEntry(int tileType, int id)
+    public TileSetMapEntry(int tileId, string name)
     {
-        TileType = tileType;
-        Id = id;
+        TileId = tileId;
+        Name = name;
     }
 }

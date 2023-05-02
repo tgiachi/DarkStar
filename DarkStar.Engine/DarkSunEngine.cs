@@ -206,7 +206,7 @@ public class DarkSunEngine : IDarkSunEngine
                 await _networkClient.SendMessageAsync(new AccountLoginRequestMessage("test@test.com", "12345"));
                 await _networkClient.SendMessageAsync(new AccountLoginRequestMessage("test@test.com", "1234"));
                 await _networkClient.SendMessageAsync(new TileSetListRequestMessage());
-                // await _networkClient.SendMessageAsync(new TileSetDownloadRequestMessage("Tangaria"));
+                await _networkClient.SendMessageAsync(new TileSetDownloadRequestMessage("Tangaria"));
                 await _networkClient.SendMessageAsync(new TileSetMapRequestMessage("Tangaria"));
                 await _networkClient.SendMessageAsync(
                     new PlayerCreateRequestMessage()
