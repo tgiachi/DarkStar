@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DarkStar.Api.Engine.Interfaces.Core;
 using DarkStar.Network.Interfaces;
 using DarkStar.Network.Protocol.Interfaces.Messages;
@@ -39,15 +34,9 @@ public class BaseNetworkMessageListener<TMessage> : INetworkServerMessageListene
         }
     }
 
-    public virtual Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(string sessionId, DarkStarMessageType messageType, TMessage message)
-    {
-        return Task.FromResult(new List<IDarkStarNetworkMessage>());
-    }
+    public virtual Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(string sessionId, DarkStarMessageType messageType, TMessage message) => Task.FromResult(new List<IDarkStarNetworkMessage>());
 
-    protected List<IDarkStarNetworkMessage> SingleMessage(IDarkStarNetworkMessage message)
-    {
-        return new List<IDarkStarNetworkMessage>() { message };
-    }
+    protected List<IDarkStarNetworkMessage> SingleMessage(IDarkStarNetworkMessage message) => new() { message };
 
     protected List<IDarkStarNetworkMessage> MultipleMessages(params IDarkStarNetworkMessage[] message)
     {
@@ -57,8 +46,5 @@ public class BaseNetworkMessageListener<TMessage> : INetworkServerMessageListene
         return mess;
     }
 
-    protected List<IDarkStarNetworkMessage> EmptyMessage()
-    {
-        return new List<IDarkStarNetworkMessage>();
-    }
+    protected List<IDarkStarNetworkMessage> EmptyMessage() => new();
 }

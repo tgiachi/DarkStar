@@ -7,12 +7,15 @@ using DarkStar.Api.Engine.Data.ScriptEngine;
 using DarkStar.Api.Engine.Events.Engine;
 using DarkStar.Api.Engine.Interfaces.Services;
 using DarkStar.Api.Utils;
+using DarkStar.Api.World.Types.Equippable;
 using DarkStar.Api.World.Types.GameObjects;
+using DarkStar.Api.World.Types.Items;
 using DarkStar.Api.World.Types.Map;
 using DarkStar.Api.World.Types.Npc;
 using DarkStar.Api.World.Types.Tiles;
 using DarkStar.Engine.Attributes.ScriptEngine;
 using DarkStar.Engine.Services.Base;
+using DarkStar.Network.Protocol.Messages.World;
 using FastEnumUtility;
 using GoRogue.GameFramework;
 using Microsoft.Extensions.Logging;
@@ -35,9 +38,10 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
     public Dictionary<string, object> ContextVariables { get; } = new();
 
 
-
-    public ScriptEngineService(ILogger<IScriptEngineService> logger, DirectoriesConfig directoriesConfig, ITypeService typeService,
-        IServiceProvider container) : base(logger)
+    public ScriptEngineService(
+        ILogger<IScriptEngineService> logger, DirectoriesConfig directoriesConfig, ITypeService typeService,
+        IServiceProvider container
+    ) : base(logger)
     {
         _typeService = typeService;
         _container = container;
@@ -47,7 +51,6 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
 
     protected override async ValueTask<bool> StartAsync()
     {
-
         SubscribeToEvent<TileAddedEvent>(@event => AddTileToVariables(@event.Tile));
         SubscribeToEvent<GameObjectTypeAdded>(@event => AddGameObjectTypeToVariables(@event.GameObjectType));
         SubscribeToEvent<NpcTypeAdded>(@event => AddNpcTypeToVariables(@event.NpcType));
@@ -68,10 +71,12 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
             moduleFolder = moduleFolder.Replace(@"\", @"\\");
         }
 
-        _scriptEngine.DoString($@"
+        _scriptEngine.DoString(
+            $@"
 			-- Update the search path
 			local module_folder = '{moduleFolder}'
-			package.path = module_folder .. '?.lua;' .. package.path");
+			package.path = module_folder .. '?.lua;' .. package.path"
+        );
 
         return ValueTask.CompletedTask;
     }
@@ -100,6 +105,31 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
             var mapTypeName = $"MAP_TYPE_{mapType.ToString().ToUpper()}";
             Logger.LogDebug("Adding map type {MapTypeName}={Id} to LUA context", mapTypeName, (short)mapType);
             AddContextVariable(mapTypeName, (short)mapType);
+        }
+
+        foreach (var messageTypeValue in FastEnum.GetValues<WorldMessageType>())
+        {
+            var messageType = "MESSAGE_TYPE_" + messageTypeValue.ToString().ToUpper();
+            Logger.LogDebug("Adding message type {MessageType}={Id} to LUA context", messageType, (short)messageTypeValue);
+            AddContextVariable(messageType, (short)messageTypeValue);
+        }
+
+        foreach (var equipLocation in FastEnum.GetValues<EquipLocationType>())
+        {
+            var equipLocationName = $"EQUIP_LOCATION_{equipLocation.ToString().ToUpper()}";
+            Logger.LogDebug(
+                "Adding equip location {EquipLocationName}={Id} to LUA context",
+                equipLocationName,
+                (short)equipLocation
+            );
+            AddContextVariable(equipLocationName, (short)equipLocation);
+        }
+
+        foreach (var itemRarity in FastEnum.GetValues<ItemRarityType>())
+        {
+            var itemRarityName = $"ITEM_RARITY_{itemRarity.ToString().ToUpper()}";
+            Logger.LogDebug("Adding item rarity {ItemRarityName}={Id} to LUA context", itemRarityName, (short)itemRarity);
+            AddContextVariable(itemRarityName, (short)itemRarity);
         }
 
         foreach (var npcType in _typeService.NpcTypes)
@@ -174,6 +204,7 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
                     {
                         continue;
                     }
+
                     ExtractFunctionDescriptor(sMethodAttr, scriptMethod);
 
                     Logger.LogInformation("Adding script method {M}", sMethodAttr.Alias ?? scriptMethod.Name);
@@ -201,14 +232,15 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
 
         foreach (var parameter in methodInfo.GetParameters())
         {
-
-            descriptor.Parameters.Add(new ScriptFunctionParameterDescriptor
-            {
-                ParameterName = parameter.Name,
-                ParameterType = parameter.ParameterType.Name,
-
-            });
+            descriptor.Parameters.Add(
+                new ScriptFunctionParameterDescriptor
+                {
+                    ParameterName = parameter.Name,
+                    ParameterType = parameter.ParameterType.Name,
+                }
+            );
         }
+
         Functions.Add(descriptor);
     }
 
@@ -248,5 +280,4 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
             return new ScriptEngineExecutionResult() { Exception = ex };
         }
     }
-
 }

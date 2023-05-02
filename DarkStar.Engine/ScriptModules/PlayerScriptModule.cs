@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DarkStar.Api.Engine.Data.Player;
 using DarkStar.Api.Engine.Interfaces.Core;
 using DarkStar.Api.Engine.ScriptModules;
+using DarkStar.Api.Utils;
 using DarkStar.Database.Entities.Item;
 using DarkStar.Engine.Attributes.ScriptEngine;
 using Microsoft.Extensions.Logging;
@@ -15,10 +16,8 @@ namespace DarkStar.Engine.ScriptModules;
 [ScriptModule]
 public class PlayerScriptModule : BaseScriptModule
 {
-
     public PlayerScriptModule(ILogger<BaseScriptModule> logger, IDarkSunEngine engine) : base(logger, engine)
     {
-
     }
 
     [ScriptFunction("set_player_initial_gold")]
@@ -26,7 +25,6 @@ public class PlayerScriptModule : BaseScriptModule
     {
         Engine.PlayerService.InitialInventory.Gold = gold;
         Logger.LogInformation("Players Initial gold set: {Gold}", gold);
-
     }
 
     [ScriptFunction("set_player_initial_item")]
@@ -36,7 +34,7 @@ public class PlayerScriptModule : BaseScriptModule
             async () =>
             {
                 var item = await Engine.DatabaseService.QueryAsSingleAsync<ItemEntity>(
-                    entity => entity.Name.ToLower().Contains(itemName)
+                    entity => SearchListUtils.MatchesWildcard(entity.Name, itemName)
                 );
                 if (item == null)
                 {
@@ -54,6 +52,5 @@ public class PlayerScriptModule : BaseScriptModule
                 Logger.LogInformation("Players Initial item set: {ItemId} x {Quantity}", item.Name, quantity);
             }
         );
-
     }
 }

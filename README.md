@@ -2,11 +2,11 @@
 
 ![Dark Star Logo](/imgs/DarkStarLogoSmall.png)
 
-  
- 
- **!!! README being updated !!!** 
 
-  
+
+ **!!! README being updated !!!**
+
+
 # Preface
 
 Hi, my name is Tommaso and I've always been passionate about fantasy and mmorpg games, especially when (back in 1999) I discovered Ultima OnLine.
@@ -15,7 +15,7 @@ I am a very curious person and as such every year I set myself challenges in ord
 
 You can find me on linkedin [Tommaso Giachi | LinkedIn](https://www.linkedin.com/in/tgiachi/)
 
-  
+
 
 # What is Dark Star?:
 
@@ -27,8 +27,8 @@ encountering monsters and exploring procedurally generated dungeons. The game is
 
 In Dark Star, the player has the choice between different character classes, each with their own unique abilities and characteristics. Furthermore, the game features a progression system that allows the player to upgrade his character as he progresses through the game.
 
-  
-  
+
+
 
 # Used .net core libraries
 
@@ -37,22 +37,22 @@ In Dark Star, the player has the choice between different character classes, eac
 - ProtoBuf C#
 - Netcore Servers
 
-  
-  
+
+
 
 # Milestone 0.5.0
 
-- Management of character and account creation
-- Creation of the AI dummy (cat and mushroom finder human)
-- Management of the movements of the character
+- ~~Management of character and account creation~~
+- ~~Creation of the AI dummy (cat and mushroom finder human)~~
+- ~~Management of the movements of the character~~
 - Basic inventory management
-- Random map creation (city [ which has 10 dungeons ] )
+- ~~Random map creation (city [ which has 10 dungeons ] )~~
 
 
 # How collaborate?
 - Catch me in https://discord.gg/kwGYvVeC
-- Open a PR 
-  
+- Open a PR
+
 
 # Inspirations
 
@@ -62,3 +62,13 @@ For the creation of Dark Star I was inspired by
 - Tales of Maj'Eyal
 - Cataclysm Dark Days Ahead
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=tgiachi/DarkStar&type=Date)](https://star-history.com/#tgiachi/DarkStar&Date)
+
+
+[![Stargazers repo roster for @tgiachi/DarkStart](https://reporoster.com/stars/tgiachi/DarkStar)](https://github.com/stars/tgiachi/DarkStar/stargazers)
+
+[![Forkers repo roster for @stars/tgiachi/DarkStar](https://reporoster.com/forks/tgiachi/DarkStar)](https://github.com/tgiachi/DarkStar/network/members)
+
+By the way, thank you so much for [![Stars](https://img.shields.io/github/stars/tgiachi/DarkStar?style=social)](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API/stargazers) and all the support!!

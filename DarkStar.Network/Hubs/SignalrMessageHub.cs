@@ -58,9 +58,6 @@ public class SignalrMessageHub : Hub
         {
             await signalrNetwork.OnConnectedClient(Context.ConnectionId);
         }
-
-
-
     }
 
     public override Task OnDisconnectedAsync(Exception? exception)

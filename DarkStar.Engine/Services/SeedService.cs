@@ -7,7 +7,6 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using DarkStar.Api.Attributes.Seed;
 using DarkStar.Api.Attributes.Services;
-
 using Microsoft.Extensions.Logging;
 using DarkStar.Api.Utils;
 using DarkStar.Api.Serialization.TileSets;
@@ -15,7 +14,6 @@ using DarkStar.Api.World.Types.GameObjects;
 using DarkStar.Api.Engine.Serialization.Seeds;
 using DarkStar.Api.Engine.Interfaces.Services;
 using DarkStar.Engine.Services.Base;
-
 using DarkStar.Api.Data.Config;
 using DarkStar.Api.Engine.Serialization;
 using DarkStar.Database.Entities.Races;
@@ -26,6 +24,7 @@ using DarkStar.Api.World.Types.Tiles;
 using DarkStar.Database.Entities.Objects;
 using FastEnumUtility;
 using DarkStar.Api.Serialization.Types;
+using DarkStar.Api.World.Types.Items;
 
 namespace DarkStar.Engine.Services;
 
@@ -35,11 +34,14 @@ public class SeedService : BaseService<SeedService>, ISeedService
     private readonly HashSet<RaceEntity> _racesSeed = new();
     private readonly HashSet<GameObjectEntity> _gameObjectSeed = new();
     private readonly HashSet<ItemEntity> _itemsSeed = new();
+    private readonly HashSet<TextContentEntity> _textContentSeed = new();
 
     private readonly DirectoriesConfig _directoriesConfig;
     private readonly ITypeService _typeService;
 
-    public SeedService(ILogger<SeedService> logger, DirectoriesConfig directoriesConfig, ITypeService typeService) : base(logger)
+    public SeedService(
+        ILogger<SeedService> logger, DirectoriesConfig directoriesConfig, ITypeService typeService
+    ) : base(logger)
     {
         _directoriesConfig = directoriesConfig;
         _typeService = typeService;
@@ -49,23 +51,23 @@ public class SeedService : BaseService<SeedService>, ISeedService
     {
         await CheckSeedTemplatesAsync();
         await CheckSeedDirectoriesAsync();
-        await LoadCsvSeedsAsync();
         await ScanTileSetsAsync();
+        await LoadCsvSeedsAsync();
         await InsertDbSeedsAsync();
+
         return true;
     }
 
     private async Task LoadCsvSeedsAsync()
     {
         Logger.LogInformation("Loading seeds");
-        await LoadSeedAsync<TileSetMapSerializable>();
+        //await LoadSeedAsync<TileSetMapSerializable>();
         await LoadSeedAsync<GameObjectTypeSerializableEntity>();
         await LoadSeedAsync<NpcTypeAndSubTypeSerializableEntity>();
         await LoadSeedAsync<WorldObjectSeedEntity>();
         await LoadSeedAsync<RaceObjectSeedEntity>();
         await LoadSeedAsync<ItemObjectSeedEntity>();
         await LoadSeedAsync<ItemDropObjectSeedEntity>();
-
     }
 
     private async Task CheckSeedTemplatesAsync()
@@ -78,7 +80,7 @@ public class SeedService : BaseService<SeedService>, ISeedService
         await CheckSeedTemplateAsync<ItemObjectSeedEntity>();
         await CheckSeedTemplateAsync<WorldObjectSeedEntity>();
         await CheckSeedTemplateAsync<RaceObjectSeedEntity>();
-        await CheckSeedTemplateAsync<TileSetMapSerializable>();
+        //await CheckSeedTemplateAsync<TileSetMapSerializable>();
 
         // await CheckSeedTemplateAsync(GetDefaultTileSetMap());
     }
@@ -92,8 +94,10 @@ public class SeedService : BaseService<SeedService>, ISeedService
     private Task CheckSeedDirectoriesAsync()
     {
         var attributes = AssemblyUtils.GetAttribute<SeedObjectAttribute>();
-        foreach (var dir in attributes.Select(type =>
-                         type.GetCustomAttribute<SeedObjectAttribute>()!)
+        foreach (var dir in attributes.Select(
+                         type =>
+                             type.GetCustomAttribute<SeedObjectAttribute>()!
+                     )
                      .Select(attr => Path.Join(_directoriesConfig[DirectoryNameType.Seeds], attr.TemplateDirectory))
                      .Where(dir => !Directory.Exists(dir)))
         {
@@ -115,19 +119,31 @@ public class SeedService : BaseService<SeedService>, ISeedService
         {
             await LoadSeedFileAsync<TEntity>(file);
         }
-
     }
 
     public void AddGameObjectSeed(string name, string description, string tileNAme, string gameObjectName, object data)
     {
-        _gameObjectSeed.Add(new GameObjectEntity()
-        {
-            Name = name,
-            Description = description,
-            TileId = _typeService.SearchTile(tileNAme, null, null)!.Id,
-            GameObjectType = _typeService.SearchGameObject(gameObjectName)!.Id,
-            Data = JsonSerializer.Serialize(data)
-        });
+        _gameObjectSeed.Add(
+            new GameObjectEntity()
+            {
+                Name = name,
+                Description = description,
+                TileId = _typeService.SearchTile(tileNAme, null, null)!.Id,
+                GameObjectType = _typeService.SearchGameObject(gameObjectName)!.Id,
+                Data = JsonSerializer.Serialize(data)
+            }
+        );
+    }
+
+    public void AddTextContentSeed(string name, string content)
+    {
+        _textContentSeed.Add(
+            new TextContentEntity
+            {
+                Name = name.ToUpper(),
+                Content = content
+            }
+        );
     }
 
     private async Task LoadSeedFileAsync<TEntity>(string fileName) where TEntity : class, new()
@@ -135,14 +151,19 @@ public class SeedService : BaseService<SeedService>, ISeedService
         if (typeof(TEntity) == typeof(WorldObjectSeedEntity))
         {
             var gameObjects = await SeedCsvParser.Instance.ParseAsync<WorldObjectSeedEntity>(fileName);
-            gameObjects.ToList().ForEach(go => _gameObjectSeed.Add(new GameObjectEntity()
-            {
-                Name = go.Name,
-                Description = go.Description,
-                TileId = _typeService.SearchTile(go.TileName, null, null)!.Id,
-                GameObjectType = _typeService.SearchGameObject(go.GameObjectName)!.Id,
-                Data = JsonSerializer.Serialize(go.Data)
-            }));
+            gameObjects.ToList()
+                .ForEach(
+                    go => _gameObjectSeed.Add(
+                        new GameObjectEntity()
+                        {
+                            Name = go.Name,
+                            Description = go.Description,
+                            TileId = _typeService.SearchTile(go.TileName, null, null)!.Id,
+                            GameObjectType = _typeService.SearchGameObject(go.GameObjectName)!.Id,
+                            Data = JsonSerializer.Serialize(go.Data)
+                        }
+                    )
+                );
         }
 
         if (typeof(TEntity) == typeof(GameObjectTypeSerializableEntity))
@@ -163,28 +184,50 @@ public class SeedService : BaseService<SeedService>, ISeedService
             {
                 _typeService.AddNpcSubType(npcType.NpcName, npcType.NpcSubTypeName);
 
-                _typeService.AddNpcTypeTile(_typeService.GetNpcType(npcType.NpcName).Value, _typeService.GetNpcSubType(npcType.NpcSubTypeName), npcType.TileName);
+                _typeService.AddNpcTypeTile(
+                    _typeService.GetNpcType(npcType.NpcName).Value,
+                    _typeService.GetNpcSubType(npcType.NpcSubTypeName),
+                    npcType.TileName
+                );
             }
         }
 
-        if (typeof(TEntity) == typeof(TileSetMapSerializable))
+        if (typeof(TEntity) == typeof(ItemObjectSeedEntity))
         {
-            var tiles = await SeedCsvParser.Instance.ParseAsync<TileSetMapSerializable>(fileName);
-
-            foreach (var tile in tiles)
+            var itemsTypes = await SeedCsvParser.Instance.ParseAsync<ItemObjectSeedEntity>(fileName);
+            foreach (var importItem in itemsTypes)
             {
-                _typeService.AddTile(new Tile(tile.Name, tile.Id, tile.Category, tile.SubCategory, tile.IsTransparent, string.IsNullOrEmpty(tile.Tag) ? null : tile.Tag));
+                var itemEntity = new ItemEntity
+                {
+                    Name = importItem.Name,
+                    Description = importItem.Description,
+                    EquipLocation = importItem.EquipLocation,
+                    Attack = importItem.Attack,
+                    Defense = importItem.Defense,
+                    Weight = importItem.Weight,
+                    MinLevel = importItem.MinLevel,
+                    Speed = importItem.Speed,
+                    BuyDice = importItem.BuyDice,
+                    SellDice = importItem.SellDice,
+                    TileType = _typeService.SearchTile(importItem.TileName, null, null).Id,
+                    ItemRarity = importItem.ItemRarity,
+                    Category = _typeService.AddItemCategoryType(importItem.Category),
+                    Type = _typeService.AddItemType(importItem.Type)
+                };
+
+                await Engine.DatabaseService.InsertAsync(itemEntity);
             }
         }
-
     }
 
 
     private async Task CheckSeedTemplateAsync<TEntity>(IEnumerable<TEntity>? defaultData = null) where TEntity : class, new()
     {
         Logger.LogInformation("Checking Seed Template for type: {GameObjectType}", typeof(TEntity).Name);
-        var fileName = Path.Join(_directoriesConfig[DirectoryNameType.SeedTemplates],
-            $"{typeof(TEntity).Name.Replace("Entity", "").Replace("Serializable", "").ToUnderscoreCase()}.csv");
+        var fileName = Path.Join(
+            _directoriesConfig[DirectoryNameType.SeedTemplates],
+            $"{typeof(TEntity).Name.Replace("Entity", "").Replace("Serializable", "").ToUnderscoreCase()}.csv"
+        );
         if (!File.Exists(fileName))
         {
             if (defaultData == null)
@@ -199,33 +242,43 @@ public class SeedService : BaseService<SeedService>, ISeedService
     public void AddRaceToSeed(string race, string description, short tileId, BaseStatEntity stat)
     {
         Logger.LogInformation("Adding Race {Race} to seed", race);
-        _racesSeed.Add(new RaceEntity()
-        {
-            Name = race,
-            Description = description,
-            Dexterity = stat.Dexterity,
-            Intelligence = stat.Intelligence,
-            Luck = stat.Luck,
-            Strength = stat.Strength,
-            TileId = tileId
-        });
+        _racesSeed.Add(
+            new RaceEntity()
+            {
+                Name = race,
+                Description = description,
+                Dexterity = stat.Dexterity,
+                Intelligence = stat.Intelligence,
+                Luck = stat.Luck,
+                Strength = stat.Strength,
+                TileId = tileId
+            }
+        );
     }
 
-    public void AddGameObjectToSeed(string name, string description, int tileType,
-        GameObjectType gameObjectType)
+    public void AddGameObjectToSeed(
+        string name, string description, int tileType,
+        GameObjectType gameObjectType
+    )
     {
-        _gameObjectSeed.Add(new GameObjectEntity()
-        {
-            Name = name,
-            Description = description,
-            TileId = (uint)tileType,
-            GameObjectType = gameObjectType.Id
-        });
+        _gameObjectSeed.Add(
+            new GameObjectEntity()
+            {
+                Name = name,
+                Description = description,
+                TileId = (uint)tileType,
+                GameObjectType = gameObjectType.Id
+            }
+        );
     }
 
     private async Task ScanTileSetsAsync()
     {
-        var files = Directory.GetFiles(_directoriesConfig[DirectoryNameType.Assets], "*.tileset", SearchOption.AllDirectories);
+        var files = Directory.GetFiles(
+            _directoriesConfig[DirectoryNameType.Assets],
+            "*.tileset",
+            SearchOption.AllDirectories
+        );
         Logger.LogInformation("Scanning TileSets");
         foreach (var tileSet in files)
         {
@@ -237,7 +290,8 @@ public class SeedService : BaseService<SeedService>, ISeedService
     {
         foreach (var go in _gameObjectSeed)
         {
-            var gameObject = await Engine.DatabaseService.QueryAsSingleAsync<GameObjectEntity>(entity => entity.Name == go.Name);
+            var gameObject =
+                await Engine.DatabaseService.QueryAsSingleAsync<GameObjectEntity>(entity => entity.Name == go.Name);
             if (gameObject == null!)
             {
                 await Engine.DatabaseService.InsertAsync(go);
@@ -252,6 +306,23 @@ public class SeedService : BaseService<SeedService>, ISeedService
                 await Engine.DatabaseService.UpdateAsync(gameObject);
             }
         }
+
+        foreach (var contentEntity in _textContentSeed)
+        {
+            var existTextSeed =
+                await Engine.DatabaseService.QueryAsSingleAsync<TextContentEntity>(
+                    entity => entity.Name == contentEntity.Name
+                );
+            if (existTextSeed == null!)
+            {
+                await Engine.DatabaseService.InsertAsync(contentEntity);
+            }
+            else
+            {
+                existTextSeed.Content = contentEntity.Content;
+                await Engine.DatabaseService.UpdateAsync(existTextSeed);
+            }
+        }
     }
 
     private async Task LoadTileSetDefinitionAsync(string tileSet)
@@ -263,7 +334,8 @@ public class SeedService : BaseService<SeedService>, ISeedService
         var tilesDirectory = new FileInfo(tileSet);
         var tileSetImageInfo = new FileInfo(Path.Join(tilesDirectory.DirectoryName, tileSetDefinition.Source));
 
-        var tileEntity = await Engine.DatabaseService.QueryAsSingleAsync<TileSetEntity>(entity => entity.Name == tileSetDefinition!.Name);
+        var tileEntity =
+            await Engine.DatabaseService.QueryAsSingleAsync<TileSetEntity>(entity => entity.Name == tileSetDefinition!.Name);
 
         if (tileEntity == null!)
         {
@@ -280,12 +352,18 @@ public class SeedService : BaseService<SeedService>, ISeedService
         }
 
         var tileMap =
-            await SeedCsvParser.Instance.ParseAsync<TileSetMapSerializable>(Path.Join(tilesDirectory.DirectoryName!,
-                tileSetDefinition!.TileSetMapFileName));
+            await SeedCsvParser.Instance.ParseAsync<TileSetMapSerializable>(
+                Path.Join(
+                    tilesDirectory.DirectoryName!,
+                    tileSetDefinition!.TileSetMapFileName
+                )
+            );
 
         foreach (var tile in tileMap)
         {
-            var tileMapEntity = await Engine.DatabaseService.QueryAsSingleAsync<TileSetMapEntity>(entity => entity.TileSetId == tileEntity.Id && entity.TileId == tile.Id);
+            var tileMapEntity = await Engine.DatabaseService.QueryAsSingleAsync<TileSetMapEntity>(
+                entity => entity.TileSetId == tileEntity.Id && entity.TileId == tile.Id
+            );
             if (tileMapEntity != null!)
             {
                 continue;
@@ -295,10 +373,27 @@ public class SeedService : BaseService<SeedService>, ISeedService
             {
                 TileSetId = tileEntity.Id,
                 TileId = tile.Id,
+                Category = tile.Category,
+                Tag = tile.Tag,
+                IsTransparent = tile.IsTransparent,
+                SubCategory = tile.SubCategory,
+                Name = tile.Name
+
                 //TileType = tile.GameObjectType,
                 //IsTransparent = tile.IsTransparent
             };
             await Engine.DatabaseService.InsertAsync(tileMapEntity);
+
+            _typeService.AddTile(
+                new Tile(
+                    tile.Name,
+                    tile.Id,
+                    tile.Category,
+                    tile.SubCategory,
+                    tile.IsTransparent,
+                    string.IsNullOrEmpty(tile.Tag) ? null : tile.Tag
+                )
+            );
         }
     }
 }

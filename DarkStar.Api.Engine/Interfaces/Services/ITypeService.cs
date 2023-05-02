@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DarkStar.Api.Engine.Interfaces.Services.Base;
 using DarkStar.Api.World.Types.GameObjects;
+using DarkStar.Api.World.Types.Items;
 using DarkStar.Api.World.Types.Npc;
 using DarkStar.Api.World.Types.Tiles;
 
@@ -40,5 +41,13 @@ public interface ITypeService : IDarkSunEngineService
 
     Tile GetTileForNpc(NpcType npcType, NpcSubType npcSubType);
     Tile GetTileForNpc(string npcType, string npcSubType);
+
+    ItemType AddItemType(string name);
+    ItemType AddItemType(short id, string name);
+    ItemType SearchItemType(string name);
+
+    ItemCategoryType AddItemCategoryType(string name);
+    ItemCategoryType AddItemCategoryType(short id, string name);
+    ItemCategoryType SearchItemCategoryType(string name);
 
 }

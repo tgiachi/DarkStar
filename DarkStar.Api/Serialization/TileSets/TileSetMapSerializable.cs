@@ -27,7 +27,5 @@ public class TileSetMapSerializable
     [Column]
     public bool IsTransparent { get; set; }
 
-   
-
     public override string ToString() => $"Id: {Id},  IsBlocked: {IsTransparent}";
 }

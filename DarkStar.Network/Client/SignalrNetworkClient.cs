@@ -8,6 +8,7 @@ using System.Text;
 
 using DarkStar.Network.Data;
 using DarkStar.Network.Protocol.Interfaces.Messages;
+using Humanizer;
 using Microsoft.AspNetCore.SignalR.Client;
 
 namespace DarkStar.Network.Client;
@@ -53,13 +54,14 @@ public class SignalrNetworkClient : IDarkStarNetworkClient
         try
         {
             var parsedMessage = _messageBuilder.ParseMessage(Encoding.UTF8.GetBytes(message));
+            _logger.LogDebug("Received message: {MessageType} size: {Size}", parsedMessage.MessageType, message.Length.Bytes());
             await DispatchMessageReceivedAsync(parsedMessage.MessageType, parsedMessage.Message);
         }
         catch (Exception e)
         {
             _logger.LogError(e, "Error while processing message: {Message}", message);
         }
-        
+
     }
 
     public ValueTask DisconnectAsync() => _hubConnection.DisposeAsync();

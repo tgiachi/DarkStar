@@ -48,7 +48,7 @@ public class BaseAiBehaviourExecutor : IAiBehaviourExecutor
         return DoAiAsync();
     }
 
-    public ValueTask InitializeAsync(string mapId, NpcEntity npc, NpcGameObject npcGameObject)
+    public virtual ValueTask InitializeAsync(string mapId, NpcEntity npc, NpcGameObject npcGameObject)
     {
         Logger.LogDebug("Initializing {Name} AI Behaviour for {GameObjectType} {SubType} {Alignment} ID: {Id}", GetType().Name, npc.Type, npc.SubType, npc.Alignment, npcGameObject.ID);
         MapId = mapId;
@@ -100,7 +100,7 @@ public class BaseAiBehaviourExecutor : IAiBehaviourExecutor
         if (Engine.WorldService.IsLocationWalkable(MapId, position))
         {
             NpcGameObject.Position = new Point(position.X, position.Y);
-     
+
             return true;
         }
         return false;

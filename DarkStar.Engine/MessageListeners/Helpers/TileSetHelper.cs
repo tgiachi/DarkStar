@@ -34,13 +34,15 @@ public static class TileSetHelper
 
         var tileSet = await engine.DatabaseService.QueryAsSingleAsync<TileSetEntity>(x => x.Name == tileId);
         var tileSetMap = await engine.DatabaseService.QueryAsListAsync<TileSetMapEntity>(x => x.TileSetId == tileSet.Id);
-        var list = tileSetMap.Select(x => new TileSetMapEntry(x.TileType, x.TileId)).ToList();
+        var list = tileSetMap.Select(x => new TileSetMapEntry(x.TileId, x.Name)).ToList();
         s_tileSetMapCache.Add(tileId, list);
         return list;
     }
 
-    public static async ValueTask<(byte[], List<TileSetMapEntry>)> GetTileSetContentAndMapAsync(string tileSet,
-        IDarkSunEngine engine)
+    public static async ValueTask<(byte[], List<TileSetMapEntry>)> GetTileSetContentAndMapAsync(
+        string tileSet,
+        IDarkSunEngine engine
+    )
     {
         return (await GetTileSetAsync(tileSet, engine), await GetTileSetMapAsync(tileSet, engine));
     }
