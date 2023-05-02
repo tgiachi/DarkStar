@@ -85,6 +85,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Ai.Base.BaseScriptableBehaviourExecutor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Ai.Base.BaseScriptableBehaviourExecutor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/DarkStar.Api.Engine.Ai.Base.yml",
       "output": {
         ".html": {
@@ -229,6 +239,26 @@
       "output": {
         ".html": {
           "relative_path": "api/DarkStar.Api.Engine.ConnectionHandlers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Data.Ai.AiContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Data.Ai.AiContext.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Data.Ai.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Data.Ai.html"
         }
       },
       "version": ""
@@ -1865,6 +1895,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Database.Entities.Item.TextContentEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Database.Entities.Item.TextContentEntity.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/DarkStar.Database.Entities.Item.yml",
       "output": {
         ".html": {
@@ -2255,6 +2295,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Http.Controllers.NetworkController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Http.Controllers.NetworkController.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/DarkStar.Engine.Http.Controllers.ScriptController.yml",
       "output": {
         ".html": {
@@ -2545,6 +2595,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.ScriptModules.AiScriptModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.ScriptModules.AiScriptModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/DarkStar.Engine.ScriptModules.BlueprintScriptModule.yml",
       "output": {
         ".html": {
@@ -2569,6 +2629,16 @@
       "output": {
         ".html": {
           "relative_path": "api/DarkStar.Engine.ScriptModules.RandomUtilsScriptModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.ScriptModules.SeedScriptModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.ScriptModules.SeedScriptModule.html"
         }
       },
       "version": ""
