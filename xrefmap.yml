@@ -12943,19 +12943,19 @@ references:
   isSpec: "True"
   fullName: DarkStar.Engine.Services.AiService.AddNpcAiAsync
   nameWithType: AiService.AddNpcAiAsync
-- uid: DarkStar.Engine.Services.AiService.AddScriptNpc(DarkStar.Api.Engine.Events.Map.GameObjectAddedEvent)
-  name: AddScriptNpc(GameObjectAddedEvent)
-  href: api/DarkStar.Engine.Services.AiService.html#DarkStar_Engine_Services_AiService_AddScriptNpc_DarkStar_Api_Engine_Events_Map_GameObjectAddedEvent_
-  commentId: M:DarkStar.Engine.Services.AiService.AddScriptNpc(DarkStar.Api.Engine.Events.Map.GameObjectAddedEvent)
-  fullName: DarkStar.Engine.Services.AiService.AddScriptNpc(DarkStar.Api.Engine.Events.Map.GameObjectAddedEvent)
-  nameWithType: AiService.AddScriptNpc(GameObjectAddedEvent)
-- uid: DarkStar.Engine.Services.AiService.AddScriptNpc*
-  name: AddScriptNpc
-  href: api/DarkStar.Engine.Services.AiService.html#DarkStar_Engine_Services_AiService_AddScriptNpc_
-  commentId: Overload:DarkStar.Engine.Services.AiService.AddScriptNpc
+- uid: DarkStar.Engine.Services.AiService.AddScriptNpcAsync(DarkStar.Api.Engine.Events.Map.GameObjectAddedEvent)
+  name: AddScriptNpcAsync(GameObjectAddedEvent)
+  href: api/DarkStar.Engine.Services.AiService.html#DarkStar_Engine_Services_AiService_AddScriptNpcAsync_DarkStar_Api_Engine_Events_Map_GameObjectAddedEvent_
+  commentId: M:DarkStar.Engine.Services.AiService.AddScriptNpcAsync(DarkStar.Api.Engine.Events.Map.GameObjectAddedEvent)
+  fullName: DarkStar.Engine.Services.AiService.AddScriptNpcAsync(DarkStar.Api.Engine.Events.Map.GameObjectAddedEvent)
+  nameWithType: AiService.AddScriptNpcAsync(GameObjectAddedEvent)
+- uid: DarkStar.Engine.Services.AiService.AddScriptNpcAsync*
+  name: AddScriptNpcAsync
+  href: api/DarkStar.Engine.Services.AiService.html#DarkStar_Engine_Services_AiService_AddScriptNpcAsync_
+  commentId: Overload:DarkStar.Engine.Services.AiService.AddScriptNpcAsync
   isSpec: "True"
-  fullName: DarkStar.Engine.Services.AiService.AddScriptNpc
-  nameWithType: AiService.AddScriptNpc
+  fullName: DarkStar.Engine.Services.AiService.AddScriptNpcAsync
+  nameWithType: AiService.AddScriptNpcAsync
 - uid: DarkStar.Engine.Services.AiService.OnGameObjectAddedEvent(DarkStar.Api.Engine.Events.Map.GameObjectAddedEvent)
   name: OnGameObjectAddedEvent(GameObjectAddedEvent)
   href: api/DarkStar.Engine.Services.AiService.html#DarkStar_Engine_Services_AiService_OnGameObjectAddedEvent_DarkStar_Api_Engine_Events_Map_GameObjectAddedEvent_
