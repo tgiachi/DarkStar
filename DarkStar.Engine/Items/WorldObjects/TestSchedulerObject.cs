@@ -14,7 +14,7 @@ namespace DarkStar.Engine.Items.WorldObjects;
 //[GameObjectAction(GameObjectType.Internal_World_Spawner)]
 public class TestSchedulerObject : BaseScheduledWorldObject
 {
-    public TestSchedulerObject(ILogger<BaseWorldObjectAction> logger, IDarkSunEngine engine) : base(logger, engine)
+    public TestSchedulerObject(ILogger<TestSchedulerObject> logger, IDarkSunEngine engine) : base(logger, engine)
     {
         SetInterval(4000);
     }

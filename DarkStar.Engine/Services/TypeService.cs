@@ -63,10 +63,15 @@ public class TypeService : BaseService<TypeService>, ITypeService
 
     public Tile SearchTile(string name, string? category, string? subCategory)
     {
+        bool result = int.TryParse(name, out var i);
+        if (result)
+        {
+            return new Tile("Unknown", i, "Unknown", "Unknown", false, null);
+        }
+
         var results = SearchTiles(name, category, subCategory);
         return results.Count > 1 ? results.RandomItem() : results.First();
     }
-
 
     public void AddTile(Tile tile)
     {

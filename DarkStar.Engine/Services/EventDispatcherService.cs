@@ -1,4 +1,5 @@
 using DarkStar.Api.Attributes.Services;
+using DarkStar.Api.Engine.Events.Engine;
 using DarkStar.Api.Engine.Events.Map;
 using DarkStar.Api.Engine.Events.Players;
 using DarkStar.Api.Engine.Interfaces.Services;
@@ -18,10 +19,12 @@ using Microsoft.Extensions.Logging;
 
 namespace DarkStar.Engine.Services;
 
-[DarkStarEngineService(nameof(NetworkEventDispatcherService), 1000)]
-public class NetworkEventDispatcherService : BaseService<NetworkEventDispatcherService>, INetworkEventDispatcherService
+[DarkStarEngineService(nameof(EventDispatcherService), 1000)]
+public class EventDispatcherService : BaseService<EventDispatcherService>, IEventDispatcherService
 {
-    public NetworkEventDispatcherService(ILogger<NetworkEventDispatcherService> logger) : base(logger)
+    private readonly List<Action> _engineReadyActions = new();
+
+    public EventDispatcherService(ILogger<EventDispatcherService> logger) : base(logger)
     {
     }
 
@@ -33,7 +36,21 @@ public class NetworkEventDispatcherService : BaseService<NetworkEventDispatcherS
         SubscribeToEvent<GameObjectRemovedEvent>(OnGameObjectRemoved);
         SubscribeToEvent<PingRequestEvent>(OnPingRequestMessage);
         SubscribeToEvent<PlayerLoggedEvent>(OnPlayerLoggedMessage);
+        SubscribeToEvent<EngineReadyEvent>(OnEngineReadyMessage);
         return ValueTask.FromResult(true);
+    }
+
+    private void OnEngineReadyMessage(EngineReadyEvent obj)
+    {
+        _ = Task.Run(
+            () =>
+            {
+                foreach (var action in _engineReadyActions)
+                {
+                    action();
+                }
+            }
+        );
     }
 
     private void OnPlayerLoggedMessage(PlayerLoggedEvent obj)
@@ -179,5 +196,10 @@ public class NetworkEventDispatcherService : BaseService<NetworkEventDispatcherS
     private void OnPingRequestMessage(PingRequestEvent obj)
     {
         _ = Task.Run(async () => await Engine.NetworkServer.BroadcastMessageAsync(new PingMessageResponse()));
+    }
+
+    public void AddEngineReadyEvent(Action callback)
+    {
+        _engineReadyActions.Add(callback);
     }
 }

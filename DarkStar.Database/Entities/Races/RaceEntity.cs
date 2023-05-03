@@ -16,7 +16,7 @@ public class RaceEntity : BaseStatEntity
 
     public string Description { get; set; } = null!;
 
-    public int TileId { get; set; }
+    public uint TileId { get; set; }
 
     public bool IsVisible { get; set; }
 }

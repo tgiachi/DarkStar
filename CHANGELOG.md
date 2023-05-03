@@ -2,6 +2,46 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="0.6.2"></a>
+## [0.6.2](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.6.2) (2023-5-3)
+
+### Other
+
+* 🎉 feat(nuget.yml): add GitHub workflow to publish Void libraries on NuGet ([b29552f](https://www.github.com/tgiachi/DarkSun/commit/b29552f08d0c443d17ff04fdae85046795f1d31e))
+* 🎨 style(csproj): add assembly info generation and package metadata to csproj files ([3d1b151](https://www.github.com/tgiachi/DarkSun/commit/3d1b1519b78bb18458a5ff2a6b46638e14745abc))
+* 🐛 fix(BinarySerialization.cs): change BinarySerialization class to static ([6b61bb6](https://www.github.com/tgiachi/DarkSun/commit/6b61bb64e8937171f5db587b59f7789e1f182360))
+* 🐛 fix(ItemService.cs): add missing await to AddScriptableGameObjectAction method call ([a2dd8ad](https://www.github.com/tgiachi/DarkSun/commit/a2dd8adc00110eade4a7d0995623a1918a4a80c2))
+* 🐛 fix(nuget.yml): add newline at end of file ([2b2ff9f](https://www.github.com/tgiachi/DarkSun/commit/2b2ff9f1c8c351d87cbf049e3ed8fe23e2a1e427))
+* 📝 docs(nuget.yml): update workflow name to reflect project name change ([e3bdd02](https://www.github.com/tgiachi/DarkSun/commit/e3bdd02de25529078815faead3810144483ddf05))
+* 🚀 chore(dependabot.yml): add Dependabot configuration file ([d16f48d](https://www.github.com/tgiachi/DarkSun/commit/d16f48d08e9c6e34b72a38c888dd9fa8c87ed85b))
+* Create dependabot.yml ([7bae235](https://www.github.com/tgiachi/DarkSun/commit/7bae235d274f050ea4590dd19e0f143a55091a6a))
+* Merge branch 'dev' of github.com:tgiachi/DarkSun into dev ([6075519](https://www.github.com/tgiachi/DarkSun/commit/6075519a7bf4294a69934219f9c84934759f8953))
+* Merge branch 'main' into dev ([5c2c718](https://www.github.com/tgiachi/DarkSun/commit/5c2c718218ecad1fc10e7ecaea18e7ed3e47825e))
+* Merge pull request #17 from tgiachi/dev ([1ae1015](https://www.github.com/tgiachi/DarkSun/commit/1ae1015e2cbe5ffafcd231e2d671b83e387fa1bb))
+* Merge pull request #18 from tgiachi/dev ([20a8b1b](https://www.github.com/tgiachi/DarkSun/commit/20a8b1b8947d2d4c953428097b28dfe46930e403))
+* Merge pull request #19 from tgiachi/dev ([1c88e84](https://www.github.com/tgiachi/DarkSun/commit/1c88e849af5138461dc3b389ef97365435fc97d8))
+* Merge pull request #2 from tgiachi/dev ([0feba20](https://www.github.com/tgiachi/DarkSun/commit/0feba20c8f104f0dc31bff84c204e0c6ec25c3d8))
+* Merge pull request #20 from tgiachi/dev ([45e1122](https://www.github.com/tgiachi/DarkSun/commit/45e112248b98cbcf4630f229dfd59f1b0b8046fc))
+* Merge pull request #21 from tgiachi/dev ([7488c39](https://www.github.com/tgiachi/DarkSun/commit/7488c394c183e84b5c06c490ba840bd1d78c0ace))
+* Merge pull request #22 from tgiachi/dev ([0dafb1c](https://www.github.com/tgiachi/DarkSun/commit/0dafb1c63bd3beb08ab9cbbee4cf91c8e85cf024))
+* Merge pull request #23 from tgiachi/dev ([3542dcc](https://www.github.com/tgiachi/DarkSun/commit/3542dccd0f61798ec39ceb75b4756d92a063c771))
+* Merge pull request #24 from tgiachi/dev ([2219ee3](https://www.github.com/tgiachi/DarkSun/commit/2219ee3dca5aeb37c3f8726538114309af87d5a4))
+* Merge pull request #26 from tgiachi/dev ([80115f1](https://www.github.com/tgiachi/DarkSun/commit/80115f1ab2e136b5d8753b7abbd0f6df4b7f9be1))
+* Merge pull request #27 from tgiachi/dev ([54b37a7](https://www.github.com/tgiachi/DarkSun/commit/54b37a7a8448471129ab52d2751b797328de871f))
+* Merge pull request #28 from tgiachi/dev ([bcbec47](https://www.github.com/tgiachi/DarkSun/commit/bcbec47ccc26504b88b5569d69a9555abcf6d2d9))
+* Merge pull request #3 from tgiachi/dependabot/nuget/Microsoft.VisualStudio.Threading.Analyzers-17.5.22 ([30bead7](https://www.github.com/tgiachi/DarkSun/commit/30bead7bf86c3bfd2484c716f1e61f5e34232ebc))
+* Merge pull request #30 from tgiachi/dev ([53e1c75](https://www.github.com/tgiachi/DarkSun/commit/53e1c759a6f6f7961ee12fe8b6c4c7c1faf173cf))
+* Merge pull request #31 from tgiachi/dev ([21d7e9f](https://www.github.com/tgiachi/DarkSun/commit/21d7e9fefc123c4b2e22f01c20d8a8b61e6ef3c3))
+* Merge pull request #32 from tgiachi/dev ([f2a3b00](https://www.github.com/tgiachi/DarkSun/commit/f2a3b00f2dc864c9571ecbf8a28d3199ff229fa0))
+* Merge pull request #33 from tgiachi/dev ([e50c49d](https://www.github.com/tgiachi/DarkSun/commit/e50c49dea886bbb87a6b81d8c8eea32edd9288dc))
+* Merge pull request #34 from tgiachi/dev ([7191caa](https://www.github.com/tgiachi/DarkSun/commit/7191caab893aa02c86caea57aceb73d0255e8c7d))
+* Merge pull request #35 from tgiachi/dev ([3c8982b](https://www.github.com/tgiachi/DarkSun/commit/3c8982baab63caf25ef724b3a8953ff6a4fff6de))
+* Merge pull request #36 from tgiachi/dependabot/nuget/Nerdbank.GitVersioning-3.6.128 ([1e73648](https://www.github.com/tgiachi/DarkSun/commit/1e736483aedccd2322e787b7a716bfc42be0ca04))
+* Merge pull request #38 from tgiachi/dev ([ab674a7](https://www.github.com/tgiachi/DarkSun/commit/ab674a7f0fd5bc7013de64cfdf52fddca6337cb0))
+* Merge pull request #39 from tgiachi/dev ([b2e2204](https://www.github.com/tgiachi/DarkSun/commit/b2e2204d456e06e9eae0af2e741c0fe98be9545d))
+* **deps:** bump Microsoft.VisualStudio.Threading.Analyzers ([88aa9c9](https://www.github.com/tgiachi/DarkSun/commit/88aa9c9f4433d185eb65ccfc95e5964f4b09622d))
+* **deps:** bump Nerdbank.GitVersioning from 3.5.119 to 3.6.128 ([23976e5](https://www.github.com/tgiachi/DarkSun/commit/23976e54a7b6c408dca8e6c40e1b696b52238991))
+
 <a name="0.6.1"></a>
 ## [0.6.1](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.6.1) (2023-5-3)
 

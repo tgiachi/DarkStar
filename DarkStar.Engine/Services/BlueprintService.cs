@@ -83,7 +83,7 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
             {
                 foreach (var templateObject in templateDefinition.Objects)
                 {
-                    Logger.LogInformation("Adding [{Class}] {Name} ", templateObject.Type, templateObject.Name);
+                    Logger.LogInformation("Adding [{Class}] {Name} in blueprint template ", templateObject.Type, templateObject.Name);
                     var points = GetPointsFromRect(
                         templateObject.X,
                         templateObject.Y,

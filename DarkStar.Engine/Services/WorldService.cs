@@ -11,19 +11,15 @@ using DarkStar.Api.Engine.Serialization;
 using DarkStar.Api.Engine.Serialization.Map;
 using DarkStar.Api.Engine.Utils;
 using DarkStar.Api.Utils;
-using DarkStar.Api.World.Types.GameObjects;
 using DarkStar.Api.World.Types.Map;
-using DarkStar.Api.World.Types.Npc;
-using DarkStar.Api.World.Types.Tiles;
 using DarkStar.Database.Entities.Maps;
 using DarkStar.Engine.Services.Base;
 using DarkStar.Network.Protocol.Messages.Common;
 using FastEnumUtility;
-using GoRogue;
 using GoRogue.GameFramework;
 using GoRogue.MapGeneration;
+using Humanizer;
 using Microsoft.Extensions.Logging;
-using Microsoft.VisualBasic.CompilerServices;
 using SadRogue.Primitives;
 using SadRogue.Primitives.GridViews;
 
@@ -48,14 +44,21 @@ public class WorldService : BaseService<IWorldService>, IWorldService
 
     public override async ValueTask<bool> StopAsync()
     {
-        // await Task.Delay(3000);
         await SaveMapsAsync();
         return true;
     }
 
     protected override async ValueTask<bool> StartAsync()
     {
-        await GenerateMapsAsync();
+        if (_engineConfig.Database.RecreateDatabase)
+        {
+            await GenerateMapsAsync();
+        }
+        else
+        {
+            await LoadMapsAsync();
+        }
+
         await SaveMapsAsync();
         Engine.JobSchedulerService.AddJob(
             "SaveMaps",
@@ -65,6 +68,67 @@ public class WorldService : BaseService<IWorldService>, IWorldService
         );
 
         return true;
+    }
+
+    private async Task LoadMapsAsync()
+    {
+        var sw = new Stopwatch();
+        sw.Start();
+        var maps = await Engine.DatabaseService.FindAllAsync<MapEntity>();
+        Logger.LogInformation("Loading maps {MapsCount}", maps.Count);
+        if (maps.Count == 0)
+        {
+            await GenerateMapsAsync();
+            return;
+        }
+
+        foreach (var map in maps)
+        {
+            await LoadMap(map);
+        }
+
+        sw.Stop();
+        Logger.LogInformation("Loaded maps in {Elapsed}", sw.Elapsed.TotalMilliseconds.Milliseconds());
+    }
+
+    private async Task LoadMap(MapEntity entity)
+    {
+        Logger.LogInformation("Loading map {Type} {MapId}", entity.Type, entity.Id);
+        var mapData = await BinarySerialization.DeserializeFromFileAsync<MapObjectSerialization>(
+            Path.Join(_directoriesConfig[DirectoryNameType.Maps], entity.FileName)
+        );
+
+        var map = new Map(mapData.Width, mapData.Height, FastEnum.GetValues<MapLayer>().Count, Distance.Chebyshev);
+        _maps.TryAdd(mapData.MapId, (map, mapData.MapType, new MapInfo() { Name = mapData.Name }));
+
+        HandleMapEvents(mapData.MapId, map);
+        foreach (var layer in mapData.Layers)
+        {
+            if (layer.Type == MapLayer.Terrain)
+            {
+                var terrain = new TerrainGameObject(layer.Position.ToPoint());
+                terrain.Tile = layer.Tile;
+                terrain.ObjectId = layer.ObjectId;
+                map.SetTerrain(terrain);
+            }
+
+            if (layer.Type == MapLayer.Creatures)
+            {
+                var npc = new NpcGameObject(layer.Position.ToPoint());
+                npc.Tile = layer.Tile;
+                npc.ObjectId = layer.ObjectId;
+                npc.Name = "";
+                map.AddEntity(npc);
+            }
+
+            if (layer.Type == MapLayer.Objects)
+            {
+                var gameObject = new WorldGameObject(layer.Position.ToPoint());
+                gameObject.ObjectId = layer.ObjectId;
+                gameObject.Tile = layer.Tile;
+                map.AddEntity(gameObject);
+            }
+        }
     }
 
     public Task<Dictionary<MapLayer, List<IGameObject>>> GetGameObjectsInRangeAsync(
@@ -282,7 +346,6 @@ public class WorldService : BaseService<IWorldService>, IWorldService
             );
         }
 
-
         await BinarySerialization.SerializeToFileAsync(
             mapEntity,
             Path.Join(_directoriesConfig[DirectoryNameType.Maps], $"{mapId}.map")
@@ -370,33 +433,42 @@ public class WorldService : BaseService<IWorldService>, IWorldService
     {
         map.ObjectAdded += (_, args) =>
         {
-            Logger.LogDebug(
-                "Added {GameObject} to map {MapId} Layer: {Layer}",
-                args.Item,
-                id,
-                ((MapLayer)args.Item.Layer).FastToString()
-            );
-            HandleGameObjectAdded(id, args.Item, args.Position.ToPointPosition());
+            if (args.Item is not TerrainGameObject)
+            {
+                Logger.LogDebug(
+                    "Added {GameObject} to map {MapId} Layer: {Layer}",
+                    args.Item,
+                    id,
+                    ((MapLayer)args.Item.Layer).FastToString()
+                );
+                HandleGameObjectAdded(id, args.Item, args.Position.ToPointPosition());
+            }
         };
         map.ObjectMoved += (_, args) =>
         {
-            Logger.LogDebug(
-                "Moved {GameObject} to map {MapId} Layer: {Layer}",
-                args.Item,
-                id,
-                ((MapLayer)args.Item.Layer).FastToString()
-            );
-            HandleGameObjectMoved(id, args.Item, args.OldPosition.ToPointPosition(), args.NewPosition.ToPointPosition());
+            if (args.Item is not TerrainGameObject)
+            {
+                Logger.LogDebug(
+                    "Moved {GameObject} to map {MapId} Layer: {Layer}",
+                    args.Item,
+                    id,
+                    ((MapLayer)args.Item.Layer).FastToString()
+                );
+                HandleGameObjectMoved(id, args.Item, args.OldPosition.ToPointPosition(), args.NewPosition.ToPointPosition());
+            }
         };
         map.ObjectRemoved += (_, args) =>
         {
-            Logger.LogDebug(
-                "Removed {GameObject} to map {MapId} Layer: {Layer}",
-                args.Item,
-                id,
-                ((MapLayer)args.Item.Layer).FastToString()
-            );
-            HandleGameObjectRemoved(id, args.Item, args.Position.ToPointPosition());
+            if (args.Item is not TerrainGameObject)
+            {
+                Logger.LogDebug(
+                    "Removed {GameObject} to map {MapId} Layer: {Layer}",
+                    args.Item,
+                    id,
+                    ((MapLayer)args.Item.Layer).FastToString()
+                );
+                HandleGameObjectRemoved(id, args.Item, args.Position.ToPointPosition());
+            }
         };
     }
 
@@ -424,7 +496,10 @@ public class WorldService : BaseService<IWorldService>, IWorldService
     public async Task<bool> MovePlayerAsync(string mapId, Guid playerId, PointPosition position)
     {
         var player = await GetPlayerOnMapAsync(mapId, playerId);
-
+        if (player is null)
+        {
+            return false;
+        }
         player.Position = position.ToPoint();
 
         return true;

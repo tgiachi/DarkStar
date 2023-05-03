@@ -218,7 +218,7 @@ public class DarkSunEngine : IDarkSunEngine
                     }
                 );
                 await _networkClient.SendMessageAsync(new PlayerLoginRequestMessage(Guid.Empty, "Player 1"));
-                foreach (var _ in Enumerable.Range(0, 10))
+                foreach (var _ in Enumerable.Range(0, 3))
                 {
                     await Task.Delay(1000);
                     await _networkClient.SendMessageAsync(
@@ -226,7 +226,8 @@ public class DarkSunEngine : IDarkSunEngine
                     );
                 }
 
-                //await _networkClient.DisconnectAsync();
+                await _networkClient.SendMessageAsync(new PlayerLogoutRequestMessage());
+                await _networkClient.DisconnectAsync();
             }
         );
     }

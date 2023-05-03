@@ -4,7 +4,7 @@
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <Version>0.6.1</Version>
+        <Version>0.6.2</Version>
         <GenerateAssemblyInfo>True</GenerateAssemblyInfo>
         <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
         <Authors>tgiachi (squid@stormwind.it)</Authors>
@@ -41,10 +41,6 @@
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-    </ItemGroup>
-
-    <ItemGroup>
-        <Folder Include="Protocol\Messages\Triggers\Players\" />
     </ItemGroup>
 
     <ItemGroup>

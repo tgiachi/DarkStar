@@ -192,6 +192,32 @@ public class SeedService : BaseService<SeedService>, ISeedService
             }
         }
 
+        if (typeof(TEntity) == typeof(RaceObjectSeedEntity))
+        {
+            var races = await SeedCsvParser.Instance.ParseAsync<RaceObjectSeedEntity>(fileName);
+            foreach (var importRace in races)
+            {
+                _racesSeed.Add(
+                    new RaceEntity()
+                    {
+                        Name = importRace.Name,
+                        Description = importRace.Description,
+                        TileId = _typeService.SearchTile(importRace.TileType, null, null)!.Id,
+                        Dexterity = importRace.Dexterity,
+                        Strength = importRace.Strength,
+                        Luck = importRace.Luck,
+                        Intelligence = importRace.Intelligence,
+                        Experience = 0,
+                        Mana = importRace.Mana,
+                        MaxHealth = importRace.MaxHealth,
+                        Health = importRace.Health,
+                        MaxMana = importRace.MaxMana,
+                        IsVisible = importRace.IsVisible,
+                    }
+                );
+            }
+        }
+
         if (typeof(TEntity) == typeof(ItemObjectSeedEntity))
         {
             var itemsTypes = await SeedCsvParser.Instance.ParseAsync<ItemObjectSeedEntity>(fileName);
@@ -251,7 +277,7 @@ public class SeedService : BaseService<SeedService>, ISeedService
                 Intelligence = stat.Intelligence,
                 Luck = stat.Luck,
                 Strength = stat.Strength,
-                TileId = tileId
+                TileId = (uint)tileId
             }
         );
     }
@@ -323,6 +349,36 @@ public class SeedService : BaseService<SeedService>, ISeedService
                 await Engine.DatabaseService.UpdateAsync(existTextSeed);
             }
         }
+
+        foreach (var raceEntity in _racesSeed)
+        {
+            var existRace = await Engine.DatabaseService.QueryAsSingleAsync<RaceEntity>(
+                entity => entity.Name == raceEntity.Name
+            );
+
+            if (existRace == null)
+            {
+                Logger.LogInformation("Adding race name: {Name}", raceEntity.Name);
+                await Engine.DatabaseService.InsertAsync(raceEntity);
+            }
+            else
+            {
+                existRace.Description = raceEntity.Description;
+                existRace.TileId = raceEntity.TileId;
+                existRace.Dexterity = raceEntity.Dexterity;
+                existRace.Strength = raceEntity.Strength;
+                existRace.Luck = raceEntity.Luck;
+                existRace.Intelligence = raceEntity.Intelligence;
+                existRace.Experience = 0;
+                existRace.Mana = raceEntity.Mana;
+                existRace.MaxHealth = raceEntity.MaxHealth;
+                existRace.Health = raceEntity.Health;
+                existRace.MaxMana = raceEntity.MaxMana;
+                existRace.IsVisible = raceEntity.IsVisible;
+
+                await Engine.DatabaseService.UpdateAsync(existRace);
+            }
+        }
     }
 
     private async Task LoadTileSetDefinitionAsync(string tileSet)
@@ -383,11 +439,18 @@ public class SeedService : BaseService<SeedService>, ISeedService
                 //IsTransparent = tile.IsTransparent
             };
             await Engine.DatabaseService.InsertAsync(tileMapEntity);
+        }
 
+        var tileSetMap = await Engine.DatabaseService.QueryAsListAsync<TileSetMapEntity>(
+            entity => entity.TileSetId == tileEntity.Id
+        );
+
+        foreach (var tile in tileSetMap)
+        {
             _typeService.AddTile(
                 new Tile(
                     tile.Name,
-                    tile.Id,
+                    tile.TileId,
                     tile.Category,
                     tile.SubCategory,
                     tile.IsTransparent,
