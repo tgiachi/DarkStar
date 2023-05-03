@@ -30,6 +30,10 @@ public class ItemsScriptModule : BaseScriptModule
     [ScriptFunction("add_scheduled_game_object_action", "Adds a scheduled game object action to the game object.")]
     public void AddScriptScheduledGameObject(string gameObjectType, int interval, Action<GameObjectContext> callBack)
     {
-        _itemService.AddScriptableScheduledGameObject(_typeService.SearchGameObject(gameObjectType), interval, callBack);
+        _itemService.AddScriptableScheduledGameObject(
+            _typeService.SearchGameObject(gameObjectType),
+            interval * 1000,
+            callBack
+        );
     }
 }
