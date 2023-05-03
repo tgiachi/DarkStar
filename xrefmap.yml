@@ -1852,6 +1852,70 @@ references:
   isSpec: "True"
   fullName: DarkStar.Api.Engine.Data.Config.Sections.WorldMapConfig.Width
   nameWithType: WorldMapConfig.Width
+- uid: DarkStar.Api.Engine.Data.Items
+  name: DarkStar.Api.Engine.Data.Items
+  href: api/DarkStar.Api.Engine.Data.Items.html
+  commentId: N:DarkStar.Api.Engine.Data.Items
+  fullName: DarkStar.Api.Engine.Data.Items
+  nameWithType: DarkStar.Api.Engine.Data.Items
+- uid: DarkStar.Api.Engine.Data.Items.GameObjectContext
+  name: GameObjectContext
+  href: api/DarkStar.Api.Engine.Data.Items.GameObjectContext.html
+  commentId: T:DarkStar.Api.Engine.Data.Items.GameObjectContext
+  fullName: DarkStar.Api.Engine.Data.Items.GameObjectContext
+  nameWithType: GameObjectContext
+- uid: DarkStar.Api.Engine.Data.Items.GameObjectContext.GameObject
+  name: GameObject
+  href: api/DarkStar.Api.Engine.Data.Items.GameObjectContext.html#DarkStar_Api_Engine_Data_Items_GameObjectContext_GameObject
+  commentId: P:DarkStar.Api.Engine.Data.Items.GameObjectContext.GameObject
+  fullName: DarkStar.Api.Engine.Data.Items.GameObjectContext.GameObject
+  nameWithType: GameObjectContext.GameObject
+- uid: DarkStar.Api.Engine.Data.Items.GameObjectContext.GameObject*
+  name: GameObject
+  href: api/DarkStar.Api.Engine.Data.Items.GameObjectContext.html#DarkStar_Api_Engine_Data_Items_GameObjectContext_GameObject_
+  commentId: Overload:DarkStar.Api.Engine.Data.Items.GameObjectContext.GameObject
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Data.Items.GameObjectContext.GameObject
+  nameWithType: GameObjectContext.GameObject
+- uid: DarkStar.Api.Engine.Data.Items.GameObjectContext.IsNpc
+  name: IsNpc
+  href: api/DarkStar.Api.Engine.Data.Items.GameObjectContext.html#DarkStar_Api_Engine_Data_Items_GameObjectContext_IsNpc
+  commentId: P:DarkStar.Api.Engine.Data.Items.GameObjectContext.IsNpc
+  fullName: DarkStar.Api.Engine.Data.Items.GameObjectContext.IsNpc
+  nameWithType: GameObjectContext.IsNpc
+- uid: DarkStar.Api.Engine.Data.Items.GameObjectContext.IsNpc*
+  name: IsNpc
+  href: api/DarkStar.Api.Engine.Data.Items.GameObjectContext.html#DarkStar_Api_Engine_Data_Items_GameObjectContext_IsNpc_
+  commentId: Overload:DarkStar.Api.Engine.Data.Items.GameObjectContext.IsNpc
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Data.Items.GameObjectContext.IsNpc
+  nameWithType: GameObjectContext.IsNpc
+- uid: DarkStar.Api.Engine.Data.Items.GameObjectContext.MapId
+  name: MapId
+  href: api/DarkStar.Api.Engine.Data.Items.GameObjectContext.html#DarkStar_Api_Engine_Data_Items_GameObjectContext_MapId
+  commentId: P:DarkStar.Api.Engine.Data.Items.GameObjectContext.MapId
+  fullName: DarkStar.Api.Engine.Data.Items.GameObjectContext.MapId
+  nameWithType: GameObjectContext.MapId
+- uid: DarkStar.Api.Engine.Data.Items.GameObjectContext.MapId*
+  name: MapId
+  href: api/DarkStar.Api.Engine.Data.Items.GameObjectContext.html#DarkStar_Api_Engine_Data_Items_GameObjectContext_MapId_
+  commentId: Overload:DarkStar.Api.Engine.Data.Items.GameObjectContext.MapId
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Data.Items.GameObjectContext.MapId
+  nameWithType: GameObjectContext.MapId
+- uid: DarkStar.Api.Engine.Data.Items.GameObjectContext.SenderId
+  name: SenderId
+  href: api/DarkStar.Api.Engine.Data.Items.GameObjectContext.html#DarkStar_Api_Engine_Data_Items_GameObjectContext_SenderId
+  commentId: P:DarkStar.Api.Engine.Data.Items.GameObjectContext.SenderId
+  fullName: DarkStar.Api.Engine.Data.Items.GameObjectContext.SenderId
+  nameWithType: GameObjectContext.SenderId
+- uid: DarkStar.Api.Engine.Data.Items.GameObjectContext.SenderId*
+  name: SenderId
+  href: api/DarkStar.Api.Engine.Data.Items.GameObjectContext.html#DarkStar_Api_Engine_Data_Items_GameObjectContext_SenderId_
+  commentId: Overload:DarkStar.Api.Engine.Data.Items.GameObjectContext.SenderId
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Data.Items.GameObjectContext.SenderId
+  nameWithType: GameObjectContext.SenderId
 - uid: DarkStar.Api.Engine.Data.Player
   name: DarkStar.Api.Engine.Data.Player
   href: api/DarkStar.Api.Engine.Data.Player.html
@@ -3845,12 +3909,63 @@ references:
   commentId: T:DarkStar.Api.Engine.Interfaces.Services.IDiagnosticService
   fullName: DarkStar.Api.Engine.Interfaces.Services.IDiagnosticService
   nameWithType: IDiagnosticService
+- uid: DarkStar.Api.Engine.Interfaces.Services.IEventDispatcherService
+  name: IEventDispatcherService
+  href: api/DarkStar.Api.Engine.Interfaces.Services.IEventDispatcherService.html
+  commentId: T:DarkStar.Api.Engine.Interfaces.Services.IEventDispatcherService
+  fullName: DarkStar.Api.Engine.Interfaces.Services.IEventDispatcherService
+  nameWithType: IEventDispatcherService
+- uid: DarkStar.Api.Engine.Interfaces.Services.IEventDispatcherService.AddEngineReadyEvent(System.Action)
+  name: AddEngineReadyEvent(Action)
+  href: api/DarkStar.Api.Engine.Interfaces.Services.IEventDispatcherService.html#DarkStar_Api_Engine_Interfaces_Services_IEventDispatcherService_AddEngineReadyEvent_System_Action_
+  commentId: M:DarkStar.Api.Engine.Interfaces.Services.IEventDispatcherService.AddEngineReadyEvent(System.Action)
+  fullName: DarkStar.Api.Engine.Interfaces.Services.IEventDispatcherService.AddEngineReadyEvent(System.Action)
+  nameWithType: IEventDispatcherService.AddEngineReadyEvent(Action)
+- uid: DarkStar.Api.Engine.Interfaces.Services.IEventDispatcherService.AddEngineReadyEvent*
+  name: AddEngineReadyEvent
+  href: api/DarkStar.Api.Engine.Interfaces.Services.IEventDispatcherService.html#DarkStar_Api_Engine_Interfaces_Services_IEventDispatcherService_AddEngineReadyEvent_
+  commentId: Overload:DarkStar.Api.Engine.Interfaces.Services.IEventDispatcherService.AddEngineReadyEvent
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Interfaces.Services.IEventDispatcherService.AddEngineReadyEvent
+  nameWithType: IEventDispatcherService.AddEngineReadyEvent
 - uid: DarkStar.Api.Engine.Interfaces.Services.IItemService
   name: IItemService
   href: api/DarkStar.Api.Engine.Interfaces.Services.IItemService.html
   commentId: T:DarkStar.Api.Engine.Interfaces.Services.IItemService
   fullName: DarkStar.Api.Engine.Interfaces.Services.IItemService
   nameWithType: IItemService
+- uid: DarkStar.Api.Engine.Interfaces.Services.IItemService.AddScriptableGameObject(DarkStar.Api.World.Types.GameObjects.GameObjectType,System.Action{DarkStar.Api.Engine.Data.Items.GameObjectContext})
+  name: AddScriptableGameObject(GameObjectType, Action<GameObjectContext>)
+  href: api/DarkStar.Api.Engine.Interfaces.Services.IItemService.html#DarkStar_Api_Engine_Interfaces_Services_IItemService_AddScriptableGameObject_DarkStar_Api_World_Types_GameObjects_GameObjectType_System_Action_DarkStar_Api_Engine_Data_Items_GameObjectContext__
+  commentId: M:DarkStar.Api.Engine.Interfaces.Services.IItemService.AddScriptableGameObject(DarkStar.Api.World.Types.GameObjects.GameObjectType,System.Action{DarkStar.Api.Engine.Data.Items.GameObjectContext})
+  name.vb: AddScriptableGameObject(GameObjectType, Action(Of GameObjectContext))
+  fullName: DarkStar.Api.Engine.Interfaces.Services.IItemService.AddScriptableGameObject(DarkStar.Api.World.Types.GameObjects.GameObjectType, System.Action<DarkStar.Api.Engine.Data.Items.GameObjectContext>)
+  fullName.vb: DarkStar.Api.Engine.Interfaces.Services.IItemService.AddScriptableGameObject(DarkStar.Api.World.Types.GameObjects.GameObjectType, System.Action(Of DarkStar.Api.Engine.Data.Items.GameObjectContext))
+  nameWithType: IItemService.AddScriptableGameObject(GameObjectType, Action<GameObjectContext>)
+  nameWithType.vb: IItemService.AddScriptableGameObject(GameObjectType, Action(Of GameObjectContext))
+- uid: DarkStar.Api.Engine.Interfaces.Services.IItemService.AddScriptableGameObject*
+  name: AddScriptableGameObject
+  href: api/DarkStar.Api.Engine.Interfaces.Services.IItemService.html#DarkStar_Api_Engine_Interfaces_Services_IItemService_AddScriptableGameObject_
+  commentId: Overload:DarkStar.Api.Engine.Interfaces.Services.IItemService.AddScriptableGameObject
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Interfaces.Services.IItemService.AddScriptableGameObject
+  nameWithType: IItemService.AddScriptableGameObject
+- uid: DarkStar.Api.Engine.Interfaces.Services.IItemService.AddScriptableScheduledGameObject(DarkStar.Api.World.Types.GameObjects.GameObjectType,System.Int32,System.Action{DarkStar.Api.Engine.Data.Items.GameObjectContext})
+  name: AddScriptableScheduledGameObject(GameObjectType, int, Action<GameObjectContext>)
+  href: api/DarkStar.Api.Engine.Interfaces.Services.IItemService.html#DarkStar_Api_Engine_Interfaces_Services_IItemService_AddScriptableScheduledGameObject_DarkStar_Api_World_Types_GameObjects_GameObjectType_System_Int32_System_Action_DarkStar_Api_Engine_Data_Items_GameObjectContext__
+  commentId: M:DarkStar.Api.Engine.Interfaces.Services.IItemService.AddScriptableScheduledGameObject(DarkStar.Api.World.Types.GameObjects.GameObjectType,System.Int32,System.Action{DarkStar.Api.Engine.Data.Items.GameObjectContext})
+  name.vb: AddScriptableScheduledGameObject(GameObjectType, Integer, Action(Of GameObjectContext))
+  fullName: DarkStar.Api.Engine.Interfaces.Services.IItemService.AddScriptableScheduledGameObject(DarkStar.Api.World.Types.GameObjects.GameObjectType, int, System.Action<DarkStar.Api.Engine.Data.Items.GameObjectContext>)
+  fullName.vb: DarkStar.Api.Engine.Interfaces.Services.IItemService.AddScriptableScheduledGameObject(DarkStar.Api.World.Types.GameObjects.GameObjectType, Integer, System.Action(Of DarkStar.Api.Engine.Data.Items.GameObjectContext))
+  nameWithType: IItemService.AddScriptableScheduledGameObject(GameObjectType, int, Action<GameObjectContext>)
+  nameWithType.vb: IItemService.AddScriptableScheduledGameObject(GameObjectType, Integer, Action(Of GameObjectContext))
+- uid: DarkStar.Api.Engine.Interfaces.Services.IItemService.AddScriptableScheduledGameObject*
+  name: AddScriptableScheduledGameObject
+  href: api/DarkStar.Api.Engine.Interfaces.Services.IItemService.html#DarkStar_Api_Engine_Interfaces_Services_IItemService_AddScriptableScheduledGameObject_
+  commentId: Overload:DarkStar.Api.Engine.Interfaces.Services.IItemService.AddScriptableScheduledGameObject
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Interfaces.Services.IItemService.AddScriptableScheduledGameObject
+  nameWithType: IItemService.AddScriptableScheduledGameObject
 - uid: DarkStar.Api.Engine.Interfaces.Services.IItemService.ExecuteGameObjectActionAsync(DarkStar.Api.Engine.Map.Entities.WorldGameObject,System.String,System.Nullable{System.Guid},System.Nullable{System.Guid},System.Boolean,System.Nullable{System.UInt32},System.Nullable{System.Guid})
   name: ExecuteGameObjectActionAsync(WorldGameObject, string, Guid?, Guid?, bool, uint?, Guid?)
   href: api/DarkStar.Api.Engine.Interfaces.Services.IItemService.html#DarkStar_Api_Engine_Interfaces_Services_IItemService_ExecuteGameObjectActionAsync_DarkStar_Api_Engine_Map_Entities_WorldGameObject_System_String_System_Nullable_System_Guid__System_Nullable_System_Guid__System_Boolean_System_Nullable_System_UInt32__System_Nullable_System_Guid__
@@ -3950,12 +4065,6 @@ references:
   isSpec: "True"
   fullName: DarkStar.Api.Engine.Interfaces.Services.INamesService.RandomName
   nameWithType: INamesService.RandomName
-- uid: DarkStar.Api.Engine.Interfaces.Services.INetworkEventDispatcherService
-  name: INetworkEventDispatcherService
-  href: api/DarkStar.Api.Engine.Interfaces.Services.INetworkEventDispatcherService.html
-  commentId: T:DarkStar.Api.Engine.Interfaces.Services.INetworkEventDispatcherService
-  fullName: DarkStar.Api.Engine.Interfaces.Services.INetworkEventDispatcherService
-  nameWithType: INetworkEventDispatcherService
 - uid: DarkStar.Api.Engine.Interfaces.Services.IPlayerService
   name: IPlayerService
   href: api/DarkStar.Api.Engine.Interfaces.Services.IPlayerService.html
@@ -5147,6 +5256,130 @@ references:
   isSpec: "True"
   fullName: DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScheduledWorldObject.UpdateAsync
   nameWithType: BaseScheduledWorldObject.UpdateAsync
+- uid: DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction
+  name: BaseScriptableScheduledWorldObjectAction
+  href: api/DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction.html
+  commentId: T:DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction
+  fullName: DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction
+  nameWithType: BaseScriptableScheduledWorldObjectAction
+- uid: DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine,System.Action{DarkStar.Api.Engine.Data.Items.GameObjectContext})
+  name: BaseScriptableScheduledWorldObjectAction(ILogger<BaseScriptableScheduledWorldObjectAction>, IDarkSunEngine, Action<GameObjectContext>)
+  href: api/DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction.html#DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScriptableScheduledWorldObjectAction__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScriptableScheduledWorldObjectAction__DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_System_Action_DarkStar_Api_Engine_Data_Items_GameObjectContext__
+  commentId: M:DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine,System.Action{DarkStar.Api.Engine.Data.Items.GameObjectContext})
+  name.vb: New(ILogger(Of BaseScriptableScheduledWorldObjectAction), IDarkSunEngine, Action(Of GameObjectContext))
+  fullName: DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction.BaseScriptableScheduledWorldObjectAction(Microsoft.Extensions.Logging.ILogger<DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction>, DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine, System.Action<DarkStar.Api.Engine.Data.Items.GameObjectContext>)
+  fullName.vb: DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction.New(Microsoft.Extensions.Logging.ILogger(Of DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction), DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine, System.Action(Of DarkStar.Api.Engine.Data.Items.GameObjectContext))
+  nameWithType: BaseScriptableScheduledWorldObjectAction.BaseScriptableScheduledWorldObjectAction(ILogger<BaseScriptableScheduledWorldObjectAction>, IDarkSunEngine, Action<GameObjectContext>)
+  nameWithType.vb: BaseScriptableScheduledWorldObjectAction.New(ILogger(Of BaseScriptableScheduledWorldObjectAction), IDarkSunEngine, Action(Of GameObjectContext))
+- uid: DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction.#ctor*
+  name: BaseScriptableScheduledWorldObjectAction
+  href: api/DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction.html#DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScriptableScheduledWorldObjectAction__ctor_
+  commentId: Overload:DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction.BaseScriptableScheduledWorldObjectAction
+  fullName.vb: DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction.New
+  nameWithType: BaseScriptableScheduledWorldObjectAction.BaseScriptableScheduledWorldObjectAction
+  nameWithType.vb: BaseScriptableScheduledWorldObjectAction.New
+- uid: DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction.GameObjectAction
+  name: GameObjectAction
+  href: api/DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction.html#DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScriptableScheduledWorldObjectAction_GameObjectAction
+  commentId: P:DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction.GameObjectAction
+  fullName: DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction.GameObjectAction
+  nameWithType: BaseScriptableScheduledWorldObjectAction.GameObjectAction
+- uid: DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction.GameObjectAction*
+  name: GameObjectAction
+  href: api/DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction.html#DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScriptableScheduledWorldObjectAction_GameObjectAction_
+  commentId: Overload:DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction.GameObjectAction
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction.GameObjectAction
+  nameWithType: BaseScriptableScheduledWorldObjectAction.GameObjectAction
+- uid: DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction.OnActivatedAsync(System.String,DarkStar.Api.Engine.Map.Entities.WorldGameObject,System.Guid,System.Boolean)
+  name: OnActivatedAsync(string, WorldGameObject, Guid, bool)
+  href: api/DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction.html#DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScriptableScheduledWorldObjectAction_OnActivatedAsync_System_String_DarkStar_Api_Engine_Map_Entities_WorldGameObject_System_Guid_System_Boolean_
+  commentId: M:DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction.OnActivatedAsync(System.String,DarkStar.Api.Engine.Map.Entities.WorldGameObject,System.Guid,System.Boolean)
+  name.vb: OnActivatedAsync(String, WorldGameObject, Guid, Boolean)
+  fullName: DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction.OnActivatedAsync(string, DarkStar.Api.Engine.Map.Entities.WorldGameObject, System.Guid, bool)
+  fullName.vb: DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction.OnActivatedAsync(String, DarkStar.Api.Engine.Map.Entities.WorldGameObject, System.Guid, Boolean)
+  nameWithType: BaseScriptableScheduledWorldObjectAction.OnActivatedAsync(string, WorldGameObject, Guid, bool)
+  nameWithType.vb: BaseScriptableScheduledWorldObjectAction.OnActivatedAsync(String, WorldGameObject, Guid, Boolean)
+- uid: DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction.OnActivatedAsync*
+  name: OnActivatedAsync
+  href: api/DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction.html#DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScriptableScheduledWorldObjectAction_OnActivatedAsync_
+  commentId: Overload:DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction.OnActivatedAsync
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction.OnActivatedAsync
+  nameWithType: BaseScriptableScheduledWorldObjectAction.OnActivatedAsync
+- uid: DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction.SetScheduledInterval(System.Double)
+  name: SetScheduledInterval(double)
+  href: api/DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction.html#DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScriptableScheduledWorldObjectAction_SetScheduledInterval_System_Double_
+  commentId: M:DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction.SetScheduledInterval(System.Double)
+  name.vb: SetScheduledInterval(Double)
+  fullName: DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction.SetScheduledInterval(double)
+  fullName.vb: DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction.SetScheduledInterval(Double)
+  nameWithType: BaseScriptableScheduledWorldObjectAction.SetScheduledInterval(double)
+  nameWithType.vb: BaseScriptableScheduledWorldObjectAction.SetScheduledInterval(Double)
+- uid: DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction.SetScheduledInterval*
+  name: SetScheduledInterval
+  href: api/DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction.html#DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScriptableScheduledWorldObjectAction_SetScheduledInterval_
+  commentId: Overload:DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction.SetScheduledInterval
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction.SetScheduledInterval
+  nameWithType: BaseScriptableScheduledWorldObjectAction.SetScheduledInterval
+- uid: DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction
+  name: BaseScriptableWorldObjectAction
+  href: api/DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction.html
+  commentId: T:DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction
+  fullName: DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction
+  nameWithType: BaseScriptableWorldObjectAction
+- uid: DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine,System.Action{DarkStar.Api.Engine.Data.Items.GameObjectContext})
+  name: BaseScriptableWorldObjectAction(ILogger<BaseScriptableWorldObjectAction>, IDarkSunEngine, Action<GameObjectContext>)
+  href: api/DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction.html#DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScriptableWorldObjectAction__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScriptableWorldObjectAction__DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_System_Action_DarkStar_Api_Engine_Data_Items_GameObjectContext__
+  commentId: M:DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine,System.Action{DarkStar.Api.Engine.Data.Items.GameObjectContext})
+  name.vb: New(ILogger(Of BaseScriptableWorldObjectAction), IDarkSunEngine, Action(Of GameObjectContext))
+  fullName: DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction.BaseScriptableWorldObjectAction(Microsoft.Extensions.Logging.ILogger<DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction>, DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine, System.Action<DarkStar.Api.Engine.Data.Items.GameObjectContext>)
+  fullName.vb: DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction.New(Microsoft.Extensions.Logging.ILogger(Of DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction), DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine, System.Action(Of DarkStar.Api.Engine.Data.Items.GameObjectContext))
+  nameWithType: BaseScriptableWorldObjectAction.BaseScriptableWorldObjectAction(ILogger<BaseScriptableWorldObjectAction>, IDarkSunEngine, Action<GameObjectContext>)
+  nameWithType.vb: BaseScriptableWorldObjectAction.New(ILogger(Of BaseScriptableWorldObjectAction), IDarkSunEngine, Action(Of GameObjectContext))
+- uid: DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction.#ctor*
+  name: BaseScriptableWorldObjectAction
+  href: api/DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction.html#DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScriptableWorldObjectAction__ctor_
+  commentId: Overload:DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction.BaseScriptableWorldObjectAction
+  fullName.vb: DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction.New
+  nameWithType: BaseScriptableWorldObjectAction.BaseScriptableWorldObjectAction
+  nameWithType.vb: BaseScriptableWorldObjectAction.New
+- uid: DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction.GameObjectAction
+  name: GameObjectAction
+  href: api/DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction.html#DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScriptableWorldObjectAction_GameObjectAction
+  commentId: P:DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction.GameObjectAction
+  fullName: DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction.GameObjectAction
+  nameWithType: BaseScriptableWorldObjectAction.GameObjectAction
+- uid: DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction.GameObjectAction*
+  name: GameObjectAction
+  href: api/DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction.html#DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScriptableWorldObjectAction_GameObjectAction_
+  commentId: Overload:DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction.GameObjectAction
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction.GameObjectAction
+  nameWithType: BaseScriptableWorldObjectAction.GameObjectAction
+- uid: DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction.OnActivatedAsync(System.String,DarkStar.Api.Engine.Map.Entities.WorldGameObject,System.Guid,System.Boolean)
+  name: OnActivatedAsync(string, WorldGameObject, Guid, bool)
+  href: api/DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction.html#DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScriptableWorldObjectAction_OnActivatedAsync_System_String_DarkStar_Api_Engine_Map_Entities_WorldGameObject_System_Guid_System_Boolean_
+  commentId: M:DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction.OnActivatedAsync(System.String,DarkStar.Api.Engine.Map.Entities.WorldGameObject,System.Guid,System.Boolean)
+  name.vb: OnActivatedAsync(String, WorldGameObject, Guid, Boolean)
+  fullName: DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction.OnActivatedAsync(string, DarkStar.Api.Engine.Map.Entities.WorldGameObject, System.Guid, bool)
+  fullName.vb: DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction.OnActivatedAsync(String, DarkStar.Api.Engine.Map.Entities.WorldGameObject, System.Guid, Boolean)
+  nameWithType: BaseScriptableWorldObjectAction.OnActivatedAsync(string, WorldGameObject, Guid, bool)
+  nameWithType.vb: BaseScriptableWorldObjectAction.OnActivatedAsync(String, WorldGameObject, Guid, Boolean)
+- uid: DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction.OnActivatedAsync*
+  name: OnActivatedAsync
+  href: api/DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction.html#DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScriptableWorldObjectAction_OnActivatedAsync_
+  commentId: Overload:DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction.OnActivatedAsync
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction.OnActivatedAsync
+  nameWithType: BaseScriptableWorldObjectAction.OnActivatedAsync
 - uid: DarkStar.Api.Engine.Items.WorldObjects.Base.BaseWorldObjectAction
   name: BaseWorldObjectAction
   href: api/DarkStar.Api.Engine.Items.WorldObjects.Base.BaseWorldObjectAction.html
@@ -5777,6 +6010,22 @@ references:
   commentId: T:DarkStar.Api.Engine.Serialization.BinarySerialization
   fullName: DarkStar.Api.Engine.Serialization.BinarySerialization
   nameWithType: BinarySerialization
+- uid: DarkStar.Api.Engine.Serialization.BinarySerialization.DeserializeFromFileAsync*
+  name: DeserializeFromFileAsync
+  href: api/DarkStar.Api.Engine.Serialization.BinarySerialization.html#DarkStar_Api_Engine_Serialization_BinarySerialization_DeserializeFromFileAsync_
+  commentId: Overload:DarkStar.Api.Engine.Serialization.BinarySerialization.DeserializeFromFileAsync
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Serialization.BinarySerialization.DeserializeFromFileAsync
+  nameWithType: BinarySerialization.DeserializeFromFileAsync
+- uid: DarkStar.Api.Engine.Serialization.BinarySerialization.DeserializeFromFileAsync``1(System.String)
+  name: DeserializeFromFileAsync<TEntity>(string)
+  href: api/DarkStar.Api.Engine.Serialization.BinarySerialization.html#DarkStar_Api_Engine_Serialization_BinarySerialization_DeserializeFromFileAsync__1_System_String_
+  commentId: M:DarkStar.Api.Engine.Serialization.BinarySerialization.DeserializeFromFileAsync``1(System.String)
+  name.vb: DeserializeFromFileAsync(Of TEntity)(String)
+  fullName: DarkStar.Api.Engine.Serialization.BinarySerialization.DeserializeFromFileAsync<TEntity>(string)
+  fullName.vb: DarkStar.Api.Engine.Serialization.BinarySerialization.DeserializeFromFileAsync(Of TEntity)(String)
+  nameWithType: BinarySerialization.DeserializeFromFileAsync<TEntity>(string)
+  nameWithType.vb: BinarySerialization.DeserializeFromFileAsync(Of TEntity)(String)
 - uid: DarkStar.Api.Engine.Serialization.BinarySerialization.SerializeToFileAsync*
   name: SerializeToFileAsync
   href: api/DarkStar.Api.Engine.Serialization.BinarySerialization.html#DarkStar_Api_Engine_Serialization_BinarySerialization_SerializeToFileAsync_
@@ -11460,15 +11709,15 @@ references:
   commentId: T:DarkStar.Engine.Items.WorldObjects.TestSchedulerObject
   fullName: DarkStar.Engine.Items.WorldObjects.TestSchedulerObject
   nameWithType: TestSchedulerObject
-- uid: DarkStar.Engine.Items.WorldObjects.TestSchedulerObject.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Api.Engine.Items.WorldObjects.Base.BaseWorldObjectAction},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
-  name: TestSchedulerObject(ILogger<BaseWorldObjectAction>, IDarkSunEngine)
-  href: api/DarkStar.Engine.Items.WorldObjects.TestSchedulerObject.html#DarkStar_Engine_Items_WorldObjects_TestSchedulerObject__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Api_Engine_Items_WorldObjects_Base_BaseWorldObjectAction__DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_
-  commentId: M:DarkStar.Engine.Items.WorldObjects.TestSchedulerObject.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Api.Engine.Items.WorldObjects.Base.BaseWorldObjectAction},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
-  name.vb: New(ILogger(Of BaseWorldObjectAction), IDarkSunEngine)
-  fullName: DarkStar.Engine.Items.WorldObjects.TestSchedulerObject.TestSchedulerObject(Microsoft.Extensions.Logging.ILogger<DarkStar.Api.Engine.Items.WorldObjects.Base.BaseWorldObjectAction>, DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
-  fullName.vb: DarkStar.Engine.Items.WorldObjects.TestSchedulerObject.New(Microsoft.Extensions.Logging.ILogger(Of DarkStar.Api.Engine.Items.WorldObjects.Base.BaseWorldObjectAction), DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
-  nameWithType: TestSchedulerObject.TestSchedulerObject(ILogger<BaseWorldObjectAction>, IDarkSunEngine)
-  nameWithType.vb: TestSchedulerObject.New(ILogger(Of BaseWorldObjectAction), IDarkSunEngine)
+- uid: DarkStar.Engine.Items.WorldObjects.TestSchedulerObject.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.Items.WorldObjects.TestSchedulerObject},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  name: TestSchedulerObject(ILogger<TestSchedulerObject>, IDarkSunEngine)
+  href: api/DarkStar.Engine.Items.WorldObjects.TestSchedulerObject.html#DarkStar_Engine_Items_WorldObjects_TestSchedulerObject__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Engine_Items_WorldObjects_TestSchedulerObject__DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_
+  commentId: M:DarkStar.Engine.Items.WorldObjects.TestSchedulerObject.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.Items.WorldObjects.TestSchedulerObject},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  name.vb: New(ILogger(Of TestSchedulerObject), IDarkSunEngine)
+  fullName: DarkStar.Engine.Items.WorldObjects.TestSchedulerObject.TestSchedulerObject(Microsoft.Extensions.Logging.ILogger<DarkStar.Engine.Items.WorldObjects.TestSchedulerObject>, DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  fullName.vb: DarkStar.Engine.Items.WorldObjects.TestSchedulerObject.New(Microsoft.Extensions.Logging.ILogger(Of DarkStar.Engine.Items.WorldObjects.TestSchedulerObject), DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  nameWithType: TestSchedulerObject.TestSchedulerObject(ILogger<TestSchedulerObject>, IDarkSunEngine)
+  nameWithType.vb: TestSchedulerObject.New(ILogger(Of TestSchedulerObject), IDarkSunEngine)
 - uid: DarkStar.Engine.Items.WorldObjects.TestSchedulerObject.#ctor*
   name: TestSchedulerObject
   href: api/DarkStar.Engine.Items.WorldObjects.TestSchedulerObject.html#DarkStar_Engine_Items_WorldObjects_TestSchedulerObject__ctor_
@@ -11829,6 +12078,47 @@ references:
   isSpec: "True"
   fullName: DarkStar.Engine.MessageListeners.PlayerLoginMessageListener.OnMessageReceivedAsync
   nameWithType: PlayerLoginMessageListener.OnMessageReceivedAsync
+- uid: DarkStar.Engine.MessageListeners.PlayerLogoutMessageListener
+  name: PlayerLogoutMessageListener
+  href: api/DarkStar.Engine.MessageListeners.PlayerLogoutMessageListener.html
+  commentId: T:DarkStar.Engine.MessageListeners.PlayerLogoutMessageListener
+  fullName: DarkStar.Engine.MessageListeners.PlayerLogoutMessageListener
+  nameWithType: PlayerLogoutMessageListener
+- uid: DarkStar.Engine.MessageListeners.PlayerLogoutMessageListener.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.MessageListeners.PlayerLogoutMessageListener},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  name: PlayerLogoutMessageListener(ILogger<PlayerLogoutMessageListener>, IDarkSunEngine)
+  href: api/DarkStar.Engine.MessageListeners.PlayerLogoutMessageListener.html#DarkStar_Engine_MessageListeners_PlayerLogoutMessageListener__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Engine_MessageListeners_PlayerLogoutMessageListener__DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_
+  commentId: M:DarkStar.Engine.MessageListeners.PlayerLogoutMessageListener.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.MessageListeners.PlayerLogoutMessageListener},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  name.vb: New(ILogger(Of PlayerLogoutMessageListener), IDarkSunEngine)
+  fullName: DarkStar.Engine.MessageListeners.PlayerLogoutMessageListener.PlayerLogoutMessageListener(Microsoft.Extensions.Logging.ILogger<DarkStar.Engine.MessageListeners.PlayerLogoutMessageListener>, DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  fullName.vb: DarkStar.Engine.MessageListeners.PlayerLogoutMessageListener.New(Microsoft.Extensions.Logging.ILogger(Of DarkStar.Engine.MessageListeners.PlayerLogoutMessageListener), DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  nameWithType: PlayerLogoutMessageListener.PlayerLogoutMessageListener(ILogger<PlayerLogoutMessageListener>, IDarkSunEngine)
+  nameWithType.vb: PlayerLogoutMessageListener.New(ILogger(Of PlayerLogoutMessageListener), IDarkSunEngine)
+- uid: DarkStar.Engine.MessageListeners.PlayerLogoutMessageListener.#ctor*
+  name: PlayerLogoutMessageListener
+  href: api/DarkStar.Engine.MessageListeners.PlayerLogoutMessageListener.html#DarkStar_Engine_MessageListeners_PlayerLogoutMessageListener__ctor_
+  commentId: Overload:DarkStar.Engine.MessageListeners.PlayerLogoutMessageListener.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: DarkStar.Engine.MessageListeners.PlayerLogoutMessageListener.PlayerLogoutMessageListener
+  fullName.vb: DarkStar.Engine.MessageListeners.PlayerLogoutMessageListener.New
+  nameWithType: PlayerLogoutMessageListener.PlayerLogoutMessageListener
+  nameWithType.vb: PlayerLogoutMessageListener.New
+- uid: DarkStar.Engine.MessageListeners.PlayerLogoutMessageListener.OnMessageReceivedAsync(System.String,DarkStar.Network.Protocol.Types.DarkStarMessageType,DarkStar.Network.Protocol.Messages.Players.PlayerLogoutRequestMessage)
+  name: OnMessageReceivedAsync(string, DarkStarMessageType, PlayerLogoutRequestMessage)
+  href: api/DarkStar.Engine.MessageListeners.PlayerLogoutMessageListener.html#DarkStar_Engine_MessageListeners_PlayerLogoutMessageListener_OnMessageReceivedAsync_System_String_DarkStar_Network_Protocol_Types_DarkStarMessageType_DarkStar_Network_Protocol_Messages_Players_PlayerLogoutRequestMessage_
+  commentId: M:DarkStar.Engine.MessageListeners.PlayerLogoutMessageListener.OnMessageReceivedAsync(System.String,DarkStar.Network.Protocol.Types.DarkStarMessageType,DarkStar.Network.Protocol.Messages.Players.PlayerLogoutRequestMessage)
+  name.vb: OnMessageReceivedAsync(String, DarkStarMessageType, PlayerLogoutRequestMessage)
+  fullName: DarkStar.Engine.MessageListeners.PlayerLogoutMessageListener.OnMessageReceivedAsync(string, DarkStar.Network.Protocol.Types.DarkStarMessageType, DarkStar.Network.Protocol.Messages.Players.PlayerLogoutRequestMessage)
+  fullName.vb: DarkStar.Engine.MessageListeners.PlayerLogoutMessageListener.OnMessageReceivedAsync(String, DarkStar.Network.Protocol.Types.DarkStarMessageType, DarkStar.Network.Protocol.Messages.Players.PlayerLogoutRequestMessage)
+  nameWithType: PlayerLogoutMessageListener.OnMessageReceivedAsync(string, DarkStarMessageType, PlayerLogoutRequestMessage)
+  nameWithType.vb: PlayerLogoutMessageListener.OnMessageReceivedAsync(String, DarkStarMessageType, PlayerLogoutRequestMessage)
+- uid: DarkStar.Engine.MessageListeners.PlayerLogoutMessageListener.OnMessageReceivedAsync*
+  name: OnMessageReceivedAsync
+  href: api/DarkStar.Engine.MessageListeners.PlayerLogoutMessageListener.html#DarkStar_Engine_MessageListeners_PlayerLogoutMessageListener_OnMessageReceivedAsync_
+  commentId: Overload:DarkStar.Engine.MessageListeners.PlayerLogoutMessageListener.OnMessageReceivedAsync
+  isSpec: "True"
+  fullName: DarkStar.Engine.MessageListeners.PlayerLogoutMessageListener.OnMessageReceivedAsync
+  nameWithType: PlayerLogoutMessageListener.OnMessageReceivedAsync
 - uid: DarkStar.Engine.MessageListeners.PlayerMoveMessageListener
   name: PlayerMoveMessageListener
   href: api/DarkStar.Engine.MessageListeners.PlayerMoveMessageListener.html
@@ -12474,6 +12764,119 @@ references:
   isSpec: "True"
   fullName: DarkStar.Engine.ScriptModules.BlueprintScriptModule.AddMapGenerator
   nameWithType: BlueprintScriptModule.AddMapGenerator
+- uid: DarkStar.Engine.ScriptModules.EventScriptModule
+  name: EventScriptModule
+  href: api/DarkStar.Engine.ScriptModules.EventScriptModule.html
+  commentId: T:DarkStar.Engine.ScriptModules.EventScriptModule
+  fullName: DarkStar.Engine.ScriptModules.EventScriptModule
+  nameWithType: EventScriptModule
+- uid: DarkStar.Engine.ScriptModules.EventScriptModule._eventDispatcherService
+  name: _eventDispatcherService
+  href: api/DarkStar.Engine.ScriptModules.EventScriptModule.html#DarkStar_Engine_ScriptModules_EventScriptModule__eventDispatcherService
+  commentId: F:DarkStar.Engine.ScriptModules.EventScriptModule._eventDispatcherService
+  fullName: DarkStar.Engine.ScriptModules.EventScriptModule._eventDispatcherService
+  nameWithType: EventScriptModule._eventDispatcherService
+- uid: DarkStar.Engine.ScriptModules.EventScriptModule.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.ScriptModules.EventScriptModule},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine,DarkStar.Api.Engine.Interfaces.Services.IEventDispatcherService)
+  name: EventScriptModule(ILogger<EventScriptModule>, IDarkSunEngine, IEventDispatcherService)
+  href: api/DarkStar.Engine.ScriptModules.EventScriptModule.html#DarkStar_Engine_ScriptModules_EventScriptModule__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Engine_ScriptModules_EventScriptModule__DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_DarkStar_Api_Engine_Interfaces_Services_IEventDispatcherService_
+  commentId: M:DarkStar.Engine.ScriptModules.EventScriptModule.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.ScriptModules.EventScriptModule},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine,DarkStar.Api.Engine.Interfaces.Services.IEventDispatcherService)
+  name.vb: New(ILogger(Of EventScriptModule), IDarkSunEngine, IEventDispatcherService)
+  fullName: DarkStar.Engine.ScriptModules.EventScriptModule.EventScriptModule(Microsoft.Extensions.Logging.ILogger<DarkStar.Engine.ScriptModules.EventScriptModule>, DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine, DarkStar.Api.Engine.Interfaces.Services.IEventDispatcherService)
+  fullName.vb: DarkStar.Engine.ScriptModules.EventScriptModule.New(Microsoft.Extensions.Logging.ILogger(Of DarkStar.Engine.ScriptModules.EventScriptModule), DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine, DarkStar.Api.Engine.Interfaces.Services.IEventDispatcherService)
+  nameWithType: EventScriptModule.EventScriptModule(ILogger<EventScriptModule>, IDarkSunEngine, IEventDispatcherService)
+  nameWithType.vb: EventScriptModule.New(ILogger(Of EventScriptModule), IDarkSunEngine, IEventDispatcherService)
+- uid: DarkStar.Engine.ScriptModules.EventScriptModule.#ctor*
+  name: EventScriptModule
+  href: api/DarkStar.Engine.ScriptModules.EventScriptModule.html#DarkStar_Engine_ScriptModules_EventScriptModule__ctor_
+  commentId: Overload:DarkStar.Engine.ScriptModules.EventScriptModule.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: DarkStar.Engine.ScriptModules.EventScriptModule.EventScriptModule
+  fullName.vb: DarkStar.Engine.ScriptModules.EventScriptModule.New
+  nameWithType: EventScriptModule.EventScriptModule
+  nameWithType.vb: EventScriptModule.New
+- uid: DarkStar.Engine.ScriptModules.EventScriptModule.AddEvent(System.Action)
+  name: AddEvent(Action)
+  href: api/DarkStar.Engine.ScriptModules.EventScriptModule.html#DarkStar_Engine_ScriptModules_EventScriptModule_AddEvent_System_Action_
+  commentId: M:DarkStar.Engine.ScriptModules.EventScriptModule.AddEvent(System.Action)
+  fullName: DarkStar.Engine.ScriptModules.EventScriptModule.AddEvent(System.Action)
+  nameWithType: EventScriptModule.AddEvent(Action)
+- uid: DarkStar.Engine.ScriptModules.EventScriptModule.AddEvent*
+  name: AddEvent
+  href: api/DarkStar.Engine.ScriptModules.EventScriptModule.html#DarkStar_Engine_ScriptModules_EventScriptModule_AddEvent_
+  commentId: Overload:DarkStar.Engine.ScriptModules.EventScriptModule.AddEvent
+  isSpec: "True"
+  fullName: DarkStar.Engine.ScriptModules.EventScriptModule.AddEvent
+  nameWithType: EventScriptModule.AddEvent
+- uid: DarkStar.Engine.ScriptModules.ItemsScriptModule
+  name: ItemsScriptModule
+  href: api/DarkStar.Engine.ScriptModules.ItemsScriptModule.html
+  commentId: T:DarkStar.Engine.ScriptModules.ItemsScriptModule
+  fullName: DarkStar.Engine.ScriptModules.ItemsScriptModule
+  nameWithType: ItemsScriptModule
+- uid: DarkStar.Engine.ScriptModules.ItemsScriptModule._itemService
+  name: _itemService
+  href: api/DarkStar.Engine.ScriptModules.ItemsScriptModule.html#DarkStar_Engine_ScriptModules_ItemsScriptModule__itemService
+  commentId: F:DarkStar.Engine.ScriptModules.ItemsScriptModule._itemService
+  fullName: DarkStar.Engine.ScriptModules.ItemsScriptModule._itemService
+  nameWithType: ItemsScriptModule._itemService
+- uid: DarkStar.Engine.ScriptModules.ItemsScriptModule._typeService
+  name: _typeService
+  href: api/DarkStar.Engine.ScriptModules.ItemsScriptModule.html#DarkStar_Engine_ScriptModules_ItemsScriptModule__typeService
+  commentId: F:DarkStar.Engine.ScriptModules.ItemsScriptModule._typeService
+  fullName: DarkStar.Engine.ScriptModules.ItemsScriptModule._typeService
+  nameWithType: ItemsScriptModule._typeService
+- uid: DarkStar.Engine.ScriptModules.ItemsScriptModule.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.ScriptModules.ItemsScriptModule},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine,DarkStar.Api.Engine.Interfaces.Services.IItemService,DarkStar.Api.Engine.Interfaces.Services.ITypeService)
+  name: ItemsScriptModule(ILogger<ItemsScriptModule>, IDarkSunEngine, IItemService, ITypeService)
+  href: api/DarkStar.Engine.ScriptModules.ItemsScriptModule.html#DarkStar_Engine_ScriptModules_ItemsScriptModule__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Engine_ScriptModules_ItemsScriptModule__DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_DarkStar_Api_Engine_Interfaces_Services_IItemService_DarkStar_Api_Engine_Interfaces_Services_ITypeService_
+  commentId: M:DarkStar.Engine.ScriptModules.ItemsScriptModule.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.ScriptModules.ItemsScriptModule},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine,DarkStar.Api.Engine.Interfaces.Services.IItemService,DarkStar.Api.Engine.Interfaces.Services.ITypeService)
+  name.vb: New(ILogger(Of ItemsScriptModule), IDarkSunEngine, IItemService, ITypeService)
+  fullName: DarkStar.Engine.ScriptModules.ItemsScriptModule.ItemsScriptModule(Microsoft.Extensions.Logging.ILogger<DarkStar.Engine.ScriptModules.ItemsScriptModule>, DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine, DarkStar.Api.Engine.Interfaces.Services.IItemService, DarkStar.Api.Engine.Interfaces.Services.ITypeService)
+  fullName.vb: DarkStar.Engine.ScriptModules.ItemsScriptModule.New(Microsoft.Extensions.Logging.ILogger(Of DarkStar.Engine.ScriptModules.ItemsScriptModule), DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine, DarkStar.Api.Engine.Interfaces.Services.IItemService, DarkStar.Api.Engine.Interfaces.Services.ITypeService)
+  nameWithType: ItemsScriptModule.ItemsScriptModule(ILogger<ItemsScriptModule>, IDarkSunEngine, IItemService, ITypeService)
+  nameWithType.vb: ItemsScriptModule.New(ILogger(Of ItemsScriptModule), IDarkSunEngine, IItemService, ITypeService)
+- uid: DarkStar.Engine.ScriptModules.ItemsScriptModule.#ctor*
+  name: ItemsScriptModule
+  href: api/DarkStar.Engine.ScriptModules.ItemsScriptModule.html#DarkStar_Engine_ScriptModules_ItemsScriptModule__ctor_
+  commentId: Overload:DarkStar.Engine.ScriptModules.ItemsScriptModule.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: DarkStar.Engine.ScriptModules.ItemsScriptModule.ItemsScriptModule
+  fullName.vb: DarkStar.Engine.ScriptModules.ItemsScriptModule.New
+  nameWithType: ItemsScriptModule.ItemsScriptModule
+  nameWithType.vb: ItemsScriptModule.New
+- uid: DarkStar.Engine.ScriptModules.ItemsScriptModule.AddScriptGameObject(System.String,System.Action{DarkStar.Api.Engine.Data.Items.GameObjectContext})
+  name: AddScriptGameObject(string, Action<GameObjectContext>)
+  href: api/DarkStar.Engine.ScriptModules.ItemsScriptModule.html#DarkStar_Engine_ScriptModules_ItemsScriptModule_AddScriptGameObject_System_String_System_Action_DarkStar_Api_Engine_Data_Items_GameObjectContext__
+  commentId: M:DarkStar.Engine.ScriptModules.ItemsScriptModule.AddScriptGameObject(System.String,System.Action{DarkStar.Api.Engine.Data.Items.GameObjectContext})
+  name.vb: AddScriptGameObject(String, Action(Of GameObjectContext))
+  fullName: DarkStar.Engine.ScriptModules.ItemsScriptModule.AddScriptGameObject(string, System.Action<DarkStar.Api.Engine.Data.Items.GameObjectContext>)
+  fullName.vb: DarkStar.Engine.ScriptModules.ItemsScriptModule.AddScriptGameObject(String, System.Action(Of DarkStar.Api.Engine.Data.Items.GameObjectContext))
+  nameWithType: ItemsScriptModule.AddScriptGameObject(string, Action<GameObjectContext>)
+  nameWithType.vb: ItemsScriptModule.AddScriptGameObject(String, Action(Of GameObjectContext))
+- uid: DarkStar.Engine.ScriptModules.ItemsScriptModule.AddScriptGameObject*
+  name: AddScriptGameObject
+  href: api/DarkStar.Engine.ScriptModules.ItemsScriptModule.html#DarkStar_Engine_ScriptModules_ItemsScriptModule_AddScriptGameObject_
+  commentId: Overload:DarkStar.Engine.ScriptModules.ItemsScriptModule.AddScriptGameObject
+  isSpec: "True"
+  fullName: DarkStar.Engine.ScriptModules.ItemsScriptModule.AddScriptGameObject
+  nameWithType: ItemsScriptModule.AddScriptGameObject
+- uid: DarkStar.Engine.ScriptModules.ItemsScriptModule.AddScriptScheduledGameObject(System.String,System.Int32,System.Action{DarkStar.Api.Engine.Data.Items.GameObjectContext})
+  name: AddScriptScheduledGameObject(string, int, Action<GameObjectContext>)
+  href: api/DarkStar.Engine.ScriptModules.ItemsScriptModule.html#DarkStar_Engine_ScriptModules_ItemsScriptModule_AddScriptScheduledGameObject_System_String_System_Int32_System_Action_DarkStar_Api_Engine_Data_Items_GameObjectContext__
+  commentId: M:DarkStar.Engine.ScriptModules.ItemsScriptModule.AddScriptScheduledGameObject(System.String,System.Int32,System.Action{DarkStar.Api.Engine.Data.Items.GameObjectContext})
+  name.vb: AddScriptScheduledGameObject(String, Integer, Action(Of GameObjectContext))
+  fullName: DarkStar.Engine.ScriptModules.ItemsScriptModule.AddScriptScheduledGameObject(string, int, System.Action<DarkStar.Api.Engine.Data.Items.GameObjectContext>)
+  fullName.vb: DarkStar.Engine.ScriptModules.ItemsScriptModule.AddScriptScheduledGameObject(String, Integer, System.Action(Of DarkStar.Api.Engine.Data.Items.GameObjectContext))
+  nameWithType: ItemsScriptModule.AddScriptScheduledGameObject(string, int, Action<GameObjectContext>)
+  nameWithType.vb: ItemsScriptModule.AddScriptScheduledGameObject(String, Integer, Action(Of GameObjectContext))
+- uid: DarkStar.Engine.ScriptModules.ItemsScriptModule.AddScriptScheduledGameObject*
+  name: AddScriptScheduledGameObject
+  href: api/DarkStar.Engine.ScriptModules.ItemsScriptModule.html#DarkStar_Engine_ScriptModules_ItemsScriptModule_AddScriptScheduledGameObject_
+  commentId: Overload:DarkStar.Engine.ScriptModules.ItemsScriptModule.AddScriptScheduledGameObject
+  isSpec: "True"
+  fullName: DarkStar.Engine.ScriptModules.ItemsScriptModule.AddScriptScheduledGameObject
+  nameWithType: ItemsScriptModule.AddScriptScheduledGameObject
 - uid: DarkStar.Engine.ScriptModules.PlayerScriptModule
   name: PlayerScriptModule
   href: api/DarkStar.Engine.ScriptModules.PlayerScriptModule.html
@@ -12745,15 +13148,15 @@ references:
   isSpec: "True"
   fullName: DarkStar.Engine.ScriptModules.TypesScriptModule.AddGameObject
   nameWithType: TypesScriptModule.AddGameObject
-- uid: DarkStar.Engine.ScriptModules.TypesScriptModule.AddGameObjectType(System.String)
-  name: AddGameObjectType(string)
-  href: api/DarkStar.Engine.ScriptModules.TypesScriptModule.html#DarkStar_Engine_ScriptModules_TypesScriptModule_AddGameObjectType_System_String_
-  commentId: M:DarkStar.Engine.ScriptModules.TypesScriptModule.AddGameObjectType(System.String)
-  name.vb: AddGameObjectType(String)
-  fullName: DarkStar.Engine.ScriptModules.TypesScriptModule.AddGameObjectType(string)
-  fullName.vb: DarkStar.Engine.ScriptModules.TypesScriptModule.AddGameObjectType(String)
-  nameWithType: TypesScriptModule.AddGameObjectType(string)
-  nameWithType.vb: TypesScriptModule.AddGameObjectType(String)
+- uid: DarkStar.Engine.ScriptModules.TypesScriptModule.AddGameObjectType(System.String[])
+  name: AddGameObjectType(params string[])
+  href: api/DarkStar.Engine.ScriptModules.TypesScriptModule.html#DarkStar_Engine_ScriptModules_TypesScriptModule_AddGameObjectType_System_String___
+  commentId: M:DarkStar.Engine.ScriptModules.TypesScriptModule.AddGameObjectType(System.String[])
+  name.vb: AddGameObjectType(ParamArray String())
+  fullName: DarkStar.Engine.ScriptModules.TypesScriptModule.AddGameObjectType(params string[])
+  fullName.vb: DarkStar.Engine.ScriptModules.TypesScriptModule.AddGameObjectType(ParamArray String())
+  nameWithType: TypesScriptModule.AddGameObjectType(params string[])
+  nameWithType.vb: TypesScriptModule.AddGameObjectType(ParamArray String())
 - uid: DarkStar.Engine.ScriptModules.TypesScriptModule.AddGameObjectType*
   name: AddGameObjectType
   href: api/DarkStar.Engine.ScriptModules.TypesScriptModule.html#DarkStar_Engine_ScriptModules_TypesScriptModule_AddGameObjectType_
@@ -13842,6 +14245,180 @@ references:
   isSpec: "True"
   fullName: DarkStar.Engine.Services.DiagnosticService.StopAsync
   nameWithType: DiagnosticService.StopAsync
+- uid: DarkStar.Engine.Services.EventDispatcherService
+  name: EventDispatcherService
+  href: api/DarkStar.Engine.Services.EventDispatcherService.html
+  commentId: T:DarkStar.Engine.Services.EventDispatcherService
+  fullName: DarkStar.Engine.Services.EventDispatcherService
+  nameWithType: EventDispatcherService
+- uid: DarkStar.Engine.Services.EventDispatcherService._engineReadyActions
+  name: _engineReadyActions
+  href: api/DarkStar.Engine.Services.EventDispatcherService.html#DarkStar_Engine_Services_EventDispatcherService__engineReadyActions
+  commentId: F:DarkStar.Engine.Services.EventDispatcherService._engineReadyActions
+  fullName: DarkStar.Engine.Services.EventDispatcherService._engineReadyActions
+  nameWithType: EventDispatcherService._engineReadyActions
+- uid: DarkStar.Engine.Services.EventDispatcherService.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.Services.EventDispatcherService})
+  name: EventDispatcherService(ILogger<EventDispatcherService>)
+  href: api/DarkStar.Engine.Services.EventDispatcherService.html#DarkStar_Engine_Services_EventDispatcherService__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Engine_Services_EventDispatcherService__
+  commentId: M:DarkStar.Engine.Services.EventDispatcherService.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.Services.EventDispatcherService})
+  name.vb: New(ILogger(Of EventDispatcherService))
+  fullName: DarkStar.Engine.Services.EventDispatcherService.EventDispatcherService(Microsoft.Extensions.Logging.ILogger<DarkStar.Engine.Services.EventDispatcherService>)
+  fullName.vb: DarkStar.Engine.Services.EventDispatcherService.New(Microsoft.Extensions.Logging.ILogger(Of DarkStar.Engine.Services.EventDispatcherService))
+  nameWithType: EventDispatcherService.EventDispatcherService(ILogger<EventDispatcherService>)
+  nameWithType.vb: EventDispatcherService.New(ILogger(Of EventDispatcherService))
+- uid: DarkStar.Engine.Services.EventDispatcherService.#ctor*
+  name: EventDispatcherService
+  href: api/DarkStar.Engine.Services.EventDispatcherService.html#DarkStar_Engine_Services_EventDispatcherService__ctor_
+  commentId: Overload:DarkStar.Engine.Services.EventDispatcherService.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: DarkStar.Engine.Services.EventDispatcherService.EventDispatcherService
+  fullName.vb: DarkStar.Engine.Services.EventDispatcherService.New
+  nameWithType: EventDispatcherService.EventDispatcherService
+  nameWithType.vb: EventDispatcherService.New
+- uid: DarkStar.Engine.Services.EventDispatcherService.AddEngineReadyEvent(System.Action)
+  name: AddEngineReadyEvent(Action)
+  href: api/DarkStar.Engine.Services.EventDispatcherService.html#DarkStar_Engine_Services_EventDispatcherService_AddEngineReadyEvent_System_Action_
+  commentId: M:DarkStar.Engine.Services.EventDispatcherService.AddEngineReadyEvent(System.Action)
+  fullName: DarkStar.Engine.Services.EventDispatcherService.AddEngineReadyEvent(System.Action)
+  nameWithType: EventDispatcherService.AddEngineReadyEvent(Action)
+- uid: DarkStar.Engine.Services.EventDispatcherService.AddEngineReadyEvent*
+  name: AddEngineReadyEvent
+  href: api/DarkStar.Engine.Services.EventDispatcherService.html#DarkStar_Engine_Services_EventDispatcherService_AddEngineReadyEvent_
+  commentId: Overload:DarkStar.Engine.Services.EventDispatcherService.AddEngineReadyEvent
+  isSpec: "True"
+  fullName: DarkStar.Engine.Services.EventDispatcherService.AddEngineReadyEvent
+  nameWithType: EventDispatcherService.AddEngineReadyEvent
+- uid: DarkStar.Engine.Services.EventDispatcherService.HandleEntityAddedAsync(DarkStar.Api.Engine.Events.Map.GameObjectAddedEvent)
+  name: HandleEntityAddedAsync(GameObjectAddedEvent)
+  href: api/DarkStar.Engine.Services.EventDispatcherService.html#DarkStar_Engine_Services_EventDispatcherService_HandleEntityAddedAsync_DarkStar_Api_Engine_Events_Map_GameObjectAddedEvent_
+  commentId: M:DarkStar.Engine.Services.EventDispatcherService.HandleEntityAddedAsync(DarkStar.Api.Engine.Events.Map.GameObjectAddedEvent)
+  fullName: DarkStar.Engine.Services.EventDispatcherService.HandleEntityAddedAsync(DarkStar.Api.Engine.Events.Map.GameObjectAddedEvent)
+  nameWithType: EventDispatcherService.HandleEntityAddedAsync(GameObjectAddedEvent)
+- uid: DarkStar.Engine.Services.EventDispatcherService.HandleEntityAddedAsync*
+  name: HandleEntityAddedAsync
+  href: api/DarkStar.Engine.Services.EventDispatcherService.html#DarkStar_Engine_Services_EventDispatcherService_HandleEntityAddedAsync_
+  commentId: Overload:DarkStar.Engine.Services.EventDispatcherService.HandleEntityAddedAsync
+  isSpec: "True"
+  fullName: DarkStar.Engine.Services.EventDispatcherService.HandleEntityAddedAsync
+  nameWithType: EventDispatcherService.HandleEntityAddedAsync
+- uid: DarkStar.Engine.Services.EventDispatcherService.HandleEntityMovedAsync(DarkStar.Api.Engine.Events.Map.GameObjectMovedEvent)
+  name: HandleEntityMovedAsync(GameObjectMovedEvent)
+  href: api/DarkStar.Engine.Services.EventDispatcherService.html#DarkStar_Engine_Services_EventDispatcherService_HandleEntityMovedAsync_DarkStar_Api_Engine_Events_Map_GameObjectMovedEvent_
+  commentId: M:DarkStar.Engine.Services.EventDispatcherService.HandleEntityMovedAsync(DarkStar.Api.Engine.Events.Map.GameObjectMovedEvent)
+  fullName: DarkStar.Engine.Services.EventDispatcherService.HandleEntityMovedAsync(DarkStar.Api.Engine.Events.Map.GameObjectMovedEvent)
+  nameWithType: EventDispatcherService.HandleEntityMovedAsync(GameObjectMovedEvent)
+- uid: DarkStar.Engine.Services.EventDispatcherService.HandleEntityMovedAsync*
+  name: HandleEntityMovedAsync
+  href: api/DarkStar.Engine.Services.EventDispatcherService.html#DarkStar_Engine_Services_EventDispatcherService_HandleEntityMovedAsync_
+  commentId: Overload:DarkStar.Engine.Services.EventDispatcherService.HandleEntityMovedAsync
+  isSpec: "True"
+  fullName: DarkStar.Engine.Services.EventDispatcherService.HandleEntityMovedAsync
+  nameWithType: EventDispatcherService.HandleEntityMovedAsync
+- uid: DarkStar.Engine.Services.EventDispatcherService.HandleEntityRemovedAsync(DarkStar.Api.Engine.Events.Map.GameObjectRemovedEvent)
+  name: HandleEntityRemovedAsync(GameObjectRemovedEvent)
+  href: api/DarkStar.Engine.Services.EventDispatcherService.html#DarkStar_Engine_Services_EventDispatcherService_HandleEntityRemovedAsync_DarkStar_Api_Engine_Events_Map_GameObjectRemovedEvent_
+  commentId: M:DarkStar.Engine.Services.EventDispatcherService.HandleEntityRemovedAsync(DarkStar.Api.Engine.Events.Map.GameObjectRemovedEvent)
+  fullName: DarkStar.Engine.Services.EventDispatcherService.HandleEntityRemovedAsync(DarkStar.Api.Engine.Events.Map.GameObjectRemovedEvent)
+  nameWithType: EventDispatcherService.HandleEntityRemovedAsync(GameObjectRemovedEvent)
+- uid: DarkStar.Engine.Services.EventDispatcherService.HandleEntityRemovedAsync*
+  name: HandleEntityRemovedAsync
+  href: api/DarkStar.Engine.Services.EventDispatcherService.html#DarkStar_Engine_Services_EventDispatcherService_HandleEntityRemovedAsync_
+  commentId: Overload:DarkStar.Engine.Services.EventDispatcherService.HandleEntityRemovedAsync
+  isSpec: "True"
+  fullName: DarkStar.Engine.Services.EventDispatcherService.HandleEntityRemovedAsync
+  nameWithType: EventDispatcherService.HandleEntityRemovedAsync
+- uid: DarkStar.Engine.Services.EventDispatcherService.OnEngineReadyMessage(DarkStar.Api.Engine.Events.Engine.EngineReadyEvent)
+  name: OnEngineReadyMessage(EngineReadyEvent)
+  href: api/DarkStar.Engine.Services.EventDispatcherService.html#DarkStar_Engine_Services_EventDispatcherService_OnEngineReadyMessage_DarkStar_Api_Engine_Events_Engine_EngineReadyEvent_
+  commentId: M:DarkStar.Engine.Services.EventDispatcherService.OnEngineReadyMessage(DarkStar.Api.Engine.Events.Engine.EngineReadyEvent)
+  fullName: DarkStar.Engine.Services.EventDispatcherService.OnEngineReadyMessage(DarkStar.Api.Engine.Events.Engine.EngineReadyEvent)
+  nameWithType: EventDispatcherService.OnEngineReadyMessage(EngineReadyEvent)
+- uid: DarkStar.Engine.Services.EventDispatcherService.OnEngineReadyMessage*
+  name: OnEngineReadyMessage
+  href: api/DarkStar.Engine.Services.EventDispatcherService.html#DarkStar_Engine_Services_EventDispatcherService_OnEngineReadyMessage_
+  commentId: Overload:DarkStar.Engine.Services.EventDispatcherService.OnEngineReadyMessage
+  isSpec: "True"
+  fullName: DarkStar.Engine.Services.EventDispatcherService.OnEngineReadyMessage
+  nameWithType: EventDispatcherService.OnEngineReadyMessage
+- uid: DarkStar.Engine.Services.EventDispatcherService.OnGameObjectAdded(DarkStar.Api.Engine.Events.Map.GameObjectAddedEvent)
+  name: OnGameObjectAdded(GameObjectAddedEvent)
+  href: api/DarkStar.Engine.Services.EventDispatcherService.html#DarkStar_Engine_Services_EventDispatcherService_OnGameObjectAdded_DarkStar_Api_Engine_Events_Map_GameObjectAddedEvent_
+  commentId: M:DarkStar.Engine.Services.EventDispatcherService.OnGameObjectAdded(DarkStar.Api.Engine.Events.Map.GameObjectAddedEvent)
+  fullName: DarkStar.Engine.Services.EventDispatcherService.OnGameObjectAdded(DarkStar.Api.Engine.Events.Map.GameObjectAddedEvent)
+  nameWithType: EventDispatcherService.OnGameObjectAdded(GameObjectAddedEvent)
+- uid: DarkStar.Engine.Services.EventDispatcherService.OnGameObjectAdded*
+  name: OnGameObjectAdded
+  href: api/DarkStar.Engine.Services.EventDispatcherService.html#DarkStar_Engine_Services_EventDispatcherService_OnGameObjectAdded_
+  commentId: Overload:DarkStar.Engine.Services.EventDispatcherService.OnGameObjectAdded
+  isSpec: "True"
+  fullName: DarkStar.Engine.Services.EventDispatcherService.OnGameObjectAdded
+  nameWithType: EventDispatcherService.OnGameObjectAdded
+- uid: DarkStar.Engine.Services.EventDispatcherService.OnGameObjectMoved(DarkStar.Api.Engine.Events.Map.GameObjectMovedEvent)
+  name: OnGameObjectMoved(GameObjectMovedEvent)
+  href: api/DarkStar.Engine.Services.EventDispatcherService.html#DarkStar_Engine_Services_EventDispatcherService_OnGameObjectMoved_DarkStar_Api_Engine_Events_Map_GameObjectMovedEvent_
+  commentId: M:DarkStar.Engine.Services.EventDispatcherService.OnGameObjectMoved(DarkStar.Api.Engine.Events.Map.GameObjectMovedEvent)
+  fullName: DarkStar.Engine.Services.EventDispatcherService.OnGameObjectMoved(DarkStar.Api.Engine.Events.Map.GameObjectMovedEvent)
+  nameWithType: EventDispatcherService.OnGameObjectMoved(GameObjectMovedEvent)
+- uid: DarkStar.Engine.Services.EventDispatcherService.OnGameObjectMoved*
+  name: OnGameObjectMoved
+  href: api/DarkStar.Engine.Services.EventDispatcherService.html#DarkStar_Engine_Services_EventDispatcherService_OnGameObjectMoved_
+  commentId: Overload:DarkStar.Engine.Services.EventDispatcherService.OnGameObjectMoved
+  isSpec: "True"
+  fullName: DarkStar.Engine.Services.EventDispatcherService.OnGameObjectMoved
+  nameWithType: EventDispatcherService.OnGameObjectMoved
+- uid: DarkStar.Engine.Services.EventDispatcherService.OnGameObjectRemoved(DarkStar.Api.Engine.Events.Map.GameObjectRemovedEvent)
+  name: OnGameObjectRemoved(GameObjectRemovedEvent)
+  href: api/DarkStar.Engine.Services.EventDispatcherService.html#DarkStar_Engine_Services_EventDispatcherService_OnGameObjectRemoved_DarkStar_Api_Engine_Events_Map_GameObjectRemovedEvent_
+  commentId: M:DarkStar.Engine.Services.EventDispatcherService.OnGameObjectRemoved(DarkStar.Api.Engine.Events.Map.GameObjectRemovedEvent)
+  fullName: DarkStar.Engine.Services.EventDispatcherService.OnGameObjectRemoved(DarkStar.Api.Engine.Events.Map.GameObjectRemovedEvent)
+  nameWithType: EventDispatcherService.OnGameObjectRemoved(GameObjectRemovedEvent)
+- uid: DarkStar.Engine.Services.EventDispatcherService.OnGameObjectRemoved*
+  name: OnGameObjectRemoved
+  href: api/DarkStar.Engine.Services.EventDispatcherService.html#DarkStar_Engine_Services_EventDispatcherService_OnGameObjectRemoved_
+  commentId: Overload:DarkStar.Engine.Services.EventDispatcherService.OnGameObjectRemoved
+  isSpec: "True"
+  fullName: DarkStar.Engine.Services.EventDispatcherService.OnGameObjectRemoved
+  nameWithType: EventDispatcherService.OnGameObjectRemoved
+- uid: DarkStar.Engine.Services.EventDispatcherService.OnPingRequestMessage(DarkStar.Api.Engine.Events.Players.PingRequestEvent)
+  name: OnPingRequestMessage(PingRequestEvent)
+  href: api/DarkStar.Engine.Services.EventDispatcherService.html#DarkStar_Engine_Services_EventDispatcherService_OnPingRequestMessage_DarkStar_Api_Engine_Events_Players_PingRequestEvent_
+  commentId: M:DarkStar.Engine.Services.EventDispatcherService.OnPingRequestMessage(DarkStar.Api.Engine.Events.Players.PingRequestEvent)
+  fullName: DarkStar.Engine.Services.EventDispatcherService.OnPingRequestMessage(DarkStar.Api.Engine.Events.Players.PingRequestEvent)
+  nameWithType: EventDispatcherService.OnPingRequestMessage(PingRequestEvent)
+- uid: DarkStar.Engine.Services.EventDispatcherService.OnPingRequestMessage*
+  name: OnPingRequestMessage
+  href: api/DarkStar.Engine.Services.EventDispatcherService.html#DarkStar_Engine_Services_EventDispatcherService_OnPingRequestMessage_
+  commentId: Overload:DarkStar.Engine.Services.EventDispatcherService.OnPingRequestMessage
+  isSpec: "True"
+  fullName: DarkStar.Engine.Services.EventDispatcherService.OnPingRequestMessage
+  nameWithType: EventDispatcherService.OnPingRequestMessage
+- uid: DarkStar.Engine.Services.EventDispatcherService.OnPlayerLoggedMessage(DarkStar.Api.Engine.Events.Players.PlayerLoggedEvent)
+  name: OnPlayerLoggedMessage(PlayerLoggedEvent)
+  href: api/DarkStar.Engine.Services.EventDispatcherService.html#DarkStar_Engine_Services_EventDispatcherService_OnPlayerLoggedMessage_DarkStar_Api_Engine_Events_Players_PlayerLoggedEvent_
+  commentId: M:DarkStar.Engine.Services.EventDispatcherService.OnPlayerLoggedMessage(DarkStar.Api.Engine.Events.Players.PlayerLoggedEvent)
+  fullName: DarkStar.Engine.Services.EventDispatcherService.OnPlayerLoggedMessage(DarkStar.Api.Engine.Events.Players.PlayerLoggedEvent)
+  nameWithType: EventDispatcherService.OnPlayerLoggedMessage(PlayerLoggedEvent)
+- uid: DarkStar.Engine.Services.EventDispatcherService.OnPlayerLoggedMessage*
+  name: OnPlayerLoggedMessage
+  href: api/DarkStar.Engine.Services.EventDispatcherService.html#DarkStar_Engine_Services_EventDispatcherService_OnPlayerLoggedMessage_
+  commentId: Overload:DarkStar.Engine.Services.EventDispatcherService.OnPlayerLoggedMessage
+  isSpec: "True"
+  fullName: DarkStar.Engine.Services.EventDispatcherService.OnPlayerLoggedMessage
+  nameWithType: EventDispatcherService.OnPlayerLoggedMessage
+- uid: DarkStar.Engine.Services.EventDispatcherService.StartAsync
+  name: StartAsync()
+  href: api/DarkStar.Engine.Services.EventDispatcherService.html#DarkStar_Engine_Services_EventDispatcherService_StartAsync
+  commentId: M:DarkStar.Engine.Services.EventDispatcherService.StartAsync
+  fullName: DarkStar.Engine.Services.EventDispatcherService.StartAsync()
+  nameWithType: EventDispatcherService.StartAsync()
+- uid: DarkStar.Engine.Services.EventDispatcherService.StartAsync*
+  name: StartAsync
+  href: api/DarkStar.Engine.Services.EventDispatcherService.html#DarkStar_Engine_Services_EventDispatcherService_StartAsync_
+  commentId: Overload:DarkStar.Engine.Services.EventDispatcherService.StartAsync
+  isSpec: "True"
+  fullName: DarkStar.Engine.Services.EventDispatcherService.StartAsync
+  nameWithType: EventDispatcherService.StartAsync
 - uid: DarkStar.Engine.Services.ItemService
   name: ItemService
   href: api/DarkStar.Engine.Services.ItemService.html
@@ -13872,6 +14449,18 @@ references:
   commentId: F:DarkStar.Engine.Services.ItemService._scheduledGameObjectActions
   fullName: DarkStar.Engine.Services.ItemService._scheduledGameObjectActions
   nameWithType: ItemService._scheduledGameObjectActions
+- uid: DarkStar.Engine.Services.ItemService._scriptableGameObjectActions
+  name: _scriptableGameObjectActions
+  href: api/DarkStar.Engine.Services.ItemService.html#DarkStar_Engine_Services_ItemService__scriptableGameObjectActions
+  commentId: F:DarkStar.Engine.Services.ItemService._scriptableGameObjectActions
+  fullName: DarkStar.Engine.Services.ItemService._scriptableGameObjectActions
+  nameWithType: ItemService._scriptableGameObjectActions
+- uid: DarkStar.Engine.Services.ItemService._scriptableScheduledGameObjectActions
+  name: _scriptableScheduledGameObjectActions
+  href: api/DarkStar.Engine.Services.ItemService.html#DarkStar_Engine_Services_ItemService__scriptableScheduledGameObjectActions
+  commentId: F:DarkStar.Engine.Services.ItemService._scriptableScheduledGameObjectActions
+  fullName: DarkStar.Engine.Services.ItemService._scriptableScheduledGameObjectActions
+  nameWithType: ItemService._scriptableScheduledGameObjectActions
 - uid: DarkStar.Engine.Services.ItemService._serviceProvider
   name: _serviceProvider
   href: api/DarkStar.Engine.Services.ItemService.html#DarkStar_Engine_Services_ItemService__serviceProvider
@@ -13916,6 +14505,51 @@ references:
   isSpec: "True"
   fullName: DarkStar.Engine.Services.ItemService.AddGameObjectActionAsync
   nameWithType: ItemService.AddGameObjectActionAsync
+- uid: DarkStar.Engine.Services.ItemService.AddScriptableGameObject(DarkStar.Api.World.Types.GameObjects.GameObjectType,System.Action{DarkStar.Api.Engine.Data.Items.GameObjectContext})
+  name: AddScriptableGameObject(GameObjectType, Action<GameObjectContext>)
+  href: api/DarkStar.Engine.Services.ItemService.html#DarkStar_Engine_Services_ItemService_AddScriptableGameObject_DarkStar_Api_World_Types_GameObjects_GameObjectType_System_Action_DarkStar_Api_Engine_Data_Items_GameObjectContext__
+  commentId: M:DarkStar.Engine.Services.ItemService.AddScriptableGameObject(DarkStar.Api.World.Types.GameObjects.GameObjectType,System.Action{DarkStar.Api.Engine.Data.Items.GameObjectContext})
+  name.vb: AddScriptableGameObject(GameObjectType, Action(Of GameObjectContext))
+  fullName: DarkStar.Engine.Services.ItemService.AddScriptableGameObject(DarkStar.Api.World.Types.GameObjects.GameObjectType, System.Action<DarkStar.Api.Engine.Data.Items.GameObjectContext>)
+  fullName.vb: DarkStar.Engine.Services.ItemService.AddScriptableGameObject(DarkStar.Api.World.Types.GameObjects.GameObjectType, System.Action(Of DarkStar.Api.Engine.Data.Items.GameObjectContext))
+  nameWithType: ItemService.AddScriptableGameObject(GameObjectType, Action<GameObjectContext>)
+  nameWithType.vb: ItemService.AddScriptableGameObject(GameObjectType, Action(Of GameObjectContext))
+- uid: DarkStar.Engine.Services.ItemService.AddScriptableGameObject*
+  name: AddScriptableGameObject
+  href: api/DarkStar.Engine.Services.ItemService.html#DarkStar_Engine_Services_ItemService_AddScriptableGameObject_
+  commentId: Overload:DarkStar.Engine.Services.ItemService.AddScriptableGameObject
+  isSpec: "True"
+  fullName: DarkStar.Engine.Services.ItemService.AddScriptableGameObject
+  nameWithType: ItemService.AddScriptableGameObject
+- uid: DarkStar.Engine.Services.ItemService.AddScriptableGameObjectAction(DarkStar.Api.Engine.Events.Map.GameObjectAddedEvent)
+  name: AddScriptableGameObjectAction(GameObjectAddedEvent)
+  href: api/DarkStar.Engine.Services.ItemService.html#DarkStar_Engine_Services_ItemService_AddScriptableGameObjectAction_DarkStar_Api_Engine_Events_Map_GameObjectAddedEvent_
+  commentId: M:DarkStar.Engine.Services.ItemService.AddScriptableGameObjectAction(DarkStar.Api.Engine.Events.Map.GameObjectAddedEvent)
+  fullName: DarkStar.Engine.Services.ItemService.AddScriptableGameObjectAction(DarkStar.Api.Engine.Events.Map.GameObjectAddedEvent)
+  nameWithType: ItemService.AddScriptableGameObjectAction(GameObjectAddedEvent)
+- uid: DarkStar.Engine.Services.ItemService.AddScriptableGameObjectAction*
+  name: AddScriptableGameObjectAction
+  href: api/DarkStar.Engine.Services.ItemService.html#DarkStar_Engine_Services_ItemService_AddScriptableGameObjectAction_
+  commentId: Overload:DarkStar.Engine.Services.ItemService.AddScriptableGameObjectAction
+  isSpec: "True"
+  fullName: DarkStar.Engine.Services.ItemService.AddScriptableGameObjectAction
+  nameWithType: ItemService.AddScriptableGameObjectAction
+- uid: DarkStar.Engine.Services.ItemService.AddScriptableScheduledGameObject(DarkStar.Api.World.Types.GameObjects.GameObjectType,System.Int32,System.Action{DarkStar.Api.Engine.Data.Items.GameObjectContext})
+  name: AddScriptableScheduledGameObject(GameObjectType, int, Action<GameObjectContext>)
+  href: api/DarkStar.Engine.Services.ItemService.html#DarkStar_Engine_Services_ItemService_AddScriptableScheduledGameObject_DarkStar_Api_World_Types_GameObjects_GameObjectType_System_Int32_System_Action_DarkStar_Api_Engine_Data_Items_GameObjectContext__
+  commentId: M:DarkStar.Engine.Services.ItemService.AddScriptableScheduledGameObject(DarkStar.Api.World.Types.GameObjects.GameObjectType,System.Int32,System.Action{DarkStar.Api.Engine.Data.Items.GameObjectContext})
+  name.vb: AddScriptableScheduledGameObject(GameObjectType, Integer, Action(Of GameObjectContext))
+  fullName: DarkStar.Engine.Services.ItemService.AddScriptableScheduledGameObject(DarkStar.Api.World.Types.GameObjects.GameObjectType, int, System.Action<DarkStar.Api.Engine.Data.Items.GameObjectContext>)
+  fullName.vb: DarkStar.Engine.Services.ItemService.AddScriptableScheduledGameObject(DarkStar.Api.World.Types.GameObjects.GameObjectType, Integer, System.Action(Of DarkStar.Api.Engine.Data.Items.GameObjectContext))
+  nameWithType: ItemService.AddScriptableScheduledGameObject(GameObjectType, int, Action<GameObjectContext>)
+  nameWithType.vb: ItemService.AddScriptableScheduledGameObject(GameObjectType, Integer, Action(Of GameObjectContext))
+- uid: DarkStar.Engine.Services.ItemService.AddScriptableScheduledGameObject*
+  name: AddScriptableScheduledGameObject
+  href: api/DarkStar.Engine.Services.ItemService.html#DarkStar_Engine_Services_ItemService_AddScriptableScheduledGameObject_
+  commentId: Overload:DarkStar.Engine.Services.ItemService.AddScriptableScheduledGameObject
+  isSpec: "True"
+  fullName: DarkStar.Engine.Services.ItemService.AddScriptableScheduledGameObject
+  nameWithType: ItemService.AddScriptableScheduledGameObject
 - uid: DarkStar.Engine.Services.ItemService.ExecuteGameObjectActionAsync(DarkStar.Api.Engine.Map.Entities.WorldGameObject,System.String,System.Nullable{System.Guid},System.Nullable{System.Guid},System.Boolean,System.Nullable{System.UInt32},System.Nullable{System.Guid})
   name: ExecuteGameObjectActionAsync(WorldGameObject, string, Guid?, Guid?, bool, uint?, Guid?)
   href: api/DarkStar.Engine.Services.ItemService.html#DarkStar_Engine_Services_ItemService_ExecuteGameObjectActionAsync_DarkStar_Api_Engine_Map_Entities_WorldGameObject_System_String_System_Nullable_System_Guid__System_Nullable_System_Guid__System_Boolean_System_Nullable_System_UInt32__System_Nullable_System_Guid__
@@ -14330,148 +14964,6 @@ references:
   isSpec: "True"
   fullName: DarkStar.Engine.Services.NamesService.StartAsync
   nameWithType: NamesService.StartAsync
-- uid: DarkStar.Engine.Services.NetworkEventDispatcherService
-  name: NetworkEventDispatcherService
-  href: api/DarkStar.Engine.Services.NetworkEventDispatcherService.html
-  commentId: T:DarkStar.Engine.Services.NetworkEventDispatcherService
-  fullName: DarkStar.Engine.Services.NetworkEventDispatcherService
-  nameWithType: NetworkEventDispatcherService
-- uid: DarkStar.Engine.Services.NetworkEventDispatcherService.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.Services.NetworkEventDispatcherService})
-  name: NetworkEventDispatcherService(ILogger<NetworkEventDispatcherService>)
-  href: api/DarkStar.Engine.Services.NetworkEventDispatcherService.html#DarkStar_Engine_Services_NetworkEventDispatcherService__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Engine_Services_NetworkEventDispatcherService__
-  commentId: M:DarkStar.Engine.Services.NetworkEventDispatcherService.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.Services.NetworkEventDispatcherService})
-  name.vb: New(ILogger(Of NetworkEventDispatcherService))
-  fullName: DarkStar.Engine.Services.NetworkEventDispatcherService.NetworkEventDispatcherService(Microsoft.Extensions.Logging.ILogger<DarkStar.Engine.Services.NetworkEventDispatcherService>)
-  fullName.vb: DarkStar.Engine.Services.NetworkEventDispatcherService.New(Microsoft.Extensions.Logging.ILogger(Of DarkStar.Engine.Services.NetworkEventDispatcherService))
-  nameWithType: NetworkEventDispatcherService.NetworkEventDispatcherService(ILogger<NetworkEventDispatcherService>)
-  nameWithType.vb: NetworkEventDispatcherService.New(ILogger(Of NetworkEventDispatcherService))
-- uid: DarkStar.Engine.Services.NetworkEventDispatcherService.#ctor*
-  name: NetworkEventDispatcherService
-  href: api/DarkStar.Engine.Services.NetworkEventDispatcherService.html#DarkStar_Engine_Services_NetworkEventDispatcherService__ctor_
-  commentId: Overload:DarkStar.Engine.Services.NetworkEventDispatcherService.#ctor
-  isSpec: "True"
-  name.vb: New
-  fullName: DarkStar.Engine.Services.NetworkEventDispatcherService.NetworkEventDispatcherService
-  fullName.vb: DarkStar.Engine.Services.NetworkEventDispatcherService.New
-  nameWithType: NetworkEventDispatcherService.NetworkEventDispatcherService
-  nameWithType.vb: NetworkEventDispatcherService.New
-- uid: DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityAddedAsync(DarkStar.Api.Engine.Events.Map.GameObjectAddedEvent)
-  name: HandleEntityAddedAsync(GameObjectAddedEvent)
-  href: api/DarkStar.Engine.Services.NetworkEventDispatcherService.html#DarkStar_Engine_Services_NetworkEventDispatcherService_HandleEntityAddedAsync_DarkStar_Api_Engine_Events_Map_GameObjectAddedEvent_
-  commentId: M:DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityAddedAsync(DarkStar.Api.Engine.Events.Map.GameObjectAddedEvent)
-  fullName: DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityAddedAsync(DarkStar.Api.Engine.Events.Map.GameObjectAddedEvent)
-  nameWithType: NetworkEventDispatcherService.HandleEntityAddedAsync(GameObjectAddedEvent)
-- uid: DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityAddedAsync*
-  name: HandleEntityAddedAsync
-  href: api/DarkStar.Engine.Services.NetworkEventDispatcherService.html#DarkStar_Engine_Services_NetworkEventDispatcherService_HandleEntityAddedAsync_
-  commentId: Overload:DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityAddedAsync
-  isSpec: "True"
-  fullName: DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityAddedAsync
-  nameWithType: NetworkEventDispatcherService.HandleEntityAddedAsync
-- uid: DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityMovedAsync(DarkStar.Api.Engine.Events.Map.GameObjectMovedEvent)
-  name: HandleEntityMovedAsync(GameObjectMovedEvent)
-  href: api/DarkStar.Engine.Services.NetworkEventDispatcherService.html#DarkStar_Engine_Services_NetworkEventDispatcherService_HandleEntityMovedAsync_DarkStar_Api_Engine_Events_Map_GameObjectMovedEvent_
-  commentId: M:DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityMovedAsync(DarkStar.Api.Engine.Events.Map.GameObjectMovedEvent)
-  fullName: DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityMovedAsync(DarkStar.Api.Engine.Events.Map.GameObjectMovedEvent)
-  nameWithType: NetworkEventDispatcherService.HandleEntityMovedAsync(GameObjectMovedEvent)
-- uid: DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityMovedAsync*
-  name: HandleEntityMovedAsync
-  href: api/DarkStar.Engine.Services.NetworkEventDispatcherService.html#DarkStar_Engine_Services_NetworkEventDispatcherService_HandleEntityMovedAsync_
-  commentId: Overload:DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityMovedAsync
-  isSpec: "True"
-  fullName: DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityMovedAsync
-  nameWithType: NetworkEventDispatcherService.HandleEntityMovedAsync
-- uid: DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityRemovedAsync(DarkStar.Api.Engine.Events.Map.GameObjectRemovedEvent)
-  name: HandleEntityRemovedAsync(GameObjectRemovedEvent)
-  href: api/DarkStar.Engine.Services.NetworkEventDispatcherService.html#DarkStar_Engine_Services_NetworkEventDispatcherService_HandleEntityRemovedAsync_DarkStar_Api_Engine_Events_Map_GameObjectRemovedEvent_
-  commentId: M:DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityRemovedAsync(DarkStar.Api.Engine.Events.Map.GameObjectRemovedEvent)
-  fullName: DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityRemovedAsync(DarkStar.Api.Engine.Events.Map.GameObjectRemovedEvent)
-  nameWithType: NetworkEventDispatcherService.HandleEntityRemovedAsync(GameObjectRemovedEvent)
-- uid: DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityRemovedAsync*
-  name: HandleEntityRemovedAsync
-  href: api/DarkStar.Engine.Services.NetworkEventDispatcherService.html#DarkStar_Engine_Services_NetworkEventDispatcherService_HandleEntityRemovedAsync_
-  commentId: Overload:DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityRemovedAsync
-  isSpec: "True"
-  fullName: DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityRemovedAsync
-  nameWithType: NetworkEventDispatcherService.HandleEntityRemovedAsync
-- uid: DarkStar.Engine.Services.NetworkEventDispatcherService.OnGameObjectAdded(DarkStar.Api.Engine.Events.Map.GameObjectAddedEvent)
-  name: OnGameObjectAdded(GameObjectAddedEvent)
-  href: api/DarkStar.Engine.Services.NetworkEventDispatcherService.html#DarkStar_Engine_Services_NetworkEventDispatcherService_OnGameObjectAdded_DarkStar_Api_Engine_Events_Map_GameObjectAddedEvent_
-  commentId: M:DarkStar.Engine.Services.NetworkEventDispatcherService.OnGameObjectAdded(DarkStar.Api.Engine.Events.Map.GameObjectAddedEvent)
-  fullName: DarkStar.Engine.Services.NetworkEventDispatcherService.OnGameObjectAdded(DarkStar.Api.Engine.Events.Map.GameObjectAddedEvent)
-  nameWithType: NetworkEventDispatcherService.OnGameObjectAdded(GameObjectAddedEvent)
-- uid: DarkStar.Engine.Services.NetworkEventDispatcherService.OnGameObjectAdded*
-  name: OnGameObjectAdded
-  href: api/DarkStar.Engine.Services.NetworkEventDispatcherService.html#DarkStar_Engine_Services_NetworkEventDispatcherService_OnGameObjectAdded_
-  commentId: Overload:DarkStar.Engine.Services.NetworkEventDispatcherService.OnGameObjectAdded
-  isSpec: "True"
-  fullName: DarkStar.Engine.Services.NetworkEventDispatcherService.OnGameObjectAdded
-  nameWithType: NetworkEventDispatcherService.OnGameObjectAdded
-- uid: DarkStar.Engine.Services.NetworkEventDispatcherService.OnGameObjectMoved(DarkStar.Api.Engine.Events.Map.GameObjectMovedEvent)
-  name: OnGameObjectMoved(GameObjectMovedEvent)
-  href: api/DarkStar.Engine.Services.NetworkEventDispatcherService.html#DarkStar_Engine_Services_NetworkEventDispatcherService_OnGameObjectMoved_DarkStar_Api_Engine_Events_Map_GameObjectMovedEvent_
-  commentId: M:DarkStar.Engine.Services.NetworkEventDispatcherService.OnGameObjectMoved(DarkStar.Api.Engine.Events.Map.GameObjectMovedEvent)
-  fullName: DarkStar.Engine.Services.NetworkEventDispatcherService.OnGameObjectMoved(DarkStar.Api.Engine.Events.Map.GameObjectMovedEvent)
-  nameWithType: NetworkEventDispatcherService.OnGameObjectMoved(GameObjectMovedEvent)
-- uid: DarkStar.Engine.Services.NetworkEventDispatcherService.OnGameObjectMoved*
-  name: OnGameObjectMoved
-  href: api/DarkStar.Engine.Services.NetworkEventDispatcherService.html#DarkStar_Engine_Services_NetworkEventDispatcherService_OnGameObjectMoved_
-  commentId: Overload:DarkStar.Engine.Services.NetworkEventDispatcherService.OnGameObjectMoved
-  isSpec: "True"
-  fullName: DarkStar.Engine.Services.NetworkEventDispatcherService.OnGameObjectMoved
-  nameWithType: NetworkEventDispatcherService.OnGameObjectMoved
-- uid: DarkStar.Engine.Services.NetworkEventDispatcherService.OnGameObjectRemoved(DarkStar.Api.Engine.Events.Map.GameObjectRemovedEvent)
-  name: OnGameObjectRemoved(GameObjectRemovedEvent)
-  href: api/DarkStar.Engine.Services.NetworkEventDispatcherService.html#DarkStar_Engine_Services_NetworkEventDispatcherService_OnGameObjectRemoved_DarkStar_Api_Engine_Events_Map_GameObjectRemovedEvent_
-  commentId: M:DarkStar.Engine.Services.NetworkEventDispatcherService.OnGameObjectRemoved(DarkStar.Api.Engine.Events.Map.GameObjectRemovedEvent)
-  fullName: DarkStar.Engine.Services.NetworkEventDispatcherService.OnGameObjectRemoved(DarkStar.Api.Engine.Events.Map.GameObjectRemovedEvent)
-  nameWithType: NetworkEventDispatcherService.OnGameObjectRemoved(GameObjectRemovedEvent)
-- uid: DarkStar.Engine.Services.NetworkEventDispatcherService.OnGameObjectRemoved*
-  name: OnGameObjectRemoved
-  href: api/DarkStar.Engine.Services.NetworkEventDispatcherService.html#DarkStar_Engine_Services_NetworkEventDispatcherService_OnGameObjectRemoved_
-  commentId: Overload:DarkStar.Engine.Services.NetworkEventDispatcherService.OnGameObjectRemoved
-  isSpec: "True"
-  fullName: DarkStar.Engine.Services.NetworkEventDispatcherService.OnGameObjectRemoved
-  nameWithType: NetworkEventDispatcherService.OnGameObjectRemoved
-- uid: DarkStar.Engine.Services.NetworkEventDispatcherService.OnPingRequestMessage(DarkStar.Api.Engine.Events.Players.PingRequestEvent)
-  name: OnPingRequestMessage(PingRequestEvent)
-  href: api/DarkStar.Engine.Services.NetworkEventDispatcherService.html#DarkStar_Engine_Services_NetworkEventDispatcherService_OnPingRequestMessage_DarkStar_Api_Engine_Events_Players_PingRequestEvent_
-  commentId: M:DarkStar.Engine.Services.NetworkEventDispatcherService.OnPingRequestMessage(DarkStar.Api.Engine.Events.Players.PingRequestEvent)
-  fullName: DarkStar.Engine.Services.NetworkEventDispatcherService.OnPingRequestMessage(DarkStar.Api.Engine.Events.Players.PingRequestEvent)
-  nameWithType: NetworkEventDispatcherService.OnPingRequestMessage(PingRequestEvent)
-- uid: DarkStar.Engine.Services.NetworkEventDispatcherService.OnPingRequestMessage*
-  name: OnPingRequestMessage
-  href: api/DarkStar.Engine.Services.NetworkEventDispatcherService.html#DarkStar_Engine_Services_NetworkEventDispatcherService_OnPingRequestMessage_
-  commentId: Overload:DarkStar.Engine.Services.NetworkEventDispatcherService.OnPingRequestMessage
-  isSpec: "True"
-  fullName: DarkStar.Engine.Services.NetworkEventDispatcherService.OnPingRequestMessage
-  nameWithType: NetworkEventDispatcherService.OnPingRequestMessage
-- uid: DarkStar.Engine.Services.NetworkEventDispatcherService.OnPlayerLoggedMessage(DarkStar.Api.Engine.Events.Players.PlayerLoggedEvent)
-  name: OnPlayerLoggedMessage(PlayerLoggedEvent)
-  href: api/DarkStar.Engine.Services.NetworkEventDispatcherService.html#DarkStar_Engine_Services_NetworkEventDispatcherService_OnPlayerLoggedMessage_DarkStar_Api_Engine_Events_Players_PlayerLoggedEvent_
-  commentId: M:DarkStar.Engine.Services.NetworkEventDispatcherService.OnPlayerLoggedMessage(DarkStar.Api.Engine.Events.Players.PlayerLoggedEvent)
-  fullName: DarkStar.Engine.Services.NetworkEventDispatcherService.OnPlayerLoggedMessage(DarkStar.Api.Engine.Events.Players.PlayerLoggedEvent)
-  nameWithType: NetworkEventDispatcherService.OnPlayerLoggedMessage(PlayerLoggedEvent)
-- uid: DarkStar.Engine.Services.NetworkEventDispatcherService.OnPlayerLoggedMessage*
-  name: OnPlayerLoggedMessage
-  href: api/DarkStar.Engine.Services.NetworkEventDispatcherService.html#DarkStar_Engine_Services_NetworkEventDispatcherService_OnPlayerLoggedMessage_
-  commentId: Overload:DarkStar.Engine.Services.NetworkEventDispatcherService.OnPlayerLoggedMessage
-  isSpec: "True"
-  fullName: DarkStar.Engine.Services.NetworkEventDispatcherService.OnPlayerLoggedMessage
-  nameWithType: NetworkEventDispatcherService.OnPlayerLoggedMessage
-- uid: DarkStar.Engine.Services.NetworkEventDispatcherService.StartAsync
-  name: StartAsync()
-  href: api/DarkStar.Engine.Services.NetworkEventDispatcherService.html#DarkStar_Engine_Services_NetworkEventDispatcherService_StartAsync
-  commentId: M:DarkStar.Engine.Services.NetworkEventDispatcherService.StartAsync
-  fullName: DarkStar.Engine.Services.NetworkEventDispatcherService.StartAsync()
-  nameWithType: NetworkEventDispatcherService.StartAsync()
-- uid: DarkStar.Engine.Services.NetworkEventDispatcherService.StartAsync*
-  name: StartAsync
-  href: api/DarkStar.Engine.Services.NetworkEventDispatcherService.html#DarkStar_Engine_Services_NetworkEventDispatcherService_StartAsync_
-  commentId: Overload:DarkStar.Engine.Services.NetworkEventDispatcherService.StartAsync
-  isSpec: "True"
-  fullName: DarkStar.Engine.Services.NetworkEventDispatcherService.StartAsync
-  nameWithType: NetworkEventDispatcherService.StartAsync
 - uid: DarkStar.Engine.Services.PlayerService
   name: PlayerService
   href: api/DarkStar.Engine.Services.PlayerService.html
@@ -16353,6 +16845,32 @@ references:
   isSpec: "True"
   fullName: DarkStar.Engine.Services.WorldService.IsLocationWalkable
   nameWithType: WorldService.IsLocationWalkable
+- uid: DarkStar.Engine.Services.WorldService.LoadMap(DarkStar.Database.Entities.Maps.MapEntity)
+  name: LoadMap(MapEntity)
+  href: api/DarkStar.Engine.Services.WorldService.html#DarkStar_Engine_Services_WorldService_LoadMap_DarkStar_Database_Entities_Maps_MapEntity_
+  commentId: M:DarkStar.Engine.Services.WorldService.LoadMap(DarkStar.Database.Entities.Maps.MapEntity)
+  fullName: DarkStar.Engine.Services.WorldService.LoadMap(DarkStar.Database.Entities.Maps.MapEntity)
+  nameWithType: WorldService.LoadMap(MapEntity)
+- uid: DarkStar.Engine.Services.WorldService.LoadMap*
+  name: LoadMap
+  href: api/DarkStar.Engine.Services.WorldService.html#DarkStar_Engine_Services_WorldService_LoadMap_
+  commentId: Overload:DarkStar.Engine.Services.WorldService.LoadMap
+  isSpec: "True"
+  fullName: DarkStar.Engine.Services.WorldService.LoadMap
+  nameWithType: WorldService.LoadMap
+- uid: DarkStar.Engine.Services.WorldService.LoadMapsAsync
+  name: LoadMapsAsync()
+  href: api/DarkStar.Engine.Services.WorldService.html#DarkStar_Engine_Services_WorldService_LoadMapsAsync
+  commentId: M:DarkStar.Engine.Services.WorldService.LoadMapsAsync
+  fullName: DarkStar.Engine.Services.WorldService.LoadMapsAsync()
+  nameWithType: WorldService.LoadMapsAsync()
+- uid: DarkStar.Engine.Services.WorldService.LoadMapsAsync*
+  name: LoadMapsAsync
+  href: api/DarkStar.Engine.Services.WorldService.html#DarkStar_Engine_Services_WorldService_LoadMapsAsync_
+  commentId: Overload:DarkStar.Engine.Services.WorldService.LoadMapsAsync
+  isSpec: "True"
+  fullName: DarkStar.Engine.Services.WorldService.LoadMapsAsync
+  nameWithType: WorldService.LoadMapsAsync
 - uid: DarkStar.Engine.Services.WorldService.MovePlayerAsync(System.String,System.Guid,DarkStar.Network.Protocol.Messages.Common.PointPosition)
   name: MovePlayerAsync(string, Guid, PointPosition)
   href: api/DarkStar.Engine.Services.WorldService.html#DarkStar_Engine_Services_WorldService_MovePlayerAsync_System_String_System_Guid_DarkStar_Network_Protocol_Messages_Common_PointPosition_

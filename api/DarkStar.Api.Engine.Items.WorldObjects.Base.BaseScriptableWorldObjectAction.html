@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Class BaseScheduledWorldObject
+      <title>Class BaseScriptableWorldObjectAction
  </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Class BaseScheduledWorldObject
+      <meta name="title" content="Class BaseScriptableWorldObjectAction
  ">
     
       <link rel="shortcut icon" href="../favicon.ico">
@@ -67,11 +67,11 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScheduledWorldObject">
+            <article class="content wrap" id="_content" data-uid="DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction">
 
 
 
-  <h1 id="DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScheduledWorldObject" data-uid="DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScheduledWorldObject" class="text-break">Class BaseScheduledWorldObject
+  <h1 id="DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScriptableWorldObjectAction" data-uid="DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction" class="text-break">Class BaseScriptableWorldObjectAction
 </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
@@ -79,13 +79,10 @@
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
     <div class="level1"><a class="xref" href="DarkStar.Api.Engine.Items.WorldObjects.Base.BaseWorldObjectAction.html">BaseWorldObjectAction</a></div>
-    <div class="level2"><span class="xref">BaseScheduledWorldObject</span></div>
-      <div class="level3"><a class="xref" href="DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableScheduledWorldObjectAction.html">BaseScriptableScheduledWorldObjectAction</a></div>
-      <div class="level3"><a class="xref" href="DarkStar.Engine.Items.WorldObjects.TestSchedulerObject.html">TestSchedulerObject</a></div>
+    <div class="level2"><span class="xref">BaseScriptableWorldObjectAction</span></div>
   </div>
   <div class="implements">
     <h5>Implements</h5>
-    <div><a class="xref" href="DarkStar.Api.Engine.Interfaces.Objects.IScheduledGameObjectAction.html">IScheduledGameObjectAction</a></div>
     <div><a class="xref" href="DarkStar.Api.Engine.Interfaces.Objects.IGameObjectAction.html">IGameObjectAction</a></div>
     <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
   </div>
@@ -105,9 +102,6 @@
     </div>
     <div>
       <a class="xref" href="DarkStar.Api.Engine.Items.WorldObjects.Base.BaseWorldObjectAction.html#DarkStar_Api_Engine_Items_WorldObjects_Base_BaseWorldObjectAction_OnInitializedAsync_System_String_DarkStar_Api_Engine_Map_Entities_WorldGameObject_">BaseWorldObjectAction.OnInitializedAsync(string, WorldGameObject)</a>
-    </div>
-    <div>
-      <a class="xref" href="DarkStar.Api.Engine.Items.WorldObjects.Base.BaseWorldObjectAction.html#DarkStar_Api_Engine_Items_WorldObjects_Base_BaseWorldObjectAction_OnActivatedAsync_System_String_DarkStar_Api_Engine_Map_Entities_WorldGameObject_System_Guid_System_Boolean_">BaseWorldObjectAction.OnActivatedAsync(string, WorldGameObject, Guid, bool)</a>
     </div>
     <div>
       <a class="xref" href="DarkStar.Api.Engine.Items.WorldObjects.Base.BaseWorldObjectAction.html#DarkStar_Api_Engine_Items_WorldObjects_Base_BaseWorldObjectAction_RemoveMySelfAsync">BaseWorldObjectAction.RemoveMySelfAsync()</a>
@@ -139,26 +133,26 @@
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="DarkStar.html">DarkStar</a>.<a class="xref" href="DarkStar.Api.html">Api</a>.<a class="xref" href="DarkStar.Api.Engine.html">Engine</a>.<a class="xref" href="DarkStar.Api.Engine.Items.html">Items</a>.<a class="xref" href="DarkStar.Api.Engine.Items.WorldObjects.html">WorldObjects</a>.<a class="xref" href="DarkStar.Api.Engine.Items.WorldObjects.Base.html">Base</a></h6>
   <h6><strong>Assembly</strong>: DarkStar.Api.Engine.dll</h6>
-  <h5 id="DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScheduledWorldObject_syntax">Syntax</h5>
+  <h5 id="DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScriptableWorldObjectAction_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class BaseScheduledWorldObject : BaseWorldObjectAction, IScheduledGameObjectAction, IGameObjectAction, IDisposable</code></pre>
+    <pre><code class="lang-csharp hljs">public class BaseScriptableWorldObjectAction : BaseWorldObjectAction, IGameObjectAction, IDisposable</code></pre>
   </div>
   <h3 id="constructors">Constructors
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScheduledWorldObject__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Api_Engine_Items_WorldObjects_Base_BaseWorldObjectAction__DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_.md&amp;value=---%0Auid%3A%20DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScheduledWorldObject.%23ctor(Microsoft.Extensions.Logging.ILogger%7BDarkStar.Api.Engine.Items.WorldObjects.Base.BaseWorldObjectAction%7D%2CDarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScriptableWorldObjectAction__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScriptableWorldObjectAction__DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_System_Action_DarkStar_Api_Engine_Data_Items_GameObjectContext__.md&amp;value=---%0Auid%3A%20DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction.%23ctor(Microsoft.Extensions.Logging.ILogger%7BDarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction%7D%2CDarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine%2CSystem.Action%7BDarkStar.Api.Engine.Data.Items.GameObjectContext%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Items/WorldObjects/Base/BaseScheduledWorldObject.cs/#L12">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Items/WorldObjects/Base/BaseScriptableWorldObjectAction.cs/#L12">View Source</a>
   </span>
-  <a id="DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScheduledWorldObject__ctor_" data-uid="DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScheduledWorldObject.#ctor*"></a>
-  <h4 id="DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScheduledWorldObject__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Api_Engine_Items_WorldObjects_Base_BaseWorldObjectAction__DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_" data-uid="DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScheduledWorldObject.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Api.Engine.Items.WorldObjects.Base.BaseWorldObjectAction},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)">BaseScheduledWorldObject(ILogger&lt;BaseWorldObjectAction&gt;, IDarkSunEngine)</h4>
+  <a id="DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScriptableWorldObjectAction__ctor_" data-uid="DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction.#ctor*"></a>
+  <h4 id="DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScriptableWorldObjectAction__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScriptableWorldObjectAction__DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_System_Action_DarkStar_Api_Engine_Data_Items_GameObjectContext__" data-uid="DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine,System.Action{DarkStar.Api.Engine.Data.Items.GameObjectContext})">BaseScriptableWorldObjectAction(ILogger&lt;BaseScriptableWorldObjectAction&gt;, IDarkSunEngine, Action&lt;GameObjectContext&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public BaseScheduledWorldObject(ILogger&lt;BaseWorldObjectAction&gt; logger, IDarkSunEngine engine)</code></pre>
+    <pre><code class="lang-csharp hljs">public BaseScriptableWorldObjectAction(ILogger&lt;BaseScriptableWorldObjectAction&gt; logger, IDarkSunEngine engine, Action&lt;GameObjectContext&gt; callback)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -171,7 +165,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1">ILogger</a>&lt;<a class="xref" href="DarkStar.Api.Engine.Items.WorldObjects.Base.BaseWorldObjectAction.html">BaseWorldObjectAction</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1">ILogger</a>&lt;<a class="xref" href="DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction.html">BaseScriptableWorldObjectAction</a>&gt;</td>
         <td><span class="parametername">logger</span></td>
         <td></td>
       </tr>
@@ -180,35 +174,9 @@
         <td><span class="parametername">engine</span></td>
         <td></td>
       </tr>
-    </tbody>
-  </table>
-  <h3 id="fields">Fields
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScheduledWorldObject__currentInterval.md&amp;value=---%0Auid%3A%20DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScheduledWorldObject._currentInterval%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Items/WorldObjects/Base/BaseScheduledWorldObject.cs/#L9">View Source</a>
-  </span>
-  <h4 id="DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScheduledWorldObject__currentInterval" data-uid="DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScheduledWorldObject._currentInterval">_currentInterval</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">private double _currentInterval</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
       <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="DarkStar.Api.Engine.Data.Items.GameObjectContext.html">GameObjectContext</a>&gt;</td>
+        <td><span class="parametername">callback</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -217,18 +185,18 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScheduledWorldObject_Interval.md&amp;value=---%0Auid%3A%20DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScheduledWorldObject.Interval%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScriptableWorldObjectAction_GameObjectAction.md&amp;value=---%0Auid%3A%20DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction.GameObjectAction%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Items/WorldObjects/Base/BaseScheduledWorldObject.cs/#L10">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Items/WorldObjects/Base/BaseScriptableWorldObjectAction.cs/#L10">View Source</a>
   </span>
-  <a id="DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScheduledWorldObject_Interval_" data-uid="DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScheduledWorldObject.Interval*"></a>
-  <h4 id="DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScheduledWorldObject_Interval" data-uid="DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScheduledWorldObject.Interval">Interval</h4>
+  <a id="DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScriptableWorldObjectAction_GameObjectAction_" data-uid="DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction.GameObjectAction*"></a>
+  <h4 id="DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScriptableWorldObjectAction_GameObjectAction" data-uid="DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction.GameObjectAction">GameObjectAction</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public double Interval { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Action&lt;GameObjectContext&gt; GameObjectAction { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-condensed">
@@ -240,7 +208,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="DarkStar.Api.Engine.Data.Items.GameObjectContext.html">GameObjectContext</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -249,18 +217,18 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScheduledWorldObject_SetInterval_System_Double_.md&amp;value=---%0Auid%3A%20DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScheduledWorldObject.SetInterval(System.Double)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScriptableWorldObjectAction_OnActivatedAsync_System_String_DarkStar_Api_Engine_Map_Entities_WorldGameObject_System_Guid_System_Boolean_.md&amp;value=---%0Auid%3A%20DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction.OnActivatedAsync(System.String%2CDarkStar.Api.Engine.Map.Entities.WorldGameObject%2CSystem.Guid%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Items/WorldObjects/Base/BaseScheduledWorldObject.cs/#L28">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Items/WorldObjects/Base/BaseScriptableWorldObjectAction.cs/#L19">View Source</a>
   </span>
-  <a id="DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScheduledWorldObject_SetInterval_" data-uid="DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScheduledWorldObject.SetInterval*"></a>
-  <h4 id="DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScheduledWorldObject_SetInterval_System_Double_" data-uid="DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScheduledWorldObject.SetInterval(System.Double)">SetInterval(double)</h4>
+  <a id="DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScriptableWorldObjectAction_OnActivatedAsync_" data-uid="DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction.OnActivatedAsync*"></a>
+  <h4 id="DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScriptableWorldObjectAction_OnActivatedAsync_System_String_DarkStar_Api_Engine_Map_Entities_WorldGameObject_System_Guid_System_Boolean_" data-uid="DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction.OnActivatedAsync(System.String,DarkStar.Api.Engine.Map.Entities.WorldGameObject,System.Guid,System.Boolean)">OnActivatedAsync(string, WorldGameObject, Guid, bool)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected void SetInterval(double interval)</code></pre>
+    <pre><code class="lang-csharp hljs">public override ValueTask OnActivatedAsync(string mapId, WorldGameObject gameObject, Guid senderId, bool isNpc)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -273,40 +241,23 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></td>
-        <td><span class="parametername">interval</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">mapId</span></td>
         <td></td>
       </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScheduledWorldObject_UpdateAsync_System_Double_.md&amp;value=---%0Auid%3A%20DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScheduledWorldObject.UpdateAsync(System.Double)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Items/WorldObjects/Base/BaseScheduledWorldObject.cs/#L16">View Source</a>
-  </span>
-  <a id="DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScheduledWorldObject_UpdateAsync_" data-uid="DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScheduledWorldObject.UpdateAsync*"></a>
-  <h4 id="DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScheduledWorldObject_UpdateAsync_System_Double_" data-uid="DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScheduledWorldObject.UpdateAsync(System.Double)">UpdateAsync(double)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ValueTask UpdateAsync(double deltaTime)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
       <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
+        <td><a class="xref" href="DarkStar.Api.Engine.Map.Entities.WorldGameObject.html">WorldGameObject</a></td>
+        <td><span class="parametername">gameObject</span></td>
+        <td></td>
       </tr>
-    </thead>
-    <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></td>
-        <td><span class="parametername">deltaTime</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></td>
+        <td><span class="parametername">senderId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isNpc</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -326,10 +277,9 @@
       </tr>
     </tbody>
   </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="DarkStar.Api.Engine.Items.WorldObjects.Base.BaseWorldObjectAction.html#DarkStar_Api_Engine_Items_WorldObjects_Base_BaseWorldObjectAction_OnActivatedAsync_System_String_DarkStar_Api_Engine_Map_Entities_WorldGameObject_System_Guid_System_Boolean_">BaseWorldObjectAction.OnActivatedAsync(string, WorldGameObject, Guid, bool)</a></div>
   <h3 id="implements">Implements</h3>
-  <div>
-      <a class="xref" href="DarkStar.Api.Engine.Interfaces.Objects.IScheduledGameObjectAction.html">IScheduledGameObjectAction</a>
-  </div>
   <div>
       <a class="xref" href="DarkStar.Api.Engine.Interfaces.Objects.IGameObjectAction.html">IGameObjectAction</a>
   </div>
@@ -345,10 +295,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScheduledWorldObject.md&amp;value=---%0Auid%3A%20DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScheduledWorldObject%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Api_Engine_Items_WorldObjects_Base_BaseScriptableWorldObjectAction.md&amp;value=---%0Auid%3A%20DarkStar.Api.Engine.Items.WorldObjects.Base.BaseScriptableWorldObjectAction%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Items/WorldObjects/Base/BaseScheduledWorldObject.cs/#L7" class="contribution-link">View Source</a>
+                    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Api.Engine/Items/WorldObjects/Base/BaseScriptableWorldObjectAction.cs/#L8" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
