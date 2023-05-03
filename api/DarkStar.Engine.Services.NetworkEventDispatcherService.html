@@ -108,6 +108,9 @@
       <a class="xref" href="DarkStar.Engine.Services.Base.BaseService-1.html#DarkStar_Engine_Services_Base_BaseService_1_SubscribeToEvent__1_System_Action___0__">BaseService&lt;NetworkEventDispatcherService&gt;.SubscribeToEvent&lt;TEvent&gt;(Action&lt;TEvent&gt;)</a>
     </div>
     <div>
+      <a class="xref" href="DarkStar.Engine.Services.Base.BaseService-1.html#DarkStar_Engine_Services_Base_BaseService_1_StopAsync">BaseService&lt;NetworkEventDispatcherService&gt;.StopAsync()</a>
+    </div>
+    <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
     </div>
     <div>
@@ -143,7 +146,7 @@ public class NetworkEventDispatcherService : BaseService&lt;NetworkEventDispatch
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_NetworkEventDispatcherService__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Engine_Services_NetworkEventDispatcherService__.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.NetworkEventDispatcherService.%23ctor(Microsoft.Extensions.Logging.ILogger%7BDarkStar.Engine.Services.NetworkEventDispatcherService%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/NetworkEventDispatcherService.cs/#L28">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/NetworkEventDispatcherService.cs/#L24">View Source</a>
   </span>
   <a id="DarkStar_Engine_Services_NetworkEventDispatcherService__ctor_" data-uid="DarkStar.Engine.Services.NetworkEventDispatcherService.#ctor*"></a>
   <h4 id="DarkStar_Engine_Services_NetworkEventDispatcherService__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Engine_Services_NetworkEventDispatcherService__" data-uid="DarkStar.Engine.Services.NetworkEventDispatcherService.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.Services.NetworkEventDispatcherService})">NetworkEventDispatcherService(ILogger&lt;NetworkEventDispatcherService&gt;)</h4>
@@ -170,23 +173,41 @@ public class NetworkEventDispatcherService : BaseService&lt;NetworkEventDispatch
       </tr>
     </tbody>
   </table>
-  <h3 id="fields">Fields
+  <h3 id="methods">Methods
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_NetworkEventDispatcherService__subscriptionTokens.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.NetworkEventDispatcherService._subscriptionTokens%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_NetworkEventDispatcherService_HandleEntityAddedAsync_DarkStar_Api_Engine_Events_Map_GameObjectAddedEvent_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityAddedAsync(DarkStar.Api.Engine.Events.Map.GameObjectAddedEvent)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/NetworkEventDispatcherService.cs/#L26">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/NetworkEventDispatcherService.cs/#L97">View Source</a>
   </span>
-  <h4 id="DarkStar_Engine_Services_NetworkEventDispatcherService__subscriptionTokens" data-uid="DarkStar.Engine.Services.NetworkEventDispatcherService._subscriptionTokens">_subscriptionTokens</h4>
+  <a id="DarkStar_Engine_Services_NetworkEventDispatcherService_HandleEntityAddedAsync_" data-uid="DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityAddedAsync*"></a>
+  <h4 id="DarkStar_Engine_Services_NetworkEventDispatcherService_HandleEntityAddedAsync_DarkStar_Api_Engine_Events_Map_GameObjectAddedEvent_" data-uid="DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityAddedAsync(DarkStar.Api.Engine.Events.Map.GameObjectAddedEvent)">HandleEntityAddedAsync(GameObjectAddedEvent)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">private readonly HashSet&lt;SubscriptionToken&gt; _subscriptionTokens</code></pre>
+    <pre><code class="lang-csharp hljs">private Task&lt;IDarkStarNetworkMessage?&gt; HandleEntityAddedAsync(GameObjectAddedEvent @event)</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DarkStar.Api.Engine.Events.Map.GameObjectAddedEvent.html">GameObjectAddedEvent</a></td>
+        <td><span class="parametername">event</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-condensed">
     <thead>
       <tr>
@@ -196,19 +217,111 @@ public class NetworkEventDispatcherService : BaseService&lt;NetworkEventDispatch
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1">HashSet</a>&lt;<span class="xref">SubscriptionToken</span>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="DarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage.html">IDarkStarNetworkMessage</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h3 id="methods">Methods
-</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_NetworkEventDispatcherService_HandleEntityMovedAsync_DarkStar_Api_Engine_Events_Map_GameObjectMovedEvent_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityMovedAsync(DarkStar.Api.Engine.Events.Map.GameObjectMovedEvent)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/NetworkEventDispatcherService.cs/#L140">View Source</a>
+  </span>
+  <a id="DarkStar_Engine_Services_NetworkEventDispatcherService_HandleEntityMovedAsync_" data-uid="DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityMovedAsync*"></a>
+  <h4 id="DarkStar_Engine_Services_NetworkEventDispatcherService_HandleEntityMovedAsync_DarkStar_Api_Engine_Events_Map_GameObjectMovedEvent_" data-uid="DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityMovedAsync(DarkStar.Api.Engine.Events.Map.GameObjectMovedEvent)">HandleEntityMovedAsync(GameObjectMovedEvent)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private Task&lt;IDarkStarNetworkMessage?&gt; HandleEntityMovedAsync(GameObjectMovedEvent @event)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DarkStar.Api.Engine.Events.Map.GameObjectMovedEvent.html">GameObjectMovedEvent</a></td>
+        <td><span class="parametername">event</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="DarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage.html">IDarkStarNetworkMessage</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_NetworkEventDispatcherService_HandleEntityRemovedAsync_DarkStar_Api_Engine_Events_Map_GameObjectRemovedEvent_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityRemovedAsync(DarkStar.Api.Engine.Events.Map.GameObjectRemovedEvent)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/NetworkEventDispatcherService.cs/#L159">View Source</a>
+  </span>
+  <a id="DarkStar_Engine_Services_NetworkEventDispatcherService_HandleEntityRemovedAsync_" data-uid="DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityRemovedAsync*"></a>
+  <h4 id="DarkStar_Engine_Services_NetworkEventDispatcherService_HandleEntityRemovedAsync_DarkStar_Api_Engine_Events_Map_GameObjectRemovedEvent_" data-uid="DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityRemovedAsync(DarkStar.Api.Engine.Events.Map.GameObjectRemovedEvent)">HandleEntityRemovedAsync(GameObjectRemovedEvent)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private Task&lt;IDarkStarNetworkMessage?&gt; HandleEntityRemovedAsync(GameObjectRemovedEvent @event)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DarkStar.Api.Engine.Events.Map.GameObjectRemovedEvent.html">GameObjectRemovedEvent</a></td>
+        <td><span class="parametername">event</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="DarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage.html">IDarkStarNetworkMessage</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_NetworkEventDispatcherService_OnGameObjectAdded_DarkStar_Api_Engine_Events_Map_GameObjectAddedEvent_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.NetworkEventDispatcherService.OnGameObjectAdded(DarkStar.Api.Engine.Events.Map.GameObjectAddedEvent)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/NetworkEventDispatcherService.cs/#L66">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/NetworkEventDispatcherService.cs/#L57">View Source</a>
   </span>
   <a id="DarkStar_Engine_Services_NetworkEventDispatcherService_OnGameObjectAdded_" data-uid="DarkStar.Engine.Services.NetworkEventDispatcherService.OnGameObjectAdded*"></a>
   <h4 id="DarkStar_Engine_Services_NetworkEventDispatcherService_OnGameObjectAdded_DarkStar_Api_Engine_Events_Map_GameObjectAddedEvent_" data-uid="DarkStar.Engine.Services.NetworkEventDispatcherService.OnGameObjectAdded(DarkStar.Api.Engine.Events.Map.GameObjectAddedEvent)">OnGameObjectAdded(GameObjectAddedEvent)</h4>
@@ -240,7 +353,7 @@ public class NetworkEventDispatcherService : BaseService&lt;NetworkEventDispatch
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_NetworkEventDispatcherService_OnGameObjectMoved_DarkStar_Api_Engine_Events_Map_GameObjectMovedEvent_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.NetworkEventDispatcherService.OnGameObjectMoved(DarkStar.Api.Engine.Events.Map.GameObjectMovedEvent)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/NetworkEventDispatcherService.cs/#L96">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/NetworkEventDispatcherService.cs/#L84">View Source</a>
   </span>
   <a id="DarkStar_Engine_Services_NetworkEventDispatcherService_OnGameObjectMoved_" data-uid="DarkStar.Engine.Services.NetworkEventDispatcherService.OnGameObjectMoved*"></a>
   <h4 id="DarkStar_Engine_Services_NetworkEventDispatcherService_OnGameObjectMoved_DarkStar_Api_Engine_Events_Map_GameObjectMovedEvent_" data-uid="DarkStar.Engine.Services.NetworkEventDispatcherService.OnGameObjectMoved(DarkStar.Api.Engine.Events.Map.GameObjectMovedEvent)">OnGameObjectMoved(GameObjectMovedEvent)</h4>
@@ -272,7 +385,7 @@ public class NetworkEventDispatcherService : BaseService&lt;NetworkEventDispatch
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_NetworkEventDispatcherService_OnGameObjectRemoved_DarkStar_Api_Engine_Events_Map_GameObjectRemovedEvent_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.NetworkEventDispatcherService.OnGameObjectRemoved(DarkStar.Api.Engine.Events.Map.GameObjectRemovedEvent)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/NetworkEventDispatcherService.cs/#L87">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/NetworkEventDispatcherService.cs/#L72">View Source</a>
   </span>
   <a id="DarkStar_Engine_Services_NetworkEventDispatcherService_OnGameObjectRemoved_" data-uid="DarkStar.Engine.Services.NetworkEventDispatcherService.OnGameObjectRemoved*"></a>
   <h4 id="DarkStar_Engine_Services_NetworkEventDispatcherService_OnGameObjectRemoved_DarkStar_Api_Engine_Events_Map_GameObjectRemovedEvent_" data-uid="DarkStar.Engine.Services.NetworkEventDispatcherService.OnGameObjectRemoved(DarkStar.Api.Engine.Events.Map.GameObjectRemovedEvent)">OnGameObjectRemoved(GameObjectRemovedEvent)</h4>
@@ -304,7 +417,7 @@ public class NetworkEventDispatcherService : BaseService&lt;NetworkEventDispatch
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_NetworkEventDispatcherService_OnPingRequestMessage_DarkStar_Api_Engine_Events_Players_PingRequestEvent_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.NetworkEventDispatcherService.OnPingRequestMessage(DarkStar.Api.Engine.Events.Players.PingRequestEvent)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/NetworkEventDispatcherService.cs/#L105">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/NetworkEventDispatcherService.cs/#L179">View Source</a>
   </span>
   <a id="DarkStar_Engine_Services_NetworkEventDispatcherService_OnPingRequestMessage_" data-uid="DarkStar.Engine.Services.NetworkEventDispatcherService.OnPingRequestMessage*"></a>
   <h4 id="DarkStar_Engine_Services_NetworkEventDispatcherService_OnPingRequestMessage_DarkStar_Api_Engine_Events_Players_PingRequestEvent_" data-uid="DarkStar.Engine.Services.NetworkEventDispatcherService.OnPingRequestMessage(DarkStar.Api.Engine.Events.Players.PingRequestEvent)">OnPingRequestMessage(PingRequestEvent)</h4>
@@ -336,7 +449,7 @@ public class NetworkEventDispatcherService : BaseService&lt;NetworkEventDispatch
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_NetworkEventDispatcherService_OnPlayerLoggedMessage_DarkStar_Api_Engine_Events_Players_PlayerLoggedEvent_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.NetworkEventDispatcherService.OnPlayerLoggedMessage(DarkStar.Api.Engine.Events.Players.PlayerLoggedEvent)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/NetworkEventDispatcherService.cs/#L44">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/NetworkEventDispatcherService.cs/#L39">View Source</a>
   </span>
   <a id="DarkStar_Engine_Services_NetworkEventDispatcherService_OnPlayerLoggedMessage_" data-uid="DarkStar.Engine.Services.NetworkEventDispatcherService.OnPlayerLoggedMessage*"></a>
   <h4 id="DarkStar_Engine_Services_NetworkEventDispatcherService_OnPlayerLoggedMessage_DarkStar_Api_Engine_Events_Players_PlayerLoggedEvent_" data-uid="DarkStar.Engine.Services.NetworkEventDispatcherService.OnPlayerLoggedMessage(DarkStar.Api.Engine.Events.Players.PlayerLoggedEvent)">OnPlayerLoggedMessage(PlayerLoggedEvent)</h4>
@@ -368,7 +481,7 @@ public class NetworkEventDispatcherService : BaseService&lt;NetworkEventDispatch
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_NetworkEventDispatcherService_StartAsync.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.NetworkEventDispatcherService.StartAsync%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/NetworkEventDispatcherService.cs/#L33">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/NetworkEventDispatcherService.cs/#L28">View Source</a>
   </span>
   <a id="DarkStar_Engine_Services_NetworkEventDispatcherService_StartAsync_" data-uid="DarkStar.Engine.Services.NetworkEventDispatcherService.StartAsync*"></a>
   <h4 id="DarkStar_Engine_Services_NetworkEventDispatcherService_StartAsync" data-uid="DarkStar.Engine.Services.NetworkEventDispatcherService.StartAsync">StartAsync()</h4>
@@ -395,38 +508,6 @@ public class NetworkEventDispatcherService : BaseService&lt;NetworkEventDispatch
   </table>
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="DarkStar.Engine.Services.Base.BaseService{DarkStar.Engine.Services.NetworkEventDispatcherService}.html#DarkStar.Engine.Services.Base.BaseService{DarkStar.Engine.Services.NetworkEventDispatcherService}.StartAsync">BaseService&lt;NetworkEventDispatcherService&gt;.StartAsync()</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_NetworkEventDispatcherService_StopAsync.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.NetworkEventDispatcherService.StopAsync%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/NetworkEventDispatcherService.cs/#L54">View Source</a>
-  </span>
-  <a id="DarkStar_Engine_Services_NetworkEventDispatcherService_StopAsync_" data-uid="DarkStar.Engine.Services.NetworkEventDispatcherService.StopAsync*"></a>
-  <h4 id="DarkStar_Engine_Services_NetworkEventDispatcherService_StopAsync" data-uid="DarkStar.Engine.Services.NetworkEventDispatcherService.StopAsync">StopAsync()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override ValueTask&lt;bool&gt; StopAsync()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1">ValueTask</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="DarkStar.Engine.Services.Base.BaseService{DarkStar.Engine.Services.NetworkEventDispatcherService}.html#DarkStar.Engine.Services.Base.BaseService{DarkStar.Engine.Services.NetworkEventDispatcherService}.StopAsync">BaseService&lt;NetworkEventDispatcherService&gt;.StopAsync()</a></div>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="DarkStar.Api.Engine.Interfaces.Services.INetworkEventDispatcherService.html">INetworkEventDispatcherService</a>
@@ -449,7 +530,7 @@ public class NetworkEventDispatcherService : BaseService&lt;NetworkEventDispatch
                     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_NetworkEventDispatcherService.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.NetworkEventDispatcherService%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/NetworkEventDispatcherService.cs/#L23" class="contribution-link">View Source</a>
+                    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/NetworkEventDispatcherService.cs/#L21" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

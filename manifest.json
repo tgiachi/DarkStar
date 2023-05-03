@@ -3405,6 +3405,66 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectRemovedResponseMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectRemovedResponseMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerInventoryRequestMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerInventoryRequestMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerInventoryResponseMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerInventoryResponseMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerListRequestMessage.yml",
       "output": {
         ".html": {

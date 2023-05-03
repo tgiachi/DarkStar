@@ -11601,6 +11601,19 @@ references:
   commentId: T:DarkStar.Engine.MessageListeners.Helpers.PlayerDataHelper
   fullName: DarkStar.Engine.MessageListeners.Helpers.PlayerDataHelper
   nameWithType: PlayerDataHelper
+- uid: DarkStar.Engine.MessageListeners.Helpers.PlayerDataHelper.BuildPlayerInventoryAsync(DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine,System.Guid)
+  name: BuildPlayerInventoryAsync(IDarkSunEngine, Guid)
+  href: api/DarkStar.Engine.MessageListeners.Helpers.PlayerDataHelper.html#DarkStar_Engine_MessageListeners_Helpers_PlayerDataHelper_BuildPlayerInventoryAsync_DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_System_Guid_
+  commentId: M:DarkStar.Engine.MessageListeners.Helpers.PlayerDataHelper.BuildPlayerInventoryAsync(DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine,System.Guid)
+  fullName: DarkStar.Engine.MessageListeners.Helpers.PlayerDataHelper.BuildPlayerInventoryAsync(DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine, System.Guid)
+  nameWithType: PlayerDataHelper.BuildPlayerInventoryAsync(IDarkSunEngine, Guid)
+- uid: DarkStar.Engine.MessageListeners.Helpers.PlayerDataHelper.BuildPlayerInventoryAsync*
+  name: BuildPlayerInventoryAsync
+  href: api/DarkStar.Engine.MessageListeners.Helpers.PlayerDataHelper.html#DarkStar_Engine_MessageListeners_Helpers_PlayerDataHelper_BuildPlayerInventoryAsync_
+  commentId: Overload:DarkStar.Engine.MessageListeners.Helpers.PlayerDataHelper.BuildPlayerInventoryAsync
+  isSpec: "True"
+  fullName: DarkStar.Engine.MessageListeners.Helpers.PlayerDataHelper.BuildPlayerInventoryAsync
+  nameWithType: PlayerDataHelper.BuildPlayerInventoryAsync
 - uid: DarkStar.Engine.MessageListeners.Helpers.PlayerDataHelper.BuildPlayerListForPlayerAsync(DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine,System.Guid)
   name: BuildPlayerListForPlayerAsync(IDarkSunEngine, Guid)
   href: api/DarkStar.Engine.MessageListeners.Helpers.PlayerDataHelper.html#DarkStar_Engine_MessageListeners_Helpers_PlayerDataHelper_BuildPlayerListForPlayerAsync_DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_System_Guid_
@@ -11781,15 +11794,15 @@ references:
   commentId: T:DarkStar.Engine.MessageListeners.PlayerLoginMessageListener
   fullName: DarkStar.Engine.MessageListeners.PlayerLoginMessageListener
   nameWithType: PlayerLoginMessageListener
-- uid: DarkStar.Engine.MessageListeners.PlayerLoginMessageListener.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Api.Engine.MessageListeners.BaseNetworkMessageListener{DarkStar.Network.Protocol.Messages.Players.PlayerLoginRequestMessage}},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
-  name: PlayerLoginMessageListener(ILogger<BaseNetworkMessageListener<PlayerLoginRequestMessage>>, IDarkSunEngine)
-  href: api/DarkStar.Engine.MessageListeners.PlayerLoginMessageListener.html#DarkStar_Engine_MessageListeners_PlayerLoginMessageListener__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Api_Engine_MessageListeners_BaseNetworkMessageListener_DarkStar_Network_Protocol_Messages_Players_PlayerLoginRequestMessage___DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_
-  commentId: M:DarkStar.Engine.MessageListeners.PlayerLoginMessageListener.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Api.Engine.MessageListeners.BaseNetworkMessageListener{DarkStar.Network.Protocol.Messages.Players.PlayerLoginRequestMessage}},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
-  name.vb: New(ILogger(Of BaseNetworkMessageListener(Of PlayerLoginRequestMessage)), IDarkSunEngine)
-  fullName: DarkStar.Engine.MessageListeners.PlayerLoginMessageListener.PlayerLoginMessageListener(Microsoft.Extensions.Logging.ILogger<DarkStar.Api.Engine.MessageListeners.BaseNetworkMessageListener<DarkStar.Network.Protocol.Messages.Players.PlayerLoginRequestMessage>>, DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
-  fullName.vb: DarkStar.Engine.MessageListeners.PlayerLoginMessageListener.New(Microsoft.Extensions.Logging.ILogger(Of DarkStar.Api.Engine.MessageListeners.BaseNetworkMessageListener(Of DarkStar.Network.Protocol.Messages.Players.PlayerLoginRequestMessage)), DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
-  nameWithType: PlayerLoginMessageListener.PlayerLoginMessageListener(ILogger<BaseNetworkMessageListener<PlayerLoginRequestMessage>>, IDarkSunEngine)
-  nameWithType.vb: PlayerLoginMessageListener.New(ILogger(Of BaseNetworkMessageListener(Of PlayerLoginRequestMessage)), IDarkSunEngine)
+- uid: DarkStar.Engine.MessageListeners.PlayerLoginMessageListener.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.MessageListeners.PlayerLoginMessageListener},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  name: PlayerLoginMessageListener(ILogger<PlayerLoginMessageListener>, IDarkSunEngine)
+  href: api/DarkStar.Engine.MessageListeners.PlayerLoginMessageListener.html#DarkStar_Engine_MessageListeners_PlayerLoginMessageListener__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Engine_MessageListeners_PlayerLoginMessageListener__DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_
+  commentId: M:DarkStar.Engine.MessageListeners.PlayerLoginMessageListener.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.MessageListeners.PlayerLoginMessageListener},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  name.vb: New(ILogger(Of PlayerLoginMessageListener), IDarkSunEngine)
+  fullName: DarkStar.Engine.MessageListeners.PlayerLoginMessageListener.PlayerLoginMessageListener(Microsoft.Extensions.Logging.ILogger<DarkStar.Engine.MessageListeners.PlayerLoginMessageListener>, DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  fullName.vb: DarkStar.Engine.MessageListeners.PlayerLoginMessageListener.New(Microsoft.Extensions.Logging.ILogger(Of DarkStar.Engine.MessageListeners.PlayerLoginMessageListener), DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  nameWithType: PlayerLoginMessageListener.PlayerLoginMessageListener(ILogger<PlayerLoginMessageListener>, IDarkSunEngine)
+  nameWithType.vb: PlayerLoginMessageListener.New(ILogger(Of PlayerLoginMessageListener), IDarkSunEngine)
 - uid: DarkStar.Engine.MessageListeners.PlayerLoginMessageListener.#ctor*
   name: PlayerLoginMessageListener
   href: api/DarkStar.Engine.MessageListeners.PlayerLoginMessageListener.html#DarkStar_Engine_MessageListeners_PlayerLoginMessageListener__ctor_
@@ -12467,15 +12480,15 @@ references:
   commentId: T:DarkStar.Engine.ScriptModules.PlayerScriptModule
   fullName: DarkStar.Engine.ScriptModules.PlayerScriptModule
   nameWithType: PlayerScriptModule
-- uid: DarkStar.Engine.ScriptModules.PlayerScriptModule.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Api.Engine.ScriptModules.BaseScriptModule},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
-  name: PlayerScriptModule(ILogger<BaseScriptModule>, IDarkSunEngine)
-  href: api/DarkStar.Engine.ScriptModules.PlayerScriptModule.html#DarkStar_Engine_ScriptModules_PlayerScriptModule__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Api_Engine_ScriptModules_BaseScriptModule__DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_
-  commentId: M:DarkStar.Engine.ScriptModules.PlayerScriptModule.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Api.Engine.ScriptModules.BaseScriptModule},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
-  name.vb: New(ILogger(Of BaseScriptModule), IDarkSunEngine)
-  fullName: DarkStar.Engine.ScriptModules.PlayerScriptModule.PlayerScriptModule(Microsoft.Extensions.Logging.ILogger<DarkStar.Api.Engine.ScriptModules.BaseScriptModule>, DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
-  fullName.vb: DarkStar.Engine.ScriptModules.PlayerScriptModule.New(Microsoft.Extensions.Logging.ILogger(Of DarkStar.Api.Engine.ScriptModules.BaseScriptModule), DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
-  nameWithType: PlayerScriptModule.PlayerScriptModule(ILogger<BaseScriptModule>, IDarkSunEngine)
-  nameWithType.vb: PlayerScriptModule.New(ILogger(Of BaseScriptModule), IDarkSunEngine)
+- uid: DarkStar.Engine.ScriptModules.PlayerScriptModule.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.ScriptModules.PlayerScriptModule},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  name: PlayerScriptModule(ILogger<PlayerScriptModule>, IDarkSunEngine)
+  href: api/DarkStar.Engine.ScriptModules.PlayerScriptModule.html#DarkStar_Engine_ScriptModules_PlayerScriptModule__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Engine_ScriptModules_PlayerScriptModule__DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_
+  commentId: M:DarkStar.Engine.ScriptModules.PlayerScriptModule.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.ScriptModules.PlayerScriptModule},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  name.vb: New(ILogger(Of PlayerScriptModule), IDarkSunEngine)
+  fullName: DarkStar.Engine.ScriptModules.PlayerScriptModule.PlayerScriptModule(Microsoft.Extensions.Logging.ILogger<DarkStar.Engine.ScriptModules.PlayerScriptModule>, DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  fullName.vb: DarkStar.Engine.ScriptModules.PlayerScriptModule.New(Microsoft.Extensions.Logging.ILogger(Of DarkStar.Engine.ScriptModules.PlayerScriptModule), DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  nameWithType: PlayerScriptModule.PlayerScriptModule(ILogger<PlayerScriptModule>, IDarkSunEngine)
+  nameWithType.vb: PlayerScriptModule.New(ILogger(Of PlayerScriptModule), IDarkSunEngine)
 - uid: DarkStar.Engine.ScriptModules.PlayerScriptModule.#ctor*
   name: PlayerScriptModule
   href: api/DarkStar.Engine.ScriptModules.PlayerScriptModule.html#DarkStar_Engine_ScriptModules_PlayerScriptModule__ctor_
@@ -14323,12 +14336,6 @@ references:
   commentId: T:DarkStar.Engine.Services.NetworkEventDispatcherService
   fullName: DarkStar.Engine.Services.NetworkEventDispatcherService
   nameWithType: NetworkEventDispatcherService
-- uid: DarkStar.Engine.Services.NetworkEventDispatcherService._subscriptionTokens
-  name: _subscriptionTokens
-  href: api/DarkStar.Engine.Services.NetworkEventDispatcherService.html#DarkStar_Engine_Services_NetworkEventDispatcherService__subscriptionTokens
-  commentId: F:DarkStar.Engine.Services.NetworkEventDispatcherService._subscriptionTokens
-  fullName: DarkStar.Engine.Services.NetworkEventDispatcherService._subscriptionTokens
-  nameWithType: NetworkEventDispatcherService._subscriptionTokens
 - uid: DarkStar.Engine.Services.NetworkEventDispatcherService.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.Services.NetworkEventDispatcherService})
   name: NetworkEventDispatcherService(ILogger<NetworkEventDispatcherService>)
   href: api/DarkStar.Engine.Services.NetworkEventDispatcherService.html#DarkStar_Engine_Services_NetworkEventDispatcherService__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Engine_Services_NetworkEventDispatcherService__
@@ -14348,6 +14355,45 @@ references:
   fullName.vb: DarkStar.Engine.Services.NetworkEventDispatcherService.New
   nameWithType: NetworkEventDispatcherService.NetworkEventDispatcherService
   nameWithType.vb: NetworkEventDispatcherService.New
+- uid: DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityAddedAsync(DarkStar.Api.Engine.Events.Map.GameObjectAddedEvent)
+  name: HandleEntityAddedAsync(GameObjectAddedEvent)
+  href: api/DarkStar.Engine.Services.NetworkEventDispatcherService.html#DarkStar_Engine_Services_NetworkEventDispatcherService_HandleEntityAddedAsync_DarkStar_Api_Engine_Events_Map_GameObjectAddedEvent_
+  commentId: M:DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityAddedAsync(DarkStar.Api.Engine.Events.Map.GameObjectAddedEvent)
+  fullName: DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityAddedAsync(DarkStar.Api.Engine.Events.Map.GameObjectAddedEvent)
+  nameWithType: NetworkEventDispatcherService.HandleEntityAddedAsync(GameObjectAddedEvent)
+- uid: DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityAddedAsync*
+  name: HandleEntityAddedAsync
+  href: api/DarkStar.Engine.Services.NetworkEventDispatcherService.html#DarkStar_Engine_Services_NetworkEventDispatcherService_HandleEntityAddedAsync_
+  commentId: Overload:DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityAddedAsync
+  isSpec: "True"
+  fullName: DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityAddedAsync
+  nameWithType: NetworkEventDispatcherService.HandleEntityAddedAsync
+- uid: DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityMovedAsync(DarkStar.Api.Engine.Events.Map.GameObjectMovedEvent)
+  name: HandleEntityMovedAsync(GameObjectMovedEvent)
+  href: api/DarkStar.Engine.Services.NetworkEventDispatcherService.html#DarkStar_Engine_Services_NetworkEventDispatcherService_HandleEntityMovedAsync_DarkStar_Api_Engine_Events_Map_GameObjectMovedEvent_
+  commentId: M:DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityMovedAsync(DarkStar.Api.Engine.Events.Map.GameObjectMovedEvent)
+  fullName: DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityMovedAsync(DarkStar.Api.Engine.Events.Map.GameObjectMovedEvent)
+  nameWithType: NetworkEventDispatcherService.HandleEntityMovedAsync(GameObjectMovedEvent)
+- uid: DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityMovedAsync*
+  name: HandleEntityMovedAsync
+  href: api/DarkStar.Engine.Services.NetworkEventDispatcherService.html#DarkStar_Engine_Services_NetworkEventDispatcherService_HandleEntityMovedAsync_
+  commentId: Overload:DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityMovedAsync
+  isSpec: "True"
+  fullName: DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityMovedAsync
+  nameWithType: NetworkEventDispatcherService.HandleEntityMovedAsync
+- uid: DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityRemovedAsync(DarkStar.Api.Engine.Events.Map.GameObjectRemovedEvent)
+  name: HandleEntityRemovedAsync(GameObjectRemovedEvent)
+  href: api/DarkStar.Engine.Services.NetworkEventDispatcherService.html#DarkStar_Engine_Services_NetworkEventDispatcherService_HandleEntityRemovedAsync_DarkStar_Api_Engine_Events_Map_GameObjectRemovedEvent_
+  commentId: M:DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityRemovedAsync(DarkStar.Api.Engine.Events.Map.GameObjectRemovedEvent)
+  fullName: DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityRemovedAsync(DarkStar.Api.Engine.Events.Map.GameObjectRemovedEvent)
+  nameWithType: NetworkEventDispatcherService.HandleEntityRemovedAsync(GameObjectRemovedEvent)
+- uid: DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityRemovedAsync*
+  name: HandleEntityRemovedAsync
+  href: api/DarkStar.Engine.Services.NetworkEventDispatcherService.html#DarkStar_Engine_Services_NetworkEventDispatcherService_HandleEntityRemovedAsync_
+  commentId: Overload:DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityRemovedAsync
+  isSpec: "True"
+  fullName: DarkStar.Engine.Services.NetworkEventDispatcherService.HandleEntityRemovedAsync
+  nameWithType: NetworkEventDispatcherService.HandleEntityRemovedAsync
 - uid: DarkStar.Engine.Services.NetworkEventDispatcherService.OnGameObjectAdded(DarkStar.Api.Engine.Events.Map.GameObjectAddedEvent)
   name: OnGameObjectAdded(GameObjectAddedEvent)
   href: api/DarkStar.Engine.Services.NetworkEventDispatcherService.html#DarkStar_Engine_Services_NetworkEventDispatcherService_OnGameObjectAdded_DarkStar_Api_Engine_Events_Map_GameObjectAddedEvent_
@@ -14426,19 +14472,6 @@ references:
   isSpec: "True"
   fullName: DarkStar.Engine.Services.NetworkEventDispatcherService.StartAsync
   nameWithType: NetworkEventDispatcherService.StartAsync
-- uid: DarkStar.Engine.Services.NetworkEventDispatcherService.StopAsync
-  name: StopAsync()
-  href: api/DarkStar.Engine.Services.NetworkEventDispatcherService.html#DarkStar_Engine_Services_NetworkEventDispatcherService_StopAsync
-  commentId: M:DarkStar.Engine.Services.NetworkEventDispatcherService.StopAsync
-  fullName: DarkStar.Engine.Services.NetworkEventDispatcherService.StopAsync()
-  nameWithType: NetworkEventDispatcherService.StopAsync()
-- uid: DarkStar.Engine.Services.NetworkEventDispatcherService.StopAsync*
-  name: StopAsync
-  href: api/DarkStar.Engine.Services.NetworkEventDispatcherService.html#DarkStar_Engine_Services_NetworkEventDispatcherService_StopAsync_
-  commentId: Overload:DarkStar.Engine.Services.NetworkEventDispatcherService.StopAsync
-  isSpec: "True"
-  fullName: DarkStar.Engine.Services.NetworkEventDispatcherService.StopAsync
-  nameWithType: NetworkEventDispatcherService.StopAsync
 - uid: DarkStar.Engine.Services.PlayerService
   name: PlayerService
   href: api/DarkStar.Engine.Services.PlayerService.html
@@ -18815,6 +18848,334 @@ references:
   commentId: T:DarkStar.Network.Protocol.Messages.Players.PlayerDataResponseMessage
   fullName: DarkStar.Network.Protocol.Messages.Players.PlayerDataResponseMessage
   nameWithType: PlayerDataResponseMessage
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage
+  name: PlayerGameObjectAddedResponseMessage
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.html
+  commentId: T:DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage
+  nameWithType: PlayerGameObjectAddedResponseMessage
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.#ctor
+  name: PlayerGameObjectAddedResponseMessage()
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerGameObjectAddedResponseMessage__ctor
+  commentId: M:DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.#ctor
+  name.vb: New()
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.PlayerGameObjectAddedResponseMessage()
+  fullName.vb: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.New()
+  nameWithType: PlayerGameObjectAddedResponseMessage.PlayerGameObjectAddedResponseMessage()
+  nameWithType.vb: PlayerGameObjectAddedResponseMessage.New()
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.#ctor(System.String,System.String,System.String,DarkStar.Network.Protocol.Messages.Common.PointPosition,System.Int32)
+  name: PlayerGameObjectAddedResponseMessage(string, string, string, PointPosition, int)
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerGameObjectAddedResponseMessage__ctor_System_String_System_String_System_String_DarkStar_Network_Protocol_Messages_Common_PointPosition_System_Int32_
+  commentId: M:DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.#ctor(System.String,System.String,System.String,DarkStar.Network.Protocol.Messages.Common.PointPosition,System.Int32)
+  name.vb: New(String, String, String, PointPosition, Integer)
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.PlayerGameObjectAddedResponseMessage(string, string, string, DarkStar.Network.Protocol.Messages.Common.PointPosition, int)
+  fullName.vb: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.New(String, String, String, DarkStar.Network.Protocol.Messages.Common.PointPosition, Integer)
+  nameWithType: PlayerGameObjectAddedResponseMessage.PlayerGameObjectAddedResponseMessage(string, string, string, PointPosition, int)
+  nameWithType.vb: PlayerGameObjectAddedResponseMessage.New(String, String, String, PointPosition, Integer)
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.#ctor*
+  name: PlayerGameObjectAddedResponseMessage
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerGameObjectAddedResponseMessage__ctor_
+  commentId: Overload:DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.PlayerGameObjectAddedResponseMessage
+  fullName.vb: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.New
+  nameWithType: PlayerGameObjectAddedResponseMessage.PlayerGameObjectAddedResponseMessage
+  nameWithType.vb: PlayerGameObjectAddedResponseMessage.New
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.Id
+  name: Id
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerGameObjectAddedResponseMessage_Id
+  commentId: P:DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.Id
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.Id
+  nameWithType: PlayerGameObjectAddedResponseMessage.Id
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.Id*
+  name: Id
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerGameObjectAddedResponseMessage_Id_
+  commentId: Overload:DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.Id
+  isSpec: "True"
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.Id
+  nameWithType: PlayerGameObjectAddedResponseMessage.Id
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.MapId
+  name: MapId
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerGameObjectAddedResponseMessage_MapId
+  commentId: P:DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.MapId
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.MapId
+  nameWithType: PlayerGameObjectAddedResponseMessage.MapId
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.MapId*
+  name: MapId
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerGameObjectAddedResponseMessage_MapId_
+  commentId: Overload:DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.MapId
+  isSpec: "True"
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.MapId
+  nameWithType: PlayerGameObjectAddedResponseMessage.MapId
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.Name
+  name: Name
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerGameObjectAddedResponseMessage_Name
+  commentId: P:DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.Name
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.Name
+  nameWithType: PlayerGameObjectAddedResponseMessage.Name
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.Name*
+  name: Name
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerGameObjectAddedResponseMessage_Name_
+  commentId: Overload:DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.Name
+  isSpec: "True"
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.Name
+  nameWithType: PlayerGameObjectAddedResponseMessage.Name
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.Position
+  name: Position
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerGameObjectAddedResponseMessage_Position
+  commentId: P:DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.Position
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.Position
+  nameWithType: PlayerGameObjectAddedResponseMessage.Position
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.Position*
+  name: Position
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerGameObjectAddedResponseMessage_Position_
+  commentId: Overload:DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.Position
+  isSpec: "True"
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.Position
+  nameWithType: PlayerGameObjectAddedResponseMessage.Position
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.TileId
+  name: TileId
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerGameObjectAddedResponseMessage_TileId
+  commentId: P:DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.TileId
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.TileId
+  nameWithType: PlayerGameObjectAddedResponseMessage.TileId
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.TileId*
+  name: TileId
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerGameObjectAddedResponseMessage_TileId_
+  commentId: Overload:DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.TileId
+  isSpec: "True"
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.TileId
+  nameWithType: PlayerGameObjectAddedResponseMessage.TileId
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage
+  name: PlayerGameObjectMovedResponseMessage
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.html
+  commentId: T:DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage
+  nameWithType: PlayerGameObjectMovedResponseMessage
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.#ctor
+  name: PlayerGameObjectMovedResponseMessage()
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerGameObjectMovedResponseMessage__ctor
+  commentId: M:DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.#ctor
+  name.vb: New()
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.PlayerGameObjectMovedResponseMessage()
+  fullName.vb: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.New()
+  nameWithType: PlayerGameObjectMovedResponseMessage.PlayerGameObjectMovedResponseMessage()
+  nameWithType.vb: PlayerGameObjectMovedResponseMessage.New()
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.#ctor(System.String,System.String,DarkStar.Network.Protocol.Messages.Common.PointPosition)
+  name: PlayerGameObjectMovedResponseMessage(string, string, PointPosition)
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerGameObjectMovedResponseMessage__ctor_System_String_System_String_DarkStar_Network_Protocol_Messages_Common_PointPosition_
+  commentId: M:DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.#ctor(System.String,System.String,DarkStar.Network.Protocol.Messages.Common.PointPosition)
+  name.vb: New(String, String, PointPosition)
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.PlayerGameObjectMovedResponseMessage(string, string, DarkStar.Network.Protocol.Messages.Common.PointPosition)
+  fullName.vb: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.New(String, String, DarkStar.Network.Protocol.Messages.Common.PointPosition)
+  nameWithType: PlayerGameObjectMovedResponseMessage.PlayerGameObjectMovedResponseMessage(string, string, PointPosition)
+  nameWithType.vb: PlayerGameObjectMovedResponseMessage.New(String, String, PointPosition)
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.#ctor*
+  name: PlayerGameObjectMovedResponseMessage
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerGameObjectMovedResponseMessage__ctor_
+  commentId: Overload:DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.PlayerGameObjectMovedResponseMessage
+  fullName.vb: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.New
+  nameWithType: PlayerGameObjectMovedResponseMessage.PlayerGameObjectMovedResponseMessage
+  nameWithType.vb: PlayerGameObjectMovedResponseMessage.New
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.MapId
+  name: MapId
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerGameObjectMovedResponseMessage_MapId
+  commentId: P:DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.MapId
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.MapId
+  nameWithType: PlayerGameObjectMovedResponseMessage.MapId
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.MapId*
+  name: MapId
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerGameObjectMovedResponseMessage_MapId_
+  commentId: Overload:DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.MapId
+  isSpec: "True"
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.MapId
+  nameWithType: PlayerGameObjectMovedResponseMessage.MapId
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.PlayerId
+  name: PlayerId
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerGameObjectMovedResponseMessage_PlayerId
+  commentId: P:DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.PlayerId
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.PlayerId
+  nameWithType: PlayerGameObjectMovedResponseMessage.PlayerId
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.PlayerId*
+  name: PlayerId
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerGameObjectMovedResponseMessage_PlayerId_
+  commentId: Overload:DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.PlayerId
+  isSpec: "True"
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.PlayerId
+  nameWithType: PlayerGameObjectMovedResponseMessage.PlayerId
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.Position
+  name: Position
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerGameObjectMovedResponseMessage_Position
+  commentId: P:DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.Position
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.Position
+  nameWithType: PlayerGameObjectMovedResponseMessage.Position
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.Position*
+  name: Position
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerGameObjectMovedResponseMessage_Position_
+  commentId: Overload:DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.Position
+  isSpec: "True"
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectMovedResponseMessage.Position
+  nameWithType: PlayerGameObjectMovedResponseMessage.Position
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectRemovedResponseMessage
+  name: PlayerGameObjectRemovedResponseMessage
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectRemovedResponseMessage.html
+  commentId: T:DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectRemovedResponseMessage
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectRemovedResponseMessage
+  nameWithType: PlayerGameObjectRemovedResponseMessage
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectRemovedResponseMessage.#ctor
+  name: PlayerGameObjectRemovedResponseMessage()
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectRemovedResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerGameObjectRemovedResponseMessage__ctor
+  commentId: M:DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectRemovedResponseMessage.#ctor
+  name.vb: New()
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectRemovedResponseMessage.PlayerGameObjectRemovedResponseMessage()
+  fullName.vb: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectRemovedResponseMessage.New()
+  nameWithType: PlayerGameObjectRemovedResponseMessage.PlayerGameObjectRemovedResponseMessage()
+  nameWithType.vb: PlayerGameObjectRemovedResponseMessage.New()
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectRemovedResponseMessage.#ctor(System.String,System.String)
+  name: PlayerGameObjectRemovedResponseMessage(string, string)
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectRemovedResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerGameObjectRemovedResponseMessage__ctor_System_String_System_String_
+  commentId: M:DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectRemovedResponseMessage.#ctor(System.String,System.String)
+  name.vb: New(String, String)
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectRemovedResponseMessage.PlayerGameObjectRemovedResponseMessage(string, string)
+  fullName.vb: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectRemovedResponseMessage.New(String, String)
+  nameWithType: PlayerGameObjectRemovedResponseMessage.PlayerGameObjectRemovedResponseMessage(string, string)
+  nameWithType.vb: PlayerGameObjectRemovedResponseMessage.New(String, String)
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectRemovedResponseMessage.#ctor*
+  name: PlayerGameObjectRemovedResponseMessage
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectRemovedResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerGameObjectRemovedResponseMessage__ctor_
+  commentId: Overload:DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectRemovedResponseMessage.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectRemovedResponseMessage.PlayerGameObjectRemovedResponseMessage
+  fullName.vb: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectRemovedResponseMessage.New
+  nameWithType: PlayerGameObjectRemovedResponseMessage.PlayerGameObjectRemovedResponseMessage
+  nameWithType.vb: PlayerGameObjectRemovedResponseMessage.New
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectRemovedResponseMessage.Id
+  name: Id
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectRemovedResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerGameObjectRemovedResponseMessage_Id
+  commentId: P:DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectRemovedResponseMessage.Id
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectRemovedResponseMessage.Id
+  nameWithType: PlayerGameObjectRemovedResponseMessage.Id
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectRemovedResponseMessage.Id*
+  name: Id
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectRemovedResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerGameObjectRemovedResponseMessage_Id_
+  commentId: Overload:DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectRemovedResponseMessage.Id
+  isSpec: "True"
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectRemovedResponseMessage.Id
+  nameWithType: PlayerGameObjectRemovedResponseMessage.Id
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectRemovedResponseMessage.MapId
+  name: MapId
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectRemovedResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerGameObjectRemovedResponseMessage_MapId
+  commentId: P:DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectRemovedResponseMessage.MapId
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectRemovedResponseMessage.MapId
+  nameWithType: PlayerGameObjectRemovedResponseMessage.MapId
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectRemovedResponseMessage.MapId*
+  name: MapId
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectRemovedResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerGameObjectRemovedResponseMessage_MapId_
+  commentId: Overload:DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectRemovedResponseMessage.MapId
+  isSpec: "True"
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectRemovedResponseMessage.MapId
+  nameWithType: PlayerGameObjectRemovedResponseMessage.MapId
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem
+  name: PlayerInventoryItem
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.html
+  commentId: T:DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem
+  nameWithType: PlayerInventoryItem
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.ItemDescription
+  name: ItemDescription
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.html#DarkStar_Network_Protocol_Messages_Players_PlayerInventoryItem_ItemDescription
+  commentId: P:DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.ItemDescription
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.ItemDescription
+  nameWithType: PlayerInventoryItem.ItemDescription
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.ItemDescription*
+  name: ItemDescription
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.html#DarkStar_Network_Protocol_Messages_Players_PlayerInventoryItem_ItemDescription_
+  commentId: Overload:DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.ItemDescription
+  isSpec: "True"
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.ItemDescription
+  nameWithType: PlayerInventoryItem.ItemDescription
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.ItemId
+  name: ItemId
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.html#DarkStar_Network_Protocol_Messages_Players_PlayerInventoryItem_ItemId
+  commentId: P:DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.ItemId
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.ItemId
+  nameWithType: PlayerInventoryItem.ItemId
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.ItemId*
+  name: ItemId
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.html#DarkStar_Network_Protocol_Messages_Players_PlayerInventoryItem_ItemId_
+  commentId: Overload:DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.ItemId
+  isSpec: "True"
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.ItemId
+  nameWithType: PlayerInventoryItem.ItemId
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.ItemName
+  name: ItemName
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.html#DarkStar_Network_Protocol_Messages_Players_PlayerInventoryItem_ItemName
+  commentId: P:DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.ItemName
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.ItemName
+  nameWithType: PlayerInventoryItem.ItemName
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.ItemName*
+  name: ItemName
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.html#DarkStar_Network_Protocol_Messages_Players_PlayerInventoryItem_ItemName_
+  commentId: Overload:DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.ItemName
+  isSpec: "True"
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.ItemName
+  nameWithType: PlayerInventoryItem.ItemName
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.Quantity
+  name: Quantity
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.html#DarkStar_Network_Protocol_Messages_Players_PlayerInventoryItem_Quantity
+  commentId: P:DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.Quantity
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.Quantity
+  nameWithType: PlayerInventoryItem.Quantity
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.Quantity*
+  name: Quantity
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.html#DarkStar_Network_Protocol_Messages_Players_PlayerInventoryItem_Quantity_
+  commentId: Overload:DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.Quantity
+  isSpec: "True"
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.Quantity
+  nameWithType: PlayerInventoryItem.Quantity
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.TileId
+  name: TileId
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.html#DarkStar_Network_Protocol_Messages_Players_PlayerInventoryItem_TileId
+  commentId: P:DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.TileId
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.TileId
+  nameWithType: PlayerInventoryItem.TileId
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.TileId*
+  name: TileId
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.html#DarkStar_Network_Protocol_Messages_Players_PlayerInventoryItem_TileId_
+  commentId: Overload:DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.TileId
+  isSpec: "True"
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerInventoryItem.TileId
+  nameWithType: PlayerInventoryItem.TileId
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerInventoryRequestMessage
+  name: PlayerInventoryRequestMessage
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerInventoryRequestMessage.html
+  commentId: T:DarkStar.Network.Protocol.Messages.Players.PlayerInventoryRequestMessage
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerInventoryRequestMessage
+  nameWithType: PlayerInventoryRequestMessage
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerInventoryResponseMessage
+  name: PlayerInventoryResponseMessage
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerInventoryResponseMessage.html
+  commentId: T:DarkStar.Network.Protocol.Messages.Players.PlayerInventoryResponseMessage
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerInventoryResponseMessage
+  nameWithType: PlayerInventoryResponseMessage
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerInventoryResponseMessage.Items
+  name: Items
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerInventoryResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerInventoryResponseMessage_Items
+  commentId: P:DarkStar.Network.Protocol.Messages.Players.PlayerInventoryResponseMessage.Items
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerInventoryResponseMessage.Items
+  nameWithType: PlayerInventoryResponseMessage.Items
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerInventoryResponseMessage.Items*
+  name: Items
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerInventoryResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerInventoryResponseMessage_Items_
+  commentId: Overload:DarkStar.Network.Protocol.Messages.Players.PlayerInventoryResponseMessage.Items
+  isSpec: "True"
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerInventoryResponseMessage.Items
+  nameWithType: PlayerInventoryResponseMessage.Items
 - uid: DarkStar.Network.Protocol.Messages.Players.PlayerListRequestMessage
   name: PlayerListRequestMessage
   href: api/DarkStar.Network.Protocol.Messages.Players.PlayerListRequestMessage.html
@@ -20415,15 +20776,15 @@ references:
   fullName.vb: DarkStar.Network.Protocol.Messages.Triggers.Npc.NpcRemovedResponseMessage.New()
   nameWithType: NpcRemovedResponseMessage.NpcRemovedResponseMessage()
   nameWithType.vb: NpcRemovedResponseMessage.New()
-- uid: DarkStar.Network.Protocol.Messages.Triggers.Npc.NpcRemovedResponseMessage.#ctor(System.String,System.String,DarkStar.Network.Protocol.Messages.Common.PointPosition)
-  name: NpcRemovedResponseMessage(string, string, PointPosition)
-  href: api/DarkStar.Network.Protocol.Messages.Triggers.Npc.NpcRemovedResponseMessage.html#DarkStar_Network_Protocol_Messages_Triggers_Npc_NpcRemovedResponseMessage__ctor_System_String_System_String_DarkStar_Network_Protocol_Messages_Common_PointPosition_
-  commentId: M:DarkStar.Network.Protocol.Messages.Triggers.Npc.NpcRemovedResponseMessage.#ctor(System.String,System.String,DarkStar.Network.Protocol.Messages.Common.PointPosition)
-  name.vb: New(String, String, PointPosition)
-  fullName: DarkStar.Network.Protocol.Messages.Triggers.Npc.NpcRemovedResponseMessage.NpcRemovedResponseMessage(string, string, DarkStar.Network.Protocol.Messages.Common.PointPosition)
-  fullName.vb: DarkStar.Network.Protocol.Messages.Triggers.Npc.NpcRemovedResponseMessage.New(String, String, DarkStar.Network.Protocol.Messages.Common.PointPosition)
-  nameWithType: NpcRemovedResponseMessage.NpcRemovedResponseMessage(string, string, PointPosition)
-  nameWithType.vb: NpcRemovedResponseMessage.New(String, String, PointPosition)
+- uid: DarkStar.Network.Protocol.Messages.Triggers.Npc.NpcRemovedResponseMessage.#ctor(System.String,System.String)
+  name: NpcRemovedResponseMessage(string, string)
+  href: api/DarkStar.Network.Protocol.Messages.Triggers.Npc.NpcRemovedResponseMessage.html#DarkStar_Network_Protocol_Messages_Triggers_Npc_NpcRemovedResponseMessage__ctor_System_String_System_String_
+  commentId: M:DarkStar.Network.Protocol.Messages.Triggers.Npc.NpcRemovedResponseMessage.#ctor(System.String,System.String)
+  name.vb: New(String, String)
+  fullName: DarkStar.Network.Protocol.Messages.Triggers.Npc.NpcRemovedResponseMessage.NpcRemovedResponseMessage(string, string)
+  fullName.vb: DarkStar.Network.Protocol.Messages.Triggers.Npc.NpcRemovedResponseMessage.New(String, String)
+  nameWithType: NpcRemovedResponseMessage.NpcRemovedResponseMessage(string, string)
+  nameWithType.vb: NpcRemovedResponseMessage.New(String, String)
 - uid: DarkStar.Network.Protocol.Messages.Triggers.Npc.NpcRemovedResponseMessage.#ctor*
   name: NpcRemovedResponseMessage
   href: api/DarkStar.Network.Protocol.Messages.Triggers.Npc.NpcRemovedResponseMessage.html#DarkStar_Network_Protocol_Messages_Triggers_Npc_NpcRemovedResponseMessage__ctor_
@@ -20460,19 +20821,6 @@ references:
   isSpec: "True"
   fullName: DarkStar.Network.Protocol.Messages.Triggers.Npc.NpcRemovedResponseMessage.NpcId
   nameWithType: NpcRemovedResponseMessage.NpcId
-- uid: DarkStar.Network.Protocol.Messages.Triggers.Npc.NpcRemovedResponseMessage.Position
-  name: Position
-  href: api/DarkStar.Network.Protocol.Messages.Triggers.Npc.NpcRemovedResponseMessage.html#DarkStar_Network_Protocol_Messages_Triggers_Npc_NpcRemovedResponseMessage_Position
-  commentId: P:DarkStar.Network.Protocol.Messages.Triggers.Npc.NpcRemovedResponseMessage.Position
-  fullName: DarkStar.Network.Protocol.Messages.Triggers.Npc.NpcRemovedResponseMessage.Position
-  nameWithType: NpcRemovedResponseMessage.Position
-- uid: DarkStar.Network.Protocol.Messages.Triggers.Npc.NpcRemovedResponseMessage.Position*
-  name: Position
-  href: api/DarkStar.Network.Protocol.Messages.Triggers.Npc.NpcRemovedResponseMessage.html#DarkStar_Network_Protocol_Messages_Triggers_Npc_NpcRemovedResponseMessage_Position_
-  commentId: Overload:DarkStar.Network.Protocol.Messages.Triggers.Npc.NpcRemovedResponseMessage.Position
-  isSpec: "True"
-  fullName: DarkStar.Network.Protocol.Messages.Triggers.Npc.NpcRemovedResponseMessage.Position
-  nameWithType: NpcRemovedResponseMessage.Position
 - uid: DarkStar.Network.Protocol.Messages.Triggers.WorldObject
   name: DarkStar.Network.Protocol.Messages.Triggers.WorldObject
   href: api/DarkStar.Network.Protocol.Messages.Triggers.WorldObject.html
@@ -20666,15 +21014,15 @@ references:
   fullName.vb: DarkStar.Network.Protocol.Messages.Triggers.WorldObject.WorldObjectRemovedResponseMessage.New()
   nameWithType: WorldObjectRemovedResponseMessage.WorldObjectRemovedResponseMessage()
   nameWithType.vb: WorldObjectRemovedResponseMessage.New()
-- uid: DarkStar.Network.Protocol.Messages.Triggers.WorldObject.WorldObjectRemovedResponseMessage.#ctor(System.String,System.String,DarkStar.Network.Protocol.Messages.Common.PointPosition)
-  name: WorldObjectRemovedResponseMessage(string, string, PointPosition)
-  href: api/DarkStar.Network.Protocol.Messages.Triggers.WorldObject.WorldObjectRemovedResponseMessage.html#DarkStar_Network_Protocol_Messages_Triggers_WorldObject_WorldObjectRemovedResponseMessage__ctor_System_String_System_String_DarkStar_Network_Protocol_Messages_Common_PointPosition_
-  commentId: M:DarkStar.Network.Protocol.Messages.Triggers.WorldObject.WorldObjectRemovedResponseMessage.#ctor(System.String,System.String,DarkStar.Network.Protocol.Messages.Common.PointPosition)
-  name.vb: New(String, String, PointPosition)
-  fullName: DarkStar.Network.Protocol.Messages.Triggers.WorldObject.WorldObjectRemovedResponseMessage.WorldObjectRemovedResponseMessage(string, string, DarkStar.Network.Protocol.Messages.Common.PointPosition)
-  fullName.vb: DarkStar.Network.Protocol.Messages.Triggers.WorldObject.WorldObjectRemovedResponseMessage.New(String, String, DarkStar.Network.Protocol.Messages.Common.PointPosition)
-  nameWithType: WorldObjectRemovedResponseMessage.WorldObjectRemovedResponseMessage(string, string, PointPosition)
-  nameWithType.vb: WorldObjectRemovedResponseMessage.New(String, String, PointPosition)
+- uid: DarkStar.Network.Protocol.Messages.Triggers.WorldObject.WorldObjectRemovedResponseMessage.#ctor(System.String,System.String)
+  name: WorldObjectRemovedResponseMessage(string, string)
+  href: api/DarkStar.Network.Protocol.Messages.Triggers.WorldObject.WorldObjectRemovedResponseMessage.html#DarkStar_Network_Protocol_Messages_Triggers_WorldObject_WorldObjectRemovedResponseMessage__ctor_System_String_System_String_
+  commentId: M:DarkStar.Network.Protocol.Messages.Triggers.WorldObject.WorldObjectRemovedResponseMessage.#ctor(System.String,System.String)
+  name.vb: New(String, String)
+  fullName: DarkStar.Network.Protocol.Messages.Triggers.WorldObject.WorldObjectRemovedResponseMessage.WorldObjectRemovedResponseMessage(string, string)
+  fullName.vb: DarkStar.Network.Protocol.Messages.Triggers.WorldObject.WorldObjectRemovedResponseMessage.New(String, String)
+  nameWithType: WorldObjectRemovedResponseMessage.WorldObjectRemovedResponseMessage(string, string)
+  nameWithType.vb: WorldObjectRemovedResponseMessage.New(String, String)
 - uid: DarkStar.Network.Protocol.Messages.Triggers.WorldObject.WorldObjectRemovedResponseMessage.#ctor*
   name: WorldObjectRemovedResponseMessage
   href: api/DarkStar.Network.Protocol.Messages.Triggers.WorldObject.WorldObjectRemovedResponseMessage.html#DarkStar_Network_Protocol_Messages_Triggers_WorldObject_WorldObjectRemovedResponseMessage__ctor_
@@ -20711,19 +21059,6 @@ references:
   isSpec: "True"
   fullName: DarkStar.Network.Protocol.Messages.Triggers.WorldObject.WorldObjectRemovedResponseMessage.MapId
   nameWithType: WorldObjectRemovedResponseMessage.MapId
-- uid: DarkStar.Network.Protocol.Messages.Triggers.WorldObject.WorldObjectRemovedResponseMessage.Position
-  name: Position
-  href: api/DarkStar.Network.Protocol.Messages.Triggers.WorldObject.WorldObjectRemovedResponseMessage.html#DarkStar_Network_Protocol_Messages_Triggers_WorldObject_WorldObjectRemovedResponseMessage_Position
-  commentId: P:DarkStar.Network.Protocol.Messages.Triggers.WorldObject.WorldObjectRemovedResponseMessage.Position
-  fullName: DarkStar.Network.Protocol.Messages.Triggers.WorldObject.WorldObjectRemovedResponseMessage.Position
-  nameWithType: WorldObjectRemovedResponseMessage.Position
-- uid: DarkStar.Network.Protocol.Messages.Triggers.WorldObject.WorldObjectRemovedResponseMessage.Position*
-  name: Position
-  href: api/DarkStar.Network.Protocol.Messages.Triggers.WorldObject.WorldObjectRemovedResponseMessage.html#DarkStar_Network_Protocol_Messages_Triggers_WorldObject_WorldObjectRemovedResponseMessage_Position_
-  commentId: Overload:DarkStar.Network.Protocol.Messages.Triggers.WorldObject.WorldObjectRemovedResponseMessage.Position
-  isSpec: "True"
-  fullName: DarkStar.Network.Protocol.Messages.Triggers.WorldObject.WorldObjectRemovedResponseMessage.Position
-  nameWithType: WorldObjectRemovedResponseMessage.Position
 - uid: DarkStar.Network.Protocol.Messages.World
   name: DarkStar.Network.Protocol.Messages.World
   href: api/DarkStar.Network.Protocol.Messages.World.html
@@ -21059,6 +21394,36 @@ references:
   commentId: F:DarkStar.Network.Protocol.Types.DarkStarMessageType.PlayerDataResponse
   fullName: DarkStar.Network.Protocol.Types.DarkStarMessageType.PlayerDataResponse
   nameWithType: DarkStarMessageType.PlayerDataResponse
+- uid: DarkStar.Network.Protocol.Types.DarkStarMessageType.PlayerGameObjectAddedResponse
+  name: PlayerGameObjectAddedResponse
+  href: api/DarkStar.Network.Protocol.Types.DarkStarMessageType.html#DarkStar_Network_Protocol_Types_DarkStarMessageType_PlayerGameObjectAddedResponse
+  commentId: F:DarkStar.Network.Protocol.Types.DarkStarMessageType.PlayerGameObjectAddedResponse
+  fullName: DarkStar.Network.Protocol.Types.DarkStarMessageType.PlayerGameObjectAddedResponse
+  nameWithType: DarkStarMessageType.PlayerGameObjectAddedResponse
+- uid: DarkStar.Network.Protocol.Types.DarkStarMessageType.PlayerGameObjectMovedResponse
+  name: PlayerGameObjectMovedResponse
+  href: api/DarkStar.Network.Protocol.Types.DarkStarMessageType.html#DarkStar_Network_Protocol_Types_DarkStarMessageType_PlayerGameObjectMovedResponse
+  commentId: F:DarkStar.Network.Protocol.Types.DarkStarMessageType.PlayerGameObjectMovedResponse
+  fullName: DarkStar.Network.Protocol.Types.DarkStarMessageType.PlayerGameObjectMovedResponse
+  nameWithType: DarkStarMessageType.PlayerGameObjectMovedResponse
+- uid: DarkStar.Network.Protocol.Types.DarkStarMessageType.PlayerGameObjectRemovedResponse
+  name: PlayerGameObjectRemovedResponse
+  href: api/DarkStar.Network.Protocol.Types.DarkStarMessageType.html#DarkStar_Network_Protocol_Types_DarkStarMessageType_PlayerGameObjectRemovedResponse
+  commentId: F:DarkStar.Network.Protocol.Types.DarkStarMessageType.PlayerGameObjectRemovedResponse
+  fullName: DarkStar.Network.Protocol.Types.DarkStarMessageType.PlayerGameObjectRemovedResponse
+  nameWithType: DarkStarMessageType.PlayerGameObjectRemovedResponse
+- uid: DarkStar.Network.Protocol.Types.DarkStarMessageType.PlayerInventoryRequest
+  name: PlayerInventoryRequest
+  href: api/DarkStar.Network.Protocol.Types.DarkStarMessageType.html#DarkStar_Network_Protocol_Types_DarkStarMessageType_PlayerInventoryRequest
+  commentId: F:DarkStar.Network.Protocol.Types.DarkStarMessageType.PlayerInventoryRequest
+  fullName: DarkStar.Network.Protocol.Types.DarkStarMessageType.PlayerInventoryRequest
+  nameWithType: DarkStarMessageType.PlayerInventoryRequest
+- uid: DarkStar.Network.Protocol.Types.DarkStarMessageType.PlayerInventoryResponse
+  name: PlayerInventoryResponse
+  href: api/DarkStar.Network.Protocol.Types.DarkStarMessageType.html#DarkStar_Network_Protocol_Types_DarkStarMessageType_PlayerInventoryResponse
+  commentId: F:DarkStar.Network.Protocol.Types.DarkStarMessageType.PlayerInventoryResponse
+  fullName: DarkStar.Network.Protocol.Types.DarkStarMessageType.PlayerInventoryResponse
+  nameWithType: DarkStarMessageType.PlayerInventoryResponse
 - uid: DarkStar.Network.Protocol.Types.DarkStarMessageType.PlayerListRequest
   name: PlayerListRequest
   href: api/DarkStar.Network.Protocol.Types.DarkStarMessageType.html#DarkStar_Network_Protocol_Types_DarkStarMessageType_PlayerListRequest
