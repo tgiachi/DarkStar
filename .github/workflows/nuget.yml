@@ -1,4 +1,4 @@
-name: Publish Void libraries on NuGet
+name: Publish DarkStar libraries on NuGet
  
 on:
   push:
