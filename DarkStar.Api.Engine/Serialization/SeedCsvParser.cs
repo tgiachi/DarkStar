@@ -1,5 +1,3 @@
-
-
 using System.Text;
 using TinyCsv;
 using TinyCsv.Extensions;
@@ -9,7 +7,7 @@ namespace DarkStar.Api.Engine.Serialization;
 public class SeedCsvParser
 {
     private static SeedCsvParser s_instance = null!;
-    public static SeedCsvParser Instance => s_instance ??= new();
+    public static SeedCsvParser Instance => s_instance ??= new SeedCsvParser();
 
     public async Task<IEnumerable<TEntity>> ParseAsync<TEntity>(string fileName) where TEntity : class, new()
     {
@@ -17,7 +15,8 @@ public class SeedCsvParser
         return await csvReader.LoadFromFileAsync(fileName);
     }
 
-    public async Task<bool> WriteHeaderToFileAsync<TEntity>(string fileName, IEnumerable<TEntity> entities) where TEntity : class, new()
+    public async Task<bool> WriteHeaderToFileAsync<TEntity>(string fileName, IEnumerable<TEntity> entities)
+        where TEntity : class, new()
     {
         var csvReader = new TinyCsv<TEntity>();
         await csvReader.SaveAsync(fileName, entities);

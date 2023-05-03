@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Logging;
 
 namespace DarkStar.Network.Hubs;
+
 public class SignalrNetworkServer : IDarkSunNetworkServer
 {
     private readonly ILogger<SignalrNetworkServer> _logger;
@@ -30,9 +31,11 @@ public class SignalrNetworkServer : IDarkSunNetworkServer
 
     private readonly Dictionary<DarkStarMessageType, INetworkServerMessageListener> _messageListeners = new();
 
-    public SignalrNetworkServer(ILogger<SignalrNetworkServer> logger, INetworkMessageBuilder messageBuilder, INetworkSessionManager sessionManager, IHubContext<SignalrMessageHub> hubContext)
+    public SignalrNetworkServer(
+        ILogger<SignalrNetworkServer> logger, INetworkMessageBuilder messageBuilder, INetworkSessionManager sessionManager,
+        IHubContext<SignalrMessageHub> hubContext
+    )
     {
-
         _logger = logger;
         _messageBuilder = messageBuilder;
         _sessionManager = sessionManager;
@@ -44,29 +47,30 @@ public class SignalrNetworkServer : IDarkSunNetworkServer
         _logger.LogInformation("Client {IpAddress} connected with sessionId: {SessionId}", sessionId);
         var messages = await OnClientConnected?.Invoke(sessionId);
         await SendMessageAsync(sessionId, messages);
-
     }
 
 
     public async Task SendMessageAsync(string sessionId, IDarkStarNetworkMessage message)
     {
-        await _hubContext.Clients.Client(sessionId).SendAsync("IncomingMessage", Encoding.UTF8.GetString(_messageBuilder.BuildMessage(message)));
-
+        await _hubContext.Clients.Client(sessionId)
+            .SendAsync("IncomingMessage", Encoding.UTF8.GetString(_messageBuilder.BuildMessage(message)));
     }
 
     public async Task SendMessageAsync(string sessionId, List<IDarkStarNetworkMessage> message)
     {
         foreach (var networkMessage in message)
         {
-            await _hubContext.Clients.Client(sessionId).SendAsync("IncomingMessage", Encoding.UTF8.GetString(_messageBuilder.BuildMessage(networkMessage)));
+            await _hubContext.Clients.Client(sessionId)
+                .SendAsync("IncomingMessage", Encoding.UTF8.GetString(_messageBuilder.BuildMessage(networkMessage)));
         }
-
     }
 
     public async Task BroadcastMessageAsync(IDarkStarNetworkMessage message)
     {
-        await _hubContext.Clients.All.SendAsync("IncomingMessage", Encoding.UTF8.GetString(_messageBuilder.BuildMessage(message)));
-
+        await _hubContext.Clients.All.SendAsync(
+            "IncomingMessage",
+            Encoding.UTF8.GetString(_messageBuilder.BuildMessage(message))
+        );
     }
 
     public async Task DispatchMessageReceivedAsync(
@@ -77,6 +81,7 @@ public class SignalrNetworkServer : IDarkSunNetworkServer
         {
             await OnMessageReceived?.Invoke(sessionId, messageType, message);
         }
+
         if (_messageListeners.TryGetValue(messageType, out var listener))
         {
             await listener.OnMessageReceivedAsync(sessionId, messageType, message);

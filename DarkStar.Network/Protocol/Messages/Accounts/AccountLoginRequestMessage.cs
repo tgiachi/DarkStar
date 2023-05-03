@@ -6,21 +6,16 @@ using System.Threading.Tasks;
 using DarkStar.Network.Attributes;
 using DarkStar.Network.Protocol.Interfaces.Messages;
 using DarkStar.Network.Protocol.Types;
-
-
 using ProtoBuf;
 
 namespace DarkStar.Network.Protocol.Messages.Accounts;
-
 
 [NetworkMessage(DarkStarMessageType.AccountLoginRequest)]
 [ProtoContract]
 public struct AccountLoginRequestMessage : IDarkStarNetworkMessage
 {
-    [ProtoMember(1)]
-    public string Email { get; set; } = null!;
-    [ProtoMember(2)]
-    public string Password { get; set; } = null!;
+    [ProtoMember(1)] public string Email { get; set; } = null!;
+    [ProtoMember(2)] public string Password { get; set; } = null!;
 
     public AccountLoginRequestMessage()
     {

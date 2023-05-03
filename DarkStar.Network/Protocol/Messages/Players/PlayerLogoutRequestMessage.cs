@@ -10,7 +10,6 @@ using ProtoBuf;
 
 namespace DarkStar.Network.Protocol.Messages.Players;
 
-
 [NetworkMessage(DarkStarMessageType.PlayerLogoutRequest)]
 [ProtoContract]
 public struct PlayerLogoutRequestMessage : IDarkStarNetworkMessage

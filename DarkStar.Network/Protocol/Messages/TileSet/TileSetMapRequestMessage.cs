@@ -17,13 +17,9 @@ public class TileSetMapRequestMessage : IDarkStarNetworkMessage
 {
     [ProtoMember(1)] public string TileSetName { get; set; } = null!;
 
-    public TileSetMapRequestMessage(string tileSetName)
-    {
-        TileSetName = tileSetName;
-    }
+    public TileSetMapRequestMessage(string tileSetName) => TileSetName = tileSetName;
 
     public TileSetMapRequestMessage()
     {
     }
-
 }

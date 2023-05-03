@@ -10,16 +10,13 @@ using ProtoBuf;
 
 namespace DarkStar.Network.Protocol.Messages.Players;
 
-
 [NetworkMessage(DarkStarMessageType.PlayerLoginRequest)]
 [ProtoContract]
 public struct PlayerLoginRequestMessage : IDarkStarNetworkMessage
 {
-    [ProtoMember(1)]
-    public Guid PlayerId { get; set; }
+    [ProtoMember(1)] public Guid PlayerId { get; set; }
 
-    [ProtoMember(2)]
-    public string PlayerName { get; set; } = null!;
+    [ProtoMember(2)] public string PlayerName { get; set; } = null!;
 
     public PlayerLoginRequestMessage(Guid playerId, string playerName)
     {
@@ -29,6 +26,5 @@ public struct PlayerLoginRequestMessage : IDarkStarNetworkMessage
 
     public PlayerLoginRequestMessage()
     {
-
     }
 }

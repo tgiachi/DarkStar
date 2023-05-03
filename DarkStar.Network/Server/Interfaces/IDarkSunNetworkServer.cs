@@ -11,8 +11,10 @@ namespace DarkStar.Network.Server.Interfaces;
 
 public interface IDarkSunNetworkServer
 {
-    delegate Task MessageReceivedDelegate(string sessionId, DarkStarMessageType messageType,
-        IDarkStarNetworkMessage message);
+    delegate Task MessageReceivedDelegate(
+        string sessionId, DarkStarMessageType messageType,
+        IDarkStarNetworkMessage message
+    );
 
     delegate Task<List<IDarkStarNetworkMessage>> ClientConnectedMessages(string sessionId);
 

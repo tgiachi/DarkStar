@@ -13,8 +13,6 @@ using Microsoft.Extensions.Logging;
 
 namespace DarkStar.Network.Hubs;
 
-
-
 public class SignalrMessageHub : Hub
 {
     private readonly ILogger<SignalrMessageHub> _logger;
@@ -24,7 +22,8 @@ public class SignalrMessageHub : Hub
 
 
     public SignalrMessageHub(
-        ILogger<SignalrMessageHub> logger, INetworkMessageBuilder messageBuilder, INetworkSessionManager sessionManager, IDarkSunNetworkServer networkServer
+        ILogger<SignalrMessageHub> logger, INetworkMessageBuilder messageBuilder, INetworkSessionManager sessionManager,
+        IDarkSunNetworkServer networkServer
     )
     {
         _logger = logger;
@@ -32,6 +31,7 @@ public class SignalrMessageHub : Hub
         _sessionManager = sessionManager;
         _networkServer = networkServer;
     }
+
     public async Task SendMessage(string message)
     {
         try
@@ -47,7 +47,6 @@ public class SignalrMessageHub : Hub
         catch (Exception ex)
         {
             _logger.LogError("Error during receive message from sessionId: {Id}: {Ex}", Context.ConnectionId, ex);
-
         }
     }
 

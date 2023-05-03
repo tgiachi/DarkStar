@@ -16,7 +16,7 @@ namespace DarkStar.Engine.ScriptModules;
 [ScriptModule]
 public class PlayerScriptModule : BaseScriptModule
 {
-    public PlayerScriptModule(ILogger<BaseScriptModule> logger, IDarkSunEngine engine) : base(logger, engine)
+    public PlayerScriptModule(ILogger<PlayerScriptModule> logger, IDarkSunEngine engine) : base(logger, engine)
     {
     }
 

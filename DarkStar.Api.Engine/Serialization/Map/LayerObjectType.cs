@@ -14,5 +14,5 @@ public enum LayerObjectType : short
     Creature,
     Player,
     Effect,
-    Weather,
+    Weather
 }

@@ -22,22 +22,30 @@ public interface IWorldService : IDarkSunEngineService
     void RemoveEntity<TEntity>(string mapId, TEntity entity) where TEntity : IGameObject;
     ValueTask<TEntity?> GetEntityByIdAsync<TEntity>(string mapId, Guid id) where TEntity : BaseGameObject;
     ValueTask<TEntity?> GetEntityBySerialIdAsync<TEntity>(string mapId, uint serialId) where TEntity : BaseGameObject;
-    ValueTask<TEntity> GetEntityByPositionAsync<TEntity>(string mapId, PointPosition position) where TEntity : BaseGameObject;
-    ValueTask<List<TEntity>> GetAllEntitiesInLayerAsync<TEntity>(string mapId, MapLayer layer) where TEntity : BaseGameObject;
+
+    ValueTask<TEntity> GetEntityByPositionAsync<TEntity>(string mapId, PointPosition position)
+        where TEntity : BaseGameObject;
+
+    ValueTask<List<TEntity>> GetAllEntitiesInLayerAsync<TEntity>(string mapId, MapLayer layer)
+        where TEntity : BaseGameObject;
+
     ValueTask<(string mapId, PointPosition position)> GetRandomCityStartingPointAsync();
     ValueTask<List<PlayerGameObject>> GetPlayersByMapIdAsync(string mapId);
     ValueTask RemoveEntityAsync(string mapId, uint id);
 
     bool IsLocationWalkable(string mapId, PointPosition position);
     bool IsLocationWalkable(GoRogue.GameFramework.Map map, PointPosition position);
-    Task<Dictionary<MapLayer, List<IGameObject>>> GetGameObjectsInRangeAsync(string mapId, PointPosition position, int range = 5);
+
+    Task<Dictionary<MapLayer, List<IGameObject>>> GetGameObjectsInRangeAsync(
+        string mapId, PointPosition position, int range = 5
+    );
 
     Task<List<TEntity>> GetEntitiesInRangeAsync<TEntity>(string mapId, MapLayer layer, PointPosition position, int range = 5)
         where TEntity : BaseGameObject;
+
     Task<List<PointPosition>> GetNeighborCellsAsync(string mapId, PointPosition startPosition, int cellsNumber = 5);
     Task<List<PointPosition>> GetFovAsync(string mapId, PointPosition sourcePosition, int radius = 5);
     Task<bool> MovePlayerAsync(string mapId, Guid playerId, PointPosition position);
     List<PlayerGameObject> GetPlayers(string mapId);
     List<PointPosition> CalculateAStarPath(string mapId, PointPosition sourcePosition, PointPosition destinationPosition);
-
 }

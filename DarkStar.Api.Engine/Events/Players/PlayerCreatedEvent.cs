@@ -21,7 +21,5 @@ public class PlayerCreatedEvent : EventBase
 
     public PlayerCreatedEvent()
     {
-
     }
-
 }

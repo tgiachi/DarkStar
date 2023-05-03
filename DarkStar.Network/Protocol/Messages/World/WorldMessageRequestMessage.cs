@@ -10,17 +10,13 @@ using ProtoBuf;
 
 namespace DarkStar.Network.Protocol.Messages.World;
 
-
 [NetworkMessage(DarkStarMessageType.WorldMessageRequest)]
 [ProtoContract]
 public struct WorldMessageRequestMessage : IDarkStarNetworkMessage
 {
-    [ProtoMember(1)]
-    public string Message { get; set; } = null!;
-    [ProtoMember(2)]
-    public string Sender { get; set; } = null!;
-    [ProtoMember(3)]
-    public WorldMessageType MessageType { get; set; }
+    [ProtoMember(1)] public string Message { get; set; } = null!;
+    [ProtoMember(2)] public string Sender { get; set; } = null!;
+    [ProtoMember(3)] public WorldMessageType MessageType { get; set; }
 
 
     public WorldMessageRequestMessage(string message, string sender, WorldMessageType messageType)
@@ -32,6 +28,5 @@ public struct WorldMessageRequestMessage : IDarkStarNetworkMessage
 
     public WorldMessageRequestMessage()
     {
-
     }
 }

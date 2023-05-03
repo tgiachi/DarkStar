@@ -14,7 +14,9 @@ public class AiScriptModule : BaseScriptModule
     private readonly IAiService _aiService;
     private readonly ITypeService _typeService;
 
-    public AiScriptModule(ILogger<AiScriptModule> logger, IDarkSunEngine engine, IAiService aiService, ITypeService typeService) :
+    public AiScriptModule(
+        ILogger<AiScriptModule> logger, IDarkSunEngine engine, IAiService aiService, ITypeService typeService
+    ) :
         base(logger, engine)
     {
         _aiService = aiService;
@@ -24,7 +26,11 @@ public class AiScriptModule : BaseScriptModule
     [ScriptFunction("add_ai_brain_by_type")]
     public void AddAiScriptByType(string npcType, string npcSubType, Action<AiContext> context)
     {
-        _aiService.AddAiScriptByType(_typeService.GetNpcType(npcType)!.Value, _typeService.GetNpcSubType(npcSubType), context);
+        _aiService.AddAiScriptByType(
+            _typeService.GetNpcType(npcType)!.Value,
+            _typeService.GetNpcSubType(npcSubType),
+            context
+        );
     }
 
 

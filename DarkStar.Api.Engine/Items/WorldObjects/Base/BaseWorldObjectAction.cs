@@ -12,6 +12,7 @@ public class BaseWorldObjectAction : IGameObjectAction
     protected IDarkSunEngine Engine { get; }
     protected string MapId { get; private set; } = null!;
     protected WorldGameObject GameObject { get; private set; } = null!;
+
     public BaseWorldObjectAction(ILogger<BaseWorldObjectAction> logger, IDarkSunEngine engine)
     {
         Logger = logger;
@@ -26,7 +27,8 @@ public class BaseWorldObjectAction : IGameObjectAction
         return ValueTask.CompletedTask;
     }
 
-    public virtual ValueTask OnActivatedAsync(string mapId, WorldGameObject gameObject, Guid senderId, bool isNpc) => ValueTask.CompletedTask;
+    public virtual ValueTask OnActivatedAsync(string mapId, WorldGameObject gameObject, Guid senderId, bool isNpc) =>
+        ValueTask.CompletedTask;
 
     protected ValueTask RemoveMySelfAsync() => Engine.WorldService.RemoveEntityAsync(MapId, GameObject.ID);
 

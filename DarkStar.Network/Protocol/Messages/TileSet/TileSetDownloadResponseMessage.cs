@@ -5,15 +5,13 @@ using ProtoBuf;
 
 namespace DarkStar.Network.Protocol.Messages.TileSet;
 
-
 [ProtoContract]
 [NetworkMessage(DarkStarMessageType.TileSetDownloadResponse)]
 public struct TileSetDownloadResponseMessage : IDarkStarNetworkMessage
 {
     [ProtoMember(1)] public string TileSetName { get; set; } = null!;
 
-    [ProtoMember(2)]
-    public byte[] TileSetData { get; set; } = null!;
+    [ProtoMember(2)] public byte[] TileSetData { get; set; } = null!;
 
 
     public TileSetDownloadResponseMessage(string name, byte[] tileSetData)

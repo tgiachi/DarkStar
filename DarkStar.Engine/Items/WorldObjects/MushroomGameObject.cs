@@ -12,13 +12,11 @@ using Microsoft.Extensions.Logging;
 
 namespace DarkStar.Engine.Items.WorldObjects;
 
-
 [GameObjectAction("PROP_MUSHROOM")]
 public class MushroomGameObject : BaseWorldObjectAction
 {
     public MushroomGameObject(ILogger<BaseWorldObjectAction> logger, IDarkSunEngine engine) : base(logger, engine)
     {
-
     }
 
     public override ValueTask OnActivatedAsync(string mapId, WorldGameObject gameObject, Guid senderId, bool isNpc)

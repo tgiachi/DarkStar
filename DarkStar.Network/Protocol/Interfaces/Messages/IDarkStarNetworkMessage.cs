@@ -7,8 +7,6 @@ using System.Threading.Tasks;
 
 namespace DarkStar.Network.Protocol.Interfaces.Messages;
 
-
 public interface IDarkStarNetworkMessage
 {
-
 }

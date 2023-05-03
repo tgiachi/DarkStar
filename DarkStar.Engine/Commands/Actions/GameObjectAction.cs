@@ -8,6 +8,7 @@ using DarkStar.Api.Engine.Types.Commands;
 using DarkStar.Network.Protocol.Messages.Common;
 
 namespace DarkStar.Engine.Commands.Actions;
+
 public class GameObjectAction : ICommandAction
 {
     public double Delay { get; set; } = 500;
@@ -20,5 +21,4 @@ public class GameObjectAction : ICommandAction
     public Guid? NpcObjectId { get; set; }
 
     public PointPosition Position { get; set; }
-
 }

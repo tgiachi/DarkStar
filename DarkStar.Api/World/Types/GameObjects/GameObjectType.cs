@@ -14,7 +14,6 @@ namespace DarkStar.Api.World.Types.GameObjects;
 //    Internal_World_Spawner
 //}
 
-
 [StructLayout(LayoutKind.Auto)]
 public struct GameObjectType
 {
@@ -29,7 +28,5 @@ public struct GameObjectType
 
     public GameObjectType()
     {
-
     }
-
 }

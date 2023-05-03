@@ -1,5 +1,4 @@
 using DarkStar.Database.Entities.Base;
-
 using FreeSql.DataAnnotations;
 
 namespace DarkStar.Database.Entities.Npc;

@@ -17,15 +17,15 @@ public static class PointConverterEx
     {
         return direction switch
         {
-            MoveDirectionType.North => new PointPosition(position.X, position.Y - 1),
-            MoveDirectionType.South => new PointPosition(position.X, position.Y + 1),
-            MoveDirectionType.East => new PointPosition(position.X + 1, position.Y),
-            MoveDirectionType.West => new PointPosition(position.X - 1, position.Y),
+            MoveDirectionType.North     => new PointPosition(position.X, position.Y - 1),
+            MoveDirectionType.South     => new PointPosition(position.X, position.Y + 1),
+            MoveDirectionType.East      => new PointPosition(position.X + 1, position.Y),
+            MoveDirectionType.West      => new PointPosition(position.X - 1, position.Y),
             MoveDirectionType.NorthEast => new PointPosition(position.X + 1, position.Y - 1),
             MoveDirectionType.NorthWest => new PointPosition(position.X - 1, position.Y - 1),
             MoveDirectionType.SouthEast => new PointPosition(position.X + 1, position.Y + 1),
             MoveDirectionType.SouthWest => new PointPosition(position.X - 1, position.Y + 1),
-            _ => throw new ArgumentOutOfRangeException(nameof(direction), direction, null)
+            _                           => throw new ArgumentOutOfRangeException(nameof(direction), direction, null)
         };
     }
 }

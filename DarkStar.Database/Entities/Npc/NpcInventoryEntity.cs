@@ -1,6 +1,5 @@
 using DarkStar.Database.Entities.Base;
 using DarkStar.Database.Entities.Item;
-
 using FreeSql.DataAnnotations;
 
 namespace DarkStar.Database.Entities.Npc;

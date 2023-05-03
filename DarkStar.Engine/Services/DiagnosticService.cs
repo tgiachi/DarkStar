@@ -9,7 +9,6 @@ using DarkStar.Api.Data.Config;
 using DarkStar.Api.Engine.Events.Engine;
 using DarkStar.Api.Engine.Interfaces.Services;
 using DarkStar.Engine.Services.Base;
-
 using Humanizer;
 using Microsoft.Extensions.Logging;
 
@@ -20,14 +19,11 @@ public class DiagnosticService : BaseService<DiagnosticService>, IDiagnosticServ
 {
     private readonly string _pidFileName;
 
-    public DiagnosticService(ILogger<DiagnosticService> logger, DirectoriesConfig directoriesConfig) : base(logger)
-    {
+    public DiagnosticService(ILogger<DiagnosticService> logger, DirectoriesConfig directoriesConfig) : base(logger) =>
         _pidFileName = Path.Join(directoriesConfig[DirectoryNameType.Root], "DarkStar.pid");
-    }
 
     protected override ValueTask<bool> StartAsync()
     {
-
         if (File.Exists(_pidFileName))
         {
             Logger.LogWarning("!!! PID Exists, server did't shutdown correctly!");
@@ -53,10 +49,13 @@ public class DiagnosticService : BaseService<DiagnosticService>, IDiagnosticServ
     {
         var currentProcess = Process.GetCurrentProcess();
 
-        Logger.LogInformation("Memory usage private: {Private} Paged: {Paged} Total Threads: {Threads} PID: {Pid}",
-            currentProcess.PrivateMemorySize64.Bytes(), currentProcess.PagedMemorySize64.Bytes(),
-            currentProcess.Threads.Count, currentProcess.Id);
+        Logger.LogInformation(
+            "Memory usage private: {Private} Paged: {Paged} Total Threads: {Threads} PID: {Pid}",
+            currentProcess.PrivateMemorySize64.Bytes(),
+            currentProcess.PagedMemorySize64.Bytes(),
+            currentProcess.Threads.Count,
+            currentProcess.Id
+        );
         GC.Collect(2, GCCollectionMode.Optimized);
-
     }
 }

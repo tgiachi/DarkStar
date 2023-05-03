@@ -13,11 +13,9 @@ namespace DarkStar.Network.Protocol.Messages.Server;
 [NetworkMessage(DarkStarMessageType.ServerMessageResponse)]
 public struct ServerMessageResponseMessage
 {
-    [ProtoMember(1)]
-    public string Message { get; set; } = null!;
+    [ProtoMember(1)] public string Message { get; set; } = null!;
 
-    [ProtoMember(2)]
-    public ServerMessageType Type { get; set; }
+    [ProtoMember(2)] public ServerMessageType Type { get; set; }
 
     public ServerMessageResponseMessage(string message, ServerMessageType type)
     {
@@ -27,15 +25,12 @@ public struct ServerMessageResponseMessage
 
     public ServerMessageResponseMessage()
     {
-
     }
-
 }
-
 
 [ProtoContract]
 public enum ServerMessageType
 {
     Announcement,
-    Information,
+    Information
 }

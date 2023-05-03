@@ -4,7 +4,6 @@ using System.Diagnostics;
 using DarkStar.Api.Attributes.Services;
 using DarkStar.Api.Engine.Interfaces.Services;
 using DarkStar.Engine.Services.Base;
-
 using Microsoft.Extensions.Logging;
 
 namespace DarkStar.Engine.Services;
@@ -26,8 +25,12 @@ public class SchedulerService : BaseService<SchedulerService>, ISchedulerService
     protected override ValueTask<bool> StartAsync()
     {
         Logger.LogInformation("Starting Scheduler");
-        _ = Task.Factory.StartNew(ExecuteSchedulerTaskAsync, _schedulerCancellationToken,
-            TaskCreationOptions.LongRunning, TaskScheduler.Current);
+        _ = Task.Factory.StartNew(
+            ExecuteSchedulerTaskAsync,
+            _schedulerCancellationToken,
+            TaskCreationOptions.LongRunning,
+            TaskScheduler.Current
+        );
         return base.StartAsync();
     }
 

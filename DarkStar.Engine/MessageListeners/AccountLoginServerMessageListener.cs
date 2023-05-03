@@ -12,7 +12,6 @@ using DarkStar.Network.Protocol.Interfaces.Messages;
 using DarkStar.Network.Protocol.Messages.Accounts;
 using DarkStar.Network.Protocol.Messages.Server;
 using DarkStar.Network.Protocol.Types;
-
 using Microsoft.Extensions.Logging;
 
 namespace DarkStar.Engine.MessageListeners;
@@ -20,17 +19,23 @@ namespace DarkStar.Engine.MessageListeners;
 [NetworkMessageListener(DarkStarMessageType.AccountLoginRequest)]
 public class AccountLoginMessageListener : BaseNetworkMessageListener<AccountLoginRequestMessage>
 {
-    public AccountLoginMessageListener(ILogger<BaseNetworkMessageListener<AccountLoginRequestMessage>> logger,
-        IDarkSunEngine engine) : base(logger, engine)
+    public AccountLoginMessageListener(
+        ILogger<BaseNetworkMessageListener<AccountLoginRequestMessage>> logger,
+        IDarkSunEngine engine
+    ) : base(logger, engine)
     {
     }
 
-    public override async Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(string sessionId,
-        DarkStarMessageType messageType, AccountLoginRequestMessage message)
+    public override async Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(
+        string sessionId,
+        DarkStarMessageType messageType, AccountLoginRequestMessage message
+    )
     {
         Logger.LogInformation("Received login request from {Id}", sessionId);
-        var account = await Engine.DatabaseService.QueryAsSingleAsync<AccountEntity>(entity =>
-            entity.Email == message.Email);
+        var account = await Engine.DatabaseService.QueryAsSingleAsync<AccountEntity>(
+            entity =>
+                entity.Email == message.Email
+        );
 
 
         if (account == null!)

@@ -1,4 +1,3 @@
-
 using System;
 using System.Numerics;
 
@@ -15,5 +14,4 @@ public static class RandomUtils
     public static bool RandomBool() => s_random.Next(2) == 1;
 
     public static IEnumerable<int> RandEnumerable(int min, int max) => Enumerable.Range(min, Range(min, max));
-
 }

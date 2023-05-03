@@ -14,15 +14,10 @@ namespace DarkStar.Network.Protocol.Messages.TileSet;
 [ProtoContract]
 public class TileSetDownloadRequestMessage : IDarkStarNetworkMessage
 {
-
     [ProtoMember(1)] public string TileName { get; set; } = null!;
 
 
-
-    public TileSetDownloadRequestMessage(string tileName)
-    {
-        TileName = tileName;
-    }
+    public TileSetDownloadRequestMessage(string tileName) => TileName = tileName;
 
     public TileSetDownloadRequestMessage()
     {

@@ -15,14 +15,12 @@ namespace DarkStar.Network.Protocol.Messages.Players;
 [NetworkMessage(DarkStarMessageType.PlayerMoveResponse)]
 public struct PlayerMoveResponseMessage : IDarkStarNetworkMessage
 {
-    [ProtoMember(1)]
-    public PointPosition Position { get; set; }
+    [ProtoMember(1)] public PointPosition Position { get; set; }
 
 
     public PlayerMoveResponseMessage(PointPosition position) => Position = position;
 
     public PlayerMoveResponseMessage()
     {
-
     }
 }

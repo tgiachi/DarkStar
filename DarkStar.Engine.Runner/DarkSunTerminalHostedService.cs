@@ -11,46 +11,44 @@ namespace DarkStar.Engine.Runner;
 public class DarkSunTerminalHostedService : IHostedService
 {
     private readonly IDarkSunEngine _darkSunEngine;
-    public DarkSunTerminalHostedService(IDarkSunEngine darkSunEngine)
-    {
-        _darkSunEngine = darkSunEngine;
-    }
+    public DarkSunTerminalHostedService(IDarkSunEngine darkSunEngine) => _darkSunEngine = darkSunEngine;
 
 
     public Task StartAsync(CancellationToken cancellationToken)
     {
-        _ = Task.Run(() =>
-        {
-            Console.WriteLine(">> PRESS ENTER FOR START LUA SHELL");
-            var command = Console.ReadLine();
-            while (command != "EXIT")
+        _ = Task.Run(
+            () =>
             {
-                Console.Write("SHELL > ");
-                command = Console.ReadLine();
-                var result = _darkSunEngine.ScriptEngineService.ExecuteCommand(command!);
-
-                if (result.Result != null)
+                Console.WriteLine(">> PRESS ENTER FOR START LUA SHELL");
+                var command = Console.ReadLine();
+                while (command != "EXIT")
                 {
-                    foreach (var item in result.Result)
+                    Console.Write("SHELL > ");
+                    command = Console.ReadLine();
+                    var result = _darkSunEngine.ScriptEngineService.ExecuteCommand(command!);
+
+                    if (result.Result != null)
                     {
-                        Console.WriteLine(item);
+                        foreach (var item in result.Result)
+                        {
+                            Console.WriteLine(item);
+                        }
+                    }
+
+                    if (result.Exception != null)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine(result.Exception.Message);
+                        Console.ResetColor();
                     }
                 }
-                if (result.Exception != null)
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine(result.Exception.Message);
-                    Console.ResetColor();
-                }
-            }
-        }, cancellationToken);
+            },
+            cancellationToken
+        );
 
 
         return Task.CompletedTask;
     }
 
-    public Task StopAsync(CancellationToken cancellationToken)
-    {
-        return Task.CompletedTask;
-    }
+    public Task StopAsync(CancellationToken cancellationToken) => Task.CompletedTask;
 }

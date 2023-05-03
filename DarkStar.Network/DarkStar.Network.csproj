@@ -4,7 +4,19 @@
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <Version>0.6.0</Version>
+        <Version>0.6.1</Version>
+        <GenerateAssemblyInfo>True</GenerateAssemblyInfo>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+        <Authors>tgiachi (squid@stormwind.it)</Authors>
+        <PackageProjectUrl>https://github.com/tgiachi/darksun</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/tgiachi/darksun</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <Version>0.6.1</Version>
+        <Title>Dark Star MMO Network protocol</Title>
+        <Description>    </Description>
+        <Copyright>MIT License</Copyright>
+        <PackageLicenseUrl>https://github.com/tgiachi/DarkStar/blob/main/LICENSE</PackageLicenseUrl>
+        <PackageIcon>dark_star_icon.png</PackageIcon>
     </PropertyGroup>
 
 
@@ -33,6 +45,13 @@
 
     <ItemGroup>
         <Folder Include="Protocol\Messages\Triggers\Players\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="dark_star_icon.png">
+        <Pack>True</Pack>
+        <PackagePath></PackagePath>
+      </None>
     </ItemGroup>
 
 </Project>

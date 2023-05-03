@@ -15,8 +15,7 @@ namespace DarkStar.Api.Serialization.TileSets;
 [SeedObject("tileSetMap")]
 public class TileSetMapSerializable
 {
-    [Column]
-    public int Id { get; set; }
+    [Column] public int Id { get; set; }
     [Column] public string Name { get; set; }
 
     [Column] public string Category { get; set; }
@@ -24,8 +23,7 @@ public class TileSetMapSerializable
 
     [Column] public string? Tag { get; set; }
 
-    [Column]
-    public bool IsTransparent { get; set; }
+    [Column] public bool IsTransparent { get; set; }
 
     public override string ToString() => $"Id: {Id},  IsBlocked: {IsTransparent}";
 }

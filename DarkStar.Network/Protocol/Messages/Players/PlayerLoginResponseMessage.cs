@@ -16,8 +16,5 @@ public class PlayerLoginResponseMessage : IDarkStarNetworkMessage
 {
     public bool Success { get; set; }
 
-    public PlayerLoginResponseMessage(bool success)
-    {
-        Success = success;
-    }
+    public PlayerLoginResponseMessage(bool success) => Success = success;
 }

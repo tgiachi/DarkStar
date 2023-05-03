@@ -16,10 +16,7 @@ public class PlayerLogoutResponseMessage : IDarkStarNetworkMessage
 {
     public bool Success { get; set; }
 
-    public PlayerLogoutResponseMessage(bool success)
-    {
-        Success = success;
-    }
+    public PlayerLogoutResponseMessage(bool success) => Success = success;
 
     public PlayerLogoutResponseMessage()
     {

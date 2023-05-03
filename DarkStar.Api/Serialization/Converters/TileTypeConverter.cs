@@ -11,13 +11,7 @@ namespace DarkStar.Api.Serialization.Converters;
 
 public class TileTypeConverter : IValueConverter
 {
-    public string Convert(object value, object parameter, IFormatProvider provider)
-    {
-        return "";
-    }
+    public string Convert(object value, object parameter, IFormatProvider provider) => "";
 
-    public object ConvertBack(string value, Type targetType, object parameter, IFormatProvider provider)
-    {
-        return null!;
-    }
+    public object ConvertBack(string value, Type targetType, object parameter, IFormatProvider provider) => null!;
 }

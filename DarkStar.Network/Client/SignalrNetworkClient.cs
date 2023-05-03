@@ -3,15 +3,14 @@ using DarkStar.Network.Interfaces;
 using DarkStar.Network.Protocol.Interfaces.Builders;
 using DarkStar.Network.Protocol.Types;
 using Microsoft.Extensions.Logging;
-
 using System.Text;
-
 using DarkStar.Network.Data;
 using DarkStar.Network.Protocol.Interfaces.Messages;
 using Humanizer;
 using Microsoft.AspNetCore.SignalR.Client;
 
 namespace DarkStar.Network.Client;
+
 public class SignalrNetworkClient : IDarkStarNetworkClient
 {
     public event IDarkStarNetworkClient.MessageReceivedDelegate? OnMessageReceived;
@@ -22,7 +21,9 @@ public class SignalrNetworkClient : IDarkStarNetworkClient
     private HubConnection _hubConnection;
     private readonly Dictionary<DarkStarMessageType, INetworkClientMessageListener> _messageListeners = new();
 
-    public SignalrNetworkClient(ILogger<SignalrNetworkClient> logger, INetworkMessageBuilder messageBuilder, DarkStarNetworkClientConfig clientConfig)
+    public SignalrNetworkClient(
+        ILogger<SignalrNetworkClient> logger, INetworkMessageBuilder messageBuilder, DarkStarNetworkClientConfig clientConfig
+    )
     {
         _logger = logger;
         _messageBuilder = messageBuilder;
@@ -33,17 +34,15 @@ public class SignalrNetworkClient : IDarkStarNetworkClient
 
     public async ValueTask ConnectAsync()
     {
-        _hubConnection = new HubConnectionBuilder().WithUrl($"{_clientConfig.Address}:{_clientConfig.Port}/messages").Build();
+        _hubConnection = new HubConnectionBuilder().WithUrl($"{_clientConfig.Address}:{_clientConfig.Port}/messages")
+            .Build();
         _hubConnection.Closed += async (error) =>
         {
             await Task.Delay(new Random().Next(0, 5) * 1000);
             await _hubConnection.StartAsync();
         };
 
-        _hubConnection.On<string>("IncomingMessage", async (message) =>
-        {
-            await OnMessageReceivedAsync(message);
-        });
+        _hubConnection.On<string>("IncomingMessage", async (message) => { await OnMessageReceivedAsync(message); });
 
         await _hubConnection.StartAsync();
         IsConnected = true;
@@ -54,14 +53,17 @@ public class SignalrNetworkClient : IDarkStarNetworkClient
         try
         {
             var parsedMessage = _messageBuilder.ParseMessage(Encoding.UTF8.GetBytes(message));
-            _logger.LogDebug("Received message: {MessageType} size: {Size}", parsedMessage.MessageType, message.Length.Bytes());
+            _logger.LogDebug(
+                "Received message: {MessageType} size: {Size}",
+                parsedMessage.MessageType,
+                message.Length.Bytes()
+            );
             await DispatchMessageReceivedAsync(parsedMessage.MessageType, parsedMessage.Message);
         }
         catch (Exception e)
         {
             _logger.LogError(e, "Error while processing message: {Message}", message);
         }
-
     }
 
     public ValueTask DisconnectAsync() => _hubConnection.DisposeAsync();
@@ -85,8 +87,10 @@ public class SignalrNetworkClient : IDarkStarNetworkClient
         _messageListeners.Add(messageType, serverMessageListener);
     }
 
-    public async Task DispatchMessageReceivedAsync(DarkStarMessageType messageType,
-        IDarkStarNetworkMessage message)
+    public async Task DispatchMessageReceivedAsync(
+        DarkStarMessageType messageType,
+        IDarkStarNetworkMessage message
+    )
     {
         _logger.LogDebug("Received message: {MessageType}", messageType);
         OnMessageReceived?.Invoke(messageType, message);
@@ -96,6 +100,4 @@ public class SignalrNetworkClient : IDarkStarNetworkClient
             await listener.OnMessageReceivedAsync(messageType, message);
         }
     }
-
-
 }

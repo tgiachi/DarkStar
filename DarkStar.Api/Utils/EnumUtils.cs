@@ -14,7 +14,8 @@ public static class EnumUtils
 
     public static List<T> SearchType<T>(this T _, string tileType) where T : struct, Enum
     {
-        return FastEnum.GetValues<T>().Where(s => s.ToString().ToLower().StartsWith(tileType.ToLower()))
+        return FastEnum.GetValues<T>()
+            .Where(s => s.ToString().ToLower().StartsWith(tileType.ToLower()))
             .ToList();
     }
 }

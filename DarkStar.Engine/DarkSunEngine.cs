@@ -17,7 +17,6 @@ using DarkStar.Network.Protocol.Messages.Common;
 using DarkStar.Network.Protocol.Messages.Players;
 using DarkStar.Network.Protocol.Messages.TileSet;
 using DarkStar.Network.Server.Interfaces;
-
 using Microsoft.Extensions.Logging;
 using Redbus.Interfaces;
 
@@ -51,7 +50,8 @@ public class DarkSunEngine : IDarkSunEngine
     public IEventBus EventBus { get; }
     public ITypeService TypeService { get; }
 
-    public DarkSunEngine(ILogger<DarkSunEngine> logger,
+    public DarkSunEngine(
+        ILogger<DarkSunEngine> logger,
         IBlueprintService blueprintService,
         ISchedulerService schedulerService,
         IScriptEngineService scriptEngineService,
@@ -95,8 +95,11 @@ public class DarkSunEngine : IDarkSunEngine
         foreach (var messageListenerType in messageListenersTypes)
         {
             var attribute = messageListenerType.GetCustomAttribute<NetworkMessageListenerAttribute>()!;
-            _logger.LogDebug("Adding message listener {GameObjectType} from message type: {MessageType}",
-                messageListenerType.Name, attribute.MessageType);
+            _logger.LogDebug(
+                "Adding message listener {GameObjectType} from message type: {MessageType}",
+                messageListenerType.Name,
+                attribute.MessageType
+            );
             if (_container.GetService(messageListenerType) is INetworkServerMessageListener service)
             {
                 NetworkServer.RegisterMessageListener(attribute.MessageType, service);
@@ -156,11 +159,12 @@ public class DarkSunEngine : IDarkSunEngine
         }
 
         await NetworkServer.StartAsync();
-        JobSchedulerService.AddJob("PingClients", () =>
-        {
-            EventBus.PublishAsync(new PingRequestEvent());
-
-        }, (int)TimeSpan.FromMinutes(5).TotalSeconds, false);
+        JobSchedulerService.AddJob(
+            "PingClients",
+            () => { EventBus.PublishAsync(new PingRequestEvent()); },
+            (int)TimeSpan.FromMinutes(5).TotalSeconds,
+            false
+        );
 
         // TODO: This is only for testing, will be removed later
 
@@ -210,14 +214,16 @@ public class DarkSunEngine : IDarkSunEngine
                         Name = "Player 1",
                         Strength = 10,
                         TileId = 0,
-                        RaceId = race.Id,
+                        RaceId = race.Id
                     }
                 );
                 await _networkClient.SendMessageAsync(new PlayerLoginRequestMessage(Guid.Empty, "Player 1"));
                 foreach (var _ in Enumerable.Range(0, 10))
                 {
                     await Task.Delay(1000);
-                    await _networkClient.SendMessageAsync(new PlayerMoveRequestMessage(MoveDirectionType.North.RandomEnumValue()));
+                    await _networkClient.SendMessageAsync(
+                        new PlayerMoveRequestMessage(MoveDirectionType.North.RandomEnumValue())
+                    );
                 }
 
                 //await _networkClient.DisconnectAsync();

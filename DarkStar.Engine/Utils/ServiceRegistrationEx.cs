@@ -13,11 +13,14 @@ public static class ServiceRegistrationEx
 {
     public static IServiceCollection RegisterDarkSunServices(this IServiceCollection services)
     {
-        AssemblyUtils.GetAttribute<DarkStarEngineServiceAttribute>().ForEach(s =>
-        {
-            var interf = AssemblyUtils.GetInterfacesOfType(s)!.First(k => k.Name.EndsWith(s.Name));
-            services.AddSingleton(interf, s);
-        });
+        AssemblyUtils.GetAttribute<DarkStarEngineServiceAttribute>()
+            .ForEach(
+                s =>
+                {
+                    var interf = AssemblyUtils.GetInterfacesOfType(s)!.First(k => k.Name.EndsWith(s.Name));
+                    services.AddSingleton(interf, s);
+                }
+            );
 
         return services;
     }

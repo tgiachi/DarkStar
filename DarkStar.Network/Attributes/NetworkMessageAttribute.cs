@@ -11,8 +11,5 @@ public class NetworkMessageAttribute : Attribute
 {
     public DarkStarMessageType MessageType { get; set; }
 
-    public NetworkMessageAttribute(DarkStarMessageType messageType)
-    {
-        MessageType = messageType;
-    }
+    public NetworkMessageAttribute(DarkStarMessageType messageType) => MessageType = messageType;
 }

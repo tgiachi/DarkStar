@@ -12,23 +12,32 @@ namespace DarkStar.Engine.MessageListeners;
 [NetworkMessageListener(DarkStarMessageType.TileSetListRequest)]
 public class TileSetListMessageListener : BaseNetworkMessageListener<TileSetListRequestMessage>
 {
-    public TileSetListMessageListener(ILogger<BaseNetworkMessageListener<TileSetListRequestMessage>> logger, IDarkSunEngine engine) : base(logger, engine)
+    public TileSetListMessageListener(
+        ILogger<BaseNetworkMessageListener<TileSetListRequestMessage>> logger, IDarkSunEngine engine
+    ) : base(logger, engine)
     {
     }
 
-    public override async Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(string sessionId, DarkStarMessageType messageType, TileSetListRequestMessage message)
+    public override async Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(
+        string sessionId, DarkStarMessageType messageType, TileSetListRequestMessage message
+    )
     {
         var tileSets = await Engine.DatabaseService.FindAllAsync<TileSetEntity>();
 
-        return SingleMessage(new TileSetListResponseMessage()
-        {
-            TileSets = tileSets.Select(x => new TileSetEntryMessage()
+        return SingleMessage(
+            new TileSetListResponseMessage()
             {
-                Name = x.Name,
-                FileSize = x.FileSize,
-                TileHeight = x.TileHeight,
-                TileWidth = x.TileWidth,
-            }).ToList()
-        });
+                TileSets = tileSets.Select(
+                        x => new TileSetEntryMessage()
+                        {
+                            Name = x.Name,
+                            FileSize = x.FileSize,
+                            TileHeight = x.TileHeight,
+                            TileWidth = x.TileWidth
+                        }
+                    )
+                    .ToList()
+            }
+        );
     }
 }

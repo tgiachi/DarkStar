@@ -12,7 +12,6 @@ using DarkStar.Api.Data.Config;
 using DarkStar.Api.Engine.Interfaces.Services;
 using DarkStar.Api.Utils;
 using DarkStar.Engine.Services.Base;
-
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -38,10 +37,8 @@ public class NamesService : BaseService<NamesService>, INamesService
     private readonly List<string> _citiesNames = new();
     private readonly List<string> _names = new();
 
-    public NamesService(ILogger<NamesService> logger, DirectoriesConfig directoriesConfig) : base(logger)
-    {
+    public NamesService(ILogger<NamesService> logger, DirectoriesConfig directoriesConfig) : base(logger) =>
         _cacheDirectory = directoriesConfig[DirectoryNameType.Cache];
-    }
 
     protected override async ValueTask<bool> StartAsync()
     {
@@ -81,7 +78,8 @@ public class NamesService : BaseService<NamesService>, INamesService
         if (File.Exists(Path.Join(_cacheDirectory, fileName)))
         {
             return JsonSerializer.Deserialize<List<string>>(
-                await File.ReadAllTextAsync(Path.Join(_cacheDirectory, fileName)));
+                await File.ReadAllTextAsync(Path.Join(_cacheDirectory, fileName))
+            );
         }
 
         using var httpClient = new HttpClient();
@@ -89,7 +87,7 @@ public class NamesService : BaseService<NamesService>, INamesService
         for (var i = 0; i < count; i++)
         {
             var json = await httpClient.GetStringAsync(link);
-            var list = Newtonsoft.Json.JsonConvert.DeserializeObject<AnimalList>(json);
+            var list = JsonConvert.DeserializeObject<AnimalList>(json);
             fullList.AddRange(list!.data.Select(s => s.name));
         }
 
@@ -108,7 +106,8 @@ public class NamesService : BaseService<NamesService>, INamesService
         if (File.Exists(Path.Join(_cacheDirectory, fileName)))
         {
             return JsonSerializer.Deserialize<List<string>>(
-                await File.ReadAllTextAsync(Path.Join(_cacheDirectory, fileName)));
+                await File.ReadAllTextAsync(Path.Join(_cacheDirectory, fileName))
+            );
         }
 
         using var httpClient = new HttpClient();
@@ -128,7 +127,8 @@ public class NamesService : BaseService<NamesService>, INamesService
 
     private string GetLink(string category) => string.Format(RandomGeneratorBaseUrl, category);
 
-    private string GetAnimalLink(string animalType, string sex) => string.Format(RandomAnimalNameGeneratorUrl, animalType, sex);
+    private string GetAnimalLink(string animalType, string sex) =>
+        string.Format(RandomAnimalNameGeneratorUrl, animalType, sex);
 
     public class AnimalList
     {

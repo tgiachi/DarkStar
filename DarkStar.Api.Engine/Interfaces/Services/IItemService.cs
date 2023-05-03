@@ -11,7 +11,6 @@ namespace DarkStar.Api.Engine.Interfaces.Services;
 
 public interface IItemService : IDarkSunEngineService
 {
-
     public Task ExecuteGameObjectActionAsync(
         WorldGameObject gameObject, string mapId, Guid? sessionId, Guid? playerId, bool isNpc, uint? npcId, Guid? npcObjectId
     );

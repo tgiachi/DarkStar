@@ -11,6 +11,7 @@ public enum DarkStarMessageType : short
 {
     Ping,
     Pong,
+
     // Server messages
     ServerVersionResponse,
     ServerMotdResponse,
@@ -40,6 +41,8 @@ public enum DarkStarMessageType : short
     PlayerDataResponse,
     PlayerMoveRequest,
     PlayerMoveResponse,
+    PlayerInventoryRequest,
+    PlayerInventoryResponse,
 
     // TileSet message
     TileSetListRequest,
@@ -62,9 +65,13 @@ public enum DarkStarMessageType : short
     WorldGameObjectRemovedResponse,
     WorldGameObjectMovedResponse,
 
+    PlayerGameObjectAddedResponse,
+    PlayerGameObjectRemovedResponse,
+    PlayerGameObjectMovedResponse,
+
     WorldMessageRequest,
     WorldMessageResponse,
 
     MapRequest,
-    MapResponse,
+    MapResponse
 }

@@ -12,15 +12,19 @@ public class GameObjectMovedEvent : GameObjectAddedEvent
 {
     public PointPosition OldPosition { get; set; }
 
-    public GameObjectMovedEvent(string mapId, MapLayer layer, PointPosition oldPosition, PointPosition newPosition, Guid objectId, uint Id) : base(
-       mapId, layer, newPosition, objectId, Id)
-    {
+    public GameObjectMovedEvent(
+        string mapId, MapLayer layer, PointPosition oldPosition, PointPosition newPosition, Guid objectId, uint Id
+    ) : base(
+        mapId,
+        layer,
+        newPosition,
+        objectId,
+        Id
+    ) =>
         OldPosition = oldPosition;
-    }
 
     public GameObjectMovedEvent()
     {
-
     }
 
     public override string ToString() => $"GameObjectMovedEvent: {Layer} - {ObjectId} - {OldPosition} -> {Position}";

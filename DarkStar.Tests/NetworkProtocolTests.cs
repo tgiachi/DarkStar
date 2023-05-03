@@ -38,10 +38,12 @@ public class NetworkProtocolTests
     [TestMethod]
     public async Task TestTcpServerAsync()
     {
-        var server = new TcpNetworkServer(new NullLogger<TcpNetworkServer>(),
+        var server = new TcpNetworkServer(
+            new NullLogger<TcpNetworkServer>(),
             new InMemoryNetworkSessionManager(),
             new ProtoBufMessageBuilder(new NullLogger<ProtoBufMessageBuilder>()),
-            new DarkStarNetworkServerConfig() { Address = IPAddress.Any.ToString(), Port = 9000 });
+            new DarkStarNetworkServerConfig() { Address = IPAddress.Any.ToString(), Port = 9000 }
+        );
 
         await server.StartAsync();
         Assert.IsTrue(server.IsStarted);
@@ -59,13 +61,15 @@ public class NetworkProtocolTests
         {
             messageBuilder.BuildMessage(new PingMessageResponse() { TimeStamp = 1 }),
             messageBuilder.BuildMessage(new PongMessageResponse() { TimeStamp = 1 }),
-            messageBuilder.BuildMessage(new ServerVersionResponseMessage() {Minor = 0, Build = 0, Major = 1} ),
+            messageBuilder.BuildMessage(new ServerVersionResponseMessage() { Minor = 0, Build = 0, Major = 1 })
         };
 
-        var server = new TcpNetworkServer(new NullLogger<TcpNetworkServer>(),
+        var server = new TcpNetworkServer(
+            new NullLogger<TcpNetworkServer>(),
             new InMemoryNetworkSessionManager(),
             new ProtoBufMessageBuilder(new NullLogger<ProtoBufMessageBuilder>()),
-            new DarkStarNetworkServerConfig() { Address = IPAddress.Any.ToString(), Port = 9000 });
+            new DarkStarNetworkServerConfig() { Address = IPAddress.Any.ToString(), Port = 9000 }
+        );
 
         await server.StartAsync();
         Assert.IsTrue(server.IsStarted);

@@ -11,31 +11,22 @@ using ProtoBuf;
 
 namespace DarkStar.Network.Protocol.Messages.Triggers.Npc;
 
-
 [NetworkMessage(DarkStarMessageType.NpcRemovedResponse)]
 [ProtoContract]
 public struct NpcRemovedResponseMessage : IDarkStarNetworkMessage
 {
+    [ProtoMember(1)] public string MapId { get; set; } = null!;
 
-    [ProtoMember(1)]
-    public string MapId { get; set; } = null!;
+    [ProtoMember(2)] public string NpcId { get; set; } = null!;
 
-    [ProtoMember(2)]
-    public string NpcId { get; set; } = null!;
-
-    [ProtoMember(3)]
-    public PointPosition Position { get; set; }
 
     public NpcRemovedResponseMessage()
     {
-
     }
 
-    public NpcRemovedResponseMessage(string mapId, string npcId, PointPosition position)
+    public NpcRemovedResponseMessage(string mapId, string npcId)
     {
         MapId = mapId;
         NpcId = npcId;
-        Position = position;
     }
-
 }

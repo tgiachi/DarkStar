@@ -19,6 +19,7 @@ using ProtoBuf;
 using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace DarkStar.Network.Protocol.Builders;
+
 public class JsonMessageBuilder : INetworkMessageBuilder
 {
     private readonly ILogger _logger;
@@ -39,9 +40,13 @@ public class JsonMessageBuilder : INetworkMessageBuilder
 
         var message = JsonSerializer.Deserialize<NetworkMessage>(buffer);
         _logger.LogDebug("Message type is {MessageType}", message.MessageType);
-        var innerMessage = JsonConvert.DeserializeObject(Encoding.UTF8.GetString(message.Message), _messageTypes[message.MessageType]);
+        var innerMessage = JsonConvert.DeserializeObject(
+            Encoding.UTF8.GetString(message.Message),
+            _messageTypes[message.MessageType]
+        );
 
-        return new NetworkMessageData { MessageType = message.MessageType, Message = (innerMessage as IDarkStarNetworkMessage)! };
+        return new NetworkMessageData
+            { MessageType = message.MessageType, Message = (innerMessage as IDarkStarNetworkMessage)! };
     }
 
     public byte[] BuildMessage<T>(T message) where T : IDarkStarNetworkMessage
@@ -54,17 +59,21 @@ public class JsonMessageBuilder : INetworkMessageBuilder
             {
                 var options = new JsonSerializerOptions
                 {
-                    MaxDepth = 1000,
+                    MaxDepth = 1000
                 };
-                
-                var innerMessage = Encoding.UTF8.GetBytes (JsonConvert.SerializeObject(message));
+
+                var innerMessage = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(message));
 
                 var netMessage =
                     new NetworkMessage() { Message = innerMessage, MessageType = messageType.MessageType };
                 var fullMessage = JsonSerializer.Serialize(netMessage);
 
 
-                _logger.LogDebug("Sending message type: {Type} - Length: {BufferSize}", messageType.MessageType, fullMessage.Length.Bytes());
+                _logger.LogDebug(
+                    "Sending message type: {Type} - Length: {BufferSize}",
+                    messageType.MessageType,
+                    fullMessage.Length.Bytes()
+                );
                 return Encoding.UTF8.GetBytes(fullMessage);
             }
             catch (Exception e)
@@ -75,8 +84,6 @@ public class JsonMessageBuilder : INetworkMessageBuilder
 
         throw new Exception($"Missing attribute [NetworkMessageAttribute] on message ${typeof(T)}");
     }
-
-
 
 
     private void PrepareMessageTypesConversionMap()

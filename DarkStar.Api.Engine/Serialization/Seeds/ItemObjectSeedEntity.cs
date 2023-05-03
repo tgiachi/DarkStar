@@ -1,10 +1,7 @@
-
 using DarkStar.Api.Attributes.Seed;
 using DarkStar.Api.Engine.Serialization.Seeds.Converters;
-
 using DarkStar.Api.World.Types.Equippable;
 using DarkStar.Api.World.Types.Items;
-
 using TinyCsv.Attributes;
 
 namespace DarkStar.Api.Engine.Serialization.Seeds;
@@ -26,6 +23,7 @@ public class ItemObjectSeedEntity
 
     [Column(converter: typeof(ItemRarityConverter))]
     public ItemRarityType ItemRarity { get; set; }
+
     [Column] public string SellDice { get; set; } = null!;
     [Column] public string BuyDice { get; set; } = null!;
     [Column] public string Attack { get; set; } = null!;

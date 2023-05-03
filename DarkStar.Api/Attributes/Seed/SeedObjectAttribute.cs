@@ -5,8 +5,5 @@ public class SeedObjectAttribute : Attribute
 {
     public string TemplateDirectory { get; set; }
 
-    public SeedObjectAttribute(string templateDirectory)
-    {
-        TemplateDirectory = templateDirectory;
-    }
+    public SeedObjectAttribute(string templateDirectory) => TemplateDirectory = templateDirectory;
 }

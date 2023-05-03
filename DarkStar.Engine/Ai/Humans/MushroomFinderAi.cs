@@ -36,14 +36,16 @@ public class MushroomFinderAi : BaseAiBehaviourExecutor
                 Logger.LogInformation("MMMhh, yummy mushroom!");
                 await SendWorldMessageAsync("MMMhh, yummy mushroom!", WorldMessageType.Yell);
 
-                Engine.CommandService.EnqueueNpcAction(new GameObjectAction()
-                {
-                    MapId = MapId,
-                    IsNpc = true,
-                    NpcId = NpcGameObject.ID,
-                    NpcObjectId = NpcEntity.Id,
-                    Position = NpcGameObject.PointPosition(),
-                });
+                Engine.CommandService.EnqueueNpcAction(
+                    new GameObjectAction()
+                    {
+                        MapId = MapId,
+                        IsNpc = true,
+                        NpcId = NpcGameObject.ID,
+                        NpcObjectId = NpcEntity.Id,
+                        Position = NpcGameObject.PointPosition()
+                    }
+                );
 
                 _path.Clear();
                 _currentStep = 0;
@@ -52,15 +54,23 @@ public class MushroomFinderAi : BaseAiBehaviourExecutor
             }
 
             var nextStep = _path[_currentStep];
-            Logger.LogInformation("I'm {Name} and i'm moving to {NewPos} - Step remaining: {StepRemain}", NpcEntity.Name, nextStep, _path.Count - _currentStep);
+            Logger.LogInformation(
+                "I'm {Name} and i'm moving to {NewPos} - Step remaining: {StepRemain}",
+                NpcEntity.Name,
+                nextStep,
+                _path.Count - _currentStep
+            );
             if (MoveToPosition(nextStep))
             {
                 _currentStep++;
             }
+
             return;
         }
 
-        WorldGameObject mushrooms = (await GetEntitiesInRangeAsync<WorldGameObject>(MapLayer.Objects)).FirstOrDefault(s => s.Type == Engine.TypeService.GetGameObjectType("Prop_Mushroom").Id );
+        var mushrooms = (await GetEntitiesInRangeAsync<WorldGameObject>(MapLayer.Objects)).FirstOrDefault(
+            s => s.Type == Engine.TypeService.GetGameObjectType("Prop_Mushroom").Id
+        );
 
         if (mushrooms == null)
         {

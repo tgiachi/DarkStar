@@ -123,24 +123,16 @@ public class AssemblyUtils
         return result;
     }
 
-    public static List<Type> GetAttribute<T>()
-    {
+    public static List<Type> GetAttribute<T>() =>
         // return Assembly.GetExecutingAssembly().GetTypes().Where(t => t.IsDefined(typeof(T))).ToList();
-        return ScanAllAssembliesFromAttribute(typeof(T));
-    }
+        ScanAllAssembliesFromAttribute(typeof(T));
 
     /// <summary>
     ///     Prende tutt gli assembly (*.dll) da un attributo.
     /// </summary>
     /// <param name="attribute"></param>
     /// <returns></returns>
-    public static List<Type> ScanAllAssembliesFromAttribute(Type attribute)
-    {
-        return ScanAssembly(attribute);
-    }
+    public static List<Type> ScanAllAssembliesFromAttribute(Type attribute) => ScanAssembly(attribute);
 
-    public static List<Assembly> GetAppAssemblies()
-    {
-        return Assemblies;
-    }
+    public static List<Assembly> GetAppAssemblies() => Assemblies;
 }

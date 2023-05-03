@@ -6,8 +6,6 @@ using System.Threading.Tasks;
 using DarkStar.Network.Attributes;
 using DarkStar.Network.Protocol.Interfaces.Messages;
 using DarkStar.Network.Protocol.Types;
-
-
 using ProtoBuf;
 
 namespace DarkStar.Network.Protocol.Messages.Server;
@@ -16,12 +14,9 @@ namespace DarkStar.Network.Protocol.Messages.Server;
 [ProtoContract]
 public class ServerVersionResponseMessage : IDarkStarNetworkMessage
 {
-    [ProtoMember(1)]
-    public int Minor { get; set; }
-    [ProtoMember(2)]
-    public int Major { get; set; }
-    [ProtoMember(3)]
-    public int Build { get; set; }
+    [ProtoMember(1)] public int Minor { get; set; }
+    [ProtoMember(2)] public int Major { get; set; }
+    [ProtoMember(3)] public int Build { get; set; }
 
     public ServerVersionResponseMessage()
     {

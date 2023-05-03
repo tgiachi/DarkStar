@@ -7,8 +7,8 @@ using DarkStar.Api.World.Types.GameObjects;
 using Redbus.Events;
 
 namespace DarkStar.Api.Engine.Events.Engine;
+
 public class GameObjectTypeAdded : EventBase
 {
-
     public GameObjectType GameObjectType { get; set; }
 }

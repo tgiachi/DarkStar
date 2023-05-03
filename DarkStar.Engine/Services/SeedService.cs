@@ -346,7 +346,7 @@ public class SeedService : BaseService<SeedService>, ISeedService
                 FileSize = tileSetImageInfo.Length,
                 TileHeight = tileSetDefinition!.TileHeight,
                 TileWidth = tileSetDefinition!.TileWidth,
-                TileSetMapFileName = Path.Join(tilesDirectory.DirectoryName!, tileSetDefinition!.TileSetMapFileName),
+                TileSetMapFileName = Path.Join(tilesDirectory.DirectoryName!, tileSetDefinition!.TileSetMapFileName)
             };
             await Engine.DatabaseService.InsertAsync(tileEntity);
         }

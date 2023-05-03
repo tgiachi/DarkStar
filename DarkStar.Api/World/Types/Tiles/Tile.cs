@@ -30,10 +30,7 @@ public struct Tile
 
     public Tile()
     {
-
     }
 
     public override string ToString() => $"Name: {Name}, Id: {Id}, Category: {Category}, IsTransparent: {IsTransparent}";
-
-    
 }

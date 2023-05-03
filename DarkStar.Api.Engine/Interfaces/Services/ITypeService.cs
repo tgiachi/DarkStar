@@ -10,6 +10,7 @@ using DarkStar.Api.World.Types.Npc;
 using DarkStar.Api.World.Types.Tiles;
 
 namespace DarkStar.Api.Engine.Interfaces.Services;
+
 public interface ITypeService : IDarkSunEngineService
 {
     void AddTile(Tile tile);
@@ -49,5 +50,4 @@ public interface ITypeService : IDarkSunEngineService
     ItemCategoryType AddItemCategoryType(string name);
     ItemCategoryType AddItemCategoryType(short id, string name);
     ItemCategoryType SearchItemCategoryType(string name);
-
 }

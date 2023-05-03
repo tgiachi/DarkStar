@@ -32,5 +32,4 @@ public interface IPlayerService : IDarkSunEngineService
     Task<bool> BroadcastChatMessageAsync(
         string mapId, PointPosition position, string name, uint sender, string message, WorldMessageType type
     );
-
 }

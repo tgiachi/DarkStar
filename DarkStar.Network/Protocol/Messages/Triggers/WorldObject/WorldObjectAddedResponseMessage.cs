@@ -12,24 +12,18 @@ using ProtoBuf;
 
 namespace DarkStar.Network.Protocol.Messages.Triggers.WorldObject;
 
-
 [ProtoContract]
 [NetworkMessage(DarkStarMessageType.WorldGameObjectAddedResponse)]
 public struct WorldObjectAddedResponseMessage : IDarkStarNetworkMessage
 {
-    [ProtoMember(1)]
-    public string MapId { get; set; } = null!;
+    [ProtoMember(1)] public string MapId { get; set; } = null!;
 
 
-    [ProtoMember(2)]
-    public string ItemId { get; set; } = null!;
-    [ProtoMember(3)]
-    public string Name { get; set; } = null!;
-    [ProtoMember(4)]
-    public PointPosition Position { get; set; } = default;
+    [ProtoMember(2)] public string ItemId { get; set; } = null!;
+    [ProtoMember(3)] public string Name { get; set; } = null!;
+    [ProtoMember(4)] public PointPosition Position { get; set; } = default;
 
-    [ProtoMember(5)]
-    public int TileType { get; set; } = 0;
+    [ProtoMember(5)] public int TileType { get; set; } = 0;
 
     public WorldObjectAddedResponseMessage()
     {

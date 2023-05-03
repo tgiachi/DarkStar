@@ -86,78 +86,82 @@ internal class Program
         }
 
         using var host = Host.CreateDefaultBuilder(args)
-            .ConfigureServices(services =>
-            {
-                services.AddSingleton<IDarkSunEngine, DarkSunEngine>()
-                    .AddSingleton<IDarkSunNetworkServer, SignalrNetworkServer>()
-                    .AddSingleton<INetworkSessionManager, InMemoryNetworkSessionManager>()
-                    .AddSingleton<INetworkMessageBuilder, JsonMessageBuilder>()
-                    .AddSingleton<IEventBus>(
-                        new EventBus(
-                            new EventBusConfiguration()
+            .ConfigureServices(
+                services =>
+                {
+                    services.AddSingleton<IDarkSunEngine, DarkSunEngine>()
+                        .AddSingleton<IDarkSunNetworkServer, SignalrNetworkServer>()
+                        .AddSingleton<INetworkSessionManager, InMemoryNetworkSessionManager>()
+                        .AddSingleton<INetworkMessageBuilder, JsonMessageBuilder>()
+                        .AddSingleton<IEventBus>(
+                            new EventBus(
+                                new EventBusConfiguration()
+                                {
+                                    ThrowSubscriberException = true
+                                }
+                            )
+                        )
+                        .AddSingleton(
+                            new DarkStarNetworkServerConfig()
                             {
-                                ThrowSubscriberException = true
+                                Address = engineConfig.NetworkServer.Address,
+                                Port = engineConfig.NetworkServer.Port
                             }
                         )
-                    )
-                    .AddSingleton(
-                        new DarkStarNetworkServerConfig()
-                        {
-                            Address = engineConfig.NetworkServer.Address,
-                            Port = engineConfig.NetworkServer.Port
-                        }
-                    )
-                    // Only for test
-                    .AddSingleton(new DarkStarNetworkClientConfig()
+                        // Only for test
+                        .AddSingleton(
+                            new DarkStarNetworkClientConfig()
+                            {
+                                Address = "http://localhost",
+                                Port = 5000
+                            }
+                        )
+                        .AddSingleton<IDarkStarNetworkClient, SignalrNetworkClient>()
+                        .AddSingleton(engineConfig)
+                        .AddSingleton(directoryConfig)
+                        .RegisterDarkSunServices()
+                        .RegisterMessageListeners()
+                        .RegisterCommandExecutors()
+                        .RegisterScriptEngineFunctions()
+                        .RegisterAiBehaviour()
+                        .RegisterWorldObjectAndItems()
+                        .AddHostedService<DarkSunEngineHostedService>()
+                        .AddSignalR();
+
+                    if (string.IsNullOrEmpty(Environment.GetEnvironmentVariable("DOCKER_CONTAINER")))
                     {
-                        Address = "http://localhost",
-                        Port = 5000
-                    })
-                    .AddSingleton<IDarkStarNetworkClient, SignalrNetworkClient>()
-                    .AddSingleton(engineConfig)
-                    .AddSingleton(directoryConfig)
-                    .RegisterDarkSunServices()
-                    .RegisterMessageListeners()
-                    .RegisterCommandExecutors()
-                    .RegisterScriptEngineFunctions()
-                    .RegisterAiBehaviour()
-                    .RegisterWorldObjectAndItems()
-                    .AddHostedService<DarkSunEngineHostedService>()
-                    .AddSignalR();
+                        services.AddHostedService<DarkSunTerminalHostedService>();
+                    }
 
-                if (string.IsNullOrEmpty(Environment.GetEnvironmentVariable("DOCKER_CONTAINER")))
-                {
-                    services.AddHostedService<DarkSunTerminalHostedService>();
+                    if (engineConfig.HttpServer.Enabled)
+                    {
+                        services.ConfigureWebServer();
+                    }
                 }
-
-                if (engineConfig.HttpServer.Enabled)
-                {
-                    services.ConfigureWebServer();
-                }
-
-            })
+            )
             .UseSerilog()
             .UseConsoleLifetime()
-            .ConfigureWebHostDefaults(builder =>
-            {
-
-
-
-
-                Log.Logger.Information("Starting HTTP server - http root Directory is: {RootDirectory}", directoryConfig[DirectoryNameType.HttpRoot]);
-                builder.Configure(applicationBuilder =>
+            .ConfigureWebHostDefaults(
+                builder =>
                 {
-                    //applicationBuilder.UseEndpoints(
-                    //    routeBuilder =>
-                    //    {
+                    Log.Logger.Information(
+                        "Starting HTTP server - http root Directory is: {RootDirectory}",
+                        directoryConfig[DirectoryNameType.HttpRoot]
+                    );
+                    builder.Configure(
+                        applicationBuilder =>
+                        {
+                            //applicationBuilder.UseEndpoints(
+                            //    routeBuilder =>
+                            //    {
 
-                    //    }
-                    //);
-                    applicationBuilder.ConfigureWebServerApp(directoryConfig[DirectoryNameType.HttpRoot]);
-                });
-
-            })
-
+                            //    }
+                            //);
+                            applicationBuilder.ConfigureWebServerApp(directoryConfig[DirectoryNameType.HttpRoot]);
+                        }
+                    );
+                }
+            )
             .Build();
 
         await host.RunAsync();
@@ -167,8 +171,10 @@ internal class Program
     private static DirectoriesConfig EnsureDirectories()
     {
         var rootDirectory = Environment.GetEnvironmentVariable("DARKSTAR_ROOT_DIRECTORY")
-                            ?? Path.Join(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-                                "DarkStar");
+                            ?? Path.Join(
+                                Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+                                "DarkStar"
+                            );
 
         if (string.IsNullOrEmpty(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)))
         {
@@ -198,8 +204,6 @@ internal class Program
 
     private static EngineConfig LoadConfig(DirectoriesConfig directoriesConfig)
     {
-
-
         var config = new EngineConfig();
         var configPath = Path.Join(directoriesConfig[DirectoryNameType.Config], "DarkStar.yml");
         if (File.Exists(configPath))

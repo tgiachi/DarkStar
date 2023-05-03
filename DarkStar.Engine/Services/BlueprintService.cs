@@ -28,14 +28,16 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
     private readonly INamesService _namesService;
     private readonly List<BluePrintTemplate> _bluePrintTemplates = new();
 
-    private readonly Dictionary<MapType, List<Func<BlueprintGenerationMapContext, BlueprintGenerationMapContext>>> _mapGenerators = new();
+    private readonly Dictionary<MapType, List<Func<BlueprintGenerationMapContext, BlueprintGenerationMapContext>>>
+        _mapGenerators = new();
 
 
-    public BlueprintService(ILogger<BlueprintService> logger, DirectoriesConfig directoriesConfig, INamesService namesService) : base(logger)
+    public BlueprintService(
+        ILogger<BlueprintService> logger, DirectoriesConfig directoriesConfig, INamesService namesService
+    ) : base(logger)
     {
         _directoriesConfig = directoriesConfig;
         _namesService = namesService;
-
     }
 
     protected override async ValueTask<bool> StartAsync()
@@ -47,14 +49,17 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
 
     private async ValueTask ScanForMapTemplatesAsync()
     {
-        var mapTemplates = Directory.GetFiles(_directoriesConfig[DirectoryNameType.BluePrints], "*.tmx", SearchOption.AllDirectories);
+        var mapTemplates = Directory.GetFiles(
+            _directoriesConfig[DirectoryNameType.BluePrints],
+            "*.tmx",
+            SearchOption.AllDirectories
+        );
 
         foreach (var mapTemplate in mapTemplates)
         {
             await LoadMapTemplateAsync(mapTemplate);
         }
     }
-
 
 
     private ValueTask LoadMapTemplateAsync(string fileName)
@@ -66,7 +71,11 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
             // Check if the map is valid
             if (template.Layers.Count != FastEnum.GetValues<MapLayer>().Count)
             {
-                Logger.LogWarning("Map have {MapCount} layers, template must have {MapLayerCount} ", template.ImageLayers.Count, FastEnum.GetValues<MapLayer>().Count);
+                Logger.LogWarning(
+                    "Map have {MapCount} layers, template must have {MapLayerCount} ",
+                    template.ImageLayers.Count,
+                    FastEnum.GetValues<MapLayer>().Count
+                );
                 return ValueTask.CompletedTask;
             }
 
@@ -75,8 +84,16 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
                 foreach (var templateObject in templateDefinition.Objects)
                 {
                     Logger.LogInformation("Adding [{Class}] {Name} ", templateObject.Type, templateObject.Name);
-                    var points = GetPointsFromRect(templateObject.X, templateObject.Y, templateObject.Width, templateObject.Height, template.Tilesets.First());
-                    _bluePrintTemplates.Add(BuildBluePrintTemplateFromObject(template, templateObject.Name, templateObject.Type, points));
+                    var points = GetPointsFromRect(
+                        templateObject.X,
+                        templateObject.Y,
+                        templateObject.Width,
+                        templateObject.Height,
+                        template.Tilesets.First()
+                    );
+                    _bluePrintTemplates.Add(
+                        BuildBluePrintTemplateFromObject(template, templateObject.Name, templateObject.Type, points)
+                    );
                 }
             }
         }
@@ -84,6 +101,7 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
         {
             Logger.LogError(ex, "Failed to load map template {FileName}: {Error}", fileName, ex);
         }
+
         return ValueTask.CompletedTask;
     }
 
@@ -97,16 +115,18 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
                 points.Add(new PointPosition((int)i, (int)j));
             }
         }
+
         return points;
     }
 
     private BluePrintTemplate BuildBluePrintTemplateFromObject(
-        TmxMap map, string objectName, string className, List<PointPosition> points)
+        TmxMap map, string objectName, string className, List<PointPosition> points
+    )
     {
         var bluePrintTemplate = new BluePrintTemplate
         {
             Name = objectName,
-            ClassName = className,
+            ClassName = className
         };
 
         foreach (var layer in map.Layers.Reverse())
@@ -119,9 +139,7 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
                 {
                     try
                     {
-
                         bluePrintTemplate.Layers[layerType].Add(new BluePrintTemplatePoint(tile.Gid, p.X, p.Y));
-
                     }
                     catch (Exception ex)
                     {
@@ -136,7 +154,6 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
 
     public async Task<NpcEntity> GenerateNpcEntityAsync(NpcType npcType, NpcSubType subType, int level = 1)
     {
-
         NpcStatEntity npcStats;
 
         var npc = new NpcEntity()
@@ -167,7 +184,7 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
                 Experience = 0,
                 Intelligence = 1,
                 Mana = 1,
-                Strength = 1,
+                Strength = 1
             };
         }
         else
@@ -183,9 +200,10 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
                 Health = life,
                 MaxHealth = life,
                 Mana = magicLife,
-                MaxMana = magicLife,
+                MaxMana = magicLife
             };
         }
+
         await Engine.DatabaseService.InsertAsync(npc);
         await Engine.DatabaseService.InsertAsync(npcStats);
 
@@ -204,17 +222,19 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
             Name = entity.Name,
             IsTransparent = false,
             IsWalkable = true,
-            Tile = entity.TileId,
+            Tile = entity.TileId
         };
 
         return gameObject;
-
     }
 
     public async Task<GameObjectEntity> GenerateWorldGameObjectAsync(GameObjectType type)
     {
         // First of all, i search if gameObject exists
-        var entities = await Engine.DatabaseService.QueryAsListAsync<GameObjectEntity>(objectEntity => objectEntity.GameObjectType == type.Id);
+        var entities =
+            await Engine.DatabaseService.QueryAsListAsync<GameObjectEntity>(
+                objectEntity => objectEntity.GameObjectType == type.Id
+            );
         if (!entities.Any())
         {
             throw new Exception($"Can't find game object type: {type}!");

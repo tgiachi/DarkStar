@@ -10,7 +10,6 @@ using DarkStar.Engine.MessageListeners.Helpers;
 using DarkStar.Network.Protocol.Interfaces.Messages;
 using DarkStar.Network.Protocol.Messages.Players;
 using DarkStar.Network.Protocol.Types;
-
 using Microsoft.Extensions.Logging;
 
 namespace DarkStar.Engine.MessageListeners;
@@ -18,16 +17,18 @@ namespace DarkStar.Engine.MessageListeners;
 [NetworkMessageListener(DarkStarMessageType.PlayerRacesRequest)]
 public class RacesRequestMessageListener : BaseNetworkMessageListener<PlayerRacesRequestMessage>
 {
-    public RacesRequestMessageListener(ILogger<BaseNetworkMessageListener<PlayerRacesRequestMessage>> logger,
-        IDarkSunEngine engine) : base(logger, engine)
+    public RacesRequestMessageListener(
+        ILogger<BaseNetworkMessageListener<PlayerRacesRequestMessage>> logger,
+        IDarkSunEngine engine
+    ) : base(logger, engine)
     {
     }
 
-    public override async Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(string sessionId,
-        DarkStarMessageType messageType, PlayerRacesRequestMessage message)
-    {
-        return Engine.PlayerService.GetSession(sessionId).IsLogged
+    public override async Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(
+        string sessionId,
+        DarkStarMessageType messageType, PlayerRacesRequestMessage message
+    ) =>
+        Engine.PlayerService.GetSession(sessionId).IsLogged
             ? SingleMessage(await PlayerDataHelper.BuildPlayerRacesAsync(Engine))
             : EmptyMessage();
-    }
 }

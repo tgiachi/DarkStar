@@ -17,9 +17,10 @@ namespace DarkStar.Engine.Commands.Executors;
 [CommandAction(CommandActionType.PlayerMove)]
 public class PlayerCommandActionExecutor : BaseCommandActionExecutor<PlayerMoveAction>
 {
-    public PlayerCommandActionExecutor(ILogger<BaseCommandActionExecutor<PlayerMoveAction>> logger, IDarkSunEngine engine) : base(logger, engine)
+    public PlayerCommandActionExecutor(
+        ILogger<BaseCommandActionExecutor<PlayerMoveAction>> logger, IDarkSunEngine engine
+    ) : base(logger, engine)
     {
-
     }
 
     public override async Task ProcessAsync(PlayerMoveAction action)
@@ -29,7 +30,13 @@ public class PlayerCommandActionExecutor : BaseCommandActionExecutor<PlayerMoveA
         var newPosition = player.Position.AddMovement(action.Direction);
 
 
-        Logger.LogDebug("Player {PlayerId} request move to {Direction} Old Position: {OldPosition} - New position: {NewPosition}", action.PlayerId, action.Direction, player.Position, player.Position.AddMovement(action.Direction));
+        Logger.LogDebug(
+            "Player {PlayerId} request move to {Direction} Old Position: {OldPosition} - New position: {NewPosition}",
+            action.PlayerId,
+            action.Direction,
+            player.Position,
+            player.Position.AddMovement(action.Direction)
+        );
         var canMove = Engine.WorldService.IsLocationWalkable(player.MapId, newPosition);
 
         if (canMove)

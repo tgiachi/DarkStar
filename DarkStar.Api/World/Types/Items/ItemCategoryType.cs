@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace DarkStar.Api.World.Types.Items;
 
-
 [StructLayout(LayoutKind.Auto)]
 public struct ItemCategoryType
 {
@@ -22,7 +21,6 @@ public struct ItemCategoryType
 
     public ItemCategoryType()
     {
-
     }
 
     public override string ToString() => $"{Id} - {Name}";

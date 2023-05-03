@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DarkStar.Api.Engine.Interfaces.Core;
-
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -19,9 +18,11 @@ public class DarkSunEngineHostedService : IHostedService
     private readonly IHostApplicationLifetime _applicationLifetime;
     private readonly IServiceProvider _serviceProvider;
 
-    public DarkSunEngineHostedService(ILogger<DarkSunEngineHostedService> logger,
+    public DarkSunEngineHostedService(
+        ILogger<DarkSunEngineHostedService> logger,
         IHostApplicationLifetime lifetime,
-        IServiceProvider serviceProvider)
+        IServiceProvider serviceProvider
+    )
     {
         _applicationLifetime = lifetime;
         _logger = logger;

@@ -1,4 +1,3 @@
-
 using System.Reflection;
 using DarkStar.Api.Attributes.Services;
 using DarkStar.Api.Engine.Attributes.Objects;
@@ -16,7 +15,6 @@ using Microsoft.Extensions.Logging;
 
 namespace DarkStar.Engine.Services;
 
-
 [DarkStarEngineService(nameof(ItemService), 6)]
 public class ItemService : BaseService<ItemService>, IItemService
 {
@@ -26,10 +24,11 @@ public class ItemService : BaseService<ItemService>, IItemService
     private readonly Dictionary<string, Type> _gameObjectActionTypes = new();
     private readonly Dictionary<uint, IGameObjectAction> _gameObjectActions = new();
     private readonly Dictionary<uint, IScheduledGameObjectAction> _scheduledGameObjectActions = new();
-    
 
 
-    public ItemService(ILogger<ItemService> logger, IServiceProvider serviceProvider, ITypeService typeService) : base(logger)
+    public ItemService(ILogger<ItemService> logger, IServiceProvider serviceProvider, ITypeService typeService) : base(
+        logger
+    )
     {
         _serviceProvider = serviceProvider;
         _typeService = typeService;
@@ -83,9 +82,13 @@ public class ItemService : BaseService<ItemService>, IItemService
     {
         var gameObjectEntity =
             await Engine.DatabaseService.QueryAsSingleAsync<GameObjectEntity>(
-                entity => entity.Id == @event.ObjectId);
+                entity => entity.Id == @event.ObjectId
+            );
 
-        if (_gameObjectActionTypes.TryGetValue(_typeService.GetGameObjectType(gameObjectEntity.GameObjectType)!.Name, out var type))
+        if (_gameObjectActionTypes.TryGetValue(
+                _typeService.GetGameObjectType(gameObjectEntity.GameObjectType)!.Name,
+                out var type
+            ))
         {
             var worldGameObject =
                 await Engine.WorldService.GetEntityBySerialIdAsync<WorldGameObject>(@event.MapId, @event.Id);
@@ -127,7 +130,10 @@ public class ItemService : BaseService<ItemService>, IItemService
                 }
                 else
                 {
-                    Logger.LogError("Failed to add game object action {GameObjectType}, maybe not implement interface IGameObjectAction?", type);
+                    Logger.LogError(
+                        "Failed to add game object action {GameObjectType}, maybe not implement interface IGameObjectAction?",
+                        type
+                    );
                 }
             }
             catch (Exception e)
@@ -146,10 +152,12 @@ public class ItemService : BaseService<ItemService>, IItemService
         {
             await scheduledGameObjectAction.Value.UpdateAsync(deltaTime);
         }
+
         _gameObjectActionLock.Release();
     }
 
-    public Task ExecuteGameObjectActionAsync(WorldGameObject gameObject, string mapId, Guid? sessionId, Guid? playerId, bool isNpc, uint? npcId, Guid? npcObjectId
+    public Task ExecuteGameObjectActionAsync(
+        WorldGameObject gameObject, string mapId, Guid? sessionId, Guid? playerId, bool isNpc, uint? npcId, Guid? npcObjectId
     )
     {
         if (_gameObjectActions.TryGetValue(gameObject.ID, out var action))
@@ -163,10 +171,16 @@ public class ItemService : BaseService<ItemService>, IItemService
             {
                 senderId = playerId.Value;
             }
+
             _ = action.OnActivatedAsync(mapId, gameObject, senderId, isNpc);
             return Task.CompletedTask;
         }
-        Logger.LogWarning("Can't find Game object action {GameObjectName} [{GameObjectId}] ", gameObject.Type, gameObject.ObjectId);
+
+        Logger.LogWarning(
+            "Can't find Game object action {GameObjectName} [{GameObjectId}] ",
+            gameObject.Type,
+            gameObject.ObjectId
+        );
         return Task.CompletedTask;
     }
 }

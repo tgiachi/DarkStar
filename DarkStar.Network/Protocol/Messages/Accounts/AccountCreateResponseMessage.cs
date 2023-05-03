@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using DarkStar.Network.Attributes;
 using DarkStar.Network.Protocol.Interfaces.Messages;
 using DarkStar.Network.Protocol.Types;
-
 using ProtoBuf;
 
 namespace DarkStar.Network.Protocol.Messages.Accounts;
@@ -15,11 +14,12 @@ namespace DarkStar.Network.Protocol.Messages.Accounts;
 [ProtoContract]
 public struct AccountCreateResponseMessage : IDarkStarNetworkMessage
 {
-    [ProtoMember(1)]
-    public bool Success { get; set; }
-    [ProtoMember(2)]
-    public string? Message { get; set; }
-    public AccountCreateResponseMessage() { }
+    [ProtoMember(1)] public bool Success { get; set; }
+    [ProtoMember(2)] public string? Message { get; set; }
+
+    public AccountCreateResponseMessage()
+    {
+    }
 
     public AccountCreateResponseMessage(bool success, string? message)
     {

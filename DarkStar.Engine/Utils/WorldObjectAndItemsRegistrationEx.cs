@@ -13,13 +13,11 @@ public static class WorldObjectAndItemsRegistrationEx
 {
     public static IServiceCollection RegisterWorldObjectAndItems(this IServiceCollection services)
     {
-
         foreach (var attr in AssemblyUtils.GetAttribute<GameObjectActionAttribute>())
         {
             services.AddTransient(attr);
         }
 
         return services;
-
     }
 }

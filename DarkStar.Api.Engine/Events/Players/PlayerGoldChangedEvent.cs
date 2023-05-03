@@ -23,6 +23,5 @@ public class PlayerGoldChangedEvent : EventBase
 
     public PlayerGoldChangedEvent()
     {
-
     }
 }

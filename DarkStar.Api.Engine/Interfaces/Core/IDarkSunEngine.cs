@@ -24,6 +24,4 @@ public interface IDarkSunEngine
     ITypeService TypeService { get; }
     ValueTask<bool> StartAsync();
     ValueTask<bool> StopAsync();
-
-
 }

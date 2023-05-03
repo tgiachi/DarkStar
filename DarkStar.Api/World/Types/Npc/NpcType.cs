@@ -20,7 +20,6 @@ public struct NpcType
 
     public NpcType()
     {
-
     }
 
     public override string ToString() => Name;

@@ -13,5 +13,4 @@ public interface IAiService : IDarkSunEngineService
 {
     void AddAiScriptByType(NpcType npcType, NpcSubType npcSubType, Action<AiContext> context);
     void AddAiScriptByName(string name, Action<AiContext> context);
-
 }

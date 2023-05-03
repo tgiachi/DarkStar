@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="0.6.1"></a>
+## [0.6.1](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.6.1) (2023-5-3)
+
+### Other
+
+* **AiService.cs:** rename AddScriptNpc method to AddScriptNpcAsync ([37719e4](https://www.github.com/tgiachi/DarkSun/commit/37719e4299cff35362b8c5c1f78ece36d238cd5b))
+* **all:** applied standard code format ([10eb144](https://www.github.com/tgiachi/DarkSun/commit/10eb14405d39f9ea8ee346596a51f6f7fa091110))
+
 <a name="0.6.0"></a>
 ## [0.6.0](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.6.0) (2023-5-2)
 

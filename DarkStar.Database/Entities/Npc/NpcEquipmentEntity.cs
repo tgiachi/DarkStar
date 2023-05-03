@@ -1,7 +1,6 @@
 using DarkStar.Api.World.Types.Equippable;
 using DarkStar.Database.Entities.Base;
 using DarkStar.Database.Entities.Item;
-
 using FreeSql.DataAnnotations;
 
 namespace DarkStar.Database.Entities.Npc;

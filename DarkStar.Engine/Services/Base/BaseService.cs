@@ -18,10 +18,7 @@ public class BaseService<TService> : IDarkSunEngineService where TService : IDar
 
     private readonly List<SubscriptionToken> _eventBusSubscriptions = new();
 
-    public BaseService(ILogger<TService> logger)
-    {
-        Logger = logger;
-    }
+    public BaseService(ILogger<TService> logger) => Logger = logger;
 
     public virtual ValueTask DisposeAsync()
     {
@@ -41,10 +38,7 @@ public class BaseService<TService> : IDarkSunEngineService where TService : IDar
         _eventBusSubscriptions.Add(Engine.EventBus.Subscribe(action));
     }
 
-    protected virtual ValueTask<bool> StartAsync()
-    {
-        return ValueTask.FromResult(true);
-    }
+    protected virtual ValueTask<bool> StartAsync() => ValueTask.FromResult(true);
 
     public virtual ValueTask<bool> StopAsync()
     {

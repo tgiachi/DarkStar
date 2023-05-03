@@ -2,7 +2,6 @@ using DarkStar.Api.World.Types.Npc;
 
 namespace DarkStar.Api.Engine.Attributes.Ai;
 
-
 [AttributeUsage(AttributeTargets.Class)]
 public class AiBehaviourAttribute : Attribute
 {
