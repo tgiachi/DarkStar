@@ -1,9 +1,11 @@
 using System.Reflection;
 using DarkStar.Api.Attributes.Services;
 using DarkStar.Api.Engine.Attributes.Objects;
+using DarkStar.Api.Engine.Data.Items;
 using DarkStar.Api.Engine.Events.Map;
 using DarkStar.Api.Engine.Interfaces.Objects;
 using DarkStar.Api.Engine.Interfaces.Services;
+using DarkStar.Api.Engine.Items.WorldObjects.Base;
 using DarkStar.Api.Engine.Map.Entities;
 using DarkStar.Api.Utils;
 using DarkStar.Api.World.Types.GameObjects;
@@ -11,6 +13,7 @@ using DarkStar.Api.World.Types.Map;
 using DarkStar.Database.Entities.Objects;
 using DarkStar.Engine.Services.Base;
 using DarkStar.Network.Protocol.Messages.Common;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
 namespace DarkStar.Engine.Services;
@@ -24,6 +27,11 @@ public class ItemService : BaseService<ItemService>, IItemService
     private readonly Dictionary<string, Type> _gameObjectActionTypes = new();
     private readonly Dictionary<uint, IGameObjectAction> _gameObjectActions = new();
     private readonly Dictionary<uint, IScheduledGameObjectAction> _scheduledGameObjectActions = new();
+
+    private readonly Dictionary<short, Action<GameObjectContext>> _scriptableGameObjectActions = new();
+
+    private readonly Dictionary<short, (double interval, Action<GameObjectContext> callback)>
+        _scriptableScheduledGameObjectActions = new();
 
 
     public ItemService(ILogger<ItemService> logger, IServiceProvider serviceProvider, ITypeService typeService) : base(
@@ -56,7 +64,13 @@ public class ItemService : BaseService<ItemService>, IItemService
     {
         if (obj.Layer == MapLayer.Objects)
         {
-            _ = Task.Run(() => AddGameObjectActionAsync(obj));
+            _ = Task.Run(
+                async () =>
+                {
+                    await AddGameObjectActionAsync(obj);
+                    await AddScriptableGameObjectAction(obj);
+                }
+            );
         }
     }
 
@@ -76,6 +90,40 @@ public class ItemService : BaseService<ItemService>, IItemService
         }
 
         _gameObjectActionLock.Release();
+    }
+
+    private async ValueTask AddScriptableGameObjectAction(GameObjectAddedEvent @event)
+    {
+        var gameObjectEntity =
+            await Engine.DatabaseService.QueryAsSingleAsync<GameObjectEntity>(
+                entity => entity.Id == @event.ObjectId
+            );
+
+        var worldGameObject =
+            await Engine.WorldService.GetEntityBySerialIdAsync<WorldGameObject>(@event.MapId, @event.Id);
+
+        if (_scriptableGameObjectActions.TryGetValue(gameObjectEntity.GameObjectType, out var action))
+        {
+            var scriptableGameObjectAction = new BaseScriptableWorldObjectAction(
+                _serviceProvider.GetRequiredService<ILogger<BaseScriptableWorldObjectAction>>(),
+                Engine,
+                action
+            );
+            await scriptableGameObjectAction.OnInitializedAsync(@event.MapId, worldGameObject!);
+            _gameObjectActions.Add(worldGameObject!.ID, scriptableGameObjectAction);
+        }
+
+        if (_scriptableScheduledGameObjectActions.TryGetValue(gameObjectEntity.GameObjectType, out var scheduledAction))
+        {
+            var scriptableScheduledGameObjectAction = new BaseScriptableScheduledWorldObjectAction(
+                _serviceProvider.GetRequiredService<ILogger<BaseScriptableScheduledWorldObjectAction>>(),
+                Engine,
+                scheduledAction.callback
+            );
+            scriptableScheduledGameObjectAction.SetScheduledInterval(scheduledAction.interval);
+            await scriptableScheduledGameObjectAction.OnInitializedAsync(@event.MapId, worldGameObject!);
+            _gameObjectActions.Add(worldGameObject!.ID, scriptableScheduledGameObjectAction);
+        }
     }
 
     private async ValueTask AddGameObjectActionAsync(GameObjectAddedEvent @event)
@@ -182,5 +230,17 @@ public class ItemService : BaseService<ItemService>, IItemService
             gameObject.ObjectId
         );
         return Task.CompletedTask;
+    }
+
+    public void AddScriptableGameObject(GameObjectType gameObjectType, Action<GameObjectContext> callBack)
+    {
+        _scriptableGameObjectActions.Add(gameObjectType.Id, callBack);
+    }
+
+    public void AddScriptableScheduledGameObject(
+        GameObjectType gameObjectType, int delay, Action<GameObjectContext> callBack
+    )
+    {
+        _scriptableScheduledGameObjectActions.Add(gameObjectType.Id, (delay, callBack));
     }
 }

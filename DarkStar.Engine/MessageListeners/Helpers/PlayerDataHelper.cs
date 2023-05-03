@@ -49,7 +49,7 @@ public static class PlayerDataHelper
                         Strength = r.Strength,
                         Name = r.Name,
                         Luck = r.Luck,
-                        TileId = r.TileId
+                        TileId = (int)r.TileId
                     }
                 )
                 .ToList()

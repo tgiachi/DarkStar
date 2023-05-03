@@ -346,7 +346,6 @@ public class WorldService : BaseService<IWorldService>, IWorldService
             );
         }
 
-
         await BinarySerialization.SerializeToFileAsync(
             mapEntity,
             Path.Join(_directoriesConfig[DirectoryNameType.Maps], $"{mapId}.map")
@@ -497,7 +496,10 @@ public class WorldService : BaseService<IWorldService>, IWorldService
     public async Task<bool> MovePlayerAsync(string mapId, Guid playerId, PointPosition position)
     {
         var player = await GetPlayerOnMapAsync(mapId, playerId);
-
+        if (player is null)
+        {
+            return false;
+        }
         player.Position = position.ToPoint();
 
         return true;

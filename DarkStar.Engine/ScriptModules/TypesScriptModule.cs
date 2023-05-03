@@ -22,7 +22,10 @@ public class TypesScriptModule
     }
 
     [ScriptFunction("add_game_object_type")]
-    public GameObjectType AddGameObjectType(string type) => _typeService.AddGameObjectType(type);
+    public void AddGameObjectType(params string[] type)
+    {
+        type.ToList().ForEach(s => _typeService.AddGameObjectType(s));
+    }
 
     [ScriptFunction("add_npc_type")]
     public NpcSubType AddNpcType(string type, string subType) => _typeService.AddNpcSubType(type, subType);
