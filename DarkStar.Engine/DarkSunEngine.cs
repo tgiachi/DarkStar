@@ -226,6 +226,7 @@ public class DarkSunEngine : IDarkSunEngine
                     );
                 }
 
+                await _networkClient.SendMessageAsync(new PlayerLogoutRequestMessage());
                 //await _networkClient.DisconnectAsync();
             }
         );

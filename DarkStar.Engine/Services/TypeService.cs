@@ -67,7 +67,6 @@ public class TypeService : BaseService<TypeService>, ITypeService
         return results.Count > 1 ? results.RandomItem() : results.First();
     }
 
-
     public void AddTile(Tile tile)
     {
         Logger.LogInformation("Adding tile: {Id} - {Name}", tile.Id, tile);

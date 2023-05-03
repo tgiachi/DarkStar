@@ -383,11 +383,18 @@ public class SeedService : BaseService<SeedService>, ISeedService
                 //IsTransparent = tile.IsTransparent
             };
             await Engine.DatabaseService.InsertAsync(tileMapEntity);
+        }
 
+        var tileSetMap = await Engine.DatabaseService.QueryAsListAsync<TileSetMapEntity>(
+            entity => entity.TileSetId == tileEntity.Id
+        );
+
+        foreach (var tile in tileSetMap)
+        {
             _typeService.AddTile(
                 new Tile(
                     tile.Name,
-                    tile.Id,
+                    tile.TileId,
                     tile.Category,
                     tile.SubCategory,
                     tile.IsTransparent,

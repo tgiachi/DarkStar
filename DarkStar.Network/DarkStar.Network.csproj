@@ -44,10 +44,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="Protocol\Messages\Triggers\Players\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <None Update="dark_star_icon.png">
         <Pack>True</Pack>
         <PackagePath></PackagePath>

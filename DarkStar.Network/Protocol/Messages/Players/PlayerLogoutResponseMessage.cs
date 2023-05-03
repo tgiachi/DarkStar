@@ -21,4 +21,6 @@ public class PlayerLogoutResponseMessage : IDarkStarNetworkMessage
     public PlayerLogoutResponseMessage()
     {
     }
+
+
 }

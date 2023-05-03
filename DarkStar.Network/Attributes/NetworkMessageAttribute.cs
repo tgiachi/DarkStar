@@ -7,6 +7,7 @@ using DarkStar.Network.Protocol.Types;
 
 namespace DarkStar.Network.Attributes;
 
+[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct)]
 public class NetworkMessageAttribute : Attribute
 {
     public DarkStarMessageType MessageType { get; set; }
