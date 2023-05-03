@@ -1,0 +1,29 @@
+name: Publish Void libraries on NuGet
+ 
+on:
+  push:
+    branches: [ main ]
+    paths: [ '*/**' ]
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 7.0.x
+        
+    - name: Restore dependencies api
+      run: dotnet restore DarkStar.sln
+
+    - name: Build all project
+      run: dotnet build -c Release --no-restore --output publish DarkStar.sln
+
+    - name: Publish on NuGet
+      run: dotnet nuget push .publish/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+    
