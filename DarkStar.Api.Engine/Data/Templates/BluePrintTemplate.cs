@@ -26,7 +26,6 @@ public class BluePrintTemplate
         Name = name;
         ClassName = className;
         InitLayers();
-
     }
 
     private void InitLayers()

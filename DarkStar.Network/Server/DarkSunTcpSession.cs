@@ -18,8 +18,10 @@ public class DarkSunTcpSession : TcpSession
     private readonly byte[] _tempBuffer = new byte[1];
     private byte[] _buffer = Array.Empty<byte>();
 
-    public DarkSunTcpSession(TcpServer server, INetworkMessageBuilder messageBuilder,
-        IDarkSunNetworkServer networkServer) : base(server)
+    public DarkSunTcpSession(
+        TcpServer server, INetworkMessageBuilder messageBuilder,
+        IDarkSunNetworkServer networkServer
+    ) : base(server)
     {
         _messageBuilder = messageBuilder;
         _networkServer = networkServer;
@@ -75,7 +77,6 @@ public class DarkSunTcpSession : TcpSession
         {
             var message = _messageBuilder.ParseMessage(buffer.ToArray());
             _networkServer.DispatchMessageReceivedAsync(Id.ToString(), message.MessageType, message.Message);
-
         }
         catch (Exception e)
         {

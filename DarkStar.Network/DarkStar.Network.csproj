@@ -9,19 +9,19 @@
 
 
     <ItemGroup>
-        <FrameworkReference Include="Microsoft.AspNetCore.App" />
+        <FrameworkReference Include="Microsoft.AspNetCore.App"/>
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="7.0.5" />
-        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0" />
-        <PackageReference Include="NetCoreServer" Version="7.0.0" />
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-        <PackageReference Include="protobuf-net" Version="3.2.16" />
+        <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="7.0.5"/>
+        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0"/>
+        <PackageReference Include="NetCoreServer" Version="7.0.0"/>
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
+        <PackageReference Include="protobuf-net" Version="3.2.16"/>
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\DarkStar.Api\DarkStar.Api.csproj" />
+        <ProjectReference Include="..\DarkStar.Api\DarkStar.Api.csproj"/>
     </ItemGroup>
 
     <ItemGroup>
@@ -32,7 +32,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="Protocol\Messages\Triggers\Players\" />
+        <Folder Include="Protocol\Messages\Triggers\Players\"/>
     </ItemGroup>
 
 </Project>

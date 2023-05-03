@@ -4,10 +4,7 @@ public static class RandomListUtils
 {
     private static readonly Random Random = new();
 
-    public static TEntity RandomItem<TEntity>(this List<TEntity> list)
-    {
-        return list[Random.Next(list.Count)];
-    }
+    public static TEntity RandomItem<TEntity>(this List<TEntity> list) => list[Random.Next(list.Count)];
 
     public static IEnumerable<TEntity> RandomItems<TEntity>(this List<TEntity> list, int num)
     {

@@ -21,6 +21,7 @@ public class ProtoBufMessageBuilder : INetworkMessageBuilder
 {
     private readonly ILogger _logger;
     private readonly Dictionary<DarkStarMessageType, Type> _messageTypes = new();
+
     /// <summary>
     /// Each message is separated by this string
     /// </summary>
@@ -43,15 +44,17 @@ public class ProtoBufMessageBuilder : INetworkMessageBuilder
 
         var message = Serializer.Deserialize<NetworkMessage>(new ReadOnlyMemory<byte>(messageBuffer));
         _logger.LogDebug("Message type is {MessageType}", message.MessageType);
-        var innerMessage = Serializer.Deserialize(_messageTypes[message.MessageType],
-            new MemoryStream(message.Message));
+        var innerMessage = Serializer.Deserialize(
+            _messageTypes[message.MessageType],
+            new MemoryStream(message.Message)
+        );
 
-        return new NetworkMessageData { MessageType = message.MessageType, Message = (innerMessage as IDarkStarNetworkMessage)! };
+        return new NetworkMessageData
+            { MessageType = message.MessageType, Message = (innerMessage as IDarkStarNetworkMessage)! };
     }
 
     public byte[] BuildMessage<T>(T message) where T : IDarkStarNetworkMessage
     {
-
         var messageType = message.GetType().GetCustomAttribute<NetworkMessageAttribute>();
 
         if (messageType != null)
@@ -72,7 +75,11 @@ public class ProtoBufMessageBuilder : INetworkMessageBuilder
                 netMessageBuffer = netMessageBuffer.Take((int)messageStream.Length).ToArray();
                 var fullMessage = netMessageBuffer.Concat(_separatorBytes).ToArray();
 
-                _logger.LogDebug("Sending message type: {Type} - Length: {BufferSize}", messageType.MessageType, fullMessage.Length.Bytes());
+                _logger.LogDebug(
+                    "Sending message type: {Type} - Length: {BufferSize}",
+                    messageType.MessageType,
+                    fullMessage.Length.Bytes()
+                );
                 return
                     new ReadOnlyMemory<byte>(fullMessage).ToArray();
             }
@@ -85,10 +92,7 @@ public class ProtoBufMessageBuilder : INetworkMessageBuilder
         throw new Exception($"Missing attribute [NetworkMessageAttribute] on message ${typeof(T)}");
     }
 
-    public int GetMessageLength(byte[] buffer)
-    {
-        return BufferUtils.GetIntFromByteArray(buffer);
-    }
+    public int GetMessageLength(byte[] buffer) => BufferUtils.GetIntFromByteArray(buffer);
 
 
     private void PrepareMessageTypesConversionMap()

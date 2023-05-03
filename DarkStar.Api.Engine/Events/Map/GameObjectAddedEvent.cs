@@ -17,6 +17,7 @@ public class GameObjectAddedEvent : EventBase
     public Guid ObjectId { get; set; }
 
     public uint Id { get; set; }
+
     public GameObjectAddedEvent(string mapId, MapLayer layer, PointPosition position, Guid objectId, uint id)
     {
         MapId = mapId;
@@ -28,11 +29,7 @@ public class GameObjectAddedEvent : EventBase
 
     public GameObjectAddedEvent()
     {
-
     }
 
-    public override string ToString()
-    {
-        return $"GameObjectAddedEvent: {Layer} - {Position} - {ObjectId}";
-    }
+    public override string ToString() => $"GameObjectAddedEvent: {Layer} - {Position} - {ObjectId}";
 }

@@ -18,7 +18,6 @@ using DarkStar.Api.World.Types.Tiles;
 using DarkStar.Database.Entities.Maps;
 using DarkStar.Engine.Services.Base;
 using DarkStar.Network.Protocol.Messages.Common;
-
 using FastEnumUtility;
 using GoRogue;
 using GoRogue.GameFramework;
@@ -39,7 +38,9 @@ public class WorldService : BaseService<IWorldService>, IWorldService
 
     private readonly ConcurrentDictionary<string, (Map map, MapType mapType, MapInfo mapInfo)> _maps = new();
 
-    public WorldService(ILogger<WorldService> logger, EngineConfig engineConfig, DirectoriesConfig directoriesConfig) : base(logger)
+    public WorldService(
+        ILogger<WorldService> logger, EngineConfig engineConfig, DirectoriesConfig directoriesConfig
+    ) : base(logger)
     {
         _engineConfig = engineConfig;
         _directoriesConfig = directoriesConfig;
@@ -56,18 +57,20 @@ public class WorldService : BaseService<IWorldService>, IWorldService
     {
         await GenerateMapsAsync();
         await SaveMapsAsync();
-        Engine.JobSchedulerService.AddJob("SaveMaps",
-            () =>
-            {
-                _ = Task.Run(SaveMapsAsync);
-
-            }, (int)TimeSpan.FromMinutes(_engineConfig.Maps.SaveEveryMinutes).TotalSeconds, false);
+        Engine.JobSchedulerService.AddJob(
+            "SaveMaps",
+            () => { _ = Task.Run(SaveMapsAsync); },
+            (int)TimeSpan.FromMinutes(_engineConfig.Maps.SaveEveryMinutes).TotalSeconds,
+            false
+        );
 
         return true;
     }
 
-    public Task<Dictionary<MapLayer, List<IGameObject>>> GetGameObjectsInRangeAsync(string mapId,
-        PointPosition position, int range = 5)
+    public Task<Dictionary<MapLayer, List<IGameObject>>> GetGameObjectsInRangeAsync(
+        string mapId,
+        PointPosition position, int range = 5
+    )
     {
         var map = GetMap(mapId);
         var gameObjects = FastEnum.GetValues<MapLayer>().ToDictionary(layer => layer, layer => new List<IGameObject>());
@@ -81,10 +84,13 @@ public class WorldService : BaseService<IWorldService>, IWorldService
                 gameObjects[(MapLayer)gameObject.Layer].Add(gameObject);
             }
         }
+
         return Task.FromResult(gameObjects);
     }
 
-    public Task<List<TEntity>> GetEntitiesInRangeAsync<TEntity>(string mapId, MapLayer layer, PointPosition position, int range = 5)
+    public Task<List<TEntity>> GetEntitiesInRangeAsync<TEntity>(
+        string mapId, MapLayer layer, PointPosition position, int range = 5
+    )
         where TEntity : BaseGameObject
     {
         var entities = new List<TEntity>();
@@ -101,8 +107,8 @@ public class WorldService : BaseService<IWorldService>, IWorldService
                 }
             }
         }
-        return Task.FromResult(entities);
 
+        return Task.FromResult(entities);
     }
 
 
@@ -122,8 +128,8 @@ public class WorldService : BaseService<IWorldService>, IWorldService
                     positions.Add(radius.ToPointPosition());
                 }
             }
-
         }
+
         return Task.FromResult(positions);
     }
 
@@ -137,7 +143,6 @@ public class WorldService : BaseService<IWorldService>, IWorldService
 
     public async ValueTask RemoveEntityAsync(string mapId, uint id)
     {
-
         var map = GetMap(mapId);
         var entity = await GetEntityBySerialIdAsync<BaseGameObject>(mapId, id);
         map.RemoveEntity(entity);
@@ -156,23 +161,33 @@ public class WorldService : BaseService<IWorldService>, IWorldService
     private async ValueTask GenerateMapsAsync()
     {
         var mapsToGenerate = Enumerable.Range(1, _engineConfig.Maps.Cities.Num)
-            .Select(_ => Task.Run(async () =>
-            {
-                var (id, map) = await BuildMapAsync(MapType.City);
-                HandleMapEvents(id, map);
-                _maps.TryAdd(id, (map, MapType.City, new MapInfo()));
-            }))
+            .Select(
+                _ => Task.Run(
+                    async () =>
+                    {
+                        var (id, map) = await BuildMapAsync(MapType.City);
+                        HandleMapEvents(id, map);
+                        _maps.TryAdd(id, (map, MapType.City, new MapInfo()));
+                    }
+                )
+            )
             .ToList();
 
 
-        mapsToGenerate.AddRange(Enumerable.Range(1, _engineConfig.Maps.Dungeons.Num)
-            .Select(_ => Task.Run(async () =>
-            {
-                var (id, map) = await BuildMapAsync(MapType.Dungeon);
-                HandleMapEvents(id, map);
-                _maps.TryAdd(id, (map, MapType.Dungeon, new MapInfo()));
-            }))
-            .ToList());
+        mapsToGenerate.AddRange(
+            Enumerable.Range(1, _engineConfig.Maps.Dungeons.Num)
+                .Select(
+                    _ => Task.Run(
+                        async () =>
+                        {
+                            var (id, map) = await BuildMapAsync(MapType.Dungeon);
+                            HandleMapEvents(id, map);
+                            _maps.TryAdd(id, (map, MapType.Dungeon, new MapInfo()));
+                        }
+                    )
+                )
+                .ToList()
+        );
 
         var mapGeneratingStopwatch = new Stopwatch();
         mapGeneratingStopwatch.Start();
@@ -181,7 +196,11 @@ public class WorldService : BaseService<IWorldService>, IWorldService
         await SaveMapsOnDbAsync();
         mapGeneratingStopwatch.Stop();
 
-        Logger.LogInformation("Generated {NumMaps} maps in {Time}ms", _maps.Count, mapGeneratingStopwatch.ElapsedMilliseconds);
+        Logger.LogInformation(
+            "Generated {NumMaps} maps in {Time}ms",
+            _maps.Count,
+            mapGeneratingStopwatch.ElapsedMilliseconds
+        );
     }
 
     private async ValueTask SaveMapsOnDbAsync()
@@ -190,13 +209,15 @@ public class WorldService : BaseService<IWorldService>, IWorldService
         {
             var map = maps.Value;
             var mapId = maps.Key;
-            await Engine.DatabaseService.InsertAsync(new MapEntity()
-            {
-                Name = map.Item3.Name,
-                MapId = mapId,
-                Type = map.Item2,
-                FileName = $"{mapId}.map"
-            });
+            await Engine.DatabaseService.InsertAsync(
+                new MapEntity()
+                {
+                    Name = map.Item3.Name,
+                    MapId = mapId,
+                    Type = map.Item2,
+                    FileName = $"{mapId}.map"
+                }
+            );
         }
     }
 
@@ -204,8 +225,10 @@ public class WorldService : BaseService<IWorldService>, IWorldService
     {
         var tasksToExecute = new List<Task>();
 
-        tasksToExecute.AddRange(_maps.Where(s => s.Value.mapType == MapType.City)
-            .Select(k => FillCityMapAsync(k.Key)));
+        tasksToExecute.AddRange(
+            _maps.Where(s => s.Value.mapType == MapType.City)
+                .Select(k => FillCityMapAsync(k.Key))
+        );
 
         return tasksToExecute;
     }
@@ -219,6 +242,7 @@ public class WorldService : BaseService<IWorldService>, IWorldService
         {
             await SaveMapAsync(map.Key);
         }
+
         savingStopWatch.Stop();
         Logger.LogInformation("Saved {NumMaps} maps in {Time} ms", _maps.Count, savingStopWatch.ElapsedMilliseconds);
     }
@@ -226,35 +250,43 @@ public class WorldService : BaseService<IWorldService>, IWorldService
     private async ValueTask SaveMapAsync(string mapId)
     {
         var map = _maps[mapId];
-        var mapEntity = new MapObjectSerialization() { Name = map.Item3.Name, MapId = mapId, MapType = map.Item2, Height = map.Item1.Height, Width = map.Item1.Width };
+        var mapEntity = new MapObjectSerialization()
+        {
+            Name = map.Item3.Name, MapId = mapId, MapType = map.Item2, Height = map.Item1.Height, Width = map.Item1.Width
+        };
 
         foreach (var terrainPosition in map.Item1.Terrain.Positions())
         {
             var terrainObject = map.Item1.GetTerrainAt(terrainPosition) as BaseGameObject;
-            mapEntity.Layers.Add(new LayerObjectSerialization()
-            {
-                Type = MapLayer.Terrain,
-                Tile = terrainObject!.Tile,
-                Position = new PointPosition(terrainPosition.X, terrainPosition.Y)
-            });
+            mapEntity.Layers.Add(
+                new LayerObjectSerialization()
+                {
+                    Type = MapLayer.Terrain,
+                    Tile = terrainObject!.Tile,
+                    Position = new PointPosition(terrainPosition.X, terrainPosition.Y)
+                }
+            );
         }
 
         foreach (var gameObject in map.Item1.Entities.Items)
         {
             var baseGameObject = gameObject as BaseGameObject;
-            mapEntity.Layers.Add(new()
-            {
-                Type = (MapLayer)gameObject.Layer,
-                Tile = baseGameObject!.Tile,
-                ObjectId = baseGameObject.ObjectId,
-                Position = gameObject.Position.ToPointPosition()
-            });
+            mapEntity.Layers.Add(
+                new LayerObjectSerialization
+                {
+                    Type = (MapLayer)gameObject.Layer,
+                    Tile = baseGameObject!.Tile,
+                    ObjectId = baseGameObject.ObjectId,
+                    Position = gameObject.Position.ToPointPosition()
+                }
+            );
         }
 
 
-        await BinarySerialization.SerializeToFileAsync(mapEntity,
-            Path.Join(_directoriesConfig[DirectoryNameType.Maps], $"{mapId}.map"));
-
+        await BinarySerialization.SerializeToFileAsync(
+            mapEntity,
+            Path.Join(_directoriesConfig[DirectoryNameType.Maps], $"{mapId}.map")
+        );
     }
 
     private async Task<(string, Map)> BuildMapAsync(MapType mapType)
@@ -263,30 +295,33 @@ public class WorldService : BaseService<IWorldService>, IWorldService
         Logger.LogDebug("Generating map type {MapType}", mapType);
         return mapType switch
         {
-            MapType.City => (id, await GenerateCityMapAsync()),
+            MapType.City    => (id, await GenerateCityMapAsync()),
             MapType.Dungeon => (id, await GenerateDungeonMapAsync()),
-            _ => throw new Exception($"Can't find map type generator {mapType}")
+            _               => throw new Exception($"Can't find map type generator {mapType}")
         };
     }
 
     private ValueTask<Map> GenerateCityMapAsync()
     {
         var cityMapGenerator = new Generator(_engineConfig.Maps.Cities.Width, _engineConfig.Maps.Cities.Height)
-            .ConfigAndGenerateSafe(generator =>
-            {
-                generator.AddSteps(DefaultAlgorithms.RectangleMapSteps());
-            }, 3);
+            .ConfigAndGenerateSafe(generator => { generator.AddSteps(DefaultAlgorithms.RectangleMapSteps()); }, 3);
 
         var wallsFloors = cityMapGenerator.Context.GetFirst<ArrayView<bool>>("WallFloor");
-        var map = new Map(_engineConfig.Maps.Cities.Width, _engineConfig.Maps.Cities.Height,
-            FastEnum.GetValues<MapLayer>().Count, Distance.Chebyshev);
+        var map = new Map(
+            _engineConfig.Maps.Cities.Width,
+            _engineConfig.Maps.Cities.Height,
+            FastEnum.GetValues<MapLayer>().Count,
+            Distance.Chebyshev
+        );
 
-        map.ApplyTerrainOverlay(wallsFloors, (pos, val) => val
-            ? new TerrainGameObject(pos) { IsWalkable = true, IsTransparent = true, Tile = 0 }
-            : new TerrainGameObject(pos, false, false) { Tile = 1 });
+        map.ApplyTerrainOverlay(
+            wallsFloors,
+            (pos, val) => val
+                ? new TerrainGameObject(pos) { IsWalkable = true, IsTransparent = true, Tile = 0 }
+                : new TerrainGameObject(pos, false, false) { Tile = 1 }
+        );
 
         return ValueTask.FromResult(map);
-
     }
 
     private async Task FillCityMapAsync(string mapId)
@@ -335,17 +370,32 @@ public class WorldService : BaseService<IWorldService>, IWorldService
     {
         map.ObjectAdded += (_, args) =>
         {
-            Logger.LogDebug("Added {GameObject} to map {MapId} Layer: {Layer}", args.Item, id, ((MapLayer)args.Item.Layer).FastToString());
+            Logger.LogDebug(
+                "Added {GameObject} to map {MapId} Layer: {Layer}",
+                args.Item,
+                id,
+                ((MapLayer)args.Item.Layer).FastToString()
+            );
             HandleGameObjectAdded(id, args.Item, args.Position.ToPointPosition());
         };
         map.ObjectMoved += (_, args) =>
         {
-            Logger.LogDebug("Moved {GameObject} to map {MapId} Layer: {Layer}", args.Item, id, ((MapLayer)args.Item.Layer).FastToString());
+            Logger.LogDebug(
+                "Moved {GameObject} to map {MapId} Layer: {Layer}",
+                args.Item,
+                id,
+                ((MapLayer)args.Item.Layer).FastToString()
+            );
             HandleGameObjectMoved(id, args.Item, args.OldPosition.ToPointPosition(), args.NewPosition.ToPointPosition());
         };
         map.ObjectRemoved += (_, args) =>
         {
-            Logger.LogDebug("Removed {GameObject} to map {MapId} Layer: {Layer}", args.Item, id, ((MapLayer)args.Item.Layer).FastToString());
+            Logger.LogDebug(
+                "Removed {GameObject} to map {MapId} Layer: {Layer}",
+                args.Item,
+                id,
+                ((MapLayer)args.Item.Layer).FastToString()
+            );
             HandleGameObjectRemoved(id, args.Item, args.Position.ToPointPosition());
         };
     }
@@ -359,6 +409,7 @@ public class WorldService : BaseService<IWorldService>, IWorldService
         {
             randomPosition = RandPointUtils.RandomPoint(map.Width, map.Height);
         }
+
         return randomPosition.ToPointPosition();
     }
 
@@ -382,7 +433,8 @@ public class WorldService : BaseService<IWorldService>, IWorldService
     private async Task<PlayerGameObject?> GetPlayerOnMapAsync(string mapId, Guid playerId)
     {
         var map = GetMap(mapId);
-        return map.Entities.GetLayer((int)MapLayer.Players).Items.Cast<PlayerGameObject>()
+        return map.Entities.GetLayer((int)MapLayer.Players)
+            .Items.Cast<PlayerGameObject>()
             .FirstOrDefault(s => s.ObjectId == playerId);
     }
 
@@ -390,23 +442,28 @@ public class WorldService : BaseService<IWorldService>, IWorldService
     {
         var map = _maps[mapId].Item1;
 
-        map.AddEntity(new PlayerGameObject(position.ToPoint())
-        {
-            Tile = tile,
-            ObjectId = playerId,
-            NetworkSessionId = networkSessionId
-        });
+        map.AddEntity(
+            new PlayerGameObject(position.ToPoint())
+            {
+                Tile = tile,
+                ObjectId = playerId,
+                NetworkSessionId = networkSessionId
+            }
+        );
         return true;
     }
 
     public bool RemovePlayerFromMap(string mapId, Guid playerId)
     {
         var map = GetMap(mapId);
-        var player = map.Entities.Items.FirstOrDefault(x => x is PlayerGameObject playerGameObject && playerGameObject.ObjectId == playerId);
+        var player = map.Entities.Items.FirstOrDefault(
+            x => x is PlayerGameObject playerGameObject && playerGameObject.ObjectId == playerId
+        );
         if (player is null)
         {
             return false;
         }
+
         map.RemoveEntity(player);
         return true;
     }
@@ -417,6 +474,7 @@ public class WorldService : BaseService<IWorldService>, IWorldService
         {
             return map.Item1;
         }
+
         throw new Exception($"Map {mapId} not found");
     }
 
@@ -432,13 +490,18 @@ public class WorldService : BaseService<IWorldService>, IWorldService
         _maps.TryGetValue(mapId, out var map);
 
         return map.mapInfo.Name;
-
     }
 
     public void AddEntity<TEntity>(string mapId, TEntity entity) where TEntity : IGameObject
     {
         var map = GetMap(mapId);
-        Logger.LogDebug("Add entity {Entity} to map {MapId} Layer: {Layer} Position: {Pos}", entity, mapId, ((MapLayer)entity.Layer).FastToString(), entity.Position);
+        Logger.LogDebug(
+            "Add entity {Entity} to map {MapId} Layer: {Layer} Position: {Pos}",
+            entity,
+            mapId,
+            ((MapLayer)entity.Layer).FastToString(),
+            entity.Position
+        );
         map.AddEntity(entity);
     }
 
@@ -461,7 +524,6 @@ public class WorldService : BaseService<IWorldService>, IWorldService
         var map = GetMap(mapId);
         var entity = map.Entities.Items.FirstOrDefault(x => x is TEntity tEntity && tEntity.ID == serialId);
         return ValueTask.FromResult(entity as TEntity);
-
     }
 
     public ValueTask<TEntity> GetEntityByPositionAsync<TEntity>(string mapId, PointPosition position)
@@ -480,9 +542,9 @@ public class WorldService : BaseService<IWorldService>, IWorldService
         {
             return ValueTask.FromResult(map.Terrain.Positions().Select(x => map.GetTerrainAt(x)).Cast<TEntity>().ToList());
         }
+
         var entities = map.Entities.GetLayer((int)layer).Items.Cast<TEntity>().ToList();
         return ValueTask.FromResult(entities);
-
     }
 
     public ValueTask<(string mapId, PointPosition position)> GetRandomCityStartingPointAsync()
@@ -491,7 +553,6 @@ public class WorldService : BaseService<IWorldService>, IWorldService
         var position = GetRandomWalkablePosition(map.Key);
 
         return ValueTask.FromResult((map.Key, position));
-
     }
 
     public List<PlayerGameObject> GetPlayers(string mapId)
@@ -502,56 +563,84 @@ public class WorldService : BaseService<IWorldService>, IWorldService
     }
 
 
-    public List<PointPosition> CalculateAStarPath(string mapId, PointPosition sourcePosition, PointPosition destinationPosition)
+    public List<PointPosition> CalculateAStarPath(
+        string mapId, PointPosition sourcePosition, PointPosition destinationPosition
+    )
     {
         var map = GetMap(mapId);
         var path = map.AStar.ShortestPath(sourcePosition.ToPoint(), destinationPosition.ToPoint());
 
         return path.StepsWithStart.Select(s => s.ToPointPosition()).ToList();
-
     }
 
     private void HandleGameObjectAdded(string mapId, IGameObject gameObject, PointPosition position)
     {
         var baseGameObject = gameObject as BaseGameObject;
-        Engine.EventBus.PublishAsync(new GameObjectAddedEvent(mapId, (MapLayer)gameObject.Layer, position,
-            baseGameObject!.ObjectId, gameObject.ID));
+        Engine.EventBus.PublishAsync(
+            new GameObjectAddedEvent(
+                mapId,
+                (MapLayer)gameObject.Layer,
+                position,
+                baseGameObject!.ObjectId,
+                gameObject.ID
+            )
+        );
     }
 
-    private void HandleGameObjectMoved(string mapId, IGameObject gameObject, PointPosition oldPosition, PointPosition newPosition)
+    private void HandleGameObjectMoved(
+        string mapId, IGameObject gameObject, PointPosition oldPosition, PointPosition newPosition
+    )
     {
         var baseGameObject = gameObject as BaseGameObject;
-        Engine.EventBus.PublishAsync(new GameObjectMovedEvent(mapId, (MapLayer)gameObject.Layer, oldPosition, newPosition, baseGameObject!.ObjectId, baseGameObject.ID));
+        Engine.EventBus.PublishAsync(
+            new GameObjectMovedEvent(
+                mapId,
+                (MapLayer)gameObject.Layer,
+                oldPosition,
+                newPosition,
+                baseGameObject!.ObjectId,
+                baseGameObject.ID
+            )
+        );
     }
 
     private void HandleGameObjectRemoved(string mapId, IGameObject gameObject, PointPosition position)
     {
         var baseGameObject = gameObject as BaseGameObject;
-        Engine.EventBus.PublishAsync(new GameObjectRemovedEvent(mapId, (MapLayer)gameObject.Layer, position, baseGameObject!.ObjectId, baseGameObject.ID));
+        Engine.EventBus.PublishAsync(
+            new GameObjectRemovedEvent(
+                mapId,
+                (MapLayer)gameObject.Layer,
+                position,
+                baseGameObject!.ObjectId,
+                baseGameObject.ID
+            )
+        );
     }
 
     private ValueTask<Map> GenerateDungeonMapAsync()
     {
         var dungeonGenerator = new Generator(_engineConfig.Maps.Dungeons.Width, _engineConfig.Maps.Dungeons.Height)
-            .ConfigAndGenerateSafe(generator =>
-            {
-                generator.AddSteps(DefaultAlgorithms.DungeonMazeMapSteps());
-            }, 3);
+            .ConfigAndGenerateSafe(generator => { generator.AddSteps(DefaultAlgorithms.DungeonMazeMapSteps()); }, 3);
 
-        var map = new Map(_engineConfig.Maps.Dungeons.Width, _engineConfig.Maps.Dungeons.Height,
-            FastEnum.GetValues<MapLayer>().Count, Distance.Chebyshev);
+        var map = new Map(
+            _engineConfig.Maps.Dungeons.Width,
+            _engineConfig.Maps.Dungeons.Height,
+            FastEnum.GetValues<MapLayer>().Count,
+            Distance.Chebyshev
+        );
 
         var wallsFloors = dungeonGenerator.Context.GetFirst<ArrayView<bool>>("WallFloor");
 
-        map.ApplyTerrainOverlay(wallsFloors, (pos, val) => val
-            ? new TerrainGameObject(pos) { IsWalkable = true, IsTransparent = true, Tile = 0 }
-            : new TerrainGameObject(pos, false, false) { Tile = 0 });
+        map.ApplyTerrainOverlay(
+            wallsFloors,
+            (pos, val) => val
+                ? new TerrainGameObject(pos) { IsWalkable = true, IsTransparent = true, Tile = 0 }
+                : new TerrainGameObject(pos, false, false) { Tile = 0 }
+        );
 
         return ValueTask.FromResult(map);
     }
 
-    private static string GenerateMapId()
-    {
-        return Guid.NewGuid().ToString().Replace("-", "");
-    }
+    private static string GenerateMapId() => Guid.NewGuid().ToString().Replace("-", "");
 }

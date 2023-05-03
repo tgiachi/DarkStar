@@ -14,8 +14,10 @@ public class WorldMessageResponseMessage : IDarkStarNetworkMessage
     public string SenderName { get; set; } = null!;
     public WorldMessageType MessageType { get; set; }
 
-    public WorldMessageResponseMessage(string message, string senderId, string senderName,
-        WorldMessageType messageType)
+    public WorldMessageResponseMessage(
+        string message, string senderId, string senderName,
+        WorldMessageType messageType
+    )
     {
         Message = message;
         SenderId = senderId;

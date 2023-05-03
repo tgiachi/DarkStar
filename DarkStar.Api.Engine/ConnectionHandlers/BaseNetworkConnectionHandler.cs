@@ -21,13 +21,8 @@ public class BaseNetworkConnectionHandler : INetworkConnectionHandler
         Engine = engine;
     }
 
-    public virtual Task<List<IDarkStarNetworkMessage>> ClientConnectedMessagesAsync(string sessionId)
-    {
+    public virtual Task<List<IDarkStarNetworkMessage>> ClientConnectedMessagesAsync(string sessionId) =>
         throw new NotImplementedException();
-    }
 
-    public virtual Task ClientDisconnectedAsync(string sessionId)
-    {
-        throw new NotImplementedException();
-    }
+    public virtual Task ClientDisconnectedAsync(string sessionId) => throw new NotImplementedException();
 }

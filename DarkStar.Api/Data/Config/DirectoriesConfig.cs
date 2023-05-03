@@ -32,8 +32,5 @@ public class DirectoriesConfig
         Directories.Add(type, directory);
     }
 
-    public string GetDirectory(DirectoryNameType type)
-    {
-        return Directories[type];
-    }
+    public string GetDirectory(DirectoryNameType type) => Directories[type];
 }

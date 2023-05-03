@@ -201,7 +201,6 @@ public class TypeService : BaseService<TypeService>, ITypeService
 
     public ItemType AddItemType(string name)
     {
-
         var exists = _itemTypes.FirstOrDefault(s => s.Name == name.ToUpper());
         if (!string.IsNullOrEmpty(exists.Name))
         {

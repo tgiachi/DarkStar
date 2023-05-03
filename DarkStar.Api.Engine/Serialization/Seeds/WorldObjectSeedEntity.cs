@@ -8,7 +8,6 @@ using DarkStar.Api.Engine.Serialization.Seeds.Converters;
 using DarkStar.Api.Serialization.Converters;
 using DarkStar.Api.World.Types.GameObjects;
 using DarkStar.Api.World.Types.Tiles;
-
 using TinyCsv.Attributes;
 
 namespace DarkStar.Api.Engine.Serialization.Seeds;
@@ -18,15 +17,11 @@ namespace DarkStar.Api.Engine.Serialization.Seeds;
 [Delimiter(";")]
 public class WorldObjectSeedEntity
 {
-    [Column]
-    public string Name { get; set; } = null!;
-    [Column]
-    public string Description { get; set; } = null!;
-    [Column]
-    public string TileName { get; set; }
+    [Column] public string Name { get; set; } = null!;
+    [Column] public string Description { get; set; } = null!;
+    [Column] public string TileName { get; set; }
 
-    [Column]
-    public string GameObjectName { get; set; }
+    [Column] public string GameObjectName { get; set; }
 
     [Column(converter: typeof(ExtraDataConverter))]
     public Dictionary<string, string> Data { get; set; } = null!;

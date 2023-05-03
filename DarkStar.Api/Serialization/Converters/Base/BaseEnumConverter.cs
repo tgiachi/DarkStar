@@ -11,10 +11,7 @@ namespace DarkStar.Api.Serialization.Converters.Base;
 
 public class BaseEnumConverter<TEnum> : IValueConverter where TEnum : struct, Enum
 {
-    public virtual string Convert(object value, object parameter, IFormatProvider provider)
-    {
-        return value.ToString()!;
-    }
+    public virtual string Convert(object value, object parameter, IFormatProvider provider) => value.ToString()!;
 
 
     public virtual object ConvertBack(string value, Type targetType, object parameter, IFormatProvider provider)
@@ -26,7 +23,6 @@ public class BaseEnumConverter<TEnum> : IValueConverter where TEnum : struct, En
 
         if (value.ToLower() == "random")
         {
-
             return FastEnum.GetValues<TEnum>().ToList().RandomItem().ToString();
         }
         else
@@ -36,8 +32,10 @@ public class BaseEnumConverter<TEnum> : IValueConverter where TEnum : struct, En
             {
                 // Replace * and search value in enum 
 
-                var enumValue = enumValues.FirstOrDefault(x =>
-                    x.ToString().ToLower().StartsWith(value.ToLower().Replace("*","")));
+                var enumValue = enumValues.FirstOrDefault(
+                    x =>
+                        x.ToString().ToLower().StartsWith(value.ToLower().Replace("*", ""))
+                );
 
                 return enumValue!;
             }
@@ -46,9 +44,6 @@ public class BaseEnumConverter<TEnum> : IValueConverter where TEnum : struct, En
                 var enumValue = enumValues.FirstOrDefault(x => x.ToString().ToLower() == value.ToLower());
                 return enumValue!;
             }
-
         }
-
     }
-
 }

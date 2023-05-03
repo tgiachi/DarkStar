@@ -12,6 +12,7 @@ public class BaseScriptModule
 {
     protected ILogger Logger { get; }
     protected IDarkSunEngine Engine { get; }
+
     public BaseScriptModule(ILogger<BaseScriptModule> logger, IDarkSunEngine engine)
     {
         Logger = logger;

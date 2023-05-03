@@ -12,13 +12,11 @@ namespace DarkStar.Api.Serialization.Types;
 [HasHeaderRecord(true)]
 [Delimiter(";")]
 [SeedObject("NpcTypeSubTypes")]
-public class NpcTypeAndSubTypeSerializableEntity 
+public class NpcTypeAndSubTypeSerializableEntity
 {
-    [Column]
-    public int IdNpcType { get; set; }
+    [Column] public int IdNpcType { get; set; }
 
-    [Column]
-    public int IdNpcSubType { get; set; }
+    [Column] public int IdNpcSubType { get; set; }
 
     [Column(converter: typeof(ToUpperCaseConverter))]
     public string NpcName { get; set; }
@@ -26,7 +24,5 @@ public class NpcTypeAndSubTypeSerializableEntity
     [Column(converter: typeof(ToUpperCaseConverter))]
     public string NpcSubTypeName { get; set; }
 
-    [Column]
-    public string TileName { get; set; }
-
+    [Column] public string TileName { get; set; }
 }

@@ -9,5 +9,4 @@ namespace DarkStar.Api.Engine.Data.Config.Sections;
 public class HttpServerConfig
 {
     public bool Enabled { get; set; } = true;
-
 }

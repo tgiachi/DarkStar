@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using DarkStar.Network.Attributes;
 using DarkStar.Network.Protocol.Interfaces.Messages;
 using DarkStar.Network.Protocol.Types;
-
 using ProtoBuf;
 
 
@@ -16,6 +15,5 @@ namespace DarkStar.Network.Protocol.Messages.Players;
 [ProtoContract]
 public class PlayerSelectRequestMessage : IDarkStarNetworkMessage
 {
-    [ProtoMember(1)]
-    public Guid PlayerId { get; set; }
+    [ProtoMember(1)] public Guid PlayerId { get; set; }
 }

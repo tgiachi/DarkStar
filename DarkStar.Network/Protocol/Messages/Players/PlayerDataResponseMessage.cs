@@ -14,7 +14,4 @@ namespace DarkStar.Network.Protocol.Messages.Players;
 [ProtoContract]
 public class PlayerDataResponseMessage : IDarkStarNetworkMessage
 {
-
-
-
 }

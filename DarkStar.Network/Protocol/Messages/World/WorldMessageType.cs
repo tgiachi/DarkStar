@@ -10,5 +10,5 @@ public enum WorldMessageType : short
 {
     Whisper = 5,
     Normal = 10,
-    Yell = 15,
+    Yell = 15
 }

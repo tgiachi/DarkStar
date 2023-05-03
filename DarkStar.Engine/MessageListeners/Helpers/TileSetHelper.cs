@@ -42,8 +42,6 @@ public static class TileSetHelper
     public static async ValueTask<(byte[], List<TileSetMapEntry>)> GetTileSetContentAndMapAsync(
         string tileSet,
         IDarkSunEngine engine
-    )
-    {
-        return (await GetTileSetAsync(tileSet, engine), await GetTileSetMapAsync(tileSet, engine));
-    }
+    ) =>
+        (await GetTileSetAsync(tileSet, engine), await GetTileSetMapAsync(tileSet, engine));
 }

@@ -9,19 +9,17 @@ namespace DarkStar.Engine.Http;
 
 public static class WebModuleLoaderExtension
 {
-
     public static IServiceCollection ConfigureWebServer(this IServiceCollection services)
     {
         services
             .AddRouting()
-            .AddControllers().ConfigureApplicationPartManager(manager =>
-            {
-                manager.ApplicationParts.Add(new AssemblyPart(typeof(VersionController).Assembly));
-            });
+            .AddControllers()
+            .ConfigureApplicationPartManager(
+                manager => { manager.ApplicationParts.Add(new AssemblyPart(typeof(VersionController).Assembly)); }
+            );
 
 
         services.AddSignalR();
-
 
 
         services
@@ -44,15 +42,19 @@ public static class WebModuleLoaderExtension
             .UseSwagger()
             .UseSwaggerUI()
             .UseDefaultFiles(defaultFileOptions)
-            .UseStaticFiles(new StaticFileOptions()
-            {
-                FileProvider = new PhysicalFileProvider(httpRootDirectory)
-            })
-            .UseEndpoints(routeBuilder =>
-            {
-                routeBuilder.MapHub<SignalrMessageHub>("/messages");
-                routeBuilder.MapControllers();
-            });
+            .UseStaticFiles(
+                new StaticFileOptions()
+                {
+                    FileProvider = new PhysicalFileProvider(httpRootDirectory)
+                }
+            )
+            .UseEndpoints(
+                routeBuilder =>
+                {
+                    routeBuilder.MapHub<SignalrMessageHub>("/messages");
+                    routeBuilder.MapControllers();
+                }
+            );
         return builder;
     }
 }

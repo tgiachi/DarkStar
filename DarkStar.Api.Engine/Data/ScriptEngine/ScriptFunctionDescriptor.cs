@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace DarkStar.Api.Engine.Data.ScriptEngine;
+
 public class ScriptFunctionDescriptor
 {
     public string FunctionName { get; set; } = null!;

@@ -10,5 +10,4 @@ public interface IItemAction
     Task OnRemovedAsync(string mapId, ItemGameObject itemObject, Guid senderId, bool isNpc);
     Task<int> GetAttackAsync(string mapId, ItemGameObject itemObject, Guid senderId, bool isNpc);
     Task<int> GetDefenceAsync(string mapId, ItemGameObject itemObject, Guid senderId, bool isNpc);
-
 }

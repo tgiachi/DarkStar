@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using DarkStar.Api.Engine.Interfaces.Commands;
 using DarkStar.Api.Engine.Types.Commands;
 using DarkStar.Network.Protocol.Messages.Common;
@@ -27,5 +26,4 @@ public struct PlayerMoveAction : ICommandAction
         Delay = delay;
         Direction = direction;
     }
-
 }

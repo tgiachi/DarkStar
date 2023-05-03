@@ -9,13 +9,14 @@ namespace DarkStar.Api.Engine.Ai.Base;
 
 public class BaseScriptableBehaviourExecutor : BaseAiBehaviourExecutor
 {
-
     private readonly IServiceProvider _serviceProvider;
 
     public AiContext Ai { get; set; }
     public Action<AiContext> ExecutorFunc { get; set; }
 
-    public BaseScriptableBehaviourExecutor(ILogger<BaseScriptableBehaviourExecutor> logger, IDarkSunEngine engine, IServiceProvider serviceProvider) : base(logger, engine) => _serviceProvider = serviceProvider;
+    public BaseScriptableBehaviourExecutor(
+        ILogger<BaseScriptableBehaviourExecutor> logger, IDarkSunEngine engine, IServiceProvider serviceProvider
+    ) : base(logger, engine) => _serviceProvider = serviceProvider;
 
     public override async ValueTask InitializeAsync(string mapId, NpcEntity npc, NpcGameObject npcGameObject)
     {
@@ -38,6 +39,5 @@ public class BaseScriptableBehaviourExecutor : BaseAiBehaviourExecutor
     {
         ExecutorFunc.Invoke(Ai);
         return ValueTask.CompletedTask;
-
     }
 }

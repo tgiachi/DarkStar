@@ -26,7 +26,6 @@ public class WorldMapConfig
     public int Height { get; set; } = MapDefaultSizes.DefaultWorldHeight;
 }
 
-
 public class CityMapConfig
 {
     public int Num { get; set; } = MapDefaultSizes.NumCities;

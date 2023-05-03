@@ -11,8 +11,8 @@ namespace DarkStar.Network.Client.Interfaces;
 
 public interface IDarkStarNetworkClient
 {
-
     delegate Task MessageReceivedDelegate(DarkStarMessageType messageType, IDarkStarNetworkMessage message);
+
     event MessageReceivedDelegate OnMessageReceived;
 
     bool IsConnected { get; }

@@ -14,15 +14,18 @@ using Microsoft.Extensions.Logging;
 
 namespace DarkStar.Engine.MessageListeners;
 
-
 [NetworkMessageListener(DarkStarMessageType.TileSetDownloadRequest)]
 public class TileSetDownloadMessageListener : BaseNetworkMessageListener<TileSetDownloadRequestMessage>
 {
-    public TileSetDownloadMessageListener(ILogger<BaseNetworkMessageListener<TileSetDownloadRequestMessage>> logger, IDarkSunEngine engine) : base(logger, engine)
+    public TileSetDownloadMessageListener(
+        ILogger<BaseNetworkMessageListener<TileSetDownloadRequestMessage>> logger, IDarkSunEngine engine
+    ) : base(logger, engine)
     {
     }
 
-    public override async Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(string sessionId, DarkStarMessageType messageType, TileSetDownloadRequestMessage message)
+    public override async Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(
+        string sessionId, DarkStarMessageType messageType, TileSetDownloadRequestMessage message
+    )
     {
         if (!Engine.PlayerService.GetSession(sessionId).IsLogged)
         {
@@ -31,6 +34,5 @@ public class TileSetDownloadMessageListener : BaseNetworkMessageListener<TileSet
 
         var result = await TileSetHelper.GetTileSetAsync(message.TileName, Engine);
         return SingleMessage(new TileSetDownloadResponseMessage(message.TileName, result));
-
     }
 }

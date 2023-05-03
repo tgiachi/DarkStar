@@ -33,9 +33,11 @@ public class TcpNetworkClient : TcpClient, IDarkStarNetworkClient
     private readonly byte[] _tempBuffer = new byte[1];
     private byte[] _buffer = Array.Empty<byte>();
 
-    public TcpNetworkClient(ILogger<TcpNetworkClient> logger,
+    public TcpNetworkClient(
+        ILogger<TcpNetworkClient> logger,
         DarkStarNetworkClientConfig config,
-        INetworkMessageBuilder messageBuilder) : base(config.Address, config.Port)
+        INetworkMessageBuilder messageBuilder
+    ) : base(config.Address, config.Port)
     {
         _logger = logger;
         _messageBuilder = messageBuilder;
@@ -101,11 +103,14 @@ public class TcpNetworkClient : TcpClient, IDarkStarNetworkClient
                 _tokenIndex = 0;
             }
         }
+
         base.OnReceived(buffer, offset, size);
     }
 
-    public async Task DispatchMessageReceivedAsync(DarkStarMessageType messageType,
-        IDarkStarNetworkMessage message)
+    public async Task DispatchMessageReceivedAsync(
+        DarkStarMessageType messageType,
+        IDarkStarNetworkMessage message
+    )
     {
         _logger.LogDebug("Received message: {MessageType}", messageType);
         OnMessageReceived?.Invoke(messageType, message);
@@ -122,7 +127,6 @@ public class TcpNetworkClient : TcpClient, IDarkStarNetworkClient
         {
             var message = _messageBuilder.ParseMessage(buffer.ToArray());
             await DispatchMessageReceivedAsync(message.MessageType, message.Message);
-
         }
         catch (Exception e)
         {
@@ -135,7 +139,6 @@ public class TcpNetworkClient : TcpClient, IDarkStarNetworkClient
         try
         {
             SendAsync(_messageBuilder.BuildMessage(message));
-
         }
         catch (Exception ex)
 
@@ -148,7 +151,6 @@ public class TcpNetworkClient : TcpClient, IDarkStarNetworkClient
 
     public Task SendMessageAsync(List<IDarkStarNetworkMessage> message)
     {
-
         foreach (var messageItem in message)
         {
             try
@@ -169,7 +171,6 @@ public class TcpNetworkClient : TcpClient, IDarkStarNetworkClient
     {
         _messageListeners.Add(messageType, serverMessageListener);
     }
-
 
 
     public new ValueTask ConnectAsync()

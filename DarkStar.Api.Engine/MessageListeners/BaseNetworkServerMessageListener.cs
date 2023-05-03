@@ -17,7 +17,9 @@ public class BaseNetworkMessageListener<TMessage> : INetworkServerMessageListene
         Engine = engine;
     }
 
-    public async Task OnMessageReceivedAsync(string sessionId, DarkStarMessageType messageType, IDarkStarNetworkMessage message)
+    public async Task OnMessageReceivedAsync(
+        string sessionId, DarkStarMessageType messageType, IDarkStarNetworkMessage message
+    )
     {
         try
         {
@@ -29,12 +31,18 @@ public class BaseNetworkMessageListener<TMessage> : INetworkServerMessageListene
         }
         catch (Exception ex)
         {
-            Logger.LogError(ex, "Error while processing message {MessageType} for session {SessionId}", messageType,
-                sessionId);
+            Logger.LogError(
+                ex,
+                "Error while processing message {MessageType} for session {SessionId}",
+                messageType,
+                sessionId
+            );
         }
     }
 
-    public virtual Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(string sessionId, DarkStarMessageType messageType, TMessage message) => Task.FromResult(new List<IDarkStarNetworkMessage>());
+    public virtual Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(
+        string sessionId, DarkStarMessageType messageType, TMessage message
+    ) => Task.FromResult(new List<IDarkStarNetworkMessage>());
 
     protected List<IDarkStarNetworkMessage> SingleMessage(IDarkStarNetworkMessage message) => new() { message };
 

@@ -10,5 +10,5 @@ public enum NpcAlignmentType : short
 {
     Neutral,
     Good,
-    Evil,
+    Evil
 }

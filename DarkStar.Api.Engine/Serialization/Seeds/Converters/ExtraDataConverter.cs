@@ -38,8 +38,8 @@ public class ExtraDataConverter : IValueConverter
                     dict.Add(keyValue[0], keyValue[1]);
                 }
             }
-
         }
+
         return dict;
     }
 }

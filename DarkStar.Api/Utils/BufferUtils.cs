@@ -30,8 +30,6 @@ public class BufferUtils
         return bytes;
     }
 
-    public static int GetIntFromByteArray(byte[] bytes)
-    {
-        return BitConverter.ToInt32(bytes[..LengthHeaderSize].Reverse().ToArray(), 0);
-    }
+    public static int GetIntFromByteArray(byte[] bytes) =>
+        BitConverter.ToInt32(bytes[..LengthHeaderSize].Reverse().ToArray(), 0);
 }

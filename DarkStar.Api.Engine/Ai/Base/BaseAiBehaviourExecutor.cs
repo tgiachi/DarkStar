@@ -17,11 +17,11 @@ namespace DarkStar.Api.Engine.Ai.Base;
 
 public class BaseAiBehaviourExecutor : IAiBehaviourExecutor
 {
-
     /// <summary>
     /// Default interval is 1 second
     /// </summary>
     public double Interval { get; set; } = 1000;
+
     private double _currentInterval = 1000;
     protected NpcGameObject NpcGameObject { get; private set; } = null!;
     protected NpcEntity NpcEntity { get; private set; } = null!;
@@ -50,7 +50,14 @@ public class BaseAiBehaviourExecutor : IAiBehaviourExecutor
 
     public virtual ValueTask InitializeAsync(string mapId, NpcEntity npc, NpcGameObject npcGameObject)
     {
-        Logger.LogDebug("Initializing {Name} AI Behaviour for {GameObjectType} {SubType} {Alignment} ID: {Id}", GetType().Name, npc.Type, npc.SubType, npc.Alignment, npcGameObject.ID);
+        Logger.LogDebug(
+            "Initializing {Name} AI Behaviour for {GameObjectType} {SubType} {Alignment} ID: {Id}",
+            GetType().Name,
+            npc.Type,
+            npc.SubType,
+            npc.Alignment,
+            npcGameObject.ID
+        );
         MapId = mapId;
         NpcGameObject = npcGameObject;
         NpcEntity = npc;
@@ -67,7 +74,6 @@ public class BaseAiBehaviourExecutor : IAiBehaviourExecutor
 
     public virtual void Dispose()
     {
-
     }
 
     protected bool MoveToDirection(MoveDirectionType direction)
@@ -79,12 +85,14 @@ public class BaseAiBehaviourExecutor : IAiBehaviourExecutor
             NpcGameObject.Position = newPosition.ToPoint();
             return true;
         }
+
         return false;
     }
 
     protected bool MoveRandomDirection() => MoveToDirection(MoveDirectionType.East.RandomEnumValue());
 
-    protected Task<List<TEntity>> GetEntitiesInRangeAsync<TEntity>(MapLayer layer, int range = 5) where TEntity : BaseGameObject =>
+    protected Task<List<TEntity>> GetEntitiesInRangeAsync<TEntity>(MapLayer layer, int range = 5)
+        where TEntity : BaseGameObject =>
         Engine.WorldService.GetEntitiesInRangeAsync<TEntity>(
             MapId,
             layer,
@@ -103,6 +111,7 @@ public class BaseAiBehaviourExecutor : IAiBehaviourExecutor
 
             return true;
         }
+
         return false;
     }
 

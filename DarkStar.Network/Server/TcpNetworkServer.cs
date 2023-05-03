@@ -29,11 +29,15 @@ public class TcpNetworkServer : TcpServer, IDarkSunNetworkServer
 
     private readonly Dictionary<DarkStarMessageType, INetworkServerMessageListener> _messageListeners = new();
 
-    public TcpNetworkServer(ILogger<TcpNetworkServer> logger,
+    public TcpNetworkServer(
+        ILogger<TcpNetworkServer> logger,
         INetworkSessionManager sessionManager,
         INetworkMessageBuilder messageBuilder,
-        DarkStarNetworkServerConfig darkStarNetworkServerConfig) : base(darkStarNetworkServerConfig.Address,
-        darkStarNetworkServerConfig.Port)
+        DarkStarNetworkServerConfig darkStarNetworkServerConfig
+    ) : base(
+        darkStarNetworkServerConfig.Address,
+        darkStarNetworkServerConfig.Port
+    )
     {
         _logger = logger;
         _sessionManager = sessionManager;
@@ -48,8 +52,11 @@ public class TcpNetworkServer : TcpServer, IDarkSunNetworkServer
 
     protected override async void OnConnected(TcpSession session)
     {
-        _logger.LogInformation("Client {IpAddress} connected with sessionId: {SessionId}",
-            session.Socket.RemoteEndPoint, session.Id);
+        _logger.LogInformation(
+            "Client {IpAddress} connected with sessionId: {SessionId}",
+            session.Socket.RemoteEndPoint,
+            session.Id
+        );
 
         _sessionManager.AddSession(session.Id.ToString());
 
@@ -72,8 +79,11 @@ public class TcpNetworkServer : TcpServer, IDarkSunNetworkServer
 
     protected override void OnStarted()
     {
-        _logger.LogInformation("Tcp Server started on {Ip}:{Port}", _darkStarNetworkServerConfig.Address,
-            _darkStarNetworkServerConfig.Port);
+        _logger.LogInformation(
+            "Tcp Server started on {Ip}:{Port}",
+            _darkStarNetworkServerConfig.Address,
+            _darkStarNetworkServerConfig.Port
+        );
 
         base.OnStarted();
     }
@@ -98,7 +108,6 @@ public class TcpNetworkServer : TcpServer, IDarkSunNetworkServer
 
         {
             _logger.LogError("Error during send message to sessionId: {SessionId}: {Error}", sessionId, ex);
-
         }
 
         _sendLock.Release();
@@ -120,6 +129,7 @@ public class TcpNetworkServer : TcpServer, IDarkSunNetworkServer
                 _logger.LogError("Error during send message to sessionId: {SessionId}: {Error}", sessionId, ex);
             }
         }
+
         _sendLock.Release();
     }
 
@@ -131,8 +141,10 @@ public class TcpNetworkServer : TcpServer, IDarkSunNetworkServer
         }
     }
 
-    public async Task DispatchMessageReceivedAsync(string sessionId, DarkStarMessageType messageType,
-        IDarkStarNetworkMessage message)
+    public async Task DispatchMessageReceivedAsync(
+        string sessionId, DarkStarMessageType messageType,
+        IDarkStarNetworkMessage message
+    )
     {
         OnMessageReceived?.Invoke(sessionId, messageType, message);
         if (_messageListeners.TryGetValue(messageType, out var listener))

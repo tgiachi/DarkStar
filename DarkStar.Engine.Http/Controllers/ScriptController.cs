@@ -12,7 +12,6 @@ namespace DarkStar.Engine.Http.Controllers;
 [ApiController]
 public class ScriptController : ControllerBase
 {
-
     private readonly IScriptEngineService _scriptEngineService;
     public ScriptController(IScriptEngineService scriptEngineService) => _scriptEngineService = scriptEngineService;
 

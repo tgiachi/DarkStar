@@ -60,21 +60,29 @@ public class PlayerService : BaseService<PlayerService>, IPlayerService
 
         foreach (var player in players)
         {
-            player.Stats = await Engine.DatabaseService.QueryAsSingleAsync<PlayerStatEntity>(entity =>
-                entity.PlayerId == player.Id);
+            player.Stats = await Engine.DatabaseService.QueryAsSingleAsync<PlayerStatEntity>(
+                entity =>
+                    entity.PlayerId == player.Id
+            );
         }
 
         return players;
     }
 
-    public async Task<PlayerEntity> CreatePlayerAsync(Guid accountId, string name, uint tileId, Guid raceId,
-        BaseStatEntity stats)
+    public async Task<PlayerEntity> CreatePlayerAsync(
+        Guid accountId, string name, uint tileId, Guid raceId,
+        BaseStatEntity stats
+    )
     {
         var race = await Engine.DatabaseService.QueryAsSingleAsync<RaceEntity>(entity => entity.Id == raceId);
 
         var startingPoint = await Engine.WorldService.GetRandomCityStartingPointAsync();
 
-        var playerEntity = new PlayerEntity() { AccountId = accountId, TileId = tileId, RaceId = race.Id, Gold = InitialInventory.Gold, Name = name, MapId = startingPoint.mapId, X = startingPoint.position.X, Y = startingPoint.position.Y };
+        var playerEntity = new PlayerEntity()
+        {
+            AccountId = accountId, TileId = tileId, RaceId = race.Id, Gold = InitialInventory.Gold, Name = name,
+            MapId = startingPoint.mapId, X = startingPoint.position.X, Y = startingPoint.position.Y
+        };
         await Engine.DatabaseService.InsertAsync(playerEntity);
 
         var statEntity = new PlayerStatEntity()
@@ -94,7 +102,10 @@ public class PlayerService : BaseService<PlayerService>, IPlayerService
 
         foreach (var item in InitialInventory.Items)
         {
-            var inventoryEntity = new PlayerInventoryEntity() { PlayerId = playerEntity.Id, ItemId = item.ItemId, Amount = item.Quantity };
+            var itemEntity = await Engine.DatabaseService.QueryAsSingleAsync<ItemEntity>(entity => entity.Id == item.ItemId);
+            Logger.LogInformation("Adding initial item {ItemName} to player {PlayerName}", itemEntity.Name, name);
+            var inventoryEntity = new PlayerInventoryEntity()
+                { PlayerId = playerEntity.Id, ItemId = item.ItemId, Amount = item.Quantity };
             await Engine.DatabaseService.InsertAsync(inventoryEntity);
         }
 
@@ -125,7 +136,8 @@ public class PlayerService : BaseService<PlayerService>, IPlayerService
 
     public async Task<List<PlayerInventoryEntity>> GetPlayerInventoryAsync(Guid playerId)
     {
-        var inventories = await Engine.DatabaseService.QueryAsListAsync<PlayerInventoryEntity>(entity => entity.PlayerId == playerId);
+        var inventories =
+            await Engine.DatabaseService.QueryAsListAsync<PlayerInventoryEntity>(entity => entity.PlayerId == playerId);
         foreach (var inventory in inventories)
         {
             var item = await Engine.DatabaseService.QueryAsSingleAsync<ItemEntity>(entity => entity.Id == inventory.ItemId);
@@ -135,7 +147,8 @@ public class PlayerService : BaseService<PlayerService>, IPlayerService
         return inventories;
     }
 
-    public Task<List<PlayerInventoryEntity>> AddPlayerInventoryAsync(Guid playerId, ItemEntity item, int amount) => AddPlayerInventoryAsync(playerId, item.Id, amount);
+    public Task<List<PlayerInventoryEntity>> AddPlayerInventoryAsync(Guid playerId, ItemEntity item, int amount) =>
+        AddPlayerInventoryAsync(playerId, item.Id, amount);
 
     public async Task<List<PlayerInventoryEntity>> AddPlayerInventoryAsync(Guid playerId, Guid itemId, int amount)
     {
@@ -153,6 +166,7 @@ public class PlayerService : BaseService<PlayerService>, IPlayerService
             inventory!.Amount += amount;
             await Engine.DatabaseService.UpdateAsync(inventory);
         }
+
         return await GetPlayerInventoryAsync(playerId);
     }
 

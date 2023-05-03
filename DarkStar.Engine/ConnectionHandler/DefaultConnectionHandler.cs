@@ -3,7 +3,6 @@ using DarkStar.Api.Engine.ConnectionHandlers;
 using DarkStar.Api.Engine.Interfaces.Core;
 using DarkStar.Network.Protocol.Interfaces.Messages;
 using DarkStar.Network.Protocol.Messages.Server;
-
 using Microsoft.Extensions.Logging;
 
 namespace DarkStar.Engine.ConnectionHandler;
@@ -13,7 +12,8 @@ public class DefaultConnectionHandler : BaseNetworkConnectionHandler
 {
     public DefaultConnectionHandler(ILogger<BaseNetworkConnectionHandler> logger, IDarkSunEngine engine) : base(
         logger,
-        engine)
+        engine
+    )
     {
     }
 
@@ -21,10 +21,12 @@ public class DefaultConnectionHandler : BaseNetworkConnectionHandler
     {
         Logger.LogInformation("New connection: {Id}", sessionId);
         Engine.PlayerService.AddSession(sessionId);
-        return Task.FromResult(new List<IDarkStarNetworkMessage>
-        {
-            new ServerNameResponseMessage(Engine.ServerName), new ServerVersionResponseMessage(0, 0, 1)
-        });
+        return Task.FromResult(
+            new List<IDarkStarNetworkMessage>
+            {
+                new ServerNameResponseMessage(Engine.ServerName), new ServerVersionResponseMessage(0, 0, 1)
+            }
+        );
     }
 
     public override Task ClientDisconnectedAsync(string sessionId)

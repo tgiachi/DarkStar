@@ -11,22 +11,15 @@ using ProtoBuf;
 
 namespace DarkStar.Network.Protocol.Messages.Players;
 
-
 [NetworkMessage(DarkStarMessageType.PlayerMoveRequest)]
 [ProtoContract]
 public struct PlayerMoveRequestMessage : IDarkStarNetworkMessage
 {
-    [ProtoMember(1)]
-    public MoveDirectionType Direction { get; set; }
+    [ProtoMember(1)] public MoveDirectionType Direction { get; set; }
 
     public PlayerMoveRequestMessage()
     {
-
     }
 
-    public PlayerMoveRequestMessage(MoveDirectionType direction)
-    {
-        Direction = direction;
-    }
-
+    public PlayerMoveRequestMessage(MoveDirectionType direction) => Direction = direction;
 }

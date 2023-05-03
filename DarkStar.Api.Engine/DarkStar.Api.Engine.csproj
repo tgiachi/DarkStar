@@ -9,16 +9,16 @@
 
     <ItemGroup>
 
-        <PackageReference Include="Microsoft.AspNetCore.SignalR.Common" Version="7.0.5" />
+        <PackageReference Include="Microsoft.AspNetCore.SignalR.Common" Version="7.0.5"/>
 
-        <PackageReference Include="Redbus" Version="1.0.8" />
-        <PackageReference Include="GoRogue" Version="3.0.0-beta04-debug" />
+        <PackageReference Include="Redbus" Version="1.0.8"/>
+        <PackageReference Include="GoRogue" Version="3.0.0-beta04-debug"/>
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\DarkStar.Api\DarkStar.Api.csproj" />
-        <ProjectReference Include="..\DarkStar.Database\DarkStar.Database.csproj" />
-        <ProjectReference Include="..\DarkStar.Network\DarkStar.Network.csproj" />
+        <ProjectReference Include="..\DarkStar.Api\DarkStar.Api.csproj"/>
+        <ProjectReference Include="..\DarkStar.Database\DarkStar.Database.csproj"/>
+        <ProjectReference Include="..\DarkStar.Network\DarkStar.Network.csproj"/>
     </ItemGroup>
 
     <ItemGroup>

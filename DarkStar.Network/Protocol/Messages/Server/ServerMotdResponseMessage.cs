@@ -6,23 +6,20 @@ using System.Threading.Tasks;
 using DarkStar.Network.Attributes;
 using DarkStar.Network.Protocol.Interfaces.Messages;
 using DarkStar.Network.Protocol.Types;
-
 using ProtoBuf;
 
 
 namespace DarkStar.Network.Protocol.Messages.Server;
 
-
 [ProtoContract]
 [NetworkMessage(DarkStarMessageType.ServerMotdResponse)]
 public class ServerMotdResponseMessage : IDarkStarNetworkMessage
 {
-    [ProtoMember(1)]
-    public string Motd { get; set; } = null!;
-    public ServerMotdResponseMessage() { }
+    [ProtoMember(1)] public string Motd { get; set; } = null!;
 
-    public ServerMotdResponseMessage(string motd)
+    public ServerMotdResponseMessage()
     {
-        Motd = motd;
     }
+
+    public ServerMotdResponseMessage(string motd) => Motd = motd;
 }

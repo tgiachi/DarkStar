@@ -10,7 +10,6 @@ using DarkStar.Database.Entities.Base;
 using DarkStar.Network.Protocol.Interfaces.Messages;
 using DarkStar.Network.Protocol.Messages.Players;
 using DarkStar.Network.Protocol.Types;
-
 using Microsoft.Extensions.Logging;
 
 namespace DarkStar.Engine.MessageListeners;
@@ -18,13 +17,17 @@ namespace DarkStar.Engine.MessageListeners;
 [NetworkMessageListener(DarkStarMessageType.PlayerCreateRequest)]
 public class PlayerCreationMessageListener : BaseNetworkMessageListener<PlayerCreateRequestMessage>
 {
-    public PlayerCreationMessageListener(ILogger<BaseNetworkMessageListener<PlayerCreateRequestMessage>> logger,
-        IDarkSunEngine engine) : base(logger, engine)
+    public PlayerCreationMessageListener(
+        ILogger<BaseNetworkMessageListener<PlayerCreateRequestMessage>> logger,
+        IDarkSunEngine engine
+    ) : base(logger, engine)
     {
     }
 
-    public override async Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(string sessionId,
-        DarkStarMessageType messageType, PlayerCreateRequestMessage message)
+    public override async Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(
+        string sessionId,
+        DarkStarMessageType messageType, PlayerCreateRequestMessage message
+    )
     {
         if (Engine.PlayerService.GetSession(sessionId).IsLogged == false)
         {
@@ -34,7 +37,9 @@ public class PlayerCreationMessageListener : BaseNetworkMessageListener<PlayerCr
 
 
         var player = await Engine.PlayerService.CreatePlayerAsync(
-            Engine.PlayerService.GetSession(sessionId).AccountId, message.Name, message.TileId,
+            Engine.PlayerService.GetSession(sessionId).AccountId,
+            message.Name,
+            message.TileId,
             message.RaceId,
             new BaseStatEntity()
             {
@@ -42,7 +47,8 @@ public class PlayerCreationMessageListener : BaseNetworkMessageListener<PlayerCr
                 Intelligence = message.Intelligence,
                 Luck = message.Luck,
                 Strength = message.Strength
-            });
+            }
+        );
 
 
         return SingleMessage(new PlayerCreateResponseMessage(true, player.Id));

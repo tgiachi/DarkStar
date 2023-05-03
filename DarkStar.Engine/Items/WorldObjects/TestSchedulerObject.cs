@@ -11,7 +11,6 @@ using Microsoft.Extensions.Logging;
 
 namespace DarkStar.Engine.Items.WorldObjects;
 
-
 //[GameObjectAction(GameObjectType.Internal_World_Spawner)]
 public class TestSchedulerObject : BaseScheduledWorldObject
 {
@@ -19,6 +18,4 @@ public class TestSchedulerObject : BaseScheduledWorldObject
     {
         SetInterval(4000);
     }
-
-
 }

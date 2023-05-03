@@ -14,7 +14,6 @@ using DarkStar.Api.Engine.Interfaces.Services;
 using DarkStar.Api.Interfaces.Entities;
 using DarkStar.Database.Entities.Account;
 using DarkStar.Engine.Services.Base;
-
 using FreeSql;
 using FreeSql.DataAnnotations;
 using Microsoft.Extensions.Logging;
@@ -29,8 +28,10 @@ public class DatabaseService : BaseService<IDatabaseService>, IDatabaseService
 
     private readonly EngineConfig _config;
 
-    public DatabaseService(ILogger<DatabaseService> logger, EngineConfig engineConfig,
-        DirectoriesConfig directoriesConfig) : base(logger)
+    public DatabaseService(
+        ILogger<DatabaseService> logger, EngineConfig engineConfig,
+        DirectoriesConfig directoriesConfig
+    ) : base(logger)
     {
         _config = engineConfig;
         _directoriesConfig = directoriesConfig;
@@ -40,8 +41,10 @@ public class DatabaseService : BaseService<IDatabaseService>, IDatabaseService
     {
         var connectionStringBuilder = new DbConnectionStringBuilder
         {
-            ConnectionString = _config.Database.ConnectionString.Replace("{DATABASE_DIRECTORY}",
-                Path.Join(_directoriesConfig[DirectoryNameType.Database] + Path.DirectorySeparatorChar))
+            ConnectionString = _config.Database.ConnectionString.Replace(
+                "{DATABASE_DIRECTORY}",
+                Path.Join(_directoriesConfig[DirectoryNameType.Database] + Path.DirectorySeparatorChar)
+            )
         };
 
         if (_config.Database.RecreateDatabase)
@@ -84,8 +87,10 @@ public class DatabaseService : BaseService<IDatabaseService>, IDatabaseService
         {
             var connectionStringBuilder = new DbConnectionStringBuilder
             {
-                ConnectionString = _config.Database.ConnectionString.Replace("{DATABASE_DIRECTORY}",
-                    Path.Join(_directoriesConfig[DirectoryNameType.Database] + Path.DirectorySeparatorChar))
+                ConnectionString = _config.Database.ConnectionString.Replace(
+                    "{DATABASE_DIRECTORY}",
+                    Path.Join(_directoriesConfig[DirectoryNameType.Database] + Path.DirectorySeparatorChar)
+                )
             };
             var databasePath = connectionStringBuilder["Data Source"]?.ToString();
             if (databasePath != null)
@@ -118,21 +123,21 @@ public class DatabaseService : BaseService<IDatabaseService>, IDatabaseService
         return entity;
     }
 
-    public Task<List<TEntity>> InsertAsync<TEntity>(List<TEntity> entities) where TEntity : class, IBaseEntity
-    {
-        return InsertAsync(entities, false);
-    }
+    public Task<List<TEntity>> InsertAsync<TEntity>(List<TEntity> entities) where TEntity : class, IBaseEntity =>
+        InsertAsync(entities, false);
 
     public async Task<List<TEntity>> InsertAsync<TEntity>(List<TEntity> entities, bool enableCascade)
         where TEntity : class, IBaseEntity
     {
-        entities.ForEach(entity =>
-        {
-            if (entity.Id == Guid.Empty)
+        entities.ForEach(
+            entity =>
             {
-                entity.Id = Guid.NewGuid();
+                if (entity.Id == Guid.Empty)
+                {
+                    entity.Id = Guid.NewGuid();
+                }
             }
-        });
+        );
         using var dbConnection = _connectionFactory.GetRepository<TEntity>();
 
         dbConnection.DbContextOptions.EnableCascadeSave = enableCascade;
@@ -195,6 +200,7 @@ public class DatabaseService : BaseService<IDatabaseService>, IDatabaseService
     {
         var tableAssembies = new List<Type>();
         foreach (var type in Assembly.GetAssembly(typeof(AccountEntity))!.GetExportedTypes())
+        {
             foreach (var attribute in type.GetCustomAttributes())
             {
                 if (attribute is TableAttribute tableAttribute)
@@ -205,6 +211,7 @@ public class DatabaseService : BaseService<IDatabaseService>, IDatabaseService
                     }
                 }
             }
+        }
 
         return tableAssembies.ToArray();
     }

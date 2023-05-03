@@ -2,38 +2,38 @@
 <Project>
 
     <ItemGroup Label="commom configuration code style.">
-        
+
         <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" Version="17.4.27">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-         <PackageReference Include="Nerdbank.GitVersioning" Condition="!Exists('packages.config')">
+        <PackageReference Include="Nerdbank.GitVersioning" Condition="!Exists('packages.config')">
             <Version>3.5.119</Version>
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
-       <!-- <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.435">
-            <PrivateAssets>all</PrivateAssets>
-            <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-        </PackageReference> -->
-        
+        <!-- <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.435">
+             <PrivateAssets>all</PrivateAssets>
+             <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+         </PackageReference> -->
+
     </ItemGroup>
 
-   <!-- <Choose>
-        <When Condition="Exists('../SharedAssemblyInfo.cs')">
-            <ItemGroup>
-                <Compile Include="..\SharedAssemblyInfo.cs" Link="Properties\SharedAssemblyInfo.cs" />
-                <Compile Include="..\SharedGlobalUsings.cs" Link="SharedGlobalUsings.cs" />
-                <AdditionalFiles Include="..\stylecop.json" Link="stylecop.json" />
-                <None Include="..\.editorconfig" Link=".editorconfig" />
-            </ItemGroup>
-        </When>
-        <Otherwise>
-            <ItemGroup>
-                <Compile Include="..\..\SharedAssemblyInfo.cs" Link="Properties\SharedAssemblyInfo.cs" />
-                <Compile Include="..\..\SharedGlobalUsings.cs" Link="SharedGlobalUsings.cs" />
-                <AdditionalFiles Include="..\..\stylecop.json" Link="stylecop.json" />
-                <None Include="..\..\.editorconfig" Link=".editorconfig" />
-            </ItemGroup>
-        </Otherwise>
-    </Choose> -->
+    <!-- <Choose>
+         <When Condition="Exists('../SharedAssemblyInfo.cs')">
+             <ItemGroup>
+                 <Compile Include="..\SharedAssemblyInfo.cs" Link="Properties\SharedAssemblyInfo.cs" />
+                 <Compile Include="..\SharedGlobalUsings.cs" Link="SharedGlobalUsings.cs" />
+                 <AdditionalFiles Include="..\stylecop.json" Link="stylecop.json" />
+                 <None Include="..\.editorconfig" Link=".editorconfig" />
+             </ItemGroup>
+         </When>
+         <Otherwise>
+             <ItemGroup>
+                 <Compile Include="..\..\SharedAssemblyInfo.cs" Link="Properties\SharedAssemblyInfo.cs" />
+                 <Compile Include="..\..\SharedGlobalUsings.cs" Link="SharedGlobalUsings.cs" />
+                 <AdditionalFiles Include="..\..\stylecop.json" Link="stylecop.json" />
+                 <None Include="..\..\.editorconfig" Link=".editorconfig" />
+             </ItemGroup>
+         </Otherwise>
+     </Choose> -->
 </Project>

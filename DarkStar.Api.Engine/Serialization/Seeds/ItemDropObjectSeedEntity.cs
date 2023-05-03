@@ -1,4 +1,3 @@
-
 using DarkStar.Api.Attributes.Seed;
 using DarkStar.Api.Engine.Serialization.Seeds.Converters;
 using DarkStar.Api.World.Types.Map;

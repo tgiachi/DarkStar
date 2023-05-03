@@ -18,6 +18,5 @@ public class WorldGameObject : BaseGameObject
 
     public WorldGameObject(Point position) : base(position, (int)MapLayer.Objects, true, false)
     {
-
     }
 }

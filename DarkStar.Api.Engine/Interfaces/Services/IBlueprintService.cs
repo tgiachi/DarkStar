@@ -17,10 +17,11 @@ namespace DarkStar.Api.Engine.Interfaces.Services;
 
 public interface IBlueprintService : IDarkSunEngineService
 {
-
     Task<NpcEntity> GenerateNpcEntityAsync(NpcType npcType, NpcSubType subType, int level = 1);
 
-    Task<NpcGameObject> GenerateNpcGameObjectAsync(PointPosition position, NpcType npcType, NpcSubType subType, int level = 1);
+    Task<NpcGameObject> GenerateNpcGameObjectAsync(
+        PointPosition position, NpcType npcType, NpcSubType subType, int level = 1
+    );
 
     Task<GameObjectEntity> GenerateWorldGameObjectAsync(GameObjectType type);
 

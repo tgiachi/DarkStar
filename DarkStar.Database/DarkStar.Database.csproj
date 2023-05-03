@@ -8,12 +8,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="FreeSql" Version="3.2.693" />
-        <PackageReference Include="FreeSql.Repository" Version="3.2.693" />
+        <PackageReference Include="FreeSql" Version="3.2.693"/>
+        <PackageReference Include="FreeSql.Repository" Version="3.2.693"/>
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\DarkStar.Api\DarkStar.Api.csproj" />
+        <ProjectReference Include="..\DarkStar.Api\DarkStar.Api.csproj"/>
     </ItemGroup>
 
     <ItemGroup>

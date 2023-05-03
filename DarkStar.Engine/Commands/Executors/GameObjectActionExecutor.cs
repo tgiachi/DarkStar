@@ -11,9 +11,10 @@ namespace DarkStar.Engine.Commands.Executors;
 [CommandAction(CommandActionType.GameObjectAction)]
 public class GameObjectActionExecutor : BaseCommandActionExecutor<GameObjectAction>
 {
-    public GameObjectActionExecutor(ILogger<BaseCommandActionExecutor<GameObjectAction>> logger, IDarkSunEngine engine) : base(logger, engine)
+    public GameObjectActionExecutor(
+        ILogger<BaseCommandActionExecutor<GameObjectAction>> logger, IDarkSunEngine engine
+    ) : base(logger, engine)
     {
-
     }
 
     public override async Task ProcessAsync(GameObjectAction action)

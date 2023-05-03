@@ -7,7 +7,6 @@ using Microsoft.Extensions.Logging;
 
 namespace DarkStar.Engine.Services;
 
-
 [DarkStarEngineService(nameof(JobSchedulerService), 3)]
 public class JobSchedulerService : BaseService<JobSchedulerService>, IJobSchedulerService
 {
@@ -29,7 +28,12 @@ public class JobSchedulerService : BaseService<JobSchedulerService>, IJobSchedul
 
     public void AddJob(string name, Action action, int seconds, bool runOnce)
     {
-        Logger.LogDebug("Adding scheduled job: {Name} every {Seconds} seconds, runOne: {RunOnce}", name, seconds.Seconds(), runOnce);
+        Logger.LogDebug(
+            "Adding scheduled job: {Name} every {Seconds} seconds, runOne: {RunOnce}",
+            name,
+            seconds.Seconds(),
+            runOnce
+        );
         JobManager.AddJob(action, schedule => schedule.WithName(name).ToRunEvery(seconds).Seconds());
     }
 

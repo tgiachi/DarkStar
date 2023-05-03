@@ -13,7 +13,6 @@ namespace DarkStar.Engine.ScriptModules;
 [ScriptModule]
 public class RandomUtilsScriptModule
 {
-
     [ScriptFunction("random_range")]
     public int Random(int min, int max)
     {

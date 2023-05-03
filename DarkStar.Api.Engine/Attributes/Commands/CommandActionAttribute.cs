@@ -7,9 +7,5 @@ public class CommandActionAttribute : Attribute
 {
     public CommandActionType Type { get; set; }
 
-    public CommandActionAttribute(CommandActionType type)
-    {
-        Type = type;
-    }
-
+    public CommandActionAttribute(CommandActionType type) => Type = type;
 }

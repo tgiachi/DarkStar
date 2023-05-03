@@ -15,25 +15,21 @@ namespace DarkStar.Network.Protocol.Messages.Triggers.WorldObject;
 [ProtoContract]
 public struct WorldObjectMovedResponseMessage : IDarkStarNetworkMessage
 {
-    [ProtoMember(1)]
-    public string MapId { get; set; } = null!;
+    [ProtoMember(1)] public string MapId { get; set; } = null!;
 
 
-    [ProtoMember(2)]
-    public string ItemId { get; set; } = null!;
+    [ProtoMember(2)] public string ItemId { get; set; } = null!;
 
-    [ProtoMember(3)]
-    public PointPosition Position { get; set; }
+    [ProtoMember(3)] public PointPosition Position { get; set; }
 
     public WorldObjectMovedResponseMessage()
     {
-
     }
+
     public WorldObjectMovedResponseMessage(string mapId, string itemId, PointPosition position)
     {
         MapId = mapId;
         ItemId = itemId;
         Position = position;
     }
-
 }

@@ -14,8 +14,7 @@ namespace DarkStar.Api.Serialization.Types;
 [SeedObject("GameObjectTypes")]
 public class GameObjectTypeSerializableEntity
 {
-    [Column]
-    public short Id { get; set; }
+    [Column] public short Id { get; set; }
 
     [Column(converter: typeof(ToUpperCaseConverter))]
     public string Name { get; set; }

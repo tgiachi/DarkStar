@@ -11,14 +11,10 @@ namespace DarkStar.Network.Protocol.Messages.Common;
 [ProtoContract]
 public class MapEntityNetworkObject
 {
-    [ProtoMember(1)]
-    public int Id { get; set; }
-    [ProtoMember(2)]
-    public Guid ObjectId { get; set; }
-    [ProtoMember(3)]
-    public uint TileType { get; set; }
-    [ProtoMember(4)]
-    public PointPosition Position { get; set; }
+    [ProtoMember(1)] public int Id { get; set; }
+    [ProtoMember(2)] public Guid ObjectId { get; set; }
+    [ProtoMember(3)] public uint TileType { get; set; }
+    [ProtoMember(4)] public PointPosition Position { get; set; }
 
     public MapEntityNetworkObject()
     {

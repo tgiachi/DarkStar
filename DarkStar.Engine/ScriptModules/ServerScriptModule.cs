@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using DarkStar.Api.Engine.Interfaces.Core;
 using DarkStar.Api.Engine.ScriptModules;
 using DarkStar.Engine.Attributes.ScriptEngine;
-
 using Microsoft.Extensions.Logging;
 
 namespace DarkStar.Engine.ScriptModules;

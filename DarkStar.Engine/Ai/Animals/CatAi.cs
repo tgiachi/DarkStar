@@ -9,7 +9,6 @@ using Microsoft.Extensions.Logging;
 
 namespace DarkStar.Engine.Ai.Animals;
 
-
 //[AiBehaviour("Animal", "Cat")]
 public class CatAi : BaseAiBehaviourExecutor
 {

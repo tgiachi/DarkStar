@@ -236,7 +236,7 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
                 new ScriptFunctionParameterDescriptor
                 {
                     ParameterName = parameter.Name,
-                    ParameterType = parameter.ParameterType.Name,
+                    ParameterType = parameter.ParameterType.Name
                 }
             );
         }

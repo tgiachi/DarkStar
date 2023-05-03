@@ -7,6 +7,7 @@ using DarkStar.Api.World.Types.Npc;
 using Redbus.Events;
 
 namespace DarkStar.Api.Engine.Events.Engine;
+
 public class NpcSubTypeAdded : EventBase
 {
     public NpcSubType NpcSubType { get; set; }

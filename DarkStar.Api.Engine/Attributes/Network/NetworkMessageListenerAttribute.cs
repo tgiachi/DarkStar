@@ -12,8 +12,5 @@ public class NetworkMessageListenerAttribute : Attribute
 {
     public DarkStarMessageType MessageType { get; set; }
 
-    public NetworkMessageListenerAttribute(DarkStarMessageType messageType)
-    {
-        MessageType = messageType;
-    }
+    public NetworkMessageListenerAttribute(DarkStarMessageType messageType) => MessageType = messageType;
 }

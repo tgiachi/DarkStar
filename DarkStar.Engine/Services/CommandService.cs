@@ -7,7 +7,6 @@ using DarkStar.Api.Engine.Interfaces.Services;
 using DarkStar.Api.Engine.Types.Commands;
 using DarkStar.Api.Utils;
 using DarkStar.Engine.Services.Base;
-
 using Microsoft.Extensions.Logging;
 
 namespace DarkStar.Engine.Services;
@@ -20,10 +19,9 @@ public class CommandService : BaseService<ICommandService>, ICommandService
     private readonly List<ICommandAction> _npcsActionsQueue = new();
     private readonly IServiceProvider _container;
     private readonly SemaphoreSlim _actionListLock = new(1);
-    public CommandService(ILogger<ICommandService> logger, IServiceProvider container) : base(logger)
-    {
+
+    public CommandService(ILogger<ICommandService> logger, IServiceProvider container) : base(logger) =>
         _container = container;
-    }
 
     protected override ValueTask<bool> StartAsync()
     {
@@ -34,13 +32,16 @@ public class CommandService : BaseService<ICommandService>, ICommandService
 
     private void PrepareSchedulerExecutors()
     {
-        AssemblyUtils.GetAttribute<CommandActionAttribute>().ForEach(s =>
-        {
-            var attr = s.GetCustomAttribute<CommandActionAttribute>()!;
-            Logger.LogInformation("Adding {GameObjectType} from {ActionType}", s.Name, attr.Type);
-            var executor = _container.GetService(s);
-            _actionExecutors.Add(attr.Type, (ICommandActionExecutor)executor!);
-        });
+        AssemblyUtils.GetAttribute<CommandActionAttribute>()
+            .ForEach(
+                s =>
+                {
+                    var attr = s.GetCustomAttribute<CommandActionAttribute>()!;
+                    Logger.LogInformation("Adding {GameObjectType} from {ActionType}", s.Name, attr.Type);
+                    var executor = _container.GetService(s);
+                    _actionExecutors.Add(attr.Type, (ICommandActionExecutor)executor!);
+                }
+            );
     }
 
     public void EnqueuePlayerAction<ActionEntity>(ActionEntity entity) where ActionEntity : ICommandAction
@@ -77,7 +78,7 @@ public class CommandService : BaseService<ICommandService>, ICommandService
         {
             _playersActionsQueue.Remove(action);
         }
-        
+
         actionsToRemove.Clear();
 
         foreach (var action in _npcsActionsQueue)

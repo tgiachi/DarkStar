@@ -14,6 +14,5 @@ public enum MapLayer : short
     Creatures,
     Players,
     Effects,
-    Weather,
+    Weather
 }
-

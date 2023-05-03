@@ -10,6 +10,7 @@ using DarkStar.Api.World.Types.Npc;
 using DarkStar.Network.Protocol.Messages.Common;
 
 namespace DarkStar.Api.Engine.Data.Blueprint;
+
 public class BlueprintGenerationMapContext
 {
     private readonly SemaphoreSlim _listLock = new(1);
@@ -51,8 +52,9 @@ public class BlueprintGenerationMapContext
                     _listLock.Wait();
                     _gameObjects.Add(task.Result);
                     _listLock.Release();
-
-                }, TaskScheduler.Current);
+                },
+                TaskScheduler.Current
+            );
     }
 
     public void AddGameObjects(int count, short gameObjectId)
@@ -65,14 +67,21 @@ public class BlueprintGenerationMapContext
 
     public async void AddNpc(short npcType, short subType, int level = 1)
     {
-        await BlueprintService.GenerateNpcGameObjectAsync(WorldService.GetRandomWalkablePosition(_mapId), _typeService.GetNpcType(npcType), _typeService.GetNpcSubType(subType), level)
+        await BlueprintService.GenerateNpcGameObjectAsync(
+                WorldService.GetRandomWalkablePosition(_mapId),
+                _typeService.GetNpcType(npcType),
+                _typeService.GetNpcSubType(subType),
+                level
+            )
             .ContinueWith(
                 task =>
                 {
                     _listLock.Wait();
                     _npcs.Add(task.Result);
                     _listLock.Release();
-                }, TaskScheduler.Current);
+                },
+                TaskScheduler.Current
+            );
     }
 
     public void AddNpcs(int count, short npcType, short subType, int level = 1)
@@ -82,6 +91,4 @@ public class BlueprintGenerationMapContext
             AddNpc(npcType, subType, level);
         }
     }
-
-
 }
