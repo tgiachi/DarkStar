@@ -2,7 +2,7 @@ using System.Reflection;
 
 namespace DarkStar.Api.Utils;
 
-public class AssemblyUtils
+public static class AssemblyUtils
 {
     private static List<Assembly> Assemblies { get; } =
         new(AppDomain.CurrentDomain.GetAssemblies().ToList());
