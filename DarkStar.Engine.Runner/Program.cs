@@ -7,6 +7,7 @@ using DarkStar.Api.Engine.Data.Config;
 using DarkStar.Api.Engine.Interfaces.Core;
 using DarkStar.Api.Utils;
 using DarkStar.Engine.Http;
+using DarkStar.Engine.Runner.Compiler;
 using DarkStar.Engine.Utils;
 using DarkStar.Network.Client;
 using DarkStar.Network.Client.Interfaces;
@@ -80,6 +81,16 @@ internal class Program
         }
 
         Log.Logger = loggerConfiguration.CreateLogger();
+
+        if (engineConfig.Experimental.Compiler.EnableCSharpCompiler)
+        {
+            Log.Logger.Warning("C# Compiler is enabled! This is an experimental feature and may not work as expected!");
+
+            var cSharpCompiler = new CSharpCompiler(Log.Logger, directoryConfig);
+
+            await cSharpCompiler.CompileSources();
+        }
+
 
         foreach (var assembly in engineConfig.Assemblies.AssemblyNames)
         {

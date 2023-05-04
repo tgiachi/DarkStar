@@ -20,5 +20,6 @@ public enum DirectoryNameType
     SeedTemplates,
     Seeds,
     Maps,
-    BluePrints
+    BluePrints,
+    Sources,
 }
