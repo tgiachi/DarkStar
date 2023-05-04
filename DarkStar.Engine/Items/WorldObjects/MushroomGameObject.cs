@@ -15,7 +15,7 @@ namespace DarkStar.Engine.Items.WorldObjects;
 [GameObjectAction("PROP_MUSHROOM")]
 public class MushroomGameObject : BaseWorldObjectAction
 {
-    public MushroomGameObject(ILogger<BaseWorldObjectAction> logger, IDarkSunEngine engine) : base(logger, engine)
+    public MushroomGameObject(ILogger<MushroomGameObject> logger, IDarkSunEngine engine) : base(logger, engine)
     {
     }
 

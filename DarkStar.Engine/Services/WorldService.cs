@@ -106,26 +106,32 @@ public class WorldService : BaseService<IWorldService>, IWorldService
         {
             if (layer.Type == MapLayer.Terrain)
             {
-                var terrain = new TerrainGameObject(layer.Position.ToPoint());
-                terrain.Tile = layer.Tile;
-                terrain.ObjectId = layer.ObjectId;
+                var terrain = new TerrainGameObject(layer.Position.ToPoint())
+                {
+                    Tile = layer.Tile,
+                    ObjectId = layer.ObjectId
+                };
                 map.SetTerrain(terrain);
             }
 
             if (layer.Type == MapLayer.Creatures)
             {
-                var npc = new NpcGameObject(layer.Position.ToPoint());
-                npc.Tile = layer.Tile;
-                npc.ObjectId = layer.ObjectId;
-                npc.Name = "";
+                var npc = new NpcGameObject(layer.Position.ToPoint())
+                {
+                    Tile = layer.Tile,
+                    ObjectId = layer.ObjectId,
+                    Name = ""
+                };
                 map.AddEntity(npc);
             }
 
             if (layer.Type == MapLayer.Objects)
             {
-                var gameObject = new WorldGameObject(layer.Position.ToPoint());
-                gameObject.ObjectId = layer.ObjectId;
-                gameObject.Tile = layer.Tile;
+                var gameObject = new WorldGameObject(layer.Position.ToPoint())
+                {
+                    ObjectId = layer.ObjectId,
+                    Tile = layer.Tile
+                };
                 map.AddEntity(gameObject);
             }
         }

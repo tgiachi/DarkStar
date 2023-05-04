@@ -9,6 +9,7 @@ namespace DarkStar.Api.Data.Config;
 public enum DirectoryNameType
 {
     Root,
+    Logs,
     Assets,
     Cache,
     Database,
@@ -19,5 +20,6 @@ public enum DirectoryNameType
     SeedTemplates,
     Seeds,
     Maps,
-    BluePrints
+    BluePrints,
+    Sources,
 }

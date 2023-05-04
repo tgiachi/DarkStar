@@ -9,4 +9,6 @@ namespace DarkStar.Api.Engine.Data.Config.Sections;
 public class LoggerConfig
 {
     public bool EnableDebug { get; set; } = false;
+
+    public bool EnableFileLogging { get; set; } = true;
 }

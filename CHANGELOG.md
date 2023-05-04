@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="0.6.3"></a>
+## [0.6.3](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.6.3) (2023-5-4)
+
+### Other
+
+* ✨ feat(SeedService.cs): add AttachTextContentToItem method ([a485fca](https://www.github.com/tgiachi/DarkSun/commit/a485fca01bfa9f40ca90300e0ee8ebaf8e7bb017))
+* 🎉 feat(dependabot.yml): add Dependabot configuration file for NuGet package ecosystem ([2979485](https://www.github.com/tgiachi/DarkSun/commit/2979485df48e92ad7916ab68028475942995e9bc))
+* 🎨 style(WorldService.cs): refactor object creation to use object initializer syntax ([9d2fc0b](https://www.github.com/tgiachi/DarkSun/commit/9d2fc0b7266ba7fe61c4a576af4a087b1dbe5cf7))
+* 🔧 chore: remove unused HttpServerConfig from EngineConfig ([6f86534](https://www.github.com/tgiachi/DarkSun/commit/6f86534bfab0b7354ee9a5b318ec2965ec200362))
+* 🚀 chore(DarkStar.Client): add @microsoft/signalr and mobx-react dependencies ([0a11fd1](https://www.github.com/tgiachi/DarkSun/commit/0a11fd107c7ae9259010ddcf042a6307609feadd))
+* 🚀 feat(EngineConfig.cs): add ExperimentalConfig section to EngineConfig ([2d62566](https://www.github.com/tgiachi/DarkSun/commit/2d6256638b0391950e0005bed92ed8d03c49c063))
+
 <a name="0.6.2"></a>
 ## [0.6.2](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.6.2) (2023-5-3)
 
