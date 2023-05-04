@@ -1,5 +1,4 @@
 using DarkStar.Api.Engine.Interfaces.Services;
-using DarkStar.Api.World.Types.GameObjects;
 using DarkStar.Api.World.Types.Npc;
 using DarkStar.Api.World.Types.Tiles;
 using DarkStar.Engine.Attributes.ScriptEngine;
@@ -37,21 +36,72 @@ public class TypesScriptModule
         return _typeService.GetTile((uint)id);
     }
 
-    [ScriptFunction("add_game_object_seed")]
+    [ScriptFunction("add_game_object")]
     public void AddGameObject(string name, string description, string tileName, string gameObjectType, string data)
     {
         _seedService.AddGameObjectSeed(name, description, tileName, gameObjectType, data);
     }
 
     [ScriptFunction("add_item_type")]
-    public void AddItemType(string name)
+    public void AddItemType(params string[] names)
     {
-        _typeService.AddItemType(name);
+        names.ToList().ForEach(s => _typeService.AddItemType(s));
     }
 
     [ScriptFunction("add_item_category_type")]
-    public void AddItemCategoryType(string name)
+    public void AddItemCategoryType(params string[] names)
     {
-        _typeService.AddItemCategoryType(name);
+        names.ToList().ForEach(s => _typeService.AddItemCategoryType(s));
+    }
+
+    [ScriptFunction("add_text_content")]
+    public void AddTextContent(string id, string content)
+    {
+        _seedService.AddTextContentSeed(id, content);
+        _logger.LogDebug("Added text content seed {Id}", id.ToUpper());
+    }
+
+
+    [ScriptFunction("attach_text_content_to_item")]
+    public void AttachTextContentToItem(string gameObjectName, string textContentId)
+    {
+        _seedService.AttachTextContentToItem(gameObjectName, textContentId);
+        _logger.LogDebug("Attached text content {Id} to game object {GameObjectName}", textContentId.ToUpper(), gameObjectName.ToUpper());
+    }
+
+    [ScriptFunction("add_item")]
+    public void AddItem(
+        string name, string description, int weight, string tileName, string category, string type, short equipLocation,
+        short itemRarity, string sellDice, string buyDice, string attackDice, string defenseDice, string speed
+    )
+    {
+        var existType = _typeService.SearchItemType(type);
+        var existCategory = _typeService.SearchItemCategoryType(category);
+
+        if (string.IsNullOrEmpty(existType.Name))
+        {
+            _typeService.AddItemType(type);
+        }
+
+        if (string.IsNullOrEmpty(existCategory.Name))
+        {
+            _typeService.AddItemCategoryType(category);
+        }
+
+        _seedService.AddItemSeed(
+            name,
+            description,
+            weight,
+            tileName,
+            category,
+            type,
+            equipLocation,
+            itemRarity,
+            sellDice,
+            buyDice,
+            attackDice,
+            defenseDice,
+            speed
+        );
     }
 }

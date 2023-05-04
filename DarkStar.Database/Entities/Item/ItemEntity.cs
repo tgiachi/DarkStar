@@ -18,8 +18,8 @@ public class ItemEntity : BaseEntity
     public string Description { get; set; } = null!;
     public int Weight { get; set; }
     public uint TileType { get; set; }
-    public ItemCategoryType Category { get; set; }
-    public ItemType Type { get; set; }
+    public ushort Category { get; set; }
+    public ushort Type { get; set; }
     public EquipLocationType EquipLocation { get; set; }
     public ItemRarityType ItemRarity { get; set; }
     public string SellDice { get; set; } = null!;

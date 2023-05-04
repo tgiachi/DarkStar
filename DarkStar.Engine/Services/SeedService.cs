@@ -1,10 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 using DarkStar.Api.Attributes.Seed;
 using DarkStar.Api.Attributes.Services;
 using Microsoft.Extensions.Logging;
@@ -22,8 +17,9 @@ using DarkStar.Database.Entities.Item;
 using DarkStar.Database.Entities.TileSets;
 using DarkStar.Api.World.Types.Tiles;
 using DarkStar.Database.Entities.Objects;
-using FastEnumUtility;
+
 using DarkStar.Api.Serialization.Types;
+using DarkStar.Api.World.Types.Equippable;
 using DarkStar.Api.World.Types.Items;
 
 namespace DarkStar.Engine.Services;
@@ -146,6 +142,42 @@ public class SeedService : BaseService<SeedService>, ISeedService
         );
     }
 
+    public void AttachTextContentToItem(string itemName, string textContentName)
+    {
+        var item = _itemsSeed.FirstOrDefault(s => s.Name == itemName);
+        if (item != null)
+        {
+            item.IsTextScroll = true;
+            item.TextId = _textContentSeed.FirstOrDefault(s => s.Name == textContentName)!.Id;
+        }
+
+    }
+
+    public void AddItemSeed(
+        string name, string description, int weight, string tileName, string category, string type, short equipLocation,
+        short itemRarity, string sellDice, string buyDice, string attackDice, string defenseDice, string speed
+    )
+    {
+        _itemsSeed.Add(
+            new ItemEntity
+            {
+                Name = name,
+                Description = description,
+                Weight = weight,
+                TileType = _typeService.SearchTile(tileName, null, null)!.Id,
+                Category = _typeService.SearchItemCategoryType(category)!.Id,
+                Attack = attackDice,
+                Defense = defenseDice,
+                BuyDice = buyDice,
+                SellDice = sellDice,
+                Type = _typeService.SearchItemType(type)!.Id,
+                EquipLocation = (EquipLocationType)equipLocation,
+                Speed = speed,
+                ItemRarity = (ItemRarityType)itemRarity,
+            }
+        );
+    }
+
     private async Task LoadSeedFileAsync<TEntity>(string fileName) where TEntity : class, new()
     {
         if (typeof(TEntity) == typeof(WorldObjectSeedEntity))
@@ -237,11 +269,10 @@ public class SeedService : BaseService<SeedService>, ISeedService
                     SellDice = importItem.SellDice,
                     TileType = _typeService.SearchTile(importItem.TileName, null, null).Id,
                     ItemRarity = importItem.ItemRarity,
-                    Category = _typeService.AddItemCategoryType(importItem.Category),
-                    Type = _typeService.AddItemType(importItem.Type)
+                    Category = _typeService.AddItemCategoryType(importItem.Category).Id,
+                    Type = _typeService.AddItemType(importItem.Type).Id
                 };
-
-                await Engine.DatabaseService.InsertAsync(itemEntity);
+                _itemsSeed.Add(itemEntity);
             }
         }
     }
@@ -377,6 +408,36 @@ public class SeedService : BaseService<SeedService>, ISeedService
                 existRace.IsVisible = raceEntity.IsVisible;
 
                 await Engine.DatabaseService.UpdateAsync(existRace);
+            }
+        }
+
+        foreach (var item in _itemsSeed)
+        {
+            var existItem = await Engine.DatabaseService.QueryAsSingleAsync<ItemEntity>(
+                entity => entity.Name == item.Name
+            );
+
+            if (existItem == null)
+            {
+
+                await Engine.DatabaseService.InsertAsync(item);
+            }
+            else
+            {
+                existItem.Attack = item.Attack;
+                existItem.Defense = item.Defense;
+                existItem.Description = item.Description;
+                existItem.ItemRarity = item.ItemRarity;
+                existItem.BuyDice = item.BuyDice;
+                existItem.SellDice = item.SellDice;
+                existItem.TileType = item.TileType;
+                existItem.Category = item.Category;
+                existItem.Type = item.Type;
+                existItem.Weight = item.Weight;
+                existItem.EquipLocation = item.EquipLocation;
+                existItem.Speed = item.Speed;
+
+                await Engine.DatabaseService.UpdateAsync(existItem);
             }
         }
     }
