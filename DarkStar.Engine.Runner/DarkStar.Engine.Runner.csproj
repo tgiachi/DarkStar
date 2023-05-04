@@ -6,7 +6,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <Version>0.6.3</Version>
-        <ServerGarbageCollection>true</ServerGarbageCollection>
+      <!--  <ServerGarbageCollection>true</ServerGarbageCollection>-->
         <PublishSingleFile>true</PublishSingleFile>
 
 
