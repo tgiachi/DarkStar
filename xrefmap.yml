@@ -249,6 +249,12 @@ references:
   commentId: F:DarkStar.Api.Data.Config.DirectoryNameType.HttpRoot
   fullName: DarkStar.Api.Data.Config.DirectoryNameType.HttpRoot
   nameWithType: DirectoryNameType.HttpRoot
+- uid: DarkStar.Api.Data.Config.DirectoryNameType.Logs
+  name: Logs
+  href: api/DarkStar.Api.Data.Config.DirectoryNameType.html#DarkStar_Api_Data_Config_DirectoryNameType_Logs
+  commentId: F:DarkStar.Api.Data.Config.DirectoryNameType.Logs
+  fullName: DarkStar.Api.Data.Config.DirectoryNameType.Logs
+  nameWithType: DirectoryNameType.Logs
 - uid: DarkStar.Api.Data.Config.DirectoryNameType.Maps
   name: Maps
   href: api/DarkStar.Api.Data.Config.DirectoryNameType.html#DarkStar_Api_Data_Config_DirectoryNameType_Maps
@@ -285,6 +291,12 @@ references:
   commentId: F:DarkStar.Api.Data.Config.DirectoryNameType.SeedTemplates
   fullName: DarkStar.Api.Data.Config.DirectoryNameType.SeedTemplates
   nameWithType: DirectoryNameType.SeedTemplates
+- uid: DarkStar.Api.Data.Config.DirectoryNameType.Sources
+  name: Sources
+  href: api/DarkStar.Api.Data.Config.DirectoryNameType.html#DarkStar_Api_Data_Config_DirectoryNameType_Sources
+  commentId: F:DarkStar.Api.Data.Config.DirectoryNameType.Sources
+  fullName: DarkStar.Api.Data.Config.DirectoryNameType.Sources
+  nameWithType: DirectoryNameType.Sources
 - uid: DarkStar.Api.Engine.Ai.Base
   name: DarkStar.Api.Engine.Ai.Base
   href: api/DarkStar.Api.Engine.Ai.Base.html
@@ -1395,19 +1407,19 @@ references:
   isSpec: "True"
   fullName: DarkStar.Api.Engine.Data.Config.EngineConfig.Database
   nameWithType: EngineConfig.Database
-- uid: DarkStar.Api.Engine.Data.Config.EngineConfig.HttpServer
-  name: HttpServer
-  href: api/DarkStar.Api.Engine.Data.Config.EngineConfig.html#DarkStar_Api_Engine_Data_Config_EngineConfig_HttpServer
-  commentId: P:DarkStar.Api.Engine.Data.Config.EngineConfig.HttpServer
-  fullName: DarkStar.Api.Engine.Data.Config.EngineConfig.HttpServer
-  nameWithType: EngineConfig.HttpServer
-- uid: DarkStar.Api.Engine.Data.Config.EngineConfig.HttpServer*
-  name: HttpServer
-  href: api/DarkStar.Api.Engine.Data.Config.EngineConfig.html#DarkStar_Api_Engine_Data_Config_EngineConfig_HttpServer_
-  commentId: Overload:DarkStar.Api.Engine.Data.Config.EngineConfig.HttpServer
+- uid: DarkStar.Api.Engine.Data.Config.EngineConfig.Experimental
+  name: Experimental
+  href: api/DarkStar.Api.Engine.Data.Config.EngineConfig.html#DarkStar_Api_Engine_Data_Config_EngineConfig_Experimental
+  commentId: P:DarkStar.Api.Engine.Data.Config.EngineConfig.Experimental
+  fullName: DarkStar.Api.Engine.Data.Config.EngineConfig.Experimental
+  nameWithType: EngineConfig.Experimental
+- uid: DarkStar.Api.Engine.Data.Config.EngineConfig.Experimental*
+  name: Experimental
+  href: api/DarkStar.Api.Engine.Data.Config.EngineConfig.html#DarkStar_Api_Engine_Data_Config_EngineConfig_Experimental_
+  commentId: Overload:DarkStar.Api.Engine.Data.Config.EngineConfig.Experimental
   isSpec: "True"
-  fullName: DarkStar.Api.Engine.Data.Config.EngineConfig.HttpServer
-  nameWithType: EngineConfig.HttpServer
+  fullName: DarkStar.Api.Engine.Data.Config.EngineConfig.Experimental
+  nameWithType: EngineConfig.Experimental
 - uid: DarkStar.Api.Engine.Data.Config.EngineConfig.Logger
   name: Logger
   href: api/DarkStar.Api.Engine.Data.Config.EngineConfig.html#DarkStar_Api_Engine_Data_Config_EngineConfig_Logger
@@ -1517,6 +1529,25 @@ references:
   isSpec: "True"
   fullName: DarkStar.Api.Engine.Data.Config.Sections.CityMapConfig.Width
   nameWithType: CityMapConfig.Width
+- uid: DarkStar.Api.Engine.Data.Config.Sections.CompilerConfig
+  name: CompilerConfig
+  href: api/DarkStar.Api.Engine.Data.Config.Sections.CompilerConfig.html
+  commentId: T:DarkStar.Api.Engine.Data.Config.Sections.CompilerConfig
+  fullName: DarkStar.Api.Engine.Data.Config.Sections.CompilerConfig
+  nameWithType: CompilerConfig
+- uid: DarkStar.Api.Engine.Data.Config.Sections.CompilerConfig.EnableCSharpCompiler
+  name: EnableCSharpCompiler
+  href: api/DarkStar.Api.Engine.Data.Config.Sections.CompilerConfig.html#DarkStar_Api_Engine_Data_Config_Sections_CompilerConfig_EnableCSharpCompiler
+  commentId: P:DarkStar.Api.Engine.Data.Config.Sections.CompilerConfig.EnableCSharpCompiler
+  fullName: DarkStar.Api.Engine.Data.Config.Sections.CompilerConfig.EnableCSharpCompiler
+  nameWithType: CompilerConfig.EnableCSharpCompiler
+- uid: DarkStar.Api.Engine.Data.Config.Sections.CompilerConfig.EnableCSharpCompiler*
+  name: EnableCSharpCompiler
+  href: api/DarkStar.Api.Engine.Data.Config.Sections.CompilerConfig.html#DarkStar_Api_Engine_Data_Config_Sections_CompilerConfig_EnableCSharpCompiler_
+  commentId: Overload:DarkStar.Api.Engine.Data.Config.Sections.CompilerConfig.EnableCSharpCompiler
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Data.Config.Sections.CompilerConfig.EnableCSharpCompiler
+  nameWithType: CompilerConfig.EnableCSharpCompiler
 - uid: DarkStar.Api.Engine.Data.Config.Sections.DatabaseConfig
   name: DatabaseConfig
   href: api/DarkStar.Api.Engine.Data.Config.Sections.DatabaseConfig.html
@@ -1631,6 +1662,25 @@ references:
   isSpec: "True"
   fullName: DarkStar.Api.Engine.Data.Config.Sections.DungeonMapConfig.Width
   nameWithType: DungeonMapConfig.Width
+- uid: DarkStar.Api.Engine.Data.Config.Sections.ExperimentalConfig
+  name: ExperimentalConfig
+  href: api/DarkStar.Api.Engine.Data.Config.Sections.ExperimentalConfig.html
+  commentId: T:DarkStar.Api.Engine.Data.Config.Sections.ExperimentalConfig
+  fullName: DarkStar.Api.Engine.Data.Config.Sections.ExperimentalConfig
+  nameWithType: ExperimentalConfig
+- uid: DarkStar.Api.Engine.Data.Config.Sections.ExperimentalConfig.Compiler
+  name: Compiler
+  href: api/DarkStar.Api.Engine.Data.Config.Sections.ExperimentalConfig.html#DarkStar_Api_Engine_Data_Config_Sections_ExperimentalConfig_Compiler
+  commentId: P:DarkStar.Api.Engine.Data.Config.Sections.ExperimentalConfig.Compiler
+  fullName: DarkStar.Api.Engine.Data.Config.Sections.ExperimentalConfig.Compiler
+  nameWithType: ExperimentalConfig.Compiler
+- uid: DarkStar.Api.Engine.Data.Config.Sections.ExperimentalConfig.Compiler*
+  name: Compiler
+  href: api/DarkStar.Api.Engine.Data.Config.Sections.ExperimentalConfig.html#DarkStar_Api_Engine_Data_Config_Sections_ExperimentalConfig_Compiler_
+  commentId: Overload:DarkStar.Api.Engine.Data.Config.Sections.ExperimentalConfig.Compiler
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Data.Config.Sections.ExperimentalConfig.Compiler
+  nameWithType: ExperimentalConfig.Compiler
 - uid: DarkStar.Api.Engine.Data.Config.Sections.HttpServerConfig
   name: HttpServerConfig
   href: api/DarkStar.Api.Engine.Data.Config.Sections.HttpServerConfig.html
@@ -1669,6 +1719,19 @@ references:
   isSpec: "True"
   fullName: DarkStar.Api.Engine.Data.Config.Sections.LoggerConfig.EnableDebug
   nameWithType: LoggerConfig.EnableDebug
+- uid: DarkStar.Api.Engine.Data.Config.Sections.LoggerConfig.EnableFileLogging
+  name: EnableFileLogging
+  href: api/DarkStar.Api.Engine.Data.Config.Sections.LoggerConfig.html#DarkStar_Api_Engine_Data_Config_Sections_LoggerConfig_EnableFileLogging
+  commentId: P:DarkStar.Api.Engine.Data.Config.Sections.LoggerConfig.EnableFileLogging
+  fullName: DarkStar.Api.Engine.Data.Config.Sections.LoggerConfig.EnableFileLogging
+  nameWithType: LoggerConfig.EnableFileLogging
+- uid: DarkStar.Api.Engine.Data.Config.Sections.LoggerConfig.EnableFileLogging*
+  name: EnableFileLogging
+  href: api/DarkStar.Api.Engine.Data.Config.Sections.LoggerConfig.html#DarkStar_Api_Engine_Data_Config_Sections_LoggerConfig_EnableFileLogging_
+  commentId: Overload:DarkStar.Api.Engine.Data.Config.Sections.LoggerConfig.EnableFileLogging
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Data.Config.Sections.LoggerConfig.EnableFileLogging
+  nameWithType: LoggerConfig.EnableFileLogging
 - uid: DarkStar.Api.Engine.Data.Config.Sections.MapConfig
   name: MapConfig
   href: api/DarkStar.Api.Engine.Data.Config.Sections.MapConfig.html
@@ -4351,6 +4414,22 @@ references:
   isSpec: "True"
   fullName: DarkStar.Api.Engine.Interfaces.Services.ISeedService.AddGameObjectToSeed
   nameWithType: ISeedService.AddGameObjectToSeed
+- uid: DarkStar.Api.Engine.Interfaces.Services.ISeedService.AddItemSeed(System.String,System.String,System.Int32,System.String,System.String,System.String,System.Int16,System.Int16,System.String,System.String,System.String,System.String,System.String)
+  name: AddItemSeed(string, string, int, string, string, string, short, short, string, string, string, string, string)
+  href: api/DarkStar.Api.Engine.Interfaces.Services.ISeedService.html#DarkStar_Api_Engine_Interfaces_Services_ISeedService_AddItemSeed_System_String_System_String_System_Int32_System_String_System_String_System_String_System_Int16_System_Int16_System_String_System_String_System_String_System_String_System_String_
+  commentId: M:DarkStar.Api.Engine.Interfaces.Services.ISeedService.AddItemSeed(System.String,System.String,System.Int32,System.String,System.String,System.String,System.Int16,System.Int16,System.String,System.String,System.String,System.String,System.String)
+  name.vb: AddItemSeed(String, String, Integer, String, String, String, Short, Short, String, String, String, String, String)
+  fullName: DarkStar.Api.Engine.Interfaces.Services.ISeedService.AddItemSeed(string, string, int, string, string, string, short, short, string, string, string, string, string)
+  fullName.vb: DarkStar.Api.Engine.Interfaces.Services.ISeedService.AddItemSeed(String, String, Integer, String, String, String, Short, Short, String, String, String, String, String)
+  nameWithType: ISeedService.AddItemSeed(string, string, int, string, string, string, short, short, string, string, string, string, string)
+  nameWithType.vb: ISeedService.AddItemSeed(String, String, Integer, String, String, String, Short, Short, String, String, String, String, String)
+- uid: DarkStar.Api.Engine.Interfaces.Services.ISeedService.AddItemSeed*
+  name: AddItemSeed
+  href: api/DarkStar.Api.Engine.Interfaces.Services.ISeedService.html#DarkStar_Api_Engine_Interfaces_Services_ISeedService_AddItemSeed_
+  commentId: Overload:DarkStar.Api.Engine.Interfaces.Services.ISeedService.AddItemSeed
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Interfaces.Services.ISeedService.AddItemSeed
+  nameWithType: ISeedService.AddItemSeed
 - uid: DarkStar.Api.Engine.Interfaces.Services.ISeedService.AddRaceToSeed(System.String,System.String,System.Int16,DarkStar.Database.Entities.Base.BaseStatEntity)
   name: AddRaceToSeed(string, string, short, BaseStatEntity)
   href: api/DarkStar.Api.Engine.Interfaces.Services.ISeedService.html#DarkStar_Api_Engine_Interfaces_Services_ISeedService_AddRaceToSeed_System_String_System_String_System_Int16_DarkStar_Database_Entities_Base_BaseStatEntity_
@@ -4383,6 +4462,22 @@ references:
   isSpec: "True"
   fullName: DarkStar.Api.Engine.Interfaces.Services.ISeedService.AddTextContentSeed
   nameWithType: ISeedService.AddTextContentSeed
+- uid: DarkStar.Api.Engine.Interfaces.Services.ISeedService.AttachTextContentToItem(System.String,System.String)
+  name: AttachTextContentToItem(string, string)
+  href: api/DarkStar.Api.Engine.Interfaces.Services.ISeedService.html#DarkStar_Api_Engine_Interfaces_Services_ISeedService_AttachTextContentToItem_System_String_System_String_
+  commentId: M:DarkStar.Api.Engine.Interfaces.Services.ISeedService.AttachTextContentToItem(System.String,System.String)
+  name.vb: AttachTextContentToItem(String, String)
+  fullName: DarkStar.Api.Engine.Interfaces.Services.ISeedService.AttachTextContentToItem(string, string)
+  fullName.vb: DarkStar.Api.Engine.Interfaces.Services.ISeedService.AttachTextContentToItem(String, String)
+  nameWithType: ISeedService.AttachTextContentToItem(string, string)
+  nameWithType.vb: ISeedService.AttachTextContentToItem(String, String)
+- uid: DarkStar.Api.Engine.Interfaces.Services.ISeedService.AttachTextContentToItem*
+  name: AttachTextContentToItem
+  href: api/DarkStar.Api.Engine.Interfaces.Services.ISeedService.html#DarkStar_Api_Engine_Interfaces_Services_ISeedService_AttachTextContentToItem_
+  commentId: Overload:DarkStar.Api.Engine.Interfaces.Services.ISeedService.AttachTextContentToItem
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Interfaces.Services.ISeedService.AttachTextContentToItem
+  nameWithType: ISeedService.AttachTextContentToItem
 - uid: DarkStar.Api.Engine.Interfaces.Services.ITypeService
   name: ITypeService
   href: api/DarkStar.Api.Engine.Interfaces.Services.ITypeService.html
@@ -10695,15 +10790,15 @@ references:
   commentId: F:DarkStar.Engine.Ai.Humans.MushroomFinderAi._path
   fullName: DarkStar.Engine.Ai.Humans.MushroomFinderAi._path
   nameWithType: MushroomFinderAi._path
-- uid: DarkStar.Engine.Ai.Humans.MushroomFinderAi.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Api.Engine.Ai.Base.BaseAiBehaviourExecutor},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
-  name: MushroomFinderAi(ILogger<BaseAiBehaviourExecutor>, IDarkSunEngine)
-  href: api/DarkStar.Engine.Ai.Humans.MushroomFinderAi.html#DarkStar_Engine_Ai_Humans_MushroomFinderAi__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Api_Engine_Ai_Base_BaseAiBehaviourExecutor__DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_
-  commentId: M:DarkStar.Engine.Ai.Humans.MushroomFinderAi.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Api.Engine.Ai.Base.BaseAiBehaviourExecutor},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
-  name.vb: New(ILogger(Of BaseAiBehaviourExecutor), IDarkSunEngine)
-  fullName: DarkStar.Engine.Ai.Humans.MushroomFinderAi.MushroomFinderAi(Microsoft.Extensions.Logging.ILogger<DarkStar.Api.Engine.Ai.Base.BaseAiBehaviourExecutor>, DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
-  fullName.vb: DarkStar.Engine.Ai.Humans.MushroomFinderAi.New(Microsoft.Extensions.Logging.ILogger(Of DarkStar.Api.Engine.Ai.Base.BaseAiBehaviourExecutor), DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
-  nameWithType: MushroomFinderAi.MushroomFinderAi(ILogger<BaseAiBehaviourExecutor>, IDarkSunEngine)
-  nameWithType.vb: MushroomFinderAi.New(ILogger(Of BaseAiBehaviourExecutor), IDarkSunEngine)
+- uid: DarkStar.Engine.Ai.Humans.MushroomFinderAi.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.Ai.Humans.MushroomFinderAi},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  name: MushroomFinderAi(ILogger<MushroomFinderAi>, IDarkSunEngine)
+  href: api/DarkStar.Engine.Ai.Humans.MushroomFinderAi.html#DarkStar_Engine_Ai_Humans_MushroomFinderAi__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Engine_Ai_Humans_MushroomFinderAi__DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_
+  commentId: M:DarkStar.Engine.Ai.Humans.MushroomFinderAi.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.Ai.Humans.MushroomFinderAi},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  name.vb: New(ILogger(Of MushroomFinderAi), IDarkSunEngine)
+  fullName: DarkStar.Engine.Ai.Humans.MushroomFinderAi.MushroomFinderAi(Microsoft.Extensions.Logging.ILogger<DarkStar.Engine.Ai.Humans.MushroomFinderAi>, DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  fullName.vb: DarkStar.Engine.Ai.Humans.MushroomFinderAi.New(Microsoft.Extensions.Logging.ILogger(Of DarkStar.Engine.Ai.Humans.MushroomFinderAi), DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  nameWithType: MushroomFinderAi.MushroomFinderAi(ILogger<MushroomFinderAi>, IDarkSunEngine)
+  nameWithType.vb: MushroomFinderAi.New(ILogger(Of MushroomFinderAi), IDarkSunEngine)
 - uid: DarkStar.Engine.Ai.Humans.MushroomFinderAi.#ctor*
   name: MushroomFinderAi
   href: api/DarkStar.Engine.Ai.Humans.MushroomFinderAi.html#DarkStar_Engine_Ai_Humans_MushroomFinderAi__ctor_
@@ -11103,15 +11198,15 @@ references:
   commentId: T:DarkStar.Engine.ConnectionHandler.DefaultConnectionHandler
   fullName: DarkStar.Engine.ConnectionHandler.DefaultConnectionHandler
   nameWithType: DefaultConnectionHandler
-- uid: DarkStar.Engine.ConnectionHandler.DefaultConnectionHandler.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Api.Engine.ConnectionHandlers.BaseNetworkConnectionHandler},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
-  name: DefaultConnectionHandler(ILogger<BaseNetworkConnectionHandler>, IDarkSunEngine)
-  href: api/DarkStar.Engine.ConnectionHandler.DefaultConnectionHandler.html#DarkStar_Engine_ConnectionHandler_DefaultConnectionHandler__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Api_Engine_ConnectionHandlers_BaseNetworkConnectionHandler__DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_
-  commentId: M:DarkStar.Engine.ConnectionHandler.DefaultConnectionHandler.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Api.Engine.ConnectionHandlers.BaseNetworkConnectionHandler},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
-  name.vb: New(ILogger(Of BaseNetworkConnectionHandler), IDarkSunEngine)
-  fullName: DarkStar.Engine.ConnectionHandler.DefaultConnectionHandler.DefaultConnectionHandler(Microsoft.Extensions.Logging.ILogger<DarkStar.Api.Engine.ConnectionHandlers.BaseNetworkConnectionHandler>, DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
-  fullName.vb: DarkStar.Engine.ConnectionHandler.DefaultConnectionHandler.New(Microsoft.Extensions.Logging.ILogger(Of DarkStar.Api.Engine.ConnectionHandlers.BaseNetworkConnectionHandler), DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
-  nameWithType: DefaultConnectionHandler.DefaultConnectionHandler(ILogger<BaseNetworkConnectionHandler>, IDarkSunEngine)
-  nameWithType.vb: DefaultConnectionHandler.New(ILogger(Of BaseNetworkConnectionHandler), IDarkSunEngine)
+- uid: DarkStar.Engine.ConnectionHandler.DefaultConnectionHandler.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.ConnectionHandler.DefaultConnectionHandler},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  name: DefaultConnectionHandler(ILogger<DefaultConnectionHandler>, IDarkSunEngine)
+  href: api/DarkStar.Engine.ConnectionHandler.DefaultConnectionHandler.html#DarkStar_Engine_ConnectionHandler_DefaultConnectionHandler__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Engine_ConnectionHandler_DefaultConnectionHandler__DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_
+  commentId: M:DarkStar.Engine.ConnectionHandler.DefaultConnectionHandler.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.ConnectionHandler.DefaultConnectionHandler},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  name.vb: New(ILogger(Of DefaultConnectionHandler), IDarkSunEngine)
+  fullName: DarkStar.Engine.ConnectionHandler.DefaultConnectionHandler.DefaultConnectionHandler(Microsoft.Extensions.Logging.ILogger<DarkStar.Engine.ConnectionHandler.DefaultConnectionHandler>, DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  fullName.vb: DarkStar.Engine.ConnectionHandler.DefaultConnectionHandler.New(Microsoft.Extensions.Logging.ILogger(Of DarkStar.Engine.ConnectionHandler.DefaultConnectionHandler), DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  nameWithType: DefaultConnectionHandler.DefaultConnectionHandler(ILogger<DefaultConnectionHandler>, IDarkSunEngine)
+  nameWithType.vb: DefaultConnectionHandler.New(ILogger(Of DefaultConnectionHandler), IDarkSunEngine)
 - uid: DarkStar.Engine.ConnectionHandler.DefaultConnectionHandler.#ctor*
   name: DefaultConnectionHandler
   href: api/DarkStar.Engine.ConnectionHandler.DefaultConnectionHandler.html#DarkStar_Engine_ConnectionHandler_DefaultConnectionHandler__ctor_
@@ -11154,6 +11249,12 @@ references:
   isSpec: "True"
   fullName: DarkStar.Engine.ConnectionHandler.DefaultConnectionHandler.ClientDisconnectedAsync
   nameWithType: DefaultConnectionHandler.ClientDisconnectedAsync
+- uid: DarkStar.Engine.ConnectionHandler.DefaultConnectionHandler.s_version
+  name: s_version
+  href: api/DarkStar.Engine.ConnectionHandler.DefaultConnectionHandler.html#DarkStar_Engine_ConnectionHandler_DefaultConnectionHandler_s_version
+  commentId: F:DarkStar.Engine.ConnectionHandler.DefaultConnectionHandler.s_version
+  fullName: DarkStar.Engine.ConnectionHandler.DefaultConnectionHandler.s_version
+  nameWithType: DefaultConnectionHandler.s_version
 - uid: DarkStar.Engine.DarkSunEngine
   name: DarkSunEngine
   href: api/DarkStar.Engine.DarkSunEngine.html
@@ -11602,6 +11703,63 @@ references:
   isSpec: "True"
   fullName: DarkStar.Engine.Http.Controllers.ScriptController.GetVariables
   nameWithType: ScriptController.GetVariables
+- uid: DarkStar.Engine.Http.Controllers.TilesController
+  name: TilesController
+  href: api/DarkStar.Engine.Http.Controllers.TilesController.html
+  commentId: T:DarkStar.Engine.Http.Controllers.TilesController
+  fullName: DarkStar.Engine.Http.Controllers.TilesController
+  nameWithType: TilesController
+- uid: DarkStar.Engine.Http.Controllers.TilesController._darkSunEngine
+  name: _darkSunEngine
+  href: api/DarkStar.Engine.Http.Controllers.TilesController.html#DarkStar_Engine_Http_Controllers_TilesController__darkSunEngine
+  commentId: F:DarkStar.Engine.Http.Controllers.TilesController._darkSunEngine
+  fullName: DarkStar.Engine.Http.Controllers.TilesController._darkSunEngine
+  nameWithType: TilesController._darkSunEngine
+- uid: DarkStar.Engine.Http.Controllers.TilesController.#ctor(DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  name: TilesController(IDarkSunEngine)
+  href: api/DarkStar.Engine.Http.Controllers.TilesController.html#DarkStar_Engine_Http_Controllers_TilesController__ctor_DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_
+  commentId: M:DarkStar.Engine.Http.Controllers.TilesController.#ctor(DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  name.vb: New(IDarkSunEngine)
+  fullName: DarkStar.Engine.Http.Controllers.TilesController.TilesController(DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  fullName.vb: DarkStar.Engine.Http.Controllers.TilesController.New(DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  nameWithType: TilesController.TilesController(IDarkSunEngine)
+  nameWithType.vb: TilesController.New(IDarkSunEngine)
+- uid: DarkStar.Engine.Http.Controllers.TilesController.#ctor*
+  name: TilesController
+  href: api/DarkStar.Engine.Http.Controllers.TilesController.html#DarkStar_Engine_Http_Controllers_TilesController__ctor_
+  commentId: Overload:DarkStar.Engine.Http.Controllers.TilesController.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: DarkStar.Engine.Http.Controllers.TilesController.TilesController
+  fullName.vb: DarkStar.Engine.Http.Controllers.TilesController.New
+  nameWithType: TilesController.TilesController
+  nameWithType.vb: TilesController.New
+- uid: DarkStar.Engine.Http.Controllers.TilesController.GetTileSets
+  name: GetTileSets()
+  href: api/DarkStar.Engine.Http.Controllers.TilesController.html#DarkStar_Engine_Http_Controllers_TilesController_GetTileSets
+  commentId: M:DarkStar.Engine.Http.Controllers.TilesController.GetTileSets
+  fullName: DarkStar.Engine.Http.Controllers.TilesController.GetTileSets()
+  nameWithType: TilesController.GetTileSets()
+- uid: DarkStar.Engine.Http.Controllers.TilesController.GetTileSets*
+  name: GetTileSets
+  href: api/DarkStar.Engine.Http.Controllers.TilesController.html#DarkStar_Engine_Http_Controllers_TilesController_GetTileSets_
+  commentId: Overload:DarkStar.Engine.Http.Controllers.TilesController.GetTileSets
+  isSpec: "True"
+  fullName: DarkStar.Engine.Http.Controllers.TilesController.GetTileSets
+  nameWithType: TilesController.GetTileSets
+- uid: DarkStar.Engine.Http.Controllers.TilesController.GetTileSetSource(System.Guid)
+  name: GetTileSetSource(Guid)
+  href: api/DarkStar.Engine.Http.Controllers.TilesController.html#DarkStar_Engine_Http_Controllers_TilesController_GetTileSetSource_System_Guid_
+  commentId: M:DarkStar.Engine.Http.Controllers.TilesController.GetTileSetSource(System.Guid)
+  fullName: DarkStar.Engine.Http.Controllers.TilesController.GetTileSetSource(System.Guid)
+  nameWithType: TilesController.GetTileSetSource(Guid)
+- uid: DarkStar.Engine.Http.Controllers.TilesController.GetTileSetSource*
+  name: GetTileSetSource
+  href: api/DarkStar.Engine.Http.Controllers.TilesController.html#DarkStar_Engine_Http_Controllers_TilesController_GetTileSetSource_
+  commentId: Overload:DarkStar.Engine.Http.Controllers.TilesController.GetTileSetSource
+  isSpec: "True"
+  fullName: DarkStar.Engine.Http.Controllers.TilesController.GetTileSetSource
+  nameWithType: TilesController.GetTileSetSource
 - uid: DarkStar.Engine.Http.Controllers.VersionController
   name: VersionController
   href: api/DarkStar.Engine.Http.Controllers.VersionController.html
@@ -11621,6 +11779,121 @@ references:
   isSpec: "True"
   fullName: DarkStar.Engine.Http.Controllers.VersionController.GetVersion
   nameWithType: VersionController.GetVersion
+- uid: DarkStar.Engine.Http.Dto
+  name: DarkStar.Engine.Http.Dto
+  href: api/DarkStar.Engine.Http.Dto.html
+  commentId: N:DarkStar.Engine.Http.Dto
+  fullName: DarkStar.Engine.Http.Dto
+  nameWithType: DarkStar.Engine.Http.Dto
+- uid: DarkStar.Engine.Http.Dto.TileSetDto
+  name: TileSetDto
+  href: api/DarkStar.Engine.Http.Dto.TileSetDto.html
+  commentId: T:DarkStar.Engine.Http.Dto.TileSetDto
+  fullName: DarkStar.Engine.Http.Dto.TileSetDto
+  nameWithType: TileSetDto
+- uid: DarkStar.Engine.Http.Dto.TileSetDto.FileSize
+  name: FileSize
+  href: api/DarkStar.Engine.Http.Dto.TileSetDto.html#DarkStar_Engine_Http_Dto_TileSetDto_FileSize
+  commentId: P:DarkStar.Engine.Http.Dto.TileSetDto.FileSize
+  fullName: DarkStar.Engine.Http.Dto.TileSetDto.FileSize
+  nameWithType: TileSetDto.FileSize
+- uid: DarkStar.Engine.Http.Dto.TileSetDto.FileSize*
+  name: FileSize
+  href: api/DarkStar.Engine.Http.Dto.TileSetDto.html#DarkStar_Engine_Http_Dto_TileSetDto_FileSize_
+  commentId: Overload:DarkStar.Engine.Http.Dto.TileSetDto.FileSize
+  isSpec: "True"
+  fullName: DarkStar.Engine.Http.Dto.TileSetDto.FileSize
+  nameWithType: TileSetDto.FileSize
+- uid: DarkStar.Engine.Http.Dto.TileSetDto.Id
+  name: Id
+  href: api/DarkStar.Engine.Http.Dto.TileSetDto.html#DarkStar_Engine_Http_Dto_TileSetDto_Id
+  commentId: P:DarkStar.Engine.Http.Dto.TileSetDto.Id
+  fullName: DarkStar.Engine.Http.Dto.TileSetDto.Id
+  nameWithType: TileSetDto.Id
+- uid: DarkStar.Engine.Http.Dto.TileSetDto.Id*
+  name: Id
+  href: api/DarkStar.Engine.Http.Dto.TileSetDto.html#DarkStar_Engine_Http_Dto_TileSetDto_Id_
+  commentId: Overload:DarkStar.Engine.Http.Dto.TileSetDto.Id
+  isSpec: "True"
+  fullName: DarkStar.Engine.Http.Dto.TileSetDto.Id
+  nameWithType: TileSetDto.Id
+- uid: DarkStar.Engine.Http.Dto.TileSetDto.Name
+  name: Name
+  href: api/DarkStar.Engine.Http.Dto.TileSetDto.html#DarkStar_Engine_Http_Dto_TileSetDto_Name
+  commentId: P:DarkStar.Engine.Http.Dto.TileSetDto.Name
+  fullName: DarkStar.Engine.Http.Dto.TileSetDto.Name
+  nameWithType: TileSetDto.Name
+- uid: DarkStar.Engine.Http.Dto.TileSetDto.Name*
+  name: Name
+  href: api/DarkStar.Engine.Http.Dto.TileSetDto.html#DarkStar_Engine_Http_Dto_TileSetDto_Name_
+  commentId: Overload:DarkStar.Engine.Http.Dto.TileSetDto.Name
+  isSpec: "True"
+  fullName: DarkStar.Engine.Http.Dto.TileSetDto.Name
+  nameWithType: TileSetDto.Name
+- uid: DarkStar.Engine.Http.Dto.TileSetDto.TileHeight
+  name: TileHeight
+  href: api/DarkStar.Engine.Http.Dto.TileSetDto.html#DarkStar_Engine_Http_Dto_TileSetDto_TileHeight
+  commentId: P:DarkStar.Engine.Http.Dto.TileSetDto.TileHeight
+  fullName: DarkStar.Engine.Http.Dto.TileSetDto.TileHeight
+  nameWithType: TileSetDto.TileHeight
+- uid: DarkStar.Engine.Http.Dto.TileSetDto.TileHeight*
+  name: TileHeight
+  href: api/DarkStar.Engine.Http.Dto.TileSetDto.html#DarkStar_Engine_Http_Dto_TileSetDto_TileHeight_
+  commentId: Overload:DarkStar.Engine.Http.Dto.TileSetDto.TileHeight
+  isSpec: "True"
+  fullName: DarkStar.Engine.Http.Dto.TileSetDto.TileHeight
+  nameWithType: TileSetDto.TileHeight
+- uid: DarkStar.Engine.Http.Dto.TileSetDto.TileWidth
+  name: TileWidth
+  href: api/DarkStar.Engine.Http.Dto.TileSetDto.html#DarkStar_Engine_Http_Dto_TileSetDto_TileWidth
+  commentId: P:DarkStar.Engine.Http.Dto.TileSetDto.TileWidth
+  fullName: DarkStar.Engine.Http.Dto.TileSetDto.TileWidth
+  nameWithType: TileSetDto.TileWidth
+- uid: DarkStar.Engine.Http.Dto.TileSetDto.TileWidth*
+  name: TileWidth
+  href: api/DarkStar.Engine.Http.Dto.TileSetDto.html#DarkStar_Engine_Http_Dto_TileSetDto_TileWidth_
+  commentId: Overload:DarkStar.Engine.Http.Dto.TileSetDto.TileWidth
+  isSpec: "True"
+  fullName: DarkStar.Engine.Http.Dto.TileSetDto.TileWidth
+  nameWithType: TileSetDto.TileWidth
+- uid: DarkStar.Engine.Http.EnumSchemaFilter
+  name: EnumSchemaFilter
+  href: api/DarkStar.Engine.Http.EnumSchemaFilter.html
+  commentId: T:DarkStar.Engine.Http.EnumSchemaFilter
+  fullName: DarkStar.Engine.Http.EnumSchemaFilter
+  nameWithType: EnumSchemaFilter
+- uid: DarkStar.Engine.Http.EnumSchemaFilter.Apply(Microsoft.OpenApi.Models.OpenApiSchema,Swashbuckle.AspNetCore.SwaggerGen.SchemaFilterContext)
+  name: Apply(OpenApiSchema, SchemaFilterContext)
+  href: api/DarkStar.Engine.Http.EnumSchemaFilter.html#DarkStar_Engine_Http_EnumSchemaFilter_Apply_Microsoft_OpenApi_Models_OpenApiSchema_Swashbuckle_AspNetCore_SwaggerGen_SchemaFilterContext_
+  commentId: M:DarkStar.Engine.Http.EnumSchemaFilter.Apply(Microsoft.OpenApi.Models.OpenApiSchema,Swashbuckle.AspNetCore.SwaggerGen.SchemaFilterContext)
+  fullName: DarkStar.Engine.Http.EnumSchemaFilter.Apply(Microsoft.OpenApi.Models.OpenApiSchema, Swashbuckle.AspNetCore.SwaggerGen.SchemaFilterContext)
+  nameWithType: EnumSchemaFilter.Apply(OpenApiSchema, SchemaFilterContext)
+- uid: DarkStar.Engine.Http.EnumSchemaFilter.Apply*
+  name: Apply
+  href: api/DarkStar.Engine.Http.EnumSchemaFilter.html#DarkStar_Engine_Http_EnumSchemaFilter_Apply_
+  commentId: Overload:DarkStar.Engine.Http.EnumSchemaFilter.Apply
+  isSpec: "True"
+  fullName: DarkStar.Engine.Http.EnumSchemaFilter.Apply
+  nameWithType: EnumSchemaFilter.Apply
+- uid: DarkStar.Engine.Http.NetworkMessageDocumentFilter
+  name: NetworkMessageDocumentFilter
+  href: api/DarkStar.Engine.Http.NetworkMessageDocumentFilter.html
+  commentId: T:DarkStar.Engine.Http.NetworkMessageDocumentFilter
+  fullName: DarkStar.Engine.Http.NetworkMessageDocumentFilter
+  nameWithType: NetworkMessageDocumentFilter
+- uid: DarkStar.Engine.Http.NetworkMessageDocumentFilter.Apply(Microsoft.OpenApi.Models.OpenApiDocument,Swashbuckle.AspNetCore.SwaggerGen.DocumentFilterContext)
+  name: Apply(OpenApiDocument, DocumentFilterContext)
+  href: api/DarkStar.Engine.Http.NetworkMessageDocumentFilter.html#DarkStar_Engine_Http_NetworkMessageDocumentFilter_Apply_Microsoft_OpenApi_Models_OpenApiDocument_Swashbuckle_AspNetCore_SwaggerGen_DocumentFilterContext_
+  commentId: M:DarkStar.Engine.Http.NetworkMessageDocumentFilter.Apply(Microsoft.OpenApi.Models.OpenApiDocument,Swashbuckle.AspNetCore.SwaggerGen.DocumentFilterContext)
+  fullName: DarkStar.Engine.Http.NetworkMessageDocumentFilter.Apply(Microsoft.OpenApi.Models.OpenApiDocument, Swashbuckle.AspNetCore.SwaggerGen.DocumentFilterContext)
+  nameWithType: NetworkMessageDocumentFilter.Apply(OpenApiDocument, DocumentFilterContext)
+- uid: DarkStar.Engine.Http.NetworkMessageDocumentFilter.Apply*
+  name: Apply
+  href: api/DarkStar.Engine.Http.NetworkMessageDocumentFilter.html#DarkStar_Engine_Http_NetworkMessageDocumentFilter_Apply_
+  commentId: Overload:DarkStar.Engine.Http.NetworkMessageDocumentFilter.Apply
+  isSpec: "True"
+  fullName: DarkStar.Engine.Http.NetworkMessageDocumentFilter.Apply
+  nameWithType: NetworkMessageDocumentFilter.Apply
 - uid: DarkStar.Engine.Http.WebModuleLoaderExtension
   name: WebModuleLoaderExtension
   href: api/DarkStar.Engine.Http.WebModuleLoaderExtension.html
@@ -11668,15 +11941,15 @@ references:
   commentId: T:DarkStar.Engine.Items.WorldObjects.MushroomGameObject
   fullName: DarkStar.Engine.Items.WorldObjects.MushroomGameObject
   nameWithType: MushroomGameObject
-- uid: DarkStar.Engine.Items.WorldObjects.MushroomGameObject.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Api.Engine.Items.WorldObjects.Base.BaseWorldObjectAction},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
-  name: MushroomGameObject(ILogger<BaseWorldObjectAction>, IDarkSunEngine)
-  href: api/DarkStar.Engine.Items.WorldObjects.MushroomGameObject.html#DarkStar_Engine_Items_WorldObjects_MushroomGameObject__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Api_Engine_Items_WorldObjects_Base_BaseWorldObjectAction__DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_
-  commentId: M:DarkStar.Engine.Items.WorldObjects.MushroomGameObject.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Api.Engine.Items.WorldObjects.Base.BaseWorldObjectAction},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
-  name.vb: New(ILogger(Of BaseWorldObjectAction), IDarkSunEngine)
-  fullName: DarkStar.Engine.Items.WorldObjects.MushroomGameObject.MushroomGameObject(Microsoft.Extensions.Logging.ILogger<DarkStar.Api.Engine.Items.WorldObjects.Base.BaseWorldObjectAction>, DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
-  fullName.vb: DarkStar.Engine.Items.WorldObjects.MushroomGameObject.New(Microsoft.Extensions.Logging.ILogger(Of DarkStar.Api.Engine.Items.WorldObjects.Base.BaseWorldObjectAction), DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
-  nameWithType: MushroomGameObject.MushroomGameObject(ILogger<BaseWorldObjectAction>, IDarkSunEngine)
-  nameWithType.vb: MushroomGameObject.New(ILogger(Of BaseWorldObjectAction), IDarkSunEngine)
+- uid: DarkStar.Engine.Items.WorldObjects.MushroomGameObject.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.Items.WorldObjects.MushroomGameObject},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  name: MushroomGameObject(ILogger<MushroomGameObject>, IDarkSunEngine)
+  href: api/DarkStar.Engine.Items.WorldObjects.MushroomGameObject.html#DarkStar_Engine_Items_WorldObjects_MushroomGameObject__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Engine_Items_WorldObjects_MushroomGameObject__DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_
+  commentId: M:DarkStar.Engine.Items.WorldObjects.MushroomGameObject.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.Items.WorldObjects.MushroomGameObject},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  name.vb: New(ILogger(Of MushroomGameObject), IDarkSunEngine)
+  fullName: DarkStar.Engine.Items.WorldObjects.MushroomGameObject.MushroomGameObject(Microsoft.Extensions.Logging.ILogger<DarkStar.Engine.Items.WorldObjects.MushroomGameObject>, DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  fullName.vb: DarkStar.Engine.Items.WorldObjects.MushroomGameObject.New(Microsoft.Extensions.Logging.ILogger(Of DarkStar.Engine.Items.WorldObjects.MushroomGameObject), DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  nameWithType: MushroomGameObject.MushroomGameObject(ILogger<MushroomGameObject>, IDarkSunEngine)
+  nameWithType.vb: MushroomGameObject.New(ILogger(Of MushroomGameObject), IDarkSunEngine)
 - uid: DarkStar.Engine.Items.WorldObjects.MushroomGameObject.#ctor*
   name: MushroomGameObject
   href: api/DarkStar.Engine.Items.WorldObjects.MushroomGameObject.html#DarkStar_Engine_Items_WorldObjects_MushroomGameObject__ctor_
@@ -12412,6 +12685,125 @@ references:
   commentId: N:DarkStar.Engine.Runner
   fullName: DarkStar.Engine.Runner
   nameWithType: DarkStar.Engine.Runner
+- uid: DarkStar.Engine.Runner.Compiler
+  name: DarkStar.Engine.Runner.Compiler
+  href: api/DarkStar.Engine.Runner.Compiler.html
+  commentId: N:DarkStar.Engine.Runner.Compiler
+  fullName: DarkStar.Engine.Runner.Compiler
+  nameWithType: DarkStar.Engine.Runner.Compiler
+- uid: DarkStar.Engine.Runner.Compiler.CSharpCompiler
+  name: CSharpCompiler
+  href: api/DarkStar.Engine.Runner.Compiler.CSharpCompiler.html
+  commentId: T:DarkStar.Engine.Runner.Compiler.CSharpCompiler
+  fullName: DarkStar.Engine.Runner.Compiler.CSharpCompiler
+  nameWithType: CSharpCompiler
+- uid: DarkStar.Engine.Runner.Compiler.CSharpCompiler._directoriesConfig
+  name: _directoriesConfig
+  href: api/DarkStar.Engine.Runner.Compiler.CSharpCompiler.html#DarkStar_Engine_Runner_Compiler_CSharpCompiler__directoriesConfig
+  commentId: F:DarkStar.Engine.Runner.Compiler.CSharpCompiler._directoriesConfig
+  fullName: DarkStar.Engine.Runner.Compiler.CSharpCompiler._directoriesConfig
+  nameWithType: CSharpCompiler._directoriesConfig
+- uid: DarkStar.Engine.Runner.Compiler.CSharpCompiler._logger
+  name: _logger
+  href: api/DarkStar.Engine.Runner.Compiler.CSharpCompiler.html#DarkStar_Engine_Runner_Compiler_CSharpCompiler__logger
+  commentId: F:DarkStar.Engine.Runner.Compiler.CSharpCompiler._logger
+  fullName: DarkStar.Engine.Runner.Compiler.CSharpCompiler._logger
+  nameWithType: CSharpCompiler._logger
+- uid: DarkStar.Engine.Runner.Compiler.CSharpCompiler._references
+  name: _references
+  href: api/DarkStar.Engine.Runner.Compiler.CSharpCompiler.html#DarkStar_Engine_Runner_Compiler_CSharpCompiler__references
+  commentId: F:DarkStar.Engine.Runner.Compiler.CSharpCompiler._references
+  fullName: DarkStar.Engine.Runner.Compiler.CSharpCompiler._references
+  nameWithType: CSharpCompiler._references
+- uid: DarkStar.Engine.Runner.Compiler.CSharpCompiler.#ctor(Serilog.ILogger,DarkStar.Api.Data.Config.DirectoriesConfig)
+  name: CSharpCompiler(ILogger, DirectoriesConfig)
+  href: api/DarkStar.Engine.Runner.Compiler.CSharpCompiler.html#DarkStar_Engine_Runner_Compiler_CSharpCompiler__ctor_Serilog_ILogger_DarkStar_Api_Data_Config_DirectoriesConfig_
+  commentId: M:DarkStar.Engine.Runner.Compiler.CSharpCompiler.#ctor(Serilog.ILogger,DarkStar.Api.Data.Config.DirectoriesConfig)
+  name.vb: New(ILogger, DirectoriesConfig)
+  fullName: DarkStar.Engine.Runner.Compiler.CSharpCompiler.CSharpCompiler(Serilog.ILogger, DarkStar.Api.Data.Config.DirectoriesConfig)
+  fullName.vb: DarkStar.Engine.Runner.Compiler.CSharpCompiler.New(Serilog.ILogger, DarkStar.Api.Data.Config.DirectoriesConfig)
+  nameWithType: CSharpCompiler.CSharpCompiler(ILogger, DirectoriesConfig)
+  nameWithType.vb: CSharpCompiler.New(ILogger, DirectoriesConfig)
+- uid: DarkStar.Engine.Runner.Compiler.CSharpCompiler.#ctor*
+  name: CSharpCompiler
+  href: api/DarkStar.Engine.Runner.Compiler.CSharpCompiler.html#DarkStar_Engine_Runner_Compiler_CSharpCompiler__ctor_
+  commentId: Overload:DarkStar.Engine.Runner.Compiler.CSharpCompiler.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: DarkStar.Engine.Runner.Compiler.CSharpCompiler.CSharpCompiler
+  fullName.vb: DarkStar.Engine.Runner.Compiler.CSharpCompiler.New
+  nameWithType: CSharpCompiler.CSharpCompiler
+  nameWithType.vb: CSharpCompiler.New
+- uid: DarkStar.Engine.Runner.Compiler.CSharpCompiler.AddAssemblies(System.String[])
+  name: AddAssemblies(params string[])
+  href: api/DarkStar.Engine.Runner.Compiler.CSharpCompiler.html#DarkStar_Engine_Runner_Compiler_CSharpCompiler_AddAssemblies_System_String___
+  commentId: M:DarkStar.Engine.Runner.Compiler.CSharpCompiler.AddAssemblies(System.String[])
+  name.vb: AddAssemblies(ParamArray String())
+  fullName: DarkStar.Engine.Runner.Compiler.CSharpCompiler.AddAssemblies(params string[])
+  fullName.vb: DarkStar.Engine.Runner.Compiler.CSharpCompiler.AddAssemblies(ParamArray String())
+  nameWithType: CSharpCompiler.AddAssemblies(params string[])
+  nameWithType.vb: CSharpCompiler.AddAssemblies(ParamArray String())
+- uid: DarkStar.Engine.Runner.Compiler.CSharpCompiler.AddAssemblies*
+  name: AddAssemblies
+  href: api/DarkStar.Engine.Runner.Compiler.CSharpCompiler.html#DarkStar_Engine_Runner_Compiler_CSharpCompiler_AddAssemblies_
+  commentId: Overload:DarkStar.Engine.Runner.Compiler.CSharpCompiler.AddAssemblies
+  isSpec: "True"
+  fullName: DarkStar.Engine.Runner.Compiler.CSharpCompiler.AddAssemblies
+  nameWithType: CSharpCompiler.AddAssemblies
+- uid: DarkStar.Engine.Runner.Compiler.CSharpCompiler.AddAssembly(System.Reflection.Assembly)
+  name: AddAssembly(Assembly)
+  href: api/DarkStar.Engine.Runner.Compiler.CSharpCompiler.html#DarkStar_Engine_Runner_Compiler_CSharpCompiler_AddAssembly_System_Reflection_Assembly_
+  commentId: M:DarkStar.Engine.Runner.Compiler.CSharpCompiler.AddAssembly(System.Reflection.Assembly)
+  fullName: DarkStar.Engine.Runner.Compiler.CSharpCompiler.AddAssembly(System.Reflection.Assembly)
+  nameWithType: CSharpCompiler.AddAssembly(Assembly)
+- uid: DarkStar.Engine.Runner.Compiler.CSharpCompiler.AddAssembly(System.String)
+  name: AddAssembly(string)
+  href: api/DarkStar.Engine.Runner.Compiler.CSharpCompiler.html#DarkStar_Engine_Runner_Compiler_CSharpCompiler_AddAssembly_System_String_
+  commentId: M:DarkStar.Engine.Runner.Compiler.CSharpCompiler.AddAssembly(System.String)
+  name.vb: AddAssembly(String)
+  fullName: DarkStar.Engine.Runner.Compiler.CSharpCompiler.AddAssembly(string)
+  fullName.vb: DarkStar.Engine.Runner.Compiler.CSharpCompiler.AddAssembly(String)
+  nameWithType: CSharpCompiler.AddAssembly(string)
+  nameWithType.vb: CSharpCompiler.AddAssembly(String)
+- uid: DarkStar.Engine.Runner.Compiler.CSharpCompiler.AddAssembly(System.Type)
+  name: AddAssembly(Type)
+  href: api/DarkStar.Engine.Runner.Compiler.CSharpCompiler.html#DarkStar_Engine_Runner_Compiler_CSharpCompiler_AddAssembly_System_Type_
+  commentId: M:DarkStar.Engine.Runner.Compiler.CSharpCompiler.AddAssembly(System.Type)
+  fullName: DarkStar.Engine.Runner.Compiler.CSharpCompiler.AddAssembly(System.Type)
+  nameWithType: CSharpCompiler.AddAssembly(Type)
+- uid: DarkStar.Engine.Runner.Compiler.CSharpCompiler.AddAssembly*
+  name: AddAssembly
+  href: api/DarkStar.Engine.Runner.Compiler.CSharpCompiler.html#DarkStar_Engine_Runner_Compiler_CSharpCompiler_AddAssembly_
+  commentId: Overload:DarkStar.Engine.Runner.Compiler.CSharpCompiler.AddAssembly
+  isSpec: "True"
+  fullName: DarkStar.Engine.Runner.Compiler.CSharpCompiler.AddAssembly
+  nameWithType: CSharpCompiler.AddAssembly
+- uid: DarkStar.Engine.Runner.Compiler.CSharpCompiler.AddNetCoreDefaultReferences
+  name: AddNetCoreDefaultReferences()
+  href: api/DarkStar.Engine.Runner.Compiler.CSharpCompiler.html#DarkStar_Engine_Runner_Compiler_CSharpCompiler_AddNetCoreDefaultReferences
+  commentId: M:DarkStar.Engine.Runner.Compiler.CSharpCompiler.AddNetCoreDefaultReferences
+  fullName: DarkStar.Engine.Runner.Compiler.CSharpCompiler.AddNetCoreDefaultReferences()
+  nameWithType: CSharpCompiler.AddNetCoreDefaultReferences()
+- uid: DarkStar.Engine.Runner.Compiler.CSharpCompiler.AddNetCoreDefaultReferences*
+  name: AddNetCoreDefaultReferences
+  href: api/DarkStar.Engine.Runner.Compiler.CSharpCompiler.html#DarkStar_Engine_Runner_Compiler_CSharpCompiler_AddNetCoreDefaultReferences_
+  commentId: Overload:DarkStar.Engine.Runner.Compiler.CSharpCompiler.AddNetCoreDefaultReferences
+  isSpec: "True"
+  fullName: DarkStar.Engine.Runner.Compiler.CSharpCompiler.AddNetCoreDefaultReferences
+  nameWithType: CSharpCompiler.AddNetCoreDefaultReferences
+- uid: DarkStar.Engine.Runner.Compiler.CSharpCompiler.CompileSources
+  name: CompileSources()
+  href: api/DarkStar.Engine.Runner.Compiler.CSharpCompiler.html#DarkStar_Engine_Runner_Compiler_CSharpCompiler_CompileSources
+  commentId: M:DarkStar.Engine.Runner.Compiler.CSharpCompiler.CompileSources
+  fullName: DarkStar.Engine.Runner.Compiler.CSharpCompiler.CompileSources()
+  nameWithType: CSharpCompiler.CompileSources()
+- uid: DarkStar.Engine.Runner.Compiler.CSharpCompiler.CompileSources*
+  name: CompileSources
+  href: api/DarkStar.Engine.Runner.Compiler.CSharpCompiler.html#DarkStar_Engine_Runner_Compiler_CSharpCompiler_CompileSources_
+  commentId: Overload:DarkStar.Engine.Runner.Compiler.CSharpCompiler.CompileSources
+  isSpec: "True"
+  fullName: DarkStar.Engine.Runner.Compiler.CSharpCompiler.CompileSources
+  nameWithType: CSharpCompiler.CompileSources
 - uid: DarkStar.Engine.Runner.DarkSunEngineHostedService
   name: DarkSunEngineHostedService
   href: api/DarkStar.Engine.Runner.DarkSunEngineHostedService.html
@@ -12985,53 +13377,6 @@ references:
   isSpec: "True"
   fullName: DarkStar.Engine.ScriptModules.RandomUtilsScriptModule.RandomBool
   nameWithType: RandomUtilsScriptModule.RandomBool
-- uid: DarkStar.Engine.ScriptModules.SeedScriptModule
-  name: SeedScriptModule
-  href: api/DarkStar.Engine.ScriptModules.SeedScriptModule.html
-  commentId: T:DarkStar.Engine.ScriptModules.SeedScriptModule
-  fullName: DarkStar.Engine.ScriptModules.SeedScriptModule
-  nameWithType: SeedScriptModule
-- uid: DarkStar.Engine.ScriptModules.SeedScriptModule._seedService
-  name: _seedService
-  href: api/DarkStar.Engine.ScriptModules.SeedScriptModule.html#DarkStar_Engine_ScriptModules_SeedScriptModule__seedService
-  commentId: F:DarkStar.Engine.ScriptModules.SeedScriptModule._seedService
-  fullName: DarkStar.Engine.ScriptModules.SeedScriptModule._seedService
-  nameWithType: SeedScriptModule._seedService
-- uid: DarkStar.Engine.ScriptModules.SeedScriptModule.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.ScriptModules.SeedScriptModule},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine,DarkStar.Api.Engine.Interfaces.Services.ISeedService)
-  name: SeedScriptModule(ILogger<SeedScriptModule>, IDarkSunEngine, ISeedService)
-  href: api/DarkStar.Engine.ScriptModules.SeedScriptModule.html#DarkStar_Engine_ScriptModules_SeedScriptModule__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Engine_ScriptModules_SeedScriptModule__DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_DarkStar_Api_Engine_Interfaces_Services_ISeedService_
-  commentId: M:DarkStar.Engine.ScriptModules.SeedScriptModule.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.ScriptModules.SeedScriptModule},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine,DarkStar.Api.Engine.Interfaces.Services.ISeedService)
-  name.vb: New(ILogger(Of SeedScriptModule), IDarkSunEngine, ISeedService)
-  fullName: DarkStar.Engine.ScriptModules.SeedScriptModule.SeedScriptModule(Microsoft.Extensions.Logging.ILogger<DarkStar.Engine.ScriptModules.SeedScriptModule>, DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine, DarkStar.Api.Engine.Interfaces.Services.ISeedService)
-  fullName.vb: DarkStar.Engine.ScriptModules.SeedScriptModule.New(Microsoft.Extensions.Logging.ILogger(Of DarkStar.Engine.ScriptModules.SeedScriptModule), DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine, DarkStar.Api.Engine.Interfaces.Services.ISeedService)
-  nameWithType: SeedScriptModule.SeedScriptModule(ILogger<SeedScriptModule>, IDarkSunEngine, ISeedService)
-  nameWithType.vb: SeedScriptModule.New(ILogger(Of SeedScriptModule), IDarkSunEngine, ISeedService)
-- uid: DarkStar.Engine.ScriptModules.SeedScriptModule.#ctor*
-  name: SeedScriptModule
-  href: api/DarkStar.Engine.ScriptModules.SeedScriptModule.html#DarkStar_Engine_ScriptModules_SeedScriptModule__ctor_
-  commentId: Overload:DarkStar.Engine.ScriptModules.SeedScriptModule.#ctor
-  isSpec: "True"
-  name.vb: New
-  fullName: DarkStar.Engine.ScriptModules.SeedScriptModule.SeedScriptModule
-  fullName.vb: DarkStar.Engine.ScriptModules.SeedScriptModule.New
-  nameWithType: SeedScriptModule.SeedScriptModule
-  nameWithType.vb: SeedScriptModule.New
-- uid: DarkStar.Engine.ScriptModules.SeedScriptModule.AddTextContent(System.String,System.String)
-  name: AddTextContent(string, string)
-  href: api/DarkStar.Engine.ScriptModules.SeedScriptModule.html#DarkStar_Engine_ScriptModules_SeedScriptModule_AddTextContent_System_String_System_String_
-  commentId: M:DarkStar.Engine.ScriptModules.SeedScriptModule.AddTextContent(System.String,System.String)
-  name.vb: AddTextContent(String, String)
-  fullName: DarkStar.Engine.ScriptModules.SeedScriptModule.AddTextContent(string, string)
-  fullName.vb: DarkStar.Engine.ScriptModules.SeedScriptModule.AddTextContent(String, String)
-  nameWithType: SeedScriptModule.AddTextContent(string, string)
-  nameWithType.vb: SeedScriptModule.AddTextContent(String, String)
-- uid: DarkStar.Engine.ScriptModules.SeedScriptModule.AddTextContent*
-  name: AddTextContent
-  href: api/DarkStar.Engine.ScriptModules.SeedScriptModule.html#DarkStar_Engine_ScriptModules_SeedScriptModule_AddTextContent_
-  commentId: Overload:DarkStar.Engine.ScriptModules.SeedScriptModule.AddTextContent
-  isSpec: "True"
-  fullName: DarkStar.Engine.ScriptModules.SeedScriptModule.AddTextContent
-  nameWithType: SeedScriptModule.AddTextContent
 - uid: DarkStar.Engine.ScriptModules.ServerScriptModule
   name: ServerScriptModule
   href: api/DarkStar.Engine.ScriptModules.ServerScriptModule.html
@@ -13164,15 +13509,31 @@ references:
   isSpec: "True"
   fullName: DarkStar.Engine.ScriptModules.TypesScriptModule.AddGameObjectType
   nameWithType: TypesScriptModule.AddGameObjectType
-- uid: DarkStar.Engine.ScriptModules.TypesScriptModule.AddItemCategoryType(System.String)
-  name: AddItemCategoryType(string)
-  href: api/DarkStar.Engine.ScriptModules.TypesScriptModule.html#DarkStar_Engine_ScriptModules_TypesScriptModule_AddItemCategoryType_System_String_
-  commentId: M:DarkStar.Engine.ScriptModules.TypesScriptModule.AddItemCategoryType(System.String)
-  name.vb: AddItemCategoryType(String)
-  fullName: DarkStar.Engine.ScriptModules.TypesScriptModule.AddItemCategoryType(string)
-  fullName.vb: DarkStar.Engine.ScriptModules.TypesScriptModule.AddItemCategoryType(String)
-  nameWithType: TypesScriptModule.AddItemCategoryType(string)
-  nameWithType.vb: TypesScriptModule.AddItemCategoryType(String)
+- uid: DarkStar.Engine.ScriptModules.TypesScriptModule.AddItem(System.String,System.String,System.Int32,System.String,System.String,System.String,System.Int16,System.Int16,System.String,System.String,System.String,System.String,System.String)
+  name: AddItem(string, string, int, string, string, string, short, short, string, string, string, string, string)
+  href: api/DarkStar.Engine.ScriptModules.TypesScriptModule.html#DarkStar_Engine_ScriptModules_TypesScriptModule_AddItem_System_String_System_String_System_Int32_System_String_System_String_System_String_System_Int16_System_Int16_System_String_System_String_System_String_System_String_System_String_
+  commentId: M:DarkStar.Engine.ScriptModules.TypesScriptModule.AddItem(System.String,System.String,System.Int32,System.String,System.String,System.String,System.Int16,System.Int16,System.String,System.String,System.String,System.String,System.String)
+  name.vb: AddItem(String, String, Integer, String, String, String, Short, Short, String, String, String, String, String)
+  fullName: DarkStar.Engine.ScriptModules.TypesScriptModule.AddItem(string, string, int, string, string, string, short, short, string, string, string, string, string)
+  fullName.vb: DarkStar.Engine.ScriptModules.TypesScriptModule.AddItem(String, String, Integer, String, String, String, Short, Short, String, String, String, String, String)
+  nameWithType: TypesScriptModule.AddItem(string, string, int, string, string, string, short, short, string, string, string, string, string)
+  nameWithType.vb: TypesScriptModule.AddItem(String, String, Integer, String, String, String, Short, Short, String, String, String, String, String)
+- uid: DarkStar.Engine.ScriptModules.TypesScriptModule.AddItem*
+  name: AddItem
+  href: api/DarkStar.Engine.ScriptModules.TypesScriptModule.html#DarkStar_Engine_ScriptModules_TypesScriptModule_AddItem_
+  commentId: Overload:DarkStar.Engine.ScriptModules.TypesScriptModule.AddItem
+  isSpec: "True"
+  fullName: DarkStar.Engine.ScriptModules.TypesScriptModule.AddItem
+  nameWithType: TypesScriptModule.AddItem
+- uid: DarkStar.Engine.ScriptModules.TypesScriptModule.AddItemCategoryType(System.String[])
+  name: AddItemCategoryType(params string[])
+  href: api/DarkStar.Engine.ScriptModules.TypesScriptModule.html#DarkStar_Engine_ScriptModules_TypesScriptModule_AddItemCategoryType_System_String___
+  commentId: M:DarkStar.Engine.ScriptModules.TypesScriptModule.AddItemCategoryType(System.String[])
+  name.vb: AddItemCategoryType(ParamArray String())
+  fullName: DarkStar.Engine.ScriptModules.TypesScriptModule.AddItemCategoryType(params string[])
+  fullName.vb: DarkStar.Engine.ScriptModules.TypesScriptModule.AddItemCategoryType(ParamArray String())
+  nameWithType: TypesScriptModule.AddItemCategoryType(params string[])
+  nameWithType.vb: TypesScriptModule.AddItemCategoryType(ParamArray String())
 - uid: DarkStar.Engine.ScriptModules.TypesScriptModule.AddItemCategoryType*
   name: AddItemCategoryType
   href: api/DarkStar.Engine.ScriptModules.TypesScriptModule.html#DarkStar_Engine_ScriptModules_TypesScriptModule_AddItemCategoryType_
@@ -13180,15 +13541,15 @@ references:
   isSpec: "True"
   fullName: DarkStar.Engine.ScriptModules.TypesScriptModule.AddItemCategoryType
   nameWithType: TypesScriptModule.AddItemCategoryType
-- uid: DarkStar.Engine.ScriptModules.TypesScriptModule.AddItemType(System.String)
-  name: AddItemType(string)
-  href: api/DarkStar.Engine.ScriptModules.TypesScriptModule.html#DarkStar_Engine_ScriptModules_TypesScriptModule_AddItemType_System_String_
-  commentId: M:DarkStar.Engine.ScriptModules.TypesScriptModule.AddItemType(System.String)
-  name.vb: AddItemType(String)
-  fullName: DarkStar.Engine.ScriptModules.TypesScriptModule.AddItemType(string)
-  fullName.vb: DarkStar.Engine.ScriptModules.TypesScriptModule.AddItemType(String)
-  nameWithType: TypesScriptModule.AddItemType(string)
-  nameWithType.vb: TypesScriptModule.AddItemType(String)
+- uid: DarkStar.Engine.ScriptModules.TypesScriptModule.AddItemType(System.String[])
+  name: AddItemType(params string[])
+  href: api/DarkStar.Engine.ScriptModules.TypesScriptModule.html#DarkStar_Engine_ScriptModules_TypesScriptModule_AddItemType_System_String___
+  commentId: M:DarkStar.Engine.ScriptModules.TypesScriptModule.AddItemType(System.String[])
+  name.vb: AddItemType(ParamArray String())
+  fullName: DarkStar.Engine.ScriptModules.TypesScriptModule.AddItemType(params string[])
+  fullName.vb: DarkStar.Engine.ScriptModules.TypesScriptModule.AddItemType(ParamArray String())
+  nameWithType: TypesScriptModule.AddItemType(params string[])
+  nameWithType.vb: TypesScriptModule.AddItemType(ParamArray String())
 - uid: DarkStar.Engine.ScriptModules.TypesScriptModule.AddItemType*
   name: AddItemType
   href: api/DarkStar.Engine.ScriptModules.TypesScriptModule.html#DarkStar_Engine_ScriptModules_TypesScriptModule_AddItemType_
@@ -13212,6 +13573,22 @@ references:
   isSpec: "True"
   fullName: DarkStar.Engine.ScriptModules.TypesScriptModule.AddNpcType
   nameWithType: TypesScriptModule.AddNpcType
+- uid: DarkStar.Engine.ScriptModules.TypesScriptModule.AddTextContent(System.String,System.String)
+  name: AddTextContent(string, string)
+  href: api/DarkStar.Engine.ScriptModules.TypesScriptModule.html#DarkStar_Engine_ScriptModules_TypesScriptModule_AddTextContent_System_String_System_String_
+  commentId: M:DarkStar.Engine.ScriptModules.TypesScriptModule.AddTextContent(System.String,System.String)
+  name.vb: AddTextContent(String, String)
+  fullName: DarkStar.Engine.ScriptModules.TypesScriptModule.AddTextContent(string, string)
+  fullName.vb: DarkStar.Engine.ScriptModules.TypesScriptModule.AddTextContent(String, String)
+  nameWithType: TypesScriptModule.AddTextContent(string, string)
+  nameWithType.vb: TypesScriptModule.AddTextContent(String, String)
+- uid: DarkStar.Engine.ScriptModules.TypesScriptModule.AddTextContent*
+  name: AddTextContent
+  href: api/DarkStar.Engine.ScriptModules.TypesScriptModule.html#DarkStar_Engine_ScriptModules_TypesScriptModule_AddTextContent_
+  commentId: Overload:DarkStar.Engine.ScriptModules.TypesScriptModule.AddTextContent
+  isSpec: "True"
+  fullName: DarkStar.Engine.ScriptModules.TypesScriptModule.AddTextContent
+  nameWithType: TypesScriptModule.AddTextContent
 - uid: DarkStar.Engine.ScriptModules.TypesScriptModule.AddTile(System.Int32,System.String,System.String,System.String,System.String,System.Boolean)
   name: AddTile(int, string, string, string, string?, bool)
   href: api/DarkStar.Engine.ScriptModules.TypesScriptModule.html#DarkStar_Engine_ScriptModules_TypesScriptModule_AddTile_System_Int32_System_String_System_String_System_String_System_String_System_Boolean_
@@ -13228,6 +13605,22 @@ references:
   isSpec: "True"
   fullName: DarkStar.Engine.ScriptModules.TypesScriptModule.AddTile
   nameWithType: TypesScriptModule.AddTile
+- uid: DarkStar.Engine.ScriptModules.TypesScriptModule.AttachTextContentToItem(System.String,System.String)
+  name: AttachTextContentToItem(string, string)
+  href: api/DarkStar.Engine.ScriptModules.TypesScriptModule.html#DarkStar_Engine_ScriptModules_TypesScriptModule_AttachTextContentToItem_System_String_System_String_
+  commentId: M:DarkStar.Engine.ScriptModules.TypesScriptModule.AttachTextContentToItem(System.String,System.String)
+  name.vb: AttachTextContentToItem(String, String)
+  fullName: DarkStar.Engine.ScriptModules.TypesScriptModule.AttachTextContentToItem(string, string)
+  fullName.vb: DarkStar.Engine.ScriptModules.TypesScriptModule.AttachTextContentToItem(String, String)
+  nameWithType: TypesScriptModule.AttachTextContentToItem(string, string)
+  nameWithType.vb: TypesScriptModule.AttachTextContentToItem(String, String)
+- uid: DarkStar.Engine.ScriptModules.TypesScriptModule.AttachTextContentToItem*
+  name: AttachTextContentToItem
+  href: api/DarkStar.Engine.ScriptModules.TypesScriptModule.html#DarkStar_Engine_ScriptModules_TypesScriptModule_AttachTextContentToItem_
+  commentId: Overload:DarkStar.Engine.ScriptModules.TypesScriptModule.AttachTextContentToItem
+  isSpec: "True"
+  fullName: DarkStar.Engine.ScriptModules.TypesScriptModule.AttachTextContentToItem
+  nameWithType: TypesScriptModule.AttachTextContentToItem
 - uid: DarkStar.Engine.Services
   name: DarkStar.Engine.Services
   href: api/DarkStar.Engine.Services.html
@@ -15624,6 +16017,22 @@ references:
   isSpec: "True"
   fullName: DarkStar.Engine.Services.SeedService.AddGameObjectToSeed
   nameWithType: SeedService.AddGameObjectToSeed
+- uid: DarkStar.Engine.Services.SeedService.AddItemSeed(System.String,System.String,System.Int32,System.String,System.String,System.String,System.Int16,System.Int16,System.String,System.String,System.String,System.String,System.String)
+  name: AddItemSeed(string, string, int, string, string, string, short, short, string, string, string, string, string)
+  href: api/DarkStar.Engine.Services.SeedService.html#DarkStar_Engine_Services_SeedService_AddItemSeed_System_String_System_String_System_Int32_System_String_System_String_System_String_System_Int16_System_Int16_System_String_System_String_System_String_System_String_System_String_
+  commentId: M:DarkStar.Engine.Services.SeedService.AddItemSeed(System.String,System.String,System.Int32,System.String,System.String,System.String,System.Int16,System.Int16,System.String,System.String,System.String,System.String,System.String)
+  name.vb: AddItemSeed(String, String, Integer, String, String, String, Short, Short, String, String, String, String, String)
+  fullName: DarkStar.Engine.Services.SeedService.AddItemSeed(string, string, int, string, string, string, short, short, string, string, string, string, string)
+  fullName.vb: DarkStar.Engine.Services.SeedService.AddItemSeed(String, String, Integer, String, String, String, Short, Short, String, String, String, String, String)
+  nameWithType: SeedService.AddItemSeed(string, string, int, string, string, string, short, short, string, string, string, string, string)
+  nameWithType.vb: SeedService.AddItemSeed(String, String, Integer, String, String, String, Short, Short, String, String, String, String, String)
+- uid: DarkStar.Engine.Services.SeedService.AddItemSeed*
+  name: AddItemSeed
+  href: api/DarkStar.Engine.Services.SeedService.html#DarkStar_Engine_Services_SeedService_AddItemSeed_
+  commentId: Overload:DarkStar.Engine.Services.SeedService.AddItemSeed
+  isSpec: "True"
+  fullName: DarkStar.Engine.Services.SeedService.AddItemSeed
+  nameWithType: SeedService.AddItemSeed
 - uid: DarkStar.Engine.Services.SeedService.AddRaceToSeed(System.String,System.String,System.Int16,DarkStar.Database.Entities.Base.BaseStatEntity)
   name: AddRaceToSeed(string, string, short, BaseStatEntity)
   href: api/DarkStar.Engine.Services.SeedService.html#DarkStar_Engine_Services_SeedService_AddRaceToSeed_System_String_System_String_System_Int16_DarkStar_Database_Entities_Base_BaseStatEntity_
@@ -15656,6 +16065,22 @@ references:
   isSpec: "True"
   fullName: DarkStar.Engine.Services.SeedService.AddTextContentSeed
   nameWithType: SeedService.AddTextContentSeed
+- uid: DarkStar.Engine.Services.SeedService.AttachTextContentToItem(System.String,System.String)
+  name: AttachTextContentToItem(string, string)
+  href: api/DarkStar.Engine.Services.SeedService.html#DarkStar_Engine_Services_SeedService_AttachTextContentToItem_System_String_System_String_
+  commentId: M:DarkStar.Engine.Services.SeedService.AttachTextContentToItem(System.String,System.String)
+  name.vb: AttachTextContentToItem(String, String)
+  fullName: DarkStar.Engine.Services.SeedService.AttachTextContentToItem(string, string)
+  fullName.vb: DarkStar.Engine.Services.SeedService.AttachTextContentToItem(String, String)
+  nameWithType: SeedService.AttachTextContentToItem(string, string)
+  nameWithType.vb: SeedService.AttachTextContentToItem(String, String)
+- uid: DarkStar.Engine.Services.SeedService.AttachTextContentToItem*
+  name: AttachTextContentToItem
+  href: api/DarkStar.Engine.Services.SeedService.html#DarkStar_Engine_Services_SeedService_AttachTextContentToItem_
+  commentId: Overload:DarkStar.Engine.Services.SeedService.AttachTextContentToItem
+  isSpec: "True"
+  fullName: DarkStar.Engine.Services.SeedService.AttachTextContentToItem
+  nameWithType: SeedService.AttachTextContentToItem
 - uid: DarkStar.Engine.Services.SeedService.CheckSeedDirectoriesAsync
   name: CheckSeedDirectoriesAsync()
   href: api/DarkStar.Engine.Services.SeedService.html#DarkStar_Engine_Services_SeedService_CheckSeedDirectoriesAsync

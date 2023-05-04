@@ -315,6 +315,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Data.Config.Sections.CompilerConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Data.Config.Sections.CompilerConfig.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/DarkStar.Api.Engine.Data.Config.Sections.DatabaseConfig.yml",
       "output": {
         ".html": {
@@ -339,6 +349,16 @@
       "output": {
         ".html": {
           "relative_path": "api/DarkStar.Api.Engine.Data.Config.Sections.DungeonMapConfig.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Data.Config.Sections.ExperimentalConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Data.Config.Sections.ExperimentalConfig.html"
         }
       },
       "version": ""
@@ -2355,6 +2375,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Http.Controllers.TilesController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Http.Controllers.TilesController.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/DarkStar.Engine.Http.Controllers.VersionController.yml",
       "output": {
         ".html": {
@@ -2369,6 +2399,46 @@
       "output": {
         ".html": {
           "relative_path": "api/DarkStar.Engine.Http.Controllers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Http.Dto.TileSetDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Http.Dto.TileSetDto.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Http.Dto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Http.Dto.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Http.EnumSchemaFilter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Http.EnumSchemaFilter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Http.NetworkMessageDocumentFilter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Http.NetworkMessageDocumentFilter.html"
         }
       },
       "version": ""
@@ -2605,6 +2675,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Runner.Compiler.CSharpCompiler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Runner.Compiler.CSharpCompiler.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.Runner.Compiler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.Runner.Compiler.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/DarkStar.Engine.Runner.DarkSunEngineHostedService.yml",
       "output": {
         ".html": {
@@ -2699,16 +2789,6 @@
       "output": {
         ".html": {
           "relative_path": "api/DarkStar.Engine.ScriptModules.RandomUtilsScriptModule.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/DarkStar.Engine.ScriptModules.SeedScriptModule.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/DarkStar.Engine.ScriptModules.SeedScriptModule.html"
         }
       },
       "version": ""
