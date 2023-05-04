@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="0.7.0"></a>
+## [0.7.0](https://www.github.com/tgiachi/DarkStar/releases/tag/v0.7.0) (2023-5-4)
+
+### ✨ Features
+
+* added test client ([1abaf8d](https://www.github.com/tgiachi/DarkStar/commit/1abaf8d17d4d92cad9d51253ccc43350206721ca))
+
+### Other
+
+* 🐛 fix(AssemblyUtils.cs): make AssemblyUtils class static to avoid instantiation ([55c888a](https://www.github.com/tgiachi/DarkStar/commit/55c888ab63684fde5d648ba1e836e10d71d56a43))
+* 🔥 chore(DarkStar.Engine.Runner.csproj): comment out ServerGarbageCollection property ([3b29bb1](https://www.github.com/tgiachi/DarkStar/commit/3b29bb1c1d49e4c407b66bfcce513b1f5e23df65))
+* 🔥 chore(DarkStar.Engine.Runner.csproj): remove empty lines ([71acf67](https://www.github.com/tgiachi/DarkStar/commit/71acf679da57d102a56ed8cebedc8c1a3aa23fd1))
+
 <a name="0.6.3"></a>
 ## [0.6.3](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.6.3) (2023-5-4)
 
