@@ -7,13 +7,21 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "generate-schema": "swagger-typescript-api -p http://localhost:5000/swagger/v1/swagger.json -o src/schemas/ -n dark-star-api.ts --route-types --no-client --enum-names-as-values"
   },
   "dependencies": {
     "@microsoft/signalr": "^7.0.5",
+    "@pixi/react": "^7.0.3",
+    "localforage": "^1.10.0",
+    "match-sorter": "^6.3.1",
+    "mobx": "^6.9.0",
     "mobx-react": "^7.6.0",
+    "pixi.js": "^7.2.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.11.1",
+    "sort-by": "^0.0.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
@@ -24,6 +32,7 @@
     "eslint": "^8.38.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
+    "swagger-typescript-api": "^12.0.4",
     "typescript": "^5.0.2",
     "vite": "^4.3.2"
   }
