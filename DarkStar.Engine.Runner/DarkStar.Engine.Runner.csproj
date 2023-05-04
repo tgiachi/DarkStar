@@ -6,7 +6,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <Version>0.6.3</Version>
-        <ServerGarbageCollection>true</ServerGarbageCollection>
+      <!--  <ServerGarbageCollection>true</ServerGarbageCollection>-->
         <PublishSingleFile>true</PublishSingleFile>
 
 
@@ -24,6 +24,8 @@
         </PackageReference>
     </ItemGroup>
 
+    
+    
     <ItemGroup>
         <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.5.0" />
         <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
