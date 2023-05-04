@@ -19,6 +19,5 @@ public class GameObjectAction : ICommandAction
     public bool IsNpc { get; set; }
     public uint? NpcId { get; set; }
     public Guid? NpcObjectId { get; set; }
-
     public PointPosition Position { get; set; }
 }

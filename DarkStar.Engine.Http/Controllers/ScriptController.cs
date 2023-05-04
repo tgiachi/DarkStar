@@ -8,7 +8,7 @@ using DarkStar.Api.Engine.Interfaces.Services;
 
 namespace DarkStar.Engine.Http.Controllers;
 
-[Route("scripts")]
+[Route("api/scripts")]
 [ApiController]
 public class ScriptController : ControllerBase
 {

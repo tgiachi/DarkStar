@@ -13,6 +13,6 @@ public class EngineConfig
     public NetworkServerConfig NetworkServer { get; set; } = new();
     public LoggerConfig Logger { get; set; } = new();
     public AssemblyConfig Assemblies { get; set; } = new();
-    public HttpServerConfig HttpServer { get; set; } = new();
+
     public MapConfig Maps { get; set; } = new();
 }

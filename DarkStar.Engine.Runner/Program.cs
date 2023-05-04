@@ -26,7 +26,9 @@ using Redbus;
 using Redbus.Configuration;
 using Redbus.Interfaces;
 using Serilog;
+using Serilog.Formatting.Compact;
 using Serilog.Formatting.Display;
+using Serilog.Formatting.Json;
 using Serilog.Sinks.SystemConsole.Themes;
 using Serilog.Templates;
 using Serilog.Templates.Themes;
@@ -55,22 +57,29 @@ internal class Program
         //     "{@t:HH:mm:ss} - [{Substring(SourceContext, LastIndexOf(SourceContext, '.') + 1)}]:[{@l}]: {@m}\n{@x}",
         //     theme: TemplateTheme.Code
         //  );
-        Log.Logger = new LoggerConfiguration()
+        var loggerConfiguration = new LoggerConfiguration()
             .Enrich.FromLogContext()
-            .WriteTo.Console()
-            .CreateLogger();
+            .WriteTo.Console();
 
         var directoryConfig = EnsureDirectories();
         var engineConfig = LoadConfig(directoryConfig);
 
         if (engineConfig.Logger.EnableDebug)
         {
-            Log.Logger = new LoggerConfiguration()
-                .Enrich.FromLogContext()
-                .MinimumLevel.Debug()
-                .WriteTo.Console()
-                .CreateLogger();
+            loggerConfiguration = loggerConfiguration.MinimumLevel.Debug();
         }
+
+        if (engineConfig.Logger.EnableFileLogging)
+        {
+            loggerConfiguration = loggerConfiguration.WriteTo.File(
+                new CompactJsonFormatter(),
+                Path.Join(directoryConfig[DirectoryNameType.Logs], "dark_star.log"),
+                rollingInterval: RollingInterval.Day,
+                rollOnFileSizeLimit: true
+            );
+        }
+
+        Log.Logger = loggerConfiguration.CreateLogger();
 
         foreach (var assembly in engineConfig.Assemblies.AssemblyNames)
         {
@@ -133,10 +142,7 @@ internal class Program
                         services.AddHostedService<DarkSunTerminalHostedService>();
                     }
 
-                    if (engineConfig.HttpServer.Enabled)
-                    {
-                        services.ConfigureWebServer();
-                    }
+                    services.ConfigureWebServer();
                 }
             )
             .UseSerilog()
@@ -151,12 +157,6 @@ internal class Program
                     builder.Configure(
                         applicationBuilder =>
                         {
-                            //applicationBuilder.UseEndpoints(
-                            //    routeBuilder =>
-                            //    {
-
-                            //    }
-                            //);
                             applicationBuilder.ConfigureWebServerApp(directoryConfig[DirectoryNameType.HttpRoot]);
                         }
                     );
@@ -208,14 +208,11 @@ internal class Program
         var configPath = Path.Join(directoriesConfig[DirectoryNameType.Config], "DarkStar.yml");
         if (File.Exists(configPath))
         {
-            Log.Logger.Information("Loading config from {Path}", configPath);
-
             var source = File.ReadAllText(configPath);
             config = s_yamlDeserializer.Deserialize<EngineConfig>(source);
         }
         else
         {
-            Log.Logger.Information("Creating default config at {Path}", configPath);
             var source = s_yamlSerializer.Serialize(config);
             File.WriteAllText(configPath, source);
         }

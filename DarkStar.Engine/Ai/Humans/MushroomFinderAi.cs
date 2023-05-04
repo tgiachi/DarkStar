@@ -22,7 +22,7 @@ public class MushroomFinderAi : BaseAiBehaviourExecutor
     private int _currentStep = 0;
     private List<PointPosition> _path = new();
 
-    public MushroomFinderAi(ILogger<BaseAiBehaviourExecutor> logger, IDarkSunEngine engine) : base(logger, engine)
+    public MushroomFinderAi(ILogger<MushroomFinderAi> logger, IDarkSunEngine engine) : base(logger, engine)
     {
         SetInterval(1000);
     }
