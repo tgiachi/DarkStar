@@ -9,19 +9,25 @@ namespace DarkStar.Client;
 
 public partial class App : Application
 {
+    private SplashScreenWindow _splashScreenWindow;
     public override void Initialize()
     {
         AvaloniaXamlLoader.Load(this);
+        _splashScreenWindow = new SplashScreenWindow();
+        _splashScreenWindow.Show();
     }
 
     public override void OnFrameworkInitializationCompleted()
     {
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
+
             desktop.MainWindow = new MainWindow
             {
                 DataContext = Locator.Current.GetService<MainWindowViewModel>()
             };
+
+            _splashScreenWindow.Close();
         }
 
         base.OnFrameworkInitializationCompleted();

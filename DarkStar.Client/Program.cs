@@ -3,6 +3,7 @@ using Avalonia.ReactiveUI;
 using System;
 using DarkStar.Client.Services;
 using DarkStar.Client.ViewModels;
+using DarkStar.Client.Views;
 using DarkStar.Network.Client;
 using DarkStar.Network.Client.Interfaces;
 using DarkStar.Network.Data;
@@ -64,10 +65,13 @@ class Program
     }
 
     // Avalonia configuration, don't remove; also used by visual designer.
-    public static AppBuilder BuildAvaloniaApp() =>
+    public static AppBuilder BuildAvaloniaApp()
+    {
+
         // Preparing context
-        AppBuilder.Configure<App>()
+       return AppBuilder.Configure<App>()
             .UsePlatformDetect()
             .LogToTrace()
             .UseReactiveUI();
+    }
 }
