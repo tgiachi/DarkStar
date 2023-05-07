@@ -3,6 +3,7 @@
         xmlns:vm="using:DarkStar.Client.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="clr-namespace:DarkStar.Client.Controls"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="DarkStar.Client.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
@@ -15,6 +16,16 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Menu>
+            <MenuItem Header="File"/>
+        </Menu>
+        <controls:PageViewControl Margin="5"  Grid.Row="1" />
+    </Grid>
 
 
 
