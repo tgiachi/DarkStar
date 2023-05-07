@@ -24,7 +24,7 @@
         <Menu>
             <MenuItem Header="File"/>
         </Menu>
-        <controls:PageViewControl Margin="5"  Grid.Row="1" />
+        <controls:PageViewControl x:Name="ViewControl" Margin="5"  Grid.Row="1" />
     </Grid>
 
 
