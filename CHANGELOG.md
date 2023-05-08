@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="0.8.0"></a>
+## [0.8.0](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.8.0) (2023-5-8)
+
+### ✨ Features
+
+* I've come to a conclusion, I hate typescript, I hate javascript. So the client will be done in Avalonia! 😂 ([2bc4208](https://www.github.com/tgiachi/DarkSun/commit/2bc4208d8860f5d633b5a6bf298dae8c92565566))
+* **client:** add initial Avalonia UI project files and setup dependency injection and logging ([abd2165](https://www.github.com/tgiachi/DarkSun/commit/abd21651326cbd88ae59424c479b36fe2470ea28))
+* **client:** add splash screen window with DarkStar logo and progress bar ([b8b010e](https://www.github.com/tgiachi/DarkSun/commit/b8b010eba95fc5a4b93e7aab718f08a324e6b017))
+* **client:** add support for TileSetListRequestMessage and AccountLoginResponseMessage ([194be72](https://www.github.com/tgiachi/DarkSun/commit/194be7203b1c91a1703b14096cbb79c5721dcfa9))
+* **PageViewControl:** add ContentPresenter to PageViewControl ([7091612](https://www.github.com/tgiachi/DarkSun/commit/709161252652c07b2c277d790ab4dc92c533203a))
+* **PageViewControl:** add PageViewControl to MainWindow ([c861eff](https://www.github.com/tgiachi/DarkSun/commit/c861effda59220237e1525b60b87d138b9b58222))
+
+### Other
+
+* 🎨 style(.gitignore): add DarkStar.Client/.idea to .gitignore ([1abf55c](https://www.github.com/tgiachi/DarkSun/commit/1abf55ccae5f9eba09a1ac6936c6913a68abfa4d))
+* 🐛 fix(LoginPageViewModel.cs): change network client address and port to localhost:5000 ([4c9090e](https://www.github.com/tgiachi/DarkSun/commit/4c9090e726617bfdb64f48375ad069c202a37a32))
+* 🔥 chore(DarkStar.Api, DarkStar.Client): remove unused code and files ([e6fa2b8](https://www.github.com/tgiachi/DarkSun/commit/e6fa2b8337013abeed2ff04262fe64e911db964c))
+
 <a name="0.7.0"></a>
 ## [0.7.0](https://www.github.com/tgiachi/DarkStar/releases/tag/v0.7.0) (2023-5-4)
 
