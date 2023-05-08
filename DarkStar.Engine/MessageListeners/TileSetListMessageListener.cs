@@ -30,6 +30,7 @@ public class TileSetListMessageListener : BaseNetworkMessageListener<TileSetList
                 TileSets = tileSets.Select(
                         x => new TileSetEntryMessage()
                         {
+                            Id = x.Id.ToString(),
                             Name = x.Name,
                             FileSize = x.FileSize,
                             TileHeight = x.TileHeight,

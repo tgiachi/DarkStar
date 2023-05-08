@@ -1,0 +1,22 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="DarkStar.Client.App">
+
+    <Application.Resources>
+        <FontFamily x:Key="DefaultFont">avares://DarkStar.Client/Assets/Fonts/CozetteVector.ttf#CozetteVector</FontFamily>
+    </Application.Resources>
+
+    <Application.Styles>
+        <StyleInclude Source="avares://Avalonia.Themes.Fluent/Accents/BaseDark.xaml"/>
+        <StyleInclude Source="avares://Aura.UI.FluentTheme/AuraUI.xaml"/>
+        <StyleInclude Source="avares://Avalonia.Themes.Default/Accents/BaseDark.xaml"/>
+        <StyleInclude Source="avares://Avalonia.Themes.Default/DefaultTheme.xaml"/>
+
+        <Style Selector="Window">
+            <Setter Property="FontFamily" Value="{StaticResource DefaultFont}"/>
+            <Setter Property="FontSize" Value="14" />
+        </Style>
+    </Application.Styles>
+
+
+</Application>

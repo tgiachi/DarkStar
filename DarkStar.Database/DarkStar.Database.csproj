@@ -4,12 +4,12 @@
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <Version>0.7.0</Version>
+        <Version>0.8.0</Version>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="FreeSql" Version="3.2.693" />
-        <PackageReference Include="FreeSql.Repository" Version="3.2.693" />
+        <PackageReference Include="FreeSql" Version="3.2.695" />
+        <PackageReference Include="FreeSql.Repository" Version="3.2.695" />
     </ItemGroup>
 
     <ItemGroup>

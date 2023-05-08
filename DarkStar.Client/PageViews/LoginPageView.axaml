@@ -1,0 +1,57 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:pageViewModels="clr-namespace:DarkStar.Client.PageViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             HorizontalAlignment="Stretch"
+             FontFamily="{StaticResource DefaultFont}"
+             VerticalAlignment="Stretch"
+
+             x:Class="DarkStar.Client.PageViews.LoginPageView">
+
+    <Design.DataContext>
+        <pageViewModels:LoginPageViewModel />
+    </Design.DataContext>
+    <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <Grid.RowDefinitions>*</Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>*</Grid.ColumnDefinitions>
+        <Grid.Background>
+            <ImageBrush Source="../Assets/Backgrounds/backgroud_1.png" TileMode="Tile" />
+        </Grid.Background>
+
+        <GroupBox Width="600" Height="600" Margin="4">
+            <GroupBox.Header>
+                <TextBlock HorizontalAlignment="Center" Text="{Binding ServerName, FallbackValue=No connection}" />
+            </GroupBox.Header>
+            <GroupBox.Background>
+                <SolidColorBrush Color="Black" Opacity="0.7" />
+            </GroupBox.Background>
+
+            <StackPanel>
+
+                <Grid RowDefinitions="*,*,*,*">
+                    <Label Grid.Row="0" Content="Server version: " />
+                    <TextBlock Grid.Row="1" Foreground="Red" Text="{Binding ServerVersion}" />
+                </Grid>
+
+                <StackPanel Orientation="Vertical">
+
+                    <Label Content="Server:" />
+                    <ComboBox Items="{Binding Servers}" SelectedItem="{Binding SelectedServer}" />
+                    <Label Content="Username:" />
+                    <TextBox Text="{Binding Username}" />
+                    <Label Content="Password:" />
+                    <TextBox PasswordChar="*" Text="{Binding Password}" />
+                    <Button Content="Connect" Command="{Binding LoginCommand}" />
+
+                </StackPanel>
+
+                <StackPanel Margin="10">
+                    <TextBlock HorizontalAlignment="Center" Text="{Binding ErrorConnection}" Foreground="Red" />
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+
+    </Grid>
+</UserControl>

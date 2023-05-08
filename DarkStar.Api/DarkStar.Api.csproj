@@ -10,7 +10,7 @@
         <PackageProjectUrl>https://github.com/tgiachi/darksun</PackageProjectUrl>
         <RepositoryUrl>https://github.com/tgiachi/darksun</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
-        <Version>0.7.0</Version>
+        <Version>0.8.0</Version>
         <Title>Dark Star MMO Api</Title>
         <Description>    </Description>
         <Copyright>MIT License</Copyright>
