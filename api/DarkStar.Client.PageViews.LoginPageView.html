@@ -1,0 +1,1292 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class LoginPageView
+ </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class LoginPageView
+ ">
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="DarkStar.Client.PageViews.LoginPageView">
+
+
+
+  <h1 id="DarkStar_Client_PageViews_LoginPageView" data-uid="DarkStar.Client.PageViews.LoginPageView" class="text-break">Class LoginPageView
+</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">AvaloniaObject</span></div>
+    <div class="level2"><span class="xref">Animatable</span></div>
+    <div class="level3"><span class="xref">StyledElement</span></div>
+    <div class="level4"><span class="xref">Visual</span></div>
+    <div class="level5"><span class="xref">Layoutable</span></div>
+    <div class="level6"><span class="xref">Interactive</span></div>
+    <div class="level7"><span class="xref">InputElement</span></div>
+    <div class="level8"><span class="xref">Control</span></div>
+    <div class="level9"><span class="xref">TemplatedControl</span></div>
+    <div class="level10"><span class="xref">ContentControl</span></div>
+    <div class="level11"><span class="xref">UserControl</span></div>
+    <div class="level12"><span class="xref">LoginPageView</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">IAvaloniaObjectDebug</span></div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged">INotifyPropertyChanged</a></div>
+    <div><span class="xref">IValueSink</span></div>
+    <div><span class="xref">ISetLogicalParent</span></div>
+    <div><span class="xref">ISetInheritanceParent</span></div>
+    <div><span class="xref">IVisualBrushInitialize</span></div>
+    <div><span class="xref">ISetterValue</span></div>
+    <div><span class="xref">IContentControl</span></div>
+    <div><span class="xref">IControl</span></div>
+    <div><span class="xref">IDataTemplateHost</span></div>
+    <div><span class="xref">ILayoutable</span></div>
+    <div><span class="xref">IInputElement</span></div>
+    <div><span class="xref">IVisual</span></div>
+    <div><span class="xref">IInteractive</span></div>
+    <div><span class="xref">IStyledElement</span></div>
+    <div><span class="xref">IStyleHost</span></div>
+    <div><span class="xref">ILogical</span></div>
+    <div><span class="xref">IResourceHost</span></div>
+    <div><span class="xref">IResourceNode</span></div>
+    <div><span class="xref">IDataContextProvider</span></div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.isupportinitialize">ISupportInitialize</a></div>
+    <div><span class="xref">IContentPresenterHost</span></div>
+    <div><span class="xref">ITemplatedControl</span></div>
+    <div><span class="xref">IStyleable</span></div>
+    <div><span class="xref">IAvaloniaObject</span></div>
+    <div><span class="xref">INamed</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">ContentControl.ContentProperty</span>
+    </div>
+    <div>
+      <span class="xref">ContentControl.ContentTemplateProperty</span>
+    </div>
+    <div>
+      <span class="xref">ContentControl.HorizontalContentAlignmentProperty</span>
+    </div>
+    <div>
+      <span class="xref">ContentControl.VerticalContentAlignmentProperty</span>
+    </div>
+    <div>
+      <span class="xref">ContentControl.IContentPresenterHost.RegisterContentPresenter(IContentPresenter)</span>
+    </div>
+    <div>
+      <span class="xref">ContentControl.RegisterContentPresenter(IContentPresenter)</span>
+    </div>
+    <div>
+      <span class="xref">ContentControl.Content</span>
+    </div>
+    <div>
+      <span class="xref">ContentControl.ContentTemplate</span>
+    </div>
+    <div>
+      <span class="xref">ContentControl.Presenter</span>
+    </div>
+    <div>
+      <span class="xref">ContentControl.HorizontalContentAlignment</span>
+    </div>
+    <div>
+      <span class="xref">ContentControl.VerticalContentAlignment</span>
+    </div>
+    <div>
+      <span class="xref">ContentControl.IContentPresenterHost.LogicalChildren</span>
+    </div>
+    <div>
+      <span class="xref">TemplatedControl.BackgroundProperty</span>
+    </div>
+    <div>
+      <span class="xref">TemplatedControl.BorderBrushProperty</span>
+    </div>
+    <div>
+      <span class="xref">TemplatedControl.BorderThicknessProperty</span>
+    </div>
+    <div>
+      <span class="xref">TemplatedControl.CornerRadiusProperty</span>
+    </div>
+    <div>
+      <span class="xref">TemplatedControl.FontFamilyProperty</span>
+    </div>
+    <div>
+      <span class="xref">TemplatedControl.FontSizeProperty</span>
+    </div>
+    <div>
+      <span class="xref">TemplatedControl.FontStyleProperty</span>
+    </div>
+    <div>
+      <span class="xref">TemplatedControl.FontWeightProperty</span>
+    </div>
+    <div>
+      <span class="xref">TemplatedControl.ForegroundProperty</span>
+    </div>
+    <div>
+      <span class="xref">TemplatedControl.PaddingProperty</span>
+    </div>
+    <div>
+      <span class="xref">TemplatedControl.TemplateProperty</span>
+    </div>
+    <div>
+      <span class="xref">TemplatedControl.IsTemplateFocusTargetProperty</span>
+    </div>
+    <div>
+      <span class="xref">TemplatedControl.TemplateAppliedEvent</span>
+    </div>
+    <div>
+      <span class="xref">TemplatedControl.GetIsTemplateFocusTarget(Control)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">TemplatedControl.SetIsTemplateFocusTarget(Control, bool)</a>
+    </div>
+    <div>
+      <span class="xref">TemplatedControl.ApplyTemplate()</span>
+    </div>
+    <div>
+      <span class="xref">TemplatedControl.GetTemplateFocusTarget()</span>
+    </div>
+    <div>
+      <span class="xref">TemplatedControl.NotifyChildResourcesChanged(ResourcesChangedEventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">TemplatedControl.OnAttachedToLogicalTree(LogicalTreeAttachmentEventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">TemplatedControl.OnDetachedFromLogicalTree(LogicalTreeAttachmentEventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">TemplatedControl.OnApplyTemplate(TemplateAppliedEventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">TemplatedControl.OnTemplateApplied(TemplateAppliedEventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">TemplatedControl.OnTemplateChanged(AvaloniaPropertyChangedEventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">TemplatedControl.Background</span>
+    </div>
+    <div>
+      <span class="xref">TemplatedControl.BorderBrush</span>
+    </div>
+    <div>
+      <span class="xref">TemplatedControl.BorderThickness</span>
+    </div>
+    <div>
+      <span class="xref">TemplatedControl.CornerRadius</span>
+    </div>
+    <div>
+      <span class="xref">TemplatedControl.FontFamily</span>
+    </div>
+    <div>
+      <span class="xref">TemplatedControl.FontSize</span>
+    </div>
+    <div>
+      <span class="xref">TemplatedControl.FontStyle</span>
+    </div>
+    <div>
+      <span class="xref">TemplatedControl.FontWeight</span>
+    </div>
+    <div>
+      <span class="xref">TemplatedControl.Foreground</span>
+    </div>
+    <div>
+      <span class="xref">TemplatedControl.Padding</span>
+    </div>
+    <div>
+      <span class="xref">TemplatedControl.Template</span>
+    </div>
+    <div>
+      <span class="xref">TemplatedControl.TemplateApplied</span>
+    </div>
+    <div>
+      <span class="xref">Control.FocusAdornerProperty</span>
+    </div>
+    <div>
+      <span class="xref">Control.TagProperty</span>
+    </div>
+    <div>
+      <span class="xref">Control.ContextMenuProperty</span>
+    </div>
+    <div>
+      <span class="xref">Control.ContextFlyoutProperty</span>
+    </div>
+    <div>
+      <span class="xref">Control.RequestBringIntoViewEvent</span>
+    </div>
+    <div>
+      <span class="xref">Control.ContextRequestedEvent</span>
+    </div>
+    <div>
+      <span class="xref">Control.ISetterValue.Initialize(ISetter)</span>
+    </div>
+    <div>
+      <span class="xref">Control.IVisualBrushInitialize.EnsureInitialized()</span>
+    </div>
+    <div>
+      <span class="xref">Control.OnAttachedToVisualTreeCore(VisualTreeAttachmentEventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">Control.OnDetachedFromVisualTreeCore(VisualTreeAttachmentEventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">Control.OnGotFocus(GotFocusEventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">Control.OnLostFocus(RoutedEventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">Control.OnPointerReleased(PointerReleasedEventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">Control.OnKeyUp(KeyEventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">Control.FocusAdorner</span>
+    </div>
+    <div>
+      <span class="xref">Control.DataTemplates</span>
+    </div>
+    <div>
+      <span class="xref">Control.ContextMenu</span>
+    </div>
+    <div>
+      <span class="xref">Control.ContextFlyout</span>
+    </div>
+    <div>
+      <span class="xref">Control.Tag</span>
+    </div>
+    <div>
+      <span class="xref">Control.Parent</span>
+    </div>
+    <div>
+      <span class="xref">Control.IDataTemplateHost.IsDataTemplatesInitialized</span>
+    </div>
+    <div>
+      <span class="xref">Control.ContextRequested</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.FocusableProperty</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.IsEnabledProperty</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.IsEffectivelyEnabledProperty</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.CursorProperty</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.IsKeyboardFocusWithinProperty</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.IsFocusedProperty</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.IsHitTestVisibleProperty</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.IsPointerOverProperty</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.IsTabStopProperty</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.GotFocusEvent</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.LostFocusEvent</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.KeyDownEvent</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.KeyUpEvent</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.TabIndexProperty</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.TextInputEvent</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.TextInputMethodClientRequestedEvent</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.TextInputOptionsQueryEvent</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.PointerEnterEvent</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.PointerLeaveEvent</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.PointerMovedEvent</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.PointerPressedEvent</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.PointerReleasedEvent</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.PointerCaptureLostEvent</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.PointerWheelChangedEvent</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.TappedEvent</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.DoubleTappedEvent</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.Focus()</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.OnKeyDown(KeyEventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.OnTextInput(TextInputEventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.OnPointerEnter(PointerEventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.OnPointerLeave(PointerEventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.OnPointerMoved(PointerEventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.OnPointerPressed(PointerPressedEventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.OnPointerCaptureLost(PointerCaptureLostEventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.OnPointerWheelChanged(PointerWheelEventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.OnPropertyChanged&lt;T&gt;(AvaloniaPropertyChangedEventArgs&lt;T&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.UpdateIsEffectivelyEnabled()</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.Focusable</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.IsEnabled</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.Cursor</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.IsKeyboardFocusWithin</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.IsFocused</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.IsHitTestVisible</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.IsPointerOver</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.IsTabStop</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.IsEffectivelyEnabled</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.TabIndex</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.KeyBindings</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.IsEnabledCore</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.GestureRecognizers</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.GotFocus</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.LostFocus</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.KeyDown</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.KeyUp</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.TextInput</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.TextInputMethodClientRequested</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.TextInputOptionsQuery</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.PointerEnter</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.PointerLeave</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.PointerMoved</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.PointerPressed</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.PointerReleased</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.PointerCaptureLost</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.PointerWheelChanged</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.Tapped</span>
+    </div>
+    <div>
+      <span class="xref">InputElement.DoubleTapped</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.delegate">Interactive.AddHandler(RoutedEvent, Delegate, RoutingStrategies, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.eventhandler-1">Interactive.AddHandler&lt;TEventArgs&gt;(RoutedEvent&lt;TEventArgs&gt;, EventHandler&lt;TEventArgs&gt;, RoutingStrategies, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.delegate">Interactive.RemoveHandler(RoutedEvent, Delegate)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.eventhandler-1">Interactive.RemoveHandler&lt;TEventArgs&gt;(RoutedEvent&lt;TEventArgs&gt;, EventHandler&lt;TEventArgs&gt;)</a>
+    </div>
+    <div>
+      <span class="xref">Interactive.RaiseEvent(RoutedEventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">Interactive.IInteractive.AddToEventRoute(RoutedEvent, EventRoute)</span>
+    </div>
+    <div>
+      <span class="xref">Interactive.BuildEventRoute(RoutedEvent)</span>
+    </div>
+    <div>
+      <span class="xref">Interactive.IInteractive.InteractiveParent</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.DesiredSizeProperty</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.WidthProperty</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.HeightProperty</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.MinWidthProperty</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.MaxWidthProperty</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.MinHeightProperty</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.MaxHeightProperty</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.MarginProperty</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.HorizontalAlignmentProperty</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.VerticalAlignmentProperty</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.UseLayoutRoundingProperty</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.Measure(Size)</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.Arrange(Rect)</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.InvalidateMeasure()</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.InvalidateArrange()</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.ILayoutable.ChildDesiredSizeChanged(ILayoutable)</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.ILayoutable.EffectiveViewportChanged(EffectiveViewportChangedEventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.AffectsMeasure(params AvaloniaProperty[])</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.AffectsMeasure&lt;T&gt;(params AvaloniaProperty[])</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.AffectsArrange(params AvaloniaProperty[])</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.AffectsArrange&lt;T&gt;(params AvaloniaProperty[])</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.MeasureCore(Size)</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.MeasureOverride(Size)</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.ArrangeCore(Rect)</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.ArrangeOverride(Size)</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.InvalidateStyles()</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.OnMeasureInvalidated()</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.OnVisualParentChanged(IVisual, IVisual)</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.Width</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.Height</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.MinWidth</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.MaxWidth</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.MinHeight</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.MaxHeight</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.Margin</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.HorizontalAlignment</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.VerticalAlignment</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.DesiredSize</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.IsMeasureValid</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.IsArrangeValid</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.UseLayoutRounding</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.ILayoutable.PreviousMeasure</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.ILayoutable.PreviousArrange</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.EffectiveViewportChanged</span>
+    </div>
+    <div>
+      <span class="xref">Layoutable.LayoutUpdated</span>
+    </div>
+    <div>
+      <span class="xref">Visual.BoundsProperty</span>
+    </div>
+    <div>
+      <span class="xref">Visual.TransformedBoundsProperty</span>
+    </div>
+    <div>
+      <span class="xref">Visual.ClipToBoundsProperty</span>
+    </div>
+    <div>
+      <span class="xref">Visual.ClipProperty</span>
+    </div>
+    <div>
+      <span class="xref">Visual.IsVisibleProperty</span>
+    </div>
+    <div>
+      <span class="xref">Visual.OpacityProperty</span>
+    </div>
+    <div>
+      <span class="xref">Visual.OpacityMaskProperty</span>
+    </div>
+    <div>
+      <span class="xref">Visual.RenderTransformProperty</span>
+    </div>
+    <div>
+      <span class="xref">Visual.RenderTransformOriginProperty</span>
+    </div>
+    <div>
+      <span class="xref">Visual.VisualParentProperty</span>
+    </div>
+    <div>
+      <span class="xref">Visual.ZIndexProperty</span>
+    </div>
+    <div>
+      <span class="xref">Visual.InvalidateVisual()</span>
+    </div>
+    <div>
+      <span class="xref">Visual.Render(DrawingContext)</span>
+    </div>
+    <div>
+      <span class="xref">Visual.AffectsRender(params AvaloniaProperty[])</span>
+    </div>
+    <div>
+      <span class="xref">Visual.AffectsRender&lt;T&gt;(params AvaloniaProperty[])</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Visual.LogicalChildrenCollectionChanged(object, NotifyCollectionChangedEventArgs)</a>
+    </div>
+    <div>
+      <span class="xref">Visual.OnAttachedToVisualTree(VisualTreeAttachmentEventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">Visual.OnDetachedFromVisualTree(VisualTreeAttachmentEventArgs)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.exception">Visual.LogBindingError(AvaloniaProperty, Exception)</a>
+    </div>
+    <div>
+      <span class="xref">Visual.Bounds</span>
+    </div>
+    <div>
+      <span class="xref">Visual.TransformedBounds</span>
+    </div>
+    <div>
+      <span class="xref">Visual.ClipToBounds</span>
+    </div>
+    <div>
+      <span class="xref">Visual.Clip</span>
+    </div>
+    <div>
+      <span class="xref">Visual.IsEffectivelyVisible</span>
+    </div>
+    <div>
+      <span class="xref">Visual.IsVisible</span>
+    </div>
+    <div>
+      <span class="xref">Visual.Opacity</span>
+    </div>
+    <div>
+      <span class="xref">Visual.OpacityMask</span>
+    </div>
+    <div>
+      <span class="xref">Visual.RenderTransform</span>
+    </div>
+    <div>
+      <span class="xref">Visual.RenderTransformOrigin</span>
+    </div>
+    <div>
+      <span class="xref">Visual.ZIndex</span>
+    </div>
+    <div>
+      <span class="xref">Visual.VisualChildren</span>
+    </div>
+    <div>
+      <span class="xref">Visual.VisualRoot</span>
+    </div>
+    <div>
+      <span class="xref">Visual.IVisual.IsAttachedToVisualTree</span>
+    </div>
+    <div>
+      <span class="xref">Visual.IVisual.VisualChildren</span>
+    </div>
+    <div>
+      <span class="xref">Visual.IVisual.VisualParent</span>
+    </div>
+    <div>
+      <span class="xref">Visual.IVisual.VisualRoot</span>
+    </div>
+    <div>
+      <span class="xref">Visual.IVisual.TransformedBounds</span>
+    </div>
+    <div>
+      <span class="xref">Visual.AttachedToVisualTree</span>
+    </div>
+    <div>
+      <span class="xref">Visual.DetachedFromVisualTree</span>
+    </div>
+    <div>
+      <span class="xref">StyledElement.DataContextProperty</span>
+    </div>
+    <div>
+      <span class="xref">StyledElement.NameProperty</span>
+    </div>
+    <div>
+      <span class="xref">StyledElement.ParentProperty</span>
+    </div>
+    <div>
+      <span class="xref">StyledElement.TemplatedParentProperty</span>
+    </div>
+    <div>
+      <span class="xref">StyledElement.BeginInit()</span>
+    </div>
+    <div>
+      <span class="xref">StyledElement.EndInit()</span>
+    </div>
+    <div>
+      <span class="xref">StyledElement.ApplyStyling()</span>
+    </div>
+    <div>
+      <span class="xref">StyledElement.InitializeIfNeeded()</span>
+    </div>
+    <div>
+      <span class="xref">StyledElement.ILogical.NotifyAttachedToLogicalTree(LogicalTreeAttachmentEventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">StyledElement.ILogical.NotifyDetachedFromLogicalTree(LogicalTreeAttachmentEventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">StyledElement.ILogical.NotifyResourcesChanged(ResourcesChangedEventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">StyledElement.IResourceHost.NotifyHostedResourcesChanged(ResourcesChangedEventArgs)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">StyledElement.IResourceNode.TryGetResource(object, out object)</a>
+    </div>
+    <div>
+      <span class="xref">StyledElement.ISetLogicalParent.SetParent(ILogical)</span>
+    </div>
+    <div>
+      <span class="xref">StyledElement.ISetInheritanceParent.SetParent(IAvaloniaObject)</span>
+    </div>
+    <div>
+      <span class="xref">StyledElement.IStyleable.StyleApplied(IStyleInstance)</span>
+    </div>
+    <div>
+      <span class="xref">StyledElement.IStyleable.DetachStyles()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">StyledElement.IStyleable.DetachStyles(IReadOnlyList&lt;IStyle&gt;)</a>
+    </div>
+    <div>
+      <span class="xref">StyledElement.IStyleable.InvalidateStyles()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">StyledElement.IStyleHost.StylesAdded(IReadOnlyList&lt;IStyle&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">StyledElement.IStyleHost.StylesRemoved(IReadOnlyList&lt;IStyle&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.eventargs">StyledElement.OnDataContextChanged(EventArgs)</a>
+    </div>
+    <div>
+      <span class="xref">StyledElement.OnDataContextBeginUpdate()</span>
+    </div>
+    <div>
+      <span class="xref">StyledElement.OnDataContextEndUpdate()</span>
+    </div>
+    <div>
+      <span class="xref">StyledElement.OnInitialized()</span>
+    </div>
+    <div>
+      <span class="xref">StyledElement.Name</span>
+    </div>
+    <div>
+      <span class="xref">StyledElement.Classes</span>
+    </div>
+    <div>
+      <span class="xref">StyledElement.DataContext</span>
+    </div>
+    <div>
+      <span class="xref">StyledElement.IsInitialized</span>
+    </div>
+    <div>
+      <span class="xref">StyledElement.Styles</span>
+    </div>
+    <div>
+      <span class="xref">StyledElement.Resources</span>
+    </div>
+    <div>
+      <span class="xref">StyledElement.TemplatedParent</span>
+    </div>
+    <div>
+      <span class="xref">StyledElement.LogicalChildren</span>
+    </div>
+    <div>
+      <span class="xref">StyledElement.PseudoClasses</span>
+    </div>
+    <div>
+      <span class="xref">StyledElement.ILogical.IsAttachedToLogicalTree</span>
+    </div>
+    <div>
+      <span class="xref">StyledElement.ILogical.LogicalParent</span>
+    </div>
+    <div>
+      <span class="xref">StyledElement.ILogical.LogicalChildren</span>
+    </div>
+    <div>
+      <span class="xref">StyledElement.IResourceNode.HasResources</span>
+    </div>
+    <div>
+      <span class="xref">StyledElement.IStyleable.Classes</span>
+    </div>
+    <div>
+      <span class="xref">StyledElement.IStyleable.StyleKey</span>
+    </div>
+    <div>
+      <span class="xref">StyledElement.IStyleHost.IsStylesInitialized</span>
+    </div>
+    <div>
+      <span class="xref">StyledElement.IStyleHost.StylingParent</span>
+    </div>
+    <div>
+      <span class="xref">StyledElement.AttachedToLogicalTree</span>
+    </div>
+    <div>
+      <span class="xref">StyledElement.DetachedFromLogicalTree</span>
+    </div>
+    <div>
+      <span class="xref">StyledElement.DataContextChanged</span>
+    </div>
+    <div>
+      <span class="xref">StyledElement.Initialized</span>
+    </div>
+    <div>
+      <span class="xref">StyledElement.ResourcesChanged</span>
+    </div>
+    <div>
+      <span class="xref">Animatable.ClockProperty</span>
+    </div>
+    <div>
+      <span class="xref">Animatable.TransitionsProperty</span>
+    </div>
+    <div>
+      <span class="xref">Animatable.EnableTransitions()</span>
+    </div>
+    <div>
+      <span class="xref">Animatable.DisableTransitions()</span>
+    </div>
+    <div>
+      <span class="xref">Animatable.OnPropertyChangedCore&lt;T&gt;(AvaloniaPropertyChangedEventArgs&lt;T&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">Animatable.Clock</span>
+    </div>
+    <div>
+      <span class="xref">Animatable.Transitions</span>
+    </div>
+    <div>
+      <span class="xref">AvaloniaObject.CheckAccess()</span>
+    </div>
+    <div>
+      <span class="xref">AvaloniaObject.VerifyAccess()</span>
+    </div>
+    <div>
+      <span class="xref">AvaloniaObject.ClearValue(AvaloniaProperty)</span>
+    </div>
+    <div>
+      <span class="xref">AvaloniaObject.ClearValue&lt;T&gt;(AvaloniaProperty&lt;T&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">AvaloniaObject.ClearValue&lt;T&gt;(StyledPropertyBase&lt;T&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">AvaloniaObject.ClearValue&lt;T&gt;(DirectPropertyBase&lt;T&gt;)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">AvaloniaObject.Equals(object)</a>
+    </div>
+    <div>
+      <span class="xref">AvaloniaObject.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">AvaloniaObject.GetValue(AvaloniaProperty)</span>
+    </div>
+    <div>
+      <span class="xref">AvaloniaObject.GetValue&lt;T&gt;(StyledPropertyBase&lt;T&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">AvaloniaObject.GetValue&lt;T&gt;(DirectPropertyBase&lt;T&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">AvaloniaObject.GetBaseValue&lt;T&gt;(StyledPropertyBase&lt;T&gt;, BindingPriority)</span>
+    </div>
+    <div>
+      <span class="xref">AvaloniaObject.IsAnimating(AvaloniaProperty)</span>
+    </div>
+    <div>
+      <span class="xref">AvaloniaObject.IsSet(AvaloniaProperty)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">AvaloniaObject.SetValue(AvaloniaProperty, object, BindingPriority)</a>
+    </div>
+    <div>
+      <span class="xref">AvaloniaObject.SetValue&lt;T&gt;(StyledPropertyBase&lt;T&gt;, T, BindingPriority)</span>
+    </div>
+    <div>
+      <span class="xref">AvaloniaObject.SetValue&lt;T&gt;(DirectPropertyBase&lt;T&gt;, T)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iobservable-1">AvaloniaObject.Bind&lt;T&gt;(StyledPropertyBase&lt;T&gt;, IObservable&lt;BindingValue&lt;T&gt;&gt;, BindingPriority)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iobservable-1">AvaloniaObject.Bind&lt;T&gt;(DirectPropertyBase&lt;T&gt;, IObservable&lt;BindingValue&lt;T&gt;&gt;)</a>
+    </div>
+    <div>
+      <span class="xref">AvaloniaObject.CoerceValue&lt;T&gt;(StyledPropertyBase&lt;T&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">AvaloniaObject.BeginBatchUpdate()</span>
+    </div>
+    <div>
+      <span class="xref">AvaloniaObject.EndBatchUpdate()</span>
+    </div>
+    <div>
+      <span class="xref">AvaloniaObject.IAvaloniaObject.AddInheritanceChild(IAvaloniaObject)</span>
+    </div>
+    <div>
+      <span class="xref">AvaloniaObject.IAvaloniaObject.RemoveInheritanceChild(IAvaloniaObject)</span>
+    </div>
+    <div>
+      <span class="xref">AvaloniaObject.IAvaloniaObject.InheritedPropertyChanged&lt;T&gt;(AvaloniaProperty&lt;T&gt;, Optional&lt;T&gt;, Optional&lt;T&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">AvaloniaObject.IAvaloniaObjectDebug.GetPropertyChangedSubscribers()</span>
+    </div>
+    <div>
+      <span class="xref">AvaloniaObject.IValueSink.ValueChanged&lt;T&gt;(AvaloniaPropertyChangedEventArgs&lt;T&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">AvaloniaObject.IValueSink.Completed&lt;T&gt;(StyledPropertyBase&lt;T&gt;, IPriorityValueEntry, Optional&lt;T&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">AvaloniaObject.UpdateDataValidation&lt;T&gt;(AvaloniaProperty&lt;T&gt;, BindingValue&lt;T&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">AvaloniaObject.RaisePropertyChanged&lt;T&gt;(AvaloniaProperty&lt;T&gt;, Optional&lt;T&gt;, BindingValue&lt;T&gt;, BindingPriority)</span>
+    </div>
+    <div>
+      <span class="xref">AvaloniaObject.SetAndRaise&lt;T&gt;(AvaloniaProperty&lt;T&gt;, ref T, T)</span>
+    </div>
+    <div>
+      <span class="xref">AvaloniaObject.RaisePropertyChanged&lt;T&gt;(AvaloniaPropertyChangedEventArgs&lt;T&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">AvaloniaObject.InheritanceParent</span>
+    </div>
+    <div>
+      <span class="xref">AvaloniaObject.this[AvaloniaProperty]</span>
+    </div>
+    <div>
+      <span class="xref">AvaloniaObject.this[IndexerDescriptor]</span>
+    </div>
+    <div>
+      <span class="xref">AvaloniaObject.PropertyChanged</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged">AvaloniaObject.INotifyPropertyChanged.PropertyChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="DarkStar.html">DarkStar</a>.<a class="xref" href="DarkStar.Client.html">Client</a>.<a class="xref" href="DarkStar.Client.PageViews.html">PageViews</a></h6>
+  <h6><strong>Assembly</strong>: DarkStar.Client.dll</h6>
+  <h5 id="DarkStar_Client_PageViews_LoginPageView_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[DoNotNotify]
+public class LoginPageView : UserControl, IAvaloniaObjectDebug, INotifyPropertyChanged, IValueSink, ISetLogicalParent, ISetInheritanceParent, IVisualBrushInitialize, ISetterValue, IContentControl, IControl, IDataTemplateHost, ILayoutable, IInputElement, IVisual, IInteractive, IStyledElement, IStyleHost, ILogical, IResourceHost, IResourceNode, IDataContextProvider, ISupportInitialize, IContentPresenterHost, ITemplatedControl, IStyleable, IAvaloniaObject, INamed</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Client_PageViews_LoginPageView__ctor.md&amp;value=---%0Auid%3A%20DarkStar.Client.PageViews.LoginPageView.%23ctor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Client/PageViews/LoginPageView.axaml.cs/#L11">View Source</a>
+  </span>
+  <a id="DarkStar_Client_PageViews_LoginPageView__ctor_" data-uid="DarkStar.Client.PageViews.LoginPageView.#ctor*"></a>
+  <h4 id="DarkStar_Client_PageViews_LoginPageView__ctor" data-uid="DarkStar.Client.PageViews.LoginPageView.#ctor">LoginPageView()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LoginPageView()</code></pre>
+  </div>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Client_PageViews_LoginPageView_InitializeComponent.md&amp;value=---%0Auid%3A%20DarkStar.Client.PageViews.LoginPageView.InitializeComponent%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Client/PageViews/LoginPageView.axaml.cs/#L16">View Source</a>
+  </span>
+  <a id="DarkStar_Client_PageViews_LoginPageView_InitializeComponent_" data-uid="DarkStar.Client.PageViews.LoginPageView.InitializeComponent*"></a>
+  <h4 id="DarkStar_Client_PageViews_LoginPageView_InitializeComponent" data-uid="DarkStar.Client.PageViews.LoginPageView.InitializeComponent">InitializeComponent()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private void InitializeComponent()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Client_PageViews_LoginPageView_InitializeComponent_System_Boolean_.md&amp;value=---%0Auid%3A%20DarkStar.Client.PageViews.LoginPageView.InitializeComponent(System.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/docs/Avalonia.NameGenerator/Avalonia.NameGenerator.AvaloniaNameSourceGenerator/DarkStar.Client.PageViews.LoginPageView.g.cs/#L18">View Source</a>
+  </span>
+  <a id="DarkStar_Client_PageViews_LoginPageView_InitializeComponent_" data-uid="DarkStar.Client.PageViews.LoginPageView.InitializeComponent*"></a>
+  <h4 id="DarkStar_Client_PageViews_LoginPageView_InitializeComponent_System_Boolean_" data-uid="DarkStar.Client.PageViews.LoginPageView.InitializeComponent(System.Boolean)">InitializeComponent(bool)</h4>
+  <div class="markdown level1 summary"><p>Wires up the controls and optionally loads XAML markup and attaches dev tools (if Avalonia.Diagnostics package is referenced).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void InitializeComponent(bool loadXaml = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">loadXaml</span></td>
+        <td><p>Should the XAML be loaded into the component.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">Avalonia.Diagnostics.IAvaloniaObjectDebug</span>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged">INotifyPropertyChanged</a>
+  </div>
+  <div>
+      <span class="xref">Avalonia.PropertyStore.IValueSink</span>
+  </div>
+  <div>
+      <span class="xref">Avalonia.Controls.ISetLogicalParent</span>
+  </div>
+  <div>
+      <span class="xref">Avalonia.Controls.ISetInheritanceParent</span>
+  </div>
+  <div>
+      <span class="xref">Avalonia.Rendering.IVisualBrushInitialize</span>
+  </div>
+  <div>
+      <span class="xref">Avalonia.Styling.ISetterValue</span>
+  </div>
+  <div>
+      <span class="xref">Avalonia.Controls.IContentControl</span>
+  </div>
+  <div>
+      <span class="xref">Avalonia.Controls.IControl</span>
+  </div>
+  <div>
+      <span class="xref">Avalonia.Controls.Templates.IDataTemplateHost</span>
+  </div>
+  <div>
+      <span class="xref">Avalonia.Layout.ILayoutable</span>
+  </div>
+  <div>
+      <span class="xref">Avalonia.Input.IInputElement</span>
+  </div>
+  <div>
+      <span class="xref">Avalonia.VisualTree.IVisual</span>
+  </div>
+  <div>
+      <span class="xref">Avalonia.Interactivity.IInteractive</span>
+  </div>
+  <div>
+      <span class="xref">Avalonia.IStyledElement</span>
+  </div>
+  <div>
+      <span class="xref">Avalonia.Styling.IStyleHost</span>
+  </div>
+  <div>
+      <span class="xref">Avalonia.LogicalTree.ILogical</span>
+  </div>
+  <div>
+      <span class="xref">Avalonia.Controls.IResourceHost</span>
+  </div>
+  <div>
+      <span class="xref">Avalonia.Controls.IResourceNode</span>
+  </div>
+  <div>
+      <span class="xref">Avalonia.IDataContextProvider</span>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.isupportinitialize">ISupportInitialize</a>
+  </div>
+  <div>
+      <span class="xref">Avalonia.Controls.Presenters.IContentPresenterHost</span>
+  </div>
+  <div>
+      <span class="xref">Avalonia.Styling.ITemplatedControl</span>
+  </div>
+  <div>
+      <span class="xref">Avalonia.Styling.IStyleable</span>
+  </div>
+  <div>
+      <span class="xref">Avalonia.IAvaloniaObject</span>
+  </div>
+  <div>
+      <span class="xref">Avalonia.INamed</span>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Client_PageViews_LoginPageView.md&amp;value=---%0Auid%3A%20DarkStar.Client.PageViews.LoginPageView%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/tgiachi/DarkStar/blob/main/docs/Avalonia.NameGenerator/Avalonia.NameGenerator.AvaloniaNameSourceGenerator/DarkStar.Client.PageViews.LoginPageView.g.cs/#L9" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,357 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class MainWindowViewModel
+ </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class MainWindowViewModel
+ ">
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="DarkStar.Client.ViewModels.MainWindowViewModel">
+
+
+
+  <h1 id="DarkStar_Client_ViewModels_MainWindowViewModel" data-uid="DarkStar.Client.ViewModels.MainWindowViewModel" class="text-break">Class MainWindowViewModel
+</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">ReactiveObject</span></div>
+    <div class="level2"><a class="xref" href="DarkStar.Client.ViewModels.ViewModelBase.html">ViewModelBase</a></div>
+    <div class="level3"><span class="xref">MainWindowViewModel</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">IReactiveNotifyPropertyChanged</span>&lt;<span class="xref">IReactiveObject</span>&gt;</div>
+    <div><span class="xref">IHandleObservableErrors</span></div>
+    <div><span class="xref">IReactiveObject</span></div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged">INotifyPropertyChanged</a></div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanging">INotifyPropertyChanging</a></div>
+    <div><span class="xref">IEnableLogger</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.propertychangingeventargs">ReactiveObject.IReactiveObject.RaisePropertyChanging(PropertyChangingEventArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.propertychangedeventargs">ReactiveObject.IReactiveObject.RaisePropertyChanged(PropertyChangedEventArgs)</a>
+    </div>
+    <div>
+      <span class="xref">ReactiveObject.SuppressChangeNotifications()</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveObject.AreChangeNotificationsEnabled()</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveObject.DelayChangeNotifications()</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveObject.Changing</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveObject.Changed</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveObject.ThrownExceptions</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveObject.PropertyChanging</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveObject.PropertyChanged</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="DarkStar.html">DarkStar</a>.<a class="xref" href="DarkStar.Client.html">Client</a>.<a class="xref" href="DarkStar.Client.ViewModels.html">ViewModels</a></h6>
+  <h6><strong>Assembly</strong>: DarkStar.Client.dll</h6>
+  <h5 id="DarkStar_Client_ViewModels_MainWindowViewModel_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class MainWindowViewModel : ViewModelBase, IReactiveNotifyPropertyChanged&lt;IReactiveObject&gt;, IHandleObservableErrors, IReactiveObject, INotifyPropertyChanged, INotifyPropertyChanging, IEnableLogger</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Client_ViewModels_MainWindowViewModel__ctor_DarkStar_Network_Client_Interfaces_IDarkStarNetworkClient_DarkStar_Client_Services_WindowManager_DarkStar_Client_Services_ServiceContext_.md&amp;value=---%0Auid%3A%20DarkStar.Client.ViewModels.MainWindowViewModel.%23ctor(DarkStar.Network.Client.Interfaces.IDarkStarNetworkClient%2CDarkStar.Client.Services.WindowManager%2CDarkStar.Client.Services.ServiceContext)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Client/ViewModels/MainWindowViewModel.cs/#L20">View Source</a>
+  </span>
+  <a id="DarkStar_Client_ViewModels_MainWindowViewModel__ctor_" data-uid="DarkStar.Client.ViewModels.MainWindowViewModel.#ctor*"></a>
+  <h4 id="DarkStar_Client_ViewModels_MainWindowViewModel__ctor_DarkStar_Network_Client_Interfaces_IDarkStarNetworkClient_DarkStar_Client_Services_WindowManager_DarkStar_Client_Services_ServiceContext_" data-uid="DarkStar.Client.ViewModels.MainWindowViewModel.#ctor(DarkStar.Network.Client.Interfaces.IDarkStarNetworkClient,DarkStar.Client.Services.WindowManager,DarkStar.Client.Services.ServiceContext)">MainWindowViewModel(IDarkStarNetworkClient, WindowManager, ServiceContext)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MainWindowViewModel(IDarkStarNetworkClient client, WindowManager windowManager, ServiceContext serviceContext)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DarkStar.Network.Client.Interfaces.IDarkStarNetworkClient.html">IDarkStarNetworkClient</a></td>
+        <td><span class="parametername">client</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="DarkStar.Client.Services.WindowManager.html">WindowManager</a></td>
+        <td><span class="parametername">windowManager</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="DarkStar.Client.Services.ServiceContext.html">ServiceContext</a></td>
+        <td><span class="parametername">serviceContext</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Client_ViewModels_MainWindowViewModel__windowManager.md&amp;value=---%0Auid%3A%20DarkStar.Client.ViewModels.MainWindowViewModel._windowManager%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Client/ViewModels/MainWindowViewModel.cs/#L16">View Source</a>
+  </span>
+  <h4 id="DarkStar_Client_ViewModels_MainWindowViewModel__windowManager" data-uid="DarkStar.Client.ViewModels.MainWindowViewModel._windowManager">_windowManager</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private readonly WindowManager _windowManager</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DarkStar.Client.Services.WindowManager.html">WindowManager</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Client_ViewModels_MainWindowViewModel_ShowRenderViewCommand.md&amp;value=---%0Auid%3A%20DarkStar.Client.ViewModels.MainWindowViewModel.ShowRenderViewCommand%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Client/ViewModels/MainWindowViewModel.cs/#L18">View Source</a>
+  </span>
+  <a id="DarkStar_Client_ViewModels_MainWindowViewModel_ShowRenderViewCommand_" data-uid="DarkStar.Client.ViewModels.MainWindowViewModel.ShowRenderViewCommand*"></a>
+  <h4 id="DarkStar_Client_ViewModels_MainWindowViewModel_ShowRenderViewCommand" data-uid="DarkStar.Client.ViewModels.MainWindowViewModel.ShowRenderViewCommand">ShowRenderViewCommand</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ReactiveCommand&lt;Unit, Task&gt; ShowRenderViewCommand { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReactiveCommand</span>&lt;<span class="xref">Unit</span>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Client_ViewModels_MainWindowViewModel_SetPageViewControl_DarkStar_Client_Controls_PageViewControl_.md&amp;value=---%0Auid%3A%20DarkStar.Client.ViewModels.MainWindowViewModel.SetPageViewControl(DarkStar.Client.Controls.PageViewControl)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Client/ViewModels/MainWindowViewModel.cs/#L28">View Source</a>
+  </span>
+  <a id="DarkStar_Client_ViewModels_MainWindowViewModel_SetPageViewControl_" data-uid="DarkStar.Client.ViewModels.MainWindowViewModel.SetPageViewControl*"></a>
+  <h4 id="DarkStar_Client_ViewModels_MainWindowViewModel_SetPageViewControl_DarkStar_Client_Controls_PageViewControl_" data-uid="DarkStar.Client.ViewModels.MainWindowViewModel.SetPageViewControl(DarkStar.Client.Controls.PageViewControl)">SetPageViewControl(PageViewControl)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetPageViewControl(PageViewControl pageViewControl)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DarkStar.Client.Controls.PageViewControl.html">PageViewControl</a></td>
+        <td><span class="parametername">pageViewControl</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">ReactiveUI.IReactiveNotifyPropertyChanged&lt;TSender&gt;</span>
+  </div>
+  <div>
+      <span class="xref">ReactiveUI.IHandleObservableErrors</span>
+  </div>
+  <div>
+      <span class="xref">ReactiveUI.IReactiveObject</span>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged">INotifyPropertyChanged</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanging">INotifyPropertyChanging</a>
+  </div>
+  <div>
+      <span class="xref">Splat.IEnableLogger</span>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Client_ViewModels_MainWindowViewModel.md&amp;value=---%0Auid%3A%20DarkStar.Client.ViewModels.MainWindowViewModel%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Client/ViewModels/MainWindowViewModel.cs/#L14" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

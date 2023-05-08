@@ -1865,6 +1865,256 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.App.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.App.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.Attributes.PageViewAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.Attributes.PageViewAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.Attributes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.Attributes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.Controls.PageViewControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.Controls.PageViewControl.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.Controls.RenderControl.CustomDrawOp.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.Controls.RenderControl.CustomDrawOp.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.Controls.RenderControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.Controls.RenderControl.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.Controls.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.Controls.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.PageViewModels.LoginPageViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.PageViewModels.LoginPageViewModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.PageViewModels.RenderPageViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.PageViewModels.RenderPageViewModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.PageViewModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.PageViewModels.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.PageViews.LoginPageView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.PageViews.LoginPageView.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.PageViews.RenderPageView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.PageViews.RenderPageView.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.PageViews.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.PageViews.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.Program.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.Program.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.Services.ServiceContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.Services.ServiceContext.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.Services.WindowManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.Services.WindowManager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.ViewModels.MainWindowViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.ViewModels.MainWindowViewModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.ViewModels.PageViewModelBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.ViewModels.PageViewModelBase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.ViewModels.ViewModelBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.ViewModels.ViewModelBase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.ViewModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.ViewModels.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.Views.MainWindow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.Views.MainWindow.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.Views.SplashScreenWindow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.Views.SplashScreenWindow.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.Views.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.Views.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/DarkStar.Database.Entities.Account.AccountEntity.yml",
       "output": {
         ".html": {
@@ -3119,6 +3369,16 @@
       "output": {
         ".html": {
           "relative_path": "api/DarkStar.Network.Attributes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Client.Interfaces.IDarkStarNetworkClient.ClientConnectedDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Client.Interfaces.IDarkStarNetworkClient.ClientConnectedDelegate.html"
         }
       },
       "version": ""

@@ -121,7 +121,7 @@
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Network_Client_SignalrNetworkClient__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Network_Client_SignalrNetworkClient__DarkStar_Network_Protocol_Interfaces_Builders_INetworkMessageBuilder_DarkStar_Network_Data_DarkStarNetworkClientConfig_.md&amp;value=---%0Auid%3A%20DarkStar.Network.Client.SignalrNetworkClient.%23ctor(Microsoft.Extensions.Logging.ILogger%7BDarkStar.Network.Client.SignalrNetworkClient%7D%2CDarkStar.Network.Protocol.Interfaces.Builders.INetworkMessageBuilder%2CDarkStar.Network.Data.DarkStarNetworkClientConfig)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Client/SignalrNetworkClient.cs/#L24">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Client/SignalrNetworkClient.cs/#L26">View Source</a>
   </span>
   <a id="DarkStar_Network_Client_SignalrNetworkClient__ctor_" data-uid="DarkStar.Network.Client.SignalrNetworkClient.#ctor*"></a>
   <h4 id="DarkStar_Network_Client_SignalrNetworkClient__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Network_Client_SignalrNetworkClient__DarkStar_Network_Protocol_Interfaces_Builders_INetworkMessageBuilder_DarkStar_Network_Data_DarkStarNetworkClientConfig_" data-uid="DarkStar.Network.Client.SignalrNetworkClient.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Network.Client.SignalrNetworkClient},DarkStar.Network.Protocol.Interfaces.Builders.INetworkMessageBuilder,DarkStar.Network.Data.DarkStarNetworkClientConfig)">SignalrNetworkClient(ILogger&lt;SignalrNetworkClient&gt;, INetworkMessageBuilder, DarkStarNetworkClientConfig)</h4>
@@ -162,17 +162,46 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Network_Client_SignalrNetworkClient__actionMessageListeners.md&amp;value=---%0Auid%3A%20DarkStar.Network.Client.SignalrNetworkClient._actionMessageListeners%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Client/SignalrNetworkClient.cs/#L24">View Source</a>
+  </span>
+  <h4 id="DarkStar_Network_Client_SignalrNetworkClient__actionMessageListeners" data-uid="DarkStar.Network.Client.SignalrNetworkClient._actionMessageListeners">_actionMessageListeners</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private readonly Dictionary&lt;DarkStarMessageType, Func&lt;IDarkStarNetworkMessage, Task&gt;&gt; _actionMessageListeners</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="DarkStar.Network.Protocol.Types.DarkStarMessageType.html">DarkStarMessageType</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="DarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage.html">IDarkStarNetworkMessage</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Network_Client_SignalrNetworkClient__clientConfig.md&amp;value=---%0Auid%3A%20DarkStar.Network.Client.SignalrNetworkClient._clientConfig%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Client/SignalrNetworkClient.cs/#L20">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Client/SignalrNetworkClient.cs/#L21">View Source</a>
   </span>
   <h4 id="DarkStar_Network_Client_SignalrNetworkClient__clientConfig" data-uid="DarkStar.Network.Client.SignalrNetworkClient._clientConfig">_clientConfig</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">private readonly DarkStarNetworkClientConfig _clientConfig</code></pre>
+    <pre><code class="lang-csharp hljs">private DarkStarNetworkClientConfig _clientConfig</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-condensed">
@@ -194,7 +223,7 @@
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Network_Client_SignalrNetworkClient__hubConnection.md&amp;value=---%0Auid%3A%20DarkStar.Network.Client.SignalrNetworkClient._hubConnection%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Client/SignalrNetworkClient.cs/#L21">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Client/SignalrNetworkClient.cs/#L22">View Source</a>
   </span>
   <h4 id="DarkStar_Network_Client_SignalrNetworkClient__hubConnection" data-uid="DarkStar.Network.Client.SignalrNetworkClient._hubConnection">_hubConnection</h4>
   <div class="markdown level1 summary"></div>
@@ -223,7 +252,7 @@
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Network_Client_SignalrNetworkClient__logger.md&amp;value=---%0Auid%3A%20DarkStar.Network.Client.SignalrNetworkClient._logger%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Client/SignalrNetworkClient.cs/#L18">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Client/SignalrNetworkClient.cs/#L19">View Source</a>
   </span>
   <h4 id="DarkStar_Network_Client_SignalrNetworkClient__logger" data-uid="DarkStar.Network.Client.SignalrNetworkClient._logger">_logger</h4>
   <div class="markdown level1 summary"></div>
@@ -252,7 +281,7 @@
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Network_Client_SignalrNetworkClient__messageBuilder.md&amp;value=---%0Auid%3A%20DarkStar.Network.Client.SignalrNetworkClient._messageBuilder%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Client/SignalrNetworkClient.cs/#L19">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Client/SignalrNetworkClient.cs/#L20">View Source</a>
   </span>
   <h4 id="DarkStar_Network_Client_SignalrNetworkClient__messageBuilder" data-uid="DarkStar.Network.Client.SignalrNetworkClient._messageBuilder">_messageBuilder</h4>
   <div class="markdown level1 summary"></div>
@@ -281,7 +310,7 @@
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Network_Client_SignalrNetworkClient__messageListeners.md&amp;value=---%0Auid%3A%20DarkStar.Network.Client.SignalrNetworkClient._messageListeners%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Client/SignalrNetworkClient.cs/#L22">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Client/SignalrNetworkClient.cs/#L23">View Source</a>
   </span>
   <h4 id="DarkStar_Network_Client_SignalrNetworkClient__messageListeners" data-uid="DarkStar.Network.Client.SignalrNetworkClient._messageListeners">_messageListeners</h4>
   <div class="markdown level1 summary"></div>
@@ -312,7 +341,7 @@
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Network_Client_SignalrNetworkClient_IsConnected.md&amp;value=---%0Auid%3A%20DarkStar.Network.Client.SignalrNetworkClient.IsConnected%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Client/SignalrNetworkClient.cs/#L33">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Client/SignalrNetworkClient.cs/#L35">View Source</a>
   </span>
   <a id="DarkStar_Network_Client_SignalrNetworkClient_IsConnected_" data-uid="DarkStar.Network.Client.SignalrNetworkClient.IsConnected*"></a>
   <h4 id="DarkStar_Network_Client_SignalrNetworkClient_IsConnected" data-uid="DarkStar.Network.Client.SignalrNetworkClient.IsConnected">IsConnected</h4>
@@ -344,7 +373,7 @@
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Network_Client_SignalrNetworkClient_ConnectAsync.md&amp;value=---%0Auid%3A%20DarkStar.Network.Client.SignalrNetworkClient.ConnectAsync%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Client/SignalrNetworkClient.cs/#L35">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Client/SignalrNetworkClient.cs/#L37">View Source</a>
   </span>
   <a id="DarkStar_Network_Client_SignalrNetworkClient_ConnectAsync_" data-uid="DarkStar.Network.Client.SignalrNetworkClient.ConnectAsync*"></a>
   <h4 id="DarkStar_Network_Client_SignalrNetworkClient_ConnectAsync" data-uid="DarkStar.Network.Client.SignalrNetworkClient.ConnectAsync">ConnectAsync()</h4>
@@ -371,10 +400,57 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Network_Client_SignalrNetworkClient_ConnectAsync_DarkStar_Network_Data_DarkStarNetworkClientConfig_.md&amp;value=---%0Auid%3A%20DarkStar.Network.Client.SignalrNetworkClient.ConnectAsync(DarkStar.Network.Data.DarkStarNetworkClientConfig)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Client/SignalrNetworkClient.cs/#L51">View Source</a>
+  </span>
+  <a id="DarkStar_Network_Client_SignalrNetworkClient_ConnectAsync_" data-uid="DarkStar.Network.Client.SignalrNetworkClient.ConnectAsync*"></a>
+  <h4 id="DarkStar_Network_Client_SignalrNetworkClient_ConnectAsync_DarkStar_Network_Data_DarkStarNetworkClientConfig_" data-uid="DarkStar.Network.Client.SignalrNetworkClient.ConnectAsync(DarkStar.Network.Data.DarkStarNetworkClientConfig)">ConnectAsync(DarkStarNetworkClientConfig)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ValueTask ConnectAsync(DarkStarNetworkClientConfig config)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DarkStar.Network.Data.DarkStarNetworkClientConfig.html">DarkStarNetworkClientConfig</a></td>
+        <td><span class="parametername">config</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask">ValueTask</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Network_Client_SignalrNetworkClient_DisconnectAsync.md&amp;value=---%0Auid%3A%20DarkStar.Network.Client.SignalrNetworkClient.DisconnectAsync%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Client/SignalrNetworkClient.cs/#L69">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Client/SignalrNetworkClient.cs/#L82">View Source</a>
   </span>
   <a id="DarkStar_Network_Client_SignalrNetworkClient_DisconnectAsync_" data-uid="DarkStar.Network.Client.SignalrNetworkClient.DisconnectAsync*"></a>
   <h4 id="DarkStar_Network_Client_SignalrNetworkClient_DisconnectAsync" data-uid="DarkStar.Network.Client.SignalrNetworkClient.DisconnectAsync">DisconnectAsync()</h4>
@@ -404,7 +480,7 @@
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Network_Client_SignalrNetworkClient_DispatchMessageReceivedAsync_DarkStar_Network_Protocol_Types_DarkStarMessageType_DarkStar_Network_Protocol_Interfaces_Messages_IDarkStarNetworkMessage_.md&amp;value=---%0Auid%3A%20DarkStar.Network.Client.SignalrNetworkClient.DispatchMessageReceivedAsync(DarkStar.Network.Protocol.Types.DarkStarMessageType%2CDarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Client/SignalrNetworkClient.cs/#L90">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Client/SignalrNetworkClient.cs/#L119">View Source</a>
   </span>
   <a id="DarkStar_Network_Client_SignalrNetworkClient_DispatchMessageReceivedAsync_" data-uid="DarkStar.Network.Client.SignalrNetworkClient.DispatchMessageReceivedAsync*"></a>
   <h4 id="DarkStar_Network_Client_SignalrNetworkClient_DispatchMessageReceivedAsync_DarkStar_Network_Protocol_Types_DarkStarMessageType_DarkStar_Network_Protocol_Interfaces_Messages_IDarkStarNetworkMessage_" data-uid="DarkStar.Network.Client.SignalrNetworkClient.DispatchMessageReceivedAsync(DarkStar.Network.Protocol.Types.DarkStarMessageType,DarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage)">DispatchMessageReceivedAsync(DarkStarMessageType, IDarkStarNetworkMessage)</h4>
@@ -456,7 +532,7 @@
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Network_Client_SignalrNetworkClient_OnMessageReceivedAsync_System_String_.md&amp;value=---%0Auid%3A%20DarkStar.Network.Client.SignalrNetworkClient.OnMessageReceivedAsync(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Client/SignalrNetworkClient.cs/#L51">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Client/SignalrNetworkClient.cs/#L58">View Source</a>
   </span>
   <a id="DarkStar_Network_Client_SignalrNetworkClient_OnMessageReceivedAsync_" data-uid="DarkStar.Network.Client.SignalrNetworkClient.OnMessageReceivedAsync*"></a>
   <h4 id="DarkStar_Network_Client_SignalrNetworkClient_OnMessageReceivedAsync_System_String_" data-uid="DarkStar.Network.Client.SignalrNetworkClient.OnMessageReceivedAsync(System.String)">OnMessageReceivedAsync(string)</h4>
@@ -503,7 +579,7 @@
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Network_Client_SignalrNetworkClient_RegisterMessageListener_DarkStar_Network_Protocol_Types_DarkStarMessageType_DarkStar_Network_Interfaces_INetworkClientMessageListener_.md&amp;value=---%0Auid%3A%20DarkStar.Network.Client.SignalrNetworkClient.RegisterMessageListener(DarkStar.Network.Protocol.Types.DarkStarMessageType%2CDarkStar.Network.Interfaces.INetworkClientMessageListener)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Client/SignalrNetworkClient.cs/#L85">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Client/SignalrNetworkClient.cs/#L104">View Source</a>
   </span>
   <a id="DarkStar_Network_Client_SignalrNetworkClient_RegisterMessageListener_" data-uid="DarkStar.Network.Client.SignalrNetworkClient.RegisterMessageListener*"></a>
   <h4 id="DarkStar_Network_Client_SignalrNetworkClient_RegisterMessageListener_DarkStar_Network_Protocol_Types_DarkStarMessageType_DarkStar_Network_Interfaces_INetworkClientMessageListener_" data-uid="DarkStar.Network.Client.SignalrNetworkClient.RegisterMessageListener(DarkStar.Network.Protocol.Types.DarkStarMessageType,DarkStar.Network.Interfaces.INetworkClientMessageListener)">RegisterMessageListener(DarkStarMessageType, INetworkClientMessageListener)</h4>
@@ -540,7 +616,7 @@
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Network_Client_SignalrNetworkClient_SendMessageAsync_DarkStar_Network_Protocol_Interfaces_Messages_IDarkStarNetworkMessage_.md&amp;value=---%0Auid%3A%20DarkStar.Network.Client.SignalrNetworkClient.SendMessageAsync(DarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Client/SignalrNetworkClient.cs/#L71">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Client/SignalrNetworkClient.cs/#L84">View Source</a>
   </span>
   <a id="DarkStar_Network_Client_SignalrNetworkClient_SendMessageAsync_" data-uid="DarkStar.Network.Client.SignalrNetworkClient.SendMessageAsync*"></a>
   <h4 id="DarkStar_Network_Client_SignalrNetworkClient_SendMessageAsync_DarkStar_Network_Protocol_Interfaces_Messages_IDarkStarNetworkMessage_" data-uid="DarkStar.Network.Client.SignalrNetworkClient.SendMessageAsync(DarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage)">SendMessageAsync(IDarkStarNetworkMessage)</h4>
@@ -587,7 +663,7 @@
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Network_Client_SignalrNetworkClient_SendMessageAsync_System_Collections_Generic_List_DarkStar_Network_Protocol_Interfaces_Messages_IDarkStarNetworkMessage__.md&amp;value=---%0Auid%3A%20DarkStar.Network.Client.SignalrNetworkClient.SendMessageAsync(System.Collections.Generic.List%7BDarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Client/SignalrNetworkClient.cs/#L77">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Client/SignalrNetworkClient.cs/#L90">View Source</a>
   </span>
   <a id="DarkStar_Network_Client_SignalrNetworkClient_SendMessageAsync_" data-uid="DarkStar.Network.Client.SignalrNetworkClient.SendMessageAsync*"></a>
   <h4 id="DarkStar_Network_Client_SignalrNetworkClient_SendMessageAsync_System_Collections_Generic_List_DarkStar_Network_Protocol_Interfaces_Messages_IDarkStarNetworkMessage__" data-uid="DarkStar.Network.Client.SignalrNetworkClient.SendMessageAsync(System.Collections.Generic.List{DarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage})">SendMessageAsync(List&lt;IDarkStarNetworkMessage&gt;)</h4>
@@ -629,14 +705,132 @@
       </tr>
     </tbody>
   </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Network_Client_SignalrNetworkClient_SubscribeToMessage__1_DarkStar_Network_Protocol_Types_DarkStarMessageType_System_Func_DarkStar_Network_Protocol_Interfaces_Messages_IDarkStarNetworkMessage_System_Threading_Tasks_Task__.md&amp;value=---%0Auid%3A%20DarkStar.Network.Client.SignalrNetworkClient.SubscribeToMessage%60%601(DarkStar.Network.Protocol.Types.DarkStarMessageType%2CSystem.Func%7BDarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage%2CSystem.Threading.Tasks.Task%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Client/SignalrNetworkClient.cs/#L98">View Source</a>
+  </span>
+  <a id="DarkStar_Network_Client_SignalrNetworkClient_SubscribeToMessage_" data-uid="DarkStar.Network.Client.SignalrNetworkClient.SubscribeToMessage*"></a>
+  <h4 id="DarkStar_Network_Client_SignalrNetworkClient_SubscribeToMessage__1_DarkStar_Network_Protocol_Types_DarkStarMessageType_System_Func_DarkStar_Network_Protocol_Interfaces_Messages_IDarkStarNetworkMessage_System_Threading_Tasks_Task__" data-uid="DarkStar.Network.Client.SignalrNetworkClient.SubscribeToMessage``1(DarkStar.Network.Protocol.Types.DarkStarMessageType,System.Func{DarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage,System.Threading.Tasks.Task})">SubscribeToMessage&lt;TMessage&gt;(DarkStarMessageType, Func&lt;IDarkStarNetworkMessage, Task&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SubscribeToMessage&lt;TMessage&gt;(DarkStarMessageType messageType, Func&lt;IDarkStarNetworkMessage, Task&gt; handler) where TMessage : IDarkStarNetworkMessage</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DarkStar.Network.Protocol.Types.DarkStarMessageType.html">DarkStarMessageType</a></td>
+        <td><span class="parametername">messageType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="DarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage.html">IDarkStarNetworkMessage</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a>&gt;</td>
+        <td><span class="parametername">handler</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TMessage</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Network_Client_SignalrNetworkClient_UnregisterMessageListener_DarkStar_Network_Protocol_Types_DarkStarMessageType_DarkStar_Network_Interfaces_INetworkClientMessageListener_.md&amp;value=---%0Auid%3A%20DarkStar.Network.Client.SignalrNetworkClient.UnregisterMessageListener(DarkStar.Network.Protocol.Types.DarkStarMessageType%2CDarkStar.Network.Interfaces.INetworkClientMessageListener)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Client/SignalrNetworkClient.cs/#L109">View Source</a>
+  </span>
+  <a id="DarkStar_Network_Client_SignalrNetworkClient_UnregisterMessageListener_" data-uid="DarkStar.Network.Client.SignalrNetworkClient.UnregisterMessageListener*"></a>
+  <h4 id="DarkStar_Network_Client_SignalrNetworkClient_UnregisterMessageListener_DarkStar_Network_Protocol_Types_DarkStarMessageType_DarkStar_Network_Interfaces_INetworkClientMessageListener_" data-uid="DarkStar.Network.Client.SignalrNetworkClient.UnregisterMessageListener(DarkStar.Network.Protocol.Types.DarkStarMessageType,DarkStar.Network.Interfaces.INetworkClientMessageListener)">UnregisterMessageListener(DarkStarMessageType, INetworkClientMessageListener)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UnregisterMessageListener(DarkStarMessageType messageType, INetworkClientMessageListener clientMessageListener)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DarkStar.Network.Protocol.Types.DarkStarMessageType.html">DarkStarMessageType</a></td>
+        <td><span class="parametername">messageType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="DarkStar.Network.Interfaces.INetworkClientMessageListener.html">INetworkClientMessageListener</a></td>
+        <td><span class="parametername">clientMessageListener</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="events">Events
 </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Network_Client_SignalrNetworkClient_OnClientConnected.md&amp;value=---%0Auid%3A%20DarkStar.Network.Client.SignalrNetworkClient.OnClientConnected%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Client/SignalrNetworkClient.cs/#L16">View Source</a>
+  </span>
+  <h4 id="DarkStar_Network_Client_SignalrNetworkClient_OnClientConnected" data-uid="DarkStar.Network.Client.SignalrNetworkClient.OnClientConnected">OnClientConnected</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event IDarkStarNetworkClient.ClientConnectedDelegate? OnClientConnected</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DarkStar.Network.Client.Interfaces.IDarkStarNetworkClient.html">IDarkStarNetworkClient</a>.<a class="xref" href="DarkStar.Network.Client.Interfaces.IDarkStarNetworkClient.ClientConnectedDelegate.html">ClientConnectedDelegate</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Network_Client_SignalrNetworkClient_OnMessageReceived.md&amp;value=---%0Auid%3A%20DarkStar.Network.Client.SignalrNetworkClient.OnMessageReceived%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Client/SignalrNetworkClient.cs/#L16">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Client/SignalrNetworkClient.cs/#L17">View Source</a>
   </span>
   <h4 id="DarkStar_Network_Client_SignalrNetworkClient_OnMessageReceived" data-uid="DarkStar.Network.Client.SignalrNetworkClient.OnMessageReceived">OnMessageReceived</h4>
   <div class="markdown level1 summary"></div>
