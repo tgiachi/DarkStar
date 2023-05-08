@@ -172,6 +172,16 @@ public class TcpNetworkClient : TcpClient, IDarkStarNetworkClient
         _messageListeners.Add(messageType, serverMessageListener);
     }
 
+    public void UnregisterMessageListener(
+        DarkStarMessageType messageType, INetworkClientMessageListener clientMessageListener
+    )
+    {
+        if (_messageListeners.ContainsKey(messageType))
+        {
+            _messageListeners.Remove(messageType);
+        }
+    }
+
 
     public new ValueTask ConnectAsync()
     {
@@ -179,6 +189,8 @@ public class TcpNetworkClient : TcpClient, IDarkStarNetworkClient
 
         return ValueTask.CompletedTask;
     }
+
+    public ValueTask ConnectAsync(DarkStarNetworkClientConfig config) => ConnectAsync();
 
     public new ValueTask DisconnectAsync()
     {

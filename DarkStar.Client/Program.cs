@@ -27,8 +27,8 @@ class Program
     // SynchronizationContext-reliant code before AppMain is called: things aren't initialized
     // yet and stuff might break.
     [STAThread]
-    public static void Main(string[] args){
-
+    public static void Main(string[] args)
+    {
         InitializeDependencyInjection();
         BuildAvaloniaApp()
             .StartWithClassicDesktopLifetime(args);
@@ -53,38 +53,42 @@ class Program
         services.AddSingleton(new DarkStarNetworkClientConfig());
         services.AddSingleton<WindowManager>();
         services.AddSingleton<MainWindowViewModel>();
+        services.AddSingleton<ServiceContext>();
 
-        AssemblyUtils.GetAttribute<PageViewAttribute>().ForEach(
-            a =>
-            {
-                var attribute = a.GetCustomAttribute<PageViewAttribute>();
+        AssemblyUtils.GetAttribute<PageViewAttribute>()
+            .ForEach(
+                a =>
+                {
+                    var attribute = a.GetCustomAttribute<PageViewAttribute>();
 
-                services.AddTransient(attribute.View);
-                services.AddTransient(a);
-            });
+                    services.AddTransient(attribute.View);
+                    services.AddTransient(a);
+                }
+            );
 
         Log.Logger = new LoggerConfiguration()
             .Enrich.FromLogContext()
             .WriteTo.Console()
             .CreateLogger();
 
-        services.AddLogging(builder =>
-        {
-            builder.AddConsole();
-            builder.AddDebug();
-            builder.AddSerilog(dispose: true);
-        });
-
+        services.AddLogging(
+            builder =>
+            {
+                builder.AddConsole();
+                builder.AddDebug();
+                builder.AddSerilog(dispose: true);
+            }
+        );
     }
 
     // Avalonia configuration, don't remove; also used by visual designer.
-    public static AppBuilder BuildAvaloniaApp()
-    {
-
+    public static AppBuilder BuildAvaloniaApp() =>
         // Preparing context
-       return AppBuilder.Configure<App>()
+        AppBuilder.Configure<App>()
             .UsePlatformDetect()
+            .With(new Win32PlatformOptions() { AllowEglInitialization = true })
+            .With(new X11PlatformOptions() { UseGpu = true, UseEGL = true })
+            .With(new AvaloniaNativePlatformOptions() { UseGpu = true })
             .LogToTrace()
             .UseReactiveUI();
-    }
 }

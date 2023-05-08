@@ -8,7 +8,7 @@
         x:Class="DarkStar.Client.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         FontFamily="{StaticResource DefaultFont}"
-        Icon="/Assets/avalonia-logo.ico"
+        Icon="/Assets/dark_star_icon.ico"
         Title="DarkStar Client">
 
     <Design.DataContext>
@@ -24,6 +24,9 @@
         </Grid.RowDefinitions>
         <Menu>
             <MenuItem Header="File"/>
+            <MenuItem Header="Views">
+                <MenuItem Header="Render" Command="{Binding ShowRenderViewCommand }" />
+            </MenuItem>
         </Menu>
         <controls:PageViewControl x:Name="ViewControl" Margin="5"  Grid.Row="1" />
     </Grid>

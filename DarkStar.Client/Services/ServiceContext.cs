@@ -2,8 +2,8 @@
 
 namespace DarkStar.Client.Services;
 
-public static class ServiceContext
+public class ServiceContext
 {
-    public static IDarkStarNetworkClient NetworkClient { get; set; }
-
+    public ServiceContext(IDarkStarNetworkClient networkClient) => NetworkClient = networkClient;
+    public IDarkStarNetworkClient NetworkClient { get; set; }
 }

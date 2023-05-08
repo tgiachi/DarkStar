@@ -17,7 +17,7 @@ public class SignalrNetworkClient : IDarkStarNetworkClient
 
     private readonly ILogger _logger;
     private readonly INetworkMessageBuilder _messageBuilder;
-    private readonly DarkStarNetworkClientConfig _clientConfig;
+    private  DarkStarNetworkClientConfig _clientConfig;
     private HubConnection _hubConnection;
     private readonly Dictionary<DarkStarMessageType, INetworkClientMessageListener> _messageListeners = new();
 
@@ -46,6 +46,13 @@ public class SignalrNetworkClient : IDarkStarNetworkClient
 
         await _hubConnection.StartAsync();
         IsConnected = true;
+    }
+
+    public ValueTask ConnectAsync(DarkStarNetworkClientConfig config)
+    {
+        _clientConfig = config;
+
+        return ConnectAsync();
     }
 
     private async Task OnMessageReceivedAsync(string message)
@@ -85,6 +92,14 @@ public class SignalrNetworkClient : IDarkStarNetworkClient
     public void RegisterMessageListener(DarkStarMessageType messageType, INetworkClientMessageListener serverMessageListener)
     {
         _messageListeners.Add(messageType, serverMessageListener);
+    }
+
+    public void UnregisterMessageListener(DarkStarMessageType messageType, INetworkClientMessageListener clientMessageListener)
+    {
+        if (_messageListeners.ContainsKey(messageType))
+        {
+            _messageListeners.Remove(messageType);
+        }
     }
 
     public async Task DispatchMessageReceivedAsync(

@@ -2,8 +2,45 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:pageViewModels="clr-namespace:DarkStar.Client.PageViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="DarkStar.Client.PageViews.LoginPageView">
-    Welcome to Avalonia!
-</UserControl>
+             HorizontalAlignment="Stretch"
+             FontFamily="{StaticResource DefaultFont}"
+             VerticalAlignment="Stretch"
 
+             x:Class="DarkStar.Client.PageViews.LoginPageView">
+
+    <Design.DataContext>
+        <pageViewModels:LoginPageViewModel />
+    </Design.DataContext>
+    <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <Grid.RowDefinitions>*</Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>*</Grid.ColumnDefinitions>
+        <Grid.Background>
+            <ImageBrush Source="../Assets/Backgrounds/backgroud_1.png" TileMode="Tile" />
+        </Grid.Background>
+
+        <GroupBox Width="600" Height="600" Margin="4" Header="Login">
+            <GroupBox.Background>
+                <SolidColorBrush Color="Black" Opacity="0.7" />
+            </GroupBox.Background>
+
+            <StackPanel Orientation="Vertical">
+                <Label Content="Server:" />
+                <ComboBox Items="{Binding Servers}" SelectedItem="{Binding SelectedServer}" />
+                <Label Content="Username:" />
+                <TextBox Text="{Binding Username}" />
+                <Label Content="Password:" />
+                <TextBox PasswordChar="*" Text="{Binding Password}" />
+                <Button Content="Connect" Command="{Binding LoginCommand}" />
+                <StackPanel Margin="5" VerticalAlignment="Center" Orientation="Vertical">
+                    <Label Content="Server version: " />
+                    <TextBlock Foreground="Red" Text="{Binding ServerVersion}" />
+                    <Label Content="Server name: " />
+                    <TextBlock Foreground="Red" Text="{Binding ServerName}" />
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+
+    </Grid>
+</UserControl>

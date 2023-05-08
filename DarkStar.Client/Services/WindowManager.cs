@@ -27,26 +27,40 @@ public class WindowManager
     public void InitializePageView(PageViewControl pageViewControl) => _pageViewControl = pageViewControl;
 
 
-    public async Task NavigateToPage<T>() where T : ViewModelBase
+    public async Task NavigateToPage<T>() where T : PageViewModelBase
     {
         await Dispatcher.UIThread.InvokeAsync(
-            () =>
+            async () =>
             {
-                var pageViewAttribute = typeof(T).GetCustomAttribute<PageViewAttribute>();
-                if (pageViewAttribute == null)
+                try
                 {
-                    _logger.LogError("PageViewAttribute not found for {Name}", typeof(T).Name);
-                    throw new Exception($"PageViewAttribute not found for {typeof(T).Name}");
+                    var pageViewAttribute = typeof(T).GetCustomAttribute<PageViewAttribute>();
+                    if (pageViewAttribute == null)
+                    {
+                        _logger.LogError("PageViewAttribute not found for {Name}", typeof(T).Name);
+                        throw new Exception($"PageViewAttribute not found for {typeof(T).Name}");
+                    }
 
+                    var pageView = _serviceProvider.GetService(pageViewAttribute.View) as UserControl;
+                    var pageViewModel = _serviceProvider.GetService(typeof(T)) as PageViewModelBase;
+
+                    pageView.DataContext = pageViewModel;
+
+                    if (_pageViewControl.ControlProperty.Content is UserControl
+                        {
+                            DataContext: PageViewModelBase pageViewModelBase
+                        })
+                    {
+                        await pageViewModelBase.OnClose();
+                    }
+
+                    _pageViewControl.ControlProperty.Content = pageView;
                 }
-
-                var pageView = _serviceProvider.GetService(pageViewAttribute.View) as UserControl;
-                var pageViewModel = _serviceProvider.GetService(typeof(T));
-
-                pageView.DataContext = pageViewModel;
-                _pageViewControl.ControlProperty.Content = pageView;
+                catch (Exception ex)
+                {
+                    throw;
+                }
             }
         );
-
     }
 }
