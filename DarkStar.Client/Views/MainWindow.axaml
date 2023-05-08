@@ -7,6 +7,7 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="DarkStar.Client.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
+        FontFamily="{StaticResource DefaultFont}"
         Icon="/Assets/avalonia-logo.ico"
         Title="DarkStar Client">
 

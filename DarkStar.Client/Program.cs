@@ -1,6 +1,9 @@
 ﻿using Avalonia;
 using Avalonia.ReactiveUI;
 using System;
+using System.Reflection;
+using DarkStar.Api.Utils;
+using DarkStar.Client.Attributes;
 using DarkStar.Client.Services;
 using DarkStar.Client.ViewModels;
 using DarkStar.Client.Views;
@@ -48,7 +51,17 @@ class Program
         services.AddSingleton<INetworkMessageBuilder, JsonMessageBuilder>();
         services.AddSingleton<IDarkStarNetworkClient, SignalrNetworkClient>();
         services.AddSingleton(new DarkStarNetworkClientConfig());
+        services.AddSingleton<WindowManager>();
         services.AddSingleton<MainWindowViewModel>();
+
+        AssemblyUtils.GetAttribute<PageViewAttribute>().ForEach(
+            a =>
+            {
+                var attribute = a.GetCustomAttribute<PageViewAttribute>();
+
+                services.AddTransient(attribute.View);
+                services.AddTransient(a);
+            });
 
         Log.Logger = new LoggerConfiguration()
             .Enrich.FromLogContext()

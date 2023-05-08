@@ -8,4 +8,8 @@
         <StyleInclude Source="avares://Avalonia.Themes.Default/Accents/BaseDark.xaml"/>
         <StyleInclude Source="avares://Avalonia.Themes.Default/DefaultTheme.xaml"/>
     </Application.Styles>
+
+    <Application.Resources>
+        <FontFamily x:Key="DefaultFont">avares://Assets/Fonts/ProggyVector Regular.ttf</FontFamily>
+    </Application.Resources>
 </Application>
