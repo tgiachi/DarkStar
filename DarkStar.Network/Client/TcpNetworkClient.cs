@@ -19,6 +19,7 @@ namespace DarkStar.Network.Client;
 
 public class TcpNetworkClient : TcpClient, IDarkStarNetworkClient
 {
+    public event IDarkStarNetworkClient.ClientConnectedDelegate? OnClientConnected;
     public event IDarkStarNetworkClient.MessageReceivedDelegate? OnMessageReceived;
 
     private readonly ILogger _logger;
@@ -165,6 +166,11 @@ public class TcpNetworkClient : TcpClient, IDarkStarNetworkClient
         }
 
         return Task.CompletedTask;
+    }
+
+    public void SubscribeToMessage<TMessage>(DarkStarMessageType messageType, Func<IDarkStarNetworkMessage, Task> handler) where TMessage : IDarkStarNetworkMessage
+    {
+
     }
 
     public void RegisterMessageListener(DarkStarMessageType messageType, INetworkClientMessageListener serverMessageListener)

@@ -8,10 +8,12 @@ using Avalonia.Platform;
 using Avalonia.Rendering.SceneGraph;
 using Avalonia.Skia;
 using Avalonia.Threading;
+using PropertyChanged;
 using SkiaSharp;
 
 namespace DarkStar.Client.Controls;
 
+[DoNotNotify]
 public partial class RenderControl : UserControl
 {
     class CustomDrawOp : ICustomDrawOperation

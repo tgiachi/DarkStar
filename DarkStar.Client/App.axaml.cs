@@ -3,10 +3,12 @@ using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using DarkStar.Client.ViewModels;
 using DarkStar.Client.Views;
+using PropertyChanged;
 using Splat;
 
 namespace DarkStar.Client;
 
+[DoNotNotify]
 public partial class App : Application
 {
     private SplashScreenWindow _splashScreenWindow;

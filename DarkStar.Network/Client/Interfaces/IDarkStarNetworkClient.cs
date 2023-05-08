@@ -14,6 +14,12 @@ public interface IDarkStarNetworkClient
 {
     delegate Task MessageReceivedDelegate(DarkStarMessageType messageType, IDarkStarNetworkMessage message);
 
+
+
+    delegate Task ClientConnectedDelegate();
+
+    event  ClientConnectedDelegate OnClientConnected;
+
     event MessageReceivedDelegate OnMessageReceived;
 
     bool IsConnected { get; }
@@ -24,6 +30,8 @@ public interface IDarkStarNetworkClient
     ValueTask DisconnectAsync();
     Task SendMessageAsync(IDarkStarNetworkMessage message);
     Task SendMessageAsync(List<IDarkStarNetworkMessage> message);
+    void SubscribeToMessage<TMessage>(DarkStarMessageType messageType, Func<IDarkStarNetworkMessage, Task > handler) where TMessage : IDarkStarNetworkMessage;
+
     void RegisterMessageListener(DarkStarMessageType messageType, INetworkClientMessageListener serverMessageListener);
 
     void UnregisterMessageListener(DarkStarMessageType messageType, INetworkClientMessageListener clientMessageListener);

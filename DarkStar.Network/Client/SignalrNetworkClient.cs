@@ -13,13 +13,15 @@ namespace DarkStar.Network.Client;
 
 public class SignalrNetworkClient : IDarkStarNetworkClient
 {
+    public event IDarkStarNetworkClient.ClientConnectedDelegate? OnClientConnected;
     public event IDarkStarNetworkClient.MessageReceivedDelegate? OnMessageReceived;
 
     private readonly ILogger _logger;
     private readonly INetworkMessageBuilder _messageBuilder;
-    private  DarkStarNetworkClientConfig _clientConfig;
+    private DarkStarNetworkClientConfig _clientConfig;
     private HubConnection _hubConnection;
     private readonly Dictionary<DarkStarMessageType, INetworkClientMessageListener> _messageListeners = new();
+    private readonly Dictionary<DarkStarMessageType, Func<IDarkStarNetworkMessage, Task>> _actionMessageListeners = new();
 
     public SignalrNetworkClient(
         ILogger<SignalrNetworkClient> logger, INetworkMessageBuilder messageBuilder, DarkStarNetworkClientConfig clientConfig
@@ -44,7 +46,6 @@ public class SignalrNetworkClient : IDarkStarNetworkClient
 
         _hubConnection.On<string>("IncomingMessage", async (message) => { await OnMessageReceivedAsync(message); });
         await _hubConnection.StartAsync();
-        IsConnected = true;
     }
 
     public ValueTask ConnectAsync(DarkStarNetworkClientConfig config)
@@ -58,6 +59,12 @@ public class SignalrNetworkClient : IDarkStarNetworkClient
     {
         try
         {
+            if (!IsConnected)
+            {
+                OnClientConnected?.Invoke();
+                IsConnected = true;
+            }
+
             var parsedMessage = _messageBuilder.ParseMessage(Encoding.UTF8.GetBytes(message));
             _logger.LogDebug(
                 "Received message: {MessageType} size: {Size}",
@@ -88,12 +95,20 @@ public class SignalrNetworkClient : IDarkStarNetworkClient
         }
     }
 
+    public void SubscribeToMessage<TMessage>(DarkStarMessageType messageType, Func<IDarkStarNetworkMessage, Task> handler)
+        where TMessage : IDarkStarNetworkMessage
+    {
+        _actionMessageListeners.Add(messageType, handler);
+    }
+
     public void RegisterMessageListener(DarkStarMessageType messageType, INetworkClientMessageListener serverMessageListener)
     {
         _messageListeners.Add(messageType, serverMessageListener);
     }
 
-    public void UnregisterMessageListener(DarkStarMessageType messageType, INetworkClientMessageListener clientMessageListener)
+    public void UnregisterMessageListener(
+        DarkStarMessageType messageType, INetworkClientMessageListener clientMessageListener
+    )
     {
         if (_messageListeners.ContainsKey(messageType))
         {
@@ -112,6 +127,11 @@ public class SignalrNetworkClient : IDarkStarNetworkClient
         if (_messageListeners.TryGetValue(messageType, out var listener))
         {
             await listener.OnMessageReceivedAsync(messageType, message);
+        }
+
+        if (_actionMessageListeners.TryGetValue(messageType, out var actionListener))
+        {
+            await actionListener.Invoke(message);
         }
     }
 }

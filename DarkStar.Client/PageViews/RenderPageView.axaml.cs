@@ -2,9 +2,11 @@
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using DarkStar.Client.Controls;
+using PropertyChanged;
 
 namespace DarkStar.Client.PageViews;
 
+[DoNotNotify]
 public partial class RenderPageView : UserControl
 {
 
