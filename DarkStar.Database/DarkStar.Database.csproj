@@ -8,7 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="FreeSql" Version="3.2.693" />
+        <PackageReference Include="FreeSql" Version="3.2.695" />
         <PackageReference Include="FreeSql.Repository" Version="3.2.693" />
     </ItemGroup>
 
