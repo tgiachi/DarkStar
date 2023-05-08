@@ -43,7 +43,6 @@ public class SignalrNetworkClient : IDarkStarNetworkClient
         };
 
         _hubConnection.On<string>("IncomingMessage", async (message) => { await OnMessageReceivedAsync(message); });
-
         await _hubConnection.StartAsync();
         IsConnected = true;
     }

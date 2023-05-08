@@ -49,8 +49,8 @@ public class LoginPageViewModel : PageViewModelBase, INetworkClientMessageListen
                 await _serviceContext.NetworkClient.ConnectAsync(
                     new DarkStarNetworkClientConfig
                     {
-                        Address = $"http://{parsedUri.Host}",
-                        Port = parsedUri.Port
+                        Address = $"http://localhost",
+                        Port = 5000
                     }
                 );
             }
