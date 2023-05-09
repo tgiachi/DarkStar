@@ -7,6 +7,11 @@
         <Nullable>enable</Nullable>
         <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
         <ApplicationManifest>app.manifest</ApplicationManifest>
+        <ApplicationIcon>Assets\dark_star_icon.ico</ApplicationIcon>
+        <PublishSingleFile>True</PublishSingleFile>
+        <PublishTrimmed>True</PublishTrimmed>
+        <PublishReadyToRun>True</PublishReadyToRun>
+        
     </PropertyGroup>
 
     <ItemGroup>
