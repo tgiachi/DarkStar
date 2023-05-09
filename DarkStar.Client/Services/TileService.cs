@@ -15,6 +15,7 @@ using DarkStar.Client.Models.Events;
 using DarkStar.Client.Utils;
 using Microsoft.Extensions.Logging;
 using ReactiveUI;
+using SkiaSharp;
 using Bitmap = Avalonia.Media.Imaging.Bitmap;
 using Size = Avalonia.Size;
 
@@ -26,8 +27,9 @@ public class TileService
     private readonly ServiceContext _serviceContext;
 
     private IImage _defaultTileSet;
-    private int _tileWidth;
-    private int _tileHeight;
+    private SKBitmap _defaultSkImageTileSet;
+    public int TileWidth { get; set; }
+    public int TileHeight { get; set; }
     private int _imageWidth;
     private int _imageHeight;
 
@@ -48,14 +50,30 @@ public class TileService
             tileId = RandomUtils.Range(100, 4000);
         }
 
-        var x = tileId % (_imageWidth / _tileWidth);
-        var y = tileId / (_imageHeight / _tileHeight);
+        var x = tileId % (_imageWidth / TileWidth);
+        var y = tileId / (_imageHeight / TileHeight);
 
         var cropped = new CroppedBitmap(
             _defaultTileSet,
-            new PixelRect(x * _tileWidth, y * _tileHeight, _tileWidth, _tileHeight)
+            new PixelRect(x * TileWidth, y * TileHeight, TileWidth, TileHeight)
         );
 
+        return cropped;
+    }
+
+    public SKBitmap GetSkImageTile(int tileId)
+    {
+        // if (tileId == 0)
+        // {
+        //     tileId = RandomUtils.Range(100, 4000);
+        // }
+
+        var x = tileId % (_imageWidth / TileWidth);
+        var y = tileId / (_imageHeight / TileHeight);
+
+
+        var cropped = new SKBitmap(TileWidth, TileHeight);
+        _defaultSkImageTileSet.ExtractSubset(cropped, SKRectI.Create(x * TileWidth, y * TileHeight, TileWidth, TileWidth));
 
         return cropped;
     }
@@ -79,11 +97,13 @@ public class TileService
         if (File.Exists(fileName) && new FileInfo(fileName).Length == tileSet.FileSize)
         {
             MessageBus.Current.SendMessage(new ProgressUpdateEvent($"Skipping {tileSet.Name}"));
+            _defaultSkImageTileSet = SKBitmap.Decode(fileName);
             using var tileImage = Image.FromFile(fileName);
             _defaultTileSet = new Bitmap(fileName);
 
-            _tileHeight = tileSet.TileHeight;
-            _tileWidth = tileSet.TileWidth;
+
+            TileHeight = tileSet.TileHeight;
+            TileWidth = tileSet.TileWidth;
             _imageWidth = tileImage.Width;
             _imageHeight = tileImage.Height;
 
@@ -110,9 +130,9 @@ public class TileService
         await File.WriteAllBytesAsync(fileName, tileSetMemoryStream.ToArray());
         using var image = Image.FromStream(tileSetMemoryStream);
         _defaultTileSet = new Bitmap(tileSetMemoryStream);
-
-        _tileHeight = tileSet.TileHeight;
-        _tileWidth = tileSet.TileWidth;
+        _defaultSkImageTileSet = SKBitmap.Decode(tileSetMemoryStream);
+        TileHeight = tileSet.TileHeight;
+        TileWidth = tileSet.TileWidth;
         _imageWidth = image.Width;
         _imageHeight = image.Height;
 

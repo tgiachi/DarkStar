@@ -116,6 +116,7 @@ public class LoginPageViewModel : PageViewModelBase, INetworkClientMessageListen
                     }
                     else
                     {
+                        await Task.Delay(1000);
                         MessageBus.Current.SendMessage(new NavigateToViewEvent(typeof(PlayerSelectPageViewModel)));
                     }
                 }
