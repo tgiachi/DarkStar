@@ -237,7 +237,7 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
             );
         if (!entities.Any())
         {
-            throw new Exception($"Can't find game object type: {type}!");
+            throw new Exception($"Can't find game object type: {type.Name}!");
         }
 
         return entities.RandomItem();

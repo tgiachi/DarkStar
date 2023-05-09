@@ -17,12 +17,12 @@
         <Grid.RowDefinitions>*</Grid.RowDefinitions>
         <Grid.ColumnDefinitions>*</Grid.ColumnDefinitions>
         <Grid.Background>
-            <ImageBrush Source="../Assets/Backgrounds/backgroud_1.png" TileMode="Tile" />
+            <ImageBrush Source="../Assets/Backgrounds/background_1.png" TileMode="FlipX" />
         </Grid.Background>
 
         <GroupBox Width="600" Height="600" Margin="4">
             <GroupBox.Header>
-                <TextBlock HorizontalAlignment="Center" Text="{Binding ServerName, FallbackValue=No connection}" />
+                <TextBlock HorizontalAlignment="Center" Foreground="Red" Text="Login" />
             </GroupBox.Header>
             <GroupBox.Background>
                 <SolidColorBrush Color="Black" Opacity="0.7" />
@@ -30,10 +30,6 @@
 
             <StackPanel>
 
-                <Grid RowDefinitions="*,*,*,*">
-                    <Label Grid.Row="0" Content="Server version: " />
-                    <TextBlock Grid.Row="1" Foreground="Red" Text="{Binding ServerVersion}" />
-                </Grid>
 
                 <StackPanel Orientation="Vertical">
 

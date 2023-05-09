@@ -14,11 +14,11 @@ using Microsoft.Extensions.Logging;
 
 namespace DarkStar.Engine.MessageListeners;
 
-[NetworkMessageListener(DarkStarMessageType.PlayerListResponse)]
-public class PlayerListMessageListener : BaseNetworkMessageListener<PlayerListResponseMessage>
+[NetworkMessageListener(DarkStarMessageType.PlayerListRequest)]
+public class PlayerListMessageListener : BaseNetworkMessageListener<PlayerListRequestMessage>
 {
     public PlayerListMessageListener(
-        ILogger<BaseNetworkMessageListener<PlayerListResponseMessage>> logger,
+        ILogger<PlayerListMessageListener> logger,
         IDarkSunEngine engine
     ) : base(logger, engine)
     {
@@ -26,14 +26,14 @@ public class PlayerListMessageListener : BaseNetworkMessageListener<PlayerListRe
 
     public override async Task<List<IDarkStarNetworkMessage>> OnMessageReceivedAsync(
         string sessionId,
-        DarkStarMessageType messageType, PlayerListResponseMessage message
+        DarkStarMessageType messageType, PlayerListRequestMessage message
     )
     {
         var playerSession = Engine.PlayerService.GetSession(sessionId);
         if (playerSession.IsLogged)
         {
             return SingleMessage(
-                await PlayerDataHelper.BuildPlayerListForPlayerAsync(Engine, playerSession.PlayerId)
+                await PlayerDataHelper.BuildPlayerListForPlayerAsync(Engine, playerSession.AccountId)
             );
         }
 

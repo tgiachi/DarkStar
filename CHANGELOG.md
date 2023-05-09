@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="0.9.0"></a>
+## [0.9.0](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.9.0) (2023-5-9)
+
+### ✨ Features
+
+* **RenderControl.axaml.cs:** add RenderAction property to CustomDrawOp class ([f913cff](https://www.github.com/tgiachi/DarkSun/commit/f913cffc04f5709e989b7e66825e6e0e81c0b634))
+
+### Other
+
+* ✨ feat(client): add TileService to download tilesets on connection and cache them ([b737a34](https://www.github.com/tgiachi/DarkSun/commit/b737a341c06ea7e59f7cc46b78830cb97eb94f8e))
+* ✨ feat(TileService.cs): add support for getting tile images by id ([ecaa6b8](https://www.github.com/tgiachi/DarkSun/commit/ecaa6b8290fccc33e61d7e93c182f0ceac3fc4af))
+* 🎨 style(RenderPageView.axaml): change column widths to be more responsive ([b0953d6](https://www.github.com/tgiachi/DarkSun/commit/b0953d640083bea35bf12a0a517f869344cf4b73))
+* 🚀 feat(DarkStar.Client.csproj): add application icon and enable publish options ([6216e46](https://www.github.com/tgiachi/DarkSun/commit/6216e465f43ebcd31c5f4bf3690eb106fb7e120f))
+* **ci.yml:** change runs-on to ubuntu-latest from self-hosted ([76b9e71](https://www.github.com/tgiachi/DarkSun/commit/76b9e7139c230586fea1d6354767fcd6f08bb39e))
+
 <a name="0.8.0"></a>
 ## [0.8.0](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.8.0) (2023-5-8)
 

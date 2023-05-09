@@ -1,0 +1,47 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             x:Name="PlayerUc"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="DarkStar.Client.PageViews.PlayerSelectPageView">
+
+    <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <Grid.RowDefinitions>*</Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>*</Grid.ColumnDefinitions>
+        <Grid.Background>
+            <ImageBrush Source="../Assets/Backgrounds/background_2.jpg" TileMode="FlipX" />
+        </Grid.Background>
+        <GroupBox Header="Choose character" Width="600">
+
+            <DataGrid Items="{Binding Characters}" Height="500">
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Width="40" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                       Source="{Binding Image}">
+                                </Image>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="Level" Binding="{Binding Level}" />
+                    <DataGridTextColumn Width="200" Header="Name" Binding="{Binding Name}" />
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Margin="5">
+                                    <Button Command="{Binding #PlayerUc.DataContext.SelectCharacterCommand }" CommandParameter="{Binding Id}"> Select </Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+
+
+        </GroupBox>
+    </Grid>
+
+</UserControl>

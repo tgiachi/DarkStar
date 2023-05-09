@@ -29,7 +29,7 @@ public class TilesController : ControllerBase
                     TileWidth = t.TileWidth,
                     TileHeight = t.TileHeight
                 }
-            )
+            ).ToList()
         );
     }
 

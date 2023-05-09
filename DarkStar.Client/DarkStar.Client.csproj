@@ -2,15 +2,19 @@
     <PropertyGroup>
 
         <OutputType>WinExe</OutputType>
-        <Version>0.8.0</Version>
+        <Version>0.9.0</Version>
         <TargetFramework>net7.0</TargetFramework>
         <Nullable>enable</Nullable>
         <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
         <ApplicationManifest>app.manifest</ApplicationManifest>
+        <ApplicationIcon>Assets\dark_star_icon.ico</ApplicationIcon>
+        <PublishSingleFile>True</PublishSingleFile>
+        <PublishTrimmed>True</PublishTrimmed>
+        <PublishReadyToRun>True</PublishReadyToRun>
+        
     </PropertyGroup>
 
     <ItemGroup>
-        <Folder Include="Models\" />
         <AvaloniaResource Include="Assets\**" />
     </ItemGroup>
 
