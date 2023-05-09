@@ -4,6 +4,7 @@ using System.Reactive;
 using System.Threading.Tasks;
 using Avalonia.Threading;
 using DarkStar.Client.Attributes;
+using DarkStar.Client.Models.Events;
 using DarkStar.Client.PageViews;
 using DarkStar.Client.Services;
 using DarkStar.Client.ViewModels;
@@ -29,8 +30,6 @@ public class LoginPageViewModel : PageViewModelBase, INetworkClientMessageListen
     public string Password { get; set; }
 
     public string ErrorConnection { get; set; }
-    public string ServerName { get; set; }
-    public string ServerVersion { get; set; }
 
     private bool _serverResponse;
     private bool _serverVersion;
@@ -39,12 +38,10 @@ public class LoginPageViewModel : PageViewModelBase, INetworkClientMessageListen
 
     public LoginPageViewModel(ServiceContext serviceContext)
     {
-        ServerName = "No connection";
         _serviceContext = serviceContext;
         _serviceContext.NetworkClient.OnClientConnected += NetworkClientOnOnClientConnected;
         _serviceContext.NetworkClient.RegisterMessageListener(DarkStarMessageType.ServerVersionResponse, this);
         _serviceContext.NetworkClient.RegisterMessageListener(DarkStarMessageType.ServerNameResponse, this);
-        _serviceContext.NetworkClient.RegisterMessageListener(DarkStarMessageType.TileSetListResponse, this);
         _serviceContext.NetworkClient.RegisterMessageListener(DarkStarMessageType.AccountLoginResponse, this);
 
         Servers = new ObservableCollection<string> { "http://localhost:5000/" };
@@ -70,6 +67,7 @@ public class LoginPageViewModel : PageViewModelBase, INetworkClientMessageListen
 
     private async Task NetworkClientOnOnClientConnected()
     {
+        MessageBus.Current.SendMessage(new OnConnectedEvent());
         await _serviceContext.NetworkClient.SendMessageAsync(new AccountLoginRequestMessage(Username, Password));
     }
 
@@ -88,8 +86,13 @@ public class LoginPageViewModel : PageViewModelBase, INetworkClientMessageListen
                 if (messageType == DarkStarMessageType.ServerVersionResponse)
                 {
                     var serverVersionResponse = (ServerVersionResponseMessage)message;
-                    ServerVersion =
-                        $"v {serverVersionResponse.Major}.{serverVersionResponse.Minor}.{serverVersionResponse.Build}";
+                    MessageBus.Current.SendMessage(
+                        new ServerVersionEvent()
+                        {
+                            ServerVersion = $"{serverVersionResponse.Major}.{serverVersionResponse.Minor}.{serverVersionResponse.Build}"
+                        }
+                    );
+
 
                     _serverVersion = true;
                 }
@@ -97,17 +100,15 @@ public class LoginPageViewModel : PageViewModelBase, INetworkClientMessageListen
                 if (messageType == DarkStarMessageType.ServerNameResponse)
                 {
                     var serverNameResponse = (ServerNameResponseMessage)message;
-                    ServerName = serverNameResponse.ServerName;
+                    MessageBus.Current.SendMessage(
+                        new ServerNameEvent()
+                        {
+                            Name = serverNameResponse.ServerName
+                        }
+                    );
                     _serverResponse = true;
                 }
 
-                if (messageType == DarkStarMessageType.TileSetListResponse)
-                {
-                    var tileSetList = (TileSetListResponseMessage)message;
-                    foreach (var tileSet in tileSetList.TileSets)
-                    {
-                    }
-                }
 
                 if (messageType == DarkStarMessageType.AccountLoginResponse)
                 {
@@ -118,10 +119,6 @@ public class LoginPageViewModel : PageViewModelBase, INetworkClientMessageListen
                     }
                 }
 
-                if (_serverResponse && _serverVersion)
-                {
-                    await _serviceContext.NetworkClient.SendMessageAsync(new TileSetListRequestMessage());
-                }
             }
         );
     }

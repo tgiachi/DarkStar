@@ -11,26 +11,38 @@
         Icon="/Assets/dark_star_icon.ico"
         Title="DarkStar Client">
 
-    <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-        <vm:MainWindowViewModel/>
-    </Design.DataContext>
+    <!--<Design.DataContext>
+        ~1~ This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) @1@
+        ~1~<vm:MainWindowViewModel/>@1@
+    </Design.DataContext>-->
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+    <Grid RowDefinitions="30,*,30">
+
         <Menu>
-            <MenuItem Header="File"/>
+            <MenuItem Header="File" />
             <MenuItem Header="Views">
                 <MenuItem Header="Render" Command="{Binding ShowRenderViewCommand }" />
             </MenuItem>
         </Menu>
-        <controls:PageViewControl x:Name="ViewControl" Margin="5"  Grid.Row="1" />
+        <controls:PageViewControl x:Name="ViewControl" Margin="5" Grid.Row="1" />
+        <ItemsControl DockPanel.Dock="Bottom" Height="30" Grid.Row="2">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel VerticalAlignment="Center" Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <Label Content="Server name"></Label>
+            <TextBlock VerticalAlignment="Center" Foreground="Red" Text="{Binding ServerName}" />
+            <Label Content="Version" />
+            <TextBlock  VerticalAlignment="Center" Foreground="Red" Text="{Binding ServerVersion}" />
+            <Separator Width="20" />
+            <Grid>
+                <TextBlock Text="{Binding ProgressText}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <ProgressBar Width="150" Maximum="{Binding MaxProgressValue}" Value="{Binding ProgressValue}"  />
+            </Grid>
+        </ItemsControl>
     </Grid>
-
 
 
 </Window>

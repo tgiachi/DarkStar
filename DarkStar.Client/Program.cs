@@ -53,6 +53,7 @@ class Program
         services.AddSingleton(new DarkStarNetworkClientConfig());
         services.AddSingleton<WindowManager>();
         services.AddSingleton<MainWindowViewModel>();
+        services.AddSingleton<TileService>();
         services.AddSingleton<ServiceContext>();
 
         AssemblyUtils.GetAttribute<PageViewAttribute>()
