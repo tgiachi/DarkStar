@@ -30,14 +30,14 @@
             </ExperimentalAcrylicBorder.Material>
         </ExperimentalAcrylicBorder>
 
-        <Menu>
-            <MenuItem Header="File" />
+        <Menu Background="Black" VerticalAlignment="Center">
+            <MenuItem  Header="File" />
             <MenuItem Header="Views">
                 <MenuItem Header="Render" Command="{Binding ShowRenderViewCommand }" />
             </MenuItem>
         </Menu>
         <controls:PageViewControl x:Name="ViewControl" Margin="5" Grid.Row="1" />
-        <ItemsControl DockPanel.Dock="Bottom" Height="30" Grid.Row="2">
+        <ItemsControl DockPanel.Dock="Bottom" Height="30" Grid.Row="2" Background="Black">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel Margin="5,0,0,0" VerticalAlignment="Center" Orientation="Horizontal" />
