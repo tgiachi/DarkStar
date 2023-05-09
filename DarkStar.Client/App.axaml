@@ -11,6 +11,7 @@
         <StyleInclude Source="avares://Aura.UI.FluentTheme/AuraUI.xaml"/>
         <StyleInclude Source="avares://Avalonia.Themes.Default/Accents/BaseDark.xaml"/>
         <StyleInclude Source="avares://Avalonia.Themes.Default/DefaultTheme.xaml"/>
+        <StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Default.xaml"/>
 
         <Style Selector="Window">
             <Setter Property="FontFamily" Value="{StaticResource DefaultFont}"/>

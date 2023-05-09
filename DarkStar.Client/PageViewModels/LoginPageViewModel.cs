@@ -31,8 +31,6 @@ public class LoginPageViewModel : PageViewModelBase, INetworkClientMessageListen
 
     public string ErrorConnection { get; set; }
 
-    private bool _serverResponse;
-    private bool _serverVersion;
 
     public ReactiveCommand<Unit, Task> LoginCommand { get; set; }
 
@@ -74,6 +72,8 @@ public class LoginPageViewModel : PageViewModelBase, INetworkClientMessageListen
     public override Task OnClose()
     {
         _serviceContext.NetworkClient.UnregisterMessageListener(DarkStarMessageType.ServerVersionResponse, this);
+        _serviceContext.NetworkClient.UnregisterMessageListener(DarkStarMessageType.ServerNameResponse, this);
+        _serviceContext.NetworkClient.UnregisterMessageListener(DarkStarMessageType.AccountLoginResponse, this);
         _serviceContext.NetworkClient.OnClientConnected -= NetworkClientOnOnClientConnected;
         return Task.CompletedTask;
     }
@@ -89,12 +89,10 @@ public class LoginPageViewModel : PageViewModelBase, INetworkClientMessageListen
                     MessageBus.Current.SendMessage(
                         new ServerVersionEvent()
                         {
-                            ServerVersion = $"{serverVersionResponse.Major}.{serverVersionResponse.Minor}.{serverVersionResponse.Build}"
+                            ServerVersion =
+                                $"{serverVersionResponse.Major}.{serverVersionResponse.Minor}.{serverVersionResponse.Build}"
                         }
                     );
-
-
-                    _serverVersion = true;
                 }
 
                 if (messageType == DarkStarMessageType.ServerNameResponse)
@@ -106,7 +104,6 @@ public class LoginPageViewModel : PageViewModelBase, INetworkClientMessageListen
                             Name = serverNameResponse.ServerName
                         }
                     );
-                    _serverResponse = true;
                 }
 
 
@@ -117,8 +114,11 @@ public class LoginPageViewModel : PageViewModelBase, INetworkClientMessageListen
                     {
                         ErrorConnection = "Invalid username or password!";
                     }
+                    else
+                    {
+                        MessageBus.Current.SendMessage(new NavigateToViewEvent(typeof(PlayerSelectPageViewModel)));
+                    }
                 }
-
             }
         );
     }

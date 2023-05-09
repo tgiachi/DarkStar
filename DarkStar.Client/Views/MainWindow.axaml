@@ -7,6 +7,8 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="DarkStar.Client.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
+        TransparencyLevelHint="AcrylicBlur"
+        Background="Transparent"
         FontFamily="{StaticResource DefaultFont}"
         Icon="/Assets/dark_star_icon.ico"
         Title="DarkStar Client">
@@ -18,6 +20,15 @@
     </Design.DataContext>-->
 
     <Grid RowDefinitions="30,*,30">
+        <ExperimentalAcrylicBorder IsHitTestVisible="False">
+            <ExperimentalAcrylicBorder.Material>
+                <ExperimentalAcrylicMaterial
+                    BackgroundSource="Digger"
+                    TintColor="Black"
+                    TintOpacity="1"
+                    MaterialOpacity="0.65" />
+            </ExperimentalAcrylicBorder.Material>
+        </ExperimentalAcrylicBorder>
 
         <Menu>
             <MenuItem Header="File" />
@@ -29,7 +40,7 @@
         <ItemsControl DockPanel.Dock="Bottom" Height="30" Grid.Row="2">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <StackPanel VerticalAlignment="Center" Orientation="Horizontal" />
+                    <StackPanel Margin="5,0,0,0" VerticalAlignment="Center" Orientation="Horizontal" />
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
             <Label Content="Server name"></Label>

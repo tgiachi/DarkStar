@@ -45,6 +45,8 @@ public class MainWindowViewModel : ViewModelBase
                 }
             );
 
+
+
         ShowRenderViewCommand = ReactiveCommand.Create(
             async () => { await _windowManager.NavigateToPage<RenderPageViewModel>(); }
         );

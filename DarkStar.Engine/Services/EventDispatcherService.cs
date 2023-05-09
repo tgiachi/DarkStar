@@ -58,6 +58,8 @@ public class EventDispatcherService : BaseService<EventDispatcherService>, IEven
         _ = Task.Run(
             async () =>
             {
+                await Engine.NetworkServer.SendMessageAsync(obj.SessionId, new PlayerLoginResponseMessage(true));
+                await Task.Delay(500);
                 Logger.LogDebug("Sending information of map to player {PlayerId}", obj.PlayerId);
                 Engine.NetworkServer.SendMessageAsync(
                     obj.SessionId,

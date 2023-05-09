@@ -17,7 +17,7 @@
         <Grid.RowDefinitions>*</Grid.RowDefinitions>
         <Grid.ColumnDefinitions>*</Grid.ColumnDefinitions>
         <Grid.Background>
-            <ImageBrush Source="../Assets/Backgrounds/backgroud_1.png" TileMode="FlipX" />
+            <ImageBrush Source="../Assets/Backgrounds/background_1.png" TileMode="FlipX" />
         </Grid.Background>
 
         <GroupBox Width="600" Height="600" Margin="4">
