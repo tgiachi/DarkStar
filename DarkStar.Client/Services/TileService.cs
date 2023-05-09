@@ -23,6 +23,7 @@ namespace DarkStar.Client.Services;
 
 public class TileService
 {
+    public bool TilesReady { get; set; }
     private readonly ILogger _logger;
     private readonly ServiceContext _serviceContext;
 
@@ -89,6 +90,7 @@ public class TileService
         {
             await DownloadTileSet(tileSet);
         }
+        TilesReady = true;
     }
 
     private async Task DownloadTileSet(TileSetDto tileSet)
@@ -106,7 +108,8 @@ public class TileService
             TileWidth = tileSet.TileWidth;
             _imageWidth = tileImage.Width;
             _imageHeight = tileImage.Height;
-
+            TilesReady = true;
+            MessageBus.Current.SendMessage(new TilesReadyEvent());
             return;
         }
 
@@ -139,5 +142,8 @@ public class TileService
         MessageBus.Current.SendMessage(
             new ProgressUpdateEvent($"{tileSet.Name} downloaded!")
         );
+        MessageBus.Current.SendMessage(new TilesReadyEvent());
+        TilesReady = true;
+
     }
 }

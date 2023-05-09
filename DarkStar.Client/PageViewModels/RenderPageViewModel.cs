@@ -26,7 +26,10 @@ public class RenderPageViewModel : PageViewModelBase
         _serviceContext = serviceContext;
 
         _serviceContext.NetworkClient.SubscribeToMessage<MapResponseMessage>(DarkStarMessageType.MapResponse, OnMapResponse);
-        _serviceContext.NetworkClient.SubscribeToMessage<NpcMovedResponseMessage>(DarkStarMessageType.NpcMovedResponse, OnNpcMoved);
+        _serviceContext.NetworkClient.SubscribeToMessage<NpcMovedResponseMessage>(
+            DarkStarMessageType.NpcMovedResponse,
+            OnNpcMoved
+        );
     }
 
     private Task OnNpcMoved(IDarkStarNetworkMessage arg)
@@ -55,6 +58,14 @@ public class RenderPageViewModel : PageViewModelBase
         foreach (var npc in message.NpcsLayer)
         {
             _graphicEngineRender.AddTile(MapLayer.Creatures, new Tile(npc.Id.ToString(), npc.TileType, npc.Position));
+        }
+
+        foreach (var gameObject in message.GameObjectsLayer)
+        {
+            _graphicEngineRender.AddTile(
+                MapLayer.Objects,
+                new Tile(gameObject.Id.ToString(), gameObject.TileType, gameObject.Position)
+            );
         }
 
         return Task.CompletedTask;
