@@ -78,7 +78,7 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><a class="xref" href="DarkStar.Api.Engine.MessageListeners.BaseNetworkMessageListener-1.html">BaseNetworkMessageListener</a>&lt;<a class="xref" href="DarkStar.Network.Protocol.Messages.Players.PlayerListResponseMessage.html">PlayerListResponseMessage</a>&gt;</div>
+    <div class="level1"><a class="xref" href="DarkStar.Api.Engine.MessageListeners.BaseNetworkMessageListener-1.html">BaseNetworkMessageListener</a>&lt;<a class="xref" href="DarkStar.Network.Protocol.Messages.Players.PlayerListRequestMessage.html">PlayerListRequestMessage</a>&gt;</div>
     <div class="level2"><span class="xref">PlayerListMessageListener</span></div>
   </div>
   <div class="implements">
@@ -88,22 +88,22 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="DarkStar.Api.Engine.MessageListeners.BaseNetworkMessageListener-1.html#DarkStar_Api_Engine_MessageListeners_BaseNetworkMessageListener_1_Logger">BaseNetworkMessageListener&lt;PlayerListResponseMessage&gt;.Logger</a>
+      <a class="xref" href="DarkStar.Api.Engine.MessageListeners.BaseNetworkMessageListener-1.html#DarkStar_Api_Engine_MessageListeners_BaseNetworkMessageListener_1_Logger">BaseNetworkMessageListener&lt;PlayerListRequestMessage&gt;.Logger</a>
     </div>
     <div>
-      <a class="xref" href="DarkStar.Api.Engine.MessageListeners.BaseNetworkMessageListener-1.html#DarkStar_Api_Engine_MessageListeners_BaseNetworkMessageListener_1_Engine">BaseNetworkMessageListener&lt;PlayerListResponseMessage&gt;.Engine</a>
+      <a class="xref" href="DarkStar.Api.Engine.MessageListeners.BaseNetworkMessageListener-1.html#DarkStar_Api_Engine_MessageListeners_BaseNetworkMessageListener_1_Engine">BaseNetworkMessageListener&lt;PlayerListRequestMessage&gt;.Engine</a>
     </div>
     <div>
-      <a class="xref" href="DarkStar.Api.Engine.MessageListeners.BaseNetworkMessageListener-1.html#DarkStar_Api_Engine_MessageListeners_BaseNetworkMessageListener_1_OnMessageReceivedAsync_System_String_DarkStar_Network_Protocol_Types_DarkStarMessageType_DarkStar_Network_Protocol_Interfaces_Messages_IDarkStarNetworkMessage_">BaseNetworkMessageListener&lt;PlayerListResponseMessage&gt;.OnMessageReceivedAsync(string, DarkStarMessageType, IDarkStarNetworkMessage)</a>
+      <a class="xref" href="DarkStar.Api.Engine.MessageListeners.BaseNetworkMessageListener-1.html#DarkStar_Api_Engine_MessageListeners_BaseNetworkMessageListener_1_OnMessageReceivedAsync_System_String_DarkStar_Network_Protocol_Types_DarkStarMessageType_DarkStar_Network_Protocol_Interfaces_Messages_IDarkStarNetworkMessage_">BaseNetworkMessageListener&lt;PlayerListRequestMessage&gt;.OnMessageReceivedAsync(string, DarkStarMessageType, IDarkStarNetworkMessage)</a>
     </div>
     <div>
-      <a class="xref" href="DarkStar.Api.Engine.MessageListeners.BaseNetworkMessageListener-1.html#DarkStar_Api_Engine_MessageListeners_BaseNetworkMessageListener_1_SingleMessage_DarkStar_Network_Protocol_Interfaces_Messages_IDarkStarNetworkMessage_">BaseNetworkMessageListener&lt;PlayerListResponseMessage&gt;.SingleMessage(IDarkStarNetworkMessage)</a>
+      <a class="xref" href="DarkStar.Api.Engine.MessageListeners.BaseNetworkMessageListener-1.html#DarkStar_Api_Engine_MessageListeners_BaseNetworkMessageListener_1_SingleMessage_DarkStar_Network_Protocol_Interfaces_Messages_IDarkStarNetworkMessage_">BaseNetworkMessageListener&lt;PlayerListRequestMessage&gt;.SingleMessage(IDarkStarNetworkMessage)</a>
     </div>
     <div>
-      <a class="xref" href="DarkStar.Api.Engine.MessageListeners.BaseNetworkMessageListener-1.html#DarkStar_Api_Engine_MessageListeners_BaseNetworkMessageListener_1_MultipleMessages_DarkStar_Network_Protocol_Interfaces_Messages_IDarkStarNetworkMessage___">BaseNetworkMessageListener&lt;PlayerListResponseMessage&gt;.MultipleMessages(params IDarkStarNetworkMessage[])</a>
+      <a class="xref" href="DarkStar.Api.Engine.MessageListeners.BaseNetworkMessageListener-1.html#DarkStar_Api_Engine_MessageListeners_BaseNetworkMessageListener_1_MultipleMessages_DarkStar_Network_Protocol_Interfaces_Messages_IDarkStarNetworkMessage___">BaseNetworkMessageListener&lt;PlayerListRequestMessage&gt;.MultipleMessages(params IDarkStarNetworkMessage[])</a>
     </div>
     <div>
-      <a class="xref" href="DarkStar.Api.Engine.MessageListeners.BaseNetworkMessageListener-1.html#DarkStar_Api_Engine_MessageListeners_BaseNetworkMessageListener_1_EmptyMessage">BaseNetworkMessageListener&lt;PlayerListResponseMessage&gt;.EmptyMessage()</a>
+      <a class="xref" href="DarkStar.Api.Engine.MessageListeners.BaseNetworkMessageListener-1.html#DarkStar_Api_Engine_MessageListeners_BaseNetworkMessageListener_1_EmptyMessage">BaseNetworkMessageListener&lt;PlayerListRequestMessage&gt;.EmptyMessage()</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
@@ -131,25 +131,25 @@
   <h6><strong>Assembly</strong>: DarkStar.Engine.dll</h6>
   <h5 id="DarkStar_Engine_MessageListeners_PlayerListMessageListener_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[NetworkMessageListener(DarkStarMessageType.PlayerListResponse)]
-public class PlayerListMessageListener : BaseNetworkMessageListener&lt;PlayerListResponseMessage&gt;, INetworkServerMessageListener</code></pre>
+    <pre><code class="lang-csharp hljs">[NetworkMessageListener(DarkStarMessageType.PlayerListRequest)]
+public class PlayerListMessageListener : BaseNetworkMessageListener&lt;PlayerListRequestMessage&gt;, INetworkServerMessageListener</code></pre>
   </div>
   <h3 id="constructors">Constructors
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_MessageListeners_PlayerListMessageListener__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Api_Engine_MessageListeners_BaseNetworkMessageListener_DarkStar_Network_Protocol_Messages_Players_PlayerListResponseMessage___DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.MessageListeners.PlayerListMessageListener.%23ctor(Microsoft.Extensions.Logging.ILogger%7BDarkStar.Api.Engine.MessageListeners.BaseNetworkMessageListener%7BDarkStar.Network.Protocol.Messages.Players.PlayerListResponseMessage%7D%7D%2CDarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_MessageListeners_PlayerListMessageListener__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Engine_MessageListeners_PlayerListMessageListener__DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.MessageListeners.PlayerListMessageListener.%23ctor(Microsoft.Extensions.Logging.ILogger%7BDarkStar.Engine.MessageListeners.PlayerListMessageListener%7D%2CDarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/MessageListeners/PlayerListServerMessageListener.cs/#L20">View Source</a>
   </span>
   <a id="DarkStar_Engine_MessageListeners_PlayerListMessageListener__ctor_" data-uid="DarkStar.Engine.MessageListeners.PlayerListMessageListener.#ctor*"></a>
-  <h4 id="DarkStar_Engine_MessageListeners_PlayerListMessageListener__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Api_Engine_MessageListeners_BaseNetworkMessageListener_DarkStar_Network_Protocol_Messages_Players_PlayerListResponseMessage___DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_" data-uid="DarkStar.Engine.MessageListeners.PlayerListMessageListener.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Api.Engine.MessageListeners.BaseNetworkMessageListener{DarkStar.Network.Protocol.Messages.Players.PlayerListResponseMessage}},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)">PlayerListMessageListener(ILogger&lt;BaseNetworkMessageListener&lt;PlayerListResponseMessage&gt;&gt;, IDarkSunEngine)</h4>
+  <h4 id="DarkStar_Engine_MessageListeners_PlayerListMessageListener__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Engine_MessageListeners_PlayerListMessageListener__DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_" data-uid="DarkStar.Engine.MessageListeners.PlayerListMessageListener.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.MessageListeners.PlayerListMessageListener},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)">PlayerListMessageListener(ILogger&lt;PlayerListMessageListener&gt;, IDarkSunEngine)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public PlayerListMessageListener(ILogger&lt;BaseNetworkMessageListener&lt;PlayerListResponseMessage&gt;&gt; logger, IDarkSunEngine engine)</code></pre>
+    <pre><code class="lang-csharp hljs">public PlayerListMessageListener(ILogger&lt;PlayerListMessageListener&gt; logger, IDarkSunEngine engine)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -162,7 +162,7 @@ public class PlayerListMessageListener : BaseNetworkMessageListener&lt;PlayerLis
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1">ILogger</a>&lt;<a class="xref" href="DarkStar.Api.Engine.MessageListeners.BaseNetworkMessageListener-1.html">BaseNetworkMessageListener</a>&lt;<a class="xref" href="DarkStar.Network.Protocol.Messages.Players.PlayerListResponseMessage.html">PlayerListResponseMessage</a>&gt;&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1">ILogger</a>&lt;<a class="xref" href="DarkStar.Engine.MessageListeners.PlayerListMessageListener.html">PlayerListMessageListener</a>&gt;</td>
         <td><span class="parametername">logger</span></td>
         <td></td>
       </tr>
@@ -177,18 +177,18 @@ public class PlayerListMessageListener : BaseNetworkMessageListener&lt;PlayerLis
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_MessageListeners_PlayerListMessageListener_OnMessageReceivedAsync_System_String_DarkStar_Network_Protocol_Types_DarkStarMessageType_DarkStar_Network_Protocol_Messages_Players_PlayerListResponseMessage_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.MessageListeners.PlayerListMessageListener.OnMessageReceivedAsync(System.String%2CDarkStar.Network.Protocol.Types.DarkStarMessageType%2CDarkStar.Network.Protocol.Messages.Players.PlayerListResponseMessage)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_MessageListeners_PlayerListMessageListener_OnMessageReceivedAsync_System_String_DarkStar_Network_Protocol_Types_DarkStarMessageType_DarkStar_Network_Protocol_Messages_Players_PlayerListRequestMessage_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.MessageListeners.PlayerListMessageListener.OnMessageReceivedAsync(System.String%2CDarkStar.Network.Protocol.Types.DarkStarMessageType%2CDarkStar.Network.Protocol.Messages.Players.PlayerListRequestMessage)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/MessageListeners/PlayerListServerMessageListener.cs/#L27">View Source</a>
   </span>
   <a id="DarkStar_Engine_MessageListeners_PlayerListMessageListener_OnMessageReceivedAsync_" data-uid="DarkStar.Engine.MessageListeners.PlayerListMessageListener.OnMessageReceivedAsync*"></a>
-  <h4 id="DarkStar_Engine_MessageListeners_PlayerListMessageListener_OnMessageReceivedAsync_System_String_DarkStar_Network_Protocol_Types_DarkStarMessageType_DarkStar_Network_Protocol_Messages_Players_PlayerListResponseMessage_" data-uid="DarkStar.Engine.MessageListeners.PlayerListMessageListener.OnMessageReceivedAsync(System.String,DarkStar.Network.Protocol.Types.DarkStarMessageType,DarkStar.Network.Protocol.Messages.Players.PlayerListResponseMessage)">OnMessageReceivedAsync(string, DarkStarMessageType, PlayerListResponseMessage)</h4>
+  <h4 id="DarkStar_Engine_MessageListeners_PlayerListMessageListener_OnMessageReceivedAsync_System_String_DarkStar_Network_Protocol_Types_DarkStarMessageType_DarkStar_Network_Protocol_Messages_Players_PlayerListRequestMessage_" data-uid="DarkStar.Engine.MessageListeners.PlayerListMessageListener.OnMessageReceivedAsync(System.String,DarkStar.Network.Protocol.Types.DarkStarMessageType,DarkStar.Network.Protocol.Messages.Players.PlayerListRequestMessage)">OnMessageReceivedAsync(string, DarkStarMessageType, PlayerListRequestMessage)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override Task&lt;List&lt;IDarkStarNetworkMessage&gt;&gt; OnMessageReceivedAsync(string sessionId, DarkStarMessageType messageType, PlayerListResponseMessage message)</code></pre>
+    <pre><code class="lang-csharp hljs">public override Task&lt;List&lt;IDarkStarNetworkMessage&gt;&gt; OnMessageReceivedAsync(string sessionId, DarkStarMessageType messageType, PlayerListRequestMessage message)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -211,7 +211,7 @@ public class PlayerListMessageListener : BaseNetworkMessageListener&lt;PlayerLis
         <td></td>
       </tr>
       <tr>
-        <td><a class="xref" href="DarkStar.Network.Protocol.Messages.Players.PlayerListResponseMessage.html">PlayerListResponseMessage</a></td>
+        <td><a class="xref" href="DarkStar.Network.Protocol.Messages.Players.PlayerListRequestMessage.html">PlayerListRequestMessage</a></td>
         <td><span class="parametername">message</span></td>
         <td></td>
       </tr>
@@ -233,7 +233,7 @@ public class PlayerListMessageListener : BaseNetworkMessageListener&lt;PlayerLis
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="DarkStar.Api.Engine.MessageListeners.BaseNetworkMessageListener{DarkStar.Network.Protocol.Messages.Players.PlayerListResponseMessage}.html#DarkStar.Api.Engine.MessageListeners.BaseNetworkMessageListener{DarkStar.Network.Protocol.Messages.Players.PlayerListResponseMessage}.OnMessageReceivedAsync(System.String,DarkStar.Network.Protocol.Types.DarkStarMessageType,DarkStar.Network.Protocol.Messages.Players.PlayerListResponseMessage)">BaseNetworkMessageListener&lt;PlayerListResponseMessage&gt;.OnMessageReceivedAsync(string, DarkStarMessageType, PlayerListResponseMessage)</a></div>
+  <div><a class="xref" href="DarkStar.Api.Engine.MessageListeners.BaseNetworkMessageListener{DarkStar.Network.Protocol.Messages.Players.PlayerListRequestMessage}.html#DarkStar.Api.Engine.MessageListeners.BaseNetworkMessageListener{DarkStar.Network.Protocol.Messages.Players.PlayerListRequestMessage}.OnMessageReceivedAsync(System.String,DarkStar.Network.Protocol.Types.DarkStarMessageType,DarkStar.Network.Protocol.Messages.Players.PlayerListRequestMessage)">BaseNetworkMessageListener&lt;PlayerListRequestMessage&gt;.OnMessageReceivedAsync(string, DarkStarMessageType, PlayerListRequestMessage)</a></div>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="DarkStar.Network.Interfaces.INetworkServerMessageListener.html">INetworkServerMessageListener</a>

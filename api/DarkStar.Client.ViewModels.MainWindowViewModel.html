@@ -155,18 +155,18 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Client_ViewModels_MainWindowViewModel__ctor_DarkStar_Network_Client_Interfaces_IDarkStarNetworkClient_DarkStar_Client_Services_WindowManager_DarkStar_Client_Services_ServiceContext_.md&amp;value=---%0Auid%3A%20DarkStar.Client.ViewModels.MainWindowViewModel.%23ctor(DarkStar.Network.Client.Interfaces.IDarkStarNetworkClient%2CDarkStar.Client.Services.WindowManager%2CDarkStar.Client.Services.ServiceContext)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Client_ViewModels_MainWindowViewModel__ctor_DarkStar_Network_Client_Interfaces_IDarkStarNetworkClient_DarkStar_Client_Services_WindowManager_DarkStar_Client_Services_ServiceContext_DarkStar_Client_Services_TileService_.md&amp;value=---%0Auid%3A%20DarkStar.Client.ViewModels.MainWindowViewModel.%23ctor(DarkStar.Network.Client.Interfaces.IDarkStarNetworkClient%2CDarkStar.Client.Services.WindowManager%2CDarkStar.Client.Services.ServiceContext%2CDarkStar.Client.Services.TileService)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Client/ViewModels/MainWindowViewModel.cs/#L20">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Client/ViewModels/MainWindowViewModel.cs/#L28">View Source</a>
   </span>
   <a id="DarkStar_Client_ViewModels_MainWindowViewModel__ctor_" data-uid="DarkStar.Client.ViewModels.MainWindowViewModel.#ctor*"></a>
-  <h4 id="DarkStar_Client_ViewModels_MainWindowViewModel__ctor_DarkStar_Network_Client_Interfaces_IDarkStarNetworkClient_DarkStar_Client_Services_WindowManager_DarkStar_Client_Services_ServiceContext_" data-uid="DarkStar.Client.ViewModels.MainWindowViewModel.#ctor(DarkStar.Network.Client.Interfaces.IDarkStarNetworkClient,DarkStar.Client.Services.WindowManager,DarkStar.Client.Services.ServiceContext)">MainWindowViewModel(IDarkStarNetworkClient, WindowManager, ServiceContext)</h4>
+  <h4 id="DarkStar_Client_ViewModels_MainWindowViewModel__ctor_DarkStar_Network_Client_Interfaces_IDarkStarNetworkClient_DarkStar_Client_Services_WindowManager_DarkStar_Client_Services_ServiceContext_DarkStar_Client_Services_TileService_" data-uid="DarkStar.Client.ViewModels.MainWindowViewModel.#ctor(DarkStar.Network.Client.Interfaces.IDarkStarNetworkClient,DarkStar.Client.Services.WindowManager,DarkStar.Client.Services.ServiceContext,DarkStar.Client.Services.TileService)">MainWindowViewModel(IDarkStarNetworkClient, WindowManager, ServiceContext, TileService)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public MainWindowViewModel(IDarkStarNetworkClient client, WindowManager windowManager, ServiceContext serviceContext)</code></pre>
+    <pre><code class="lang-csharp hljs">public MainWindowViewModel(IDarkStarNetworkClient client, WindowManager windowManager, ServiceContext serviceContext, TileService tileService)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -193,6 +193,11 @@
         <td><span class="parametername">serviceContext</span></td>
         <td></td>
       </tr>
+      <tr>
+        <td><a class="xref" href="DarkStar.Client.Services.TileService.html">TileService</a></td>
+        <td><span class="parametername">tileService</span></td>
+        <td></td>
+      </tr>
     </tbody>
   </table>
   <h3 id="fields">Fields
@@ -202,7 +207,7 @@
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Client_ViewModels_MainWindowViewModel__windowManager.md&amp;value=---%0Auid%3A%20DarkStar.Client.ViewModels.MainWindowViewModel._windowManager%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Client/ViewModels/MainWindowViewModel.cs/#L16">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Client/ViewModels/MainWindowViewModel.cs/#L18">View Source</a>
   </span>
   <h4 id="DarkStar_Client_ViewModels_MainWindowViewModel__windowManager" data-uid="DarkStar.Client.ViewModels.MainWindowViewModel._windowManager">_windowManager</h4>
   <div class="markdown level1 summary"></div>
@@ -230,10 +235,160 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Client_ViewModels_MainWindowViewModel_MaxProgressValue.md&amp;value=---%0Auid%3A%20DarkStar.Client.ViewModels.MainWindowViewModel.MaxProgressValue%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Client/ViewModels/MainWindowViewModel.cs/#L20">View Source</a>
+  </span>
+  <a id="DarkStar_Client_ViewModels_MainWindowViewModel_MaxProgressValue_" data-uid="DarkStar.Client.ViewModels.MainWindowViewModel.MaxProgressValue*"></a>
+  <h4 id="DarkStar_Client_ViewModels_MainWindowViewModel_MaxProgressValue" data-uid="DarkStar.Client.ViewModels.MainWindowViewModel.MaxProgressValue">MaxProgressValue</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MaxProgressValue { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Client_ViewModels_MainWindowViewModel_ProgressText.md&amp;value=---%0Auid%3A%20DarkStar.Client.ViewModels.MainWindowViewModel.ProgressText%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Client/ViewModels/MainWindowViewModel.cs/#L23">View Source</a>
+  </span>
+  <a id="DarkStar_Client_ViewModels_MainWindowViewModel_ProgressText_" data-uid="DarkStar.Client.ViewModels.MainWindowViewModel.ProgressText*"></a>
+  <h4 id="DarkStar_Client_ViewModels_MainWindowViewModel_ProgressText" data-uid="DarkStar.Client.ViewModels.MainWindowViewModel.ProgressText">ProgressText</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ProgressText { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Client_ViewModels_MainWindowViewModel_ProgressValue.md&amp;value=---%0Auid%3A%20DarkStar.Client.ViewModels.MainWindowViewModel.ProgressValue%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Client/ViewModels/MainWindowViewModel.cs/#L21">View Source</a>
+  </span>
+  <a id="DarkStar_Client_ViewModels_MainWindowViewModel_ProgressValue_" data-uid="DarkStar.Client.ViewModels.MainWindowViewModel.ProgressValue*"></a>
+  <h4 id="DarkStar_Client_ViewModels_MainWindowViewModel_ProgressValue" data-uid="DarkStar.Client.ViewModels.MainWindowViewModel.ProgressValue">ProgressValue</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ProgressValue { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Client_ViewModels_MainWindowViewModel_ServerName.md&amp;value=---%0Auid%3A%20DarkStar.Client.ViewModels.MainWindowViewModel.ServerName%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Client/ViewModels/MainWindowViewModel.cs/#L24">View Source</a>
+  </span>
+  <a id="DarkStar_Client_ViewModels_MainWindowViewModel_ServerName_" data-uid="DarkStar.Client.ViewModels.MainWindowViewModel.ServerName*"></a>
+  <h4 id="DarkStar_Client_ViewModels_MainWindowViewModel_ServerName" data-uid="DarkStar.Client.ViewModels.MainWindowViewModel.ServerName">ServerName</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ServerName { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Client_ViewModels_MainWindowViewModel_ServerVersion.md&amp;value=---%0Auid%3A%20DarkStar.Client.ViewModels.MainWindowViewModel.ServerVersion%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Client/ViewModels/MainWindowViewModel.cs/#L25">View Source</a>
+  </span>
+  <a id="DarkStar_Client_ViewModels_MainWindowViewModel_ServerVersion_" data-uid="DarkStar.Client.ViewModels.MainWindowViewModel.ServerVersion*"></a>
+  <h4 id="DarkStar_Client_ViewModels_MainWindowViewModel_ServerVersion" data-uid="DarkStar.Client.ViewModels.MainWindowViewModel.ServerVersion">ServerVersion</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ServerVersion { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Client_ViewModels_MainWindowViewModel_ShowRenderViewCommand.md&amp;value=---%0Auid%3A%20DarkStar.Client.ViewModels.MainWindowViewModel.ShowRenderViewCommand%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Client/ViewModels/MainWindowViewModel.cs/#L18">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Client/ViewModels/MainWindowViewModel.cs/#L26">View Source</a>
   </span>
   <a id="DarkStar_Client_ViewModels_MainWindowViewModel_ShowRenderViewCommand_" data-uid="DarkStar.Client.ViewModels.MainWindowViewModel.ShowRenderViewCommand*"></a>
   <h4 id="DarkStar_Client_ViewModels_MainWindowViewModel_ShowRenderViewCommand" data-uid="DarkStar.Client.ViewModels.MainWindowViewModel.ShowRenderViewCommand">ShowRenderViewCommand</h4>
@@ -265,7 +420,7 @@
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Client_ViewModels_MainWindowViewModel_SetPageViewControl_DarkStar_Client_Controls_PageViewControl_.md&amp;value=---%0Auid%3A%20DarkStar.Client.ViewModels.MainWindowViewModel.SetPageViewControl(DarkStar.Client.Controls.PageViewControl)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Client/ViewModels/MainWindowViewModel.cs/#L28">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Client/ViewModels/MainWindowViewModel.cs/#L55">View Source</a>
   </span>
   <a id="DarkStar_Client_ViewModels_MainWindowViewModel_SetPageViewControl_" data-uid="DarkStar.Client.ViewModels.MainWindowViewModel.SetPageViewControl*"></a>
   <h4 id="DarkStar_Client_ViewModels_MainWindowViewModel_SetPageViewControl_DarkStar_Client_Controls_PageViewControl_" data-uid="DarkStar.Client.ViewModels.MainWindowViewModel.SetPageViewControl(DarkStar.Client.Controls.PageViewControl)">SetPageViewControl(PageViewControl)</h4>
@@ -323,7 +478,7 @@
                     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Client_ViewModels_MainWindowViewModel.md&amp;value=---%0Auid%3A%20DarkStar.Client.ViewModels.MainWindowViewModel%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Client/ViewModels/MainWindowViewModel.cs/#L14" class="contribution-link">View Source</a>
+                    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Client/ViewModels/MainWindowViewModel.cs/#L16" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

@@ -9051,6 +9051,12 @@ references:
   commentId: F:DarkStar.Client.Controls.RenderControl.CustomDrawOp._noSkia
   fullName: DarkStar.Client.Controls.RenderControl.CustomDrawOp._noSkia
   nameWithType: RenderControl.CustomDrawOp._noSkia
+- uid: DarkStar.Client.Controls.RenderControl.CustomDrawOp._renderStopwatch
+  name: _renderStopwatch
+  href: api/DarkStar.Client.Controls.RenderControl.CustomDrawOp.html#DarkStar_Client_Controls_RenderControl_CustomDrawOp__renderStopwatch
+  commentId: F:DarkStar.Client.Controls.RenderControl.CustomDrawOp._renderStopwatch
+  fullName: DarkStar.Client.Controls.RenderControl.CustomDrawOp._renderStopwatch
+  nameWithType: RenderControl.CustomDrawOp._renderStopwatch
 - uid: DarkStar.Client.Controls.RenderControl.CustomDrawOp.#ctor(Avalonia.Rect,Avalonia.Media.FormattedText)
   name: CustomDrawOp(Rect, FormattedText)
   href: api/DarkStar.Client.Controls.RenderControl.CustomDrawOp.html#DarkStar_Client_Controls_RenderControl_CustomDrawOp__ctor_Avalonia_Rect_Avalonia_Media_FormattedText_
@@ -9070,22 +9076,6 @@ references:
   fullName.vb: DarkStar.Client.Controls.RenderControl.CustomDrawOp.New
   nameWithType: RenderControl.CustomDrawOp.CustomDrawOp
   nameWithType.vb: RenderControl.CustomDrawOp.New
-- uid: DarkStar.Client.Controls.RenderControl.CustomDrawOp.Animate(System.Int32,System.Int32,System.Int32)
-  name: Animate(int, int, int)
-  href: api/DarkStar.Client.Controls.RenderControl.CustomDrawOp.html#DarkStar_Client_Controls_RenderControl_CustomDrawOp_Animate_System_Int32_System_Int32_System_Int32_
-  commentId: M:DarkStar.Client.Controls.RenderControl.CustomDrawOp.Animate(System.Int32,System.Int32,System.Int32)
-  name.vb: Animate(Integer, Integer, Integer)
-  fullName: DarkStar.Client.Controls.RenderControl.CustomDrawOp.Animate(int, int, int)
-  fullName.vb: DarkStar.Client.Controls.RenderControl.CustomDrawOp.Animate(Integer, Integer, Integer)
-  nameWithType: RenderControl.CustomDrawOp.Animate(int, int, int)
-  nameWithType.vb: RenderControl.CustomDrawOp.Animate(Integer, Integer, Integer)
-- uid: DarkStar.Client.Controls.RenderControl.CustomDrawOp.Animate*
-  name: Animate
-  href: api/DarkStar.Client.Controls.RenderControl.CustomDrawOp.html#DarkStar_Client_Controls_RenderControl_CustomDrawOp_Animate_
-  commentId: Overload:DarkStar.Client.Controls.RenderControl.CustomDrawOp.Animate
-  isSpec: "True"
-  fullName: DarkStar.Client.Controls.RenderControl.CustomDrawOp.Animate
-  nameWithType: RenderControl.CustomDrawOp.Animate
 - uid: DarkStar.Client.Controls.RenderControl.CustomDrawOp.Bounds
   name: Bounds
   href: api/DarkStar.Client.Controls.RenderControl.CustomDrawOp.html#DarkStar_Client_Controls_RenderControl_CustomDrawOp_Bounds
@@ -9151,12 +9141,19 @@ references:
   isSpec: "True"
   fullName: DarkStar.Client.Controls.RenderControl.CustomDrawOp.Render
   nameWithType: RenderControl.CustomDrawOp.Render
-- uid: DarkStar.Client.Controls.RenderControl.CustomDrawOp.St
-  name: St
-  href: api/DarkStar.Client.Controls.RenderControl.CustomDrawOp.html#DarkStar_Client_Controls_RenderControl_CustomDrawOp_St
-  commentId: F:DarkStar.Client.Controls.RenderControl.CustomDrawOp.St
-  fullName: DarkStar.Client.Controls.RenderControl.CustomDrawOp.St
-  nameWithType: RenderControl.CustomDrawOp.St
+- uid: DarkStar.Client.Controls.RenderControl.CustomDrawOp.RenderAction
+  name: RenderAction
+  href: api/DarkStar.Client.Controls.RenderControl.CustomDrawOp.html#DarkStar_Client_Controls_RenderControl_CustomDrawOp_RenderAction
+  commentId: P:DarkStar.Client.Controls.RenderControl.CustomDrawOp.RenderAction
+  fullName: DarkStar.Client.Controls.RenderControl.CustomDrawOp.RenderAction
+  nameWithType: RenderControl.CustomDrawOp.RenderAction
+- uid: DarkStar.Client.Controls.RenderControl.CustomDrawOp.RenderAction*
+  name: RenderAction
+  href: api/DarkStar.Client.Controls.RenderControl.CustomDrawOp.html#DarkStar_Client_Controls_RenderControl_CustomDrawOp_RenderAction_
+  commentId: Overload:DarkStar.Client.Controls.RenderControl.CustomDrawOp.RenderAction
+  isSpec: "True"
+  fullName: DarkStar.Client.Controls.RenderControl.CustomDrawOp.RenderAction
+  nameWithType: RenderControl.CustomDrawOp.RenderAction
 - uid: DarkStar.Client.Controls.RenderControl.InitializeComponent(System.Boolean)
   name: InitializeComponent(bool)
   href: api/DarkStar.Client.Controls.RenderControl.html#DarkStar_Client_Controls_RenderControl_InitializeComponent_System_Boolean_
@@ -9186,6 +9183,400 @@ references:
   isSpec: "True"
   fullName: DarkStar.Client.Controls.RenderControl.Render
   nameWithType: RenderControl.Render
+- uid: DarkStar.Client.Controls.RenderControl.RenderAction
+  name: RenderAction
+  href: api/DarkStar.Client.Controls.RenderControl.html#DarkStar_Client_Controls_RenderControl_RenderAction
+  commentId: P:DarkStar.Client.Controls.RenderControl.RenderAction
+  fullName: DarkStar.Client.Controls.RenderControl.RenderAction
+  nameWithType: RenderControl.RenderAction
+- uid: DarkStar.Client.Controls.RenderControl.RenderAction*
+  name: RenderAction
+  href: api/DarkStar.Client.Controls.RenderControl.html#DarkStar_Client_Controls_RenderControl_RenderAction_
+  commentId: Overload:DarkStar.Client.Controls.RenderControl.RenderAction
+  isSpec: "True"
+  fullName: DarkStar.Client.Controls.RenderControl.RenderAction
+  nameWithType: RenderControl.RenderAction
+- uid: DarkStar.Client.Models
+  name: DarkStar.Client.Models
+  href: api/DarkStar.Client.Models.html
+  commentId: N:DarkStar.Client.Models
+  fullName: DarkStar.Client.Models
+  nameWithType: DarkStar.Client.Models
+- uid: DarkStar.Client.Models.Dto
+  name: DarkStar.Client.Models.Dto
+  href: api/DarkStar.Client.Models.Dto.html
+  commentId: N:DarkStar.Client.Models.Dto
+  fullName: DarkStar.Client.Models.Dto
+  nameWithType: DarkStar.Client.Models.Dto
+- uid: DarkStar.Client.Models.Dto.TileSetDto
+  name: TileSetDto
+  href: api/DarkStar.Client.Models.Dto.TileSetDto.html
+  commentId: T:DarkStar.Client.Models.Dto.TileSetDto
+  fullName: DarkStar.Client.Models.Dto.TileSetDto
+  nameWithType: TileSetDto
+- uid: DarkStar.Client.Models.Dto.TileSetDto.FileSize
+  name: FileSize
+  href: api/DarkStar.Client.Models.Dto.TileSetDto.html#DarkStar_Client_Models_Dto_TileSetDto_FileSize
+  commentId: P:DarkStar.Client.Models.Dto.TileSetDto.FileSize
+  fullName: DarkStar.Client.Models.Dto.TileSetDto.FileSize
+  nameWithType: TileSetDto.FileSize
+- uid: DarkStar.Client.Models.Dto.TileSetDto.FileSize*
+  name: FileSize
+  href: api/DarkStar.Client.Models.Dto.TileSetDto.html#DarkStar_Client_Models_Dto_TileSetDto_FileSize_
+  commentId: Overload:DarkStar.Client.Models.Dto.TileSetDto.FileSize
+  isSpec: "True"
+  fullName: DarkStar.Client.Models.Dto.TileSetDto.FileSize
+  nameWithType: TileSetDto.FileSize
+- uid: DarkStar.Client.Models.Dto.TileSetDto.Id
+  name: Id
+  href: api/DarkStar.Client.Models.Dto.TileSetDto.html#DarkStar_Client_Models_Dto_TileSetDto_Id
+  commentId: P:DarkStar.Client.Models.Dto.TileSetDto.Id
+  fullName: DarkStar.Client.Models.Dto.TileSetDto.Id
+  nameWithType: TileSetDto.Id
+- uid: DarkStar.Client.Models.Dto.TileSetDto.Id*
+  name: Id
+  href: api/DarkStar.Client.Models.Dto.TileSetDto.html#DarkStar_Client_Models_Dto_TileSetDto_Id_
+  commentId: Overload:DarkStar.Client.Models.Dto.TileSetDto.Id
+  isSpec: "True"
+  fullName: DarkStar.Client.Models.Dto.TileSetDto.Id
+  nameWithType: TileSetDto.Id
+- uid: DarkStar.Client.Models.Dto.TileSetDto.Name
+  name: Name
+  href: api/DarkStar.Client.Models.Dto.TileSetDto.html#DarkStar_Client_Models_Dto_TileSetDto_Name
+  commentId: P:DarkStar.Client.Models.Dto.TileSetDto.Name
+  fullName: DarkStar.Client.Models.Dto.TileSetDto.Name
+  nameWithType: TileSetDto.Name
+- uid: DarkStar.Client.Models.Dto.TileSetDto.Name*
+  name: Name
+  href: api/DarkStar.Client.Models.Dto.TileSetDto.html#DarkStar_Client_Models_Dto_TileSetDto_Name_
+  commentId: Overload:DarkStar.Client.Models.Dto.TileSetDto.Name
+  isSpec: "True"
+  fullName: DarkStar.Client.Models.Dto.TileSetDto.Name
+  nameWithType: TileSetDto.Name
+- uid: DarkStar.Client.Models.Dto.TileSetDto.TileHeight
+  name: TileHeight
+  href: api/DarkStar.Client.Models.Dto.TileSetDto.html#DarkStar_Client_Models_Dto_TileSetDto_TileHeight
+  commentId: P:DarkStar.Client.Models.Dto.TileSetDto.TileHeight
+  fullName: DarkStar.Client.Models.Dto.TileSetDto.TileHeight
+  nameWithType: TileSetDto.TileHeight
+- uid: DarkStar.Client.Models.Dto.TileSetDto.TileHeight*
+  name: TileHeight
+  href: api/DarkStar.Client.Models.Dto.TileSetDto.html#DarkStar_Client_Models_Dto_TileSetDto_TileHeight_
+  commentId: Overload:DarkStar.Client.Models.Dto.TileSetDto.TileHeight
+  isSpec: "True"
+  fullName: DarkStar.Client.Models.Dto.TileSetDto.TileHeight
+  nameWithType: TileSetDto.TileHeight
+- uid: DarkStar.Client.Models.Dto.TileSetDto.TileWidth
+  name: TileWidth
+  href: api/DarkStar.Client.Models.Dto.TileSetDto.html#DarkStar_Client_Models_Dto_TileSetDto_TileWidth
+  commentId: P:DarkStar.Client.Models.Dto.TileSetDto.TileWidth
+  fullName: DarkStar.Client.Models.Dto.TileSetDto.TileWidth
+  nameWithType: TileSetDto.TileWidth
+- uid: DarkStar.Client.Models.Dto.TileSetDto.TileWidth*
+  name: TileWidth
+  href: api/DarkStar.Client.Models.Dto.TileSetDto.html#DarkStar_Client_Models_Dto_TileSetDto_TileWidth_
+  commentId: Overload:DarkStar.Client.Models.Dto.TileSetDto.TileWidth
+  isSpec: "True"
+  fullName: DarkStar.Client.Models.Dto.TileSetDto.TileWidth
+  nameWithType: TileSetDto.TileWidth
+- uid: DarkStar.Client.Models.Events
+  name: DarkStar.Client.Models.Events
+  href: api/DarkStar.Client.Models.Events.html
+  commentId: N:DarkStar.Client.Models.Events
+  fullName: DarkStar.Client.Models.Events
+  nameWithType: DarkStar.Client.Models.Events
+- uid: DarkStar.Client.Models.Events.NavigateToViewEvent
+  name: NavigateToViewEvent
+  href: api/DarkStar.Client.Models.Events.NavigateToViewEvent.html
+  commentId: T:DarkStar.Client.Models.Events.NavigateToViewEvent
+  fullName: DarkStar.Client.Models.Events.NavigateToViewEvent
+  nameWithType: NavigateToViewEvent
+- uid: DarkStar.Client.Models.Events.NavigateToViewEvent.#ctor
+  name: NavigateToViewEvent()
+  href: api/DarkStar.Client.Models.Events.NavigateToViewEvent.html#DarkStar_Client_Models_Events_NavigateToViewEvent__ctor
+  commentId: M:DarkStar.Client.Models.Events.NavigateToViewEvent.#ctor
+  name.vb: New()
+  fullName: DarkStar.Client.Models.Events.NavigateToViewEvent.NavigateToViewEvent()
+  fullName.vb: DarkStar.Client.Models.Events.NavigateToViewEvent.New()
+  nameWithType: NavigateToViewEvent.NavigateToViewEvent()
+  nameWithType.vb: NavigateToViewEvent.New()
+- uid: DarkStar.Client.Models.Events.NavigateToViewEvent.#ctor(System.Type)
+  name: NavigateToViewEvent(Type)
+  href: api/DarkStar.Client.Models.Events.NavigateToViewEvent.html#DarkStar_Client_Models_Events_NavigateToViewEvent__ctor_System_Type_
+  commentId: M:DarkStar.Client.Models.Events.NavigateToViewEvent.#ctor(System.Type)
+  name.vb: New(Type)
+  fullName: DarkStar.Client.Models.Events.NavigateToViewEvent.NavigateToViewEvent(System.Type)
+  fullName.vb: DarkStar.Client.Models.Events.NavigateToViewEvent.New(System.Type)
+  nameWithType: NavigateToViewEvent.NavigateToViewEvent(Type)
+  nameWithType.vb: NavigateToViewEvent.New(Type)
+- uid: DarkStar.Client.Models.Events.NavigateToViewEvent.#ctor*
+  name: NavigateToViewEvent
+  href: api/DarkStar.Client.Models.Events.NavigateToViewEvent.html#DarkStar_Client_Models_Events_NavigateToViewEvent__ctor_
+  commentId: Overload:DarkStar.Client.Models.Events.NavigateToViewEvent.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: DarkStar.Client.Models.Events.NavigateToViewEvent.NavigateToViewEvent
+  fullName.vb: DarkStar.Client.Models.Events.NavigateToViewEvent.New
+  nameWithType: NavigateToViewEvent.NavigateToViewEvent
+  nameWithType.vb: NavigateToViewEvent.New
+- uid: DarkStar.Client.Models.Events.NavigateToViewEvent.ViewType
+  name: ViewType
+  href: api/DarkStar.Client.Models.Events.NavigateToViewEvent.html#DarkStar_Client_Models_Events_NavigateToViewEvent_ViewType
+  commentId: P:DarkStar.Client.Models.Events.NavigateToViewEvent.ViewType
+  fullName: DarkStar.Client.Models.Events.NavigateToViewEvent.ViewType
+  nameWithType: NavigateToViewEvent.ViewType
+- uid: DarkStar.Client.Models.Events.NavigateToViewEvent.ViewType*
+  name: ViewType
+  href: api/DarkStar.Client.Models.Events.NavigateToViewEvent.html#DarkStar_Client_Models_Events_NavigateToViewEvent_ViewType_
+  commentId: Overload:DarkStar.Client.Models.Events.NavigateToViewEvent.ViewType
+  isSpec: "True"
+  fullName: DarkStar.Client.Models.Events.NavigateToViewEvent.ViewType
+  nameWithType: NavigateToViewEvent.ViewType
+- uid: DarkStar.Client.Models.Events.OnConnectedEvent
+  name: OnConnectedEvent
+  href: api/DarkStar.Client.Models.Events.OnConnectedEvent.html
+  commentId: T:DarkStar.Client.Models.Events.OnConnectedEvent
+  fullName: DarkStar.Client.Models.Events.OnConnectedEvent
+  nameWithType: OnConnectedEvent
+- uid: DarkStar.Client.Models.Events.ProgressUpdateEvent
+  name: ProgressUpdateEvent
+  href: api/DarkStar.Client.Models.Events.ProgressUpdateEvent.html
+  commentId: T:DarkStar.Client.Models.Events.ProgressUpdateEvent
+  fullName: DarkStar.Client.Models.Events.ProgressUpdateEvent
+  nameWithType: ProgressUpdateEvent
+- uid: DarkStar.Client.Models.Events.ProgressUpdateEvent.#ctor
+  name: ProgressUpdateEvent()
+  href: api/DarkStar.Client.Models.Events.ProgressUpdateEvent.html#DarkStar_Client_Models_Events_ProgressUpdateEvent__ctor
+  commentId: M:DarkStar.Client.Models.Events.ProgressUpdateEvent.#ctor
+  name.vb: New()
+  fullName: DarkStar.Client.Models.Events.ProgressUpdateEvent.ProgressUpdateEvent()
+  fullName.vb: DarkStar.Client.Models.Events.ProgressUpdateEvent.New()
+  nameWithType: ProgressUpdateEvent.ProgressUpdateEvent()
+  nameWithType.vb: ProgressUpdateEvent.New()
+- uid: DarkStar.Client.Models.Events.ProgressUpdateEvent.#ctor(System.String,System.Int32,System.Int32)
+  name: ProgressUpdateEvent(string, int, int)
+  href: api/DarkStar.Client.Models.Events.ProgressUpdateEvent.html#DarkStar_Client_Models_Events_ProgressUpdateEvent__ctor_System_String_System_Int32_System_Int32_
+  commentId: M:DarkStar.Client.Models.Events.ProgressUpdateEvent.#ctor(System.String,System.Int32,System.Int32)
+  name.vb: New(String, Integer, Integer)
+  fullName: DarkStar.Client.Models.Events.ProgressUpdateEvent.ProgressUpdateEvent(string, int, int)
+  fullName.vb: DarkStar.Client.Models.Events.ProgressUpdateEvent.New(String, Integer, Integer)
+  nameWithType: ProgressUpdateEvent.ProgressUpdateEvent(string, int, int)
+  nameWithType.vb: ProgressUpdateEvent.New(String, Integer, Integer)
+- uid: DarkStar.Client.Models.Events.ProgressUpdateEvent.#ctor*
+  name: ProgressUpdateEvent
+  href: api/DarkStar.Client.Models.Events.ProgressUpdateEvent.html#DarkStar_Client_Models_Events_ProgressUpdateEvent__ctor_
+  commentId: Overload:DarkStar.Client.Models.Events.ProgressUpdateEvent.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: DarkStar.Client.Models.Events.ProgressUpdateEvent.ProgressUpdateEvent
+  fullName.vb: DarkStar.Client.Models.Events.ProgressUpdateEvent.New
+  nameWithType: ProgressUpdateEvent.ProgressUpdateEvent
+  nameWithType.vb: ProgressUpdateEvent.New
+- uid: DarkStar.Client.Models.Events.ProgressUpdateEvent.MaxProgress
+  name: MaxProgress
+  href: api/DarkStar.Client.Models.Events.ProgressUpdateEvent.html#DarkStar_Client_Models_Events_ProgressUpdateEvent_MaxProgress
+  commentId: P:DarkStar.Client.Models.Events.ProgressUpdateEvent.MaxProgress
+  fullName: DarkStar.Client.Models.Events.ProgressUpdateEvent.MaxProgress
+  nameWithType: ProgressUpdateEvent.MaxProgress
+- uid: DarkStar.Client.Models.Events.ProgressUpdateEvent.MaxProgress*
+  name: MaxProgress
+  href: api/DarkStar.Client.Models.Events.ProgressUpdateEvent.html#DarkStar_Client_Models_Events_ProgressUpdateEvent_MaxProgress_
+  commentId: Overload:DarkStar.Client.Models.Events.ProgressUpdateEvent.MaxProgress
+  isSpec: "True"
+  fullName: DarkStar.Client.Models.Events.ProgressUpdateEvent.MaxProgress
+  nameWithType: ProgressUpdateEvent.MaxProgress
+- uid: DarkStar.Client.Models.Events.ProgressUpdateEvent.Message
+  name: Message
+  href: api/DarkStar.Client.Models.Events.ProgressUpdateEvent.html#DarkStar_Client_Models_Events_ProgressUpdateEvent_Message
+  commentId: P:DarkStar.Client.Models.Events.ProgressUpdateEvent.Message
+  fullName: DarkStar.Client.Models.Events.ProgressUpdateEvent.Message
+  nameWithType: ProgressUpdateEvent.Message
+- uid: DarkStar.Client.Models.Events.ProgressUpdateEvent.Message*
+  name: Message
+  href: api/DarkStar.Client.Models.Events.ProgressUpdateEvent.html#DarkStar_Client_Models_Events_ProgressUpdateEvent_Message_
+  commentId: Overload:DarkStar.Client.Models.Events.ProgressUpdateEvent.Message
+  isSpec: "True"
+  fullName: DarkStar.Client.Models.Events.ProgressUpdateEvent.Message
+  nameWithType: ProgressUpdateEvent.Message
+- uid: DarkStar.Client.Models.Events.ProgressUpdateEvent.Progress
+  name: Progress
+  href: api/DarkStar.Client.Models.Events.ProgressUpdateEvent.html#DarkStar_Client_Models_Events_ProgressUpdateEvent_Progress
+  commentId: P:DarkStar.Client.Models.Events.ProgressUpdateEvent.Progress
+  fullName: DarkStar.Client.Models.Events.ProgressUpdateEvent.Progress
+  nameWithType: ProgressUpdateEvent.Progress
+- uid: DarkStar.Client.Models.Events.ProgressUpdateEvent.Progress*
+  name: Progress
+  href: api/DarkStar.Client.Models.Events.ProgressUpdateEvent.html#DarkStar_Client_Models_Events_ProgressUpdateEvent_Progress_
+  commentId: Overload:DarkStar.Client.Models.Events.ProgressUpdateEvent.Progress
+  isSpec: "True"
+  fullName: DarkStar.Client.Models.Events.ProgressUpdateEvent.Progress
+  nameWithType: ProgressUpdateEvent.Progress
+- uid: DarkStar.Client.Models.Events.ServerNameEvent
+  name: ServerNameEvent
+  href: api/DarkStar.Client.Models.Events.ServerNameEvent.html
+  commentId: T:DarkStar.Client.Models.Events.ServerNameEvent
+  fullName: DarkStar.Client.Models.Events.ServerNameEvent
+  nameWithType: ServerNameEvent
+- uid: DarkStar.Client.Models.Events.ServerNameEvent.Name
+  name: Name
+  href: api/DarkStar.Client.Models.Events.ServerNameEvent.html#DarkStar_Client_Models_Events_ServerNameEvent_Name
+  commentId: P:DarkStar.Client.Models.Events.ServerNameEvent.Name
+  fullName: DarkStar.Client.Models.Events.ServerNameEvent.Name
+  nameWithType: ServerNameEvent.Name
+- uid: DarkStar.Client.Models.Events.ServerNameEvent.Name*
+  name: Name
+  href: api/DarkStar.Client.Models.Events.ServerNameEvent.html#DarkStar_Client_Models_Events_ServerNameEvent_Name_
+  commentId: Overload:DarkStar.Client.Models.Events.ServerNameEvent.Name
+  isSpec: "True"
+  fullName: DarkStar.Client.Models.Events.ServerNameEvent.Name
+  nameWithType: ServerNameEvent.Name
+- uid: DarkStar.Client.Models.Events.ServerVersionEvent
+  name: ServerVersionEvent
+  href: api/DarkStar.Client.Models.Events.ServerVersionEvent.html
+  commentId: T:DarkStar.Client.Models.Events.ServerVersionEvent
+  fullName: DarkStar.Client.Models.Events.ServerVersionEvent
+  nameWithType: ServerVersionEvent
+- uid: DarkStar.Client.Models.Events.ServerVersionEvent.ServerVersion
+  name: ServerVersion
+  href: api/DarkStar.Client.Models.Events.ServerVersionEvent.html#DarkStar_Client_Models_Events_ServerVersionEvent_ServerVersion
+  commentId: P:DarkStar.Client.Models.Events.ServerVersionEvent.ServerVersion
+  fullName: DarkStar.Client.Models.Events.ServerVersionEvent.ServerVersion
+  nameWithType: ServerVersionEvent.ServerVersion
+- uid: DarkStar.Client.Models.Events.ServerVersionEvent.ServerVersion*
+  name: ServerVersion
+  href: api/DarkStar.Client.Models.Events.ServerVersionEvent.html#DarkStar_Client_Models_Events_ServerVersionEvent_ServerVersion_
+  commentId: Overload:DarkStar.Client.Models.Events.ServerVersionEvent.ServerVersion
+  isSpec: "True"
+  fullName: DarkStar.Client.Models.Events.ServerVersionEvent.ServerVersion
+  nameWithType: ServerVersionEvent.ServerVersion
+- uid: DarkStar.Client.Models.PlayerSelectEntity
+  name: PlayerSelectEntity
+  href: api/DarkStar.Client.Models.PlayerSelectEntity.html
+  commentId: T:DarkStar.Client.Models.PlayerSelectEntity
+  fullName: DarkStar.Client.Models.PlayerSelectEntity
+  nameWithType: PlayerSelectEntity
+- uid: DarkStar.Client.Models.PlayerSelectEntity.Id
+  name: Id
+  href: api/DarkStar.Client.Models.PlayerSelectEntity.html#DarkStar_Client_Models_PlayerSelectEntity_Id
+  commentId: P:DarkStar.Client.Models.PlayerSelectEntity.Id
+  fullName: DarkStar.Client.Models.PlayerSelectEntity.Id
+  nameWithType: PlayerSelectEntity.Id
+- uid: DarkStar.Client.Models.PlayerSelectEntity.Id*
+  name: Id
+  href: api/DarkStar.Client.Models.PlayerSelectEntity.html#DarkStar_Client_Models_PlayerSelectEntity_Id_
+  commentId: Overload:DarkStar.Client.Models.PlayerSelectEntity.Id
+  isSpec: "True"
+  fullName: DarkStar.Client.Models.PlayerSelectEntity.Id
+  nameWithType: PlayerSelectEntity.Id
+- uid: DarkStar.Client.Models.PlayerSelectEntity.Image
+  name: Image
+  href: api/DarkStar.Client.Models.PlayerSelectEntity.html#DarkStar_Client_Models_PlayerSelectEntity_Image
+  commentId: P:DarkStar.Client.Models.PlayerSelectEntity.Image
+  fullName: DarkStar.Client.Models.PlayerSelectEntity.Image
+  nameWithType: PlayerSelectEntity.Image
+- uid: DarkStar.Client.Models.PlayerSelectEntity.Image*
+  name: Image
+  href: api/DarkStar.Client.Models.PlayerSelectEntity.html#DarkStar_Client_Models_PlayerSelectEntity_Image_
+  commentId: Overload:DarkStar.Client.Models.PlayerSelectEntity.Image
+  isSpec: "True"
+  fullName: DarkStar.Client.Models.PlayerSelectEntity.Image
+  nameWithType: PlayerSelectEntity.Image
+- uid: DarkStar.Client.Models.PlayerSelectEntity.Level
+  name: Level
+  href: api/DarkStar.Client.Models.PlayerSelectEntity.html#DarkStar_Client_Models_PlayerSelectEntity_Level
+  commentId: P:DarkStar.Client.Models.PlayerSelectEntity.Level
+  fullName: DarkStar.Client.Models.PlayerSelectEntity.Level
+  nameWithType: PlayerSelectEntity.Level
+- uid: DarkStar.Client.Models.PlayerSelectEntity.Level*
+  name: Level
+  href: api/DarkStar.Client.Models.PlayerSelectEntity.html#DarkStar_Client_Models_PlayerSelectEntity_Level_
+  commentId: Overload:DarkStar.Client.Models.PlayerSelectEntity.Level
+  isSpec: "True"
+  fullName: DarkStar.Client.Models.PlayerSelectEntity.Level
+  nameWithType: PlayerSelectEntity.Level
+- uid: DarkStar.Client.Models.PlayerSelectEntity.Name
+  name: Name
+  href: api/DarkStar.Client.Models.PlayerSelectEntity.html#DarkStar_Client_Models_PlayerSelectEntity_Name
+  commentId: P:DarkStar.Client.Models.PlayerSelectEntity.Name
+  fullName: DarkStar.Client.Models.PlayerSelectEntity.Name
+  nameWithType: PlayerSelectEntity.Name
+- uid: DarkStar.Client.Models.PlayerSelectEntity.Name*
+  name: Name
+  href: api/DarkStar.Client.Models.PlayerSelectEntity.html#DarkStar_Client_Models_PlayerSelectEntity_Name_
+  commentId: Overload:DarkStar.Client.Models.PlayerSelectEntity.Name
+  isSpec: "True"
+  fullName: DarkStar.Client.Models.PlayerSelectEntity.Name
+  nameWithType: PlayerSelectEntity.Name
+- uid: DarkStar.Client.Models.Tiles
+  name: DarkStar.Client.Models.Tiles
+  href: api/DarkStar.Client.Models.Tiles.html
+  commentId: N:DarkStar.Client.Models.Tiles
+  fullName: DarkStar.Client.Models.Tiles
+  nameWithType: DarkStar.Client.Models.Tiles
+- uid: DarkStar.Client.Models.Tiles.Tile
+  name: Tile
+  href: api/DarkStar.Client.Models.Tiles.Tile.html
+  commentId: T:DarkStar.Client.Models.Tiles.Tile
+  fullName: DarkStar.Client.Models.Tiles.Tile
+  nameWithType: Tile
+- uid: DarkStar.Client.Models.Tiles.Tile.#ctor(System.String,System.UInt32,DarkStar.Network.Protocol.Messages.Common.PointPosition)
+  name: Tile(string, uint, PointPosition)
+  href: api/DarkStar.Client.Models.Tiles.Tile.html#DarkStar_Client_Models_Tiles_Tile__ctor_System_String_System_UInt32_DarkStar_Network_Protocol_Messages_Common_PointPosition_
+  commentId: M:DarkStar.Client.Models.Tiles.Tile.#ctor(System.String,System.UInt32,DarkStar.Network.Protocol.Messages.Common.PointPosition)
+  name.vb: New(String, UInteger, PointPosition)
+  fullName: DarkStar.Client.Models.Tiles.Tile.Tile(string, uint, DarkStar.Network.Protocol.Messages.Common.PointPosition)
+  fullName.vb: DarkStar.Client.Models.Tiles.Tile.New(String, UInteger, DarkStar.Network.Protocol.Messages.Common.PointPosition)
+  nameWithType: Tile.Tile(string, uint, PointPosition)
+  nameWithType.vb: Tile.New(String, UInteger, PointPosition)
+- uid: DarkStar.Client.Models.Tiles.Tile.#ctor*
+  name: Tile
+  href: api/DarkStar.Client.Models.Tiles.Tile.html#DarkStar_Client_Models_Tiles_Tile__ctor_
+  commentId: Overload:DarkStar.Client.Models.Tiles.Tile.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: DarkStar.Client.Models.Tiles.Tile.Tile
+  fullName.vb: DarkStar.Client.Models.Tiles.Tile.New
+  nameWithType: Tile.Tile
+  nameWithType.vb: Tile.New
+- uid: DarkStar.Client.Models.Tiles.Tile.Id
+  name: Id
+  href: api/DarkStar.Client.Models.Tiles.Tile.html#DarkStar_Client_Models_Tiles_Tile_Id
+  commentId: P:DarkStar.Client.Models.Tiles.Tile.Id
+  fullName: DarkStar.Client.Models.Tiles.Tile.Id
+  nameWithType: Tile.Id
+- uid: DarkStar.Client.Models.Tiles.Tile.Id*
+  name: Id
+  href: api/DarkStar.Client.Models.Tiles.Tile.html#DarkStar_Client_Models_Tiles_Tile_Id_
+  commentId: Overload:DarkStar.Client.Models.Tiles.Tile.Id
+  isSpec: "True"
+  fullName: DarkStar.Client.Models.Tiles.Tile.Id
+  nameWithType: Tile.Id
+- uid: DarkStar.Client.Models.Tiles.Tile.Position
+  name: Position
+  href: api/DarkStar.Client.Models.Tiles.Tile.html#DarkStar_Client_Models_Tiles_Tile_Position
+  commentId: P:DarkStar.Client.Models.Tiles.Tile.Position
+  fullName: DarkStar.Client.Models.Tiles.Tile.Position
+  nameWithType: Tile.Position
+- uid: DarkStar.Client.Models.Tiles.Tile.Position*
+  name: Position
+  href: api/DarkStar.Client.Models.Tiles.Tile.html#DarkStar_Client_Models_Tiles_Tile_Position_
+  commentId: Overload:DarkStar.Client.Models.Tiles.Tile.Position
+  isSpec: "True"
+  fullName: DarkStar.Client.Models.Tiles.Tile.Position
+  nameWithType: Tile.Position
+- uid: DarkStar.Client.Models.Tiles.Tile.TileId
+  name: TileId
+  href: api/DarkStar.Client.Models.Tiles.Tile.html#DarkStar_Client_Models_Tiles_Tile_TileId
+  commentId: P:DarkStar.Client.Models.Tiles.Tile.TileId
+  fullName: DarkStar.Client.Models.Tiles.Tile.TileId
+  nameWithType: Tile.TileId
+- uid: DarkStar.Client.Models.Tiles.Tile.TileId*
+  name: TileId
+  href: api/DarkStar.Client.Models.Tiles.Tile.html#DarkStar_Client_Models_Tiles_Tile_TileId_
+  commentId: Overload:DarkStar.Client.Models.Tiles.Tile.TileId
+  isSpec: "True"
+  fullName: DarkStar.Client.Models.Tiles.Tile.TileId
+  nameWithType: Tile.TileId
 - uid: DarkStar.Client.PageViewModels
   name: DarkStar.Client.PageViewModels
   href: api/DarkStar.Client.PageViewModels.html
@@ -9198,18 +9589,6 @@ references:
   commentId: T:DarkStar.Client.PageViewModels.LoginPageViewModel
   fullName: DarkStar.Client.PageViewModels.LoginPageViewModel
   nameWithType: LoginPageViewModel
-- uid: DarkStar.Client.PageViewModels.LoginPageViewModel._serverResponse
-  name: _serverResponse
-  href: api/DarkStar.Client.PageViewModels.LoginPageViewModel.html#DarkStar_Client_PageViewModels_LoginPageViewModel__serverResponse
-  commentId: F:DarkStar.Client.PageViewModels.LoginPageViewModel._serverResponse
-  fullName: DarkStar.Client.PageViewModels.LoginPageViewModel._serverResponse
-  nameWithType: LoginPageViewModel._serverResponse
-- uid: DarkStar.Client.PageViewModels.LoginPageViewModel._serverVersion
-  name: _serverVersion
-  href: api/DarkStar.Client.PageViewModels.LoginPageViewModel.html#DarkStar_Client_PageViewModels_LoginPageViewModel__serverVersion
-  commentId: F:DarkStar.Client.PageViewModels.LoginPageViewModel._serverVersion
-  fullName: DarkStar.Client.PageViewModels.LoginPageViewModel._serverVersion
-  nameWithType: LoginPageViewModel._serverVersion
 - uid: DarkStar.Client.PageViewModels.LoginPageViewModel._serviceContext
   name: _serviceContext
   href: api/DarkStar.Client.PageViewModels.LoginPageViewModel.html#DarkStar_Client_PageViewModels_LoginPageViewModel__serviceContext
@@ -9326,19 +9705,6 @@ references:
   isSpec: "True"
   fullName: DarkStar.Client.PageViewModels.LoginPageViewModel.SelectedServer
   nameWithType: LoginPageViewModel.SelectedServer
-- uid: DarkStar.Client.PageViewModels.LoginPageViewModel.ServerName
-  name: ServerName
-  href: api/DarkStar.Client.PageViewModels.LoginPageViewModel.html#DarkStar_Client_PageViewModels_LoginPageViewModel_ServerName
-  commentId: P:DarkStar.Client.PageViewModels.LoginPageViewModel.ServerName
-  fullName: DarkStar.Client.PageViewModels.LoginPageViewModel.ServerName
-  nameWithType: LoginPageViewModel.ServerName
-- uid: DarkStar.Client.PageViewModels.LoginPageViewModel.ServerName*
-  name: ServerName
-  href: api/DarkStar.Client.PageViewModels.LoginPageViewModel.html#DarkStar_Client_PageViewModels_LoginPageViewModel_ServerName_
-  commentId: Overload:DarkStar.Client.PageViewModels.LoginPageViewModel.ServerName
-  isSpec: "True"
-  fullName: DarkStar.Client.PageViewModels.LoginPageViewModel.ServerName
-  nameWithType: LoginPageViewModel.ServerName
 - uid: DarkStar.Client.PageViewModels.LoginPageViewModel.Servers
   name: Servers
   href: api/DarkStar.Client.PageViewModels.LoginPageViewModel.html#DarkStar_Client_PageViewModels_LoginPageViewModel_Servers
@@ -9352,19 +9718,6 @@ references:
   isSpec: "True"
   fullName: DarkStar.Client.PageViewModels.LoginPageViewModel.Servers
   nameWithType: LoginPageViewModel.Servers
-- uid: DarkStar.Client.PageViewModels.LoginPageViewModel.ServerVersion
-  name: ServerVersion
-  href: api/DarkStar.Client.PageViewModels.LoginPageViewModel.html#DarkStar_Client_PageViewModels_LoginPageViewModel_ServerVersion
-  commentId: P:DarkStar.Client.PageViewModels.LoginPageViewModel.ServerVersion
-  fullName: DarkStar.Client.PageViewModels.LoginPageViewModel.ServerVersion
-  nameWithType: LoginPageViewModel.ServerVersion
-- uid: DarkStar.Client.PageViewModels.LoginPageViewModel.ServerVersion*
-  name: ServerVersion
-  href: api/DarkStar.Client.PageViewModels.LoginPageViewModel.html#DarkStar_Client_PageViewModels_LoginPageViewModel_ServerVersion_
-  commentId: Overload:DarkStar.Client.PageViewModels.LoginPageViewModel.ServerVersion
-  isSpec: "True"
-  fullName: DarkStar.Client.PageViewModels.LoginPageViewModel.ServerVersion
-  nameWithType: LoginPageViewModel.ServerVersion
 - uid: DarkStar.Client.PageViewModels.LoginPageViewModel.Username
   name: Username
   href: api/DarkStar.Client.PageViewModels.LoginPageViewModel.html#DarkStar_Client_PageViewModels_LoginPageViewModel_Username
@@ -9378,12 +9731,171 @@ references:
   isSpec: "True"
   fullName: DarkStar.Client.PageViewModels.LoginPageViewModel.Username
   nameWithType: LoginPageViewModel.Username
+- uid: DarkStar.Client.PageViewModels.PlayerSelectPageViewModel
+  name: PlayerSelectPageViewModel
+  href: api/DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.html
+  commentId: T:DarkStar.Client.PageViewModels.PlayerSelectPageViewModel
+  fullName: DarkStar.Client.PageViewModels.PlayerSelectPageViewModel
+  nameWithType: PlayerSelectPageViewModel
+- uid: DarkStar.Client.PageViewModels.PlayerSelectPageViewModel._serviceContext
+  name: _serviceContext
+  href: api/DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.html#DarkStar_Client_PageViewModels_PlayerSelectPageViewModel__serviceContext
+  commentId: F:DarkStar.Client.PageViewModels.PlayerSelectPageViewModel._serviceContext
+  fullName: DarkStar.Client.PageViewModels.PlayerSelectPageViewModel._serviceContext
+  nameWithType: PlayerSelectPageViewModel._serviceContext
+- uid: DarkStar.Client.PageViewModels.PlayerSelectPageViewModel._tileService
+  name: _tileService
+  href: api/DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.html#DarkStar_Client_PageViewModels_PlayerSelectPageViewModel__tileService
+  commentId: F:DarkStar.Client.PageViewModels.PlayerSelectPageViewModel._tileService
+  fullName: DarkStar.Client.PageViewModels.PlayerSelectPageViewModel._tileService
+  nameWithType: PlayerSelectPageViewModel._tileService
+- uid: DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.#ctor(DarkStar.Client.Services.ServiceContext,DarkStar.Client.Services.TileService)
+  name: PlayerSelectPageViewModel(ServiceContext, TileService)
+  href: api/DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.html#DarkStar_Client_PageViewModels_PlayerSelectPageViewModel__ctor_DarkStar_Client_Services_ServiceContext_DarkStar_Client_Services_TileService_
+  commentId: M:DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.#ctor(DarkStar.Client.Services.ServiceContext,DarkStar.Client.Services.TileService)
+  name.vb: New(ServiceContext, TileService)
+  fullName: DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.PlayerSelectPageViewModel(DarkStar.Client.Services.ServiceContext, DarkStar.Client.Services.TileService)
+  fullName.vb: DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.New(DarkStar.Client.Services.ServiceContext, DarkStar.Client.Services.TileService)
+  nameWithType: PlayerSelectPageViewModel.PlayerSelectPageViewModel(ServiceContext, TileService)
+  nameWithType.vb: PlayerSelectPageViewModel.New(ServiceContext, TileService)
+- uid: DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.#ctor*
+  name: PlayerSelectPageViewModel
+  href: api/DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.html#DarkStar_Client_PageViewModels_PlayerSelectPageViewModel__ctor_
+  commentId: Overload:DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.PlayerSelectPageViewModel
+  fullName.vb: DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.New
+  nameWithType: PlayerSelectPageViewModel.PlayerSelectPageViewModel
+  nameWithType.vb: PlayerSelectPageViewModel.New
+- uid: DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.Characters
+  name: Characters
+  href: api/DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.html#DarkStar_Client_PageViewModels_PlayerSelectPageViewModel_Characters
+  commentId: P:DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.Characters
+  fullName: DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.Characters
+  nameWithType: PlayerSelectPageViewModel.Characters
+- uid: DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.Characters*
+  name: Characters
+  href: api/DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.html#DarkStar_Client_PageViewModels_PlayerSelectPageViewModel_Characters_
+  commentId: Overload:DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.Characters
+  isSpec: "True"
+  fullName: DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.Characters
+  nameWithType: PlayerSelectPageViewModel.Characters
+- uid: DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.OnPlayerListReceived(DarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage)
+  name: OnPlayerListReceived(IDarkStarNetworkMessage)
+  href: api/DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.html#DarkStar_Client_PageViewModels_PlayerSelectPageViewModel_OnPlayerListReceived_DarkStar_Network_Protocol_Interfaces_Messages_IDarkStarNetworkMessage_
+  commentId: M:DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.OnPlayerListReceived(DarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage)
+  fullName: DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.OnPlayerListReceived(DarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage)
+  nameWithType: PlayerSelectPageViewModel.OnPlayerListReceived(IDarkStarNetworkMessage)
+- uid: DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.OnPlayerListReceived*
+  name: OnPlayerListReceived
+  href: api/DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.html#DarkStar_Client_PageViewModels_PlayerSelectPageViewModel_OnPlayerListReceived_
+  commentId: Overload:DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.OnPlayerListReceived
+  isSpec: "True"
+  fullName: DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.OnPlayerListReceived
+  nameWithType: PlayerSelectPageViewModel.OnPlayerListReceived
+- uid: DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.OnPlayerLoginResponse(DarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage)
+  name: OnPlayerLoginResponse(IDarkStarNetworkMessage)
+  href: api/DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.html#DarkStar_Client_PageViewModels_PlayerSelectPageViewModel_OnPlayerLoginResponse_DarkStar_Network_Protocol_Interfaces_Messages_IDarkStarNetworkMessage_
+  commentId: M:DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.OnPlayerLoginResponse(DarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage)
+  fullName: DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.OnPlayerLoginResponse(DarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage)
+  nameWithType: PlayerSelectPageViewModel.OnPlayerLoginResponse(IDarkStarNetworkMessage)
+- uid: DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.OnPlayerLoginResponse*
+  name: OnPlayerLoginResponse
+  href: api/DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.html#DarkStar_Client_PageViewModels_PlayerSelectPageViewModel_OnPlayerLoginResponse_
+  commentId: Overload:DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.OnPlayerLoginResponse
+  isSpec: "True"
+  fullName: DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.OnPlayerLoginResponse
+  nameWithType: PlayerSelectPageViewModel.OnPlayerLoginResponse
+- uid: DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.SelectCharacterCommand
+  name: SelectCharacterCommand
+  href: api/DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.html#DarkStar_Client_PageViewModels_PlayerSelectPageViewModel_SelectCharacterCommand
+  commentId: P:DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.SelectCharacterCommand
+  fullName: DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.SelectCharacterCommand
+  nameWithType: PlayerSelectPageViewModel.SelectCharacterCommand
+- uid: DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.SelectCharacterCommand*
+  name: SelectCharacterCommand
+  href: api/DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.html#DarkStar_Client_PageViewModels_PlayerSelectPageViewModel_SelectCharacterCommand_
+  commentId: Overload:DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.SelectCharacterCommand
+  isSpec: "True"
+  fullName: DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.SelectCharacterCommand
+  nameWithType: PlayerSelectPageViewModel.SelectCharacterCommand
 - uid: DarkStar.Client.PageViewModels.RenderPageViewModel
   name: RenderPageViewModel
   href: api/DarkStar.Client.PageViewModels.RenderPageViewModel.html
   commentId: T:DarkStar.Client.PageViewModels.RenderPageViewModel
   fullName: DarkStar.Client.PageViewModels.RenderPageViewModel
   nameWithType: RenderPageViewModel
+- uid: DarkStar.Client.PageViewModels.RenderPageViewModel._graphicEngineRender
+  name: _graphicEngineRender
+  href: api/DarkStar.Client.PageViewModels.RenderPageViewModel.html#DarkStar_Client_PageViewModels_RenderPageViewModel__graphicEngineRender
+  commentId: F:DarkStar.Client.PageViewModels.RenderPageViewModel._graphicEngineRender
+  fullName: DarkStar.Client.PageViewModels.RenderPageViewModel._graphicEngineRender
+  nameWithType: RenderPageViewModel._graphicEngineRender
+- uid: DarkStar.Client.PageViewModels.RenderPageViewModel._serviceContext
+  name: _serviceContext
+  href: api/DarkStar.Client.PageViewModels.RenderPageViewModel.html#DarkStar_Client_PageViewModels_RenderPageViewModel__serviceContext
+  commentId: F:DarkStar.Client.PageViewModels.RenderPageViewModel._serviceContext
+  fullName: DarkStar.Client.PageViewModels.RenderPageViewModel._serviceContext
+  nameWithType: RenderPageViewModel._serviceContext
+- uid: DarkStar.Client.PageViewModels.RenderPageViewModel.#ctor(DarkStar.Client.Services.GraphicEngineRender,DarkStar.Client.Services.ServiceContext)
+  name: RenderPageViewModel(GraphicEngineRender, ServiceContext)
+  href: api/DarkStar.Client.PageViewModels.RenderPageViewModel.html#DarkStar_Client_PageViewModels_RenderPageViewModel__ctor_DarkStar_Client_Services_GraphicEngineRender_DarkStar_Client_Services_ServiceContext_
+  commentId: M:DarkStar.Client.PageViewModels.RenderPageViewModel.#ctor(DarkStar.Client.Services.GraphicEngineRender,DarkStar.Client.Services.ServiceContext)
+  name.vb: New(GraphicEngineRender, ServiceContext)
+  fullName: DarkStar.Client.PageViewModels.RenderPageViewModel.RenderPageViewModel(DarkStar.Client.Services.GraphicEngineRender, DarkStar.Client.Services.ServiceContext)
+  fullName.vb: DarkStar.Client.PageViewModels.RenderPageViewModel.New(DarkStar.Client.Services.GraphicEngineRender, DarkStar.Client.Services.ServiceContext)
+  nameWithType: RenderPageViewModel.RenderPageViewModel(GraphicEngineRender, ServiceContext)
+  nameWithType.vb: RenderPageViewModel.New(GraphicEngineRender, ServiceContext)
+- uid: DarkStar.Client.PageViewModels.RenderPageViewModel.#ctor*
+  name: RenderPageViewModel
+  href: api/DarkStar.Client.PageViewModels.RenderPageViewModel.html#DarkStar_Client_PageViewModels_RenderPageViewModel__ctor_
+  commentId: Overload:DarkStar.Client.PageViewModels.RenderPageViewModel.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: DarkStar.Client.PageViewModels.RenderPageViewModel.RenderPageViewModel
+  fullName.vb: DarkStar.Client.PageViewModels.RenderPageViewModel.New
+  nameWithType: RenderPageViewModel.RenderPageViewModel
+  nameWithType.vb: RenderPageViewModel.New
+- uid: DarkStar.Client.PageViewModels.RenderPageViewModel.OnMapResponse(DarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage)
+  name: OnMapResponse(IDarkStarNetworkMessage)
+  href: api/DarkStar.Client.PageViewModels.RenderPageViewModel.html#DarkStar_Client_PageViewModels_RenderPageViewModel_OnMapResponse_DarkStar_Network_Protocol_Interfaces_Messages_IDarkStarNetworkMessage_
+  commentId: M:DarkStar.Client.PageViewModels.RenderPageViewModel.OnMapResponse(DarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage)
+  fullName: DarkStar.Client.PageViewModels.RenderPageViewModel.OnMapResponse(DarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage)
+  nameWithType: RenderPageViewModel.OnMapResponse(IDarkStarNetworkMessage)
+- uid: DarkStar.Client.PageViewModels.RenderPageViewModel.OnMapResponse*
+  name: OnMapResponse
+  href: api/DarkStar.Client.PageViewModels.RenderPageViewModel.html#DarkStar_Client_PageViewModels_RenderPageViewModel_OnMapResponse_
+  commentId: Overload:DarkStar.Client.PageViewModels.RenderPageViewModel.OnMapResponse
+  isSpec: "True"
+  fullName: DarkStar.Client.PageViewModels.RenderPageViewModel.OnMapResponse
+  nameWithType: RenderPageViewModel.OnMapResponse
+- uid: DarkStar.Client.PageViewModels.RenderPageViewModel.OnNpcMoved(DarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage)
+  name: OnNpcMoved(IDarkStarNetworkMessage)
+  href: api/DarkStar.Client.PageViewModels.RenderPageViewModel.html#DarkStar_Client_PageViewModels_RenderPageViewModel_OnNpcMoved_DarkStar_Network_Protocol_Interfaces_Messages_IDarkStarNetworkMessage_
+  commentId: M:DarkStar.Client.PageViewModels.RenderPageViewModel.OnNpcMoved(DarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage)
+  fullName: DarkStar.Client.PageViewModels.RenderPageViewModel.OnNpcMoved(DarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage)
+  nameWithType: RenderPageViewModel.OnNpcMoved(IDarkStarNetworkMessage)
+- uid: DarkStar.Client.PageViewModels.RenderPageViewModel.OnNpcMoved*
+  name: OnNpcMoved
+  href: api/DarkStar.Client.PageViewModels.RenderPageViewModel.html#DarkStar_Client_PageViewModels_RenderPageViewModel_OnNpcMoved_
+  commentId: Overload:DarkStar.Client.PageViewModels.RenderPageViewModel.OnNpcMoved
+  isSpec: "True"
+  fullName: DarkStar.Client.PageViewModels.RenderPageViewModel.OnNpcMoved
+  nameWithType: RenderPageViewModel.OnNpcMoved
+- uid: DarkStar.Client.PageViewModels.RenderPageViewModel.SetupRenderControl(DarkStar.Client.Controls.RenderControl)
+  name: SetupRenderControl(RenderControl)
+  href: api/DarkStar.Client.PageViewModels.RenderPageViewModel.html#DarkStar_Client_PageViewModels_RenderPageViewModel_SetupRenderControl_DarkStar_Client_Controls_RenderControl_
+  commentId: M:DarkStar.Client.PageViewModels.RenderPageViewModel.SetupRenderControl(DarkStar.Client.Controls.RenderControl)
+  fullName: DarkStar.Client.PageViewModels.RenderPageViewModel.SetupRenderControl(DarkStar.Client.Controls.RenderControl)
+  nameWithType: RenderPageViewModel.SetupRenderControl(RenderControl)
+- uid: DarkStar.Client.PageViewModels.RenderPageViewModel.SetupRenderControl*
+  name: SetupRenderControl
+  href: api/DarkStar.Client.PageViewModels.RenderPageViewModel.html#DarkStar_Client_PageViewModels_RenderPageViewModel_SetupRenderControl_
+  commentId: Overload:DarkStar.Client.PageViewModels.RenderPageViewModel.SetupRenderControl
+  isSpec: "True"
+  fullName: DarkStar.Client.PageViewModels.RenderPageViewModel.SetupRenderControl
+  nameWithType: RenderPageViewModel.SetupRenderControl
 - uid: DarkStar.Client.PageViews
   name: DarkStar.Client.PageViews
   href: api/DarkStar.Client.PageViews.html
@@ -9437,6 +9949,59 @@ references:
   isSpec: "True"
   fullName: DarkStar.Client.PageViews.LoginPageView.InitializeComponent
   nameWithType: LoginPageView.InitializeComponent
+- uid: DarkStar.Client.PageViews.PlayerSelectPageView
+  name: PlayerSelectPageView
+  href: api/DarkStar.Client.PageViews.PlayerSelectPageView.html
+  commentId: T:DarkStar.Client.PageViews.PlayerSelectPageView
+  fullName: DarkStar.Client.PageViews.PlayerSelectPageView
+  nameWithType: PlayerSelectPageView
+- uid: DarkStar.Client.PageViews.PlayerSelectPageView.#ctor
+  name: PlayerSelectPageView()
+  href: api/DarkStar.Client.PageViews.PlayerSelectPageView.html#DarkStar_Client_PageViews_PlayerSelectPageView__ctor
+  commentId: M:DarkStar.Client.PageViews.PlayerSelectPageView.#ctor
+  name.vb: New()
+  fullName: DarkStar.Client.PageViews.PlayerSelectPageView.PlayerSelectPageView()
+  fullName.vb: DarkStar.Client.PageViews.PlayerSelectPageView.New()
+  nameWithType: PlayerSelectPageView.PlayerSelectPageView()
+  nameWithType.vb: PlayerSelectPageView.New()
+- uid: DarkStar.Client.PageViews.PlayerSelectPageView.#ctor*
+  name: PlayerSelectPageView
+  href: api/DarkStar.Client.PageViews.PlayerSelectPageView.html#DarkStar_Client_PageViews_PlayerSelectPageView__ctor_
+  commentId: Overload:DarkStar.Client.PageViews.PlayerSelectPageView.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: DarkStar.Client.PageViews.PlayerSelectPageView.PlayerSelectPageView
+  fullName.vb: DarkStar.Client.PageViews.PlayerSelectPageView.New
+  nameWithType: PlayerSelectPageView.PlayerSelectPageView
+  nameWithType.vb: PlayerSelectPageView.New
+- uid: DarkStar.Client.PageViews.PlayerSelectPageView.InitializeComponent
+  name: InitializeComponent()
+  href: api/DarkStar.Client.PageViews.PlayerSelectPageView.html#DarkStar_Client_PageViews_PlayerSelectPageView_InitializeComponent
+  commentId: M:DarkStar.Client.PageViews.PlayerSelectPageView.InitializeComponent
+  fullName: DarkStar.Client.PageViews.PlayerSelectPageView.InitializeComponent()
+  nameWithType: PlayerSelectPageView.InitializeComponent()
+- uid: DarkStar.Client.PageViews.PlayerSelectPageView.InitializeComponent(System.Boolean)
+  name: InitializeComponent(bool)
+  href: api/DarkStar.Client.PageViews.PlayerSelectPageView.html#DarkStar_Client_PageViews_PlayerSelectPageView_InitializeComponent_System_Boolean_
+  commentId: M:DarkStar.Client.PageViews.PlayerSelectPageView.InitializeComponent(System.Boolean)
+  name.vb: InitializeComponent(Boolean)
+  fullName: DarkStar.Client.PageViews.PlayerSelectPageView.InitializeComponent(bool)
+  fullName.vb: DarkStar.Client.PageViews.PlayerSelectPageView.InitializeComponent(Boolean)
+  nameWithType: PlayerSelectPageView.InitializeComponent(bool)
+  nameWithType.vb: PlayerSelectPageView.InitializeComponent(Boolean)
+- uid: DarkStar.Client.PageViews.PlayerSelectPageView.InitializeComponent*
+  name: InitializeComponent
+  href: api/DarkStar.Client.PageViews.PlayerSelectPageView.html#DarkStar_Client_PageViews_PlayerSelectPageView_InitializeComponent_
+  commentId: Overload:DarkStar.Client.PageViews.PlayerSelectPageView.InitializeComponent
+  isSpec: "True"
+  fullName: DarkStar.Client.PageViews.PlayerSelectPageView.InitializeComponent
+  nameWithType: PlayerSelectPageView.InitializeComponent
+- uid: DarkStar.Client.PageViews.PlayerSelectPageView.PlayerUc
+  name: PlayerUc
+  href: api/DarkStar.Client.PageViews.PlayerSelectPageView.html#DarkStar_Client_PageViews_PlayerSelectPageView_PlayerUc
+  commentId: F:DarkStar.Client.PageViews.PlayerSelectPageView.PlayerUc
+  fullName: DarkStar.Client.PageViews.PlayerSelectPageView.PlayerUc
+  nameWithType: PlayerSelectPageView.PlayerUc
 - uid: DarkStar.Client.PageViews.RenderPageView
   name: RenderPageView
   href: api/DarkStar.Client.PageViews.RenderPageView.html
@@ -9563,6 +10128,133 @@ references:
   commentId: N:DarkStar.Client.Services
   fullName: DarkStar.Client.Services
   nameWithType: DarkStar.Client.Services
+- uid: DarkStar.Client.Services.GraphicEngineRender
+  name: GraphicEngineRender
+  href: api/DarkStar.Client.Services.GraphicEngineRender.html
+  commentId: T:DarkStar.Client.Services.GraphicEngineRender
+  fullName: DarkStar.Client.Services.GraphicEngineRender
+  nameWithType: GraphicEngineRender
+- uid: DarkStar.Client.Services.GraphicEngineRender._layerLock
+  name: _layerLock
+  href: api/DarkStar.Client.Services.GraphicEngineRender.html#DarkStar_Client_Services_GraphicEngineRender__layerLock
+  commentId: F:DarkStar.Client.Services.GraphicEngineRender._layerLock
+  fullName: DarkStar.Client.Services.GraphicEngineRender._layerLock
+  nameWithType: GraphicEngineRender._layerLock
+- uid: DarkStar.Client.Services.GraphicEngineRender._layers
+  name: _layers
+  href: api/DarkStar.Client.Services.GraphicEngineRender.html#DarkStar_Client_Services_GraphicEngineRender__layers
+  commentId: F:DarkStar.Client.Services.GraphicEngineRender._layers
+  fullName: DarkStar.Client.Services.GraphicEngineRender._layers
+  nameWithType: GraphicEngineRender._layers
+- uid: DarkStar.Client.Services.GraphicEngineRender._tileService
+  name: _tileService
+  href: api/DarkStar.Client.Services.GraphicEngineRender.html#DarkStar_Client_Services_GraphicEngineRender__tileService
+  commentId: F:DarkStar.Client.Services.GraphicEngineRender._tileService
+  fullName: DarkStar.Client.Services.GraphicEngineRender._tileService
+  nameWithType: GraphicEngineRender._tileService
+- uid: DarkStar.Client.Services.GraphicEngineRender.#ctor(DarkStar.Client.Services.TileService)
+  name: GraphicEngineRender(TileService)
+  href: api/DarkStar.Client.Services.GraphicEngineRender.html#DarkStar_Client_Services_GraphicEngineRender__ctor_DarkStar_Client_Services_TileService_
+  commentId: M:DarkStar.Client.Services.GraphicEngineRender.#ctor(DarkStar.Client.Services.TileService)
+  name.vb: New(TileService)
+  fullName: DarkStar.Client.Services.GraphicEngineRender.GraphicEngineRender(DarkStar.Client.Services.TileService)
+  fullName.vb: DarkStar.Client.Services.GraphicEngineRender.New(DarkStar.Client.Services.TileService)
+  nameWithType: GraphicEngineRender.GraphicEngineRender(TileService)
+  nameWithType.vb: GraphicEngineRender.New(TileService)
+- uid: DarkStar.Client.Services.GraphicEngineRender.#ctor*
+  name: GraphicEngineRender
+  href: api/DarkStar.Client.Services.GraphicEngineRender.html#DarkStar_Client_Services_GraphicEngineRender__ctor_
+  commentId: Overload:DarkStar.Client.Services.GraphicEngineRender.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: DarkStar.Client.Services.GraphicEngineRender.GraphicEngineRender
+  fullName.vb: DarkStar.Client.Services.GraphicEngineRender.New
+  nameWithType: GraphicEngineRender.GraphicEngineRender
+  nameWithType.vb: GraphicEngineRender.New
+- uid: DarkStar.Client.Services.GraphicEngineRender.AddTile(DarkStar.Api.World.Types.Map.MapLayer,DarkStar.Client.Models.Tiles.Tile)
+  name: AddTile(MapLayer, Tile)
+  href: api/DarkStar.Client.Services.GraphicEngineRender.html#DarkStar_Client_Services_GraphicEngineRender_AddTile_DarkStar_Api_World_Types_Map_MapLayer_DarkStar_Client_Models_Tiles_Tile_
+  commentId: M:DarkStar.Client.Services.GraphicEngineRender.AddTile(DarkStar.Api.World.Types.Map.MapLayer,DarkStar.Client.Models.Tiles.Tile)
+  fullName: DarkStar.Client.Services.GraphicEngineRender.AddTile(DarkStar.Api.World.Types.Map.MapLayer, DarkStar.Client.Models.Tiles.Tile)
+  nameWithType: GraphicEngineRender.AddTile(MapLayer, Tile)
+- uid: DarkStar.Client.Services.GraphicEngineRender.AddTile*
+  name: AddTile
+  href: api/DarkStar.Client.Services.GraphicEngineRender.html#DarkStar_Client_Services_GraphicEngineRender_AddTile_
+  commentId: Overload:DarkStar.Client.Services.GraphicEngineRender.AddTile
+  isSpec: "True"
+  fullName: DarkStar.Client.Services.GraphicEngineRender.AddTile
+  nameWithType: GraphicEngineRender.AddTile
+- uid: DarkStar.Client.Services.GraphicEngineRender.ClearLayers
+  name: ClearLayers()
+  href: api/DarkStar.Client.Services.GraphicEngineRender.html#DarkStar_Client_Services_GraphicEngineRender_ClearLayers
+  commentId: M:DarkStar.Client.Services.GraphicEngineRender.ClearLayers
+  fullName: DarkStar.Client.Services.GraphicEngineRender.ClearLayers()
+  nameWithType: GraphicEngineRender.ClearLayers()
+- uid: DarkStar.Client.Services.GraphicEngineRender.ClearLayers*
+  name: ClearLayers
+  href: api/DarkStar.Client.Services.GraphicEngineRender.html#DarkStar_Client_Services_GraphicEngineRender_ClearLayers_
+  commentId: Overload:DarkStar.Client.Services.GraphicEngineRender.ClearLayers
+  isSpec: "True"
+  fullName: DarkStar.Client.Services.GraphicEngineRender.ClearLayers
+  nameWithType: GraphicEngineRender.ClearLayers
+- uid: DarkStar.Client.Services.GraphicEngineRender.MoveTile(DarkStar.Api.World.Types.Map.MapLayer,System.String,DarkStar.Network.Protocol.Messages.Common.PointPosition)
+  name: MoveTile(MapLayer, string, PointPosition)
+  href: api/DarkStar.Client.Services.GraphicEngineRender.html#DarkStar_Client_Services_GraphicEngineRender_MoveTile_DarkStar_Api_World_Types_Map_MapLayer_System_String_DarkStar_Network_Protocol_Messages_Common_PointPosition_
+  commentId: M:DarkStar.Client.Services.GraphicEngineRender.MoveTile(DarkStar.Api.World.Types.Map.MapLayer,System.String,DarkStar.Network.Protocol.Messages.Common.PointPosition)
+  name.vb: MoveTile(MapLayer, String, PointPosition)
+  fullName: DarkStar.Client.Services.GraphicEngineRender.MoveTile(DarkStar.Api.World.Types.Map.MapLayer, string, DarkStar.Network.Protocol.Messages.Common.PointPosition)
+  fullName.vb: DarkStar.Client.Services.GraphicEngineRender.MoveTile(DarkStar.Api.World.Types.Map.MapLayer, String, DarkStar.Network.Protocol.Messages.Common.PointPosition)
+  nameWithType: GraphicEngineRender.MoveTile(MapLayer, string, PointPosition)
+  nameWithType.vb: GraphicEngineRender.MoveTile(MapLayer, String, PointPosition)
+- uid: DarkStar.Client.Services.GraphicEngineRender.MoveTile*
+  name: MoveTile
+  href: api/DarkStar.Client.Services.GraphicEngineRender.html#DarkStar_Client_Services_GraphicEngineRender_MoveTile_
+  commentId: Overload:DarkStar.Client.Services.GraphicEngineRender.MoveTile
+  isSpec: "True"
+  fullName: DarkStar.Client.Services.GraphicEngineRender.MoveTile
+  nameWithType: GraphicEngineRender.MoveTile
+- uid: DarkStar.Client.Services.GraphicEngineRender.OnRenderAction(System.ValueTuple{SkiaSharp.SKCanvas,System.TimeSpan})
+  name: OnRenderAction((SKCanvas canvas, TimeSpan delta))
+  href: api/DarkStar.Client.Services.GraphicEngineRender.html#DarkStar_Client_Services_GraphicEngineRender_OnRenderAction_System_ValueTuple_SkiaSharp_SKCanvas_System_TimeSpan__
+  commentId: M:DarkStar.Client.Services.GraphicEngineRender.OnRenderAction(System.ValueTuple{SkiaSharp.SKCanvas,System.TimeSpan})
+  name.vb: OnRenderAction((canvas As SKCanvas, delta As TimeSpan))
+  fullName: DarkStar.Client.Services.GraphicEngineRender.OnRenderAction((SkiaSharp.SKCanvas canvas, System.TimeSpan delta))
+  fullName.vb: DarkStar.Client.Services.GraphicEngineRender.OnRenderAction((canvas As SkiaSharp.SKCanvas, delta As System.TimeSpan))
+  nameWithType: GraphicEngineRender.OnRenderAction((SKCanvas canvas, TimeSpan delta))
+  nameWithType.vb: GraphicEngineRender.OnRenderAction((canvas As SKCanvas, delta As TimeSpan))
+- uid: DarkStar.Client.Services.GraphicEngineRender.OnRenderAction*
+  name: OnRenderAction
+  href: api/DarkStar.Client.Services.GraphicEngineRender.html#DarkStar_Client_Services_GraphicEngineRender_OnRenderAction_
+  commentId: Overload:DarkStar.Client.Services.GraphicEngineRender.OnRenderAction
+  isSpec: "True"
+  fullName: DarkStar.Client.Services.GraphicEngineRender.OnRenderAction
+  nameWithType: GraphicEngineRender.OnRenderAction
+- uid: DarkStar.Client.Services.GraphicEngineRender.RenderAction
+  name: RenderAction
+  href: api/DarkStar.Client.Services.GraphicEngineRender.html#DarkStar_Client_Services_GraphicEngineRender_RenderAction
+  commentId: P:DarkStar.Client.Services.GraphicEngineRender.RenderAction
+  fullName: DarkStar.Client.Services.GraphicEngineRender.RenderAction
+  nameWithType: GraphicEngineRender.RenderAction
+- uid: DarkStar.Client.Services.GraphicEngineRender.RenderAction*
+  name: RenderAction
+  href: api/DarkStar.Client.Services.GraphicEngineRender.html#DarkStar_Client_Services_GraphicEngineRender_RenderAction_
+  commentId: Overload:DarkStar.Client.Services.GraphicEngineRender.RenderAction
+  isSpec: "True"
+  fullName: DarkStar.Client.Services.GraphicEngineRender.RenderAction
+  nameWithType: GraphicEngineRender.RenderAction
+- uid: DarkStar.Client.Services.GraphicEngineRender.RenderTile(DarkStar.Client.Models.Tiles.Tile,SkiaSharp.SKCanvas,System.TimeSpan)
+  name: RenderTile(Tile, SKCanvas, TimeSpan)
+  href: api/DarkStar.Client.Services.GraphicEngineRender.html#DarkStar_Client_Services_GraphicEngineRender_RenderTile_DarkStar_Client_Models_Tiles_Tile_SkiaSharp_SKCanvas_System_TimeSpan_
+  commentId: M:DarkStar.Client.Services.GraphicEngineRender.RenderTile(DarkStar.Client.Models.Tiles.Tile,SkiaSharp.SKCanvas,System.TimeSpan)
+  fullName: DarkStar.Client.Services.GraphicEngineRender.RenderTile(DarkStar.Client.Models.Tiles.Tile, SkiaSharp.SKCanvas, System.TimeSpan)
+  nameWithType: GraphicEngineRender.RenderTile(Tile, SKCanvas, TimeSpan)
+- uid: DarkStar.Client.Services.GraphicEngineRender.RenderTile*
+  name: RenderTile
+  href: api/DarkStar.Client.Services.GraphicEngineRender.html#DarkStar_Client_Services_GraphicEngineRender_RenderTile_
+  commentId: Overload:DarkStar.Client.Services.GraphicEngineRender.RenderTile
+  isSpec: "True"
+  fullName: DarkStar.Client.Services.GraphicEngineRender.RenderTile
+  nameWithType: GraphicEngineRender.RenderTile
 - uid: DarkStar.Client.Services.ServiceContext
   name: ServiceContext
   href: api/DarkStar.Client.Services.ServiceContext.html
@@ -9588,6 +10280,19 @@ references:
   fullName.vb: DarkStar.Client.Services.ServiceContext.New
   nameWithType: ServiceContext.ServiceContext
   nameWithType.vb: ServiceContext.New
+- uid: DarkStar.Client.Services.ServiceContext.AssetDirectory
+  name: AssetDirectory
+  href: api/DarkStar.Client.Services.ServiceContext.html#DarkStar_Client_Services_ServiceContext_AssetDirectory
+  commentId: P:DarkStar.Client.Services.ServiceContext.AssetDirectory
+  fullName: DarkStar.Client.Services.ServiceContext.AssetDirectory
+  nameWithType: ServiceContext.AssetDirectory
+- uid: DarkStar.Client.Services.ServiceContext.AssetDirectory*
+  name: AssetDirectory
+  href: api/DarkStar.Client.Services.ServiceContext.html#DarkStar_Client_Services_ServiceContext_AssetDirectory_
+  commentId: Overload:DarkStar.Client.Services.ServiceContext.AssetDirectory
+  isSpec: "True"
+  fullName: DarkStar.Client.Services.ServiceContext.AssetDirectory
+  nameWithType: ServiceContext.AssetDirectory
 - uid: DarkStar.Client.Services.ServiceContext.NetworkClient
   name: NetworkClient
   href: api/DarkStar.Client.Services.ServiceContext.html#DarkStar_Client_Services_ServiceContext_NetworkClient
@@ -9601,6 +10306,19 @@ references:
   isSpec: "True"
   fullName: DarkStar.Client.Services.ServiceContext.NetworkClient
   nameWithType: ServiceContext.NetworkClient
+- uid: DarkStar.Client.Services.ServiceContext.RootDirectory
+  name: RootDirectory
+  href: api/DarkStar.Client.Services.ServiceContext.html#DarkStar_Client_Services_ServiceContext_RootDirectory
+  commentId: P:DarkStar.Client.Services.ServiceContext.RootDirectory
+  fullName: DarkStar.Client.Services.ServiceContext.RootDirectory
+  nameWithType: ServiceContext.RootDirectory
+- uid: DarkStar.Client.Services.ServiceContext.RootDirectory*
+  name: RootDirectory
+  href: api/DarkStar.Client.Services.ServiceContext.html#DarkStar_Client_Services_ServiceContext_RootDirectory_
+  commentId: Overload:DarkStar.Client.Services.ServiceContext.RootDirectory
+  isSpec: "True"
+  fullName: DarkStar.Client.Services.ServiceContext.RootDirectory
+  nameWithType: ServiceContext.RootDirectory
 - uid: DarkStar.Client.Services.ServiceContext.ServerUrl
   name: ServerUrl
   href: api/DarkStar.Client.Services.ServiceContext.html#DarkStar_Client_Services_ServiceContext_ServerUrl
@@ -9614,6 +10332,151 @@ references:
   isSpec: "True"
   fullName: DarkStar.Client.Services.ServiceContext.ServerUrl
   nameWithType: ServiceContext.ServerUrl
+- uid: DarkStar.Client.Services.TileService
+  name: TileService
+  href: api/DarkStar.Client.Services.TileService.html
+  commentId: T:DarkStar.Client.Services.TileService
+  fullName: DarkStar.Client.Services.TileService
+  nameWithType: TileService
+- uid: DarkStar.Client.Services.TileService._defaultSkImageTileSet
+  name: _defaultSkImageTileSet
+  href: api/DarkStar.Client.Services.TileService.html#DarkStar_Client_Services_TileService__defaultSkImageTileSet
+  commentId: F:DarkStar.Client.Services.TileService._defaultSkImageTileSet
+  fullName: DarkStar.Client.Services.TileService._defaultSkImageTileSet
+  nameWithType: TileService._defaultSkImageTileSet
+- uid: DarkStar.Client.Services.TileService._defaultTileSet
+  name: _defaultTileSet
+  href: api/DarkStar.Client.Services.TileService.html#DarkStar_Client_Services_TileService__defaultTileSet
+  commentId: F:DarkStar.Client.Services.TileService._defaultTileSet
+  fullName: DarkStar.Client.Services.TileService._defaultTileSet
+  nameWithType: TileService._defaultTileSet
+- uid: DarkStar.Client.Services.TileService._imageHeight
+  name: _imageHeight
+  href: api/DarkStar.Client.Services.TileService.html#DarkStar_Client_Services_TileService__imageHeight
+  commentId: F:DarkStar.Client.Services.TileService._imageHeight
+  fullName: DarkStar.Client.Services.TileService._imageHeight
+  nameWithType: TileService._imageHeight
+- uid: DarkStar.Client.Services.TileService._imageWidth
+  name: _imageWidth
+  href: api/DarkStar.Client.Services.TileService.html#DarkStar_Client_Services_TileService__imageWidth
+  commentId: F:DarkStar.Client.Services.TileService._imageWidth
+  fullName: DarkStar.Client.Services.TileService._imageWidth
+  nameWithType: TileService._imageWidth
+- uid: DarkStar.Client.Services.TileService._logger
+  name: _logger
+  href: api/DarkStar.Client.Services.TileService.html#DarkStar_Client_Services_TileService__logger
+  commentId: F:DarkStar.Client.Services.TileService._logger
+  fullName: DarkStar.Client.Services.TileService._logger
+  nameWithType: TileService._logger
+- uid: DarkStar.Client.Services.TileService._serviceContext
+  name: _serviceContext
+  href: api/DarkStar.Client.Services.TileService.html#DarkStar_Client_Services_TileService__serviceContext
+  commentId: F:DarkStar.Client.Services.TileService._serviceContext
+  fullName: DarkStar.Client.Services.TileService._serviceContext
+  nameWithType: TileService._serviceContext
+- uid: DarkStar.Client.Services.TileService.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Client.Services.TileService},DarkStar.Client.Services.ServiceContext)
+  name: TileService(ILogger<TileService>, ServiceContext)
+  href: api/DarkStar.Client.Services.TileService.html#DarkStar_Client_Services_TileService__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Client_Services_TileService__DarkStar_Client_Services_ServiceContext_
+  commentId: M:DarkStar.Client.Services.TileService.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Client.Services.TileService},DarkStar.Client.Services.ServiceContext)
+  name.vb: New(ILogger(Of TileService), ServiceContext)
+  fullName: DarkStar.Client.Services.TileService.TileService(Microsoft.Extensions.Logging.ILogger<DarkStar.Client.Services.TileService>, DarkStar.Client.Services.ServiceContext)
+  fullName.vb: DarkStar.Client.Services.TileService.New(Microsoft.Extensions.Logging.ILogger(Of DarkStar.Client.Services.TileService), DarkStar.Client.Services.ServiceContext)
+  nameWithType: TileService.TileService(ILogger<TileService>, ServiceContext)
+  nameWithType.vb: TileService.New(ILogger(Of TileService), ServiceContext)
+- uid: DarkStar.Client.Services.TileService.#ctor*
+  name: TileService
+  href: api/DarkStar.Client.Services.TileService.html#DarkStar_Client_Services_TileService__ctor_
+  commentId: Overload:DarkStar.Client.Services.TileService.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: DarkStar.Client.Services.TileService.TileService
+  fullName.vb: DarkStar.Client.Services.TileService.New
+  nameWithType: TileService.TileService
+  nameWithType.vb: TileService.New
+- uid: DarkStar.Client.Services.TileService.CheckAndDownloadTiles
+  name: CheckAndDownloadTiles()
+  href: api/DarkStar.Client.Services.TileService.html#DarkStar_Client_Services_TileService_CheckAndDownloadTiles
+  commentId: M:DarkStar.Client.Services.TileService.CheckAndDownloadTiles
+  fullName: DarkStar.Client.Services.TileService.CheckAndDownloadTiles()
+  nameWithType: TileService.CheckAndDownloadTiles()
+- uid: DarkStar.Client.Services.TileService.CheckAndDownloadTiles*
+  name: CheckAndDownloadTiles
+  href: api/DarkStar.Client.Services.TileService.html#DarkStar_Client_Services_TileService_CheckAndDownloadTiles_
+  commentId: Overload:DarkStar.Client.Services.TileService.CheckAndDownloadTiles
+  isSpec: "True"
+  fullName: DarkStar.Client.Services.TileService.CheckAndDownloadTiles
+  nameWithType: TileService.CheckAndDownloadTiles
+- uid: DarkStar.Client.Services.TileService.DownloadTileSet(DarkStar.Client.Models.Dto.TileSetDto)
+  name: DownloadTileSet(TileSetDto)
+  href: api/DarkStar.Client.Services.TileService.html#DarkStar_Client_Services_TileService_DownloadTileSet_DarkStar_Client_Models_Dto_TileSetDto_
+  commentId: M:DarkStar.Client.Services.TileService.DownloadTileSet(DarkStar.Client.Models.Dto.TileSetDto)
+  fullName: DarkStar.Client.Services.TileService.DownloadTileSet(DarkStar.Client.Models.Dto.TileSetDto)
+  nameWithType: TileService.DownloadTileSet(TileSetDto)
+- uid: DarkStar.Client.Services.TileService.DownloadTileSet*
+  name: DownloadTileSet
+  href: api/DarkStar.Client.Services.TileService.html#DarkStar_Client_Services_TileService_DownloadTileSet_
+  commentId: Overload:DarkStar.Client.Services.TileService.DownloadTileSet
+  isSpec: "True"
+  fullName: DarkStar.Client.Services.TileService.DownloadTileSet
+  nameWithType: TileService.DownloadTileSet
+- uid: DarkStar.Client.Services.TileService.GetSkImageTile(System.Int32)
+  name: GetSkImageTile(int)
+  href: api/DarkStar.Client.Services.TileService.html#DarkStar_Client_Services_TileService_GetSkImageTile_System_Int32_
+  commentId: M:DarkStar.Client.Services.TileService.GetSkImageTile(System.Int32)
+  name.vb: GetSkImageTile(Integer)
+  fullName: DarkStar.Client.Services.TileService.GetSkImageTile(int)
+  fullName.vb: DarkStar.Client.Services.TileService.GetSkImageTile(Integer)
+  nameWithType: TileService.GetSkImageTile(int)
+  nameWithType.vb: TileService.GetSkImageTile(Integer)
+- uid: DarkStar.Client.Services.TileService.GetSkImageTile*
+  name: GetSkImageTile
+  href: api/DarkStar.Client.Services.TileService.html#DarkStar_Client_Services_TileService_GetSkImageTile_
+  commentId: Overload:DarkStar.Client.Services.TileService.GetSkImageTile
+  isSpec: "True"
+  fullName: DarkStar.Client.Services.TileService.GetSkImageTile
+  nameWithType: TileService.GetSkImageTile
+- uid: DarkStar.Client.Services.TileService.GetTileId(System.Int32)
+  name: GetTileId(int)
+  href: api/DarkStar.Client.Services.TileService.html#DarkStar_Client_Services_TileService_GetTileId_System_Int32_
+  commentId: M:DarkStar.Client.Services.TileService.GetTileId(System.Int32)
+  name.vb: GetTileId(Integer)
+  fullName: DarkStar.Client.Services.TileService.GetTileId(int)
+  fullName.vb: DarkStar.Client.Services.TileService.GetTileId(Integer)
+  nameWithType: TileService.GetTileId(int)
+  nameWithType.vb: TileService.GetTileId(Integer)
+- uid: DarkStar.Client.Services.TileService.GetTileId*
+  name: GetTileId
+  href: api/DarkStar.Client.Services.TileService.html#DarkStar_Client_Services_TileService_GetTileId_
+  commentId: Overload:DarkStar.Client.Services.TileService.GetTileId
+  isSpec: "True"
+  fullName: DarkStar.Client.Services.TileService.GetTileId
+  nameWithType: TileService.GetTileId
+- uid: DarkStar.Client.Services.TileService.TileHeight
+  name: TileHeight
+  href: api/DarkStar.Client.Services.TileService.html#DarkStar_Client_Services_TileService_TileHeight
+  commentId: P:DarkStar.Client.Services.TileService.TileHeight
+  fullName: DarkStar.Client.Services.TileService.TileHeight
+  nameWithType: TileService.TileHeight
+- uid: DarkStar.Client.Services.TileService.TileHeight*
+  name: TileHeight
+  href: api/DarkStar.Client.Services.TileService.html#DarkStar_Client_Services_TileService_TileHeight_
+  commentId: Overload:DarkStar.Client.Services.TileService.TileHeight
+  isSpec: "True"
+  fullName: DarkStar.Client.Services.TileService.TileHeight
+  nameWithType: TileService.TileHeight
+- uid: DarkStar.Client.Services.TileService.TileWidth
+  name: TileWidth
+  href: api/DarkStar.Client.Services.TileService.html#DarkStar_Client_Services_TileService_TileWidth
+  commentId: P:DarkStar.Client.Services.TileService.TileWidth
+  fullName: DarkStar.Client.Services.TileService.TileWidth
+  nameWithType: TileService.TileWidth
+- uid: DarkStar.Client.Services.TileService.TileWidth*
+  name: TileWidth
+  href: api/DarkStar.Client.Services.TileService.html#DarkStar_Client_Services_TileService_TileWidth_
+  commentId: Overload:DarkStar.Client.Services.TileService.TileWidth
+  isSpec: "True"
+  fullName: DarkStar.Client.Services.TileService.TileWidth
+  nameWithType: TileService.TileWidth
 - uid: DarkStar.Client.Services.WindowManager
   name: WindowManager
   href: api/DarkStar.Client.Services.WindowManager.html
@@ -9670,6 +10533,12 @@ references:
   isSpec: "True"
   fullName: DarkStar.Client.Services.WindowManager.InitializePageView
   nameWithType: WindowManager.InitializePageView
+- uid: DarkStar.Client.Services.WindowManager.NavigateToPage(System.Type)
+  name: NavigateToPage(Type)
+  href: api/DarkStar.Client.Services.WindowManager.html#DarkStar_Client_Services_WindowManager_NavigateToPage_System_Type_
+  commentId: M:DarkStar.Client.Services.WindowManager.NavigateToPage(System.Type)
+  fullName: DarkStar.Client.Services.WindowManager.NavigateToPage(System.Type)
+  nameWithType: WindowManager.NavigateToPage(Type)
 - uid: DarkStar.Client.Services.WindowManager.NavigateToPage*
   name: NavigateToPage
   href: api/DarkStar.Client.Services.WindowManager.html#DarkStar_Client_Services_WindowManager_NavigateToPage_
@@ -9686,6 +10555,56 @@ references:
   fullName.vb: DarkStar.Client.Services.WindowManager.NavigateToPage(Of T)()
   nameWithType: WindowManager.NavigateToPage<T>()
   nameWithType.vb: WindowManager.NavigateToPage(Of T)()
+- uid: DarkStar.Client.Utils
+  name: DarkStar.Client.Utils
+  href: api/DarkStar.Client.Utils.html
+  commentId: N:DarkStar.Client.Utils
+  fullName: DarkStar.Client.Utils
+  nameWithType: DarkStar.Client.Utils
+- uid: DarkStar.Client.Utils.HttpClientExtensions
+  name: HttpClientExtensions
+  href: api/DarkStar.Client.Utils.HttpClientExtensions.html
+  commentId: T:DarkStar.Client.Utils.HttpClientExtensions
+  fullName: DarkStar.Client.Utils.HttpClientExtensions
+  nameWithType: HttpClientExtensions
+- uid: DarkStar.Client.Utils.HttpClientExtensions.DownloadAsync(System.Net.Http.HttpClient,System.String,System.IO.Stream,System.IProgress{System.Int64},System.Threading.CancellationToken)
+  name: DownloadAsync(HttpClient, string, Stream, IProgress<long>, CancellationToken)
+  href: api/DarkStar.Client.Utils.HttpClientExtensions.html#DarkStar_Client_Utils_HttpClientExtensions_DownloadAsync_System_Net_Http_HttpClient_System_String_System_IO_Stream_System_IProgress_System_Int64__System_Threading_CancellationToken_
+  commentId: M:DarkStar.Client.Utils.HttpClientExtensions.DownloadAsync(System.Net.Http.HttpClient,System.String,System.IO.Stream,System.IProgress{System.Int64},System.Threading.CancellationToken)
+  name.vb: DownloadAsync(HttpClient, String, Stream, IProgress(Of Long), CancellationToken)
+  fullName: DarkStar.Client.Utils.HttpClientExtensions.DownloadAsync(System.Net.Http.HttpClient, string, System.IO.Stream, System.IProgress<long>, System.Threading.CancellationToken)
+  fullName.vb: DarkStar.Client.Utils.HttpClientExtensions.DownloadAsync(System.Net.Http.HttpClient, String, System.IO.Stream, System.IProgress(Of Long), System.Threading.CancellationToken)
+  nameWithType: HttpClientExtensions.DownloadAsync(HttpClient, string, Stream, IProgress<long>, CancellationToken)
+  nameWithType.vb: HttpClientExtensions.DownloadAsync(HttpClient, String, Stream, IProgress(Of Long), CancellationToken)
+- uid: DarkStar.Client.Utils.HttpClientExtensions.DownloadAsync*
+  name: DownloadAsync
+  href: api/DarkStar.Client.Utils.HttpClientExtensions.html#DarkStar_Client_Utils_HttpClientExtensions_DownloadAsync_
+  commentId: Overload:DarkStar.Client.Utils.HttpClientExtensions.DownloadAsync
+  isSpec: "True"
+  fullName: DarkStar.Client.Utils.HttpClientExtensions.DownloadAsync
+  nameWithType: HttpClientExtensions.DownloadAsync
+- uid: DarkStar.Client.Utils.StreamExtensions
+  name: StreamExtensions
+  href: api/DarkStar.Client.Utils.StreamExtensions.html
+  commentId: T:DarkStar.Client.Utils.StreamExtensions
+  fullName: DarkStar.Client.Utils.StreamExtensions
+  nameWithType: StreamExtensions
+- uid: DarkStar.Client.Utils.StreamExtensions.CopyToAsync(System.IO.Stream,System.IO.Stream,System.Int32,System.IProgress{System.Int64},System.Threading.CancellationToken)
+  name: CopyToAsync(Stream, Stream, int, IProgress<long>, CancellationToken)
+  href: api/DarkStar.Client.Utils.StreamExtensions.html#DarkStar_Client_Utils_StreamExtensions_CopyToAsync_System_IO_Stream_System_IO_Stream_System_Int32_System_IProgress_System_Int64__System_Threading_CancellationToken_
+  commentId: M:DarkStar.Client.Utils.StreamExtensions.CopyToAsync(System.IO.Stream,System.IO.Stream,System.Int32,System.IProgress{System.Int64},System.Threading.CancellationToken)
+  name.vb: CopyToAsync(Stream, Stream, Integer, IProgress(Of Long), CancellationToken)
+  fullName: DarkStar.Client.Utils.StreamExtensions.CopyToAsync(System.IO.Stream, System.IO.Stream, int, System.IProgress<long>, System.Threading.CancellationToken)
+  fullName.vb: DarkStar.Client.Utils.StreamExtensions.CopyToAsync(System.IO.Stream, System.IO.Stream, Integer, System.IProgress(Of Long), System.Threading.CancellationToken)
+  nameWithType: StreamExtensions.CopyToAsync(Stream, Stream, int, IProgress<long>, CancellationToken)
+  nameWithType.vb: StreamExtensions.CopyToAsync(Stream, Stream, Integer, IProgress(Of Long), CancellationToken)
+- uid: DarkStar.Client.Utils.StreamExtensions.CopyToAsync*
+  name: CopyToAsync
+  href: api/DarkStar.Client.Utils.StreamExtensions.html#DarkStar_Client_Utils_StreamExtensions_CopyToAsync_
+  commentId: Overload:DarkStar.Client.Utils.StreamExtensions.CopyToAsync
+  isSpec: "True"
+  fullName: DarkStar.Client.Utils.StreamExtensions.CopyToAsync
+  nameWithType: StreamExtensions.CopyToAsync
 - uid: DarkStar.Client.ViewModels
   name: DarkStar.Client.ViewModels
   href: api/DarkStar.Client.ViewModels.html
@@ -9704,15 +10623,15 @@ references:
   commentId: F:DarkStar.Client.ViewModels.MainWindowViewModel._windowManager
   fullName: DarkStar.Client.ViewModels.MainWindowViewModel._windowManager
   nameWithType: MainWindowViewModel._windowManager
-- uid: DarkStar.Client.ViewModels.MainWindowViewModel.#ctor(DarkStar.Network.Client.Interfaces.IDarkStarNetworkClient,DarkStar.Client.Services.WindowManager,DarkStar.Client.Services.ServiceContext)
-  name: MainWindowViewModel(IDarkStarNetworkClient, WindowManager, ServiceContext)
-  href: api/DarkStar.Client.ViewModels.MainWindowViewModel.html#DarkStar_Client_ViewModels_MainWindowViewModel__ctor_DarkStar_Network_Client_Interfaces_IDarkStarNetworkClient_DarkStar_Client_Services_WindowManager_DarkStar_Client_Services_ServiceContext_
-  commentId: M:DarkStar.Client.ViewModels.MainWindowViewModel.#ctor(DarkStar.Network.Client.Interfaces.IDarkStarNetworkClient,DarkStar.Client.Services.WindowManager,DarkStar.Client.Services.ServiceContext)
-  name.vb: New(IDarkStarNetworkClient, WindowManager, ServiceContext)
-  fullName: DarkStar.Client.ViewModels.MainWindowViewModel.MainWindowViewModel(DarkStar.Network.Client.Interfaces.IDarkStarNetworkClient, DarkStar.Client.Services.WindowManager, DarkStar.Client.Services.ServiceContext)
-  fullName.vb: DarkStar.Client.ViewModels.MainWindowViewModel.New(DarkStar.Network.Client.Interfaces.IDarkStarNetworkClient, DarkStar.Client.Services.WindowManager, DarkStar.Client.Services.ServiceContext)
-  nameWithType: MainWindowViewModel.MainWindowViewModel(IDarkStarNetworkClient, WindowManager, ServiceContext)
-  nameWithType.vb: MainWindowViewModel.New(IDarkStarNetworkClient, WindowManager, ServiceContext)
+- uid: DarkStar.Client.ViewModels.MainWindowViewModel.#ctor(DarkStar.Network.Client.Interfaces.IDarkStarNetworkClient,DarkStar.Client.Services.WindowManager,DarkStar.Client.Services.ServiceContext,DarkStar.Client.Services.TileService)
+  name: MainWindowViewModel(IDarkStarNetworkClient, WindowManager, ServiceContext, TileService)
+  href: api/DarkStar.Client.ViewModels.MainWindowViewModel.html#DarkStar_Client_ViewModels_MainWindowViewModel__ctor_DarkStar_Network_Client_Interfaces_IDarkStarNetworkClient_DarkStar_Client_Services_WindowManager_DarkStar_Client_Services_ServiceContext_DarkStar_Client_Services_TileService_
+  commentId: M:DarkStar.Client.ViewModels.MainWindowViewModel.#ctor(DarkStar.Network.Client.Interfaces.IDarkStarNetworkClient,DarkStar.Client.Services.WindowManager,DarkStar.Client.Services.ServiceContext,DarkStar.Client.Services.TileService)
+  name.vb: New(IDarkStarNetworkClient, WindowManager, ServiceContext, TileService)
+  fullName: DarkStar.Client.ViewModels.MainWindowViewModel.MainWindowViewModel(DarkStar.Network.Client.Interfaces.IDarkStarNetworkClient, DarkStar.Client.Services.WindowManager, DarkStar.Client.Services.ServiceContext, DarkStar.Client.Services.TileService)
+  fullName.vb: DarkStar.Client.ViewModels.MainWindowViewModel.New(DarkStar.Network.Client.Interfaces.IDarkStarNetworkClient, DarkStar.Client.Services.WindowManager, DarkStar.Client.Services.ServiceContext, DarkStar.Client.Services.TileService)
+  nameWithType: MainWindowViewModel.MainWindowViewModel(IDarkStarNetworkClient, WindowManager, ServiceContext, TileService)
+  nameWithType.vb: MainWindowViewModel.New(IDarkStarNetworkClient, WindowManager, ServiceContext, TileService)
 - uid: DarkStar.Client.ViewModels.MainWindowViewModel.#ctor*
   name: MainWindowViewModel
   href: api/DarkStar.Client.ViewModels.MainWindowViewModel.html#DarkStar_Client_ViewModels_MainWindowViewModel__ctor_
@@ -9723,6 +10642,71 @@ references:
   fullName.vb: DarkStar.Client.ViewModels.MainWindowViewModel.New
   nameWithType: MainWindowViewModel.MainWindowViewModel
   nameWithType.vb: MainWindowViewModel.New
+- uid: DarkStar.Client.ViewModels.MainWindowViewModel.MaxProgressValue
+  name: MaxProgressValue
+  href: api/DarkStar.Client.ViewModels.MainWindowViewModel.html#DarkStar_Client_ViewModels_MainWindowViewModel_MaxProgressValue
+  commentId: P:DarkStar.Client.ViewModels.MainWindowViewModel.MaxProgressValue
+  fullName: DarkStar.Client.ViewModels.MainWindowViewModel.MaxProgressValue
+  nameWithType: MainWindowViewModel.MaxProgressValue
+- uid: DarkStar.Client.ViewModels.MainWindowViewModel.MaxProgressValue*
+  name: MaxProgressValue
+  href: api/DarkStar.Client.ViewModels.MainWindowViewModel.html#DarkStar_Client_ViewModels_MainWindowViewModel_MaxProgressValue_
+  commentId: Overload:DarkStar.Client.ViewModels.MainWindowViewModel.MaxProgressValue
+  isSpec: "True"
+  fullName: DarkStar.Client.ViewModels.MainWindowViewModel.MaxProgressValue
+  nameWithType: MainWindowViewModel.MaxProgressValue
+- uid: DarkStar.Client.ViewModels.MainWindowViewModel.ProgressText
+  name: ProgressText
+  href: api/DarkStar.Client.ViewModels.MainWindowViewModel.html#DarkStar_Client_ViewModels_MainWindowViewModel_ProgressText
+  commentId: P:DarkStar.Client.ViewModels.MainWindowViewModel.ProgressText
+  fullName: DarkStar.Client.ViewModels.MainWindowViewModel.ProgressText
+  nameWithType: MainWindowViewModel.ProgressText
+- uid: DarkStar.Client.ViewModels.MainWindowViewModel.ProgressText*
+  name: ProgressText
+  href: api/DarkStar.Client.ViewModels.MainWindowViewModel.html#DarkStar_Client_ViewModels_MainWindowViewModel_ProgressText_
+  commentId: Overload:DarkStar.Client.ViewModels.MainWindowViewModel.ProgressText
+  isSpec: "True"
+  fullName: DarkStar.Client.ViewModels.MainWindowViewModel.ProgressText
+  nameWithType: MainWindowViewModel.ProgressText
+- uid: DarkStar.Client.ViewModels.MainWindowViewModel.ProgressValue
+  name: ProgressValue
+  href: api/DarkStar.Client.ViewModels.MainWindowViewModel.html#DarkStar_Client_ViewModels_MainWindowViewModel_ProgressValue
+  commentId: P:DarkStar.Client.ViewModels.MainWindowViewModel.ProgressValue
+  fullName: DarkStar.Client.ViewModels.MainWindowViewModel.ProgressValue
+  nameWithType: MainWindowViewModel.ProgressValue
+- uid: DarkStar.Client.ViewModels.MainWindowViewModel.ProgressValue*
+  name: ProgressValue
+  href: api/DarkStar.Client.ViewModels.MainWindowViewModel.html#DarkStar_Client_ViewModels_MainWindowViewModel_ProgressValue_
+  commentId: Overload:DarkStar.Client.ViewModels.MainWindowViewModel.ProgressValue
+  isSpec: "True"
+  fullName: DarkStar.Client.ViewModels.MainWindowViewModel.ProgressValue
+  nameWithType: MainWindowViewModel.ProgressValue
+- uid: DarkStar.Client.ViewModels.MainWindowViewModel.ServerName
+  name: ServerName
+  href: api/DarkStar.Client.ViewModels.MainWindowViewModel.html#DarkStar_Client_ViewModels_MainWindowViewModel_ServerName
+  commentId: P:DarkStar.Client.ViewModels.MainWindowViewModel.ServerName
+  fullName: DarkStar.Client.ViewModels.MainWindowViewModel.ServerName
+  nameWithType: MainWindowViewModel.ServerName
+- uid: DarkStar.Client.ViewModels.MainWindowViewModel.ServerName*
+  name: ServerName
+  href: api/DarkStar.Client.ViewModels.MainWindowViewModel.html#DarkStar_Client_ViewModels_MainWindowViewModel_ServerName_
+  commentId: Overload:DarkStar.Client.ViewModels.MainWindowViewModel.ServerName
+  isSpec: "True"
+  fullName: DarkStar.Client.ViewModels.MainWindowViewModel.ServerName
+  nameWithType: MainWindowViewModel.ServerName
+- uid: DarkStar.Client.ViewModels.MainWindowViewModel.ServerVersion
+  name: ServerVersion
+  href: api/DarkStar.Client.ViewModels.MainWindowViewModel.html#DarkStar_Client_ViewModels_MainWindowViewModel_ServerVersion
+  commentId: P:DarkStar.Client.ViewModels.MainWindowViewModel.ServerVersion
+  fullName: DarkStar.Client.ViewModels.MainWindowViewModel.ServerVersion
+  nameWithType: MainWindowViewModel.ServerVersion
+- uid: DarkStar.Client.ViewModels.MainWindowViewModel.ServerVersion*
+  name: ServerVersion
+  href: api/DarkStar.Client.ViewModels.MainWindowViewModel.html#DarkStar_Client_ViewModels_MainWindowViewModel_ServerVersion_
+  commentId: Overload:DarkStar.Client.ViewModels.MainWindowViewModel.ServerVersion
+  isSpec: "True"
+  fullName: DarkStar.Client.ViewModels.MainWindowViewModel.ServerVersion
+  nameWithType: MainWindowViewModel.ServerVersion
 - uid: DarkStar.Client.ViewModels.MainWindowViewModel.SetPageViewControl(DarkStar.Client.Controls.PageViewControl)
   name: SetPageViewControl(PageViewControl)
   href: api/DarkStar.Client.ViewModels.MainWindowViewModel.html#DarkStar_Client_ViewModels_MainWindowViewModel_SetPageViewControl_DarkStar_Client_Controls_PageViewControl_
@@ -13301,15 +14285,15 @@ references:
   commentId: T:DarkStar.Engine.MessageListeners.PlayerListMessageListener
   fullName: DarkStar.Engine.MessageListeners.PlayerListMessageListener
   nameWithType: PlayerListMessageListener
-- uid: DarkStar.Engine.MessageListeners.PlayerListMessageListener.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Api.Engine.MessageListeners.BaseNetworkMessageListener{DarkStar.Network.Protocol.Messages.Players.PlayerListResponseMessage}},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
-  name: PlayerListMessageListener(ILogger<BaseNetworkMessageListener<PlayerListResponseMessage>>, IDarkSunEngine)
-  href: api/DarkStar.Engine.MessageListeners.PlayerListMessageListener.html#DarkStar_Engine_MessageListeners_PlayerListMessageListener__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Api_Engine_MessageListeners_BaseNetworkMessageListener_DarkStar_Network_Protocol_Messages_Players_PlayerListResponseMessage___DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_
-  commentId: M:DarkStar.Engine.MessageListeners.PlayerListMessageListener.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Api.Engine.MessageListeners.BaseNetworkMessageListener{DarkStar.Network.Protocol.Messages.Players.PlayerListResponseMessage}},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
-  name.vb: New(ILogger(Of BaseNetworkMessageListener(Of PlayerListResponseMessage)), IDarkSunEngine)
-  fullName: DarkStar.Engine.MessageListeners.PlayerListMessageListener.PlayerListMessageListener(Microsoft.Extensions.Logging.ILogger<DarkStar.Api.Engine.MessageListeners.BaseNetworkMessageListener<DarkStar.Network.Protocol.Messages.Players.PlayerListResponseMessage>>, DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
-  fullName.vb: DarkStar.Engine.MessageListeners.PlayerListMessageListener.New(Microsoft.Extensions.Logging.ILogger(Of DarkStar.Api.Engine.MessageListeners.BaseNetworkMessageListener(Of DarkStar.Network.Protocol.Messages.Players.PlayerListResponseMessage)), DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
-  nameWithType: PlayerListMessageListener.PlayerListMessageListener(ILogger<BaseNetworkMessageListener<PlayerListResponseMessage>>, IDarkSunEngine)
-  nameWithType.vb: PlayerListMessageListener.New(ILogger(Of BaseNetworkMessageListener(Of PlayerListResponseMessage)), IDarkSunEngine)
+- uid: DarkStar.Engine.MessageListeners.PlayerListMessageListener.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.MessageListeners.PlayerListMessageListener},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  name: PlayerListMessageListener(ILogger<PlayerListMessageListener>, IDarkSunEngine)
+  href: api/DarkStar.Engine.MessageListeners.PlayerListMessageListener.html#DarkStar_Engine_MessageListeners_PlayerListMessageListener__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Engine_MessageListeners_PlayerListMessageListener__DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_
+  commentId: M:DarkStar.Engine.MessageListeners.PlayerListMessageListener.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.MessageListeners.PlayerListMessageListener},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  name.vb: New(ILogger(Of PlayerListMessageListener), IDarkSunEngine)
+  fullName: DarkStar.Engine.MessageListeners.PlayerListMessageListener.PlayerListMessageListener(Microsoft.Extensions.Logging.ILogger<DarkStar.Engine.MessageListeners.PlayerListMessageListener>, DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  fullName.vb: DarkStar.Engine.MessageListeners.PlayerListMessageListener.New(Microsoft.Extensions.Logging.ILogger(Of DarkStar.Engine.MessageListeners.PlayerListMessageListener), DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  nameWithType: PlayerListMessageListener.PlayerListMessageListener(ILogger<PlayerListMessageListener>, IDarkSunEngine)
+  nameWithType.vb: PlayerListMessageListener.New(ILogger(Of PlayerListMessageListener), IDarkSunEngine)
 - uid: DarkStar.Engine.MessageListeners.PlayerListMessageListener.#ctor*
   name: PlayerListMessageListener
   href: api/DarkStar.Engine.MessageListeners.PlayerListMessageListener.html#DarkStar_Engine_MessageListeners_PlayerListMessageListener__ctor_
@@ -13320,15 +14304,15 @@ references:
   fullName.vb: DarkStar.Engine.MessageListeners.PlayerListMessageListener.New
   nameWithType: PlayerListMessageListener.PlayerListMessageListener
   nameWithType.vb: PlayerListMessageListener.New
-- uid: DarkStar.Engine.MessageListeners.PlayerListMessageListener.OnMessageReceivedAsync(System.String,DarkStar.Network.Protocol.Types.DarkStarMessageType,DarkStar.Network.Protocol.Messages.Players.PlayerListResponseMessage)
-  name: OnMessageReceivedAsync(string, DarkStarMessageType, PlayerListResponseMessage)
-  href: api/DarkStar.Engine.MessageListeners.PlayerListMessageListener.html#DarkStar_Engine_MessageListeners_PlayerListMessageListener_OnMessageReceivedAsync_System_String_DarkStar_Network_Protocol_Types_DarkStarMessageType_DarkStar_Network_Protocol_Messages_Players_PlayerListResponseMessage_
-  commentId: M:DarkStar.Engine.MessageListeners.PlayerListMessageListener.OnMessageReceivedAsync(System.String,DarkStar.Network.Protocol.Types.DarkStarMessageType,DarkStar.Network.Protocol.Messages.Players.PlayerListResponseMessage)
-  name.vb: OnMessageReceivedAsync(String, DarkStarMessageType, PlayerListResponseMessage)
-  fullName: DarkStar.Engine.MessageListeners.PlayerListMessageListener.OnMessageReceivedAsync(string, DarkStar.Network.Protocol.Types.DarkStarMessageType, DarkStar.Network.Protocol.Messages.Players.PlayerListResponseMessage)
-  fullName.vb: DarkStar.Engine.MessageListeners.PlayerListMessageListener.OnMessageReceivedAsync(String, DarkStar.Network.Protocol.Types.DarkStarMessageType, DarkStar.Network.Protocol.Messages.Players.PlayerListResponseMessage)
-  nameWithType: PlayerListMessageListener.OnMessageReceivedAsync(string, DarkStarMessageType, PlayerListResponseMessage)
-  nameWithType.vb: PlayerListMessageListener.OnMessageReceivedAsync(String, DarkStarMessageType, PlayerListResponseMessage)
+- uid: DarkStar.Engine.MessageListeners.PlayerListMessageListener.OnMessageReceivedAsync(System.String,DarkStar.Network.Protocol.Types.DarkStarMessageType,DarkStar.Network.Protocol.Messages.Players.PlayerListRequestMessage)
+  name: OnMessageReceivedAsync(string, DarkStarMessageType, PlayerListRequestMessage)
+  href: api/DarkStar.Engine.MessageListeners.PlayerListMessageListener.html#DarkStar_Engine_MessageListeners_PlayerListMessageListener_OnMessageReceivedAsync_System_String_DarkStar_Network_Protocol_Types_DarkStarMessageType_DarkStar_Network_Protocol_Messages_Players_PlayerListRequestMessage_
+  commentId: M:DarkStar.Engine.MessageListeners.PlayerListMessageListener.OnMessageReceivedAsync(System.String,DarkStar.Network.Protocol.Types.DarkStarMessageType,DarkStar.Network.Protocol.Messages.Players.PlayerListRequestMessage)
+  name.vb: OnMessageReceivedAsync(String, DarkStarMessageType, PlayerListRequestMessage)
+  fullName: DarkStar.Engine.MessageListeners.PlayerListMessageListener.OnMessageReceivedAsync(string, DarkStar.Network.Protocol.Types.DarkStarMessageType, DarkStar.Network.Protocol.Messages.Players.PlayerListRequestMessage)
+  fullName.vb: DarkStar.Engine.MessageListeners.PlayerListMessageListener.OnMessageReceivedAsync(String, DarkStar.Network.Protocol.Types.DarkStarMessageType, DarkStar.Network.Protocol.Messages.Players.PlayerListRequestMessage)
+  nameWithType: PlayerListMessageListener.OnMessageReceivedAsync(string, DarkStarMessageType, PlayerListRequestMessage)
+  nameWithType.vb: PlayerListMessageListener.OnMessageReceivedAsync(String, DarkStarMessageType, PlayerListRequestMessage)
 - uid: DarkStar.Engine.MessageListeners.PlayerListMessageListener.OnMessageReceivedAsync*
   name: OnMessageReceivedAsync
   href: api/DarkStar.Engine.MessageListeners.PlayerListMessageListener.html#DarkStar_Engine_MessageListeners_PlayerListMessageListener_OnMessageReceivedAsync_

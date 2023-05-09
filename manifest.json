@@ -1935,10 +1935,140 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.Models.Dto.TileSetDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.Models.Dto.TileSetDto.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.Models.Dto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.Models.Dto.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.Models.Events.NavigateToViewEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.Models.Events.NavigateToViewEvent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.Models.Events.OnConnectedEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.Models.Events.OnConnectedEvent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.Models.Events.ProgressUpdateEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.Models.Events.ProgressUpdateEvent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.Models.Events.ServerNameEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.Models.Events.ServerNameEvent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.Models.Events.ServerVersionEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.Models.Events.ServerVersionEvent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.Models.Events.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.Models.Events.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.Models.PlayerSelectEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.Models.PlayerSelectEntity.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.Models.Tiles.Tile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.Models.Tiles.Tile.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.Models.Tiles.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.Models.Tiles.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.Models.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/DarkStar.Client.PageViewModels.LoginPageViewModel.yml",
       "output": {
         ".html": {
           "relative_path": "api/DarkStar.Client.PageViewModels.LoginPageViewModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.PageViewModels.PlayerSelectPageViewModel.html"
         }
       },
       "version": ""
@@ -1975,6 +2105,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.PageViews.PlayerSelectPageView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.PageViews.PlayerSelectPageView.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/DarkStar.Client.PageViews.RenderPageView.yml",
       "output": {
         ".html": {
@@ -2005,10 +2145,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.Services.GraphicEngineRender.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.Services.GraphicEngineRender.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/DarkStar.Client.Services.ServiceContext.yml",
       "output": {
         ".html": {
           "relative_path": "api/DarkStar.Client.Services.ServiceContext.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.Services.TileService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.Services.TileService.html"
         }
       },
       "version": ""
@@ -2029,6 +2189,36 @@
       "output": {
         ".html": {
           "relative_path": "api/DarkStar.Client.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.Utils.HttpClientExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.Utils.HttpClientExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.Utils.StreamExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.Utils.StreamExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.Utils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.Utils.html"
         }
       },
       "version": ""
