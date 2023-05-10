@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Class PlayerDataResponseMessage
+      <title>Struct PlayerDataResponseMessage
  </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Class PlayerDataResponseMessage
+      <meta name="title" content="Struct PlayerDataResponseMessage
  ">
     
       <link rel="shortcut icon" href="../favicon.ico">
@@ -71,15 +71,10 @@
 
 
 
-  <h1 id="DarkStar_Network_Protocol_Messages_Players_PlayerDataResponseMessage" data-uid="DarkStar.Network.Protocol.Messages.Players.PlayerDataResponseMessage" class="text-break">Class PlayerDataResponseMessage
+  <h1 id="DarkStar_Network_Protocol_Messages_Players_PlayerDataResponseMessage" data-uid="DarkStar.Network.Protocol.Messages.Players.PlayerDataResponseMessage" class="text-break">Struct PlayerDataResponseMessage
 </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><span class="xref">PlayerDataResponseMessage</span></div>
-  </div>
   <div class="implements">
     <h5>Implements</h5>
     <div><a class="xref" href="DarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage.html">IDarkStarNetworkMessage</a></div>
@@ -87,25 +82,22 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.equals">ValueType.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode">ValueType.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.tostring">ValueType.ToString()</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
-    </div>
-    <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
-    </div>
-    <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="DarkStar.html">DarkStar</a>.<a class="xref" href="DarkStar.Network.html">Network</a>.<a class="xref" href="DarkStar.Network.Protocol.html">Protocol</a>.<a class="xref" href="DarkStar.Network.Protocol.Messages.html">Messages</a>.<a class="xref" href="DarkStar.Network.Protocol.Messages.Players.html">Players</a></h6>
@@ -114,8 +106,264 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[NetworkMessage(DarkStarMessageType.PlayerDataResponse)]
 [ProtoContract]
-public class PlayerDataResponseMessage : IDarkStarNetworkMessage</code></pre>
+public struct PlayerDataResponseMessage : IDarkStarNetworkMessage</code></pre>
   </div>
+  <h3 id="constructors">Constructors
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Network_Protocol_Messages_Players_PlayerDataResponseMessage__ctor.md&amp;value=---%0Auid%3A%20DarkStar.Network.Protocol.Messages.Players.PlayerDataResponseMessage.%23ctor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Protocol/Messages/Players/PlayerDataResponseMessage.cs/#L39">View Source</a>
+  </span>
+  <a id="DarkStar_Network_Protocol_Messages_Players_PlayerDataResponseMessage__ctor_" data-uid="DarkStar.Network.Protocol.Messages.Players.PlayerDataResponseMessage.#ctor*"></a>
+  <h4 id="DarkStar_Network_Protocol_Messages_Players_PlayerDataResponseMessage__ctor" data-uid="DarkStar.Network.Protocol.Messages.Players.PlayerDataResponseMessage.#ctor">PlayerDataResponseMessage()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PlayerDataResponseMessage()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Network_Protocol_Messages_Players_PlayerDataResponseMessage__ctor_System_String_System_UInt32_DarkStar_Network_Protocol_Messages_Common_PointPosition_System_Guid_System_String_System_Int32_.md&amp;value=---%0Auid%3A%20DarkStar.Network.Protocol.Messages.Players.PlayerDataResponseMessage.%23ctor(System.String%2CSystem.UInt32%2CDarkStar.Network.Protocol.Messages.Common.PointPosition%2CSystem.Guid%2CSystem.String%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Protocol/Messages/Players/PlayerDataResponseMessage.cs/#L29">View Source</a>
+  </span>
+  <a id="DarkStar_Network_Protocol_Messages_Players_PlayerDataResponseMessage__ctor_" data-uid="DarkStar.Network.Protocol.Messages.Players.PlayerDataResponseMessage.#ctor*"></a>
+  <h4 id="DarkStar_Network_Protocol_Messages_Players_PlayerDataResponseMessage__ctor_System_String_System_UInt32_DarkStar_Network_Protocol_Messages_Common_PointPosition_System_Guid_System_String_System_Int32_" data-uid="DarkStar.Network.Protocol.Messages.Players.PlayerDataResponseMessage.#ctor(System.String,System.UInt32,DarkStar.Network.Protocol.Messages.Common.PointPosition,System.Guid,System.String,System.Int32)">PlayerDataResponseMessage(string, uint, PointPosition, Guid, string, int)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PlayerDataResponseMessage(string mapId, uint tileId, PointPosition position, Guid playerId, string name, int level)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">mapId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></td>
+        <td><span class="parametername">tileId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="DarkStar.Network.Protocol.Messages.Common.PointPosition.html">PointPosition</a></td>
+        <td><span class="parametername">position</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></td>
+        <td><span class="parametername">playerId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">name</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">level</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Network_Protocol_Messages_Players_PlayerDataResponseMessage_Level.md&amp;value=---%0Auid%3A%20DarkStar.Network.Protocol.Messages.Players.PlayerDataResponseMessage.Level%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Protocol/Messages/Players/PlayerDataResponseMessage.cs/#L20">View Source</a>
+  </span>
+  <a id="DarkStar_Network_Protocol_Messages_Players_PlayerDataResponseMessage_Level_" data-uid="DarkStar.Network.Protocol.Messages.Players.PlayerDataResponseMessage.Level*"></a>
+  <h4 id="DarkStar_Network_Protocol_Messages_Players_PlayerDataResponseMessage_Level" data-uid="DarkStar.Network.Protocol.Messages.Players.PlayerDataResponseMessage.Level">Level</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Level { readonly get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Network_Protocol_Messages_Players_PlayerDataResponseMessage_MapId.md&amp;value=---%0Auid%3A%20DarkStar.Network.Protocol.Messages.Players.PlayerDataResponseMessage.MapId%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Protocol/Messages/Players/PlayerDataResponseMessage.cs/#L18">View Source</a>
+  </span>
+  <a id="DarkStar_Network_Protocol_Messages_Players_PlayerDataResponseMessage_MapId_" data-uid="DarkStar.Network.Protocol.Messages.Players.PlayerDataResponseMessage.MapId*"></a>
+  <h4 id="DarkStar_Network_Protocol_Messages_Players_PlayerDataResponseMessage_MapId" data-uid="DarkStar.Network.Protocol.Messages.Players.PlayerDataResponseMessage.MapId">MapId</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string MapId { readonly get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Network_Protocol_Messages_Players_PlayerDataResponseMessage_Name.md&amp;value=---%0Auid%3A%20DarkStar.Network.Protocol.Messages.Players.PlayerDataResponseMessage.Name%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Protocol/Messages/Players/PlayerDataResponseMessage.cs/#L27">View Source</a>
+  </span>
+  <a id="DarkStar_Network_Protocol_Messages_Players_PlayerDataResponseMessage_Name_" data-uid="DarkStar.Network.Protocol.Messages.Players.PlayerDataResponseMessage.Name*"></a>
+  <h4 id="DarkStar_Network_Protocol_Messages_Players_PlayerDataResponseMessage_Name" data-uid="DarkStar.Network.Protocol.Messages.Players.PlayerDataResponseMessage.Name">Name</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Name { readonly get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Network_Protocol_Messages_Players_PlayerDataResponseMessage_PlayerId.md&amp;value=---%0Auid%3A%20DarkStar.Network.Protocol.Messages.Players.PlayerDataResponseMessage.PlayerId%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Protocol/Messages/Players/PlayerDataResponseMessage.cs/#L25">View Source</a>
+  </span>
+  <a id="DarkStar_Network_Protocol_Messages_Players_PlayerDataResponseMessage_PlayerId_" data-uid="DarkStar.Network.Protocol.Messages.Players.PlayerDataResponseMessage.PlayerId*"></a>
+  <h4 id="DarkStar_Network_Protocol_Messages_Players_PlayerDataResponseMessage_PlayerId" data-uid="DarkStar.Network.Protocol.Messages.Players.PlayerDataResponseMessage.PlayerId">PlayerId</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Guid PlayerId { readonly get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Network_Protocol_Messages_Players_PlayerDataResponseMessage_Position.md&amp;value=---%0Auid%3A%20DarkStar.Network.Protocol.Messages.Players.PlayerDataResponseMessage.Position%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Protocol/Messages/Players/PlayerDataResponseMessage.cs/#L23">View Source</a>
+  </span>
+  <a id="DarkStar_Network_Protocol_Messages_Players_PlayerDataResponseMessage_Position_" data-uid="DarkStar.Network.Protocol.Messages.Players.PlayerDataResponseMessage.Position*"></a>
+  <h4 id="DarkStar_Network_Protocol_Messages_Players_PlayerDataResponseMessage_Position" data-uid="DarkStar.Network.Protocol.Messages.Players.PlayerDataResponseMessage.Position">Position</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PointPosition Position { readonly get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DarkStar.Network.Protocol.Messages.Common.PointPosition.html">PointPosition</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Network_Protocol_Messages_Players_PlayerDataResponseMessage_TileId.md&amp;value=---%0Auid%3A%20DarkStar.Network.Protocol.Messages.Players.PlayerDataResponseMessage.TileId%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Protocol/Messages/Players/PlayerDataResponseMessage.cs/#L21">View Source</a>
+  </span>
+  <a id="DarkStar_Network_Protocol_Messages_Players_PlayerDataResponseMessage_TileId_" data-uid="DarkStar.Network.Protocol.Messages.Players.PlayerDataResponseMessage.TileId*"></a>
+  <h4 id="DarkStar_Network_Protocol_Messages_Players_PlayerDataResponseMessage_TileId" data-uid="DarkStar.Network.Protocol.Messages.Players.PlayerDataResponseMessage.TileId">TileId</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uint TileId { readonly get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="DarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage.html">IDarkStarNetworkMessage</a>
@@ -132,7 +380,7 @@ public class PlayerDataResponseMessage : IDarkStarNetworkMessage</code></pre>
                     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Network_Protocol_Messages_Players_PlayerDataResponseMessage.md&amp;value=---%0Auid%3A%20DarkStar.Network.Protocol.Messages.Players.PlayerDataResponseMessage%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Protocol/Messages/Players/PlayerDataResponseMessage.cs/#L13" class="contribution-link">View Source</a>
+                    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Protocol/Messages/Players/PlayerDataResponseMessage.cs/#L14" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

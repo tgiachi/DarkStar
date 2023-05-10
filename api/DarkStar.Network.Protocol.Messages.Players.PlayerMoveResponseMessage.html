@@ -115,7 +115,7 @@ public struct PlayerMoveResponseMessage : IDarkStarNetworkMessage</code></pre>
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Network_Protocol_Messages_Players_PlayerMoveResponseMessage__ctor.md&amp;value=---%0Auid%3A%20DarkStar.Network.Protocol.Messages.Players.PlayerMoveResponseMessage.%23ctor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Protocol/Messages/Players/PlayerMoveResponseMessage.cs/#L23">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Protocol/Messages/Players/PlayerMoveResponseMessage.cs/#L29">View Source</a>
   </span>
   <a id="DarkStar_Network_Protocol_Messages_Players_PlayerMoveResponseMessage__ctor_" data-uid="DarkStar.Network.Protocol.Messages.Players.PlayerMoveResponseMessage.#ctor*"></a>
   <h4 id="DarkStar_Network_Protocol_Messages_Players_PlayerMoveResponseMessage__ctor" data-uid="DarkStar.Network.Protocol.Messages.Players.PlayerMoveResponseMessage.#ctor">PlayerMoveResponseMessage()</h4>
@@ -127,18 +127,18 @@ public struct PlayerMoveResponseMessage : IDarkStarNetworkMessage</code></pre>
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Network_Protocol_Messages_Players_PlayerMoveResponseMessage__ctor_DarkStar_Network_Protocol_Messages_Common_PointPosition_.md&amp;value=---%0Auid%3A%20DarkStar.Network.Protocol.Messages.Players.PlayerMoveResponseMessage.%23ctor(DarkStar.Network.Protocol.Messages.Common.PointPosition)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Network_Protocol_Messages_Players_PlayerMoveResponseMessage__ctor_System_String_DarkStar_Network_Protocol_Messages_Common_PointPosition_.md&amp;value=---%0Auid%3A%20DarkStar.Network.Protocol.Messages.Players.PlayerMoveResponseMessage.%23ctor(System.String%2CDarkStar.Network.Protocol.Messages.Common.PointPosition)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Protocol/Messages/Players/PlayerMoveResponseMessage.cs/#L21">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Protocol/Messages/Players/PlayerMoveResponseMessage.cs/#L23">View Source</a>
   </span>
   <a id="DarkStar_Network_Protocol_Messages_Players_PlayerMoveResponseMessage__ctor_" data-uid="DarkStar.Network.Protocol.Messages.Players.PlayerMoveResponseMessage.#ctor*"></a>
-  <h4 id="DarkStar_Network_Protocol_Messages_Players_PlayerMoveResponseMessage__ctor_DarkStar_Network_Protocol_Messages_Common_PointPosition_" data-uid="DarkStar.Network.Protocol.Messages.Players.PlayerMoveResponseMessage.#ctor(DarkStar.Network.Protocol.Messages.Common.PointPosition)">PlayerMoveResponseMessage(PointPosition)</h4>
+  <h4 id="DarkStar_Network_Protocol_Messages_Players_PlayerMoveResponseMessage__ctor_System_String_DarkStar_Network_Protocol_Messages_Common_PointPosition_" data-uid="DarkStar.Network.Protocol.Messages.Players.PlayerMoveResponseMessage.#ctor(System.String,DarkStar.Network.Protocol.Messages.Common.PointPosition)">PlayerMoveResponseMessage(string, PointPosition)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public PlayerMoveResponseMessage(PointPosition position)</code></pre>
+    <pre><code class="lang-csharp hljs">public PlayerMoveResponseMessage(string playerId, PointPosition position)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -151,6 +151,11 @@ public struct PlayerMoveResponseMessage : IDarkStarNetworkMessage</code></pre>
     </thead>
     <tbody>
       <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">playerId</span></td>
+        <td></td>
+      </tr>
+      <tr>
         <td><a class="xref" href="DarkStar.Network.Protocol.Messages.Common.PointPosition.html">PointPosition</a></td>
         <td><span class="parametername">position</span></td>
         <td></td>
@@ -159,6 +164,37 @@ public struct PlayerMoveResponseMessage : IDarkStarNetworkMessage</code></pre>
   </table>
   <h3 id="properties">Properties
 </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Network_Protocol_Messages_Players_PlayerMoveResponseMessage_PlayerId.md&amp;value=---%0Auid%3A%20DarkStar.Network.Protocol.Messages.Players.PlayerMoveResponseMessage.PlayerId%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Protocol/Messages/Players/PlayerMoveResponseMessage.cs/#L20">View Source</a>
+  </span>
+  <a id="DarkStar_Network_Protocol_Messages_Players_PlayerMoveResponseMessage_PlayerId_" data-uid="DarkStar.Network.Protocol.Messages.Players.PlayerMoveResponseMessage.PlayerId*"></a>
+  <h4 id="DarkStar_Network_Protocol_Messages_Players_PlayerMoveResponseMessage_PlayerId" data-uid="DarkStar.Network.Protocol.Messages.Players.PlayerMoveResponseMessage.PlayerId">PlayerId</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ProtoMember(2)]
+public string PlayerId { readonly get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Network_Protocol_Messages_Players_PlayerMoveResponseMessage_Position.md&amp;value=---%0Auid%3A%20DarkStar.Network.Protocol.Messages.Players.PlayerMoveResponseMessage.Position%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>

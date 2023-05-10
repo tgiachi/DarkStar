@@ -1935,6 +1935,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.Converters.MovementTypeValueConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.Converters.MovementTypeValueConverter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.Converters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.Converters.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/DarkStar.Client.Models.Dto.TileSetDto.yml",
       "output": {
         ".html": {
@@ -2005,6 +2025,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.Models.Events.TilesReadyEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.Models.Events.TilesReadyEvent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/DarkStar.Client.Models.Events.yml",
       "output": {
         ".html": {
@@ -2029,6 +2059,16 @@
       "output": {
         ".html": {
           "relative_path": "api/DarkStar.Client.Models.Tiles.Tile.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.Models.Tiles.TileOrientation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.Models.Tiles.TileOrientation.html"
         }
       },
       "version": ""
