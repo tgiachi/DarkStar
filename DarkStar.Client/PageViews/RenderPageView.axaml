@@ -22,36 +22,50 @@
         </Grid.RowDefinitions>
 
 
-        <Grid Grid.Column="1" RowDefinitions="*,*,*" ColumnDefinitions="*,*,*">
-            <Button Grid.Row="0" Grid.Column="0" HotKey="Z" Command="{Binding MoveCharacterCommand}"
-                    CommandParameter="NorthWest">
-                ↖️
-            </Button>
-            <Button Grid.Row="0" Grid.Column="1" HotKey="S" Command="{Binding MoveCharacterCommand}"
-                    CommandParameter="North">
-                ⬆️
-            </Button>
-            <Button Grid.Row="0" Grid.Column="2" HotKey="X" Command="{Binding MoveCharacterCommand}"
-                    CommandParameter="NorthEast">
-                ↗️
-            </Button>
-            <Button Grid.Row="1" Grid.Column="0" HotKey="A" Command="{Binding MoveCharacterCommand}" CommandParameter="West">⬅️</Button>
-            <Button Grid.Row="1" Grid.Column="1" Command="{Binding PerformActionCommand}">ACT</Button>
-            <Button Grid.Row="1" Grid.Column="2" HotKey="D" Command="{Binding MoveCharacterCommand}" CommandParameter="East">➡️</Button>
-            <Button Grid.Row="2" Grid.Column="0" HotKey="Q" Command="{Binding MoveCharacterCommand}"
-                    CommandParameter="SouthWest">
-                ↙️
-            </Button>
-            <Button Grid.Row="2" Grid.Column="1" HotKey="W" Command="{Binding MoveCharacterCommand}"
-                    CommandParameter="South">
-                ⬇️
-            </Button>
-            <Button Grid.Row="2" Grid.Column="2" HotKey="E" Command="{Binding MoveCharacterCommand}"
-                    CommandParameter="SouthEast">
-                ↘️
-            </Button>
+        <StackPanel Grid.Column="1">
+            <Grid Grid.Column="1" RowDefinitions="*,*,*" ColumnDefinitions="*,*,*">
+                <Button Grid.Row="0" Grid.Column="0" HotKey="Z" Command="{Binding MoveCharacterCommand}"
+                        CommandParameter="NorthWest">
+                    ↖️
+                </Button>
+                <Button Grid.Row="0" Grid.Column="1" HotKey="S" Command="{Binding MoveCharacterCommand}"
+                        CommandParameter="North">
+                    ⬆️
+                </Button>
+                <Button Grid.Row="0" Grid.Column="2" HotKey="X" Command="{Binding MoveCharacterCommand}"
+                        CommandParameter="NorthEast">
+                    ↗️
+                </Button>
+                <Button Grid.Row="1" Grid.Column="0" HotKey="A" Command="{Binding MoveCharacterCommand}" CommandParameter="West">⬅️</Button>
+                <Button Grid.Row="1" Grid.Column="1" Command="{Binding PerformActionCommand}">ACT</Button>
+                <Button Grid.Row="1" Grid.Column="2" HotKey="D" Command="{Binding MoveCharacterCommand}" CommandParameter="East">➡️</Button>
+                <Button Grid.Row="2" Grid.Column="0" HotKey="Q" Command="{Binding MoveCharacterCommand}"
+                        CommandParameter="SouthWest">
+                    ↙️
+                </Button>
+                <Button Grid.Row="2" Grid.Column="1" HotKey="W" Command="{Binding MoveCharacterCommand}"
+                        CommandParameter="South">
+                    ⬇️
+                </Button>
+                <Button Grid.Row="2" Grid.Column="2" HotKey="E" Command="{Binding MoveCharacterCommand}"
+                        CommandParameter="SouthEast">
+                    ↘️
+                </Button>
 
-        </Grid>
+            </Grid>
+            <ItemsControl BorderThickness="0.5" Margin="5" Items="{Binding Messages}">
+               <ItemsControl.ItemTemplate>
+                   <DataTemplate>
+                       <Grid ColumnDefinitions="*, Auto">
+                           <TextBlock Foreground="Red" Grid.Column="0" />
+                           <TextBlock Grid.Column="1" />
+                       </Grid>
+                   </DataTemplate>
+               </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+        </StackPanel>
+
         <controls:RenderControl Grid.Row="0" Grid.RowSpan="2" x:Name="RenderControl" />
 
     </Grid>
