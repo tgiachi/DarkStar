@@ -12,7 +12,7 @@ namespace DarkStar.Engine.Commands.Executors;
 public class GameObjectActionExecutor : BaseCommandActionExecutor<GameObjectAction>
 {
     public GameObjectActionExecutor(
-        ILogger<BaseCommandActionExecutor<GameObjectAction>> logger, IDarkSunEngine engine
+        ILogger<GameObjectActionExecutor> logger, IDarkSunEngine engine
     ) : base(logger, engine)
     {
     }

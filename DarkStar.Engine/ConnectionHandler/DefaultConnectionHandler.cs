@@ -29,7 +29,7 @@ public class DefaultConnectionHandler : BaseNetworkConnectionHandler
             new List<IDarkStarNetworkMessage>
             {
                 new ServerNameResponseMessage(Engine.ServerName),
-                new ServerVersionResponseMessage(s_version.Major, s_version.Minor, s_version.Build)
+                new ServerVersionResponseMessage(s_version.Minor, s_version.Minor, s_version.Build)
             }
         );
     }
