@@ -370,6 +370,8 @@ public class WorldService : BaseService<IWorldService>, IWorldService
         };
     }
 
+
+    // TODO: expose this method to the lua
     private ValueTask<Map> GenerateCityMapAsync()
     {
         var cityMapGenerator = new Generator(_engineConfig.Maps.Cities.Width, _engineConfig.Maps.Cities.Height)
@@ -406,33 +408,7 @@ public class WorldService : BaseService<IWorldService>, IWorldService
             AddEntity(mapId, npcGameObject);
         }
 
-        /*foreach (var _ in Enumerable.Range(1, 5))
-        {
-            var cat = await Engine.BlueprintService.GenerateNpcGameObjectAsync(
-                GetRandomWalkablePosition(mapId),
-                NpcType.Animal,
-                NpcSubType.Cat
-            );
 
-            AddEntity(mapId, cat);
-            Logger.LogInformation("Spawn cat @ {Position} - Name {Name}", cat.Position, cat.Name);
-        }
-
-        var mushroomFinder = await Engine.BlueprintService.GenerateNpcGameObjectAsync(
-            GetRandomWalkablePosition(mapId),
-            NpcType.Human,
-            NpcSubType.MushroomFinder
-        );
-
-        AddEntity(mapId, mushroomFinder);
-        Logger.LogInformation("Spawn mushroom @ {Position} - Name {Name}", mushroomFinder.Position, mushroomFinder.Name);
-
-        foreach (var _ in Enumerable.Range(1, 15))
-        {
-            var mushroom = await Engine.BlueprintService.GenerateWorldGameObjectAsync(
-                GameObjectType.Prop_Mushroom, GetRandomWalkablePosition(mapId));
-            AddEntity(mapId, mushroom);
-        }*/
     }
 
     private void HandleMapEvents(string id, Map map)

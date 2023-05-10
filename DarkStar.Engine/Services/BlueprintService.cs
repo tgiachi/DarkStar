@@ -31,6 +31,9 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
     private readonly Dictionary<MapType, List<Func<BlueprintGenerationMapContext, BlueprintGenerationMapContext>>>
         _mapGenerators = new();
 
+    private readonly Dictionary<MapType, List<Func<BlueprintMapInfoContext, BlueprintMapInfoContext>>> _mapInfoGenerator =
+        new();
+
 
     public BlueprintService(
         ILogger<BlueprintService> logger, DirectoriesConfig directoriesConfig, INamesService namesService
