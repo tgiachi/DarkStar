@@ -28,6 +28,8 @@ public class RenderPageViewModel : PageViewModelBase
     private readonly ServiceContext _serviceContext;
     public ReactiveCommand<string, Unit> MoveCharacterCommand { get; set; }
 
+    public ReactiveCommand<Unit, Task> PerformActionCommand { get; set; }
+
     public RenderPageViewModel(GraphicEngineRender graphicEngineRender, ServiceContext serviceContext)
     {
         _graphicEngineRender = graphicEngineRender;
@@ -54,6 +56,14 @@ public class RenderPageViewModel : PageViewModelBase
                 return Unit.Default;
             });
 
+        PerformActionCommand = ReactiveCommand.Create(PerformAction);
+
+    }
+
+    private Task PerformAction()
+    {
+       //return _serviceContext.NetworkClient.SendMessageAsync()
+       return Task.CompletedTask;
     }
 
     private Task OnPlayerMoved(IDarkStarNetworkMessage arg)

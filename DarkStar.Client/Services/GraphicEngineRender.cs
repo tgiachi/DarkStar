@@ -111,7 +111,7 @@ public class GraphicEngineRender
             Translation = new SKPoint(
                 (canvas.LocalClipBounds.Width / 2) - (PlayerTile.Position.X * _tileService.TileWidth) -
                 (_tileService.TileWidth / 2),
-                (canvas.LocalClipBounds.Height / 2) - (PlayerTile.Position.X * _tileService.TileHeight) -
+                (canvas.LocalClipBounds.Height / 2) - (PlayerTile.Position.Y * _tileService.TileHeight) -
                 (_tileService.TileHeight / 2)
             );
         }
