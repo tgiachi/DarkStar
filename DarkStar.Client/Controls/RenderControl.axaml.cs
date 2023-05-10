@@ -17,6 +17,7 @@ namespace DarkStar.Client.Controls;
 public partial class RenderControl : UserControl
 {
     public Action<(SKCanvas canvas, TimeSpan deltaTime)>? RenderAction { get; set; }
+
     class CustomDrawOp : ICustomDrawOperation
     {
         private readonly FormattedText _noSkia;
@@ -122,7 +123,12 @@ public partial class RenderControl : UserControl
     }
 
 
-    public RenderControl() => ClipToBounds = true;
+    public RenderControl()
+    {
+        ClipToBounds = true;
+        Focusable = true;
+        Focus();
+    }
 
 
     public override void Render(DrawingContext context)
@@ -131,7 +137,9 @@ public partial class RenderControl : UserControl
         {
             Text = "Current rendering API is not Skia"
         };
-        context.Custom(new CustomDrawOp(new Rect(0, 0, Bounds.Width, Bounds.Height), noSkia) { RenderAction = RenderAction});
+        context.Custom(
+            new CustomDrawOp(new Rect(0, 0, Bounds.Width, Bounds.Height), noSkia) { RenderAction = RenderAction }
+        );
         Dispatcher.UIThread.InvokeAsync(InvalidateVisual, DispatcherPriority.Background);
     }
 }

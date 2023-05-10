@@ -23,6 +23,7 @@ namespace DarkStar.Client.Services;
 
 public class TileService
 {
+    public bool TilesReady { get; set; }
     private readonly ILogger _logger;
     private readonly ServiceContext _serviceContext;
 
@@ -32,6 +33,8 @@ public class TileService
     public int TileHeight { get; set; }
     private int _imageWidth;
     private int _imageHeight;
+
+    private readonly Dictionary<int, SKBitmap> _tileCache = new();
 
     public TileService(ILogger<TileService> logger, ServiceContext serviceContext)
     {
@@ -68,13 +71,18 @@ public class TileService
         //     tileId = RandomUtils.Range(100, 4000);
         // }
 
+        if (_tileCache.TryGetValue(tileId, out var tile))
+        {
+            return tile;
+        }
+
         var x = tileId % (_imageWidth / TileWidth);
         var y = tileId / (_imageHeight / TileHeight);
 
 
         var cropped = new SKBitmap(TileWidth, TileHeight);
         _defaultSkImageTileSet.ExtractSubset(cropped, SKRectI.Create(x * TileWidth, y * TileHeight, TileWidth, TileWidth));
-
+        _tileCache.Add(tileId, cropped);
         return cropped;
     }
 
@@ -89,6 +97,8 @@ public class TileService
         {
             await DownloadTileSet(tileSet);
         }
+
+        TilesReady = true;
     }
 
     private async Task DownloadTileSet(TileSetDto tileSet)
@@ -106,7 +116,8 @@ public class TileService
             TileWidth = tileSet.TileWidth;
             _imageWidth = tileImage.Width;
             _imageHeight = tileImage.Height;
-
+            TilesReady = true;
+            MessageBus.Current.SendMessage(new TilesReadyEvent());
             return;
         }
 
@@ -129,8 +140,8 @@ public class TileService
 
         await File.WriteAllBytesAsync(fileName, tileSetMemoryStream.ToArray());
         using var image = Image.FromStream(tileSetMemoryStream);
-        _defaultTileSet = new Bitmap(tileSetMemoryStream);
-        _defaultSkImageTileSet = SKBitmap.Decode(tileSetMemoryStream);
+        _defaultTileSet = new Bitmap(fileName);
+        _defaultSkImageTileSet = SKBitmap.Decode(fileName);
         TileHeight = tileSet.TileHeight;
         TileWidth = tileSet.TileWidth;
         _imageWidth = image.Width;
@@ -139,5 +150,7 @@ public class TileService
         MessageBus.Current.SendMessage(
             new ProgressUpdateEvent($"{tileSet.Name} downloaded!")
         );
+        MessageBus.Current.SendMessage(new TilesReadyEvent());
+        TilesReady = true;
     }
 }

@@ -18,7 +18,7 @@ namespace DarkStar.Engine.Commands.Executors;
 public class PlayerCommandActionExecutor : BaseCommandActionExecutor<PlayerMoveAction>
 {
     public PlayerCommandActionExecutor(
-        ILogger<BaseCommandActionExecutor<PlayerMoveAction>> logger, IDarkSunEngine engine
+        ILogger<PlayerCommandActionExecutor> logger, IDarkSunEngine engine
     ) : base(logger, engine)
     {
     }
@@ -43,7 +43,10 @@ public class PlayerCommandActionExecutor : BaseCommandActionExecutor<PlayerMoveA
         {
             player.Position = newPosition;
             await Engine.PlayerService.UpdatePlayerPositionAsync(player.PlayerId, player.MapId, newPosition);
-            await Engine.NetworkServer.SendMessageAsync(action.SessionId, new PlayerMoveResponseMessage(newPosition));
+            await Engine.NetworkServer.SendMessageAsync(
+                action.SessionId,
+                new PlayerMoveResponseMessage(player.PlayerId.ToString(), newPosition)
+            );
         }
     }
 }

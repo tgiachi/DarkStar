@@ -15,8 +15,13 @@ public class GraphicEngineRender
     private readonly SemaphoreSlim _layerLock = new(1);
     private readonly Dictionary<MapLayer, List<Tile>> _layers = new();
 
+    public bool CenterOnPlayer { get; set; } = true;
+    public Tile? PlayerTile { get; set; }
 
-    public Action<(SKCanvas canvas, TimeSpan delta)> RenderAction { get; set; } = null!;
+    public SKPoint Translation { get; set; } = new(0, 0);
+    public float Scale { get; set; } = 1f;
+
+    public Action<(SKCanvas canvas, TimeSpan delta)> RenderAction { get; set; }
 
 
     public GraphicEngineRender(TileService tileService)
@@ -34,6 +39,12 @@ public class GraphicEngineRender
         }
 
         AddTile(MapLayer.Creatures, new Tile(Guid.NewGuid().ToString(), 3479, new PointPosition(5, 5)));
+    }
+
+    public void AddPlayer(string id, uint tileId, PointPosition position)
+    {
+        PlayerTile = new Tile(id, tileId, position);
+        AddTile(MapLayer.Players, PlayerTile);
     }
 
     public void ClearLayers()
@@ -58,9 +69,10 @@ public class GraphicEngineRender
         {
             tile.Position = newPosition;
         }
-        _layerLock.Release();
 
+        _layerLock.Release();
     }
+
     public void AddTile(MapLayer layer, Tile tile)
     {
         _layerLock.Wait();
@@ -74,16 +86,11 @@ public class GraphicEngineRender
         var delta = obj.delta;
 
         canvas.Clear(SKColors.Black);
+        canvas.Scale(Scale);
+        canvas.Translate(Translation);
 
-        canvas.DrawText(
-            "ciao",
-            new SKPoint(10, 10),
-            new SKPaint
-            {
-                Typeface = SKTypeface.Default,
-                Color = SKColors.Cornsilk
-            }
-        );
+
+        CenterCanvasOnPlayer(canvas);
 
         _layerLock.Wait();
         foreach (var layer in _layers)
@@ -97,11 +104,30 @@ public class GraphicEngineRender
         _layerLock.Release();
     }
 
+    private void CenterCanvasOnPlayer(SKCanvas canvas)
+    {
+        if (PlayerTile != null && CenterOnPlayer)
+        {
+            Translation = new SKPoint(
+                (canvas.LocalClipBounds.Width / 2) - (PlayerTile.Position.X * _tileService.TileWidth) -
+                (_tileService.TileWidth / 2),
+                (canvas.LocalClipBounds.Height / 2) - (PlayerTile.Position.Y * _tileService.TileHeight) -
+                (_tileService.TileHeight / 2)
+            );
+        }
+    }
+
     private void RenderTile(Tile tile, SKCanvas canvas, TimeSpan delta)
     {
         canvas.DrawBitmap(
             _tileService.GetSkImageTile((int)tile.TileId),
             new SKPoint(tile.Position.X * _tileService.TileWidth, tile.Position.Y * _tileService.TileHeight)
         );
+    }
+
+    public static SKBitmap createFlippedBitmap(SKBitmap source, bool xFlip, bool yFlip)
+    {
+        var matrix = SKMatrix.CreateScaleTranslation(xFlip ? -1 : 1, yFlip ? -1 : 1, source.Width / 2f, source.Height / 2f);
+        return source;
     }
 }

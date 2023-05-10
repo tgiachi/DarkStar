@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="0.10.0"></a>
+## [0.10.0](https://www.github.com/tgiachi/DarkStar/releases/tag/v0.10.0) (2023-5-10)
+
+### ✨ Features
+
+* add TilesReadyEvent to notify when tiles are ready ([940965a](https://www.github.com/tgiachi/DarkStar/commit/940965aaa57d9ac5dfad6d7e71605fe22014d050))
+
+### Other
+
+* 🐛 fix(RenderPageViewModel.cs): add PerformActionCommand to perform an action ([40ccb4f](https://www.github.com/tgiachi/DarkStar/commit/40ccb4fc6b50abb4a4cfe0ea99c6dadd62a7fd2a))
+* 🔧 chore(ExperimentalConfig.cs): initialize CompilerConfig object in ExperimentalConfig class ([425d7f7](https://www.github.com/tgiachi/DarkStar/commit/425d7f70f111bbf91c792d4afbddd2e34e83e328))
+* 🔧 refactor(BaseWorldObjectAction.cs): remove unused Logger property ([54c53cf](https://www.github.com/tgiachi/DarkStar/commit/54c53cf58808c3eba5fa8c88cb5a5e2ea1e322a5))
+* 🔨 refactor(PlayerCommandActionExecutor.cs): change ILogger type to specific type ([5ae2508](https://www.github.com/tgiachi/DarkStar/commit/5ae250807b403dfa8bab1c4f3368ee879c50e234))
+
 <a name="0.9.0"></a>
 ## [0.9.0](https://www.github.com/tgiachi/DarkSun/releases/tag/v0.9.0) (2023-5-9)
 

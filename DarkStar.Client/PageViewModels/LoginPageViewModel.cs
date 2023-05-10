@@ -23,6 +23,7 @@ namespace DarkStar.Client.PageViewModels;
 public class LoginPageViewModel : PageViewModelBase, INetworkClientMessageListener
 {
     private readonly ServiceContext _serviceContext;
+    private readonly TileService _tileService;
     public ObservableCollection<string> Servers { get; set; }
 
     public string SelectedServer { get; set; }
@@ -34,14 +35,14 @@ public class LoginPageViewModel : PageViewModelBase, INetworkClientMessageListen
 
     public ReactiveCommand<Unit, Task> LoginCommand { get; set; }
 
-    public LoginPageViewModel(ServiceContext serviceContext)
+    public LoginPageViewModel(ServiceContext serviceContext, TileService tileService)
     {
         _serviceContext = serviceContext;
         _serviceContext.NetworkClient.OnClientConnected += NetworkClientOnOnClientConnected;
         _serviceContext.NetworkClient.RegisterMessageListener(DarkStarMessageType.ServerVersionResponse, this);
         _serviceContext.NetworkClient.RegisterMessageListener(DarkStarMessageType.ServerNameResponse, this);
         _serviceContext.NetworkClient.RegisterMessageListener(DarkStarMessageType.AccountLoginResponse, this);
-
+        _tileService = tileService;
         Servers = new ObservableCollection<string> { "http://localhost:5000/" };
 
         Username = "";
@@ -116,7 +117,12 @@ public class LoginPageViewModel : PageViewModelBase, INetworkClientMessageListen
                     }
                     else
                     {
-                        await Task.Delay(1000);
+
+                        while (!_tileService.TilesReady)
+                        {
+                            await Task.Delay(1000);
+                        }
+
                         MessageBus.Current.SendMessage(new NavigateToViewEvent(typeof(PlayerSelectPageViewModel)));
                     }
                 }

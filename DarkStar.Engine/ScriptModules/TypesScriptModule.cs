@@ -1,6 +1,10 @@
 using DarkStar.Api.Engine.Interfaces.Services;
+using DarkStar.Api.World.Types.Equippable;
+using DarkStar.Api.World.Types.Items;
 using DarkStar.Api.World.Types.Npc;
 using DarkStar.Api.World.Types.Tiles;
+using DarkStar.Database.Entities.Item;
+using DarkStar.Database.Entities.Objects;
 using DarkStar.Engine.Attributes.ScriptEngine;
 using Microsoft.Extensions.Logging;
 
@@ -39,7 +43,15 @@ public class TypesScriptModule
     [ScriptFunction("add_game_object")]
     public void AddGameObject(string name, string description, string tileName, string gameObjectType, string data)
     {
-        _seedService.AddGameObjectSeed(name, description, tileName, gameObjectType, data);
+        _seedService.AddGameObject(
+            new GameObjectEntity()
+            {
+                Name = name,
+                Description = description,
+                TileId = _typeService.SearchTile(tileName, null, null).Id,
+                GameObjectType = _typeService.SearchGameObject(gameObjectType)!.Id
+            }
+        );
     }
 
     [ScriptFunction("add_item_type")]
@@ -57,7 +69,13 @@ public class TypesScriptModule
     [ScriptFunction("add_text_content")]
     public void AddTextContent(string id, string content)
     {
-        _seedService.AddTextContentSeed(id, content);
+        _seedService.AddTextEntity(
+            new TextContentEntity
+            {
+                Name = id,
+                Content = content
+            }
+        );
         _logger.LogDebug("Added text content seed {Id}", id.ToUpper());
     }
 
@@ -66,7 +84,11 @@ public class TypesScriptModule
     public void AttachTextContentToItem(string gameObjectName, string textContentId)
     {
         _seedService.AttachTextContentToItem(gameObjectName, textContentId);
-        _logger.LogDebug("Attached text content {Id} to game object {GameObjectName}", textContentId.ToUpper(), gameObjectName.ToUpper());
+        _logger.LogDebug(
+            "Attached text content {Id} to game object {GameObjectName}",
+            textContentId.ToUpper(),
+            gameObjectName.ToUpper()
+        );
     }
 
     [ScriptFunction("add_item")]
@@ -88,20 +110,23 @@ public class TypesScriptModule
             _typeService.AddItemCategoryType(category);
         }
 
-        _seedService.AddItemSeed(
-            name,
-            description,
-            weight,
-            tileName,
-            category,
-            type,
-            equipLocation,
-            itemRarity,
-            sellDice,
-            buyDice,
-            attackDice,
-            defenseDice,
-            speed
+        _seedService.AddItem(
+            new ItemEntity
+            {
+                Name = name,
+                Description = description,
+                Weight = weight,
+                TileType = _typeService.SearchTile(tileName, null, null).Id,
+                Category = existCategory.Id,
+                Type = existType.Id,
+                EquipLocation = (EquipLocationType)equipLocation,
+                ItemRarity = (ItemRarityType)itemRarity,
+                SellDice = sellDice,
+                BuyDice = buyDice,
+                Attack = attackDice,
+                Defense = defenseDice,
+                Speed = speed
+            }
         );
     }
 }

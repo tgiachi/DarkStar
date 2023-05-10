@@ -3,20 +3,56 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:controls="clr-namespace:DarkStar.Client.Controls"
+             xmlns:converters="clr-namespace:DarkStar.Client.Converters"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="DarkStar.Client.PageViews.RenderPageView">
+
+    <UserControl.KeyBindings>
+        <KeyBinding Gesture="W" Command="{Binding MoveNorthCommand}" />
+    </UserControl.KeyBindings>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="300" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="33*"/>
-            <RowDefinition Height="33*"/>
-            <RowDefinition Height="33*"/>
+            <RowDefinition Height="33*" />
+            <RowDefinition Height="33*" />
+            <RowDefinition Height="33*" />
         </Grid.RowDefinitions>
 
-        <controls:RenderControl Grid.RowSpan="2" x:Name="RenderControl" />
+
+        <Grid Grid.Column="1" RowDefinitions="*,*,*" ColumnDefinitions="*,*,*">
+            <Button Grid.Row="0" Grid.Column="0" HotKey="Z" Command="{Binding MoveCharacterCommand}"
+                    CommandParameter="NorthWest">
+                ↖️
+            </Button>
+            <Button Grid.Row="0" Grid.Column="1" HotKey="S" Command="{Binding MoveCharacterCommand}"
+                    CommandParameter="North">
+                ⬆️
+            </Button>
+            <Button Grid.Row="0" Grid.Column="2" HotKey="X" Command="{Binding MoveCharacterCommand}"
+                    CommandParameter="NorthEast">
+                ↗️
+            </Button>
+            <Button Grid.Row="1" Grid.Column="0" HotKey="A" Command="{Binding MoveCharacterCommand}" CommandParameter="West">⬅️</Button>
+            <Button Grid.Row="1" Grid.Column="1" Command="{Binding PerformActionCommand}">ACT</Button>
+            <Button Grid.Row="1" Grid.Column="2" HotKey="D" Command="{Binding MoveCharacterCommand}" CommandParameter="East">➡️</Button>
+            <Button Grid.Row="2" Grid.Column="0" HotKey="Q" Command="{Binding MoveCharacterCommand}"
+                    CommandParameter="SouthWest">
+                ↙️
+            </Button>
+            <Button Grid.Row="2" Grid.Column="1" HotKey="W" Command="{Binding MoveCharacterCommand}"
+                    CommandParameter="South">
+                ⬇️
+            </Button>
+            <Button Grid.Row="2" Grid.Column="2" HotKey="E" Command="{Binding MoveCharacterCommand}"
+                    CommandParameter="SouthEast">
+                ↘️
+            </Button>
+
+        </Grid>
+        <controls:RenderControl Grid.Row="0" Grid.RowSpan="2" x:Name="RenderControl" />
 
     </Grid>
 </UserControl>
