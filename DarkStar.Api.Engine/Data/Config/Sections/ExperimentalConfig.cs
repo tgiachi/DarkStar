@@ -2,7 +2,7 @@
 
 public class ExperimentalConfig
 {
-    public CompilerConfig Compiler { get; set; }
+    public CompilerConfig Compiler { get; set; } = new();
 }
 
 
