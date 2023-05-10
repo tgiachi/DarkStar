@@ -17,7 +17,6 @@ using DarkStar.Database.Entities.Item;
 using DarkStar.Database.Entities.TileSets;
 using DarkStar.Api.World.Types.Tiles;
 using DarkStar.Database.Entities.Objects;
-
 using DarkStar.Api.Serialization.Types;
 using DarkStar.Api.World.Types.Equippable;
 using DarkStar.Api.World.Types.Items;
@@ -34,6 +33,8 @@ public class SeedService : BaseService<SeedService>, ISeedService
 
     private readonly DirectoriesConfig _directoriesConfig;
     private readonly ITypeService _typeService;
+
+    private bool _isSeedExecutable = false;
 
     public SeedService(
         ILogger<SeedService> logger, DirectoriesConfig directoriesConfig, ITypeService typeService
@@ -150,7 +151,6 @@ public class SeedService : BaseService<SeedService>, ISeedService
             item.IsTextScroll = true;
             item.TextId = _textContentSeed.FirstOrDefault(s => s.Name == textContentName)!.Id;
         }
-
     }
 
     public void AddItemSeed(
@@ -347,98 +347,120 @@ public class SeedService : BaseService<SeedService>, ISeedService
     {
         foreach (var go in _gameObjectSeed)
         {
-            var gameObject =
-                await Engine.DatabaseService.QueryAsSingleAsync<GameObjectEntity>(entity => entity.Name == go.Name);
-            if (gameObject == null!)
-            {
-                await Engine.DatabaseService.InsertAsync(go);
-            }
-            else
-            {
-                gameObject.Name = go.Name;
-                gameObject.Description = go.Description;
-                gameObject.TileId = go.TileId;
-                gameObject.GameObjectType = go.GameObjectType;
-                gameObject.Data = go.Data;
-                await Engine.DatabaseService.UpdateAsync(gameObject);
-            }
+            await AddGameObject(go);
         }
 
         foreach (var contentEntity in _textContentSeed)
         {
-            var existTextSeed =
-                await Engine.DatabaseService.QueryAsSingleAsync<TextContentEntity>(
-                    entity => entity.Name == contentEntity.Name
-                );
-            if (existTextSeed == null!)
-            {
-                await Engine.DatabaseService.InsertAsync(contentEntity);
-            }
-            else
-            {
-                existTextSeed.Content = contentEntity.Content;
-                await Engine.DatabaseService.UpdateAsync(existTextSeed);
-            }
+            await AddTextEntity(contentEntity);
         }
 
         foreach (var raceEntity in _racesSeed)
         {
-            var existRace = await Engine.DatabaseService.QueryAsSingleAsync<RaceEntity>(
-                entity => entity.Name == raceEntity.Name
-            );
-
-            if (existRace == null)
-            {
-                Logger.LogInformation("Adding race name: {Name}", raceEntity.Name);
-                await Engine.DatabaseService.InsertAsync(raceEntity);
-            }
-            else
-            {
-                existRace.Description = raceEntity.Description;
-                existRace.TileId = raceEntity.TileId;
-                existRace.Dexterity = raceEntity.Dexterity;
-                existRace.Strength = raceEntity.Strength;
-                existRace.Luck = raceEntity.Luck;
-                existRace.Intelligence = raceEntity.Intelligence;
-                existRace.Experience = 0;
-                existRace.Mana = raceEntity.Mana;
-                existRace.MaxHealth = raceEntity.MaxHealth;
-                existRace.Health = raceEntity.Health;
-                existRace.MaxMana = raceEntity.MaxMana;
-                existRace.IsVisible = raceEntity.IsVisible;
-
-                await Engine.DatabaseService.UpdateAsync(existRace);
-            }
+            await AddRace(raceEntity);
         }
 
         foreach (var item in _itemsSeed)
         {
-            var existItem = await Engine.DatabaseService.QueryAsSingleAsync<ItemEntity>(
-                entity => entity.Name == item.Name
+            await AddItem(item);
+        }
+
+        _isSeedExecutable = true;
+    }
+
+
+    public async Task AddItem(ItemEntity item)
+    {
+        var existItem = await Engine.DatabaseService.QueryAsSingleAsync<ItemEntity>(
+            entity => entity.Name == item.Name
+        );
+
+        if (existItem == null)
+        {
+            await Engine.DatabaseService.InsertAsync(item);
+        }
+        else
+        {
+            existItem.Attack = item.Attack;
+            existItem.Defense = item.Defense;
+            existItem.Description = item.Description;
+            existItem.ItemRarity = item.ItemRarity;
+            existItem.BuyDice = item.BuyDice;
+            existItem.SellDice = item.SellDice;
+            existItem.TileType = item.TileType;
+            existItem.Category = item.Category;
+            existItem.Type = item.Type;
+            existItem.Weight = item.Weight;
+            existItem.EquipLocation = item.EquipLocation;
+            existItem.Speed = item.Speed;
+
+            await Engine.DatabaseService.UpdateAsync(existItem);
+        }
+    }
+
+    public async Task AddGameObject(GameObjectEntity go)
+    {
+        var gameObject =
+            await Engine.DatabaseService.QueryAsSingleAsync<GameObjectEntity>(entity => entity.Name == go.Name);
+        if (gameObject == null!)
+        {
+            await Engine.DatabaseService.InsertAsync(go);
+        }
+        else
+        {
+            gameObject.Name = go.Name;
+            gameObject.Description = go.Description;
+            gameObject.TileId = go.TileId;
+            gameObject.GameObjectType = go.GameObjectType;
+            gameObject.Data = go.Data;
+            await Engine.DatabaseService.UpdateAsync(gameObject);
+        }
+    }
+
+    public async Task AddTextEntity(TextContentEntity contentEntity)
+    {
+        var existTextSeed =
+            await Engine.DatabaseService.QueryAsSingleAsync<TextContentEntity>(
+                entity => entity.Name == contentEntity.Name
             );
+        if (existTextSeed == null!)
+        {
+            await Engine.DatabaseService.InsertAsync(contentEntity);
+        }
+        else
+        {
+            existTextSeed.Content = contentEntity.Content;
+            await Engine.DatabaseService.UpdateAsync(existTextSeed);
+        }
+    }
 
-            if (existItem == null)
-            {
+    public async Task AddRace(RaceEntity raceEntity)
+    {
+        var existRace = await Engine.DatabaseService.QueryAsSingleAsync<RaceEntity>(
+            entity => entity.Name == raceEntity.Name
+        );
 
-                await Engine.DatabaseService.InsertAsync(item);
-            }
-            else
-            {
-                existItem.Attack = item.Attack;
-                existItem.Defense = item.Defense;
-                existItem.Description = item.Description;
-                existItem.ItemRarity = item.ItemRarity;
-                existItem.BuyDice = item.BuyDice;
-                existItem.SellDice = item.SellDice;
-                existItem.TileType = item.TileType;
-                existItem.Category = item.Category;
-                existItem.Type = item.Type;
-                existItem.Weight = item.Weight;
-                existItem.EquipLocation = item.EquipLocation;
-                existItem.Speed = item.Speed;
+        if (existRace == null)
+        {
+            Logger.LogInformation("Adding race name: {Name}", raceEntity.Name);
+            await Engine.DatabaseService.InsertAsync(raceEntity);
+        }
+        else
+        {
+            existRace.Description = raceEntity.Description;
+            existRace.TileId = raceEntity.TileId;
+            existRace.Dexterity = raceEntity.Dexterity;
+            existRace.Strength = raceEntity.Strength;
+            existRace.Luck = raceEntity.Luck;
+            existRace.Intelligence = raceEntity.Intelligence;
+            existRace.Experience = 0;
+            existRace.Mana = raceEntity.Mana;
+            existRace.MaxHealth = raceEntity.MaxHealth;
+            existRace.Health = raceEntity.Health;
+            existRace.MaxMana = raceEntity.MaxMana;
+            existRace.IsVisible = raceEntity.IsVisible;
 
-                await Engine.DatabaseService.UpdateAsync(existItem);
-            }
+            await Engine.DatabaseService.UpdateAsync(existRace);
         }
     }
 

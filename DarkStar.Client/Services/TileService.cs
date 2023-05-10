@@ -34,6 +34,8 @@ public class TileService
     private int _imageWidth;
     private int _imageHeight;
 
+    private readonly Dictionary<int, SKBitmap> _tileCache = new();
+
     public TileService(ILogger<TileService> logger, ServiceContext serviceContext)
     {
         _logger = logger;
@@ -69,13 +71,18 @@ public class TileService
         //     tileId = RandomUtils.Range(100, 4000);
         // }
 
+        if (_tileCache.TryGetValue(tileId, out var tile))
+        {
+            return tile;
+        }
+
         var x = tileId % (_imageWidth / TileWidth);
         var y = tileId / (_imageHeight / TileHeight);
 
 
         var cropped = new SKBitmap(TileWidth, TileHeight);
         _defaultSkImageTileSet.ExtractSubset(cropped, SKRectI.Create(x * TileWidth, y * TileHeight, TileWidth, TileWidth));
-
+        _tileCache.Add(tileId, cropped);
         return cropped;
     }
 
@@ -90,6 +97,7 @@ public class TileService
         {
             await DownloadTileSet(tileSet);
         }
+
         TilesReady = true;
     }
 
@@ -144,6 +152,5 @@ public class TileService
         );
         MessageBus.Current.SendMessage(new TilesReadyEvent());
         TilesReady = true;
-
     }
 }

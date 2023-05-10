@@ -65,6 +65,12 @@ public class EventDispatcherService : BaseService<EventDispatcherService>, IEven
                     obj.SessionId,
                     await MapDataHelper.BuildMapResponseDataAsync(Engine, obj.MapId, obj.PlayerId)
                 );
+
+                Engine.NetworkServer.SendMessageAsync(
+                    obj.SessionId,
+                    await PlayerDataHelper.BuildPlayerDataResponse(Engine, obj.PlayerId)
+                );
+
                 Engine.NetworkServer.SendMessageAsync(
                     obj.SessionId,
                     await PlayerDataHelper.BuildPlayerInventoryAsync(Engine, obj.PlayerId)

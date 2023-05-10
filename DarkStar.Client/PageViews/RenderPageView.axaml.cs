@@ -29,5 +29,36 @@ public partial class RenderPageView : UserControl
                 renderPageViewModel.SetupRenderControl(_canvas);
             }
         };
+
+        KeyDown += (sender, args) =>
+        {
+            if (DataContext is RenderPageViewModel renderPageViewModel)
+            {
+                renderPageViewModel.DispatchKey(args.Key, args.KeyModifiers);
+            }
+        };
+
+        PointerWheelChanged += (sender, args) =>
+        {
+            if (DataContext is RenderPageViewModel renderPageViewModel)
+            {
+                renderPageViewModel.DispatchMouseWheel(args.Delta);
+            }
+        };
+
+        PointerMoved += (sender, args) =>
+        {
+            if (DataContext is RenderPageViewModel renderPageViewModel)
+            {
+                renderPageViewModel.DispatchMouseMove(args.GetPosition(this));
+            }
+        };
+
+        PointerPressed += (sender, args) =>
+        {
+            if (DataContext is RenderPageViewModel renderPageViewModel)
+            {
+            }
+        };
     }
 }

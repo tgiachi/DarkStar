@@ -39,7 +39,7 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
 
 
     public ScriptEngineService(
-        ILogger<IScriptEngineService> logger, DirectoriesConfig directoriesConfig, ITypeService typeService,
+        ILogger<ScriptEngineService> logger, DirectoriesConfig directoriesConfig, ITypeService typeService,
         IServiceProvider container
     ) : base(logger)
     {

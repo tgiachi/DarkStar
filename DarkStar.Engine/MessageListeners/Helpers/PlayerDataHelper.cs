@@ -5,7 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using DarkStar.Api.Engine.Interfaces.Core;
 using DarkStar.Database.Entities.Item;
+using DarkStar.Database.Entities.Player;
 using DarkStar.Database.Entities.Races;
+using DarkStar.Network.Protocol.Messages.Common;
 using DarkStar.Network.Protocol.Messages.Players;
 
 namespace DarkStar.Engine.MessageListeners.Helpers;
@@ -79,5 +81,22 @@ public static class PlayerDataHelper
         }
 
         return message;
+    }
+
+    public static async Task<PlayerDataResponseMessage> BuildPlayerDataResponse(IDarkSunEngine engine, Guid playerId)
+    {
+        var player = await engine.DatabaseService.QueryAsSingleAsync<PlayerEntity>(
+            entity => entity.Id == playerId
+        );
+
+
+        return new PlayerDataResponseMessage(
+            player.MapId,
+            player.TileId,
+            new PointPosition(player.X, player.Y),
+            player.Id,
+            player.Name,
+            1
+        );
     }
 }

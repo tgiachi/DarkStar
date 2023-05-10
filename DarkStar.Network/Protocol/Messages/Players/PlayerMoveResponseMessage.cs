@@ -17,8 +17,14 @@ public struct PlayerMoveResponseMessage : IDarkStarNetworkMessage
 {
     [ProtoMember(1)] public PointPosition Position { get; set; }
 
+    [ProtoMember(2)] public string PlayerId { get; set; }
 
-    public PlayerMoveResponseMessage(PointPosition position) => Position = position;
+
+    public PlayerMoveResponseMessage(string playerId, PointPosition position)
+    {
+        Position = position;
+        PlayerId = playerId;
+    }
 
     public PlayerMoveResponseMessage()
     {
