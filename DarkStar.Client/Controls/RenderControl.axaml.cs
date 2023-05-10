@@ -123,7 +123,12 @@ public partial class RenderControl : UserControl
     }
 
 
-    public RenderControl() => ClipToBounds = true;
+    public RenderControl()
+    {
+        ClipToBounds = true;
+        Focusable = true;
+        Focus();
+    }
 
 
     public override void Render(DrawingContext context)

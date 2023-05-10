@@ -15,13 +15,17 @@ public partial class RenderPageView : UserControl
 
     public RenderPageView()
     {
+
         InitializeComponent();
     }
 
     private void InitializeComponent()
     {
+
         AvaloniaXamlLoader.Load(this);
         _canvas = this.GetControl<RenderControl>("RenderControl");
+
+
         DataContextChanged += (sender, args) =>
         {
             if (DataContext is RenderPageViewModel renderPageViewModel)

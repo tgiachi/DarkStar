@@ -2,6 +2,7 @@
 using System.Reflection;
 using System.Threading.Tasks;
 using Avalonia.Controls;
+using Avalonia.Input;
 using Avalonia.Threading;
 using DarkStar.Client.Attributes;
 using DarkStar.Client.Controls;
@@ -57,6 +58,9 @@ public class WindowManager
                     {
                         await pageViewModelBase.OnClose();
                     }
+
+
+                    pageView.Focus();
 
                     _pageViewControl.ControlProperty.Content = pageView;
                 }

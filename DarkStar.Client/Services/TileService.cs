@@ -140,8 +140,8 @@ public class TileService
 
         await File.WriteAllBytesAsync(fileName, tileSetMemoryStream.ToArray());
         using var image = Image.FromStream(tileSetMemoryStream);
-        _defaultTileSet = new Bitmap(tileSetMemoryStream);
-        _defaultSkImageTileSet = SKBitmap.Decode(tileSetMemoryStream);
+        _defaultTileSet = new Bitmap(fileName);
+        _defaultSkImageTileSet = SKBitmap.Decode(fileName);
         TileHeight = tileSet.TileHeight;
         TileWidth = tileSet.TileWidth;
         _imageWidth = image.Width;

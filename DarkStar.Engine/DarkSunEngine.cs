@@ -213,7 +213,7 @@ public class DarkSunEngine : IDarkSunEngine
                         Luck = 10,
                         Name = "Player 1",
                         Strength = 10,
-                        TileId = 0,
+                        TileId = 1416,
                         RaceId = race.Id
                     }
                 );

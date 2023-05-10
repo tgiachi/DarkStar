@@ -8,7 +8,6 @@ namespace DarkStar.Api.Engine.Items.WorldObjects.Base;
 public class BaseWorldObjectAction : IGameObjectAction
 {
     protected ILogger Logger { get; }
-
     protected IDarkSunEngine Engine { get; }
     protected string MapId { get; private set; } = null!;
     protected WorldGameObject GameObject { get; private set; } = null!;
@@ -23,7 +22,6 @@ public class BaseWorldObjectAction : IGameObjectAction
     {
         MapId = mapId;
         GameObject = gameObject;
-        Logger.LogDebug("Initialized {GameObject}", gameObject.Tile);
         return ValueTask.CompletedTask;
     }
 
