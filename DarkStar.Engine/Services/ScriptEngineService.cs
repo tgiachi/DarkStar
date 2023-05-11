@@ -271,6 +271,7 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
         catch (LuaScriptException ex)
         {
             Logger.LogError("Error during execute script {Script}: {Error}", script, ex);
+            throw;
         }
 
         return ValueTask.CompletedTask;

@@ -1,13 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DarkStar.Api.Engine.Ai.Base;
-using DarkStar.Api.Engine.Attributes.Ai;
 using DarkStar.Api.Engine.Interfaces.Core;
 using DarkStar.Api.Engine.Map.Entities;
-using DarkStar.Api.World.Types.GameObjects;
 using DarkStar.Api.World.Types.Map;
 using DarkStar.Engine.Commands.Actions;
 using DarkStar.Network.Protocol.Messages.Common;
@@ -16,7 +9,8 @@ using Microsoft.Extensions.Logging;
 
 namespace DarkStar.Engine.Ai.Humans;
 
-[AiBehaviour("Human", "Mushroom_Finder")]
+//[AiBehaviour("Human", "Mushroom_Finder")]
+
 public class MushroomFinderAi : BaseAiBehaviourExecutor
 {
     private int _currentStep = 0;

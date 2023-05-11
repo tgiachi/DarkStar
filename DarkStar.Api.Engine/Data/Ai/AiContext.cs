@@ -41,6 +41,19 @@ public class AiContext
         return false;
     }
 
+    public bool MoveToPosition(int x, int y)
+    {
+        var newPosition = PointPosition.New(x, y);
+        var canMove = WorldService.IsLocationWalkable(MapId, newPosition);
+        if (canMove)
+        {
+            NpcGameObject.Position = newPosition.ToPoint();
+            return true;
+        }
+
+        return false;
+    }
+
     public bool SendNormalMessageAsync(string message) =>
         SendWorldMessageAsync(message, (short)WorldMessageType.Normal);
 
@@ -92,6 +105,25 @@ public class AiContext
 
         return objects;
     }
+
+    public List<WorldGameObject> GetGameObjectsInRangeByName(short gameObjectType, int range = 5)
+    {
+        var objects = WorldService.GetEntitiesInRangeAsync<WorldGameObject>(
+                MapId,
+                MapLayer.Objects,
+                NpcGameObject.Position.ToPointPosition(),
+                range
+            )
+            .GetAwaiter()
+            .GetResult();
+
+        if (objects == null) return new();
+
+        return objects.Where(s => s.Type == gameObjectType).ToList();
+    }
+
+
+    public void LogInfo(string text, params object[] args) => Logger.LogInformation(text, args);
 
     public List<PointPosition> GetPathToPosition(int x, int y) => WorldService.CalculateAStarPath(
         MapId,

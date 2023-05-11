@@ -40,7 +40,15 @@ public class BaseScriptableBehaviourExecutor : BaseAiBehaviourExecutor
 
     protected override ValueTask DoAiAsync()
     {
-        ExecutorFunc.Invoke(Ai);
+        try
+        {
+            ExecutorFunc.Invoke(Ai);
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError("Error during executing ai script: {Ex}", ex);
+            throw;
+        }
         return ValueTask.CompletedTask;
     }
 }

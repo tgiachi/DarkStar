@@ -26,6 +26,7 @@ public class AiScriptModule : BaseScriptModule
     [ScriptFunction("add_ai_brain_by_type")]
     public void AddAiScriptByType(string npcType, string npcSubType, Action<AiContext> context)
     {
+        Logger.LogInformation("Adding AI script for {NpcType} {NpcSubType}", npcType, npcSubType);
         _aiService.AddAiScriptByType(
             _typeService.GetNpcType(npcType)!.Value,
             _typeService.GetNpcSubType(npcSubType),

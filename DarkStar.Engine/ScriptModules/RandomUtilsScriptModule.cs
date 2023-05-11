@@ -25,4 +25,11 @@ public class RandomUtilsScriptModule
 
     [ScriptFunction("parse_dice_exp")]
     public int ParseDice(string expression) => Dice.Parse(expression).Roll();
+
+
+    [ScriptFunction("random_list", "Get a random item from a list")]
+    public TEntity RandomList<TEntity>(List<TEntity> list)
+    {
+        return list.RandomItem();
+    }
 }
