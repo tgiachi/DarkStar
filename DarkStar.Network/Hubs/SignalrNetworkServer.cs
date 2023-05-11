@@ -44,7 +44,7 @@ public class SignalrNetworkServer : IDarkSunNetworkServer
 
     public async Task OnConnectedClient(string sessionId)
     {
-        _logger.LogInformation("Client {IpAddress} connected with sessionId: {SessionId}", sessionId);
+        _logger.LogInformation("Client {IpAddress} connected with sessionId: {SessionId}", sessionId, sessionId);
         var messages = await OnClientConnected?.Invoke(sessionId);
         await SendMessageAsync(sessionId, messages);
     }

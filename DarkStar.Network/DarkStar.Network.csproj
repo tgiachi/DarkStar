@@ -15,7 +15,7 @@
         <Title>Dark Star MMO Network protocol</Title>
         <Description>    </Description>
         <Copyright>MIT License</Copyright>
-        <PackageLicenseUrl>https://github.com/tgiachi/DarkStar/blob/main/LICENSE</PackageLicenseUrl>
+        <PackageLicense>https://github.com/tgiachi/DarkStar/blob/main/LICENSE</PackageLicense>
         <PackageIcon>dark_star_icon.png</PackageIcon>
     </PropertyGroup>
 

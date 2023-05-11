@@ -12,9 +12,9 @@
         <RepositoryType>git</RepositoryType>
         <Version>0.10.0</Version>
         <Title>Dark Star MMO Api</Title>
-        <Description>    </Description>
+        <Description>  </Description>
         <Copyright>MIT License</Copyright>
-        <PackageLicenseUrl>https://github.com/tgiachi/DarkStar/blob/main/LICENSE</PackageLicenseUrl>
+        <PackageLicense>https://github.com/tgiachi/DarkStar/blob/main/LICENSE</PackageLicense>
         <PackageIcon>dark_star_icon.png</PackageIcon>
     </PropertyGroup>
 

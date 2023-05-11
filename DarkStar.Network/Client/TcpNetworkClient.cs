@@ -51,13 +51,15 @@ public class TcpNetworkClient : TcpClient, IDarkStarNetworkClient
 
     protected override void OnConnected()
     {
-        _logger.LogInformation("Connected to {IpAddress}", Socket.RemoteEndPoint);
+        _logger.LogInformation("Connected to {@IpAddress}", Socket.RemoteEndPoint);
+        OnClientConnected?.Invoke();
         base.OnConnected();
     }
 
     protected override void OnDisconnected()
     {
         _logger.LogInformation("Disconnected from server");
+        ;
         base.OnDisconnected();
     }
 
