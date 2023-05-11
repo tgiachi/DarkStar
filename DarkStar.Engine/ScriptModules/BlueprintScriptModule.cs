@@ -43,4 +43,12 @@ public class BlueprintScriptModule
     {
         AddMapGenerator((short)MapType.Dungeon, callBack);
     }
+
+    [ScriptFunction("add_map_strategy")]
+    public void AddMapCreationStrategy(short mapType, Func<BlueprintMapInfoContext, BlueprintMapInfoContext> callBack)
+    {
+        var mapTypeEnum = FastEnum.Parse<MapType>(mapType.ToString());
+        _logger.LogDebug("Adding map creation strategy for mapType: {MapType}", mapTypeEnum);
+        _blueprintService.AddMapStrategy(mapTypeEnum, callBack);
+    }
 }

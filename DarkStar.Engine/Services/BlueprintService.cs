@@ -31,8 +31,11 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
     private readonly Dictionary<MapType, List<Func<BlueprintGenerationMapContext, BlueprintGenerationMapContext>>>
         _mapGenerators = new();
 
-    private readonly Dictionary<MapType, List<Func<BlueprintMapInfoContext, BlueprintMapInfoContext>>> _mapInfoGenerator =
-        new();
+    private readonly Dictionary<MapType, List<Func<BlueprintMapInfoContext, BlueprintMapInfoContext>>>
+        _mapStrategyGenerator =
+            new();
+
+    private readonly SemaphoreSlim _mapGenerationLock = new(1);
 
 
     public BlueprintService(
@@ -86,7 +89,11 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
             {
                 foreach (var templateObject in templateDefinition.Objects)
                 {
-                    Logger.LogInformation("Adding [{Class}] {Name} in blueprint template ", templateObject.Type, templateObject.Name);
+                    Logger.LogInformation(
+                        "Adding [{Class}] {Name} in blueprint template ",
+                        templateObject.Type,
+                        templateObject.Name
+                    );
                     var points = GetPointsFromRect(
                         templateObject.X,
                         templateObject.Y,
@@ -276,7 +283,7 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
         _mapGenerators[mapType].Add(callback);
     }
 
-    public BlueprintGenerationMapContext GetMapGenerator(string mapId, MapType mapType)
+    public BlueprintGenerationMapContext GetMapFiller(string mapId, MapType mapType)
     {
         if (!_mapGenerators.ContainsKey(mapType))
         {
@@ -287,5 +294,44 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
         var mapGenerator = _mapGenerators[mapType].RandomItem();
 
         return mapGenerator(context);
+    }
+
+    public BlueprintMapInfoContext GetMapGenerator(MapType mapType)
+    {
+        if (_mapStrategyGenerator.TryGetValue(mapType, out var generators))
+        {
+            _mapGenerationLock.Wait();
+            try
+            {
+                var gen = generators.RandomItem();
+                var context = new BlueprintMapInfoContext(Engine.TypeService)
+                {
+                    MapType = mapType
+                };
+                var result = gen(context);
+                _mapGenerationLock.Release();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError("Error while generating map {MapType} : {Ex}", mapType, ex);
+                _mapGenerationLock.Release();
+                throw;
+            }
+        }
+
+        throw new Exception($"Can't find map generator for {mapType}");
+    }
+
+    public void AddMapStrategy(MapType mapType, Func<BlueprintMapInfoContext, BlueprintMapInfoContext> callback)
+    {
+        if (!_mapStrategyGenerator.ContainsKey(mapType))
+        {
+            _mapStrategyGenerator.Add(mapType, new List<Func<BlueprintMapInfoContext, BlueprintMapInfoContext>>());
+        }
+
+        Logger.LogInformation("Adding map strategy for {MapType}", mapType);
+
+        _mapStrategyGenerator[mapType].Add(callback);
     }
 }

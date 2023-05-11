@@ -28,5 +28,10 @@ public interface IBlueprintService : IDarkSunEngineService
     Task<WorldGameObject> GenerateWorldGameObjectAsync(GameObjectType type, PointPosition position);
 
     void AddMapGenerator(MapType mapType, Func<BlueprintGenerationMapContext, BlueprintGenerationMapContext> callback);
-    BlueprintGenerationMapContext GetMapGenerator(string mapId, MapType mapType);
+    BlueprintGenerationMapContext GetMapFiller(string mapId, MapType mapType);
+
+    BlueprintMapInfoContext GetMapGenerator(MapType mapType);
+
+
+    void AddMapStrategy(MapType mapType, Func<BlueprintMapInfoContext, BlueprintMapInfoContext> callback);
 }

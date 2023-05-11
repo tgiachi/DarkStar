@@ -6,6 +6,7 @@ using DarkStar.Api.Data.Config;
 using DarkStar.Api.Engine.Data.ScriptEngine;
 using DarkStar.Api.Engine.Events.Engine;
 using DarkStar.Api.Engine.Interfaces.Services;
+using DarkStar.Api.Engine.Map.Enums;
 using DarkStar.Api.Utils;
 using DarkStar.Api.World.Types.Equippable;
 using DarkStar.Api.World.Types.GameObjects;
@@ -18,6 +19,7 @@ using DarkStar.Engine.Services.Base;
 using DarkStar.Network.Protocol.Messages.World;
 using FastEnumUtility;
 using GoRogue.GameFramework;
+using Humanizer;
 using Microsoft.Extensions.Logging;
 using NLua;
 using NLua.Exceptions;
@@ -105,6 +107,13 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
             var mapTypeName = $"MAP_TYPE_{mapType.ToString().ToUpper()}";
             Logger.LogDebug("Adding map type {MapTypeName}={Id} to LUA context", mapTypeName, (short)mapType);
             AddContextVariable(mapTypeName, (short)mapType);
+        }
+
+        foreach (var mapGeneratorType in FastEnum.GetValues<MapGeneratorType>())
+        {
+            var mapTypeName = $"MAP_GENERATOR_TYPE_{mapGeneratorType.ToString().Underscore().ToUpper()}";
+            Logger.LogDebug("Adding map type {MapTypeName}={Id} to LUA context", mapTypeName, (short)mapGeneratorType);
+            AddContextVariable(mapTypeName, (short)mapGeneratorType);
         }
 
         foreach (var messageTypeValue in FastEnum.GetValues<WorldMessageType>())
