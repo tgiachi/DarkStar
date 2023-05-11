@@ -11,11 +11,12 @@
         <PackageReference Include="FluentScheduler" Version="5.5.1" />
         <PackageReference Include="FreeSql.Provider.PostgreSQL" Version="3.2.695" />
         <PackageReference Include="FreeSql.Provider.Sqlite" Version="3.2.695" />
+        <PackageReference Include="Jint" Version="3.0.0-beta-2049" />
         <PackageReference Include="Microsoft.AspNetCore.SignalR.Common" Version="7.0.5" />
         <PackageReference Include="Microsoft.AspNetCore.SignalR.Protocols.Json" Version="7.0.5" />
 
 
-        <PackageReference Include="NLua" Version="1.6.2" />
+
         <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
         <PackageReference Include="TiledSharp" Version="1.0.1" />
     </ItemGroup>

@@ -1,12 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DarkStar.Api.Utils;
 using DarkStar.Engine.Attributes.ScriptEngine;
 using GoRogue.DiceNotation;
-using GoRogue.DiceNotation.Terms;
+
 
 namespace DarkStar.Engine.ScriptModules;
 
@@ -28,8 +23,5 @@ public class RandomUtilsScriptModule
 
 
     [ScriptFunction("random_list", "Get a random item from a list")]
-    public TEntity RandomList<TEntity>(List<TEntity> list)
-    {
-        return list.RandomItem();
-    }
+    public TEntity RandomList<TEntity>(List<TEntity> list) => list.RandomItem();
 }

@@ -1,8 +1,8 @@
+using System.Linq.Expressions;
 using System.Reflection;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 using DarkStar.Api.Attributes.Services;
 using DarkStar.Api.Data.Config;
+using DarkStar.Api.Engine.Data.Config;
 using DarkStar.Api.Engine.Data.ScriptEngine;
 using DarkStar.Api.Engine.Events.Engine;
 using DarkStar.Api.Engine.Interfaces.Services;
@@ -18,23 +18,25 @@ using DarkStar.Engine.Attributes.ScriptEngine;
 using DarkStar.Engine.Services.Base;
 using DarkStar.Network.Protocol.Messages.Common;
 using DarkStar.Network.Protocol.Messages.World;
+using Esprima;
 using FastEnumUtility;
-using GoRogue.GameFramework;
 using Humanizer;
+using Jint;
+using Jint.Runtime;
 using Microsoft.Extensions.Logging;
-using NLua;
-using NLua.Exceptions;
-using ProtoBuf;
+
 
 namespace DarkStar.Engine.Services;
 
 [DarkStarEngineService("ScriptEngine", 9)]
 public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEngineService
 {
-    private readonly Lua _scriptEngine;
+    private readonly Jint.Engine _scriptEngine;
     private readonly DirectoriesConfig _directoriesConfig;
     private readonly IServiceProvider _container;
     private readonly ITypeService _typeService;
+
+    private readonly string _fileExtension = "js";
 
     public List<ScriptFunctionDescriptor> Functions { get; } = new();
 
@@ -43,13 +45,26 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
 
     public ScriptEngineService(
         ILogger<ScriptEngineService> logger, DirectoriesConfig directoriesConfig, ITypeService typeService,
+        EngineConfig engineConfig,
         IServiceProvider container
     ) : base(logger)
     {
         _typeService = typeService;
         _container = container;
         _directoriesConfig = directoriesConfig;
-        _scriptEngine = new Lua { UseTraceback = true };
+        _scriptEngine = new Jint.Engine(
+            options =>
+            {
+                options.DebugMode(engineConfig.Logger.EnableDebug);
+                //options.TimeoutInterval(TimeSpan.FromSeconds(4));
+                // Limit the memory to 4Gb
+                options.LimitMemory(4_000_000_000);
+                options.AllowClr(AssemblyUtils.GetAppAssemblies().ToArray());
+
+                options.EnableModules(_directoriesConfig[DirectoryNameType.ScriptModules]);
+                options.StringCompilationAllowed = true;
+            }
+        );
     }
 
     protected override async ValueTask<bool> StartAsync()
@@ -67,19 +82,8 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
     private ValueTask PrepareModuleDirectoryAsync()
     {
         var moduleFolder = _directoriesConfig[DirectoryNameType.ScriptModules];
-        Logger.LogInformation("LUA script modules: {ScriptModules}", moduleFolder);
+        Logger.LogInformation("JS script modules: {ScriptModules}", moduleFolder);
 
-        if (Environment.OSVersion.Platform == PlatformID.Win32NT)
-        {
-            moduleFolder = moduleFolder.Replace(@"\", @"\\");
-        }
-
-        _scriptEngine.DoString(
-            $@"
-			-- Update the search path
-			local module_folder = '{moduleFolder}'
-			package.path = module_folder .. '?.lua;' .. package.path"
-        );
 
         return ValueTask.CompletedTask;
     }
@@ -87,7 +91,7 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
     private async ValueTask PrepareScriptContextAsync()
     {
         Logger.LogInformation("Preparing Script Context");
-        _scriptEngine["ENGINE"] = Engine;
+        _scriptEngine.SetValue("Engine", Engine);
 
 
         await ScanScriptModulesAsync();
@@ -106,21 +110,21 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
         foreach (var mapType in FastEnum.GetValues<MapType>())
         {
             var mapTypeName = $"MAP_TYPE_{mapType.ToString().ToUpper()}";
-            Logger.LogDebug("Adding map type {MapTypeName}={Id} to LUA context", mapTypeName, (short)mapType);
+            Logger.LogDebug("Adding map type {MapTypeName}={Id} to JS context", mapTypeName, (short)mapType);
             AddContextVariable(mapTypeName, (short)mapType);
         }
 
         foreach (var mapGeneratorType in FastEnum.GetValues<MapGeneratorType>())
         {
             var mapTypeName = $"MAP_GENERATOR_TYPE_{mapGeneratorType.ToString().Underscore().ToUpper()}";
-            Logger.LogDebug("Adding map type {MapTypeName}={Id} to LUA context", mapTypeName, (short)mapGeneratorType);
+            Logger.LogDebug("Adding map type {MapTypeName}={Id} to JS context", mapTypeName, (short)mapGeneratorType);
             AddContextVariable(mapTypeName, (short)mapGeneratorType);
         }
 
         foreach (var messageTypeValue in FastEnum.GetValues<WorldMessageType>())
         {
             var messageType = "MESSAGE_TYPE_" + messageTypeValue.ToString().ToUpper();
-            Logger.LogDebug("Adding message type {MessageType}={Id} to LUA context", messageType, (short)messageTypeValue);
+            Logger.LogDebug("Adding message type {MessageType}={Id} to JS context", messageType, (short)messageTypeValue);
             AddContextVariable(messageType, (short)messageTypeValue);
         }
 
@@ -128,7 +132,7 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
         {
             var equipLocationName = $"EQUIP_LOCATION_{equipLocation.ToString().ToUpper()}";
             Logger.LogDebug(
-                "Adding equip location {EquipLocationName}={Id} to LUA context",
+                "Adding equip location {EquipLocationName}={Id} to JS context",
                 equipLocationName,
                 (short)equipLocation
             );
@@ -138,14 +142,14 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
         foreach (var itemRarity in FastEnum.GetValues<ItemRarityType>())
         {
             var itemRarityName = $"ITEM_RARITY_{itemRarity.ToString().ToUpper()}";
-            Logger.LogDebug("Adding item rarity {ItemRarityName}={Id} to LUA context", itemRarityName, (short)itemRarity);
+            Logger.LogDebug("Adding item rarity {ItemRarityName}={Id} to JS context", itemRarityName, (short)itemRarity);
             AddContextVariable(itemRarityName, (short)itemRarity);
         }
 
         foreach (var direction in FastEnum.GetValues<MoveDirectionType>())
         {
             var directionName = "MOVE_DIRECTION_" + direction.ToString().Underscore().ToUpper();
-            Logger.LogDebug("Adding direction {DirectionName}={Id} to LUA context", directionName, (short)direction);
+            Logger.LogDebug("Adding direction {DirectionName}={Id} to JS context", directionName, (short)direction);
             AddContextVariable(directionName, (short)direction);
         }
 
@@ -160,7 +164,7 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
         }
 
 
-        var files = Directory.GetFiles(_directoriesConfig[DirectoryNameType.Scripts], "*.lua");
+        var files = Directory.GetFiles(_directoriesConfig[DirectoryNameType.Scripts], "*." + _fileExtension);
         Logger.LogInformation("Found {Count} scripts to load", files.Count());
 
         foreach (var file in files)
@@ -172,14 +176,14 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
     private void AddTileToVariables(Tile tileType)
     {
         var tileName = $"TILE_{tileType.FullName.ToUpper()}";
-        Logger.LogDebug("Adding tile {TileName}={Id} to LUA context", tileName, tileType.Id);
+        Logger.LogDebug("Adding tile {TileName}={Id} to JS context", tileName, tileType.Id);
         AddContextVariable(tileName, tileType.Id);
     }
 
     private void AddGameObjectTypeToVariables(GameObjectType gameObject)
     {
         var gameObjectName = $"GAMEOBJECT_{gameObject.Name.ToUpper()}";
-        Logger.LogDebug("Adding game object {GameObjectName}={Id} to LUA context", gameObjectName, gameObject.Id);
+        Logger.LogDebug("Adding game object {GameObjectName}={Id} to JS context", gameObjectName, gameObject.Id);
         AddContextVariable(gameObjectName, gameObject.Id);
     }
 
@@ -199,7 +203,7 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
 
     private void AddContextVariable(string name, object value)
     {
-        _scriptEngine[name] = value;
+        _scriptEngine.SetValue(name, value);
         ContextVariables[name] = value;
     }
 
@@ -211,7 +215,7 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
 
             try
             {
-                var instance = _container.GetService(module);
+                var obj = _container.GetService(module);
 
                 foreach (var scriptMethod in module.GetMethods())
                 {
@@ -225,7 +229,11 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
                     ExtractFunctionDescriptor(sMethodAttr, scriptMethod);
 
                     Logger.LogInformation("Adding script method {M}", sMethodAttr.Alias ?? scriptMethod.Name);
-                    _scriptEngine.RegisterFunction(sMethodAttr.Alias ?? scriptMethod.Name, instance!, scriptMethod);
+
+                    _scriptEngine.SetValue(
+                        sMethodAttr.Alias ?? scriptMethod.Name,
+                        CreateJsEngineDelegate(obj, scriptMethod)
+                    );
                 }
             }
             catch (Exception ex)
@@ -235,6 +243,18 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
         }
 
         return ValueTask.CompletedTask;
+    }
+
+    private Delegate CreateJsEngineDelegate(object obj, MethodInfo method)
+    {
+        return method.CreateDelegate(
+            Expression.GetDelegateType(
+                (from parameter in method.GetParameters() select parameter.ParameterType)
+                .Concat(new[] { method.ReturnType })
+                .ToArray()
+            ),
+            obj
+        );
     }
 
     private void ExtractFunctionDescriptor(ScriptFunctionAttribute attribute, MethodInfo methodInfo)
@@ -266,9 +286,9 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
         try
         {
             Logger.LogInformation("Executing script: {Script}", new FileInfo(script).Name);
-            _scriptEngine.DoFile(script);
+            _scriptEngine.Execute(File.ReadAllText(script), ParserOptions.Default);
         }
-        catch (LuaScriptException ex)
+        catch (JintException ex)
         {
             Logger.LogError("Error during execute script {Script}: {Error}", script, ex);
             throw;
@@ -289,7 +309,7 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
     {
         try
         {
-            var result = new ScriptEngineExecutionResult { Result = _scriptEngine.DoString(command) };
+            var result = new ScriptEngineExecutionResult { Result = _scriptEngine.Evaluate(command) };
 
             return result;
         }

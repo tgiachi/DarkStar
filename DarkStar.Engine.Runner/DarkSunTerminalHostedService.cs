@@ -19,7 +19,7 @@ public class DarkSunTerminalHostedService : IHostedService
         _ = Task.Run(
             () =>
             {
-                Console.WriteLine(">> PRESS ENTER FOR START LUA SHELL");
+                Console.WriteLine(">> PRESS ENTER FOR START JS SHELL");
                 var command = Console.ReadLine();
                 while (command != "EXIT")
                 {
@@ -29,10 +29,7 @@ public class DarkSunTerminalHostedService : IHostedService
 
                     if (result.Result != null)
                     {
-                        foreach (var item in result.Result)
-                        {
-                            Console.WriteLine(item);
-                        }
+                        Console.WriteLine(result.Result);
                     }
 
                     if (result.Exception != null)
