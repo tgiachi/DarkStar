@@ -16,6 +16,7 @@ using DarkStar.Api.World.Types.Npc;
 using DarkStar.Api.World.Types.Tiles;
 using DarkStar.Engine.Attributes.ScriptEngine;
 using DarkStar.Engine.Services.Base;
+using DarkStar.Network.Protocol.Messages.Common;
 using DarkStar.Network.Protocol.Messages.World;
 using FastEnumUtility;
 using GoRogue.GameFramework;
@@ -139,6 +140,13 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
             var itemRarityName = $"ITEM_RARITY_{itemRarity.ToString().ToUpper()}";
             Logger.LogDebug("Adding item rarity {ItemRarityName}={Id} to LUA context", itemRarityName, (short)itemRarity);
             AddContextVariable(itemRarityName, (short)itemRarity);
+        }
+
+        foreach (var direction in FastEnum.GetValues<MoveDirectionType>())
+        {
+            var directionName = "MOVE_DIRECTION_" + direction.ToString().Underscore().ToUpper();
+            Logger.LogDebug("Adding direction {DirectionName}={Id} to LUA context", directionName, (short)direction);
+            AddContextVariable(directionName, (short)direction);
         }
 
         foreach (var npcType in _typeService.NpcTypes)

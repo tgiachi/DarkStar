@@ -1,5 +1,6 @@
 ﻿using DarkStar.Api.Engine.Data.Ai;
 using DarkStar.Api.Engine.Interfaces.Core;
+using DarkStar.Api.Engine.Interfaces.Services;
 using DarkStar.Api.Engine.Map.Entities;
 using DarkStar.Database.Entities.Npc;
 using Microsoft.Extensions.DependencyInjection;
@@ -31,7 +32,9 @@ public class BaseScriptableBehaviourExecutor : BaseAiBehaviourExecutor
             NpcGameObject = NpcGameObject,
             NpcEntity = NpcEntity,
             MapId = MapId,
-            Logger = _serviceProvider.GetRequiredService<ILogger<AiContext>>()
+            Logger = _serviceProvider.GetRequiredService<ILogger<AiContext>>(),
+            WorldService = _serviceProvider.GetRequiredService<IWorldService>(),
+            PlayerService = _serviceProvider.GetRequiredService<IPlayerService>()
         };
     }
 

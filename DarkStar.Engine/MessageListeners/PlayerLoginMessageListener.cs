@@ -51,7 +51,9 @@ public class PlayerLoginMessageListener : BaseNetworkMessageListener<PlayerLogin
             );
 
             // Send player Data see: {NetworkEventDispatcherService}
-            Engine.EventBus.PublishAsync(new PlayerLoggedEvent(sessionId, player.Id, player.MapId));
+            Engine.EventBus.PublishAsync(
+                new PlayerLoggedEvent(sessionId, player.Id, player.MapId, PointPosition.New(player.X, player.Y))
+            );
         }
 
         return EmptyMessage();

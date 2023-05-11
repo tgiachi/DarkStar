@@ -19,7 +19,7 @@ using DarkStar.Network.Protocol.Messages.Players;
 using DarkStar.Network.Protocol.Messages.Triggers.Npc;
 using DarkStar.Network.Protocol.Messages.World;
 using DarkStar.Network.Protocol.Types;
-using DynamicData;
+
 using FastEnumUtility;
 using ReactiveUI;
 
@@ -60,6 +60,11 @@ public class RenderPageViewModel : PageViewModelBase
             OnNpcMoved
         );
 
+        serviceContext.NetworkClient.SubscribeToMessage<PlayerFovResponseMessage>(
+            DarkStarMessageType.PlayerFovResponse,
+            OnPlayerFovReceived
+        );
+
         MoveCharacterCommand = ReactiveCommand.Create<string, Unit>(
             s =>
             {
@@ -68,7 +73,15 @@ public class RenderPageViewModel : PageViewModelBase
             }
         );
 
+
         PerformActionCommand = ReactiveCommand.Create(PerformAction);
+    }
+
+    private Task OnPlayerFovReceived(IDarkStarNetworkMessage arg)
+    {
+        var message = (PlayerFovResponseMessage)arg;
+        _graphicEngineRender.UpdateVisiblePositions(message.VisiblePositions);
+        return Task.CompletedTask;
     }
 
     private Task OnWorldMessage(IDarkStarNetworkMessage arg)

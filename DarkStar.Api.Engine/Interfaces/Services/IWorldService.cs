@@ -44,7 +44,7 @@ public interface IWorldService : IDarkSunEngineService
         where TEntity : BaseGameObject;
 
     Task<List<PointPosition>> GetNeighborCellsAsync(string mapId, PointPosition startPosition, int cellsNumber = 5);
-    Task<List<PointPosition>> GetFovAsync(string mapId, PointPosition sourcePosition, int radius = 5);
+    Task<List<VisibilityPointPosition>> GetFovAsync(string mapId, PointPosition sourcePosition, int radius = 5);
     Task<bool> MovePlayerAsync(string mapId, Guid playerId, PointPosition position);
     List<PlayerGameObject> GetPlayers(string mapId);
     List<PointPosition> CalculateAStarPath(string mapId, PointPosition sourcePosition, PointPosition destinationPosition);

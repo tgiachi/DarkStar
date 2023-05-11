@@ -9,14 +9,13 @@ using DarkStar.Api.Utils;
 using DarkStar.Api.World.Types.GameObjects;
 using DarkStar.Api.World.Types.Map;
 using DarkStar.Api.World.Types.Npc;
-using DarkStar.Api.World.Types.Tiles;
+
 using DarkStar.Database.Entities.Npc;
 using DarkStar.Database.Entities.Objects;
 using DarkStar.Engine.Services.Base;
 using DarkStar.Network.Protocol.Messages.Common;
 using FastEnumUtility;
 using Microsoft.Extensions.Logging;
-using NetTopologySuite.GeometriesGraph;
 using TiledSharp;
 
 namespace DarkStar.Engine.Services;
@@ -48,6 +47,7 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
 
     protected override async ValueTask<bool> StartAsync()
     {
+        await ScanForMapsAsync();
         await ScanForMapTemplatesAsync();
 
         return true;
@@ -55,8 +55,10 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
 
     private async ValueTask ScanForMapTemplatesAsync()
     {
+        var templateDirectory = Path.Join(_directoriesConfig[DirectoryNameType.BluePrints], "Templates");
+        Directory.CreateDirectory(templateDirectory);
         var mapTemplates = Directory.GetFiles(
-            _directoriesConfig[DirectoryNameType.BluePrints],
+            templateDirectory,
             "*.tmx",
             SearchOption.AllDirectories
         );
@@ -65,6 +67,17 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
         {
             await LoadMapTemplateAsync(mapTemplate);
         }
+    }
+
+    private async ValueTask ScanForMapsAsync()
+    {
+        var mapsDirectory = Path.Join(_directoriesConfig[DirectoryNameType.BluePrints], "Maps");
+        Directory.CreateDirectory(mapsDirectory);
+        var maps = Directory.GetFiles(
+            mapsDirectory,
+            "*.tmx",
+            SearchOption.AllDirectories
+        );
     }
 
 
@@ -115,7 +128,7 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
         return ValueTask.CompletedTask;
     }
 
-    private List<PointPosition> GetPointsFromRect(double x, double y, double width, double height, TmxTileset tileSet)
+    private static List<PointPosition> GetPointsFromRect(double x, double y, double width, double height, TmxTileset tileSet)
     {
         var points = new List<PointPosition>();
         for (var i = x * tileSet.TileWidth; i < width / tileSet.TileWidth; i++)
@@ -166,7 +179,7 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
     {
         NpcStatEntity npcStats;
 
-        var npc = new NpcEntity()
+        var npc = new NpcEntity
         {
             Id = Guid.NewGuid(),
             Alignment =
@@ -251,8 +264,6 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
         }
 
         return entities.RandomItem();
-
-        //var entity = new GameObjectEntity();
     }
 
     public async Task<WorldGameObject> GenerateWorldGameObjectAsync(GameObjectType type, PointPosition position)
@@ -314,7 +325,7 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
             }
             catch (Exception ex)
             {
-                Logger.LogError("Error while generating map {MapType} : {Ex}", mapType, ex);
+                Logger.LogError("Error while generating map {MapType} : {Ex}", ex, mapType);
                 _mapGenerationLock.Release();
                 throw;
             }

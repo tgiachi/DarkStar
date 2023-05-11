@@ -516,12 +516,16 @@ public class WorldService : BaseService<IWorldService>, IWorldService
         return randomPosition.ToPointPosition();
     }
 
-    public Task<List<PointPosition>> GetFovAsync(string mapId, PointPosition sourcePosition, int radius = 5)
+    public Task<List<VisibilityPointPosition>> GetFovAsync(string mapId, PointPosition sourcePosition, int radius = 5)
     {
         var map = GetMap(mapId);
         map.PlayerFOV.Reset();
         map.PlayerFOV.Calculate(sourcePosition.ToPoint(), radius);
-        return Task.FromResult(map.PlayerFOV.CurrentFOV.Select(s => s.ToPointPosition()).ToList());
+        var s = map.PlayerFOV.DoubleResultView;
+        return Task.FromResult(
+            map.PlayerFOV.CurrentFOV.Select(s => new VisibilityPointPosition(s.X, s.Y, map.PlayerFOV.DoubleResultView[s]))
+                .ToList()
+        );
     }
 
     public async Task<bool> MovePlayerAsync(string mapId, Guid playerId, PointPosition position)
