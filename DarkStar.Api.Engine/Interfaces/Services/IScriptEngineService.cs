@@ -15,4 +15,6 @@ public interface IScriptEngineService : IDarkSunEngineService
     List<ScriptFunctionDescriptor> Functions { get; }
 
     Dictionary<string, object> ContextVariables { get; }
+
+    Task<string> GenerateTypeDefinitionsAsync();
 }

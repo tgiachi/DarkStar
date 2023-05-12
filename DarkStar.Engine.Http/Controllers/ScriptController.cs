@@ -23,4 +23,13 @@ public class ScriptController : ControllerBase
     [HttpGet]
     [Route("functions")]
     public ActionResult GetFunctions() => Ok(_scriptEngineService.Functions);
+
+
+    [HttpGet]
+    [Route("types")]
+    public async Task<IActionResult> GetTypes()
+    {
+        var scriptDefinition = await _scriptEngineService.GenerateTypeDefinitionsAsync();
+        return File(new MemoryStream(Encoding.UTF8.GetBytes(scriptDefinition)), "text/plain", "types.d.ts");
+    }
 }
