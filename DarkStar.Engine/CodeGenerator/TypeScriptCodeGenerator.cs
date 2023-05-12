@@ -39,6 +39,15 @@ public static class TypeScriptCodeGenerator
         }
         else if (type.IsArray)
         {
+            if (type == typeof(object[]))
+            {
+                return "any[]";
+            }
+
+            if (type == typeof(string[]))
+            {
+                return "string[]";
+            }
             return $"{GetTypeScriptType(type.GenericTypeArguments[0])}[]";
         }
 
@@ -63,6 +72,10 @@ public static class TypeScriptCodeGenerator
         else if (IsFunc(type))
         {
             return $"( c: {type.GenericTypeArguments[0].Name}  ) => {type.GenericTypeArguments[1].Name}";
+        }
+        else if (type.ToString().StartsWith("System.Collections.Generic."))
+        {
+            return "any[]";
         }
 
         return type.Name;
