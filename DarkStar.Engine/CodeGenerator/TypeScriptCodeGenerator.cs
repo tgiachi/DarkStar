@@ -1,7 +1,12 @@
 ﻿using System.Reflection;
 using System.Text;
+using DarkStar.Api.Attributes.Services;
+using DarkStar.Api.Engine.Data.Ai;
+using DarkStar.Api.Engine.Data.Blueprint;
 using DarkStar.Api.Engine.Data.ScriptEngine;
+using DarkStar.Api.Utils;
 using FastEnumUtility;
+using TypeLite;
 
 namespace DarkStar.Engine.CodeGenerator;
 
@@ -155,6 +160,7 @@ public static class TypeScriptCodeGenerator
     {
         stringBuilder.AppendLine($"interface {type.Name} {{");
 
+
         var properties = type.GetProperties(BindingFlags.Public | BindingFlags.Instance);
         foreach (var property in properties)
         {
@@ -224,6 +230,65 @@ public static class TypeScriptCodeGenerator
 
         return sb.ToString();
     }
+
+    public static string GenerateInterfacesFromFunctions(List<ScriptFunctionDescriptor> functions)
+    {
+        // var tempInterfaceNames = new List<string>();
+        // var sb = new StringBuilder();
+        // var
+
+        var definition = TypeScript.Definitions();
+        var interfaces = functions.SelectMany(s => s.Parameters)
+            .Select(p => p.RawParameterType)
+            .Where(t => TypeScriptCodeGenerator.GetTypeScriptType(t) == t.Name || IsAction(t) || IsFunc(t))
+            .Distinct();
+        // foreach(var interfaceType in interfaces)
+        // {
+        //     definition.For(interfaceType);
+        // }
+
+        // foreach (var serviceType in   AssemblyUtils.GetAttribute<DarkStarEngineServiceAttribute>())
+        // {
+        //     definition.For(serviceType);
+        // }
+
+        definition.For<AiContext>().For<BlueprintGenerationMapContext>().For<BlueprintMapInfoContext>();
+
+        var generated = definition.Generate();
+
+
+
+        // foreach (var interfaceType in interfaces)
+        // {
+        //     if (tempInterfaceNames.Contains(interfaceType.Name))
+        //     {
+        //         continue;
+        //     }
+        //
+        //     if (IsAction(interfaceType))
+        //     {
+        //         if (interfaceType.GenericTypeArguments != null && interfaceType.GenericTypeArguments.Length > 0)
+        //         {
+        //             GenerateTypeScriptDefinition(interfaceType.GenericTypeArguments[0], sb);
+        //             tempInterfaceNames.Add(interfaceType.GenericTypeArguments[0].Name);
+        //         }
+        //     }
+        //
+        //     if (IsFunc(interfaceType))
+        //     {
+        //         GenerateTypeScriptDefinition(interfaceType.GenericTypeArguments[0], sb);
+        //         tempInterfaceNames.Add(interfaceType.GenericTypeArguments[0].Name);
+        //         GenerateTypeScriptDefinition(interfaceType.GenericTypeArguments[1], sb);
+        //         tempInterfaceNames.Add(interfaceType.GenericTypeArguments[1].Name);
+        //     }
+        //
+        //     tempInterfaceNames.Add(interfaceType.Name);
+        // }
+
+        return generated;
+    }
+
+
 
     public static string GenerateTypeDefinitionOfConstants(Dictionary<string, object> constants)
     {

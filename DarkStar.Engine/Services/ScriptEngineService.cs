@@ -340,12 +340,16 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
         sb.AppendLine(TypeScriptCodeGenerator.GenerateTypeDefinitionOfEnum<EquipLocationType>());
         sb.AppendLine(TypeScriptCodeGenerator.GenerateTypeDefinitionOfEnum<MapGeneratorType>());
 
-        foreach (var interf in Functions.SelectMany(f => f.Parameters)
-                     .Select(p => p.RawParameterType)
-                     .Where(t => TypeScriptCodeGenerator.GetTypeScriptType(t) == "any"))
-        {
-            sb.AppendLine(TypeScriptCodeGenerator.GenerateInterface(interf));
-        }
+
+
+       // sb.AppendLine(TypeScriptCodeGenerator.GenerateInterfacesFromFunctions(Functions));
+
+        // foreach (var interf in Functions.SelectMany(f => f.Parameters)
+        //              .Select(p => p.RawParameterType)
+        //              .Where(t => TypeScriptCodeGenerator.GetTypeScriptType(t) == t.Name))
+        // {
+        //     sb.AppendLine(TypeScriptCodeGenerator.GenerateInterface(interf));
+        // }
 
         sb.AppendLine(TypeScriptCodeGenerator.GenerateTypeDefinitionOfConstants(ContextVariables));
         sb.AppendLine("");
