@@ -23,5 +23,5 @@ public class RandomUtilsScriptModule
 
 
     [ScriptFunction("random_list", "Get a random item from a list")]
-    public TEntity RandomList<TEntity>(List<TEntity> list) => list.RandomItem();
+    public object RandomList(List<object> list) => list.RandomItem();
 }

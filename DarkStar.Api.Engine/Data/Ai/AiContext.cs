@@ -54,6 +54,8 @@ public class AiContext
         return false;
     }
 
+    public bool MoveToPosition(PointPosition position) => MoveToPosition(position.X, position.Y);
+
     public bool SendNormalMessageAsync(string message) =>
         SendWorldMessageAsync(message, (short)WorldMessageType.Normal);
 
@@ -125,9 +127,13 @@ public class AiContext
 
     public void LogInfo(string text, params object[] args) => Logger.LogInformation(text, args);
 
+    public List<PointPosition> CreateListOfPoints() => new();
+
     public List<PointPosition> GetPathToPosition(int x, int y) => WorldService.CalculateAStarPath(
         MapId,
         NpcGameObject.Position.ToPointPosition(),
         PointPosition.New(x, y)
     );
+
+    public List<PointPosition> GetPathToPosition(PointPosition position) => GetPathToPosition(position.X, position.Y);
 }

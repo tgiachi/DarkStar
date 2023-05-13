@@ -516,7 +516,7 @@ public class WorldService : BaseService<IWorldService>, IWorldService
         return randomPosition.ToPointPosition();
     }
 
-    public Task<List<VisibilityPointPosition>> GetFovAsync(string mapId, PointPosition sourcePosition, int radius = 5)
+    public Task<List<VisibilityPointPosition>> GetFovAsync(string mapId, PointPosition sourcePosition, int radius = 15)
     {
         var map = GetMap(mapId);
         map.PlayerFOV.Reset();

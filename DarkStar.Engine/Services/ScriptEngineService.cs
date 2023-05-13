@@ -341,8 +341,7 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
         sb.AppendLine(TypeScriptCodeGenerator.GenerateTypeDefinitionOfEnum<MapGeneratorType>());
 
 
-
-       // sb.AppendLine(TypeScriptCodeGenerator.GenerateInterfacesFromFunctions(Functions));
+        // sb.AppendLine(TypeScriptCodeGenerator.GenerateInterfacesFromFunctions(Functions));
 
         // foreach (var interf in Functions.SelectMany(f => f.Parameters)
         //              .Select(p => p.RawParameterType)
