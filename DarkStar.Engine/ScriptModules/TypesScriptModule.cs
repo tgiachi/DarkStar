@@ -31,7 +31,17 @@ public class TypesScriptModule
     }
 
     [ScriptFunction("add_npc_type")]
-    public NpcSubType AddNpcType(string type, string subType) => _typeService.AddNpcSubType(type, subType);
+    public NpcSubType AddNpcType(string type, string subType, string tile)
+    {
+        _typeService.AddNpcSubType(type, subType);
+        _typeService.AddNpcTypeTile(
+            _typeService.GetNpcType(type)!.GetValueOrDefault(),
+            _typeService.GetNpcSubType(subType),
+            tile
+        );
+
+        return _typeService.GetNpcSubType(subType);
+    }
 
     [ScriptFunction("add_tile")]
     public Tile AddTile(int id, string name, string category, string subcategory, string? tag, bool isTransparent)

@@ -107,7 +107,9 @@ public class SeedService : BaseService<SeedService>, ISeedService
     private async Task LoadSeedAsync<TEntity>() where TEntity : class, new()
     {
         var attribute = typeof(TEntity).GetCustomAttribute<SeedObjectAttribute>();
+
         var directory = Path.Join(_directoriesConfig[DirectoryNameType.Seeds], attribute!.TemplateDirectory);
+        Logger.LogDebug("CSV Seed file for {GameObjectType} is {Directory}", attribute!.TemplateDirectory, directory);
         var files = Directory.GetFiles(directory, "*.csv");
 
         Logger.LogInformation("Found {Files} for {GameObjectType} seed", files.Length, attribute.TemplateDirectory);
