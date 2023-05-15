@@ -36,6 +36,24 @@ public static class PlayerDataHelper
         };
     }
 
+    public static async Task<PlayerStatsResponseMessage> BuildPlayerStatsAsync(IDarkSunEngine engine, Guid playerId)
+    {
+        var stats = await engine.DatabaseService.QueryAsSingleAsync<PlayerStatEntity>(entity => entity.PlayerId == playerId);
+
+        return new PlayerStatsResponseMessage(
+            stats.Level,
+            stats.Experience,
+            stats.Strength,
+            stats.Dexterity,
+            stats.Intelligence,
+            stats.Luck,
+            stats.MaxHealth,
+            stats.MaxMana,
+            stats.Health,
+            stats.Mana
+        );
+    }
+
     public static async Task<PlayerRacesResponseMessage> BuildPlayerRacesAsync(IDarkSunEngine engine)
     {
         var races = await engine.DatabaseService.QueryAsListAsync<RaceEntity>(entity => entity.IsVisible);

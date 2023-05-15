@@ -9,14 +9,13 @@ using DarkStar.Api.Utils;
 using DarkStar.Api.World.Types.GameObjects;
 using DarkStar.Api.World.Types.Map;
 using DarkStar.Api.World.Types.Npc;
-using DarkStar.Api.World.Types.Tiles;
+
 using DarkStar.Database.Entities.Npc;
 using DarkStar.Database.Entities.Objects;
 using DarkStar.Engine.Services.Base;
 using DarkStar.Network.Protocol.Messages.Common;
 using FastEnumUtility;
 using Microsoft.Extensions.Logging;
-using NetTopologySuite.GeometriesGraph;
 using TiledSharp;
 
 namespace DarkStar.Engine.Services;
@@ -31,6 +30,12 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
     private readonly Dictionary<MapType, List<Func<BlueprintGenerationMapContext, BlueprintGenerationMapContext>>>
         _mapGenerators = new();
 
+    private readonly Dictionary<MapType, List<Func<BlueprintMapInfoContext, BlueprintMapInfoContext>>>
+        _mapStrategyGenerator =
+            new();
+
+    private readonly SemaphoreSlim _mapGenerationLock = new(1);
+
 
     public BlueprintService(
         ILogger<BlueprintService> logger, DirectoriesConfig directoriesConfig, INamesService namesService
@@ -42,6 +47,7 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
 
     protected override async ValueTask<bool> StartAsync()
     {
+        await ScanForMapsAsync();
         await ScanForMapTemplatesAsync();
 
         return true;
@@ -49,8 +55,10 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
 
     private async ValueTask ScanForMapTemplatesAsync()
     {
+        var templateDirectory = Path.Join(_directoriesConfig[DirectoryNameType.BluePrints], "Templates");
+        Directory.CreateDirectory(templateDirectory);
         var mapTemplates = Directory.GetFiles(
-            _directoriesConfig[DirectoryNameType.BluePrints],
+            templateDirectory,
             "*.tmx",
             SearchOption.AllDirectories
         );
@@ -59,6 +67,17 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
         {
             await LoadMapTemplateAsync(mapTemplate);
         }
+    }
+
+    private async ValueTask ScanForMapsAsync()
+    {
+        var mapsDirectory = Path.Join(_directoriesConfig[DirectoryNameType.BluePrints], "Maps");
+        Directory.CreateDirectory(mapsDirectory);
+        var maps = Directory.GetFiles(
+            mapsDirectory,
+            "*.tmx",
+            SearchOption.AllDirectories
+        );
     }
 
 
@@ -83,7 +102,11 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
             {
                 foreach (var templateObject in templateDefinition.Objects)
                 {
-                    Logger.LogInformation("Adding [{Class}] {Name} in blueprint template ", templateObject.Type, templateObject.Name);
+                    Logger.LogInformation(
+                        "Adding [{Class}] {Name} in blueprint template ",
+                        templateObject.Type,
+                        templateObject.Name
+                    );
                     var points = GetPointsFromRect(
                         templateObject.X,
                         templateObject.Y,
@@ -105,7 +128,7 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
         return ValueTask.CompletedTask;
     }
 
-    private List<PointPosition> GetPointsFromRect(double x, double y, double width, double height, TmxTileset tileSet)
+    private static List<PointPosition> GetPointsFromRect(double x, double y, double width, double height, TmxTileset tileSet)
     {
         var points = new List<PointPosition>();
         for (var i = x * tileSet.TileWidth; i < width / tileSet.TileWidth; i++)
@@ -156,7 +179,7 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
     {
         NpcStatEntity npcStats;
 
-        var npc = new NpcEntity()
+        var npc = new NpcEntity
         {
             Id = Guid.NewGuid(),
             Alignment =
@@ -241,8 +264,6 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
         }
 
         return entities.RandomItem();
-
-        //var entity = new GameObjectEntity();
     }
 
     public async Task<WorldGameObject> GenerateWorldGameObjectAsync(GameObjectType type, PointPosition position)
@@ -273,7 +294,7 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
         _mapGenerators[mapType].Add(callback);
     }
 
-    public BlueprintGenerationMapContext GetMapGenerator(string mapId, MapType mapType)
+    public BlueprintGenerationMapContext GetMapFiller(string mapId, MapType mapType)
     {
         if (!_mapGenerators.ContainsKey(mapType))
         {
@@ -284,5 +305,44 @@ public class BlueprintService : BaseService<BlueprintService>, IBlueprintService
         var mapGenerator = _mapGenerators[mapType].RandomItem();
 
         return mapGenerator(context);
+    }
+
+    public BlueprintMapInfoContext GetMapGenerator(MapType mapType)
+    {
+        if (_mapStrategyGenerator.TryGetValue(mapType, out var generators))
+        {
+            _mapGenerationLock.Wait();
+            try
+            {
+                var gen = generators.RandomItem();
+                var context = new BlueprintMapInfoContext(Engine.TypeService)
+                {
+                    MapType = mapType
+                };
+                var result = gen(context);
+                _mapGenerationLock.Release();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError("Error while generating map {MapType} : {Ex}", ex, mapType);
+                _mapGenerationLock.Release();
+                throw;
+            }
+        }
+
+        throw new Exception($"Can't find map generator for {mapType}");
+    }
+
+    public void AddMapStrategy(MapType mapType, Func<BlueprintMapInfoContext, BlueprintMapInfoContext> callback)
+    {
+        if (!_mapStrategyGenerator.ContainsKey(mapType))
+        {
+            _mapStrategyGenerator.Add(mapType, new List<Func<BlueprintMapInfoContext, BlueprintMapInfoContext>>());
+        }
+
+        Logger.LogInformation("Adding map strategy for {MapType}", mapType);
+
+        _mapStrategyGenerator[mapType].Add(callback);
     }
 }

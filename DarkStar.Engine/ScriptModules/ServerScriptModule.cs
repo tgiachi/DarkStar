@@ -13,9 +13,12 @@ namespace DarkStar.Engine.ScriptModules;
 [ScriptModule]
 public class ServerScriptModule : BaseScriptModule
 {
-    public ServerScriptModule(ILogger<BaseScriptModule> logger, IDarkSunEngine engine) : base(logger, engine)
+    public ServerScriptModule(ILogger<ServerScriptModule> logger, IDarkSunEngine engine) : base(logger, engine)
     {
     }
+
+    [ScriptFunction("log")]
+    public void Log(string text, params object[] args) => Logger.LogInformation(text, args);
 
     [ScriptFunction("set_server_motd")]
     public void SetServerMotd(string serverMotd)

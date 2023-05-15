@@ -33,7 +33,6 @@ public class CSharpCompiler
         string errorMessage = null;
         Assembly assembly = null;
 
-        bool isFileAssembly = false;
         Stream codeStream = null;
         AddNetCoreDefaultReferences();
         _logger.Information("Search for compilation sources...");

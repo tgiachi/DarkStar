@@ -2,11 +2,13 @@ using System.Collections.Concurrent;
 using System.Diagnostics;
 using DarkStar.Api.Attributes.Services;
 using DarkStar.Api.Data.Config;
+using DarkStar.Api.Engine.Data.Blueprint;
 using DarkStar.Api.Engine.Data.Config;
 using DarkStar.Api.Engine.Events.Map;
 using DarkStar.Api.Engine.Interfaces.Services;
 using DarkStar.Api.Engine.Map.Entities;
 using DarkStar.Api.Engine.Map.Entities.Base;
+using DarkStar.Api.Engine.Map.Enums;
 using DarkStar.Api.Engine.Serialization;
 using DarkStar.Api.Engine.Serialization.Map;
 using DarkStar.Api.Engine.Utils;
@@ -99,7 +101,7 @@ public class WorldService : BaseService<IWorldService>, IWorldService
         );
 
         var map = new Map(mapData.Width, mapData.Height, FastEnum.GetValues<MapLayer>().Count, Distance.Chebyshev);
-        _maps.TryAdd(mapData.MapId, (map, mapData.MapType, new MapInfo() { Name = mapData.Name }));
+        _maps.TryAdd(mapData.MapId, (map, mapData.MapType, new MapInfo { Name = mapData.Name }));
 
         HandleMapEvents(mapData.MapId, map);
         foreach (var layer in mapData.Layers)
@@ -143,7 +145,7 @@ public class WorldService : BaseService<IWorldService>, IWorldService
     )
     {
         var map = GetMap(mapId);
-        var gameObjects = FastEnum.GetValues<MapLayer>().ToDictionary(layer => layer, layer => new List<IGameObject>());
+        var gameObjects = FastEnum.GetValues<MapLayer>().ToDictionary(layer => layer, _ => new List<IGameObject>());
 
         var positionsInRadius = _positionRadius.PositionsInRadius(position.ToPoint(), range);
         foreach (var pos in positionsInRadius)
@@ -280,7 +282,7 @@ public class WorldService : BaseService<IWorldService>, IWorldService
             var map = maps.Value;
             var mapId = maps.Key;
             await Engine.DatabaseService.InsertAsync(
-                new MapEntity()
+                new MapEntity
                 {
                     Name = map.Item3.Name,
                     MapId = mapId,
@@ -320,7 +322,7 @@ public class WorldService : BaseService<IWorldService>, IWorldService
     private async ValueTask SaveMapAsync(string mapId)
     {
         var map = _maps[mapId];
-        var mapEntity = new MapObjectSerialization()
+        var mapEntity = new MapObjectSerialization
         {
             Name = map.Item3.Name, MapId = mapId, MapType = map.Item2, Height = map.Item1.Height, Width = map.Item1.Width
         };
@@ -329,7 +331,7 @@ public class WorldService : BaseService<IWorldService>, IWorldService
         {
             var terrainObject = map.Item1.GetTerrainAt(terrainPosition) as BaseGameObject;
             mapEntity.Layers.Add(
-                new LayerObjectSerialization()
+                new LayerObjectSerialization
                 {
                     Type = MapLayer.Terrain,
                     Tile = terrainObject!.Tile,
@@ -370,32 +372,83 @@ public class WorldService : BaseService<IWorldService>, IWorldService
         };
     }
 
-    private ValueTask<Map> GenerateCityMapAsync()
+    private (BlueprintMapInfoContext context, Generator generator, ArrayView<bool> terrainFloor, Map map) BuildMapGenerator(
+        MapType mapType
+    )
     {
-        var cityMapGenerator = new Generator(_engineConfig.Maps.Cities.Width, _engineConfig.Maps.Cities.Height)
-            .ConfigAndGenerateSafe(generator => { generator.AddSteps(DefaultAlgorithms.RectangleMapSteps()); }, 3);
+        var mapGenerator = Engine.BlueprintService.GetMapGenerator(mapType);
+        var genericMapGenerator = new Generator(mapGenerator.Width, mapGenerator.Height)
+            .ConfigAndGenerateSafe(
+                generator =>
+                {
+                    switch (((MapGeneratorType)mapGenerator.MapStrategy))
+                    {
+                        case MapGeneratorType.RectangleMap:
+                            generator.AddSteps(DefaultAlgorithms.RectangleMapSteps());
+                            break;
+                        case MapGeneratorType.Dungeon:
+                            generator.AddSteps(DefaultAlgorithms.DungeonMazeMapSteps());
+                            break;
+                        case MapGeneratorType.BasicRandomRooms:
+                            generator.AddSteps(DefaultAlgorithms.BasicRandomRoomsMapSteps());
+                            break;
+                        case MapGeneratorType.CellularAutomata:
+                            generator.AddSteps(DefaultAlgorithms.CellularAutomataGenerationSteps());
+                            break;
+                        default:
+                            throw new ArgumentOutOfRangeException();
+                    }
+                },
+                3
+            );
 
-        var wallsFloors = cityMapGenerator.Context.GetFirst<ArrayView<bool>>("WallFloor");
+        var wallsFloors = genericMapGenerator.Context.GetFirst<ArrayView<bool>>("WallFloor");
         var map = new Map(
-            _engineConfig.Maps.Cities.Width,
-            _engineConfig.Maps.Cities.Height,
+            mapGenerator.Width,
+            mapGenerator.Height,
             FastEnum.GetValues<MapLayer>().Count,
             Distance.Chebyshev
         );
 
-        map.ApplyTerrainOverlay(
-            wallsFloors,
+        return (mapGenerator, genericMapGenerator, wallsFloors, map);
+    }
+
+
+    private ValueTask<Map> GenerateCityMapAsync()
+    {
+        var generator = BuildMapGenerator(MapType.City);
+
+
+        generator.map.ApplyTerrainOverlay(
+            generator.terrainFloor,
             (pos, val) => val
-                ? new TerrainGameObject(pos) { IsWalkable = true, IsTransparent = true, Tile = 0 }
-                : new TerrainGameObject(pos, false, false) { Tile = 1 }
+                ? new TerrainGameObject(pos)
+                    { IsWalkable = true, IsTransparent = true, Tile = generator.context.NonBlockingTile.Id }
+                : new TerrainGameObject(pos, false, false) { Tile = generator.context.BlockingTile.Id }
         );
 
-        return ValueTask.FromResult(map);
+        return ValueTask.FromResult(generator.map);
+    }
+
+    private ValueTask<Map> GenerateDungeonMapAsync()
+    {
+        var generator = BuildMapGenerator(MapType.Dungeon);
+
+
+        generator.map.ApplyTerrainOverlay(
+            generator.terrainFloor,
+            (pos, val) => val
+                ? new TerrainGameObject(pos)
+                    { IsWalkable = true, IsTransparent = true, Tile = generator.context.NonBlockingTile.Id }
+                : new TerrainGameObject(pos, false, false) { Tile = generator.context.BlockingTile.Id }
+        );
+
+        return ValueTask.FromResult(generator.map);
     }
 
     private async Task FillCityMapAsync(string mapId)
     {
-        var context = Engine.BlueprintService.GetMapGenerator(mapId, MapType.City);
+        var context = Engine.BlueprintService.GetMapFiller(mapId, MapType.City);
         foreach (var worldGameObject in context.GameObjects)
         {
             AddEntity(mapId, worldGameObject);
@@ -405,34 +458,6 @@ public class WorldService : BaseService<IWorldService>, IWorldService
         {
             AddEntity(mapId, npcGameObject);
         }
-
-        /*foreach (var _ in Enumerable.Range(1, 5))
-        {
-            var cat = await Engine.BlueprintService.GenerateNpcGameObjectAsync(
-                GetRandomWalkablePosition(mapId),
-                NpcType.Animal,
-                NpcSubType.Cat
-            );
-
-            AddEntity(mapId, cat);
-            Logger.LogInformation("Spawn cat @ {Position} - Name {Name}", cat.Position, cat.Name);
-        }
-
-        var mushroomFinder = await Engine.BlueprintService.GenerateNpcGameObjectAsync(
-            GetRandomWalkablePosition(mapId),
-            NpcType.Human,
-            NpcSubType.MushroomFinder
-        );
-
-        AddEntity(mapId, mushroomFinder);
-        Logger.LogInformation("Spawn mushroom @ {Position} - Name {Name}", mushroomFinder.Position, mushroomFinder.Name);
-
-        foreach (var _ in Enumerable.Range(1, 15))
-        {
-            var mushroom = await Engine.BlueprintService.GenerateWorldGameObjectAsync(
-                GameObjectType.Prop_Mushroom, GetRandomWalkablePosition(mapId));
-            AddEntity(mapId, mushroom);
-        }*/
     }
 
     private void HandleMapEvents(string id, Map map)
@@ -491,12 +516,16 @@ public class WorldService : BaseService<IWorldService>, IWorldService
         return randomPosition.ToPointPosition();
     }
 
-    public Task<List<PointPosition>> GetFovAsync(string mapId, PointPosition sourcePosition, int radius = 5)
+    public Task<List<VisibilityPointPosition>> GetFovAsync(string mapId, PointPosition sourcePosition, int radius = 15)
     {
         var map = GetMap(mapId);
         map.PlayerFOV.Reset();
         map.PlayerFOV.Calculate(sourcePosition.ToPoint(), radius);
-        return Task.FromResult(map.PlayerFOV.CurrentFOV.Select(s => s.ToPointPosition()).ToList());
+        var s = map.PlayerFOV.DoubleResultView;
+        return Task.FromResult(
+            map.PlayerFOV.CurrentFOV.Select(s => new VisibilityPointPosition(s.X, s.Y, map.PlayerFOV.DoubleResultView[s]))
+                .ToList()
+        );
     }
 
     public async Task<bool> MovePlayerAsync(string mapId, Guid playerId, PointPosition position)
@@ -506,6 +535,7 @@ public class WorldService : BaseService<IWorldService>, IWorldService
         {
             return false;
         }
+
         player.Position = position.ToPoint();
 
         return true;
@@ -699,29 +729,6 @@ public class WorldService : BaseService<IWorldService>, IWorldService
         );
     }
 
-    private ValueTask<Map> GenerateDungeonMapAsync()
-    {
-        var dungeonGenerator = new Generator(_engineConfig.Maps.Dungeons.Width, _engineConfig.Maps.Dungeons.Height)
-            .ConfigAndGenerateSafe(generator => { generator.AddSteps(DefaultAlgorithms.DungeonMazeMapSteps()); }, 3);
-
-        var map = new Map(
-            _engineConfig.Maps.Dungeons.Width,
-            _engineConfig.Maps.Dungeons.Height,
-            FastEnum.GetValues<MapLayer>().Count,
-            Distance.Chebyshev
-        );
-
-        var wallsFloors = dungeonGenerator.Context.GetFirst<ArrayView<bool>>("WallFloor");
-
-        map.ApplyTerrainOverlay(
-            wallsFloors,
-            (pos, val) => val
-                ? new TerrainGameObject(pos) { IsWalkable = true, IsTransparent = true, Tile = 0 }
-                : new TerrainGameObject(pos, false, false) { Tile = 0 }
-        );
-
-        return ValueTask.FromResult(map);
-    }
 
     private static string GenerateMapId() => Guid.NewGuid().ToString().Replace("-", "");
 }

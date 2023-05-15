@@ -1,7 +1,5 @@
 using System.Diagnostics;
 using System.Reflection;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 using DarkStar.Api.Data.Config;
 using DarkStar.Api.Engine.Data.Config;
 using DarkStar.Api.Engine.Interfaces.Core;
@@ -15,11 +13,9 @@ using DarkStar.Network.Data;
 using DarkStar.Network.Hubs;
 using DarkStar.Network.Protocol.Builders;
 using DarkStar.Network.Protocol.Interfaces.Builders;
-using DarkStar.Network.Server;
 using DarkStar.Network.Server.Interfaces;
 using DarkStar.Network.Session;
 using DarkStar.Network.Session.Interfaces;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -28,11 +24,6 @@ using Redbus.Configuration;
 using Redbus.Interfaces;
 using Serilog;
 using Serilog.Formatting.Compact;
-using Serilog.Formatting.Display;
-using Serilog.Formatting.Json;
-using Serilog.Sinks.SystemConsole.Themes;
-using Serilog.Templates;
-using Serilog.Templates.Themes;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 
@@ -181,11 +172,10 @@ internal class Program
 
     private static DirectoriesConfig EnsureDirectories()
     {
-        var rootDirectory = Environment.GetEnvironmentVariable("DARKSTAR_ROOT_DIRECTORY")
-                            ?? Path.Join(
-                                Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-                                "DarkStar"
-                            );
+        var envRootDirectory = Environment.GetEnvironmentVariable("DARKSTAR_ROOT_DIRECTORY");
+        var rootDirectory = string.IsNullOrEmpty(envRootDirectory)
+            ? Path.Join(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "DarkStar")
+            : envRootDirectory;
 
         if (string.IsNullOrEmpty(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)))
         {

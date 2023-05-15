@@ -43,7 +43,7 @@ public class GraphicEngineRender
 
     public void AddPlayer(string id, uint tileId, PointPosition position)
     {
-        PlayerTile = new Tile(id, tileId, position);
+        PlayerTile = new Tile(id, tileId, position) { Alpha = 1 };
         AddTile(MapLayer.Players, PlayerTile);
     }
 
@@ -77,6 +77,28 @@ public class GraphicEngineRender
     {
         _layerLock.Wait();
         _layers[layer].Add(tile);
+        _layerLock.Release();
+    }
+
+    public void UpdateVisiblePositions(List<VisibilityPointPosition> positions)
+    {
+        _layerLock.Wait();
+
+        foreach (var layer in _layers)
+        {
+            foreach (var tile in layer.Value)
+            {
+                var position = positions.FirstOrDefault(s => s.X == tile.Position.X && s.Y == tile.Position.Y);
+                if (position != null)
+                {
+                    if (tile.Alpha < position.Visibility)
+                    {
+                        tile.Alpha = position.Visibility;
+                    }
+                }
+            }
+        }
+
         _layerLock.Release();
     }
 
@@ -121,7 +143,11 @@ public class GraphicEngineRender
     {
         canvas.DrawBitmap(
             _tileService.GetSkImageTile((int)tile.TileId),
-            new SKPoint(tile.Position.X * _tileService.TileWidth, tile.Position.Y * _tileService.TileHeight)
+            new SKPoint(tile.Position.X * _tileService.TileWidth, tile.Position.Y * _tileService.TileHeight),
+            new SKPaint()
+            {
+                ColorF = SKColors.Black.WithAlpha((byte)(tile.Alpha * 255))
+            }
         );
     }
 

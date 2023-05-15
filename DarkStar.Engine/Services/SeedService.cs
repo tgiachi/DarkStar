@@ -34,7 +34,6 @@ public class SeedService : BaseService<SeedService>, ISeedService
     private readonly DirectoriesConfig _directoriesConfig;
     private readonly ITypeService _typeService;
 
-    private bool _isSeedExecutable = false;
 
     public SeedService(
         ILogger<SeedService> logger, DirectoriesConfig directoriesConfig, ITypeService typeService
@@ -364,8 +363,6 @@ public class SeedService : BaseService<SeedService>, ISeedService
         {
             await AddItem(item);
         }
-
-        _isSeedExecutable = true;
     }
 
 

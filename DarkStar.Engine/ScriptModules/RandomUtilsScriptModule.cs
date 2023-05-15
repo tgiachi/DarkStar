@@ -1,12 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DarkStar.Api.Utils;
 using DarkStar.Engine.Attributes.ScriptEngine;
 using GoRogue.DiceNotation;
-using GoRogue.DiceNotation.Terms;
+
 
 namespace DarkStar.Engine.ScriptModules;
 
@@ -25,4 +20,8 @@ public class RandomUtilsScriptModule
 
     [ScriptFunction("parse_dice_exp")]
     public int ParseDice(string expression) => Dice.Parse(expression).Roll();
+
+
+    [ScriptFunction("random_list", "Get a random item from a list")]
+    public object RandomList(List<object> list) => list.RandomItem();
 }

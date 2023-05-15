@@ -47,6 +47,8 @@ public class PlayerCommandActionExecutor : BaseCommandActionExecutor<PlayerMoveA
                 action.SessionId,
                 new PlayerMoveResponseMessage(player.PlayerId.ToString(), newPosition)
             );
+            var fov = await Engine.WorldService.GetFovAsync(player.MapId, player.Position);
+            await Engine.NetworkServer.SendMessageAsync(action.SessionId, new PlayerFovResponseMessage(fov));
         }
     }
 }

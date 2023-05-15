@@ -2,10 +2,12 @@ using System.Diagnostics;
 using System.Reflection;
 using DarkStar.Api.Attributes.Services;
 using DarkStar.Api.Engine.Attributes.Commands;
+using DarkStar.Api.Engine.Events.Commands;
 using DarkStar.Api.Engine.Interfaces.Commands;
 using DarkStar.Api.Engine.Interfaces.Services;
 using DarkStar.Api.Engine.Types.Commands;
 using DarkStar.Api.Utils;
+using DarkStar.Engine.Commands.Actions;
 using DarkStar.Engine.Services.Base;
 using Microsoft.Extensions.Logging;
 
@@ -20,14 +22,35 @@ public class CommandService : BaseService<ICommandService>, ICommandService
     private readonly IServiceProvider _container;
     private readonly SemaphoreSlim _actionListLock = new(1);
 
-    public CommandService(ILogger<ICommandService> logger, IServiceProvider container) : base(logger) =>
+    public CommandService(ILogger<CommandService> logger, IServiceProvider container) : base(logger) =>
         _container = container;
 
     protected override ValueTask<bool> StartAsync()
     {
         PrepareSchedulerExecutors();
+        SubscribeToEvent<GameObjectCommandEvent>(OnGameObjectCommandEvent);
         Engine.SchedulerService.OnTick += SchedulerServiceOnOnTickAsync;
         return base.StartAsync();
+    }
+
+    private void OnGameObjectCommandEvent(GameObjectCommandEvent obj)
+    {
+        if (obj.IsNpc)
+        {
+            EnqueueNpcAction(
+                new GameObjectAction
+                {
+                    IsNpc = obj.IsNpc,
+                    MapId = obj.MapId,
+                    NpcId = obj.NpcId,
+                    NpcObjectId = obj.NpcObjectId,
+                    Position = obj.Position,
+                    SessionId = obj.SessionId,
+                    Delay = obj.Delay,
+                    PlayerId = obj.PlayerId
+                }
+            );
+        }
     }
 
     private void PrepareSchedulerExecutors()

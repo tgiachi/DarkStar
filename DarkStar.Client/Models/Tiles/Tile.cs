@@ -7,6 +7,7 @@ public class Tile
     public string Id { get; set; }
     public uint TileId { get; set; }
     public PointPosition Position { get; set; }
+    public double Alpha { get; set; } = 0.0d;
 
     public TileOrientation Orientation { get; set; } = TileOrientation.West;
 

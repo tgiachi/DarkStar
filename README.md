@@ -2,7 +2,35 @@
 
 ![Dark Star Logo](/imgs/DarkStarLogoSmall.png)
 
+# Milestones: 0.11.0
+In this month I got to work on the project in my spare time. We are starting to see the project take shape!
 
+Breaking changes:
+- I refactored the script engine from LUA to Javascript (js is much softer for anonymous functions)
+- I created a repository for scripts and example world generation (you can find it at this [LINK](https://github.com/tgiachi/DarkStar.Scripts)). It is a typescript project with types support
+- I created the client (initially it had to be in webgl but in the end I created it with Avalonia, I feel much more confident)
+- I have optimized the code and all the classes
+- It's possible (it's an experimental feature and if someone wants to help me do it, it's welcome) to create the definitions in typescript (types.d.ts) in order to have a minimum of development comfort (yes you have the possibility to have autocomplete to create the world!)
+- Two example npc's have been implemented, the cat, the mushroom seeker and the mushroom!
+- Thanks to the advice received on reddit, I implemented SignalR as a communication protocol between the client and the server
+
+# Yes, all good, but how to test it?
+Ensure you have installed `docker`
+
+```bash
+  docker pull tgiachi/darkstar.server
+  git clone git@github.com:tgiachi/DarkStar.Scripts.git darkstar_root
+  docker run -p 5000:5000 --env DARKSTAR_ROOT_DIRECTORY="data/" -v $(pwd)darkstar_root/:/data tgiachi/darkstar.server
+```
+  Then compile `DarkStar.Client` and run it with username `test@test.com` and password `1234!`
+
+
+
+# ScreenShots
+
+![Screenshot 1](/imgs/screenshot_1.png)
+![Screenshot 2](/imgs/screenshot_2.png)
+![Screenshot 3](/imgs/screenshot_3.png)
 
  **!!! README being updated !!!**
 
@@ -35,7 +63,7 @@ In Dark Star, the player has the choice between different character classes, eac
 - GoRogue (https://github.com/Chris3606/GoRogue)
 - TinyCsv (https://github.com/fmazzant/TinyCsv) thanks Federico
 - ProtoBuf C#
-- Netcore Servers
+- SignalR
 
 
 

@@ -1,10 +1,13 @@
-﻿using System.Reactive;
+﻿using System.Collections.ObjectModel;
+using System.Reactive;
 using System.Threading.Tasks;
 using Avalonia;
 using Avalonia.Input;
+using Avalonia.Threading;
 using DarkStar.Api.World.Types.Map;
 using DarkStar.Client.Attributes;
 using DarkStar.Client.Controls;
+using DarkStar.Client.Models;
 using DarkStar.Client.Models.Tiles;
 using DarkStar.Client.PageViews;
 using DarkStar.Client.Services;
@@ -14,7 +17,9 @@ using DarkStar.Network.Protocol.Map;
 using DarkStar.Network.Protocol.Messages.Common;
 using DarkStar.Network.Protocol.Messages.Players;
 using DarkStar.Network.Protocol.Messages.Triggers.Npc;
+using DarkStar.Network.Protocol.Messages.World;
 using DarkStar.Network.Protocol.Types;
+
 using FastEnumUtility;
 using ReactiveUI;
 
@@ -25,8 +30,12 @@ public class RenderPageViewModel : PageViewModelBase
 {
     private readonly GraphicEngineRender _graphicEngineRender;
 
+    public PlayerStatsObject PlayerStats { get; set; } = new();
+
     private readonly ServiceContext _serviceContext;
     public ReactiveCommand<string, Unit> MoveCharacterCommand { get; set; }
+
+    public ObservableCollection<TextMessageEntity> Messages { get; set; } = new();
 
     public ReactiveCommand<Unit, Task> PerformActionCommand { get; set; }
 
@@ -36,6 +45,15 @@ public class RenderPageViewModel : PageViewModelBase
         _serviceContext = serviceContext;
 
         serviceContext.NetworkClient.SubscribeToMessage<MapResponseMessage>(DarkStarMessageType.MapResponse, OnMapResponse);
+        serviceContext.NetworkClient.SubscribeToMessage<PlayerStatsResponseMessage>(
+            DarkStarMessageType.PlayerStatsResponse,
+            OnPlayerStatReceived
+        );
+        serviceContext.NetworkClient.SubscribeToMessage<PlayerInventoryResponseMessage>(DarkStarMessageType.PlayerInventoryResponse, OnPlayerInventoryReceived);
+        serviceContext.NetworkClient.SubscribeToMessage<WorldMessageResponseMessage>(
+            DarkStarMessageType.WorldMessageResponse,
+            OnWorldMessage
+        );
         serviceContext.NetworkClient.SubscribeToMessage<PlayerMoveResponseMessage>(
             DarkStarMessageType.PlayerMoveResponse,
             OnPlayerMoved
@@ -49,21 +67,89 @@ public class RenderPageViewModel : PageViewModelBase
             OnNpcMoved
         );
 
+        serviceContext.NetworkClient.SubscribeToMessage<PlayerFovResponseMessage>(
+            DarkStarMessageType.PlayerFovResponse,
+            OnPlayerFovReceived
+        );
+
         MoveCharacterCommand = ReactiveCommand.Create<string, Unit>(
             s =>
             {
                 MoveCharacter(s);
                 return Unit.Default;
-            });
+            }
+        );
+
 
         PerformActionCommand = ReactiveCommand.Create(PerformAction);
+    }
 
+    private Task OnPlayerStatReceived(IDarkStarNetworkMessage arg)
+    {
+
+        var message = (PlayerStatsResponseMessage)arg;
+        return Dispatcher.UIThread.InvokeAsync(
+            () =>
+            {
+                PlayerStats.Dexterity = message.Dexterity;
+                PlayerStats.Experience = message.Experience;
+                PlayerStats.Health = message.Health;
+                PlayerStats.Intelligence = message.Intelligence;
+                PlayerStats.Level = message.Level;
+                PlayerStats.Luck = message.Luck;
+                PlayerStats.Mana = message.Mana;
+                PlayerStats.MaxHealth = message.MaxHealth;
+                PlayerStats.MaxMana = message.MaxMana;
+                PlayerStats.Strength = message.Strength;
+            }
+        );
+    }
+
+    private Task OnPlayerInventoryReceived(IDarkStarNetworkMessage arg)
+    {
+        var message = (PlayerInventoryResponseMessage)arg;
+        return Dispatcher.UIThread.InvokeAsync(
+            () =>
+            {
+
+
+            }
+        );
+    }
+
+    private Task OnPlayerFovReceived(IDarkStarNetworkMessage arg)
+    {
+        var message = (PlayerFovResponseMessage)arg;
+        _graphicEngineRender.UpdateVisiblePositions(message.VisiblePositions);
+        return Task.CompletedTask;
+    }
+
+    private Task OnWorldMessage(IDarkStarNetworkMessage arg)
+    {
+        var message = (WorldMessageResponseMessage)arg;
+
+        return Dispatcher.UIThread.InvokeAsync(
+            () =>
+            {
+                if (Messages.Count >= 50)
+                {
+                    Messages.Clear();
+                }
+                Messages.Add(
+                    new TextMessageEntity
+                    {
+                        Name = message.SenderName,
+                        Message = message.Message
+                    }
+                );
+            }
+        );
     }
 
     private Task PerformAction()
     {
-       //return _serviceContext.NetworkClient.SendMessageAsync()
-       return Task.CompletedTask;
+        //return _serviceContext.NetworkClient.SendMessageAsync()
+        return Task.CompletedTask;
     }
 
     private Task OnPlayerMoved(IDarkStarNetworkMessage arg)
@@ -151,13 +237,7 @@ public class RenderPageViewModel : PageViewModelBase
     {
         var movement = FastEnum.Parse<MoveDirectionType>(direction);
         _ = Task.Run(
-            () =>
-            {
-                _serviceContext.NetworkClient.SendMessageAsync(new PlayerMoveRequestMessage(movement));
-            }
+            () => { _serviceContext.NetworkClient.SendMessageAsync(new PlayerMoveRequestMessage(movement)); }
         );
-
     }
-
-
 }

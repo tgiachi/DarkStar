@@ -13,10 +13,14 @@ public class ScriptFunctionDescriptor
 
     public List<ScriptFunctionParameterDescriptor> Parameters { get; set; } = new();
     public string ReturnType { get; set; }
+
+    public Type RawReturnType { get; set; } = null!;
 }
 
 public class ScriptFunctionParameterDescriptor
 {
     public string ParameterName { get; set; } = null!;
     public string ParameterType { get; set; } = null!;
+
+    public Type RawParameterType { get; set; } = null!;
 }

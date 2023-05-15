@@ -8,6 +8,6 @@ namespace DarkStar.Api.Engine.Data.ScriptEngine;
 
 public class ScriptEngineExecutionResult
 {
-    public object[] Result { get; set; } = null!;
+    public object Result { get; set; } = null!;
     public Exception? Exception { get; set; }
 }

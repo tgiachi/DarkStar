@@ -53,18 +53,34 @@ public class EventDispatcherService : BaseService<EventDispatcherService>, IEven
         );
     }
 
+    /// <summary>
+    /// This event is triggered when a player login in the world
+    /// </summary>
+    /// <param name="obj"></param>
     private void OnPlayerLoggedMessage(PlayerLoggedEvent obj)
     {
         _ = Task.Run(
             async () =>
             {
                 await Engine.NetworkServer.SendMessageAsync(obj.SessionId, new PlayerLoginResponseMessage(true));
+
                 await Task.Delay(500);
+                await Engine.NetworkServer.SendMessageAsync(
+                    obj.SessionId,
+                    await PlayerDataHelper.BuildPlayerStatsAsync(
+                        Engine,
+                        obj.PlayerId
+                    )
+                );
                 Logger.LogDebug("Sending information of map to player {PlayerId}", obj.PlayerId);
                 Engine.NetworkServer.SendMessageAsync(
                     obj.SessionId,
                     await MapDataHelper.BuildMapResponseDataAsync(Engine, obj.MapId, obj.PlayerId)
                 );
+
+                await Task.Delay(1000);
+                var fov = await Engine.WorldService.GetFovAsync(obj.MapId, obj.Position);
+                Engine.NetworkServer.SendMessageAsync(obj.SessionId, new PlayerFovResponseMessage(fov));
 
                 Engine.NetworkServer.SendMessageAsync(
                     obj.SessionId,
@@ -164,39 +180,30 @@ public class EventDispatcherService : BaseService<EventDispatcherService>, IEven
 
     private async Task<IDarkStarNetworkMessage?> HandleEntityMovedAsync(GameObjectMovedEvent @event)
     {
-        IDarkStarNetworkMessage message = null!;
-        switch (@event.Layer)
+        IDarkStarNetworkMessage message = @event.Layer switch
         {
-            case MapLayer.Creatures:
-                message = new NpcMovedResponseMessage(@event.MapId, @event.Id.ToString(), @event.Position);
-                break;
-            case MapLayer.Objects:
-                message = new WorldObjectMovedResponseMessage(@event.MapId, @event.Id.ToString(), @event.Position);
-                break;
-            case MapLayer.Players:
-                message = new PlayerGameObjectMovedResponseMessage(@event.MapId, @event.Id.ToString(), @event.Position);
-                break;
-        }
+            MapLayer.Creatures => new NpcMovedResponseMessage(@event.MapId, @event.Id.ToString(), @event.Position),
+            MapLayer.Objects   => new WorldObjectMovedResponseMessage(@event.MapId, @event.Id.ToString(), @event.Position),
+            MapLayer.Players => new PlayerGameObjectMovedResponseMessage(
+                @event.MapId,
+                @event.Id.ToString(),
+                @event.Position
+            ),
+            _ => null!
+        };
 
         return message;
     }
 
     private async Task<IDarkStarNetworkMessage?> HandleEntityRemovedAsync(GameObjectRemovedEvent @event)
     {
-        IDarkStarNetworkMessage message = null!;
-        switch (@event.Layer)
+        IDarkStarNetworkMessage message = @event.Layer switch
         {
-            case MapLayer.Players:
-                message = new PlayerGameObjectRemovedResponseMessage(@event.MapId, @event.Id.ToString());
-                break;
-
-            case MapLayer.Creatures:
-                message = new NpcRemovedResponseMessage(@event.MapId, @event.Id.ToString());
-                break;
-            case MapLayer.Objects:
-                message = new WorldObjectRemovedResponseMessage(@event.MapId, @event.Id.ToString());
-                break;
-        }
+            MapLayer.Players   => new PlayerGameObjectRemovedResponseMessage(@event.MapId, @event.Id.ToString()),
+            MapLayer.Creatures => new NpcRemovedResponseMessage(@event.MapId, @event.Id.ToString()),
+            MapLayer.Objects   => new WorldObjectRemovedResponseMessage(@event.MapId, @event.Id.ToString()),
+            _                  => null!
+        };
 
         return message;
     }

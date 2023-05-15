@@ -36,6 +36,11 @@ public enum DarkStarMessageType : short
     PlayerMoveResponse,
     PlayerInventoryRequest,
     PlayerInventoryResponse,
+    PlayerFovRequest,
+    PlayerFovResponse,
+    PlayerStatsRequest,
+    PlayerStatsResponse,
+
 
     // TileSet message
     TileSetListRequest,
