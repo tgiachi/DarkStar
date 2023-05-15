@@ -53,6 +53,8 @@ internal class Program
             .Enrich.FromLogContext()
             .WriteTo.Console();
 
+        Log.Logger = loggerConfiguration.CreateLogger();
+
         var directoryConfig = EnsureDirectories();
         var engineConfig = LoadConfig(directoryConfig);
 
@@ -173,6 +175,8 @@ internal class Program
     private static DirectoriesConfig EnsureDirectories()
     {
         var envRootDirectory = Environment.GetEnvironmentVariable("DARKSTAR_ROOT_DIRECTORY");
+        Log.Logger.Information("DARKSTAR_ROOT_DIRECTORY directory is: {Root}", envRootDirectory);
+
         var rootDirectory = string.IsNullOrEmpty(envRootDirectory)
             ? Path.Join(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "DarkStar")
             : envRootDirectory;
