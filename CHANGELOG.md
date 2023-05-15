@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="0.11.0"></a>
+## [0.11.0](https://www.github.com/tgiachi/DarkStar/releases/tag/v0.11.0) (2023-5-15)
+
+### ✨ Features
+
+* **AiContext.cs:** add method to move to a position ([cac1c0e](https://www.github.com/tgiachi/DarkStar/commit/cac1c0e0a8af4031d6fec07fb9ec3591cde8811e))
+* **TypeScriptCodeGenerator.cs:** add support for generating interfaces from ScriptFunctionDescriptor parameters ([c18b59f](https://www.github.com/tgiachi/DarkStar/commit/c18b59ff5c33b8e1cdd99701291b4d774eaa1d5c))
+
+### Other
+
+* ✨ feat(RenderPageViewModel.cs): add support for displaying text messages ([0dd8755](https://www.github.com/tgiachi/DarkStar/commit/0dd8755308c96939e6a453422b83b5dbc291f9ca))
+* ✨ feat(ScriptEngineService.cs): add GenerateTypeDefinitionsAsync method to generate TypeScript type definitions for enums, constants, and functions ([66e5ac1](https://www.github.com/tgiachi/DarkStar/commit/66e5ac18e6410e8b14d119270a2deeeb827dfd08))
+* 🐛 fix: remove unused using statements in Program.cs ([3200372](https://www.github.com/tgiachi/DarkStar/commit/3200372bacfb0bbbd39f86481dd61f7baadc8744))
+* 🐛 fix(BaseScriptableBehaviourExecutor.cs): add missing IWorldService and IPlayerService dependencies to AiContext ([f56bf07](https://www.github.com/tgiachi/DarkStar/commit/f56bf07e9dc83769cb6e04ec23e29d8e9575b98d))
+* 🐛 fix(BaseScriptableBehaviourExecutor.cs): add try-catch block to handle exceptions during ai script execution ([a63d69f](https://www.github.com/tgiachi/DarkStar/commit/a63d69f99274d0e857f9fcfe0c0b2db2ecc7cee1))
+* 🐛 fix(BlueprintMapInfoContext.cs): add missing constructor and setters for BlueprintMapInfoContext properties ([9d6c0c6](https://www.github.com/tgiachi/DarkStar/commit/9d6c0c693519a89e9ab5f7463273a9f92bebd528))
+* 🐛 fix(csproj): change PackageLicenseUrl to PackageLicense ([a2a26a9](https://www.github.com/tgiachi/DarkStar/commit/a2a26a92908bab85a37f6510396a502bc0e2469d))
+* 🐛 fix(ScriptEngineExecutionResult.cs): change Result property type from object[] to object ([6405b64](https://www.github.com/tgiachi/DarkStar/commit/6405b64f81cb69e45dcc7f6f534be0e995ef5a29))
+* 🐛 fix(TypeScriptCodeGenerator.cs): return 'any[]' for System.Collections.Generic types ([05e71f2](https://www.github.com/tgiachi/DarkStar/commit/05e71f2545f6269d8d0e38049de69317dfbfff0a))
+* 🔥 chore(BlueprintMapInfoContext.cs): add empty line to BlueprintMapInfoContext ([4c70469](https://www.github.com/tgiachi/DarkStar/commit/4c7046937c1e3ad0ca3f2aedb39c13b9158d3fdc))
+* 🔨 refactor(TypeScriptCodeGenerator.cs): extract method generation to separate method ([cc60539](https://www.github.com/tgiachi/DarkStar/commit/cc60539810adbba93454ec65133e605b0e8162b6))
+
 <a name="0.10.0"></a>
 ## [0.10.0](https://www.github.com/tgiachi/DarkStar/releases/tag/v0.10.0) (2023-5-10)
 
