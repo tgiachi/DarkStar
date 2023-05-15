@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Enum TileOrientation
+      <title>Class PlayerFovRequestMessage
  </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Enum TileOrientation
+      <meta name="title" content="Class PlayerFovRequestMessage
  ">
     
       <link rel="shortcut icon" href="../favicon.ico">
@@ -67,56 +67,60 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="DarkStar.Client.Models.Tiles.TileOrientation">
+            <article class="content wrap" id="_content" data-uid="DarkStar.Network.Protocol.Messages.Players.PlayerFovRequestMessage">
 
 
 
-
-  <h1 id="DarkStar_Client_Models_Tiles_TileOrientation" data-uid="DarkStar.Client.Models.Tiles.TileOrientation" class="text-break">Enum TileOrientation
+  <h1 id="DarkStar_Network_Protocol_Messages_Players_PlayerFovRequestMessage" data-uid="DarkStar.Network.Protocol.Messages.Players.PlayerFovRequestMessage" class="text-break">Class PlayerFovRequestMessage
 </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="DarkStar.html">DarkStar</a>.<a class="xref" href="DarkStar.Client.html">Client</a>.<a class="xref" href="DarkStar.Client.Models.html">Models</a>.<a class="xref" href="DarkStar.Client.Models.Tiles.html">Tiles</a></h6>
-  <h6><strong>Assembly</strong>: DarkStar.Client.dll</h6>
-  <h5 id="DarkStar_Client_Models_Tiles_TileOrientation_syntax">Syntax</h5>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">PlayerFovRequestMessage</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="DarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage.html">IDarkStarNetworkMessage</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="DarkStar.html">DarkStar</a>.<a class="xref" href="DarkStar.Network.html">Network</a>.<a class="xref" href="DarkStar.Network.Protocol.html">Protocol</a>.<a class="xref" href="DarkStar.Network.Protocol.Messages.html">Messages</a>.<a class="xref" href="DarkStar.Network.Protocol.Messages.Players.html">Players</a></h6>
+  <h6><strong>Assembly</strong>: DarkStar.Network.dll</h6>
+  <h5 id="DarkStar_Network_Protocol_Messages_Players_PlayerFovRequestMessage_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public enum TileOrientation</code></pre>
+    <pre><code class="lang-csharp hljs">[NetworkMessage(DarkStarMessageType.PlayerFovRequest)]
+[ProtoContract]
+public class PlayerFovRequestMessage : IDarkStarNetworkMessage</code></pre>
   </div>
-  <h3 id="fields">Fields
-</h3>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    <thead>
-    <tbody>
-      <tr>
-        <td id="DarkStar_Client_Models_Tiles_TileOrientation_East">East</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td id="DarkStar_Client_Models_Tiles_TileOrientation_North">North</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td id="DarkStar_Client_Models_Tiles_TileOrientation_South">South</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td id="DarkStar_Client_Models_Tiles_TileOrientation_West">West</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </thead></thead></table>
-  <h3 id="extensionmethods">Extension Methods</h3>
+  <h3 id="implements">Implements</h3>
   <div>
-      <a class="xref" href="DarkStar.Api.Utils.EnumUtils.html#DarkStar_Api_Utils_EnumUtils_RandomEnumValue__1___0_">EnumUtils.RandomEnumValue&lt;TileOrientation&gt;(TileOrientation)</a>
+      <a class="xref" href="DarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage.html">IDarkStarNetworkMessage</a>
   </div>
-  <div>
-      <a class="xref" href="DarkStar.Api.Utils.EnumUtils.html#DarkStar_Api_Utils_EnumUtils_SearchType__1___0_System_String_">EnumUtils.SearchType&lt;TileOrientation&gt;(TileOrientation, string)</a>
-  </div>
+
 </article>
           </div>
 
@@ -125,10 +129,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Client_Models_Tiles_TileOrientation.md&amp;value=---%0Auid%3A%20DarkStar.Client.Models.Tiles.TileOrientation%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Network_Protocol_Messages_Players_PlayerFovRequestMessage.md&amp;value=---%0Auid%3A%20DarkStar.Network.Protocol.Messages.Players.PlayerFovRequestMessage%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Client/Models/Tiles/Tile.cs/#L22" class="contribution-link">View Source</a>
+                    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Network/Protocol/Messages/Players/PlayerFovRequestMessage.cs/#L9" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

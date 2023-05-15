@@ -1096,6 +1096,112 @@ references:
   commentId: T:DarkStar.Api.Engine.Data.Ai.AiContext
   fullName: DarkStar.Api.Engine.Data.Ai.AiContext
   nameWithType: AiContext
+- uid: DarkStar.Api.Engine.Data.Ai.AiContext.CreateListOfPoints
+  name: CreateListOfPoints()
+  href: api/DarkStar.Api.Engine.Data.Ai.AiContext.html#DarkStar_Api_Engine_Data_Ai_AiContext_CreateListOfPoints
+  commentId: M:DarkStar.Api.Engine.Data.Ai.AiContext.CreateListOfPoints
+  fullName: DarkStar.Api.Engine.Data.Ai.AiContext.CreateListOfPoints()
+  nameWithType: AiContext.CreateListOfPoints()
+- uid: DarkStar.Api.Engine.Data.Ai.AiContext.CreateListOfPoints*
+  name: CreateListOfPoints
+  href: api/DarkStar.Api.Engine.Data.Ai.AiContext.html#DarkStar_Api_Engine_Data_Ai_AiContext_CreateListOfPoints_
+  commentId: Overload:DarkStar.Api.Engine.Data.Ai.AiContext.CreateListOfPoints
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Data.Ai.AiContext.CreateListOfPoints
+  nameWithType: AiContext.CreateListOfPoints
+- uid: DarkStar.Api.Engine.Data.Ai.AiContext.Data
+  name: Data
+  href: api/DarkStar.Api.Engine.Data.Ai.AiContext.html#DarkStar_Api_Engine_Data_Ai_AiContext_Data
+  commentId: P:DarkStar.Api.Engine.Data.Ai.AiContext.Data
+  fullName: DarkStar.Api.Engine.Data.Ai.AiContext.Data
+  nameWithType: AiContext.Data
+- uid: DarkStar.Api.Engine.Data.Ai.AiContext.Data*
+  name: Data
+  href: api/DarkStar.Api.Engine.Data.Ai.AiContext.html#DarkStar_Api_Engine_Data_Ai_AiContext_Data_
+  commentId: Overload:DarkStar.Api.Engine.Data.Ai.AiContext.Data
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Data.Ai.AiContext.Data
+  nameWithType: AiContext.Data
+- uid: DarkStar.Api.Engine.Data.Ai.AiContext.EnqueueObjectActionInCurrentLocation
+  name: EnqueueObjectActionInCurrentLocation()
+  href: api/DarkStar.Api.Engine.Data.Ai.AiContext.html#DarkStar_Api_Engine_Data_Ai_AiContext_EnqueueObjectActionInCurrentLocation
+  commentId: M:DarkStar.Api.Engine.Data.Ai.AiContext.EnqueueObjectActionInCurrentLocation
+  fullName: DarkStar.Api.Engine.Data.Ai.AiContext.EnqueueObjectActionInCurrentLocation()
+  nameWithType: AiContext.EnqueueObjectActionInCurrentLocation()
+- uid: DarkStar.Api.Engine.Data.Ai.AiContext.EnqueueObjectActionInCurrentLocation*
+  name: EnqueueObjectActionInCurrentLocation
+  href: api/DarkStar.Api.Engine.Data.Ai.AiContext.html#DarkStar_Api_Engine_Data_Ai_AiContext_EnqueueObjectActionInCurrentLocation_
+  commentId: Overload:DarkStar.Api.Engine.Data.Ai.AiContext.EnqueueObjectActionInCurrentLocation
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Data.Ai.AiContext.EnqueueObjectActionInCurrentLocation
+  nameWithType: AiContext.EnqueueObjectActionInCurrentLocation
+- uid: DarkStar.Api.Engine.Data.Ai.AiContext.EventBus
+  name: EventBus
+  href: api/DarkStar.Api.Engine.Data.Ai.AiContext.html#DarkStar_Api_Engine_Data_Ai_AiContext_EventBus
+  commentId: P:DarkStar.Api.Engine.Data.Ai.AiContext.EventBus
+  fullName: DarkStar.Api.Engine.Data.Ai.AiContext.EventBus
+  nameWithType: AiContext.EventBus
+- uid: DarkStar.Api.Engine.Data.Ai.AiContext.EventBus*
+  name: EventBus
+  href: api/DarkStar.Api.Engine.Data.Ai.AiContext.html#DarkStar_Api_Engine_Data_Ai_AiContext_EventBus_
+  commentId: Overload:DarkStar.Api.Engine.Data.Ai.AiContext.EventBus
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Data.Ai.AiContext.EventBus
+  nameWithType: AiContext.EventBus
+- uid: DarkStar.Api.Engine.Data.Ai.AiContext.GetEntitiesInRangeAsync(DarkStar.Api.World.Types.Map.MapLayer,System.Int32)
+  name: GetEntitiesInRangeAsync(MapLayer, int)
+  href: api/DarkStar.Api.Engine.Data.Ai.AiContext.html#DarkStar_Api_Engine_Data_Ai_AiContext_GetEntitiesInRangeAsync_DarkStar_Api_World_Types_Map_MapLayer_System_Int32_
+  commentId: M:DarkStar.Api.Engine.Data.Ai.AiContext.GetEntitiesInRangeAsync(DarkStar.Api.World.Types.Map.MapLayer,System.Int32)
+  name.vb: GetEntitiesInRangeAsync(MapLayer, Integer)
+  fullName: DarkStar.Api.Engine.Data.Ai.AiContext.GetEntitiesInRangeAsync(DarkStar.Api.World.Types.Map.MapLayer, int)
+  fullName.vb: DarkStar.Api.Engine.Data.Ai.AiContext.GetEntitiesInRangeAsync(DarkStar.Api.World.Types.Map.MapLayer, Integer)
+  nameWithType: AiContext.GetEntitiesInRangeAsync(MapLayer, int)
+  nameWithType.vb: AiContext.GetEntitiesInRangeAsync(MapLayer, Integer)
+- uid: DarkStar.Api.Engine.Data.Ai.AiContext.GetEntitiesInRangeAsync*
+  name: GetEntitiesInRangeAsync
+  href: api/DarkStar.Api.Engine.Data.Ai.AiContext.html#DarkStar_Api_Engine_Data_Ai_AiContext_GetEntitiesInRangeAsync_
+  commentId: Overload:DarkStar.Api.Engine.Data.Ai.AiContext.GetEntitiesInRangeAsync
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Data.Ai.AiContext.GetEntitiesInRangeAsync
+  nameWithType: AiContext.GetEntitiesInRangeAsync
+- uid: DarkStar.Api.Engine.Data.Ai.AiContext.GetGameObjectsInRangeByName(System.Int16,System.Int32)
+  name: GetGameObjectsInRangeByName(short, int)
+  href: api/DarkStar.Api.Engine.Data.Ai.AiContext.html#DarkStar_Api_Engine_Data_Ai_AiContext_GetGameObjectsInRangeByName_System_Int16_System_Int32_
+  commentId: M:DarkStar.Api.Engine.Data.Ai.AiContext.GetGameObjectsInRangeByName(System.Int16,System.Int32)
+  name.vb: GetGameObjectsInRangeByName(Short, Integer)
+  fullName: DarkStar.Api.Engine.Data.Ai.AiContext.GetGameObjectsInRangeByName(short, int)
+  fullName.vb: DarkStar.Api.Engine.Data.Ai.AiContext.GetGameObjectsInRangeByName(Short, Integer)
+  nameWithType: AiContext.GetGameObjectsInRangeByName(short, int)
+  nameWithType.vb: AiContext.GetGameObjectsInRangeByName(Short, Integer)
+- uid: DarkStar.Api.Engine.Data.Ai.AiContext.GetGameObjectsInRangeByName*
+  name: GetGameObjectsInRangeByName
+  href: api/DarkStar.Api.Engine.Data.Ai.AiContext.html#DarkStar_Api_Engine_Data_Ai_AiContext_GetGameObjectsInRangeByName_
+  commentId: Overload:DarkStar.Api.Engine.Data.Ai.AiContext.GetGameObjectsInRangeByName
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Data.Ai.AiContext.GetGameObjectsInRangeByName
+  nameWithType: AiContext.GetGameObjectsInRangeByName
+- uid: DarkStar.Api.Engine.Data.Ai.AiContext.GetPathToPosition(DarkStar.Network.Protocol.Messages.Common.PointPosition)
+  name: GetPathToPosition(PointPosition)
+  href: api/DarkStar.Api.Engine.Data.Ai.AiContext.html#DarkStar_Api_Engine_Data_Ai_AiContext_GetPathToPosition_DarkStar_Network_Protocol_Messages_Common_PointPosition_
+  commentId: M:DarkStar.Api.Engine.Data.Ai.AiContext.GetPathToPosition(DarkStar.Network.Protocol.Messages.Common.PointPosition)
+  fullName: DarkStar.Api.Engine.Data.Ai.AiContext.GetPathToPosition(DarkStar.Network.Protocol.Messages.Common.PointPosition)
+  nameWithType: AiContext.GetPathToPosition(PointPosition)
+- uid: DarkStar.Api.Engine.Data.Ai.AiContext.GetPathToPosition(System.Int32,System.Int32)
+  name: GetPathToPosition(int, int)
+  href: api/DarkStar.Api.Engine.Data.Ai.AiContext.html#DarkStar_Api_Engine_Data_Ai_AiContext_GetPathToPosition_System_Int32_System_Int32_
+  commentId: M:DarkStar.Api.Engine.Data.Ai.AiContext.GetPathToPosition(System.Int32,System.Int32)
+  name.vb: GetPathToPosition(Integer, Integer)
+  fullName: DarkStar.Api.Engine.Data.Ai.AiContext.GetPathToPosition(int, int)
+  fullName.vb: DarkStar.Api.Engine.Data.Ai.AiContext.GetPathToPosition(Integer, Integer)
+  nameWithType: AiContext.GetPathToPosition(int, int)
+  nameWithType.vb: AiContext.GetPathToPosition(Integer, Integer)
+- uid: DarkStar.Api.Engine.Data.Ai.AiContext.GetPathToPosition*
+  name: GetPathToPosition
+  href: api/DarkStar.Api.Engine.Data.Ai.AiContext.html#DarkStar_Api_Engine_Data_Ai_AiContext_GetPathToPosition_
+  commentId: Overload:DarkStar.Api.Engine.Data.Ai.AiContext.GetPathToPosition
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Data.Ai.AiContext.GetPathToPosition
+  nameWithType: AiContext.GetPathToPosition
 - uid: DarkStar.Api.Engine.Data.Ai.AiContext.Logger
   name: Logger
   href: api/DarkStar.Api.Engine.Data.Ai.AiContext.html#DarkStar_Api_Engine_Data_Ai_AiContext_Logger
@@ -1109,6 +1215,22 @@ references:
   isSpec: "True"
   fullName: DarkStar.Api.Engine.Data.Ai.AiContext.Logger
   nameWithType: AiContext.Logger
+- uid: DarkStar.Api.Engine.Data.Ai.AiContext.LogInfo(System.String,System.Object[])
+  name: LogInfo(string, params object[])
+  href: api/DarkStar.Api.Engine.Data.Ai.AiContext.html#DarkStar_Api_Engine_Data_Ai_AiContext_LogInfo_System_String_System_Object___
+  commentId: M:DarkStar.Api.Engine.Data.Ai.AiContext.LogInfo(System.String,System.Object[])
+  name.vb: LogInfo(String, ParamArray Object())
+  fullName: DarkStar.Api.Engine.Data.Ai.AiContext.LogInfo(string, params object[])
+  fullName.vb: DarkStar.Api.Engine.Data.Ai.AiContext.LogInfo(String, ParamArray Object())
+  nameWithType: AiContext.LogInfo(string, params object[])
+  nameWithType.vb: AiContext.LogInfo(String, ParamArray Object())
+- uid: DarkStar.Api.Engine.Data.Ai.AiContext.LogInfo*
+  name: LogInfo
+  href: api/DarkStar.Api.Engine.Data.Ai.AiContext.html#DarkStar_Api_Engine_Data_Ai_AiContext_LogInfo_
+  commentId: Overload:DarkStar.Api.Engine.Data.Ai.AiContext.LogInfo
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Data.Ai.AiContext.LogInfo
+  nameWithType: AiContext.LogInfo
 - uid: DarkStar.Api.Engine.Data.Ai.AiContext.MapId
   name: MapId
   href: api/DarkStar.Api.Engine.Data.Ai.AiContext.html#DarkStar_Api_Engine_Data_Ai_AiContext_MapId
@@ -1122,6 +1244,63 @@ references:
   isSpec: "True"
   fullName: DarkStar.Api.Engine.Data.Ai.AiContext.MapId
   nameWithType: AiContext.MapId
+- uid: DarkStar.Api.Engine.Data.Ai.AiContext.MoveDirection(DarkStar.Network.Protocol.Messages.Common.MoveDirectionType)
+  name: MoveDirection(MoveDirectionType)
+  href: api/DarkStar.Api.Engine.Data.Ai.AiContext.html#DarkStar_Api_Engine_Data_Ai_AiContext_MoveDirection_DarkStar_Network_Protocol_Messages_Common_MoveDirectionType_
+  commentId: M:DarkStar.Api.Engine.Data.Ai.AiContext.MoveDirection(DarkStar.Network.Protocol.Messages.Common.MoveDirectionType)
+  fullName: DarkStar.Api.Engine.Data.Ai.AiContext.MoveDirection(DarkStar.Network.Protocol.Messages.Common.MoveDirectionType)
+  nameWithType: AiContext.MoveDirection(MoveDirectionType)
+- uid: DarkStar.Api.Engine.Data.Ai.AiContext.MoveDirection(System.Int16)
+  name: MoveDirection(short)
+  href: api/DarkStar.Api.Engine.Data.Ai.AiContext.html#DarkStar_Api_Engine_Data_Ai_AiContext_MoveDirection_System_Int16_
+  commentId: M:DarkStar.Api.Engine.Data.Ai.AiContext.MoveDirection(System.Int16)
+  name.vb: MoveDirection(Short)
+  fullName: DarkStar.Api.Engine.Data.Ai.AiContext.MoveDirection(short)
+  fullName.vb: DarkStar.Api.Engine.Data.Ai.AiContext.MoveDirection(Short)
+  nameWithType: AiContext.MoveDirection(short)
+  nameWithType.vb: AiContext.MoveDirection(Short)
+- uid: DarkStar.Api.Engine.Data.Ai.AiContext.MoveDirection*
+  name: MoveDirection
+  href: api/DarkStar.Api.Engine.Data.Ai.AiContext.html#DarkStar_Api_Engine_Data_Ai_AiContext_MoveDirection_
+  commentId: Overload:DarkStar.Api.Engine.Data.Ai.AiContext.MoveDirection
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Data.Ai.AiContext.MoveDirection
+  nameWithType: AiContext.MoveDirection
+- uid: DarkStar.Api.Engine.Data.Ai.AiContext.MoveRandomDirection
+  name: MoveRandomDirection()
+  href: api/DarkStar.Api.Engine.Data.Ai.AiContext.html#DarkStar_Api_Engine_Data_Ai_AiContext_MoveRandomDirection
+  commentId: M:DarkStar.Api.Engine.Data.Ai.AiContext.MoveRandomDirection
+  fullName: DarkStar.Api.Engine.Data.Ai.AiContext.MoveRandomDirection()
+  nameWithType: AiContext.MoveRandomDirection()
+- uid: DarkStar.Api.Engine.Data.Ai.AiContext.MoveRandomDirection*
+  name: MoveRandomDirection
+  href: api/DarkStar.Api.Engine.Data.Ai.AiContext.html#DarkStar_Api_Engine_Data_Ai_AiContext_MoveRandomDirection_
+  commentId: Overload:DarkStar.Api.Engine.Data.Ai.AiContext.MoveRandomDirection
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Data.Ai.AiContext.MoveRandomDirection
+  nameWithType: AiContext.MoveRandomDirection
+- uid: DarkStar.Api.Engine.Data.Ai.AiContext.MoveToPosition(DarkStar.Network.Protocol.Messages.Common.PointPosition)
+  name: MoveToPosition(PointPosition)
+  href: api/DarkStar.Api.Engine.Data.Ai.AiContext.html#DarkStar_Api_Engine_Data_Ai_AiContext_MoveToPosition_DarkStar_Network_Protocol_Messages_Common_PointPosition_
+  commentId: M:DarkStar.Api.Engine.Data.Ai.AiContext.MoveToPosition(DarkStar.Network.Protocol.Messages.Common.PointPosition)
+  fullName: DarkStar.Api.Engine.Data.Ai.AiContext.MoveToPosition(DarkStar.Network.Protocol.Messages.Common.PointPosition)
+  nameWithType: AiContext.MoveToPosition(PointPosition)
+- uid: DarkStar.Api.Engine.Data.Ai.AiContext.MoveToPosition(System.Int32,System.Int32)
+  name: MoveToPosition(int, int)
+  href: api/DarkStar.Api.Engine.Data.Ai.AiContext.html#DarkStar_Api_Engine_Data_Ai_AiContext_MoveToPosition_System_Int32_System_Int32_
+  commentId: M:DarkStar.Api.Engine.Data.Ai.AiContext.MoveToPosition(System.Int32,System.Int32)
+  name.vb: MoveToPosition(Integer, Integer)
+  fullName: DarkStar.Api.Engine.Data.Ai.AiContext.MoveToPosition(int, int)
+  fullName.vb: DarkStar.Api.Engine.Data.Ai.AiContext.MoveToPosition(Integer, Integer)
+  nameWithType: AiContext.MoveToPosition(int, int)
+  nameWithType.vb: AiContext.MoveToPosition(Integer, Integer)
+- uid: DarkStar.Api.Engine.Data.Ai.AiContext.MoveToPosition*
+  name: MoveToPosition
+  href: api/DarkStar.Api.Engine.Data.Ai.AiContext.html#DarkStar_Api_Engine_Data_Ai_AiContext_MoveToPosition_
+  commentId: Overload:DarkStar.Api.Engine.Data.Ai.AiContext.MoveToPosition
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Data.Ai.AiContext.MoveToPosition
+  nameWithType: AiContext.MoveToPosition
 - uid: DarkStar.Api.Engine.Data.Ai.AiContext.NpcEntity
   name: NpcEntity
   href: api/DarkStar.Api.Engine.Data.Ai.AiContext.html#DarkStar_Api_Engine_Data_Ai_AiContext_NpcEntity
@@ -1148,6 +1327,96 @@ references:
   isSpec: "True"
   fullName: DarkStar.Api.Engine.Data.Ai.AiContext.NpcGameObject
   nameWithType: AiContext.NpcGameObject
+- uid: DarkStar.Api.Engine.Data.Ai.AiContext.PlayerService
+  name: PlayerService
+  href: api/DarkStar.Api.Engine.Data.Ai.AiContext.html#DarkStar_Api_Engine_Data_Ai_AiContext_PlayerService
+  commentId: P:DarkStar.Api.Engine.Data.Ai.AiContext.PlayerService
+  fullName: DarkStar.Api.Engine.Data.Ai.AiContext.PlayerService
+  nameWithType: AiContext.PlayerService
+- uid: DarkStar.Api.Engine.Data.Ai.AiContext.PlayerService*
+  name: PlayerService
+  href: api/DarkStar.Api.Engine.Data.Ai.AiContext.html#DarkStar_Api_Engine_Data_Ai_AiContext_PlayerService_
+  commentId: Overload:DarkStar.Api.Engine.Data.Ai.AiContext.PlayerService
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Data.Ai.AiContext.PlayerService
+  nameWithType: AiContext.PlayerService
+- uid: DarkStar.Api.Engine.Data.Ai.AiContext.SendNormalMessageAsync(System.String)
+  name: SendNormalMessageAsync(string)
+  href: api/DarkStar.Api.Engine.Data.Ai.AiContext.html#DarkStar_Api_Engine_Data_Ai_AiContext_SendNormalMessageAsync_System_String_
+  commentId: M:DarkStar.Api.Engine.Data.Ai.AiContext.SendNormalMessageAsync(System.String)
+  name.vb: SendNormalMessageAsync(String)
+  fullName: DarkStar.Api.Engine.Data.Ai.AiContext.SendNormalMessageAsync(string)
+  fullName.vb: DarkStar.Api.Engine.Data.Ai.AiContext.SendNormalMessageAsync(String)
+  nameWithType: AiContext.SendNormalMessageAsync(string)
+  nameWithType.vb: AiContext.SendNormalMessageAsync(String)
+- uid: DarkStar.Api.Engine.Data.Ai.AiContext.SendNormalMessageAsync*
+  name: SendNormalMessageAsync
+  href: api/DarkStar.Api.Engine.Data.Ai.AiContext.html#DarkStar_Api_Engine_Data_Ai_AiContext_SendNormalMessageAsync_
+  commentId: Overload:DarkStar.Api.Engine.Data.Ai.AiContext.SendNormalMessageAsync
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Data.Ai.AiContext.SendNormalMessageAsync
+  nameWithType: AiContext.SendNormalMessageAsync
+- uid: DarkStar.Api.Engine.Data.Ai.AiContext.SendWhisperMessageAsync(System.String)
+  name: SendWhisperMessageAsync(string)
+  href: api/DarkStar.Api.Engine.Data.Ai.AiContext.html#DarkStar_Api_Engine_Data_Ai_AiContext_SendWhisperMessageAsync_System_String_
+  commentId: M:DarkStar.Api.Engine.Data.Ai.AiContext.SendWhisperMessageAsync(System.String)
+  name.vb: SendWhisperMessageAsync(String)
+  fullName: DarkStar.Api.Engine.Data.Ai.AiContext.SendWhisperMessageAsync(string)
+  fullName.vb: DarkStar.Api.Engine.Data.Ai.AiContext.SendWhisperMessageAsync(String)
+  nameWithType: AiContext.SendWhisperMessageAsync(string)
+  nameWithType.vb: AiContext.SendWhisperMessageAsync(String)
+- uid: DarkStar.Api.Engine.Data.Ai.AiContext.SendWhisperMessageAsync*
+  name: SendWhisperMessageAsync
+  href: api/DarkStar.Api.Engine.Data.Ai.AiContext.html#DarkStar_Api_Engine_Data_Ai_AiContext_SendWhisperMessageAsync_
+  commentId: Overload:DarkStar.Api.Engine.Data.Ai.AiContext.SendWhisperMessageAsync
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Data.Ai.AiContext.SendWhisperMessageAsync
+  nameWithType: AiContext.SendWhisperMessageAsync
+- uid: DarkStar.Api.Engine.Data.Ai.AiContext.SendWorldMessageAsync(System.String,System.Int16)
+  name: SendWorldMessageAsync(string, short)
+  href: api/DarkStar.Api.Engine.Data.Ai.AiContext.html#DarkStar_Api_Engine_Data_Ai_AiContext_SendWorldMessageAsync_System_String_System_Int16_
+  commentId: M:DarkStar.Api.Engine.Data.Ai.AiContext.SendWorldMessageAsync(System.String,System.Int16)
+  name.vb: SendWorldMessageAsync(String, Short)
+  fullName: DarkStar.Api.Engine.Data.Ai.AiContext.SendWorldMessageAsync(string, short)
+  fullName.vb: DarkStar.Api.Engine.Data.Ai.AiContext.SendWorldMessageAsync(String, Short)
+  nameWithType: AiContext.SendWorldMessageAsync(string, short)
+  nameWithType.vb: AiContext.SendWorldMessageAsync(String, Short)
+- uid: DarkStar.Api.Engine.Data.Ai.AiContext.SendWorldMessageAsync*
+  name: SendWorldMessageAsync
+  href: api/DarkStar.Api.Engine.Data.Ai.AiContext.html#DarkStar_Api_Engine_Data_Ai_AiContext_SendWorldMessageAsync_
+  commentId: Overload:DarkStar.Api.Engine.Data.Ai.AiContext.SendWorldMessageAsync
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Data.Ai.AiContext.SendWorldMessageAsync
+  nameWithType: AiContext.SendWorldMessageAsync
+- uid: DarkStar.Api.Engine.Data.Ai.AiContext.SendYellMessageAsync(System.String)
+  name: SendYellMessageAsync(string)
+  href: api/DarkStar.Api.Engine.Data.Ai.AiContext.html#DarkStar_Api_Engine_Data_Ai_AiContext_SendYellMessageAsync_System_String_
+  commentId: M:DarkStar.Api.Engine.Data.Ai.AiContext.SendYellMessageAsync(System.String)
+  name.vb: SendYellMessageAsync(String)
+  fullName: DarkStar.Api.Engine.Data.Ai.AiContext.SendYellMessageAsync(string)
+  fullName.vb: DarkStar.Api.Engine.Data.Ai.AiContext.SendYellMessageAsync(String)
+  nameWithType: AiContext.SendYellMessageAsync(string)
+  nameWithType.vb: AiContext.SendYellMessageAsync(String)
+- uid: DarkStar.Api.Engine.Data.Ai.AiContext.SendYellMessageAsync*
+  name: SendYellMessageAsync
+  href: api/DarkStar.Api.Engine.Data.Ai.AiContext.html#DarkStar_Api_Engine_Data_Ai_AiContext_SendYellMessageAsync_
+  commentId: Overload:DarkStar.Api.Engine.Data.Ai.AiContext.SendYellMessageAsync
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Data.Ai.AiContext.SendYellMessageAsync
+  nameWithType: AiContext.SendYellMessageAsync
+- uid: DarkStar.Api.Engine.Data.Ai.AiContext.WorldService
+  name: WorldService
+  href: api/DarkStar.Api.Engine.Data.Ai.AiContext.html#DarkStar_Api_Engine_Data_Ai_AiContext_WorldService
+  commentId: P:DarkStar.Api.Engine.Data.Ai.AiContext.WorldService
+  fullName: DarkStar.Api.Engine.Data.Ai.AiContext.WorldService
+  nameWithType: AiContext.WorldService
+- uid: DarkStar.Api.Engine.Data.Ai.AiContext.WorldService*
+  name: WorldService
+  href: api/DarkStar.Api.Engine.Data.Ai.AiContext.html#DarkStar_Api_Engine_Data_Ai_AiContext_WorldService_
+  commentId: Overload:DarkStar.Api.Engine.Data.Ai.AiContext.WorldService
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Data.Ai.AiContext.WorldService
+  nameWithType: AiContext.WorldService
 - uid: DarkStar.Api.Engine.Data.Blueprint
   name: DarkStar.Api.Engine.Data.Blueprint
   href: api/DarkStar.Api.Engine.Data.Blueprint.html
@@ -1369,6 +1638,163 @@ references:
   isSpec: "True"
   fullName: DarkStar.Api.Engine.Data.Blueprint.BlueprintGenerationMapContext.WorldService
   nameWithType: BlueprintGenerationMapContext.WorldService
+- uid: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext
+  name: BlueprintMapInfoContext
+  href: api/DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.html
+  commentId: T:DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext
+  fullName: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext
+  nameWithType: BlueprintMapInfoContext
+- uid: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext._typeService
+  name: _typeService
+  href: api/DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.html#DarkStar_Api_Engine_Data_Blueprint_BlueprintMapInfoContext__typeService
+  commentId: F:DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext._typeService
+  fullName: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext._typeService
+  nameWithType: BlueprintMapInfoContext._typeService
+- uid: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.#ctor(DarkStar.Api.Engine.Interfaces.Services.ITypeService)
+  name: BlueprintMapInfoContext(ITypeService)
+  href: api/DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.html#DarkStar_Api_Engine_Data_Blueprint_BlueprintMapInfoContext__ctor_DarkStar_Api_Engine_Interfaces_Services_ITypeService_
+  commentId: M:DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.#ctor(DarkStar.Api.Engine.Interfaces.Services.ITypeService)
+  name.vb: New(ITypeService)
+  fullName: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.BlueprintMapInfoContext(DarkStar.Api.Engine.Interfaces.Services.ITypeService)
+  fullName.vb: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.New(DarkStar.Api.Engine.Interfaces.Services.ITypeService)
+  nameWithType: BlueprintMapInfoContext.BlueprintMapInfoContext(ITypeService)
+  nameWithType.vb: BlueprintMapInfoContext.New(ITypeService)
+- uid: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.#ctor*
+  name: BlueprintMapInfoContext
+  href: api/DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.html#DarkStar_Api_Engine_Data_Blueprint_BlueprintMapInfoContext__ctor_
+  commentId: Overload:DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.BlueprintMapInfoContext
+  fullName.vb: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.New
+  nameWithType: BlueprintMapInfoContext.BlueprintMapInfoContext
+  nameWithType.vb: BlueprintMapInfoContext.New
+- uid: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.BlockingTile
+  name: BlockingTile
+  href: api/DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.html#DarkStar_Api_Engine_Data_Blueprint_BlueprintMapInfoContext_BlockingTile
+  commentId: P:DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.BlockingTile
+  fullName: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.BlockingTile
+  nameWithType: BlueprintMapInfoContext.BlockingTile
+- uid: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.BlockingTile*
+  name: BlockingTile
+  href: api/DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.html#DarkStar_Api_Engine_Data_Blueprint_BlueprintMapInfoContext_BlockingTile_
+  commentId: Overload:DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.BlockingTile
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.BlockingTile
+  nameWithType: BlueprintMapInfoContext.BlockingTile
+- uid: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.Height
+  name: Height
+  href: api/DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.html#DarkStar_Api_Engine_Data_Blueprint_BlueprintMapInfoContext_Height
+  commentId: P:DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.Height
+  fullName: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.Height
+  nameWithType: BlueprintMapInfoContext.Height
+- uid: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.Height*
+  name: Height
+  href: api/DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.html#DarkStar_Api_Engine_Data_Blueprint_BlueprintMapInfoContext_Height_
+  commentId: Overload:DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.Height
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.Height
+  nameWithType: BlueprintMapInfoContext.Height
+- uid: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.MapStrategy
+  name: MapStrategy
+  href: api/DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.html#DarkStar_Api_Engine_Data_Blueprint_BlueprintMapInfoContext_MapStrategy
+  commentId: P:DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.MapStrategy
+  fullName: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.MapStrategy
+  nameWithType: BlueprintMapInfoContext.MapStrategy
+- uid: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.MapStrategy*
+  name: MapStrategy
+  href: api/DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.html#DarkStar_Api_Engine_Data_Blueprint_BlueprintMapInfoContext_MapStrategy_
+  commentId: Overload:DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.MapStrategy
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.MapStrategy
+  nameWithType: BlueprintMapInfoContext.MapStrategy
+- uid: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.MapType
+  name: MapType
+  href: api/DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.html#DarkStar_Api_Engine_Data_Blueprint_BlueprintMapInfoContext_MapType
+  commentId: P:DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.MapType
+  fullName: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.MapType
+  nameWithType: BlueprintMapInfoContext.MapType
+- uid: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.MapType*
+  name: MapType
+  href: api/DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.html#DarkStar_Api_Engine_Data_Blueprint_BlueprintMapInfoContext_MapType_
+  commentId: Overload:DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.MapType
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.MapType
+  nameWithType: BlueprintMapInfoContext.MapType
+- uid: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.NonBlockingTile
+  name: NonBlockingTile
+  href: api/DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.html#DarkStar_Api_Engine_Data_Blueprint_BlueprintMapInfoContext_NonBlockingTile
+  commentId: P:DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.NonBlockingTile
+  fullName: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.NonBlockingTile
+  nameWithType: BlueprintMapInfoContext.NonBlockingTile
+- uid: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.NonBlockingTile*
+  name: NonBlockingTile
+  href: api/DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.html#DarkStar_Api_Engine_Data_Blueprint_BlueprintMapInfoContext_NonBlockingTile_
+  commentId: Overload:DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.NonBlockingTile
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.NonBlockingTile
+  nameWithType: BlueprintMapInfoContext.NonBlockingTile
+- uid: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.SetMapSize(System.Int32,System.Int32)
+  name: SetMapSize(int, int)
+  href: api/DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.html#DarkStar_Api_Engine_Data_Blueprint_BlueprintMapInfoContext_SetMapSize_System_Int32_System_Int32_
+  commentId: M:DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.SetMapSize(System.Int32,System.Int32)
+  name.vb: SetMapSize(Integer, Integer)
+  fullName: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.SetMapSize(int, int)
+  fullName.vb: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.SetMapSize(Integer, Integer)
+  nameWithType: BlueprintMapInfoContext.SetMapSize(int, int)
+  nameWithType.vb: BlueprintMapInfoContext.SetMapSize(Integer, Integer)
+- uid: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.SetMapSize*
+  name: SetMapSize
+  href: api/DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.html#DarkStar_Api_Engine_Data_Blueprint_BlueprintMapInfoContext_SetMapSize_
+  commentId: Overload:DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.SetMapSize
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.SetMapSize
+  nameWithType: BlueprintMapInfoContext.SetMapSize
+- uid: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.SetMapStrategy(System.Int32)
+  name: SetMapStrategy(int)
+  href: api/DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.html#DarkStar_Api_Engine_Data_Blueprint_BlueprintMapInfoContext_SetMapStrategy_System_Int32_
+  commentId: M:DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.SetMapStrategy(System.Int32)
+  name.vb: SetMapStrategy(Integer)
+  fullName: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.SetMapStrategy(int)
+  fullName.vb: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.SetMapStrategy(Integer)
+  nameWithType: BlueprintMapInfoContext.SetMapStrategy(int)
+  nameWithType.vb: BlueprintMapInfoContext.SetMapStrategy(Integer)
+- uid: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.SetMapStrategy*
+  name: SetMapStrategy
+  href: api/DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.html#DarkStar_Api_Engine_Data_Blueprint_BlueprintMapInfoContext_SetMapStrategy_
+  commentId: Overload:DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.SetMapStrategy
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.SetMapStrategy
+  nameWithType: BlueprintMapInfoContext.SetMapStrategy
+- uid: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.SetTerrainTiles(System.String,System.String)
+  name: SetTerrainTiles(string, string)
+  href: api/DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.html#DarkStar_Api_Engine_Data_Blueprint_BlueprintMapInfoContext_SetTerrainTiles_System_String_System_String_
+  commentId: M:DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.SetTerrainTiles(System.String,System.String)
+  name.vb: SetTerrainTiles(String, String)
+  fullName: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.SetTerrainTiles(string, string)
+  fullName.vb: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.SetTerrainTiles(String, String)
+  nameWithType: BlueprintMapInfoContext.SetTerrainTiles(string, string)
+  nameWithType.vb: BlueprintMapInfoContext.SetTerrainTiles(String, String)
+- uid: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.SetTerrainTiles*
+  name: SetTerrainTiles
+  href: api/DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.html#DarkStar_Api_Engine_Data_Blueprint_BlueprintMapInfoContext_SetTerrainTiles_
+  commentId: Overload:DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.SetTerrainTiles
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.SetTerrainTiles
+  nameWithType: BlueprintMapInfoContext.SetTerrainTiles
+- uid: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.Width
+  name: Width
+  href: api/DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.html#DarkStar_Api_Engine_Data_Blueprint_BlueprintMapInfoContext_Width
+  commentId: P:DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.Width
+  fullName: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.Width
+  nameWithType: BlueprintMapInfoContext.Width
+- uid: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.Width*
+  name: Width
+  href: api/DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.html#DarkStar_Api_Engine_Data_Blueprint_BlueprintMapInfoContext_Width_
+  commentId: Overload:DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.Width
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.Width
+  nameWithType: BlueprintMapInfoContext.Width
 - uid: DarkStar.Api.Engine.Data.Config
   name: DarkStar.Api.Engine.Data.Config
   href: api/DarkStar.Api.Engine.Data.Config.html
@@ -1490,19 +1916,6 @@ references:
   commentId: T:DarkStar.Api.Engine.Data.Config.Sections.CityMapConfig
   fullName: DarkStar.Api.Engine.Data.Config.Sections.CityMapConfig
   nameWithType: CityMapConfig
-- uid: DarkStar.Api.Engine.Data.Config.Sections.CityMapConfig.Height
-  name: Height
-  href: api/DarkStar.Api.Engine.Data.Config.Sections.CityMapConfig.html#DarkStar_Api_Engine_Data_Config_Sections_CityMapConfig_Height
-  commentId: P:DarkStar.Api.Engine.Data.Config.Sections.CityMapConfig.Height
-  fullName: DarkStar.Api.Engine.Data.Config.Sections.CityMapConfig.Height
-  nameWithType: CityMapConfig.Height
-- uid: DarkStar.Api.Engine.Data.Config.Sections.CityMapConfig.Height*
-  name: Height
-  href: api/DarkStar.Api.Engine.Data.Config.Sections.CityMapConfig.html#DarkStar_Api_Engine_Data_Config_Sections_CityMapConfig_Height_
-  commentId: Overload:DarkStar.Api.Engine.Data.Config.Sections.CityMapConfig.Height
-  isSpec: "True"
-  fullName: DarkStar.Api.Engine.Data.Config.Sections.CityMapConfig.Height
-  nameWithType: CityMapConfig.Height
 - uid: DarkStar.Api.Engine.Data.Config.Sections.CityMapConfig.Num
   name: Num
   href: api/DarkStar.Api.Engine.Data.Config.Sections.CityMapConfig.html#DarkStar_Api_Engine_Data_Config_Sections_CityMapConfig_Num
@@ -1516,19 +1929,6 @@ references:
   isSpec: "True"
   fullName: DarkStar.Api.Engine.Data.Config.Sections.CityMapConfig.Num
   nameWithType: CityMapConfig.Num
-- uid: DarkStar.Api.Engine.Data.Config.Sections.CityMapConfig.Width
-  name: Width
-  href: api/DarkStar.Api.Engine.Data.Config.Sections.CityMapConfig.html#DarkStar_Api_Engine_Data_Config_Sections_CityMapConfig_Width
-  commentId: P:DarkStar.Api.Engine.Data.Config.Sections.CityMapConfig.Width
-  fullName: DarkStar.Api.Engine.Data.Config.Sections.CityMapConfig.Width
-  nameWithType: CityMapConfig.Width
-- uid: DarkStar.Api.Engine.Data.Config.Sections.CityMapConfig.Width*
-  name: Width
-  href: api/DarkStar.Api.Engine.Data.Config.Sections.CityMapConfig.html#DarkStar_Api_Engine_Data_Config_Sections_CityMapConfig_Width_
-  commentId: Overload:DarkStar.Api.Engine.Data.Config.Sections.CityMapConfig.Width
-  isSpec: "True"
-  fullName: DarkStar.Api.Engine.Data.Config.Sections.CityMapConfig.Width
-  nameWithType: CityMapConfig.Width
 - uid: DarkStar.Api.Engine.Data.Config.Sections.CompilerConfig
   name: CompilerConfig
   href: api/DarkStar.Api.Engine.Data.Config.Sections.CompilerConfig.html
@@ -1623,19 +2023,6 @@ references:
   commentId: T:DarkStar.Api.Engine.Data.Config.Sections.DungeonMapConfig
   fullName: DarkStar.Api.Engine.Data.Config.Sections.DungeonMapConfig
   nameWithType: DungeonMapConfig
-- uid: DarkStar.Api.Engine.Data.Config.Sections.DungeonMapConfig.Height
-  name: Height
-  href: api/DarkStar.Api.Engine.Data.Config.Sections.DungeonMapConfig.html#DarkStar_Api_Engine_Data_Config_Sections_DungeonMapConfig_Height
-  commentId: P:DarkStar.Api.Engine.Data.Config.Sections.DungeonMapConfig.Height
-  fullName: DarkStar.Api.Engine.Data.Config.Sections.DungeonMapConfig.Height
-  nameWithType: DungeonMapConfig.Height
-- uid: DarkStar.Api.Engine.Data.Config.Sections.DungeonMapConfig.Height*
-  name: Height
-  href: api/DarkStar.Api.Engine.Data.Config.Sections.DungeonMapConfig.html#DarkStar_Api_Engine_Data_Config_Sections_DungeonMapConfig_Height_
-  commentId: Overload:DarkStar.Api.Engine.Data.Config.Sections.DungeonMapConfig.Height
-  isSpec: "True"
-  fullName: DarkStar.Api.Engine.Data.Config.Sections.DungeonMapConfig.Height
-  nameWithType: DungeonMapConfig.Height
 - uid: DarkStar.Api.Engine.Data.Config.Sections.DungeonMapConfig.Num
   name: Num
   href: api/DarkStar.Api.Engine.Data.Config.Sections.DungeonMapConfig.html#DarkStar_Api_Engine_Data_Config_Sections_DungeonMapConfig_Num
@@ -1649,19 +2036,6 @@ references:
   isSpec: "True"
   fullName: DarkStar.Api.Engine.Data.Config.Sections.DungeonMapConfig.Num
   nameWithType: DungeonMapConfig.Num
-- uid: DarkStar.Api.Engine.Data.Config.Sections.DungeonMapConfig.Width
-  name: Width
-  href: api/DarkStar.Api.Engine.Data.Config.Sections.DungeonMapConfig.html#DarkStar_Api_Engine_Data_Config_Sections_DungeonMapConfig_Width
-  commentId: P:DarkStar.Api.Engine.Data.Config.Sections.DungeonMapConfig.Width
-  fullName: DarkStar.Api.Engine.Data.Config.Sections.DungeonMapConfig.Width
-  nameWithType: DungeonMapConfig.Width
-- uid: DarkStar.Api.Engine.Data.Config.Sections.DungeonMapConfig.Width*
-  name: Width
-  href: api/DarkStar.Api.Engine.Data.Config.Sections.DungeonMapConfig.html#DarkStar_Api_Engine_Data_Config_Sections_DungeonMapConfig_Width_
-  commentId: Overload:DarkStar.Api.Engine.Data.Config.Sections.DungeonMapConfig.Width
-  isSpec: "True"
-  fullName: DarkStar.Api.Engine.Data.Config.Sections.DungeonMapConfig.Width
-  nameWithType: DungeonMapConfig.Width
 - uid: DarkStar.Api.Engine.Data.Config.Sections.ExperimentalConfig
   name: ExperimentalConfig
   href: api/DarkStar.Api.Engine.Data.Config.Sections.ExperimentalConfig.html
@@ -1796,18 +2170,6 @@ references:
   commentId: T:DarkStar.Api.Engine.Data.Config.Sections.MapDefaultSizes
   fullName: DarkStar.Api.Engine.Data.Config.Sections.MapDefaultSizes
   nameWithType: MapDefaultSizes
-- uid: DarkStar.Api.Engine.Data.Config.Sections.MapDefaultSizes.DefaultHeight
-  name: DefaultHeight
-  href: api/DarkStar.Api.Engine.Data.Config.Sections.MapDefaultSizes.html#DarkStar_Api_Engine_Data_Config_Sections_MapDefaultSizes_DefaultHeight
-  commentId: F:DarkStar.Api.Engine.Data.Config.Sections.MapDefaultSizes.DefaultHeight
-  fullName: DarkStar.Api.Engine.Data.Config.Sections.MapDefaultSizes.DefaultHeight
-  nameWithType: MapDefaultSizes.DefaultHeight
-- uid: DarkStar.Api.Engine.Data.Config.Sections.MapDefaultSizes.DefaultWidth
-  name: DefaultWidth
-  href: api/DarkStar.Api.Engine.Data.Config.Sections.MapDefaultSizes.html#DarkStar_Api_Engine_Data_Config_Sections_MapDefaultSizes_DefaultWidth
-  commentId: F:DarkStar.Api.Engine.Data.Config.Sections.MapDefaultSizes.DefaultWidth
-  fullName: DarkStar.Api.Engine.Data.Config.Sections.MapDefaultSizes.DefaultWidth
-  nameWithType: MapDefaultSizes.DefaultWidth
 - uid: DarkStar.Api.Engine.Data.Config.Sections.MapDefaultSizes.DefaultWorldHeight
   name: DefaultWorldHeight
   href: api/DarkStar.Api.Engine.Data.Config.Sections.MapDefaultSizes.html#DarkStar_Api_Engine_Data_Config_Sections_MapDefaultSizes_DefaultWorldHeight
@@ -2132,6 +2494,19 @@ references:
   isSpec: "True"
   fullName: DarkStar.Api.Engine.Data.ScriptEngine.ScriptFunctionDescriptor.Parameters
   nameWithType: ScriptFunctionDescriptor.Parameters
+- uid: DarkStar.Api.Engine.Data.ScriptEngine.ScriptFunctionDescriptor.RawReturnType
+  name: RawReturnType
+  href: api/DarkStar.Api.Engine.Data.ScriptEngine.ScriptFunctionDescriptor.html#DarkStar_Api_Engine_Data_ScriptEngine_ScriptFunctionDescriptor_RawReturnType
+  commentId: P:DarkStar.Api.Engine.Data.ScriptEngine.ScriptFunctionDescriptor.RawReturnType
+  fullName: DarkStar.Api.Engine.Data.ScriptEngine.ScriptFunctionDescriptor.RawReturnType
+  nameWithType: ScriptFunctionDescriptor.RawReturnType
+- uid: DarkStar.Api.Engine.Data.ScriptEngine.ScriptFunctionDescriptor.RawReturnType*
+  name: RawReturnType
+  href: api/DarkStar.Api.Engine.Data.ScriptEngine.ScriptFunctionDescriptor.html#DarkStar_Api_Engine_Data_ScriptEngine_ScriptFunctionDescriptor_RawReturnType_
+  commentId: Overload:DarkStar.Api.Engine.Data.ScriptEngine.ScriptFunctionDescriptor.RawReturnType
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Data.ScriptEngine.ScriptFunctionDescriptor.RawReturnType
+  nameWithType: ScriptFunctionDescriptor.RawReturnType
 - uid: DarkStar.Api.Engine.Data.ScriptEngine.ScriptFunctionDescriptor.ReturnType
   name: ReturnType
   href: api/DarkStar.Api.Engine.Data.ScriptEngine.ScriptFunctionDescriptor.html#DarkStar_Api_Engine_Data_ScriptEngine_ScriptFunctionDescriptor_ReturnType
@@ -2177,6 +2552,19 @@ references:
   isSpec: "True"
   fullName: DarkStar.Api.Engine.Data.ScriptEngine.ScriptFunctionParameterDescriptor.ParameterType
   nameWithType: ScriptFunctionParameterDescriptor.ParameterType
+- uid: DarkStar.Api.Engine.Data.ScriptEngine.ScriptFunctionParameterDescriptor.RawParameterType
+  name: RawParameterType
+  href: api/DarkStar.Api.Engine.Data.ScriptEngine.ScriptFunctionParameterDescriptor.html#DarkStar_Api_Engine_Data_ScriptEngine_ScriptFunctionParameterDescriptor_RawParameterType
+  commentId: P:DarkStar.Api.Engine.Data.ScriptEngine.ScriptFunctionParameterDescriptor.RawParameterType
+  fullName: DarkStar.Api.Engine.Data.ScriptEngine.ScriptFunctionParameterDescriptor.RawParameterType
+  nameWithType: ScriptFunctionParameterDescriptor.RawParameterType
+- uid: DarkStar.Api.Engine.Data.ScriptEngine.ScriptFunctionParameterDescriptor.RawParameterType*
+  name: RawParameterType
+  href: api/DarkStar.Api.Engine.Data.ScriptEngine.ScriptFunctionParameterDescriptor.html#DarkStar_Api_Engine_Data_ScriptEngine_ScriptFunctionParameterDescriptor_RawParameterType_
+  commentId: Overload:DarkStar.Api.Engine.Data.ScriptEngine.ScriptFunctionParameterDescriptor.RawParameterType
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Data.ScriptEngine.ScriptFunctionParameterDescriptor.RawParameterType
+  nameWithType: ScriptFunctionParameterDescriptor.RawParameterType
 - uid: DarkStar.Api.Engine.Data.Sessions
   name: DarkStar.Api.Engine.Data.Sessions
   href: api/DarkStar.Api.Engine.Data.Sessions.html
@@ -2471,6 +2859,135 @@ references:
   isSpec: "True"
   fullName: DarkStar.Api.Engine.Data.Templates.BluePrintTemplatePoint.Y
   nameWithType: BluePrintTemplatePoint.Y
+- uid: DarkStar.Api.Engine.Events.Commands
+  name: DarkStar.Api.Engine.Events.Commands
+  href: api/DarkStar.Api.Engine.Events.Commands.html
+  commentId: N:DarkStar.Api.Engine.Events.Commands
+  fullName: DarkStar.Api.Engine.Events.Commands
+  nameWithType: DarkStar.Api.Engine.Events.Commands
+- uid: DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent
+  name: GameObjectCommandEvent
+  href: api/DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.html
+  commentId: T:DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent
+  fullName: DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent
+  nameWithType: GameObjectCommandEvent
+- uid: DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.Delay
+  name: Delay
+  href: api/DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.html#DarkStar_Api_Engine_Events_Commands_GameObjectCommandEvent_Delay
+  commentId: P:DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.Delay
+  fullName: DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.Delay
+  nameWithType: GameObjectCommandEvent.Delay
+- uid: DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.Delay*
+  name: Delay
+  href: api/DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.html#DarkStar_Api_Engine_Events_Commands_GameObjectCommandEvent_Delay_
+  commentId: Overload:DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.Delay
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.Delay
+  nameWithType: GameObjectCommandEvent.Delay
+- uid: DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.IsNpc
+  name: IsNpc
+  href: api/DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.html#DarkStar_Api_Engine_Events_Commands_GameObjectCommandEvent_IsNpc
+  commentId: P:DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.IsNpc
+  fullName: DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.IsNpc
+  nameWithType: GameObjectCommandEvent.IsNpc
+- uid: DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.IsNpc*
+  name: IsNpc
+  href: api/DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.html#DarkStar_Api_Engine_Events_Commands_GameObjectCommandEvent_IsNpc_
+  commentId: Overload:DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.IsNpc
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.IsNpc
+  nameWithType: GameObjectCommandEvent.IsNpc
+- uid: DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.MapId
+  name: MapId
+  href: api/DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.html#DarkStar_Api_Engine_Events_Commands_GameObjectCommandEvent_MapId
+  commentId: P:DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.MapId
+  fullName: DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.MapId
+  nameWithType: GameObjectCommandEvent.MapId
+- uid: DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.MapId*
+  name: MapId
+  href: api/DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.html#DarkStar_Api_Engine_Events_Commands_GameObjectCommandEvent_MapId_
+  commentId: Overload:DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.MapId
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.MapId
+  nameWithType: GameObjectCommandEvent.MapId
+- uid: DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.NpcId
+  name: NpcId
+  href: api/DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.html#DarkStar_Api_Engine_Events_Commands_GameObjectCommandEvent_NpcId
+  commentId: P:DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.NpcId
+  fullName: DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.NpcId
+  nameWithType: GameObjectCommandEvent.NpcId
+- uid: DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.NpcId*
+  name: NpcId
+  href: api/DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.html#DarkStar_Api_Engine_Events_Commands_GameObjectCommandEvent_NpcId_
+  commentId: Overload:DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.NpcId
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.NpcId
+  nameWithType: GameObjectCommandEvent.NpcId
+- uid: DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.NpcObjectId
+  name: NpcObjectId
+  href: api/DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.html#DarkStar_Api_Engine_Events_Commands_GameObjectCommandEvent_NpcObjectId
+  commentId: P:DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.NpcObjectId
+  fullName: DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.NpcObjectId
+  nameWithType: GameObjectCommandEvent.NpcObjectId
+- uid: DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.NpcObjectId*
+  name: NpcObjectId
+  href: api/DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.html#DarkStar_Api_Engine_Events_Commands_GameObjectCommandEvent_NpcObjectId_
+  commentId: Overload:DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.NpcObjectId
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.NpcObjectId
+  nameWithType: GameObjectCommandEvent.NpcObjectId
+- uid: DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.PlayerId
+  name: PlayerId
+  href: api/DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.html#DarkStar_Api_Engine_Events_Commands_GameObjectCommandEvent_PlayerId
+  commentId: P:DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.PlayerId
+  fullName: DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.PlayerId
+  nameWithType: GameObjectCommandEvent.PlayerId
+- uid: DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.PlayerId*
+  name: PlayerId
+  href: api/DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.html#DarkStar_Api_Engine_Events_Commands_GameObjectCommandEvent_PlayerId_
+  commentId: Overload:DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.PlayerId
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.PlayerId
+  nameWithType: GameObjectCommandEvent.PlayerId
+- uid: DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.Position
+  name: Position
+  href: api/DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.html#DarkStar_Api_Engine_Events_Commands_GameObjectCommandEvent_Position
+  commentId: P:DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.Position
+  fullName: DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.Position
+  nameWithType: GameObjectCommandEvent.Position
+- uid: DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.Position*
+  name: Position
+  href: api/DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.html#DarkStar_Api_Engine_Events_Commands_GameObjectCommandEvent_Position_
+  commentId: Overload:DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.Position
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.Position
+  nameWithType: GameObjectCommandEvent.Position
+- uid: DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.SessionId
+  name: SessionId
+  href: api/DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.html#DarkStar_Api_Engine_Events_Commands_GameObjectCommandEvent_SessionId
+  commentId: P:DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.SessionId
+  fullName: DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.SessionId
+  nameWithType: GameObjectCommandEvent.SessionId
+- uid: DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.SessionId*
+  name: SessionId
+  href: api/DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.html#DarkStar_Api_Engine_Events_Commands_GameObjectCommandEvent_SessionId_
+  commentId: Overload:DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.SessionId
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.SessionId
+  nameWithType: GameObjectCommandEvent.SessionId
+- uid: DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.Type
+  name: Type
+  href: api/DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.html#DarkStar_Api_Engine_Events_Commands_GameObjectCommandEvent_Type
+  commentId: P:DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.Type
+  fullName: DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.Type
+  nameWithType: GameObjectCommandEvent.Type
+- uid: DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.Type*
+  name: Type
+  href: api/DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.html#DarkStar_Api_Engine_Events_Commands_GameObjectCommandEvent_Type_
+  commentId: Overload:DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.Type
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.Type
+  nameWithType: GameObjectCommandEvent.Type
 - uid: DarkStar.Api.Engine.Events.Engine
   name: DarkStar.Api.Engine.Events.Engine
   href: api/DarkStar.Api.Engine.Events.Engine.html
@@ -2950,15 +3467,15 @@ references:
   fullName.vb: DarkStar.Api.Engine.Events.Players.PlayerLoggedEvent.New()
   nameWithType: PlayerLoggedEvent.PlayerLoggedEvent()
   nameWithType.vb: PlayerLoggedEvent.New()
-- uid: DarkStar.Api.Engine.Events.Players.PlayerLoggedEvent.#ctor(System.String,System.Guid,System.String)
-  name: PlayerLoggedEvent(string, Guid, string)
-  href: api/DarkStar.Api.Engine.Events.Players.PlayerLoggedEvent.html#DarkStar_Api_Engine_Events_Players_PlayerLoggedEvent__ctor_System_String_System_Guid_System_String_
-  commentId: M:DarkStar.Api.Engine.Events.Players.PlayerLoggedEvent.#ctor(System.String,System.Guid,System.String)
-  name.vb: New(String, Guid, String)
-  fullName: DarkStar.Api.Engine.Events.Players.PlayerLoggedEvent.PlayerLoggedEvent(string, System.Guid, string)
-  fullName.vb: DarkStar.Api.Engine.Events.Players.PlayerLoggedEvent.New(String, System.Guid, String)
-  nameWithType: PlayerLoggedEvent.PlayerLoggedEvent(string, Guid, string)
-  nameWithType.vb: PlayerLoggedEvent.New(String, Guid, String)
+- uid: DarkStar.Api.Engine.Events.Players.PlayerLoggedEvent.#ctor(System.String,System.Guid,System.String,DarkStar.Network.Protocol.Messages.Common.PointPosition)
+  name: PlayerLoggedEvent(string, Guid, string, PointPosition)
+  href: api/DarkStar.Api.Engine.Events.Players.PlayerLoggedEvent.html#DarkStar_Api_Engine_Events_Players_PlayerLoggedEvent__ctor_System_String_System_Guid_System_String_DarkStar_Network_Protocol_Messages_Common_PointPosition_
+  commentId: M:DarkStar.Api.Engine.Events.Players.PlayerLoggedEvent.#ctor(System.String,System.Guid,System.String,DarkStar.Network.Protocol.Messages.Common.PointPosition)
+  name.vb: New(String, Guid, String, PointPosition)
+  fullName: DarkStar.Api.Engine.Events.Players.PlayerLoggedEvent.PlayerLoggedEvent(string, System.Guid, string, DarkStar.Network.Protocol.Messages.Common.PointPosition)
+  fullName.vb: DarkStar.Api.Engine.Events.Players.PlayerLoggedEvent.New(String, System.Guid, String, DarkStar.Network.Protocol.Messages.Common.PointPosition)
+  nameWithType: PlayerLoggedEvent.PlayerLoggedEvent(string, Guid, string, PointPosition)
+  nameWithType.vb: PlayerLoggedEvent.New(String, Guid, String, PointPosition)
 - uid: DarkStar.Api.Engine.Events.Players.PlayerLoggedEvent.#ctor*
   name: PlayerLoggedEvent
   href: api/DarkStar.Api.Engine.Events.Players.PlayerLoggedEvent.html#DarkStar_Api_Engine_Events_Players_PlayerLoggedEvent__ctor_
@@ -2995,6 +3512,19 @@ references:
   isSpec: "True"
   fullName: DarkStar.Api.Engine.Events.Players.PlayerLoggedEvent.PlayerId
   nameWithType: PlayerLoggedEvent.PlayerId
+- uid: DarkStar.Api.Engine.Events.Players.PlayerLoggedEvent.Position
+  name: Position
+  href: api/DarkStar.Api.Engine.Events.Players.PlayerLoggedEvent.html#DarkStar_Api_Engine_Events_Players_PlayerLoggedEvent_Position
+  commentId: P:DarkStar.Api.Engine.Events.Players.PlayerLoggedEvent.Position
+  fullName: DarkStar.Api.Engine.Events.Players.PlayerLoggedEvent.Position
+  nameWithType: PlayerLoggedEvent.Position
+- uid: DarkStar.Api.Engine.Events.Players.PlayerLoggedEvent.Position*
+  name: Position
+  href: api/DarkStar.Api.Engine.Events.Players.PlayerLoggedEvent.html#DarkStar_Api_Engine_Events_Players_PlayerLoggedEvent_Position_
+  commentId: Overload:DarkStar.Api.Engine.Events.Players.PlayerLoggedEvent.Position
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Events.Players.PlayerLoggedEvent.Position
+  nameWithType: PlayerLoggedEvent.Position
 - uid: DarkStar.Api.Engine.Events.Players.PlayerLoggedEvent.SessionId
   name: SessionId
   href: api/DarkStar.Api.Engine.Events.Players.PlayerLoggedEvent.html#DarkStar_Api_Engine_Events_Players_PlayerLoggedEvent_SessionId
@@ -3716,6 +4246,22 @@ references:
   isSpec: "True"
   fullName: DarkStar.Api.Engine.Interfaces.Services.IBlueprintService.AddMapGenerator
   nameWithType: IBlueprintService.AddMapGenerator
+- uid: DarkStar.Api.Engine.Interfaces.Services.IBlueprintService.AddMapStrategy(DarkStar.Api.World.Types.Map.MapType,System.Func{DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext,DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext})
+  name: AddMapStrategy(MapType, Func<BlueprintMapInfoContext, BlueprintMapInfoContext>)
+  href: api/DarkStar.Api.Engine.Interfaces.Services.IBlueprintService.html#DarkStar_Api_Engine_Interfaces_Services_IBlueprintService_AddMapStrategy_DarkStar_Api_World_Types_Map_MapType_System_Func_DarkStar_Api_Engine_Data_Blueprint_BlueprintMapInfoContext_DarkStar_Api_Engine_Data_Blueprint_BlueprintMapInfoContext__
+  commentId: M:DarkStar.Api.Engine.Interfaces.Services.IBlueprintService.AddMapStrategy(DarkStar.Api.World.Types.Map.MapType,System.Func{DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext,DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext})
+  name.vb: AddMapStrategy(MapType, Func(Of BlueprintMapInfoContext, BlueprintMapInfoContext))
+  fullName: DarkStar.Api.Engine.Interfaces.Services.IBlueprintService.AddMapStrategy(DarkStar.Api.World.Types.Map.MapType, System.Func<DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext, DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext>)
+  fullName.vb: DarkStar.Api.Engine.Interfaces.Services.IBlueprintService.AddMapStrategy(DarkStar.Api.World.Types.Map.MapType, System.Func(Of DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext, DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext))
+  nameWithType: IBlueprintService.AddMapStrategy(MapType, Func<BlueprintMapInfoContext, BlueprintMapInfoContext>)
+  nameWithType.vb: IBlueprintService.AddMapStrategy(MapType, Func(Of BlueprintMapInfoContext, BlueprintMapInfoContext))
+- uid: DarkStar.Api.Engine.Interfaces.Services.IBlueprintService.AddMapStrategy*
+  name: AddMapStrategy
+  href: api/DarkStar.Api.Engine.Interfaces.Services.IBlueprintService.html#DarkStar_Api_Engine_Interfaces_Services_IBlueprintService_AddMapStrategy_
+  commentId: Overload:DarkStar.Api.Engine.Interfaces.Services.IBlueprintService.AddMapStrategy
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Interfaces.Services.IBlueprintService.AddMapStrategy
+  nameWithType: IBlueprintService.AddMapStrategy
 - uid: DarkStar.Api.Engine.Interfaces.Services.IBlueprintService.GenerateNpcEntityAsync(DarkStar.Api.World.Types.Npc.NpcType,DarkStar.Api.World.Types.Npc.NpcSubType,System.Int32)
   name: GenerateNpcEntityAsync(NpcType, NpcSubType, int)
   href: api/DarkStar.Api.Engine.Interfaces.Services.IBlueprintService.html#DarkStar_Api_Engine_Interfaces_Services_IBlueprintService_GenerateNpcEntityAsync_DarkStar_Api_World_Types_Npc_NpcType_DarkStar_Api_World_Types_Npc_NpcSubType_System_Int32_
@@ -3767,15 +4313,28 @@ references:
   isSpec: "True"
   fullName: DarkStar.Api.Engine.Interfaces.Services.IBlueprintService.GenerateWorldGameObjectAsync
   nameWithType: IBlueprintService.GenerateWorldGameObjectAsync
-- uid: DarkStar.Api.Engine.Interfaces.Services.IBlueprintService.GetMapGenerator(System.String,DarkStar.Api.World.Types.Map.MapType)
-  name: GetMapGenerator(string, MapType)
-  href: api/DarkStar.Api.Engine.Interfaces.Services.IBlueprintService.html#DarkStar_Api_Engine_Interfaces_Services_IBlueprintService_GetMapGenerator_System_String_DarkStar_Api_World_Types_Map_MapType_
-  commentId: M:DarkStar.Api.Engine.Interfaces.Services.IBlueprintService.GetMapGenerator(System.String,DarkStar.Api.World.Types.Map.MapType)
-  name.vb: GetMapGenerator(String, MapType)
-  fullName: DarkStar.Api.Engine.Interfaces.Services.IBlueprintService.GetMapGenerator(string, DarkStar.Api.World.Types.Map.MapType)
-  fullName.vb: DarkStar.Api.Engine.Interfaces.Services.IBlueprintService.GetMapGenerator(String, DarkStar.Api.World.Types.Map.MapType)
-  nameWithType: IBlueprintService.GetMapGenerator(string, MapType)
-  nameWithType.vb: IBlueprintService.GetMapGenerator(String, MapType)
+- uid: DarkStar.Api.Engine.Interfaces.Services.IBlueprintService.GetMapFiller(System.String,DarkStar.Api.World.Types.Map.MapType)
+  name: GetMapFiller(string, MapType)
+  href: api/DarkStar.Api.Engine.Interfaces.Services.IBlueprintService.html#DarkStar_Api_Engine_Interfaces_Services_IBlueprintService_GetMapFiller_System_String_DarkStar_Api_World_Types_Map_MapType_
+  commentId: M:DarkStar.Api.Engine.Interfaces.Services.IBlueprintService.GetMapFiller(System.String,DarkStar.Api.World.Types.Map.MapType)
+  name.vb: GetMapFiller(String, MapType)
+  fullName: DarkStar.Api.Engine.Interfaces.Services.IBlueprintService.GetMapFiller(string, DarkStar.Api.World.Types.Map.MapType)
+  fullName.vb: DarkStar.Api.Engine.Interfaces.Services.IBlueprintService.GetMapFiller(String, DarkStar.Api.World.Types.Map.MapType)
+  nameWithType: IBlueprintService.GetMapFiller(string, MapType)
+  nameWithType.vb: IBlueprintService.GetMapFiller(String, MapType)
+- uid: DarkStar.Api.Engine.Interfaces.Services.IBlueprintService.GetMapFiller*
+  name: GetMapFiller
+  href: api/DarkStar.Api.Engine.Interfaces.Services.IBlueprintService.html#DarkStar_Api_Engine_Interfaces_Services_IBlueprintService_GetMapFiller_
+  commentId: Overload:DarkStar.Api.Engine.Interfaces.Services.IBlueprintService.GetMapFiller
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Interfaces.Services.IBlueprintService.GetMapFiller
+  nameWithType: IBlueprintService.GetMapFiller
+- uid: DarkStar.Api.Engine.Interfaces.Services.IBlueprintService.GetMapGenerator(DarkStar.Api.World.Types.Map.MapType)
+  name: GetMapGenerator(MapType)
+  href: api/DarkStar.Api.Engine.Interfaces.Services.IBlueprintService.html#DarkStar_Api_Engine_Interfaces_Services_IBlueprintService_GetMapGenerator_DarkStar_Api_World_Types_Map_MapType_
+  commentId: M:DarkStar.Api.Engine.Interfaces.Services.IBlueprintService.GetMapGenerator(DarkStar.Api.World.Types.Map.MapType)
+  fullName: DarkStar.Api.Engine.Interfaces.Services.IBlueprintService.GetMapGenerator(DarkStar.Api.World.Types.Map.MapType)
+  nameWithType: IBlueprintService.GetMapGenerator(MapType)
 - uid: DarkStar.Api.Engine.Interfaces.Services.IBlueprintService.GetMapGenerator*
   name: GetMapGenerator
   href: api/DarkStar.Api.Engine.Interfaces.Services.IBlueprintService.html#DarkStar_Api_Engine_Interfaces_Services_IBlueprintService_GetMapGenerator_
@@ -4376,6 +4935,19 @@ references:
   isSpec: "True"
   fullName: DarkStar.Api.Engine.Interfaces.Services.IScriptEngineService.Functions
   nameWithType: IScriptEngineService.Functions
+- uid: DarkStar.Api.Engine.Interfaces.Services.IScriptEngineService.GenerateTypeDefinitionsAsync
+  name: GenerateTypeDefinitionsAsync()
+  href: api/DarkStar.Api.Engine.Interfaces.Services.IScriptEngineService.html#DarkStar_Api_Engine_Interfaces_Services_IScriptEngineService_GenerateTypeDefinitionsAsync
+  commentId: M:DarkStar.Api.Engine.Interfaces.Services.IScriptEngineService.GenerateTypeDefinitionsAsync
+  fullName: DarkStar.Api.Engine.Interfaces.Services.IScriptEngineService.GenerateTypeDefinitionsAsync()
+  nameWithType: IScriptEngineService.GenerateTypeDefinitionsAsync()
+- uid: DarkStar.Api.Engine.Interfaces.Services.IScriptEngineService.GenerateTypeDefinitionsAsync*
+  name: GenerateTypeDefinitionsAsync
+  href: api/DarkStar.Api.Engine.Interfaces.Services.IScriptEngineService.html#DarkStar_Api_Engine_Interfaces_Services_IScriptEngineService_GenerateTypeDefinitionsAsync_
+  commentId: Overload:DarkStar.Api.Engine.Interfaces.Services.IScriptEngineService.GenerateTypeDefinitionsAsync
+  isSpec: "True"
+  fullName: DarkStar.Api.Engine.Interfaces.Services.IScriptEngineService.GenerateTypeDefinitionsAsync
+  nameWithType: IScriptEngineService.GenerateTypeDefinitionsAsync
 - uid: DarkStar.Api.Engine.Interfaces.Services.ISeedService
   name: ISeedService
   href: api/DarkStar.Api.Engine.Interfaces.Services.ISeedService.html
@@ -5941,6 +6513,42 @@ references:
   isSpec: "True"
   fullName: DarkStar.Api.Engine.Map.Entities.WorldGameObject.Type
   nameWithType: WorldGameObject.Type
+- uid: DarkStar.Api.Engine.Map.Enums
+  name: DarkStar.Api.Engine.Map.Enums
+  href: api/DarkStar.Api.Engine.Map.Enums.html
+  commentId: N:DarkStar.Api.Engine.Map.Enums
+  fullName: DarkStar.Api.Engine.Map.Enums
+  nameWithType: DarkStar.Api.Engine.Map.Enums
+- uid: DarkStar.Api.Engine.Map.Enums.MapGeneratorType
+  name: MapGeneratorType
+  href: api/DarkStar.Api.Engine.Map.Enums.MapGeneratorType.html
+  commentId: T:DarkStar.Api.Engine.Map.Enums.MapGeneratorType
+  fullName: DarkStar.Api.Engine.Map.Enums.MapGeneratorType
+  nameWithType: MapGeneratorType
+- uid: DarkStar.Api.Engine.Map.Enums.MapGeneratorType.BasicRandomRooms
+  name: BasicRandomRooms
+  href: api/DarkStar.Api.Engine.Map.Enums.MapGeneratorType.html#DarkStar_Api_Engine_Map_Enums_MapGeneratorType_BasicRandomRooms
+  commentId: F:DarkStar.Api.Engine.Map.Enums.MapGeneratorType.BasicRandomRooms
+  fullName: DarkStar.Api.Engine.Map.Enums.MapGeneratorType.BasicRandomRooms
+  nameWithType: MapGeneratorType.BasicRandomRooms
+- uid: DarkStar.Api.Engine.Map.Enums.MapGeneratorType.CellularAutomata
+  name: CellularAutomata
+  href: api/DarkStar.Api.Engine.Map.Enums.MapGeneratorType.html#DarkStar_Api_Engine_Map_Enums_MapGeneratorType_CellularAutomata
+  commentId: F:DarkStar.Api.Engine.Map.Enums.MapGeneratorType.CellularAutomata
+  fullName: DarkStar.Api.Engine.Map.Enums.MapGeneratorType.CellularAutomata
+  nameWithType: MapGeneratorType.CellularAutomata
+- uid: DarkStar.Api.Engine.Map.Enums.MapGeneratorType.Dungeon
+  name: Dungeon
+  href: api/DarkStar.Api.Engine.Map.Enums.MapGeneratorType.html#DarkStar_Api_Engine_Map_Enums_MapGeneratorType_Dungeon
+  commentId: F:DarkStar.Api.Engine.Map.Enums.MapGeneratorType.Dungeon
+  fullName: DarkStar.Api.Engine.Map.Enums.MapGeneratorType.Dungeon
+  nameWithType: MapGeneratorType.Dungeon
+- uid: DarkStar.Api.Engine.Map.Enums.MapGeneratorType.RectangleMap
+  name: RectangleMap
+  href: api/DarkStar.Api.Engine.Map.Enums.MapGeneratorType.html#DarkStar_Api_Engine_Map_Enums_MapGeneratorType_RectangleMap
+  commentId: F:DarkStar.Api.Engine.Map.Enums.MapGeneratorType.RectangleMap
+  fullName: DarkStar.Api.Engine.Map.Enums.MapGeneratorType.RectangleMap
+  nameWithType: MapGeneratorType.RectangleMap
 - uid: DarkStar.Api.Engine.MessageListeners
   name: DarkStar.Api.Engine.MessageListeners
   href: api/DarkStar.Api.Engine.MessageListeners.html
@@ -9609,6 +10217,174 @@ references:
   isSpec: "True"
   fullName: DarkStar.Client.Models.PlayerSelectEntity.Name
   nameWithType: PlayerSelectEntity.Name
+- uid: DarkStar.Client.Models.PlayerStatsObject
+  name: PlayerStatsObject
+  href: api/DarkStar.Client.Models.PlayerStatsObject.html
+  commentId: T:DarkStar.Client.Models.PlayerStatsObject
+  fullName: DarkStar.Client.Models.PlayerStatsObject
+  nameWithType: PlayerStatsObject
+- uid: DarkStar.Client.Models.PlayerStatsObject.Dexterity
+  name: Dexterity
+  href: api/DarkStar.Client.Models.PlayerStatsObject.html#DarkStar_Client_Models_PlayerStatsObject_Dexterity
+  commentId: P:DarkStar.Client.Models.PlayerStatsObject.Dexterity
+  fullName: DarkStar.Client.Models.PlayerStatsObject.Dexterity
+  nameWithType: PlayerStatsObject.Dexterity
+- uid: DarkStar.Client.Models.PlayerStatsObject.Dexterity*
+  name: Dexterity
+  href: api/DarkStar.Client.Models.PlayerStatsObject.html#DarkStar_Client_Models_PlayerStatsObject_Dexterity_
+  commentId: Overload:DarkStar.Client.Models.PlayerStatsObject.Dexterity
+  isSpec: "True"
+  fullName: DarkStar.Client.Models.PlayerStatsObject.Dexterity
+  nameWithType: PlayerStatsObject.Dexterity
+- uid: DarkStar.Client.Models.PlayerStatsObject.Experience
+  name: Experience
+  href: api/DarkStar.Client.Models.PlayerStatsObject.html#DarkStar_Client_Models_PlayerStatsObject_Experience
+  commentId: P:DarkStar.Client.Models.PlayerStatsObject.Experience
+  fullName: DarkStar.Client.Models.PlayerStatsObject.Experience
+  nameWithType: PlayerStatsObject.Experience
+- uid: DarkStar.Client.Models.PlayerStatsObject.Experience*
+  name: Experience
+  href: api/DarkStar.Client.Models.PlayerStatsObject.html#DarkStar_Client_Models_PlayerStatsObject_Experience_
+  commentId: Overload:DarkStar.Client.Models.PlayerStatsObject.Experience
+  isSpec: "True"
+  fullName: DarkStar.Client.Models.PlayerStatsObject.Experience
+  nameWithType: PlayerStatsObject.Experience
+- uid: DarkStar.Client.Models.PlayerStatsObject.Health
+  name: Health
+  href: api/DarkStar.Client.Models.PlayerStatsObject.html#DarkStar_Client_Models_PlayerStatsObject_Health
+  commentId: P:DarkStar.Client.Models.PlayerStatsObject.Health
+  fullName: DarkStar.Client.Models.PlayerStatsObject.Health
+  nameWithType: PlayerStatsObject.Health
+- uid: DarkStar.Client.Models.PlayerStatsObject.Health*
+  name: Health
+  href: api/DarkStar.Client.Models.PlayerStatsObject.html#DarkStar_Client_Models_PlayerStatsObject_Health_
+  commentId: Overload:DarkStar.Client.Models.PlayerStatsObject.Health
+  isSpec: "True"
+  fullName: DarkStar.Client.Models.PlayerStatsObject.Health
+  nameWithType: PlayerStatsObject.Health
+- uid: DarkStar.Client.Models.PlayerStatsObject.Intelligence
+  name: Intelligence
+  href: api/DarkStar.Client.Models.PlayerStatsObject.html#DarkStar_Client_Models_PlayerStatsObject_Intelligence
+  commentId: P:DarkStar.Client.Models.PlayerStatsObject.Intelligence
+  fullName: DarkStar.Client.Models.PlayerStatsObject.Intelligence
+  nameWithType: PlayerStatsObject.Intelligence
+- uid: DarkStar.Client.Models.PlayerStatsObject.Intelligence*
+  name: Intelligence
+  href: api/DarkStar.Client.Models.PlayerStatsObject.html#DarkStar_Client_Models_PlayerStatsObject_Intelligence_
+  commentId: Overload:DarkStar.Client.Models.PlayerStatsObject.Intelligence
+  isSpec: "True"
+  fullName: DarkStar.Client.Models.PlayerStatsObject.Intelligence
+  nameWithType: PlayerStatsObject.Intelligence
+- uid: DarkStar.Client.Models.PlayerStatsObject.Level
+  name: Level
+  href: api/DarkStar.Client.Models.PlayerStatsObject.html#DarkStar_Client_Models_PlayerStatsObject_Level
+  commentId: P:DarkStar.Client.Models.PlayerStatsObject.Level
+  fullName: DarkStar.Client.Models.PlayerStatsObject.Level
+  nameWithType: PlayerStatsObject.Level
+- uid: DarkStar.Client.Models.PlayerStatsObject.Level*
+  name: Level
+  href: api/DarkStar.Client.Models.PlayerStatsObject.html#DarkStar_Client_Models_PlayerStatsObject_Level_
+  commentId: Overload:DarkStar.Client.Models.PlayerStatsObject.Level
+  isSpec: "True"
+  fullName: DarkStar.Client.Models.PlayerStatsObject.Level
+  nameWithType: PlayerStatsObject.Level
+- uid: DarkStar.Client.Models.PlayerStatsObject.Luck
+  name: Luck
+  href: api/DarkStar.Client.Models.PlayerStatsObject.html#DarkStar_Client_Models_PlayerStatsObject_Luck
+  commentId: P:DarkStar.Client.Models.PlayerStatsObject.Luck
+  fullName: DarkStar.Client.Models.PlayerStatsObject.Luck
+  nameWithType: PlayerStatsObject.Luck
+- uid: DarkStar.Client.Models.PlayerStatsObject.Luck*
+  name: Luck
+  href: api/DarkStar.Client.Models.PlayerStatsObject.html#DarkStar_Client_Models_PlayerStatsObject_Luck_
+  commentId: Overload:DarkStar.Client.Models.PlayerStatsObject.Luck
+  isSpec: "True"
+  fullName: DarkStar.Client.Models.PlayerStatsObject.Luck
+  nameWithType: PlayerStatsObject.Luck
+- uid: DarkStar.Client.Models.PlayerStatsObject.Mana
+  name: Mana
+  href: api/DarkStar.Client.Models.PlayerStatsObject.html#DarkStar_Client_Models_PlayerStatsObject_Mana
+  commentId: P:DarkStar.Client.Models.PlayerStatsObject.Mana
+  fullName: DarkStar.Client.Models.PlayerStatsObject.Mana
+  nameWithType: PlayerStatsObject.Mana
+- uid: DarkStar.Client.Models.PlayerStatsObject.Mana*
+  name: Mana
+  href: api/DarkStar.Client.Models.PlayerStatsObject.html#DarkStar_Client_Models_PlayerStatsObject_Mana_
+  commentId: Overload:DarkStar.Client.Models.PlayerStatsObject.Mana
+  isSpec: "True"
+  fullName: DarkStar.Client.Models.PlayerStatsObject.Mana
+  nameWithType: PlayerStatsObject.Mana
+- uid: DarkStar.Client.Models.PlayerStatsObject.MaxHealth
+  name: MaxHealth
+  href: api/DarkStar.Client.Models.PlayerStatsObject.html#DarkStar_Client_Models_PlayerStatsObject_MaxHealth
+  commentId: P:DarkStar.Client.Models.PlayerStatsObject.MaxHealth
+  fullName: DarkStar.Client.Models.PlayerStatsObject.MaxHealth
+  nameWithType: PlayerStatsObject.MaxHealth
+- uid: DarkStar.Client.Models.PlayerStatsObject.MaxHealth*
+  name: MaxHealth
+  href: api/DarkStar.Client.Models.PlayerStatsObject.html#DarkStar_Client_Models_PlayerStatsObject_MaxHealth_
+  commentId: Overload:DarkStar.Client.Models.PlayerStatsObject.MaxHealth
+  isSpec: "True"
+  fullName: DarkStar.Client.Models.PlayerStatsObject.MaxHealth
+  nameWithType: PlayerStatsObject.MaxHealth
+- uid: DarkStar.Client.Models.PlayerStatsObject.MaxMana
+  name: MaxMana
+  href: api/DarkStar.Client.Models.PlayerStatsObject.html#DarkStar_Client_Models_PlayerStatsObject_MaxMana
+  commentId: P:DarkStar.Client.Models.PlayerStatsObject.MaxMana
+  fullName: DarkStar.Client.Models.PlayerStatsObject.MaxMana
+  nameWithType: PlayerStatsObject.MaxMana
+- uid: DarkStar.Client.Models.PlayerStatsObject.MaxMana*
+  name: MaxMana
+  href: api/DarkStar.Client.Models.PlayerStatsObject.html#DarkStar_Client_Models_PlayerStatsObject_MaxMana_
+  commentId: Overload:DarkStar.Client.Models.PlayerStatsObject.MaxMana
+  isSpec: "True"
+  fullName: DarkStar.Client.Models.PlayerStatsObject.MaxMana
+  nameWithType: PlayerStatsObject.MaxMana
+- uid: DarkStar.Client.Models.PlayerStatsObject.Strength
+  name: Strength
+  href: api/DarkStar.Client.Models.PlayerStatsObject.html#DarkStar_Client_Models_PlayerStatsObject_Strength
+  commentId: P:DarkStar.Client.Models.PlayerStatsObject.Strength
+  fullName: DarkStar.Client.Models.PlayerStatsObject.Strength
+  nameWithType: PlayerStatsObject.Strength
+- uid: DarkStar.Client.Models.PlayerStatsObject.Strength*
+  name: Strength
+  href: api/DarkStar.Client.Models.PlayerStatsObject.html#DarkStar_Client_Models_PlayerStatsObject_Strength_
+  commentId: Overload:DarkStar.Client.Models.PlayerStatsObject.Strength
+  isSpec: "True"
+  fullName: DarkStar.Client.Models.PlayerStatsObject.Strength
+  nameWithType: PlayerStatsObject.Strength
+- uid: DarkStar.Client.Models.TextMessageEntity
+  name: TextMessageEntity
+  href: api/DarkStar.Client.Models.TextMessageEntity.html
+  commentId: T:DarkStar.Client.Models.TextMessageEntity
+  fullName: DarkStar.Client.Models.TextMessageEntity
+  nameWithType: TextMessageEntity
+- uid: DarkStar.Client.Models.TextMessageEntity.Message
+  name: Message
+  href: api/DarkStar.Client.Models.TextMessageEntity.html#DarkStar_Client_Models_TextMessageEntity_Message
+  commentId: P:DarkStar.Client.Models.TextMessageEntity.Message
+  fullName: DarkStar.Client.Models.TextMessageEntity.Message
+  nameWithType: TextMessageEntity.Message
+- uid: DarkStar.Client.Models.TextMessageEntity.Message*
+  name: Message
+  href: api/DarkStar.Client.Models.TextMessageEntity.html#DarkStar_Client_Models_TextMessageEntity_Message_
+  commentId: Overload:DarkStar.Client.Models.TextMessageEntity.Message
+  isSpec: "True"
+  fullName: DarkStar.Client.Models.TextMessageEntity.Message
+  nameWithType: TextMessageEntity.Message
+- uid: DarkStar.Client.Models.TextMessageEntity.Name
+  name: Name
+  href: api/DarkStar.Client.Models.TextMessageEntity.html#DarkStar_Client_Models_TextMessageEntity_Name
+  commentId: P:DarkStar.Client.Models.TextMessageEntity.Name
+  fullName: DarkStar.Client.Models.TextMessageEntity.Name
+  nameWithType: TextMessageEntity.Name
+- uid: DarkStar.Client.Models.TextMessageEntity.Name*
+  name: Name
+  href: api/DarkStar.Client.Models.TextMessageEntity.html#DarkStar_Client_Models_TextMessageEntity_Name_
+  commentId: Overload:DarkStar.Client.Models.TextMessageEntity.Name
+  isSpec: "True"
+  fullName: DarkStar.Client.Models.TextMessageEntity.Name
+  nameWithType: TextMessageEntity.Name
 - uid: DarkStar.Client.Models.Tiles
   name: DarkStar.Client.Models.Tiles
   href: api/DarkStar.Client.Models.Tiles.html
@@ -9640,6 +10416,19 @@ references:
   fullName.vb: DarkStar.Client.Models.Tiles.Tile.New
   nameWithType: Tile.Tile
   nameWithType.vb: Tile.New
+- uid: DarkStar.Client.Models.Tiles.Tile.Alpha
+  name: Alpha
+  href: api/DarkStar.Client.Models.Tiles.Tile.html#DarkStar_Client_Models_Tiles_Tile_Alpha
+  commentId: P:DarkStar.Client.Models.Tiles.Tile.Alpha
+  fullName: DarkStar.Client.Models.Tiles.Tile.Alpha
+  nameWithType: Tile.Alpha
+- uid: DarkStar.Client.Models.Tiles.Tile.Alpha*
+  name: Alpha
+  href: api/DarkStar.Client.Models.Tiles.Tile.html#DarkStar_Client_Models_Tiles_Tile_Alpha_
+  commentId: Overload:DarkStar.Client.Models.Tiles.Tile.Alpha
+  isSpec: "True"
+  fullName: DarkStar.Client.Models.Tiles.Tile.Alpha
+  nameWithType: Tile.Alpha
 - uid: DarkStar.Client.Models.Tiles.Tile.Id
   name: Id
   href: api/DarkStar.Client.Models.Tiles.Tile.html#DarkStar_Client_Models_Tiles_Tile_Id
@@ -10047,6 +10836,19 @@ references:
   isSpec: "True"
   fullName: DarkStar.Client.PageViewModels.RenderPageViewModel.DispatchMouseWheel
   nameWithType: RenderPageViewModel.DispatchMouseWheel
+- uid: DarkStar.Client.PageViewModels.RenderPageViewModel.Messages
+  name: Messages
+  href: api/DarkStar.Client.PageViewModels.RenderPageViewModel.html#DarkStar_Client_PageViewModels_RenderPageViewModel_Messages
+  commentId: P:DarkStar.Client.PageViewModels.RenderPageViewModel.Messages
+  fullName: DarkStar.Client.PageViewModels.RenderPageViewModel.Messages
+  nameWithType: RenderPageViewModel.Messages
+- uid: DarkStar.Client.PageViewModels.RenderPageViewModel.Messages*
+  name: Messages
+  href: api/DarkStar.Client.PageViewModels.RenderPageViewModel.html#DarkStar_Client_PageViewModels_RenderPageViewModel_Messages_
+  commentId: Overload:DarkStar.Client.PageViewModels.RenderPageViewModel.Messages
+  isSpec: "True"
+  fullName: DarkStar.Client.PageViewModels.RenderPageViewModel.Messages
+  nameWithType: RenderPageViewModel.Messages
 - uid: DarkStar.Client.PageViewModels.RenderPageViewModel.MoveCharacter(System.String)
   name: MoveCharacter(string)
   href: api/DarkStar.Client.PageViewModels.RenderPageViewModel.html#DarkStar_Client_PageViewModels_RenderPageViewModel_MoveCharacter_System_String_
@@ -10115,6 +10917,32 @@ references:
   isSpec: "True"
   fullName: DarkStar.Client.PageViewModels.RenderPageViewModel.OnPlayerData
   nameWithType: RenderPageViewModel.OnPlayerData
+- uid: DarkStar.Client.PageViewModels.RenderPageViewModel.OnPlayerFovReceived(DarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage)
+  name: OnPlayerFovReceived(IDarkStarNetworkMessage)
+  href: api/DarkStar.Client.PageViewModels.RenderPageViewModel.html#DarkStar_Client_PageViewModels_RenderPageViewModel_OnPlayerFovReceived_DarkStar_Network_Protocol_Interfaces_Messages_IDarkStarNetworkMessage_
+  commentId: M:DarkStar.Client.PageViewModels.RenderPageViewModel.OnPlayerFovReceived(DarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage)
+  fullName: DarkStar.Client.PageViewModels.RenderPageViewModel.OnPlayerFovReceived(DarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage)
+  nameWithType: RenderPageViewModel.OnPlayerFovReceived(IDarkStarNetworkMessage)
+- uid: DarkStar.Client.PageViewModels.RenderPageViewModel.OnPlayerFovReceived*
+  name: OnPlayerFovReceived
+  href: api/DarkStar.Client.PageViewModels.RenderPageViewModel.html#DarkStar_Client_PageViewModels_RenderPageViewModel_OnPlayerFovReceived_
+  commentId: Overload:DarkStar.Client.PageViewModels.RenderPageViewModel.OnPlayerFovReceived
+  isSpec: "True"
+  fullName: DarkStar.Client.PageViewModels.RenderPageViewModel.OnPlayerFovReceived
+  nameWithType: RenderPageViewModel.OnPlayerFovReceived
+- uid: DarkStar.Client.PageViewModels.RenderPageViewModel.OnPlayerInventoryReceived(DarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage)
+  name: OnPlayerInventoryReceived(IDarkStarNetworkMessage)
+  href: api/DarkStar.Client.PageViewModels.RenderPageViewModel.html#DarkStar_Client_PageViewModels_RenderPageViewModel_OnPlayerInventoryReceived_DarkStar_Network_Protocol_Interfaces_Messages_IDarkStarNetworkMessage_
+  commentId: M:DarkStar.Client.PageViewModels.RenderPageViewModel.OnPlayerInventoryReceived(DarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage)
+  fullName: DarkStar.Client.PageViewModels.RenderPageViewModel.OnPlayerInventoryReceived(DarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage)
+  nameWithType: RenderPageViewModel.OnPlayerInventoryReceived(IDarkStarNetworkMessage)
+- uid: DarkStar.Client.PageViewModels.RenderPageViewModel.OnPlayerInventoryReceived*
+  name: OnPlayerInventoryReceived
+  href: api/DarkStar.Client.PageViewModels.RenderPageViewModel.html#DarkStar_Client_PageViewModels_RenderPageViewModel_OnPlayerInventoryReceived_
+  commentId: Overload:DarkStar.Client.PageViewModels.RenderPageViewModel.OnPlayerInventoryReceived
+  isSpec: "True"
+  fullName: DarkStar.Client.PageViewModels.RenderPageViewModel.OnPlayerInventoryReceived
+  nameWithType: RenderPageViewModel.OnPlayerInventoryReceived
 - uid: DarkStar.Client.PageViewModels.RenderPageViewModel.OnPlayerMoved(DarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage)
   name: OnPlayerMoved(IDarkStarNetworkMessage)
   href: api/DarkStar.Client.PageViewModels.RenderPageViewModel.html#DarkStar_Client_PageViewModels_RenderPageViewModel_OnPlayerMoved_DarkStar_Network_Protocol_Interfaces_Messages_IDarkStarNetworkMessage_
@@ -10128,6 +10956,32 @@ references:
   isSpec: "True"
   fullName: DarkStar.Client.PageViewModels.RenderPageViewModel.OnPlayerMoved
   nameWithType: RenderPageViewModel.OnPlayerMoved
+- uid: DarkStar.Client.PageViewModels.RenderPageViewModel.OnPlayerStatReceived(DarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage)
+  name: OnPlayerStatReceived(IDarkStarNetworkMessage)
+  href: api/DarkStar.Client.PageViewModels.RenderPageViewModel.html#DarkStar_Client_PageViewModels_RenderPageViewModel_OnPlayerStatReceived_DarkStar_Network_Protocol_Interfaces_Messages_IDarkStarNetworkMessage_
+  commentId: M:DarkStar.Client.PageViewModels.RenderPageViewModel.OnPlayerStatReceived(DarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage)
+  fullName: DarkStar.Client.PageViewModels.RenderPageViewModel.OnPlayerStatReceived(DarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage)
+  nameWithType: RenderPageViewModel.OnPlayerStatReceived(IDarkStarNetworkMessage)
+- uid: DarkStar.Client.PageViewModels.RenderPageViewModel.OnPlayerStatReceived*
+  name: OnPlayerStatReceived
+  href: api/DarkStar.Client.PageViewModels.RenderPageViewModel.html#DarkStar_Client_PageViewModels_RenderPageViewModel_OnPlayerStatReceived_
+  commentId: Overload:DarkStar.Client.PageViewModels.RenderPageViewModel.OnPlayerStatReceived
+  isSpec: "True"
+  fullName: DarkStar.Client.PageViewModels.RenderPageViewModel.OnPlayerStatReceived
+  nameWithType: RenderPageViewModel.OnPlayerStatReceived
+- uid: DarkStar.Client.PageViewModels.RenderPageViewModel.OnWorldMessage(DarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage)
+  name: OnWorldMessage(IDarkStarNetworkMessage)
+  href: api/DarkStar.Client.PageViewModels.RenderPageViewModel.html#DarkStar_Client_PageViewModels_RenderPageViewModel_OnWorldMessage_DarkStar_Network_Protocol_Interfaces_Messages_IDarkStarNetworkMessage_
+  commentId: M:DarkStar.Client.PageViewModels.RenderPageViewModel.OnWorldMessage(DarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage)
+  fullName: DarkStar.Client.PageViewModels.RenderPageViewModel.OnWorldMessage(DarkStar.Network.Protocol.Interfaces.Messages.IDarkStarNetworkMessage)
+  nameWithType: RenderPageViewModel.OnWorldMessage(IDarkStarNetworkMessage)
+- uid: DarkStar.Client.PageViewModels.RenderPageViewModel.OnWorldMessage*
+  name: OnWorldMessage
+  href: api/DarkStar.Client.PageViewModels.RenderPageViewModel.html#DarkStar_Client_PageViewModels_RenderPageViewModel_OnWorldMessage_
+  commentId: Overload:DarkStar.Client.PageViewModels.RenderPageViewModel.OnWorldMessage
+  isSpec: "True"
+  fullName: DarkStar.Client.PageViewModels.RenderPageViewModel.OnWorldMessage
+  nameWithType: RenderPageViewModel.OnWorldMessage
 - uid: DarkStar.Client.PageViewModels.RenderPageViewModel.PerformAction
   name: PerformAction()
   href: api/DarkStar.Client.PageViewModels.RenderPageViewModel.html#DarkStar_Client_PageViewModels_RenderPageViewModel_PerformAction
@@ -10154,6 +11008,19 @@ references:
   isSpec: "True"
   fullName: DarkStar.Client.PageViewModels.RenderPageViewModel.PerformActionCommand
   nameWithType: RenderPageViewModel.PerformActionCommand
+- uid: DarkStar.Client.PageViewModels.RenderPageViewModel.PlayerStats
+  name: PlayerStats
+  href: api/DarkStar.Client.PageViewModels.RenderPageViewModel.html#DarkStar_Client_PageViewModels_RenderPageViewModel_PlayerStats
+  commentId: P:DarkStar.Client.PageViewModels.RenderPageViewModel.PlayerStats
+  fullName: DarkStar.Client.PageViewModels.RenderPageViewModel.PlayerStats
+  nameWithType: RenderPageViewModel.PlayerStats
+- uid: DarkStar.Client.PageViewModels.RenderPageViewModel.PlayerStats*
+  name: PlayerStats
+  href: api/DarkStar.Client.PageViewModels.RenderPageViewModel.html#DarkStar_Client_PageViewModels_RenderPageViewModel_PlayerStats_
+  commentId: Overload:DarkStar.Client.PageViewModels.RenderPageViewModel.PlayerStats
+  isSpec: "True"
+  fullName: DarkStar.Client.PageViewModels.RenderPageViewModel.PlayerStats
+  nameWithType: RenderPageViewModel.PlayerStats
 - uid: DarkStar.Client.PageViewModels.RenderPageViewModel.SetupRenderControl(DarkStar.Client.Controls.RenderControl)
   name: SetupRenderControl(RenderControl)
   href: api/DarkStar.Client.PageViewModels.RenderPageViewModel.html#DarkStar_Client_PageViewModels_RenderPageViewModel_SetupRenderControl_DarkStar_Client_Controls_RenderControl_
@@ -10623,6 +11490,22 @@ references:
   isSpec: "True"
   fullName: DarkStar.Client.Services.GraphicEngineRender.Translation
   nameWithType: GraphicEngineRender.Translation
+- uid: DarkStar.Client.Services.GraphicEngineRender.UpdateVisiblePositions(System.Collections.Generic.List{DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition})
+  name: UpdateVisiblePositions(List<VisibilityPointPosition>)
+  href: api/DarkStar.Client.Services.GraphicEngineRender.html#DarkStar_Client_Services_GraphicEngineRender_UpdateVisiblePositions_System_Collections_Generic_List_DarkStar_Network_Protocol_Messages_Common_VisibilityPointPosition__
+  commentId: M:DarkStar.Client.Services.GraphicEngineRender.UpdateVisiblePositions(System.Collections.Generic.List{DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition})
+  name.vb: UpdateVisiblePositions(List(Of VisibilityPointPosition))
+  fullName: DarkStar.Client.Services.GraphicEngineRender.UpdateVisiblePositions(System.Collections.Generic.List<DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition>)
+  fullName.vb: DarkStar.Client.Services.GraphicEngineRender.UpdateVisiblePositions(System.Collections.Generic.List(Of DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition))
+  nameWithType: GraphicEngineRender.UpdateVisiblePositions(List<VisibilityPointPosition>)
+  nameWithType.vb: GraphicEngineRender.UpdateVisiblePositions(List(Of VisibilityPointPosition))
+- uid: DarkStar.Client.Services.GraphicEngineRender.UpdateVisiblePositions*
+  name: UpdateVisiblePositions
+  href: api/DarkStar.Client.Services.GraphicEngineRender.html#DarkStar_Client_Services_GraphicEngineRender_UpdateVisiblePositions_
+  commentId: Overload:DarkStar.Client.Services.GraphicEngineRender.UpdateVisiblePositions
+  isSpec: "True"
+  fullName: DarkStar.Client.Services.GraphicEngineRender.UpdateVisiblePositions
+  nameWithType: GraphicEngineRender.UpdateVisiblePositions
 - uid: DarkStar.Client.Services.ServiceContext
   name: ServiceContext
   href: api/DarkStar.Client.Services.ServiceContext.html
@@ -13282,6 +14165,175 @@ references:
   commentId: T:DarkStar.Engine.Attributes.ScriptEngine.ScriptModuleAttribute
   fullName: DarkStar.Engine.Attributes.ScriptEngine.ScriptModuleAttribute
   nameWithType: ScriptModuleAttribute
+- uid: DarkStar.Engine.CodeGenerator
+  name: DarkStar.Engine.CodeGenerator
+  href: api/DarkStar.Engine.CodeGenerator.html
+  commentId: N:DarkStar.Engine.CodeGenerator
+  fullName: DarkStar.Engine.CodeGenerator
+  nameWithType: DarkStar.Engine.CodeGenerator
+- uid: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator
+  name: TypeScriptCodeGenerator
+  href: api/DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.html
+  commentId: T:DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator
+  fullName: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator
+  nameWithType: TypeScriptCodeGenerator
+- uid: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateFunctionComment(DarkStar.Api.Engine.Data.ScriptEngine.ScriptFunctionDescriptor)
+  name: GenerateFunctionComment(ScriptFunctionDescriptor)
+  href: api/DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.html#DarkStar_Engine_CodeGenerator_TypeScriptCodeGenerator_GenerateFunctionComment_DarkStar_Api_Engine_Data_ScriptEngine_ScriptFunctionDescriptor_
+  commentId: M:DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateFunctionComment(DarkStar.Api.Engine.Data.ScriptEngine.ScriptFunctionDescriptor)
+  fullName: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateFunctionComment(DarkStar.Api.Engine.Data.ScriptEngine.ScriptFunctionDescriptor)
+  nameWithType: TypeScriptCodeGenerator.GenerateFunctionComment(ScriptFunctionDescriptor)
+- uid: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateFunctionComment*
+  name: GenerateFunctionComment
+  href: api/DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.html#DarkStar_Engine_CodeGenerator_TypeScriptCodeGenerator_GenerateFunctionComment_
+  commentId: Overload:DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateFunctionComment
+  isSpec: "True"
+  fullName: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateFunctionComment
+  nameWithType: TypeScriptCodeGenerator.GenerateFunctionComment
+- uid: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateInterface(System.Type)
+  name: GenerateInterface(Type)
+  href: api/DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.html#DarkStar_Engine_CodeGenerator_TypeScriptCodeGenerator_GenerateInterface_System_Type_
+  commentId: M:DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateInterface(System.Type)
+  fullName: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateInterface(System.Type)
+  nameWithType: TypeScriptCodeGenerator.GenerateInterface(Type)
+- uid: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateInterface*
+  name: GenerateInterface
+  href: api/DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.html#DarkStar_Engine_CodeGenerator_TypeScriptCodeGenerator_GenerateInterface_
+  commentId: Overload:DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateInterface
+  isSpec: "True"
+  fullName: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateInterface
+  nameWithType: TypeScriptCodeGenerator.GenerateInterface
+- uid: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateInterfaces(System.Collections.Generic.List{System.Type})
+  name: GenerateInterfaces(List<Type>)
+  href: api/DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.html#DarkStar_Engine_CodeGenerator_TypeScriptCodeGenerator_GenerateInterfaces_System_Collections_Generic_List_System_Type__
+  commentId: M:DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateInterfaces(System.Collections.Generic.List{System.Type})
+  name.vb: GenerateInterfaces(List(Of Type))
+  fullName: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateInterfaces(System.Collections.Generic.List<System.Type>)
+  fullName.vb: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateInterfaces(System.Collections.Generic.List(Of System.Type))
+  nameWithType: TypeScriptCodeGenerator.GenerateInterfaces(List<Type>)
+  nameWithType.vb: TypeScriptCodeGenerator.GenerateInterfaces(List(Of Type))
+- uid: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateInterfaces*
+  name: GenerateInterfaces
+  href: api/DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.html#DarkStar_Engine_CodeGenerator_TypeScriptCodeGenerator_GenerateInterfaces_
+  commentId: Overload:DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateInterfaces
+  isSpec: "True"
+  fullName: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateInterfaces
+  nameWithType: TypeScriptCodeGenerator.GenerateInterfaces
+- uid: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateTypeDefinitionOfConstants(System.Collections.Generic.Dictionary{System.String,System.Object})
+  name: GenerateTypeDefinitionOfConstants(Dictionary<string, object>)
+  href: api/DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.html#DarkStar_Engine_CodeGenerator_TypeScriptCodeGenerator_GenerateTypeDefinitionOfConstants_System_Collections_Generic_Dictionary_System_String_System_Object__
+  commentId: M:DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateTypeDefinitionOfConstants(System.Collections.Generic.Dictionary{System.String,System.Object})
+  name.vb: GenerateTypeDefinitionOfConstants(Dictionary(Of String, Object))
+  fullName: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateTypeDefinitionOfConstants(System.Collections.Generic.Dictionary<string, object>)
+  fullName.vb: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateTypeDefinitionOfConstants(System.Collections.Generic.Dictionary(Of String, Object))
+  nameWithType: TypeScriptCodeGenerator.GenerateTypeDefinitionOfConstants(Dictionary<string, object>)
+  nameWithType.vb: TypeScriptCodeGenerator.GenerateTypeDefinitionOfConstants(Dictionary(Of String, Object))
+- uid: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateTypeDefinitionOfConstants*
+  name: GenerateTypeDefinitionOfConstants
+  href: api/DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.html#DarkStar_Engine_CodeGenerator_TypeScriptCodeGenerator_GenerateTypeDefinitionOfConstants_
+  commentId: Overload:DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateTypeDefinitionOfConstants
+  isSpec: "True"
+  fullName: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateTypeDefinitionOfConstants
+  nameWithType: TypeScriptCodeGenerator.GenerateTypeDefinitionOfConstants
+- uid: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateTypeDefinitionOfEnum*
+  name: GenerateTypeDefinitionOfEnum
+  href: api/DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.html#DarkStar_Engine_CodeGenerator_TypeScriptCodeGenerator_GenerateTypeDefinitionOfEnum_
+  commentId: Overload:DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateTypeDefinitionOfEnum
+  isSpec: "True"
+  fullName: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateTypeDefinitionOfEnum
+  nameWithType: TypeScriptCodeGenerator.GenerateTypeDefinitionOfEnum
+- uid: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateTypeDefinitionOfEnum``1
+  name: GenerateTypeDefinitionOfEnum<TEnum>()
+  href: api/DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.html#DarkStar_Engine_CodeGenerator_TypeScriptCodeGenerator_GenerateTypeDefinitionOfEnum__1
+  commentId: M:DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateTypeDefinitionOfEnum``1
+  name.vb: GenerateTypeDefinitionOfEnum(Of TEnum)()
+  fullName: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateTypeDefinitionOfEnum<TEnum>()
+  fullName.vb: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateTypeDefinitionOfEnum(Of TEnum)()
+  nameWithType: TypeScriptCodeGenerator.GenerateTypeDefinitionOfEnum<TEnum>()
+  nameWithType.vb: TypeScriptCodeGenerator.GenerateTypeDefinitionOfEnum(Of TEnum)()
+- uid: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateTypeDefinitionOfEnum``1(``0)
+  name: GenerateTypeDefinitionOfEnum<TEnum>(TEnum)
+  href: api/DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.html#DarkStar_Engine_CodeGenerator_TypeScriptCodeGenerator_GenerateTypeDefinitionOfEnum__1___0_
+  commentId: M:DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateTypeDefinitionOfEnum``1(``0)
+  name.vb: GenerateTypeDefinitionOfEnum(Of TEnum)(TEnum)
+  fullName: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateTypeDefinitionOfEnum<TEnum>(TEnum)
+  fullName.vb: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateTypeDefinitionOfEnum(Of TEnum)(TEnum)
+  nameWithType: TypeScriptCodeGenerator.GenerateTypeDefinitionOfEnum<TEnum>(TEnum)
+  nameWithType.vb: TypeScriptCodeGenerator.GenerateTypeDefinitionOfEnum(Of TEnum)(TEnum)
+- uid: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateTypeDefinitionOfEnum``1(System.Collections.Generic.List{``0})
+  name: GenerateTypeDefinitionOfEnum<TEnum>(List<TEnum>)
+  href: api/DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.html#DarkStar_Engine_CodeGenerator_TypeScriptCodeGenerator_GenerateTypeDefinitionOfEnum__1_System_Collections_Generic_List___0__
+  commentId: M:DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateTypeDefinitionOfEnum``1(System.Collections.Generic.List{``0})
+  name.vb: GenerateTypeDefinitionOfEnum(Of TEnum)(List(Of TEnum))
+  fullName: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateTypeDefinitionOfEnum<TEnum>(System.Collections.Generic.List<TEnum>)
+  fullName.vb: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateTypeDefinitionOfEnum(Of TEnum)(System.Collections.Generic.List(Of TEnum))
+  nameWithType: TypeScriptCodeGenerator.GenerateTypeDefinitionOfEnum<TEnum>(List<TEnum>)
+  nameWithType.vb: TypeScriptCodeGenerator.GenerateTypeDefinitionOfEnum(Of TEnum)(List(Of TEnum))
+- uid: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateTypeDefinitionOfFunction(DarkStar.Api.Engine.Data.ScriptEngine.ScriptFunctionDescriptor)
+  name: GenerateTypeDefinitionOfFunction(ScriptFunctionDescriptor)
+  href: api/DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.html#DarkStar_Engine_CodeGenerator_TypeScriptCodeGenerator_GenerateTypeDefinitionOfFunction_DarkStar_Api_Engine_Data_ScriptEngine_ScriptFunctionDescriptor_
+  commentId: M:DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateTypeDefinitionOfFunction(DarkStar.Api.Engine.Data.ScriptEngine.ScriptFunctionDescriptor)
+  fullName: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateTypeDefinitionOfFunction(DarkStar.Api.Engine.Data.ScriptEngine.ScriptFunctionDescriptor)
+  nameWithType: TypeScriptCodeGenerator.GenerateTypeDefinitionOfFunction(ScriptFunctionDescriptor)
+- uid: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateTypeDefinitionOfFunction*
+  name: GenerateTypeDefinitionOfFunction
+  href: api/DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.html#DarkStar_Engine_CodeGenerator_TypeScriptCodeGenerator_GenerateTypeDefinitionOfFunction_
+  commentId: Overload:DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateTypeDefinitionOfFunction
+  isSpec: "True"
+  fullName: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateTypeDefinitionOfFunction
+  nameWithType: TypeScriptCodeGenerator.GenerateTypeDefinitionOfFunction
+- uid: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateTypeScriptDefinition(System.Type,System.Text.StringBuilder)
+  name: GenerateTypeScriptDefinition(Type, StringBuilder)
+  href: api/DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.html#DarkStar_Engine_CodeGenerator_TypeScriptCodeGenerator_GenerateTypeScriptDefinition_System_Type_System_Text_StringBuilder_
+  commentId: M:DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateTypeScriptDefinition(System.Type,System.Text.StringBuilder)
+  fullName: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateTypeScriptDefinition(System.Type, System.Text.StringBuilder)
+  nameWithType: TypeScriptCodeGenerator.GenerateTypeScriptDefinition(Type, StringBuilder)
+- uid: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateTypeScriptDefinition*
+  name: GenerateTypeScriptDefinition
+  href: api/DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.html#DarkStar_Engine_CodeGenerator_TypeScriptCodeGenerator_GenerateTypeScriptDefinition_
+  commentId: Overload:DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateTypeScriptDefinition
+  isSpec: "True"
+  fullName: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GenerateTypeScriptDefinition
+  nameWithType: TypeScriptCodeGenerator.GenerateTypeScriptDefinition
+- uid: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GetTypeScriptType(System.Type)
+  name: GetTypeScriptType(Type)
+  href: api/DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.html#DarkStar_Engine_CodeGenerator_TypeScriptCodeGenerator_GetTypeScriptType_System_Type_
+  commentId: M:DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GetTypeScriptType(System.Type)
+  fullName: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GetTypeScriptType(System.Type)
+  nameWithType: TypeScriptCodeGenerator.GetTypeScriptType(Type)
+- uid: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GetTypeScriptType*
+  name: GetTypeScriptType
+  href: api/DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.html#DarkStar_Engine_CodeGenerator_TypeScriptCodeGenerator_GetTypeScriptType_
+  commentId: Overload:DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GetTypeScriptType
+  isSpec: "True"
+  fullName: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.GetTypeScriptType
+  nameWithType: TypeScriptCodeGenerator.GetTypeScriptType
+- uid: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.IsAction(System.Type)
+  name: IsAction(Type)
+  href: api/DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.html#DarkStar_Engine_CodeGenerator_TypeScriptCodeGenerator_IsAction_System_Type_
+  commentId: M:DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.IsAction(System.Type)
+  fullName: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.IsAction(System.Type)
+  nameWithType: TypeScriptCodeGenerator.IsAction(Type)
+- uid: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.IsAction*
+  name: IsAction
+  href: api/DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.html#DarkStar_Engine_CodeGenerator_TypeScriptCodeGenerator_IsAction_
+  commentId: Overload:DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.IsAction
+  isSpec: "True"
+  fullName: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.IsAction
+  nameWithType: TypeScriptCodeGenerator.IsAction
+- uid: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.IsFunc(System.Type)
+  name: IsFunc(Type)
+  href: api/DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.html#DarkStar_Engine_CodeGenerator_TypeScriptCodeGenerator_IsFunc_System_Type_
+  commentId: M:DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.IsFunc(System.Type)
+  fullName: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.IsFunc(System.Type)
+  nameWithType: TypeScriptCodeGenerator.IsFunc(Type)
+- uid: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.IsFunc*
+  name: IsFunc
+  href: api/DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.html#DarkStar_Engine_CodeGenerator_TypeScriptCodeGenerator_IsFunc_
+  commentId: Overload:DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.IsFunc
+  isSpec: "True"
+  fullName: DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.IsFunc
+  nameWithType: TypeScriptCodeGenerator.IsFunc
 - uid: DarkStar.Engine.Commands.Actions
   name: DarkStar.Engine.Commands.Actions
   href: api/DarkStar.Engine.Commands.Actions.html
@@ -13513,15 +14565,15 @@ references:
   commentId: T:DarkStar.Engine.Commands.Executors.GameObjectActionExecutor
   fullName: DarkStar.Engine.Commands.Executors.GameObjectActionExecutor
   nameWithType: GameObjectActionExecutor
-- uid: DarkStar.Engine.Commands.Executors.GameObjectActionExecutor.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Api.Engine.Commands.Base.BaseCommandActionExecutor{DarkStar.Engine.Commands.Actions.GameObjectAction}},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
-  name: GameObjectActionExecutor(ILogger<BaseCommandActionExecutor<GameObjectAction>>, IDarkSunEngine)
-  href: api/DarkStar.Engine.Commands.Executors.GameObjectActionExecutor.html#DarkStar_Engine_Commands_Executors_GameObjectActionExecutor__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Api_Engine_Commands_Base_BaseCommandActionExecutor_DarkStar_Engine_Commands_Actions_GameObjectAction___DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_
-  commentId: M:DarkStar.Engine.Commands.Executors.GameObjectActionExecutor.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Api.Engine.Commands.Base.BaseCommandActionExecutor{DarkStar.Engine.Commands.Actions.GameObjectAction}},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
-  name.vb: New(ILogger(Of BaseCommandActionExecutor(Of GameObjectAction)), IDarkSunEngine)
-  fullName: DarkStar.Engine.Commands.Executors.GameObjectActionExecutor.GameObjectActionExecutor(Microsoft.Extensions.Logging.ILogger<DarkStar.Api.Engine.Commands.Base.BaseCommandActionExecutor<DarkStar.Engine.Commands.Actions.GameObjectAction>>, DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
-  fullName.vb: DarkStar.Engine.Commands.Executors.GameObjectActionExecutor.New(Microsoft.Extensions.Logging.ILogger(Of DarkStar.Api.Engine.Commands.Base.BaseCommandActionExecutor(Of DarkStar.Engine.Commands.Actions.GameObjectAction)), DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
-  nameWithType: GameObjectActionExecutor.GameObjectActionExecutor(ILogger<BaseCommandActionExecutor<GameObjectAction>>, IDarkSunEngine)
-  nameWithType.vb: GameObjectActionExecutor.New(ILogger(Of BaseCommandActionExecutor(Of GameObjectAction)), IDarkSunEngine)
+- uid: DarkStar.Engine.Commands.Executors.GameObjectActionExecutor.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.Commands.Executors.GameObjectActionExecutor},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  name: GameObjectActionExecutor(ILogger<GameObjectActionExecutor>, IDarkSunEngine)
+  href: api/DarkStar.Engine.Commands.Executors.GameObjectActionExecutor.html#DarkStar_Engine_Commands_Executors_GameObjectActionExecutor__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Engine_Commands_Executors_GameObjectActionExecutor__DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_
+  commentId: M:DarkStar.Engine.Commands.Executors.GameObjectActionExecutor.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.Commands.Executors.GameObjectActionExecutor},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  name.vb: New(ILogger(Of GameObjectActionExecutor), IDarkSunEngine)
+  fullName: DarkStar.Engine.Commands.Executors.GameObjectActionExecutor.GameObjectActionExecutor(Microsoft.Extensions.Logging.ILogger<DarkStar.Engine.Commands.Executors.GameObjectActionExecutor>, DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  fullName.vb: DarkStar.Engine.Commands.Executors.GameObjectActionExecutor.New(Microsoft.Extensions.Logging.ILogger(Of DarkStar.Engine.Commands.Executors.GameObjectActionExecutor), DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  nameWithType: GameObjectActionExecutor.GameObjectActionExecutor(ILogger<GameObjectActionExecutor>, IDarkSunEngine)
+  nameWithType.vb: GameObjectActionExecutor.New(ILogger(Of GameObjectActionExecutor), IDarkSunEngine)
 - uid: DarkStar.Engine.Commands.Executors.GameObjectActionExecutor.#ctor*
   name: GameObjectActionExecutor
   href: api/DarkStar.Engine.Commands.Executors.GameObjectActionExecutor.html#DarkStar_Engine_Commands_Executors_GameObjectActionExecutor__ctor_
@@ -14087,6 +15139,19 @@ references:
   isSpec: "True"
   fullName: DarkStar.Engine.Http.Controllers.ScriptController.GetFunctions
   nameWithType: ScriptController.GetFunctions
+- uid: DarkStar.Engine.Http.Controllers.ScriptController.GetTypes
+  name: GetTypes()
+  href: api/DarkStar.Engine.Http.Controllers.ScriptController.html#DarkStar_Engine_Http_Controllers_ScriptController_GetTypes
+  commentId: M:DarkStar.Engine.Http.Controllers.ScriptController.GetTypes
+  fullName: DarkStar.Engine.Http.Controllers.ScriptController.GetTypes()
+  nameWithType: ScriptController.GetTypes()
+- uid: DarkStar.Engine.Http.Controllers.ScriptController.GetTypes*
+  name: GetTypes
+  href: api/DarkStar.Engine.Http.Controllers.ScriptController.html#DarkStar_Engine_Http_Controllers_ScriptController_GetTypes_
+  commentId: Overload:DarkStar.Engine.Http.Controllers.ScriptController.GetTypes
+  isSpec: "True"
+  fullName: DarkStar.Engine.Http.Controllers.ScriptController.GetTypes
+  nameWithType: ScriptController.GetTypes
 - uid: DarkStar.Engine.Http.Controllers.ScriptController.GetVariables
   name: GetVariables()
   href: api/DarkStar.Engine.Http.Controllers.ScriptController.html#DarkStar_Engine_Http_Controllers_ScriptController_GetVariables
@@ -14572,6 +15637,19 @@ references:
   isSpec: "True"
   fullName: DarkStar.Engine.MessageListeners.Helpers.PlayerDataHelper.BuildPlayerRacesAsync
   nameWithType: PlayerDataHelper.BuildPlayerRacesAsync
+- uid: DarkStar.Engine.MessageListeners.Helpers.PlayerDataHelper.BuildPlayerStatsAsync(DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine,System.Guid)
+  name: BuildPlayerStatsAsync(IDarkSunEngine, Guid)
+  href: api/DarkStar.Engine.MessageListeners.Helpers.PlayerDataHelper.html#DarkStar_Engine_MessageListeners_Helpers_PlayerDataHelper_BuildPlayerStatsAsync_DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_System_Guid_
+  commentId: M:DarkStar.Engine.MessageListeners.Helpers.PlayerDataHelper.BuildPlayerStatsAsync(DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine,System.Guid)
+  fullName: DarkStar.Engine.MessageListeners.Helpers.PlayerDataHelper.BuildPlayerStatsAsync(DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine, System.Guid)
+  nameWithType: PlayerDataHelper.BuildPlayerStatsAsync(IDarkSunEngine, Guid)
+- uid: DarkStar.Engine.MessageListeners.Helpers.PlayerDataHelper.BuildPlayerStatsAsync*
+  name: BuildPlayerStatsAsync
+  href: api/DarkStar.Engine.MessageListeners.Helpers.PlayerDataHelper.html#DarkStar_Engine_MessageListeners_Helpers_PlayerDataHelper_BuildPlayerStatsAsync_
+  commentId: Overload:DarkStar.Engine.MessageListeners.Helpers.PlayerDataHelper.BuildPlayerStatsAsync
+  isSpec: "True"
+  fullName: DarkStar.Engine.MessageListeners.Helpers.PlayerDataHelper.BuildPlayerStatsAsync
+  nameWithType: PlayerDataHelper.BuildPlayerStatsAsync
 - uid: DarkStar.Engine.MessageListeners.Helpers.TileSetHelper
   name: TileSetHelper
   href: api/DarkStar.Engine.MessageListeners.Helpers.TileSetHelper.html
@@ -15550,6 +16628,22 @@ references:
   isSpec: "True"
   fullName: DarkStar.Engine.ScriptModules.BlueprintScriptModule.AddDungeonMapGenerator
   nameWithType: BlueprintScriptModule.AddDungeonMapGenerator
+- uid: DarkStar.Engine.ScriptModules.BlueprintScriptModule.AddMapCreationStrategy(System.Int16,System.Func{DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext,DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext})
+  name: AddMapCreationStrategy(short, Func<BlueprintMapInfoContext, BlueprintMapInfoContext>)
+  href: api/DarkStar.Engine.ScriptModules.BlueprintScriptModule.html#DarkStar_Engine_ScriptModules_BlueprintScriptModule_AddMapCreationStrategy_System_Int16_System_Func_DarkStar_Api_Engine_Data_Blueprint_BlueprintMapInfoContext_DarkStar_Api_Engine_Data_Blueprint_BlueprintMapInfoContext__
+  commentId: M:DarkStar.Engine.ScriptModules.BlueprintScriptModule.AddMapCreationStrategy(System.Int16,System.Func{DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext,DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext})
+  name.vb: AddMapCreationStrategy(Short, Func(Of BlueprintMapInfoContext, BlueprintMapInfoContext))
+  fullName: DarkStar.Engine.ScriptModules.BlueprintScriptModule.AddMapCreationStrategy(short, System.Func<DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext, DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext>)
+  fullName.vb: DarkStar.Engine.ScriptModules.BlueprintScriptModule.AddMapCreationStrategy(Short, System.Func(Of DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext, DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext))
+  nameWithType: BlueprintScriptModule.AddMapCreationStrategy(short, Func<BlueprintMapInfoContext, BlueprintMapInfoContext>)
+  nameWithType.vb: BlueprintScriptModule.AddMapCreationStrategy(Short, Func(Of BlueprintMapInfoContext, BlueprintMapInfoContext))
+- uid: DarkStar.Engine.ScriptModules.BlueprintScriptModule.AddMapCreationStrategy*
+  name: AddMapCreationStrategy
+  href: api/DarkStar.Engine.ScriptModules.BlueprintScriptModule.html#DarkStar_Engine_ScriptModules_BlueprintScriptModule_AddMapCreationStrategy_
+  commentId: Overload:DarkStar.Engine.ScriptModules.BlueprintScriptModule.AddMapCreationStrategy
+  isSpec: "True"
+  fullName: DarkStar.Engine.ScriptModules.BlueprintScriptModule.AddMapCreationStrategy
+  nameWithType: BlueprintScriptModule.AddMapCreationStrategy
 - uid: DarkStar.Engine.ScriptModules.BlueprintScriptModule.AddMapGenerator(System.Int16,System.Func{DarkStar.Api.Engine.Data.Blueprint.BlueprintGenerationMapContext,DarkStar.Api.Engine.Data.Blueprint.BlueprintGenerationMapContext})
   name: AddMapGenerator(short, Func<BlueprintGenerationMapContext, BlueprintGenerationMapContext>)
   href: api/DarkStar.Engine.ScriptModules.BlueprintScriptModule.html#DarkStar_Engine_ScriptModules_BlueprintScriptModule_AddMapGenerator_System_Int16_System_Func_DarkStar_Api_Engine_Data_Blueprint_BlueprintGenerationMapContext_DarkStar_Api_Engine_Data_Blueprint_BlueprintGenerationMapContext__
@@ -15787,21 +16881,37 @@ references:
   isSpec: "True"
   fullName: DarkStar.Engine.ScriptModules.RandomUtilsScriptModule.RandomBool
   nameWithType: RandomUtilsScriptModule.RandomBool
+- uid: DarkStar.Engine.ScriptModules.RandomUtilsScriptModule.RandomList(System.Collections.Generic.List{System.Object})
+  name: RandomList(List<object>)
+  href: api/DarkStar.Engine.ScriptModules.RandomUtilsScriptModule.html#DarkStar_Engine_ScriptModules_RandomUtilsScriptModule_RandomList_System_Collections_Generic_List_System_Object__
+  commentId: M:DarkStar.Engine.ScriptModules.RandomUtilsScriptModule.RandomList(System.Collections.Generic.List{System.Object})
+  name.vb: RandomList(List(Of Object))
+  fullName: DarkStar.Engine.ScriptModules.RandomUtilsScriptModule.RandomList(System.Collections.Generic.List<object>)
+  fullName.vb: DarkStar.Engine.ScriptModules.RandomUtilsScriptModule.RandomList(System.Collections.Generic.List(Of Object))
+  nameWithType: RandomUtilsScriptModule.RandomList(List<object>)
+  nameWithType.vb: RandomUtilsScriptModule.RandomList(List(Of Object))
+- uid: DarkStar.Engine.ScriptModules.RandomUtilsScriptModule.RandomList*
+  name: RandomList
+  href: api/DarkStar.Engine.ScriptModules.RandomUtilsScriptModule.html#DarkStar_Engine_ScriptModules_RandomUtilsScriptModule_RandomList_
+  commentId: Overload:DarkStar.Engine.ScriptModules.RandomUtilsScriptModule.RandomList
+  isSpec: "True"
+  fullName: DarkStar.Engine.ScriptModules.RandomUtilsScriptModule.RandomList
+  nameWithType: RandomUtilsScriptModule.RandomList
 - uid: DarkStar.Engine.ScriptModules.ServerScriptModule
   name: ServerScriptModule
   href: api/DarkStar.Engine.ScriptModules.ServerScriptModule.html
   commentId: T:DarkStar.Engine.ScriptModules.ServerScriptModule
   fullName: DarkStar.Engine.ScriptModules.ServerScriptModule
   nameWithType: ServerScriptModule
-- uid: DarkStar.Engine.ScriptModules.ServerScriptModule.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Api.Engine.ScriptModules.BaseScriptModule},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
-  name: ServerScriptModule(ILogger<BaseScriptModule>, IDarkSunEngine)
-  href: api/DarkStar.Engine.ScriptModules.ServerScriptModule.html#DarkStar_Engine_ScriptModules_ServerScriptModule__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Api_Engine_ScriptModules_BaseScriptModule__DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_
-  commentId: M:DarkStar.Engine.ScriptModules.ServerScriptModule.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Api.Engine.ScriptModules.BaseScriptModule},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
-  name.vb: New(ILogger(Of BaseScriptModule), IDarkSunEngine)
-  fullName: DarkStar.Engine.ScriptModules.ServerScriptModule.ServerScriptModule(Microsoft.Extensions.Logging.ILogger<DarkStar.Api.Engine.ScriptModules.BaseScriptModule>, DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
-  fullName.vb: DarkStar.Engine.ScriptModules.ServerScriptModule.New(Microsoft.Extensions.Logging.ILogger(Of DarkStar.Api.Engine.ScriptModules.BaseScriptModule), DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
-  nameWithType: ServerScriptModule.ServerScriptModule(ILogger<BaseScriptModule>, IDarkSunEngine)
-  nameWithType.vb: ServerScriptModule.New(ILogger(Of BaseScriptModule), IDarkSunEngine)
+- uid: DarkStar.Engine.ScriptModules.ServerScriptModule.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.ScriptModules.ServerScriptModule},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  name: ServerScriptModule(ILogger<ServerScriptModule>, IDarkSunEngine)
+  href: api/DarkStar.Engine.ScriptModules.ServerScriptModule.html#DarkStar_Engine_ScriptModules_ServerScriptModule__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Engine_ScriptModules_ServerScriptModule__DarkStar_Api_Engine_Interfaces_Core_IDarkSunEngine_
+  commentId: M:DarkStar.Engine.ScriptModules.ServerScriptModule.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.ScriptModules.ServerScriptModule},DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  name.vb: New(ILogger(Of ServerScriptModule), IDarkSunEngine)
+  fullName: DarkStar.Engine.ScriptModules.ServerScriptModule.ServerScriptModule(Microsoft.Extensions.Logging.ILogger<DarkStar.Engine.ScriptModules.ServerScriptModule>, DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  fullName.vb: DarkStar.Engine.ScriptModules.ServerScriptModule.New(Microsoft.Extensions.Logging.ILogger(Of DarkStar.Engine.ScriptModules.ServerScriptModule), DarkStar.Api.Engine.Interfaces.Core.IDarkSunEngine)
+  nameWithType: ServerScriptModule.ServerScriptModule(ILogger<ServerScriptModule>, IDarkSunEngine)
+  nameWithType.vb: ServerScriptModule.New(ILogger(Of ServerScriptModule), IDarkSunEngine)
 - uid: DarkStar.Engine.ScriptModules.ServerScriptModule.#ctor*
   name: ServerScriptModule
   href: api/DarkStar.Engine.ScriptModules.ServerScriptModule.html#DarkStar_Engine_ScriptModules_ServerScriptModule__ctor_
@@ -15812,6 +16922,22 @@ references:
   fullName.vb: DarkStar.Engine.ScriptModules.ServerScriptModule.New
   nameWithType: ServerScriptModule.ServerScriptModule
   nameWithType.vb: ServerScriptModule.New
+- uid: DarkStar.Engine.ScriptModules.ServerScriptModule.Log(System.String,System.Object[])
+  name: Log(string, params object[])
+  href: api/DarkStar.Engine.ScriptModules.ServerScriptModule.html#DarkStar_Engine_ScriptModules_ServerScriptModule_Log_System_String_System_Object___
+  commentId: M:DarkStar.Engine.ScriptModules.ServerScriptModule.Log(System.String,System.Object[])
+  name.vb: Log(String, ParamArray Object())
+  fullName: DarkStar.Engine.ScriptModules.ServerScriptModule.Log(string, params object[])
+  fullName.vb: DarkStar.Engine.ScriptModules.ServerScriptModule.Log(String, ParamArray Object())
+  nameWithType: ServerScriptModule.Log(string, params object[])
+  nameWithType.vb: ServerScriptModule.Log(String, ParamArray Object())
+- uid: DarkStar.Engine.ScriptModules.ServerScriptModule.Log*
+  name: Log
+  href: api/DarkStar.Engine.ScriptModules.ServerScriptModule.html#DarkStar_Engine_ScriptModules_ServerScriptModule_Log_
+  commentId: Overload:DarkStar.Engine.ScriptModules.ServerScriptModule.Log
+  isSpec: "True"
+  fullName: DarkStar.Engine.ScriptModules.ServerScriptModule.Log
+  nameWithType: ServerScriptModule.Log
 - uid: DarkStar.Engine.ScriptModules.ServerScriptModule.SetServerMotd(System.String)
   name: SetServerMotd(string)
   href: api/DarkStar.Engine.ScriptModules.ServerScriptModule.html#DarkStar_Engine_ScriptModules_ServerScriptModule_SetServerMotd_System_String_
@@ -16401,12 +17527,24 @@ references:
   commentId: F:DarkStar.Engine.Services.BlueprintService._directoriesConfig
   fullName: DarkStar.Engine.Services.BlueprintService._directoriesConfig
   nameWithType: BlueprintService._directoriesConfig
+- uid: DarkStar.Engine.Services.BlueprintService._mapGenerationLock
+  name: _mapGenerationLock
+  href: api/DarkStar.Engine.Services.BlueprintService.html#DarkStar_Engine_Services_BlueprintService__mapGenerationLock
+  commentId: F:DarkStar.Engine.Services.BlueprintService._mapGenerationLock
+  fullName: DarkStar.Engine.Services.BlueprintService._mapGenerationLock
+  nameWithType: BlueprintService._mapGenerationLock
 - uid: DarkStar.Engine.Services.BlueprintService._mapGenerators
   name: _mapGenerators
   href: api/DarkStar.Engine.Services.BlueprintService.html#DarkStar_Engine_Services_BlueprintService__mapGenerators
   commentId: F:DarkStar.Engine.Services.BlueprintService._mapGenerators
   fullName: DarkStar.Engine.Services.BlueprintService._mapGenerators
   nameWithType: BlueprintService._mapGenerators
+- uid: DarkStar.Engine.Services.BlueprintService._mapStrategyGenerator
+  name: _mapStrategyGenerator
+  href: api/DarkStar.Engine.Services.BlueprintService.html#DarkStar_Engine_Services_BlueprintService__mapStrategyGenerator
+  commentId: F:DarkStar.Engine.Services.BlueprintService._mapStrategyGenerator
+  fullName: DarkStar.Engine.Services.BlueprintService._mapStrategyGenerator
+  nameWithType: BlueprintService._mapStrategyGenerator
 - uid: DarkStar.Engine.Services.BlueprintService._namesService
   name: _namesService
   href: api/DarkStar.Engine.Services.BlueprintService.html#DarkStar_Engine_Services_BlueprintService__namesService
@@ -16448,6 +17586,22 @@ references:
   isSpec: "True"
   fullName: DarkStar.Engine.Services.BlueprintService.AddMapGenerator
   nameWithType: BlueprintService.AddMapGenerator
+- uid: DarkStar.Engine.Services.BlueprintService.AddMapStrategy(DarkStar.Api.World.Types.Map.MapType,System.Func{DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext,DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext})
+  name: AddMapStrategy(MapType, Func<BlueprintMapInfoContext, BlueprintMapInfoContext>)
+  href: api/DarkStar.Engine.Services.BlueprintService.html#DarkStar_Engine_Services_BlueprintService_AddMapStrategy_DarkStar_Api_World_Types_Map_MapType_System_Func_DarkStar_Api_Engine_Data_Blueprint_BlueprintMapInfoContext_DarkStar_Api_Engine_Data_Blueprint_BlueprintMapInfoContext__
+  commentId: M:DarkStar.Engine.Services.BlueprintService.AddMapStrategy(DarkStar.Api.World.Types.Map.MapType,System.Func{DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext,DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext})
+  name.vb: AddMapStrategy(MapType, Func(Of BlueprintMapInfoContext, BlueprintMapInfoContext))
+  fullName: DarkStar.Engine.Services.BlueprintService.AddMapStrategy(DarkStar.Api.World.Types.Map.MapType, System.Func<DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext, DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext>)
+  fullName.vb: DarkStar.Engine.Services.BlueprintService.AddMapStrategy(DarkStar.Api.World.Types.Map.MapType, System.Func(Of DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext, DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext))
+  nameWithType: BlueprintService.AddMapStrategy(MapType, Func<BlueprintMapInfoContext, BlueprintMapInfoContext>)
+  nameWithType.vb: BlueprintService.AddMapStrategy(MapType, Func(Of BlueprintMapInfoContext, BlueprintMapInfoContext))
+- uid: DarkStar.Engine.Services.BlueprintService.AddMapStrategy*
+  name: AddMapStrategy
+  href: api/DarkStar.Engine.Services.BlueprintService.html#DarkStar_Engine_Services_BlueprintService_AddMapStrategy_
+  commentId: Overload:DarkStar.Engine.Services.BlueprintService.AddMapStrategy
+  isSpec: "True"
+  fullName: DarkStar.Engine.Services.BlueprintService.AddMapStrategy
+  nameWithType: BlueprintService.AddMapStrategy
 - uid: DarkStar.Engine.Services.BlueprintService.BuildBluePrintTemplateFromObject(TiledSharp.TmxMap,System.String,System.String,System.Collections.Generic.List{DarkStar.Network.Protocol.Messages.Common.PointPosition})
   name: BuildBluePrintTemplateFromObject(TmxMap, string, string, List<PointPosition>)
   href: api/DarkStar.Engine.Services.BlueprintService.html#DarkStar_Engine_Services_BlueprintService_BuildBluePrintTemplateFromObject_TiledSharp_TmxMap_System_String_System_String_System_Collections_Generic_List_DarkStar_Network_Protocol_Messages_Common_PointPosition__
@@ -16515,15 +17669,28 @@ references:
   isSpec: "True"
   fullName: DarkStar.Engine.Services.BlueprintService.GenerateWorldGameObjectAsync
   nameWithType: BlueprintService.GenerateWorldGameObjectAsync
-- uid: DarkStar.Engine.Services.BlueprintService.GetMapGenerator(System.String,DarkStar.Api.World.Types.Map.MapType)
-  name: GetMapGenerator(string, MapType)
-  href: api/DarkStar.Engine.Services.BlueprintService.html#DarkStar_Engine_Services_BlueprintService_GetMapGenerator_System_String_DarkStar_Api_World_Types_Map_MapType_
-  commentId: M:DarkStar.Engine.Services.BlueprintService.GetMapGenerator(System.String,DarkStar.Api.World.Types.Map.MapType)
-  name.vb: GetMapGenerator(String, MapType)
-  fullName: DarkStar.Engine.Services.BlueprintService.GetMapGenerator(string, DarkStar.Api.World.Types.Map.MapType)
-  fullName.vb: DarkStar.Engine.Services.BlueprintService.GetMapGenerator(String, DarkStar.Api.World.Types.Map.MapType)
-  nameWithType: BlueprintService.GetMapGenerator(string, MapType)
-  nameWithType.vb: BlueprintService.GetMapGenerator(String, MapType)
+- uid: DarkStar.Engine.Services.BlueprintService.GetMapFiller(System.String,DarkStar.Api.World.Types.Map.MapType)
+  name: GetMapFiller(string, MapType)
+  href: api/DarkStar.Engine.Services.BlueprintService.html#DarkStar_Engine_Services_BlueprintService_GetMapFiller_System_String_DarkStar_Api_World_Types_Map_MapType_
+  commentId: M:DarkStar.Engine.Services.BlueprintService.GetMapFiller(System.String,DarkStar.Api.World.Types.Map.MapType)
+  name.vb: GetMapFiller(String, MapType)
+  fullName: DarkStar.Engine.Services.BlueprintService.GetMapFiller(string, DarkStar.Api.World.Types.Map.MapType)
+  fullName.vb: DarkStar.Engine.Services.BlueprintService.GetMapFiller(String, DarkStar.Api.World.Types.Map.MapType)
+  nameWithType: BlueprintService.GetMapFiller(string, MapType)
+  nameWithType.vb: BlueprintService.GetMapFiller(String, MapType)
+- uid: DarkStar.Engine.Services.BlueprintService.GetMapFiller*
+  name: GetMapFiller
+  href: api/DarkStar.Engine.Services.BlueprintService.html#DarkStar_Engine_Services_BlueprintService_GetMapFiller_
+  commentId: Overload:DarkStar.Engine.Services.BlueprintService.GetMapFiller
+  isSpec: "True"
+  fullName: DarkStar.Engine.Services.BlueprintService.GetMapFiller
+  nameWithType: BlueprintService.GetMapFiller
+- uid: DarkStar.Engine.Services.BlueprintService.GetMapGenerator(DarkStar.Api.World.Types.Map.MapType)
+  name: GetMapGenerator(MapType)
+  href: api/DarkStar.Engine.Services.BlueprintService.html#DarkStar_Engine_Services_BlueprintService_GetMapGenerator_DarkStar_Api_World_Types_Map_MapType_
+  commentId: M:DarkStar.Engine.Services.BlueprintService.GetMapGenerator(DarkStar.Api.World.Types.Map.MapType)
+  fullName: DarkStar.Engine.Services.BlueprintService.GetMapGenerator(DarkStar.Api.World.Types.Map.MapType)
+  nameWithType: BlueprintService.GetMapGenerator(MapType)
 - uid: DarkStar.Engine.Services.BlueprintService.GetMapGenerator*
   name: GetMapGenerator
   href: api/DarkStar.Engine.Services.BlueprintService.html#DarkStar_Engine_Services_BlueprintService_GetMapGenerator_
@@ -16563,6 +17730,19 @@ references:
   isSpec: "True"
   fullName: DarkStar.Engine.Services.BlueprintService.LoadMapTemplateAsync
   nameWithType: BlueprintService.LoadMapTemplateAsync
+- uid: DarkStar.Engine.Services.BlueprintService.ScanForMapsAsync
+  name: ScanForMapsAsync()
+  href: api/DarkStar.Engine.Services.BlueprintService.html#DarkStar_Engine_Services_BlueprintService_ScanForMapsAsync
+  commentId: M:DarkStar.Engine.Services.BlueprintService.ScanForMapsAsync
+  fullName: DarkStar.Engine.Services.BlueprintService.ScanForMapsAsync()
+  nameWithType: BlueprintService.ScanForMapsAsync()
+- uid: DarkStar.Engine.Services.BlueprintService.ScanForMapsAsync*
+  name: ScanForMapsAsync
+  href: api/DarkStar.Engine.Services.BlueprintService.html#DarkStar_Engine_Services_BlueprintService_ScanForMapsAsync_
+  commentId: Overload:DarkStar.Engine.Services.BlueprintService.ScanForMapsAsync
+  isSpec: "True"
+  fullName: DarkStar.Engine.Services.BlueprintService.ScanForMapsAsync
+  nameWithType: BlueprintService.ScanForMapsAsync
 - uid: DarkStar.Engine.Services.BlueprintService.ScanForMapTemplatesAsync
   name: ScanForMapTemplatesAsync()
   href: api/DarkStar.Engine.Services.BlueprintService.html#DarkStar_Engine_Services_BlueprintService_ScanForMapTemplatesAsync
@@ -16625,15 +17805,15 @@ references:
   commentId: F:DarkStar.Engine.Services.CommandService._playersActionsQueue
   fullName: DarkStar.Engine.Services.CommandService._playersActionsQueue
   nameWithType: CommandService._playersActionsQueue
-- uid: DarkStar.Engine.Services.CommandService.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Api.Engine.Interfaces.Services.ICommandService},System.IServiceProvider)
-  name: CommandService(ILogger<ICommandService>, IServiceProvider)
-  href: api/DarkStar.Engine.Services.CommandService.html#DarkStar_Engine_Services_CommandService__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Api_Engine_Interfaces_Services_ICommandService__System_IServiceProvider_
-  commentId: M:DarkStar.Engine.Services.CommandService.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Api.Engine.Interfaces.Services.ICommandService},System.IServiceProvider)
-  name.vb: New(ILogger(Of ICommandService), IServiceProvider)
-  fullName: DarkStar.Engine.Services.CommandService.CommandService(Microsoft.Extensions.Logging.ILogger<DarkStar.Api.Engine.Interfaces.Services.ICommandService>, System.IServiceProvider)
-  fullName.vb: DarkStar.Engine.Services.CommandService.New(Microsoft.Extensions.Logging.ILogger(Of DarkStar.Api.Engine.Interfaces.Services.ICommandService), System.IServiceProvider)
-  nameWithType: CommandService.CommandService(ILogger<ICommandService>, IServiceProvider)
-  nameWithType.vb: CommandService.New(ILogger(Of ICommandService), IServiceProvider)
+- uid: DarkStar.Engine.Services.CommandService.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.Services.CommandService},System.IServiceProvider)
+  name: CommandService(ILogger<CommandService>, IServiceProvider)
+  href: api/DarkStar.Engine.Services.CommandService.html#DarkStar_Engine_Services_CommandService__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Engine_Services_CommandService__System_IServiceProvider_
+  commentId: M:DarkStar.Engine.Services.CommandService.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.Services.CommandService},System.IServiceProvider)
+  name.vb: New(ILogger(Of CommandService), IServiceProvider)
+  fullName: DarkStar.Engine.Services.CommandService.CommandService(Microsoft.Extensions.Logging.ILogger<DarkStar.Engine.Services.CommandService>, System.IServiceProvider)
+  fullName.vb: DarkStar.Engine.Services.CommandService.New(Microsoft.Extensions.Logging.ILogger(Of DarkStar.Engine.Services.CommandService), System.IServiceProvider)
+  nameWithType: CommandService.CommandService(ILogger<CommandService>, IServiceProvider)
+  nameWithType.vb: CommandService.New(ILogger(Of CommandService), IServiceProvider)
 - uid: DarkStar.Engine.Services.CommandService.#ctor*
   name: CommandService
   href: api/DarkStar.Engine.Services.CommandService.html#DarkStar_Engine_Services_CommandService__ctor_
@@ -16676,6 +17856,19 @@ references:
   fullName.vb: DarkStar.Engine.Services.CommandService.EnqueuePlayerAction(Of ActionEntity)(ActionEntity)
   nameWithType: CommandService.EnqueuePlayerAction<ActionEntity>(ActionEntity)
   nameWithType.vb: CommandService.EnqueuePlayerAction(Of ActionEntity)(ActionEntity)
+- uid: DarkStar.Engine.Services.CommandService.OnGameObjectCommandEvent(DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent)
+  name: OnGameObjectCommandEvent(GameObjectCommandEvent)
+  href: api/DarkStar.Engine.Services.CommandService.html#DarkStar_Engine_Services_CommandService_OnGameObjectCommandEvent_DarkStar_Api_Engine_Events_Commands_GameObjectCommandEvent_
+  commentId: M:DarkStar.Engine.Services.CommandService.OnGameObjectCommandEvent(DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent)
+  fullName: DarkStar.Engine.Services.CommandService.OnGameObjectCommandEvent(DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent)
+  nameWithType: CommandService.OnGameObjectCommandEvent(GameObjectCommandEvent)
+- uid: DarkStar.Engine.Services.CommandService.OnGameObjectCommandEvent*
+  name: OnGameObjectCommandEvent
+  href: api/DarkStar.Engine.Services.CommandService.html#DarkStar_Engine_Services_CommandService_OnGameObjectCommandEvent_
+  commentId: Overload:DarkStar.Engine.Services.CommandService.OnGameObjectCommandEvent
+  isSpec: "True"
+  fullName: DarkStar.Engine.Services.CommandService.OnGameObjectCommandEvent
+  nameWithType: CommandService.OnGameObjectCommandEvent
 - uid: DarkStar.Engine.Services.CommandService.PrepareSchedulerExecutors
   name: PrepareSchedulerExecutors()
   href: api/DarkStar.Engine.Services.CommandService.html#DarkStar_Engine_Services_CommandService_PrepareSchedulerExecutors
@@ -18099,6 +19292,18 @@ references:
   commentId: F:DarkStar.Engine.Services.ScriptEngineService._directoriesConfig
   fullName: DarkStar.Engine.Services.ScriptEngineService._directoriesConfig
   nameWithType: ScriptEngineService._directoriesConfig
+- uid: DarkStar.Engine.Services.ScriptEngineService._fileExtension
+  name: _fileExtension
+  href: api/DarkStar.Engine.Services.ScriptEngineService.html#DarkStar_Engine_Services_ScriptEngineService__fileExtension
+  commentId: F:DarkStar.Engine.Services.ScriptEngineService._fileExtension
+  fullName: DarkStar.Engine.Services.ScriptEngineService._fileExtension
+  nameWithType: ScriptEngineService._fileExtension
+- uid: DarkStar.Engine.Services.ScriptEngineService._scriptConstants
+  name: _scriptConstants
+  href: api/DarkStar.Engine.Services.ScriptEngineService.html#DarkStar_Engine_Services_ScriptEngineService__scriptConstants
+  commentId: F:DarkStar.Engine.Services.ScriptEngineService._scriptConstants
+  fullName: DarkStar.Engine.Services.ScriptEngineService._scriptConstants
+  nameWithType: ScriptEngineService._scriptConstants
 - uid: DarkStar.Engine.Services.ScriptEngineService._scriptEngine
   name: _scriptEngine
   href: api/DarkStar.Engine.Services.ScriptEngineService.html#DarkStar_Engine_Services_ScriptEngineService__scriptEngine
@@ -18111,15 +19316,15 @@ references:
   commentId: F:DarkStar.Engine.Services.ScriptEngineService._typeService
   fullName: DarkStar.Engine.Services.ScriptEngineService._typeService
   nameWithType: ScriptEngineService._typeService
-- uid: DarkStar.Engine.Services.ScriptEngineService.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.Services.ScriptEngineService},DarkStar.Api.Data.Config.DirectoriesConfig,DarkStar.Api.Engine.Interfaces.Services.ITypeService,System.IServiceProvider)
-  name: ScriptEngineService(ILogger<ScriptEngineService>, DirectoriesConfig, ITypeService, IServiceProvider)
-  href: api/DarkStar.Engine.Services.ScriptEngineService.html#DarkStar_Engine_Services_ScriptEngineService__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Engine_Services_ScriptEngineService__DarkStar_Api_Data_Config_DirectoriesConfig_DarkStar_Api_Engine_Interfaces_Services_ITypeService_System_IServiceProvider_
-  commentId: M:DarkStar.Engine.Services.ScriptEngineService.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.Services.ScriptEngineService},DarkStar.Api.Data.Config.DirectoriesConfig,DarkStar.Api.Engine.Interfaces.Services.ITypeService,System.IServiceProvider)
-  name.vb: New(ILogger(Of ScriptEngineService), DirectoriesConfig, ITypeService, IServiceProvider)
-  fullName: DarkStar.Engine.Services.ScriptEngineService.ScriptEngineService(Microsoft.Extensions.Logging.ILogger<DarkStar.Engine.Services.ScriptEngineService>, DarkStar.Api.Data.Config.DirectoriesConfig, DarkStar.Api.Engine.Interfaces.Services.ITypeService, System.IServiceProvider)
-  fullName.vb: DarkStar.Engine.Services.ScriptEngineService.New(Microsoft.Extensions.Logging.ILogger(Of DarkStar.Engine.Services.ScriptEngineService), DarkStar.Api.Data.Config.DirectoriesConfig, DarkStar.Api.Engine.Interfaces.Services.ITypeService, System.IServiceProvider)
-  nameWithType: ScriptEngineService.ScriptEngineService(ILogger<ScriptEngineService>, DirectoriesConfig, ITypeService, IServiceProvider)
-  nameWithType.vb: ScriptEngineService.New(ILogger(Of ScriptEngineService), DirectoriesConfig, ITypeService, IServiceProvider)
+- uid: DarkStar.Engine.Services.ScriptEngineService.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.Services.ScriptEngineService},DarkStar.Api.Data.Config.DirectoriesConfig,DarkStar.Api.Engine.Interfaces.Services.ITypeService,DarkStar.Api.Engine.Data.Config.EngineConfig,System.IServiceProvider)
+  name: ScriptEngineService(ILogger<ScriptEngineService>, DirectoriesConfig, ITypeService, EngineConfig, IServiceProvider)
+  href: api/DarkStar.Engine.Services.ScriptEngineService.html#DarkStar_Engine_Services_ScriptEngineService__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Engine_Services_ScriptEngineService__DarkStar_Api_Data_Config_DirectoriesConfig_DarkStar_Api_Engine_Interfaces_Services_ITypeService_DarkStar_Api_Engine_Data_Config_EngineConfig_System_IServiceProvider_
+  commentId: M:DarkStar.Engine.Services.ScriptEngineService.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.Services.ScriptEngineService},DarkStar.Api.Data.Config.DirectoriesConfig,DarkStar.Api.Engine.Interfaces.Services.ITypeService,DarkStar.Api.Engine.Data.Config.EngineConfig,System.IServiceProvider)
+  name.vb: New(ILogger(Of ScriptEngineService), DirectoriesConfig, ITypeService, EngineConfig, IServiceProvider)
+  fullName: DarkStar.Engine.Services.ScriptEngineService.ScriptEngineService(Microsoft.Extensions.Logging.ILogger<DarkStar.Engine.Services.ScriptEngineService>, DarkStar.Api.Data.Config.DirectoriesConfig, DarkStar.Api.Engine.Interfaces.Services.ITypeService, DarkStar.Api.Engine.Data.Config.EngineConfig, System.IServiceProvider)
+  fullName.vb: DarkStar.Engine.Services.ScriptEngineService.New(Microsoft.Extensions.Logging.ILogger(Of DarkStar.Engine.Services.ScriptEngineService), DarkStar.Api.Data.Config.DirectoriesConfig, DarkStar.Api.Engine.Interfaces.Services.ITypeService, DarkStar.Api.Engine.Data.Config.EngineConfig, System.IServiceProvider)
+  nameWithType: ScriptEngineService.ScriptEngineService(ILogger<ScriptEngineService>, DirectoriesConfig, ITypeService, EngineConfig, IServiceProvider)
+  nameWithType.vb: ScriptEngineService.New(ILogger(Of ScriptEngineService), DirectoriesConfig, ITypeService, EngineConfig, IServiceProvider)
 - uid: DarkStar.Engine.Services.ScriptEngineService.#ctor*
   name: ScriptEngineService
   href: api/DarkStar.Engine.Services.ScriptEngineService.html#DarkStar_Engine_Services_ScriptEngineService__ctor_
@@ -18211,6 +19416,22 @@ references:
   isSpec: "True"
   fullName: DarkStar.Engine.Services.ScriptEngineService.ContextVariables
   nameWithType: ScriptEngineService.ContextVariables
+- uid: DarkStar.Engine.Services.ScriptEngineService.CreateJsEngineDelegate(System.Object,System.Reflection.MethodInfo)
+  name: CreateJsEngineDelegate(object, MethodInfo)
+  href: api/DarkStar.Engine.Services.ScriptEngineService.html#DarkStar_Engine_Services_ScriptEngineService_CreateJsEngineDelegate_System_Object_System_Reflection_MethodInfo_
+  commentId: M:DarkStar.Engine.Services.ScriptEngineService.CreateJsEngineDelegate(System.Object,System.Reflection.MethodInfo)
+  name.vb: CreateJsEngineDelegate(Object, MethodInfo)
+  fullName: DarkStar.Engine.Services.ScriptEngineService.CreateJsEngineDelegate(object, System.Reflection.MethodInfo)
+  fullName.vb: DarkStar.Engine.Services.ScriptEngineService.CreateJsEngineDelegate(Object, System.Reflection.MethodInfo)
+  nameWithType: ScriptEngineService.CreateJsEngineDelegate(object, MethodInfo)
+  nameWithType.vb: ScriptEngineService.CreateJsEngineDelegate(Object, MethodInfo)
+- uid: DarkStar.Engine.Services.ScriptEngineService.CreateJsEngineDelegate*
+  name: CreateJsEngineDelegate
+  href: api/DarkStar.Engine.Services.ScriptEngineService.html#DarkStar_Engine_Services_ScriptEngineService_CreateJsEngineDelegate_
+  commentId: Overload:DarkStar.Engine.Services.ScriptEngineService.CreateJsEngineDelegate
+  isSpec: "True"
+  fullName: DarkStar.Engine.Services.ScriptEngineService.CreateJsEngineDelegate
+  nameWithType: ScriptEngineService.CreateJsEngineDelegate
 - uid: DarkStar.Engine.Services.ScriptEngineService.ExecuteCommand(System.String)
   name: ExecuteCommand(string)
   href: api/DarkStar.Engine.Services.ScriptEngineService.html#DarkStar_Engine_Services_ScriptEngineService_ExecuteCommand_System_String_
@@ -18269,6 +19490,19 @@ references:
   isSpec: "True"
   fullName: DarkStar.Engine.Services.ScriptEngineService.Functions
   nameWithType: ScriptEngineService.Functions
+- uid: DarkStar.Engine.Services.ScriptEngineService.GenerateTypeDefinitionsAsync
+  name: GenerateTypeDefinitionsAsync()
+  href: api/DarkStar.Engine.Services.ScriptEngineService.html#DarkStar_Engine_Services_ScriptEngineService_GenerateTypeDefinitionsAsync
+  commentId: M:DarkStar.Engine.Services.ScriptEngineService.GenerateTypeDefinitionsAsync
+  fullName: DarkStar.Engine.Services.ScriptEngineService.GenerateTypeDefinitionsAsync()
+  nameWithType: ScriptEngineService.GenerateTypeDefinitionsAsync()
+- uid: DarkStar.Engine.Services.ScriptEngineService.GenerateTypeDefinitionsAsync*
+  name: GenerateTypeDefinitionsAsync
+  href: api/DarkStar.Engine.Services.ScriptEngineService.html#DarkStar_Engine_Services_ScriptEngineService_GenerateTypeDefinitionsAsync_
+  commentId: Overload:DarkStar.Engine.Services.ScriptEngineService.GenerateTypeDefinitionsAsync
+  isSpec: "True"
+  fullName: DarkStar.Engine.Services.ScriptEngineService.GenerateTypeDefinitionsAsync
+  nameWithType: ScriptEngineService.GenerateTypeDefinitionsAsync
 - uid: DarkStar.Engine.Services.ScriptEngineService.PrepareModuleDirectoryAsync
   name: PrepareModuleDirectoryAsync()
   href: api/DarkStar.Engine.Services.ScriptEngineService.html#DarkStar_Engine_Services_ScriptEngineService_PrepareModuleDirectoryAsync
@@ -18352,12 +19586,6 @@ references:
   commentId: F:DarkStar.Engine.Services.SeedService._gameObjectSeed
   fullName: DarkStar.Engine.Services.SeedService._gameObjectSeed
   nameWithType: SeedService._gameObjectSeed
-- uid: DarkStar.Engine.Services.SeedService._isSeedExecutable
-  name: _isSeedExecutable
-  href: api/DarkStar.Engine.Services.SeedService.html#DarkStar_Engine_Services_SeedService__isSeedExecutable
-  commentId: F:DarkStar.Engine.Services.SeedService._isSeedExecutable
-  fullName: DarkStar.Engine.Services.SeedService._isSeedExecutable
-  nameWithType: SeedService._isSeedExecutable
 - uid: DarkStar.Engine.Services.SeedService._itemsSeed
   name: _itemsSeed
   href: api/DarkStar.Engine.Services.SeedService.html#DarkStar_Engine_Services_SeedService__itemsSeed
@@ -19302,6 +20530,19 @@ references:
   isSpec: "True"
   fullName: DarkStar.Engine.Services.WorldService.BuildMapAsync
   nameWithType: WorldService.BuildMapAsync
+- uid: DarkStar.Engine.Services.WorldService.BuildMapGenerator(DarkStar.Api.World.Types.Map.MapType)
+  name: BuildMapGenerator(MapType)
+  href: api/DarkStar.Engine.Services.WorldService.html#DarkStar_Engine_Services_WorldService_BuildMapGenerator_DarkStar_Api_World_Types_Map_MapType_
+  commentId: M:DarkStar.Engine.Services.WorldService.BuildMapGenerator(DarkStar.Api.World.Types.Map.MapType)
+  fullName: DarkStar.Engine.Services.WorldService.BuildMapGenerator(DarkStar.Api.World.Types.Map.MapType)
+  nameWithType: WorldService.BuildMapGenerator(MapType)
+- uid: DarkStar.Engine.Services.WorldService.BuildMapGenerator*
+  name: BuildMapGenerator
+  href: api/DarkStar.Engine.Services.WorldService.html#DarkStar_Engine_Services_WorldService_BuildMapGenerator_
+  commentId: Overload:DarkStar.Engine.Services.WorldService.BuildMapGenerator
+  isSpec: "True"
+  fullName: DarkStar.Engine.Services.WorldService.BuildMapGenerator
+  nameWithType: WorldService.BuildMapGenerator
 - uid: DarkStar.Engine.Services.WorldService.CalculateAStarPath(System.String,DarkStar.Network.Protocol.Messages.Common.PointPosition,DarkStar.Network.Protocol.Messages.Common.PointPosition)
   name: CalculateAStarPath(string, PointPosition, PointPosition)
   href: api/DarkStar.Engine.Services.WorldService.html#DarkStar_Engine_Services_WorldService_CalculateAStarPath_System_String_DarkStar_Network_Protocol_Messages_Common_PointPosition_DarkStar_Network_Protocol_Messages_Common_PointPosition_
@@ -22142,6 +23383,22 @@ references:
   fullName.vb: DarkStar.Network.Protocol.Messages.Common.PointPosition.New
   nameWithType: PointPosition.PointPosition
   nameWithType.vb: PointPosition.New
+- uid: DarkStar.Network.Protocol.Messages.Common.PointPosition.New(System.Int32,System.Int32)
+  name: New(int, int)
+  href: api/DarkStar.Network.Protocol.Messages.Common.PointPosition.html#DarkStar_Network_Protocol_Messages_Common_PointPosition_New_System_Int32_System_Int32_
+  commentId: M:DarkStar.Network.Protocol.Messages.Common.PointPosition.New(System.Int32,System.Int32)
+  name.vb: New(Integer, Integer)
+  fullName: DarkStar.Network.Protocol.Messages.Common.PointPosition.New(int, int)
+  fullName.vb: DarkStar.Network.Protocol.Messages.Common.PointPosition.New(Integer, Integer)
+  nameWithType: PointPosition.New(int, int)
+  nameWithType.vb: PointPosition.New(Integer, Integer)
+- uid: DarkStar.Network.Protocol.Messages.Common.PointPosition.New*
+  name: New
+  href: api/DarkStar.Network.Protocol.Messages.Common.PointPosition.html#DarkStar_Network_Protocol_Messages_Common_PointPosition_New_
+  commentId: Overload:DarkStar.Network.Protocol.Messages.Common.PointPosition.New
+  isSpec: "True"
+  fullName: DarkStar.Network.Protocol.Messages.Common.PointPosition.New
+  nameWithType: PointPosition.New
 - uid: DarkStar.Network.Protocol.Messages.Common.PointPosition.op_Addition(DarkStar.Network.Protocol.Messages.Common.PointPosition,DarkStar.Network.Protocol.Messages.Common.PointPosition)
   name: operator +(PointPosition, PointPosition)
   href: api/DarkStar.Network.Protocol.Messages.Common.PointPosition.html#DarkStar_Network_Protocol_Messages_Common_PointPosition_op_Addition_DarkStar_Network_Protocol_Messages_Common_PointPosition_DarkStar_Network_Protocol_Messages_Common_PointPosition_
@@ -22219,6 +23476,111 @@ references:
   isSpec: "True"
   fullName: DarkStar.Network.Protocol.Messages.Common.PointPosition.Y
   nameWithType: PointPosition.Y
+- uid: DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition
+  name: VisibilityPointPosition
+  href: api/DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.html
+  commentId: T:DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition
+  fullName: DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition
+  nameWithType: VisibilityPointPosition
+- uid: DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.#ctor(System.Int32,System.Int32,System.Double)
+  name: VisibilityPointPosition(int, int, double)
+  href: api/DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.html#DarkStar_Network_Protocol_Messages_Common_VisibilityPointPosition__ctor_System_Int32_System_Int32_System_Double_
+  commentId: M:DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.#ctor(System.Int32,System.Int32,System.Double)
+  name.vb: New(Integer, Integer, Double)
+  fullName: DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.VisibilityPointPosition(int, int, double)
+  fullName.vb: DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.New(Integer, Integer, Double)
+  nameWithType: VisibilityPointPosition.VisibilityPointPosition(int, int, double)
+  nameWithType.vb: VisibilityPointPosition.New(Integer, Integer, Double)
+- uid: DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.#ctor*
+  name: VisibilityPointPosition
+  href: api/DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.html#DarkStar_Network_Protocol_Messages_Common_VisibilityPointPosition__ctor_
+  commentId: Overload:DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.VisibilityPointPosition
+  fullName.vb: DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.New
+  nameWithType: VisibilityPointPosition.VisibilityPointPosition
+  nameWithType.vb: VisibilityPointPosition.New
+- uid: DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.New(System.Int32,System.Int32,System.Double)
+  name: New(int, int, double)
+  href: api/DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.html#DarkStar_Network_Protocol_Messages_Common_VisibilityPointPosition_New_System_Int32_System_Int32_System_Double_
+  commentId: M:DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.New(System.Int32,System.Int32,System.Double)
+  name.vb: New(Integer, Integer, Double)
+  fullName: DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.New(int, int, double)
+  fullName.vb: DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.New(Integer, Integer, Double)
+  nameWithType: VisibilityPointPosition.New(int, int, double)
+  nameWithType.vb: VisibilityPointPosition.New(Integer, Integer, Double)
+- uid: DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.New*
+  name: New
+  href: api/DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.html#DarkStar_Network_Protocol_Messages_Common_VisibilityPointPosition_New_
+  commentId: Overload:DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.New
+  isSpec: "True"
+  fullName: DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.New
+  nameWithType: VisibilityPointPosition.New
+- uid: DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.op_Addition(DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition,DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition)
+  name: operator +(VisibilityPointPosition, VisibilityPointPosition)
+  href: api/DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.html#DarkStar_Network_Protocol_Messages_Common_VisibilityPointPosition_op_Addition_DarkStar_Network_Protocol_Messages_Common_VisibilityPointPosition_DarkStar_Network_Protocol_Messages_Common_VisibilityPointPosition_
+  commentId: M:DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.op_Addition(DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition,DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition)
+  name.vb: +(VisibilityPointPosition, VisibilityPointPosition)
+  fullName: DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.operator +(DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition, DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition)
+  fullName.vb: DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.+(DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition, DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition)
+  nameWithType: VisibilityPointPosition.operator +(VisibilityPointPosition, VisibilityPointPosition)
+  nameWithType.vb: VisibilityPointPosition.+(VisibilityPointPosition, VisibilityPointPosition)
+- uid: DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.op_Addition*
+  name: operator +
+  href: api/DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.html#DarkStar_Network_Protocol_Messages_Common_VisibilityPointPosition_op_Addition_
+  commentId: Overload:DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.op_Addition
+  isSpec: "True"
+  name.vb: +
+  fullName: DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.operator +
+  fullName.vb: DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.+
+  nameWithType: VisibilityPointPosition.operator +
+  nameWithType.vb: VisibilityPointPosition.+
+- uid: DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.op_Subtraction(DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition,DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition)
+  name: operator -(VisibilityPointPosition, VisibilityPointPosition)
+  href: api/DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.html#DarkStar_Network_Protocol_Messages_Common_VisibilityPointPosition_op_Subtraction_DarkStar_Network_Protocol_Messages_Common_VisibilityPointPosition_DarkStar_Network_Protocol_Messages_Common_VisibilityPointPosition_
+  commentId: M:DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.op_Subtraction(DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition,DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition)
+  name.vb: -(VisibilityPointPosition, VisibilityPointPosition)
+  fullName: DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.operator -(DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition, DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition)
+  fullName.vb: DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.-(DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition, DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition)
+  nameWithType: VisibilityPointPosition.operator -(VisibilityPointPosition, VisibilityPointPosition)
+  nameWithType.vb: VisibilityPointPosition.-(VisibilityPointPosition, VisibilityPointPosition)
+- uid: DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.op_Subtraction*
+  name: operator -
+  href: api/DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.html#DarkStar_Network_Protocol_Messages_Common_VisibilityPointPosition_op_Subtraction_
+  commentId: Overload:DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.op_Subtraction
+  isSpec: "True"
+  name.vb: '-'
+  fullName: DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.operator -
+  fullName.vb: DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.-
+  nameWithType: VisibilityPointPosition.operator -
+  nameWithType.vb: VisibilityPointPosition.-
+- uid: DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.ToString
+  name: ToString()
+  href: api/DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.html#DarkStar_Network_Protocol_Messages_Common_VisibilityPointPosition_ToString
+  commentId: M:DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.ToString
+  fullName: DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.ToString()
+  nameWithType: VisibilityPointPosition.ToString()
+- uid: DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.ToString*
+  name: ToString
+  href: api/DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.html#DarkStar_Network_Protocol_Messages_Common_VisibilityPointPosition_ToString_
+  commentId: Overload:DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.ToString
+  isSpec: "True"
+  fullName: DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.ToString
+  nameWithType: VisibilityPointPosition.ToString
+- uid: DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.Visibility
+  name: Visibility
+  href: api/DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.html#DarkStar_Network_Protocol_Messages_Common_VisibilityPointPosition_Visibility
+  commentId: P:DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.Visibility
+  fullName: DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.Visibility
+  nameWithType: VisibilityPointPosition.Visibility
+- uid: DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.Visibility*
+  name: Visibility
+  href: api/DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.html#DarkStar_Network_Protocol_Messages_Common_VisibilityPointPosition_Visibility_
+  commentId: Overload:DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.Visibility
+  isSpec: "True"
+  fullName: DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.Visibility
+  nameWithType: VisibilityPointPosition.Visibility
 - uid: DarkStar.Network.Protocol.Messages.Players
   name: DarkStar.Network.Protocol.Messages.Players
   href: api/DarkStar.Network.Protocol.Messages.Players.html
@@ -22500,6 +23862,50 @@ references:
   isSpec: "True"
   fullName: DarkStar.Network.Protocol.Messages.Players.PlayerDataResponseMessage.TileId
   nameWithType: PlayerDataResponseMessage.TileId
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerFovRequestMessage
+  name: PlayerFovRequestMessage
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerFovRequestMessage.html
+  commentId: T:DarkStar.Network.Protocol.Messages.Players.PlayerFovRequestMessage
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerFovRequestMessage
+  nameWithType: PlayerFovRequestMessage
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerFovResponseMessage
+  name: PlayerFovResponseMessage
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerFovResponseMessage.html
+  commentId: T:DarkStar.Network.Protocol.Messages.Players.PlayerFovResponseMessage
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerFovResponseMessage
+  nameWithType: PlayerFovResponseMessage
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerFovResponseMessage.#ctor(System.Collections.Generic.List{DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition})
+  name: PlayerFovResponseMessage(List<VisibilityPointPosition>)
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerFovResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerFovResponseMessage__ctor_System_Collections_Generic_List_DarkStar_Network_Protocol_Messages_Common_VisibilityPointPosition__
+  commentId: M:DarkStar.Network.Protocol.Messages.Players.PlayerFovResponseMessage.#ctor(System.Collections.Generic.List{DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition})
+  name.vb: New(List(Of VisibilityPointPosition))
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerFovResponseMessage.PlayerFovResponseMessage(System.Collections.Generic.List<DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition>)
+  fullName.vb: DarkStar.Network.Protocol.Messages.Players.PlayerFovResponseMessage.New(System.Collections.Generic.List(Of DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition))
+  nameWithType: PlayerFovResponseMessage.PlayerFovResponseMessage(List<VisibilityPointPosition>)
+  nameWithType.vb: PlayerFovResponseMessage.New(List(Of VisibilityPointPosition))
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerFovResponseMessage.#ctor*
+  name: PlayerFovResponseMessage
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerFovResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerFovResponseMessage__ctor_
+  commentId: Overload:DarkStar.Network.Protocol.Messages.Players.PlayerFovResponseMessage.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerFovResponseMessage.PlayerFovResponseMessage
+  fullName.vb: DarkStar.Network.Protocol.Messages.Players.PlayerFovResponseMessage.New
+  nameWithType: PlayerFovResponseMessage.PlayerFovResponseMessage
+  nameWithType.vb: PlayerFovResponseMessage.New
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerFovResponseMessage.VisiblePositions
+  name: VisiblePositions
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerFovResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerFovResponseMessage_VisiblePositions
+  commentId: P:DarkStar.Network.Protocol.Messages.Players.PlayerFovResponseMessage.VisiblePositions
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerFovResponseMessage.VisiblePositions
+  nameWithType: PlayerFovResponseMessage.VisiblePositions
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerFovResponseMessage.VisiblePositions*
+  name: VisiblePositions
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerFovResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerFovResponseMessage_VisiblePositions_
+  commentId: Overload:DarkStar.Network.Protocol.Messages.Players.PlayerFovResponseMessage.VisiblePositions
+  isSpec: "True"
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerFovResponseMessage.VisiblePositions
+  nameWithType: PlayerFovResponseMessage.VisiblePositions
 - uid: DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage
   name: PlayerGameObjectAddedResponseMessage
   href: api/DarkStar.Network.Protocol.Messages.Players.PlayerGameObjectAddedResponseMessage.html
@@ -23383,6 +24789,176 @@ references:
   isSpec: "True"
   fullName: DarkStar.Network.Protocol.Messages.Players.PlayerSelectResponseMessage.Success
   nameWithType: PlayerSelectResponseMessage.Success
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerStatsRequestMessage
+  name: PlayerStatsRequestMessage
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerStatsRequestMessage.html
+  commentId: T:DarkStar.Network.Protocol.Messages.Players.PlayerStatsRequestMessage
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerStatsRequestMessage
+  nameWithType: PlayerStatsRequestMessage
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage
+  name: PlayerStatsResponseMessage
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.html
+  commentId: T:DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage
+  nameWithType: PlayerStatsResponseMessage
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.#ctor
+  name: PlayerStatsResponseMessage()
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerStatsResponseMessage__ctor
+  commentId: M:DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.#ctor
+  name.vb: New()
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.PlayerStatsResponseMessage()
+  fullName.vb: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.New()
+  nameWithType: PlayerStatsResponseMessage.PlayerStatsResponseMessage()
+  nameWithType.vb: PlayerStatsResponseMessage.New()
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)
+  name: PlayerStatsResponseMessage(int, int, int, int, int, int, int, int, int, int)
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerStatsResponseMessage__ctor_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_
+  commentId: M:DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)
+  name.vb: New(Integer, Integer, Integer, Integer, Integer, Integer, Integer, Integer, Integer, Integer)
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.PlayerStatsResponseMessage(int, int, int, int, int, int, int, int, int, int)
+  fullName.vb: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.New(Integer, Integer, Integer, Integer, Integer, Integer, Integer, Integer, Integer, Integer)
+  nameWithType: PlayerStatsResponseMessage.PlayerStatsResponseMessage(int, int, int, int, int, int, int, int, int, int)
+  nameWithType.vb: PlayerStatsResponseMessage.New(Integer, Integer, Integer, Integer, Integer, Integer, Integer, Integer, Integer, Integer)
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.#ctor*
+  name: PlayerStatsResponseMessage
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerStatsResponseMessage__ctor_
+  commentId: Overload:DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.PlayerStatsResponseMessage
+  fullName.vb: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.New
+  nameWithType: PlayerStatsResponseMessage.PlayerStatsResponseMessage
+  nameWithType.vb: PlayerStatsResponseMessage.New
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Dexterity
+  name: Dexterity
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerStatsResponseMessage_Dexterity
+  commentId: P:DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Dexterity
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Dexterity
+  nameWithType: PlayerStatsResponseMessage.Dexterity
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Dexterity*
+  name: Dexterity
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerStatsResponseMessage_Dexterity_
+  commentId: Overload:DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Dexterity
+  isSpec: "True"
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Dexterity
+  nameWithType: PlayerStatsResponseMessage.Dexterity
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Experience
+  name: Experience
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerStatsResponseMessage_Experience
+  commentId: P:DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Experience
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Experience
+  nameWithType: PlayerStatsResponseMessage.Experience
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Experience*
+  name: Experience
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerStatsResponseMessage_Experience_
+  commentId: Overload:DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Experience
+  isSpec: "True"
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Experience
+  nameWithType: PlayerStatsResponseMessage.Experience
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Health
+  name: Health
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerStatsResponseMessage_Health
+  commentId: P:DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Health
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Health
+  nameWithType: PlayerStatsResponseMessage.Health
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Health*
+  name: Health
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerStatsResponseMessage_Health_
+  commentId: Overload:DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Health
+  isSpec: "True"
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Health
+  nameWithType: PlayerStatsResponseMessage.Health
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Intelligence
+  name: Intelligence
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerStatsResponseMessage_Intelligence
+  commentId: P:DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Intelligence
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Intelligence
+  nameWithType: PlayerStatsResponseMessage.Intelligence
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Intelligence*
+  name: Intelligence
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerStatsResponseMessage_Intelligence_
+  commentId: Overload:DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Intelligence
+  isSpec: "True"
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Intelligence
+  nameWithType: PlayerStatsResponseMessage.Intelligence
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Level
+  name: Level
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerStatsResponseMessage_Level
+  commentId: P:DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Level
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Level
+  nameWithType: PlayerStatsResponseMessage.Level
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Level*
+  name: Level
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerStatsResponseMessage_Level_
+  commentId: Overload:DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Level
+  isSpec: "True"
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Level
+  nameWithType: PlayerStatsResponseMessage.Level
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Luck
+  name: Luck
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerStatsResponseMessage_Luck
+  commentId: P:DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Luck
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Luck
+  nameWithType: PlayerStatsResponseMessage.Luck
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Luck*
+  name: Luck
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerStatsResponseMessage_Luck_
+  commentId: Overload:DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Luck
+  isSpec: "True"
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Luck
+  nameWithType: PlayerStatsResponseMessage.Luck
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Mana
+  name: Mana
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerStatsResponseMessage_Mana
+  commentId: P:DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Mana
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Mana
+  nameWithType: PlayerStatsResponseMessage.Mana
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Mana*
+  name: Mana
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerStatsResponseMessage_Mana_
+  commentId: Overload:DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Mana
+  isSpec: "True"
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Mana
+  nameWithType: PlayerStatsResponseMessage.Mana
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.MaxHealth
+  name: MaxHealth
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerStatsResponseMessage_MaxHealth
+  commentId: P:DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.MaxHealth
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.MaxHealth
+  nameWithType: PlayerStatsResponseMessage.MaxHealth
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.MaxHealth*
+  name: MaxHealth
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerStatsResponseMessage_MaxHealth_
+  commentId: Overload:DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.MaxHealth
+  isSpec: "True"
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.MaxHealth
+  nameWithType: PlayerStatsResponseMessage.MaxHealth
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.MaxMana
+  name: MaxMana
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerStatsResponseMessage_MaxMana
+  commentId: P:DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.MaxMana
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.MaxMana
+  nameWithType: PlayerStatsResponseMessage.MaxMana
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.MaxMana*
+  name: MaxMana
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerStatsResponseMessage_MaxMana_
+  commentId: Overload:DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.MaxMana
+  isSpec: "True"
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.MaxMana
+  nameWithType: PlayerStatsResponseMessage.MaxMana
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Strength
+  name: Strength
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerStatsResponseMessage_Strength
+  commentId: P:DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Strength
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Strength
+  nameWithType: PlayerStatsResponseMessage.Strength
+- uid: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Strength*
+  name: Strength
+  href: api/DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.html#DarkStar_Network_Protocol_Messages_Players_PlayerStatsResponseMessage_Strength_
+  commentId: Overload:DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Strength
+  isSpec: "True"
+  fullName: DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.Strength
+  nameWithType: PlayerStatsResponseMessage.Strength
 - uid: DarkStar.Network.Protocol.Messages.Server
   name: DarkStar.Network.Protocol.Messages.Server
   href: api/DarkStar.Network.Protocol.Messages.Server.html
@@ -25072,6 +26648,18 @@ references:
   commentId: F:DarkStar.Network.Protocol.Types.DarkStarMessageType.PlayerDataResponse
   fullName: DarkStar.Network.Protocol.Types.DarkStarMessageType.PlayerDataResponse
   nameWithType: DarkStarMessageType.PlayerDataResponse
+- uid: DarkStar.Network.Protocol.Types.DarkStarMessageType.PlayerFovRequest
+  name: PlayerFovRequest
+  href: api/DarkStar.Network.Protocol.Types.DarkStarMessageType.html#DarkStar_Network_Protocol_Types_DarkStarMessageType_PlayerFovRequest
+  commentId: F:DarkStar.Network.Protocol.Types.DarkStarMessageType.PlayerFovRequest
+  fullName: DarkStar.Network.Protocol.Types.DarkStarMessageType.PlayerFovRequest
+  nameWithType: DarkStarMessageType.PlayerFovRequest
+- uid: DarkStar.Network.Protocol.Types.DarkStarMessageType.PlayerFovResponse
+  name: PlayerFovResponse
+  href: api/DarkStar.Network.Protocol.Types.DarkStarMessageType.html#DarkStar_Network_Protocol_Types_DarkStarMessageType_PlayerFovResponse
+  commentId: F:DarkStar.Network.Protocol.Types.DarkStarMessageType.PlayerFovResponse
+  fullName: DarkStar.Network.Protocol.Types.DarkStarMessageType.PlayerFovResponse
+  nameWithType: DarkStarMessageType.PlayerFovResponse
 - uid: DarkStar.Network.Protocol.Types.DarkStarMessageType.PlayerGameObjectAddedResponse
   name: PlayerGameObjectAddedResponse
   href: api/DarkStar.Network.Protocol.Types.DarkStarMessageType.html#DarkStar_Network_Protocol_Types_DarkStarMessageType_PlayerGameObjectAddedResponse
@@ -25174,6 +26762,18 @@ references:
   commentId: F:DarkStar.Network.Protocol.Types.DarkStarMessageType.PlayerSelectResponse
   fullName: DarkStar.Network.Protocol.Types.DarkStarMessageType.PlayerSelectResponse
   nameWithType: DarkStarMessageType.PlayerSelectResponse
+- uid: DarkStar.Network.Protocol.Types.DarkStarMessageType.PlayerStatsRequest
+  name: PlayerStatsRequest
+  href: api/DarkStar.Network.Protocol.Types.DarkStarMessageType.html#DarkStar_Network_Protocol_Types_DarkStarMessageType_PlayerStatsRequest
+  commentId: F:DarkStar.Network.Protocol.Types.DarkStarMessageType.PlayerStatsRequest
+  fullName: DarkStar.Network.Protocol.Types.DarkStarMessageType.PlayerStatsRequest
+  nameWithType: DarkStarMessageType.PlayerStatsRequest
+- uid: DarkStar.Network.Protocol.Types.DarkStarMessageType.PlayerStatsResponse
+  name: PlayerStatsResponse
+  href: api/DarkStar.Network.Protocol.Types.DarkStarMessageType.html#DarkStar_Network_Protocol_Types_DarkStarMessageType_PlayerStatsResponse
+  commentId: F:DarkStar.Network.Protocol.Types.DarkStarMessageType.PlayerStatsResponse
+  fullName: DarkStar.Network.Protocol.Types.DarkStarMessageType.PlayerStatsResponse
+  nameWithType: DarkStarMessageType.PlayerStatsResponse
 - uid: DarkStar.Network.Protocol.Types.DarkStarMessageType.Pong
   name: Pong
   href: api/DarkStar.Network.Protocol.Types.DarkStarMessageType.html#DarkStar_Network_Protocol_Types_DarkStarMessageType_Pong

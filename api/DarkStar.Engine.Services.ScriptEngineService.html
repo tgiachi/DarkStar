@@ -140,18 +140,18 @@ public class ScriptEngineService : BaseService&lt;IScriptEngineService&gt;, IScr
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_ScriptEngineService__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Engine_Services_ScriptEngineService__DarkStar_Api_Data_Config_DirectoriesConfig_DarkStar_Api_Engine_Interfaces_Services_ITypeService_System_IServiceProvider_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.ScriptEngineService.%23ctor(Microsoft.Extensions.Logging.ILogger%7BDarkStar.Engine.Services.ScriptEngineService%7D%2CDarkStar.Api.Data.Config.DirectoriesConfig%2CDarkStar.Api.Engine.Interfaces.Services.ITypeService%2CSystem.IServiceProvider)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_ScriptEngineService__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Engine_Services_ScriptEngineService__DarkStar_Api_Data_Config_DirectoriesConfig_DarkStar_Api_Engine_Interfaces_Services_ITypeService_DarkStar_Api_Engine_Data_Config_EngineConfig_System_IServiceProvider_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.ScriptEngineService.%23ctor(Microsoft.Extensions.Logging.ILogger%7BDarkStar.Engine.Services.ScriptEngineService%7D%2CDarkStar.Api.Data.Config.DirectoriesConfig%2CDarkStar.Api.Engine.Interfaces.Services.ITypeService%2CDarkStar.Api.Engine.Data.Config.EngineConfig%2CSystem.IServiceProvider)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L41">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L52">View Source</a>
   </span>
   <a id="DarkStar_Engine_Services_ScriptEngineService__ctor_" data-uid="DarkStar.Engine.Services.ScriptEngineService.#ctor*"></a>
-  <h4 id="DarkStar_Engine_Services_ScriptEngineService__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Engine_Services_ScriptEngineService__DarkStar_Api_Data_Config_DirectoriesConfig_DarkStar_Api_Engine_Interfaces_Services_ITypeService_System_IServiceProvider_" data-uid="DarkStar.Engine.Services.ScriptEngineService.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.Services.ScriptEngineService},DarkStar.Api.Data.Config.DirectoriesConfig,DarkStar.Api.Engine.Interfaces.Services.ITypeService,System.IServiceProvider)">ScriptEngineService(ILogger&lt;ScriptEngineService&gt;, DirectoriesConfig, ITypeService, IServiceProvider)</h4>
+  <h4 id="DarkStar_Engine_Services_ScriptEngineService__ctor_Microsoft_Extensions_Logging_ILogger_DarkStar_Engine_Services_ScriptEngineService__DarkStar_Api_Data_Config_DirectoriesConfig_DarkStar_Api_Engine_Interfaces_Services_ITypeService_DarkStar_Api_Engine_Data_Config_EngineConfig_System_IServiceProvider_" data-uid="DarkStar.Engine.Services.ScriptEngineService.#ctor(Microsoft.Extensions.Logging.ILogger{DarkStar.Engine.Services.ScriptEngineService},DarkStar.Api.Data.Config.DirectoriesConfig,DarkStar.Api.Engine.Interfaces.Services.ITypeService,DarkStar.Api.Engine.Data.Config.EngineConfig,System.IServiceProvider)">ScriptEngineService(ILogger&lt;ScriptEngineService&gt;, DirectoriesConfig, ITypeService, EngineConfig, IServiceProvider)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ScriptEngineService(ILogger&lt;ScriptEngineService&gt; logger, DirectoriesConfig directoriesConfig, ITypeService typeService, IServiceProvider container)</code></pre>
+    <pre><code class="lang-csharp hljs">public ScriptEngineService(ILogger&lt;ScriptEngineService&gt; logger, DirectoriesConfig directoriesConfig, ITypeService typeService, EngineConfig engineConfig, IServiceProvider container)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -179,6 +179,11 @@ public class ScriptEngineService : BaseService&lt;IScriptEngineService&gt;, IScr
         <td></td>
       </tr>
       <tr>
+        <td><a class="xref" href="DarkStar.Api.Engine.Data.Config.EngineConfig.html">EngineConfig</a></td>
+        <td><span class="parametername">engineConfig</span></td>
+        <td></td>
+      </tr>
+      <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iserviceprovider">IServiceProvider</a></td>
         <td><span class="parametername">container</span></td>
         <td></td>
@@ -192,7 +197,7 @@ public class ScriptEngineService : BaseService&lt;IScriptEngineService&gt;, IScr
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_ScriptEngineService__container.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.ScriptEngineService._container%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L33">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L40">View Source</a>
   </span>
   <h4 id="DarkStar_Engine_Services_ScriptEngineService__container" data-uid="DarkStar.Engine.Services.ScriptEngineService._container">_container</h4>
   <div class="markdown level1 summary"></div>
@@ -221,7 +226,7 @@ public class ScriptEngineService : BaseService&lt;IScriptEngineService&gt;, IScr
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_ScriptEngineService__directoriesConfig.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.ScriptEngineService._directoriesConfig%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L32">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L39">View Source</a>
   </span>
   <h4 id="DarkStar_Engine_Services_ScriptEngineService__directoriesConfig" data-uid="DarkStar.Engine.Services.ScriptEngineService._directoriesConfig">_directoriesConfig</h4>
   <div class="markdown level1 summary"></div>
@@ -247,17 +252,17 @@ public class ScriptEngineService : BaseService&lt;IScriptEngineService&gt;, IScr
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_ScriptEngineService__scriptEngine.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.ScriptEngineService._scriptEngine%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_ScriptEngineService__fileExtension.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.ScriptEngineService._fileExtension%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L31">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L45">View Source</a>
   </span>
-  <h4 id="DarkStar_Engine_Services_ScriptEngineService__scriptEngine" data-uid="DarkStar.Engine.Services.ScriptEngineService._scriptEngine">_scriptEngine</h4>
+  <h4 id="DarkStar_Engine_Services_ScriptEngineService__fileExtension" data-uid="DarkStar.Engine.Services.ScriptEngineService._fileExtension">_fileExtension</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">private readonly Lua _scriptEngine</code></pre>
+    <pre><code class="lang-csharp hljs">private readonly string _fileExtension</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-condensed">
@@ -269,7 +274,65 @@ public class ScriptEngineService : BaseService&lt;IScriptEngineService&gt;, IScr
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Lua</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_ScriptEngineService__scriptConstants.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.ScriptEngineService._scriptConstants%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L43">View Source</a>
+  </span>
+  <h4 id="DarkStar_Engine_Services_ScriptEngineService__scriptConstants" data-uid="DarkStar.Engine.Services.ScriptEngineService._scriptConstants">_scriptConstants</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private readonly Dictionary&lt;string, object&gt; _scriptConstants</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_ScriptEngineService__scriptEngine.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.ScriptEngineService._scriptEngine%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L38">View Source</a>
+  </span>
+  <h4 id="DarkStar_Engine_Services_ScriptEngineService__scriptEngine" data-uid="DarkStar.Engine.Services.ScriptEngineService._scriptEngine">_scriptEngine</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private readonly Engine _scriptEngine</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Engine</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -279,7 +342,7 @@ public class ScriptEngineService : BaseService&lt;IScriptEngineService&gt;, IScr
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_ScriptEngineService__typeService.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.ScriptEngineService._typeService%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L34">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L41">View Source</a>
   </span>
   <h4 id="DarkStar_Engine_Services_ScriptEngineService__typeService" data-uid="DarkStar.Engine.Services.ScriptEngineService._typeService">_typeService</h4>
   <div class="markdown level1 summary"></div>
@@ -310,7 +373,7 @@ public class ScriptEngineService : BaseService&lt;IScriptEngineService&gt;, IScr
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_ScriptEngineService_ContextVariables.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.ScriptEngineService.ContextVariables%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L38">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L49">View Source</a>
   </span>
   <a id="DarkStar_Engine_Services_ScriptEngineService_ContextVariables_" data-uid="DarkStar.Engine.Services.ScriptEngineService.ContextVariables*"></a>
   <h4 id="DarkStar_Engine_Services_ScriptEngineService_ContextVariables" data-uid="DarkStar.Engine.Services.ScriptEngineService.ContextVariables">ContextVariables</h4>
@@ -340,7 +403,7 @@ public class ScriptEngineService : BaseService&lt;IScriptEngineService&gt;, IScr
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_ScriptEngineService_Functions.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.ScriptEngineService.Functions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L36">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L47">View Source</a>
   </span>
   <a id="DarkStar_Engine_Services_ScriptEngineService_Functions_" data-uid="DarkStar.Engine.Services.ScriptEngineService.Functions*"></a>
   <h4 id="DarkStar_Engine_Services_ScriptEngineService_Functions" data-uid="DarkStar.Engine.Services.ScriptEngineService.Functions">Functions</h4>
@@ -372,7 +435,7 @@ public class ScriptEngineService : BaseService&lt;IScriptEngineService&gt;, IScr
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_ScriptEngineService_AddContextVariable_System_String_System_Object_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.ScriptEngineService.AddContextVariable(System.String%2CSystem.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L183">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L211">View Source</a>
   </span>
   <a id="DarkStar_Engine_Services_ScriptEngineService_AddContextVariable_" data-uid="DarkStar.Engine.Services.ScriptEngineService.AddContextVariable*"></a>
   <h4 id="DarkStar_Engine_Services_ScriptEngineService_AddContextVariable_System_String_System_Object_" data-uid="DarkStar.Engine.Services.ScriptEngineService.AddContextVariable(System.String,System.Object)">AddContextVariable(string, object)</h4>
@@ -409,7 +472,7 @@ public class ScriptEngineService : BaseService&lt;IScriptEngineService&gt;, IScr
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_ScriptEngineService_AddGameObjectTypeToVariables_DarkStar_Api_World_Types_GameObjects_GameObjectType_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.ScriptEngineService.AddGameObjectTypeToVariables(DarkStar.Api.World.Types.GameObjects.GameObjectType)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L162">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L190">View Source</a>
   </span>
   <a id="DarkStar_Engine_Services_ScriptEngineService_AddGameObjectTypeToVariables_" data-uid="DarkStar.Engine.Services.ScriptEngineService.AddGameObjectTypeToVariables*"></a>
   <h4 id="DarkStar_Engine_Services_ScriptEngineService_AddGameObjectTypeToVariables_DarkStar_Api_World_Types_GameObjects_GameObjectType_" data-uid="DarkStar.Engine.Services.ScriptEngineService.AddGameObjectTypeToVariables(DarkStar.Api.World.Types.GameObjects.GameObjectType)">AddGameObjectTypeToVariables(GameObjectType)</h4>
@@ -441,7 +504,7 @@ public class ScriptEngineService : BaseService&lt;IScriptEngineService&gt;, IScr
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_ScriptEngineService_AddNpcSubTypeToVariables_DarkStar_Api_World_Types_Npc_NpcSubType_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.ScriptEngineService.AddNpcSubTypeToVariables(DarkStar.Api.World.Types.Npc.NpcSubType)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L176">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L204">View Source</a>
   </span>
   <a id="DarkStar_Engine_Services_ScriptEngineService_AddNpcSubTypeToVariables_" data-uid="DarkStar.Engine.Services.ScriptEngineService.AddNpcSubTypeToVariables*"></a>
   <h4 id="DarkStar_Engine_Services_ScriptEngineService_AddNpcSubTypeToVariables_DarkStar_Api_World_Types_Npc_NpcSubType_" data-uid="DarkStar.Engine.Services.ScriptEngineService.AddNpcSubTypeToVariables(DarkStar.Api.World.Types.Npc.NpcSubType)">AddNpcSubTypeToVariables(NpcSubType)</h4>
@@ -473,7 +536,7 @@ public class ScriptEngineService : BaseService&lt;IScriptEngineService&gt;, IScr
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_ScriptEngineService_AddNpcTypeToVariables_DarkStar_Api_World_Types_Npc_NpcType_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.ScriptEngineService.AddNpcTypeToVariables(DarkStar.Api.World.Types.Npc.NpcType)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L169">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L197">View Source</a>
   </span>
   <a id="DarkStar_Engine_Services_ScriptEngineService_AddNpcTypeToVariables_" data-uid="DarkStar.Engine.Services.ScriptEngineService.AddNpcTypeToVariables*"></a>
   <h4 id="DarkStar_Engine_Services_ScriptEngineService_AddNpcTypeToVariables_DarkStar_Api_World_Types_Npc_NpcType_" data-uid="DarkStar.Engine.Services.ScriptEngineService.AddNpcTypeToVariables(DarkStar.Api.World.Types.Npc.NpcType)">AddNpcTypeToVariables(NpcType)</h4>
@@ -505,7 +568,7 @@ public class ScriptEngineService : BaseService&lt;IScriptEngineService&gt;, IScr
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_ScriptEngineService_AddTileToVariables_DarkStar_Api_World_Types_Tiles_Tile_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.ScriptEngineService.AddTileToVariables(DarkStar.Api.World.Types.Tiles.Tile)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L155">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L183">View Source</a>
   </span>
   <a id="DarkStar_Engine_Services_ScriptEngineService_AddTileToVariables_" data-uid="DarkStar.Engine.Services.ScriptEngineService.AddTileToVariables*"></a>
   <h4 id="DarkStar_Engine_Services_ScriptEngineService_AddTileToVariables_DarkStar_Api_World_Types_Tiles_Tile_" data-uid="DarkStar.Engine.Services.ScriptEngineService.AddTileToVariables(DarkStar.Api.World.Types.Tiles.Tile)">AddTileToVariables(Tile)</h4>
@@ -534,10 +597,62 @@ public class ScriptEngineService : BaseService&lt;IScriptEngineService&gt;, IScr
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_ScriptEngineService_CreateJsEngineDelegate_System_Object_System_Reflection_MethodInfo_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.ScriptEngineService.CreateJsEngineDelegate(System.Object%2CSystem.Reflection.MethodInfo)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L255">View Source</a>
+  </span>
+  <a id="DarkStar_Engine_Services_ScriptEngineService_CreateJsEngineDelegate_" data-uid="DarkStar.Engine.Services.ScriptEngineService.CreateJsEngineDelegate*"></a>
+  <h4 id="DarkStar_Engine_Services_ScriptEngineService_CreateJsEngineDelegate_System_Object_System_Reflection_MethodInfo_" data-uid="DarkStar.Engine.Services.ScriptEngineService.CreateJsEngineDelegate(System.Object,System.Reflection.MethodInfo)">CreateJsEngineDelegate(object, MethodInfo)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private Delegate CreateJsEngineDelegate(object obj, MethodInfo method)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.reflection.methodinfo">MethodInfo</a></td>
+        <td><span class="parametername">method</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.delegate">Delegate</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_ScriptEngineService_ExecuteCommand_System_String_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.ScriptEngineService.ExecuteCommand(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L270">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L317">View Source</a>
   </span>
   <a id="DarkStar_Engine_Services_ScriptEngineService_ExecuteCommand_" data-uid="DarkStar.Engine.Services.ScriptEngineService.ExecuteCommand*"></a>
   <h4 id="DarkStar_Engine_Services_ScriptEngineService_ExecuteCommand_System_String_" data-uid="DarkStar.Engine.Services.ScriptEngineService.ExecuteCommand(System.String)">ExecuteCommand(string)</h4>
@@ -584,7 +699,7 @@ public class ScriptEngineService : BaseService&lt;IScriptEngineService&gt;, IScr
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_ScriptEngineService_ExecuteScriptAsync_System_String_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.ScriptEngineService.ExecuteScriptAsync(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L247">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L293">View Source</a>
   </span>
   <a id="DarkStar_Engine_Services_ScriptEngineService_ExecuteScriptAsync_" data-uid="DarkStar.Engine.Services.ScriptEngineService.ExecuteScriptAsync*"></a>
   <h4 id="DarkStar_Engine_Services_ScriptEngineService_ExecuteScriptAsync_System_String_" data-uid="DarkStar.Engine.Services.ScriptEngineService.ExecuteScriptAsync(System.String)">ExecuteScriptAsync(string)</h4>
@@ -631,7 +746,7 @@ public class ScriptEngineService : BaseService&lt;IScriptEngineService&gt;, IScr
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_ScriptEngineService_ExtractFunctionDescriptor_DarkStar_Engine_Attributes_ScriptEngine_ScriptFunctionAttribute_System_Reflection_MethodInfo_.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.ScriptEngineService.ExtractFunctionDescriptor(DarkStar.Engine.Attributes.ScriptEngine.ScriptFunctionAttribute%2CSystem.Reflection.MethodInfo)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L223">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L267">View Source</a>
   </span>
   <a id="DarkStar_Engine_Services_ScriptEngineService_ExtractFunctionDescriptor_" data-uid="DarkStar.Engine.Services.ScriptEngineService.ExtractFunctionDescriptor*"></a>
   <h4 id="DarkStar_Engine_Services_ScriptEngineService_ExtractFunctionDescriptor_DarkStar_Engine_Attributes_ScriptEngine_ScriptFunctionAttribute_System_Reflection_MethodInfo_" data-uid="DarkStar.Engine.Services.ScriptEngineService.ExtractFunctionDescriptor(DarkStar.Engine.Attributes.ScriptEngine.ScriptFunctionAttribute,System.Reflection.MethodInfo)">ExtractFunctionDescriptor(ScriptFunctionAttribute, MethodInfo)</h4>
@@ -665,10 +780,40 @@ public class ScriptEngineService : BaseService&lt;IScriptEngineService&gt;, IScr
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_ScriptEngineService_GenerateTypeDefinitionsAsync.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.ScriptEngineService.GenerateTypeDefinitionsAsync%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L331">View Source</a>
+  </span>
+  <a id="DarkStar_Engine_Services_ScriptEngineService_GenerateTypeDefinitionsAsync_" data-uid="DarkStar.Engine.Services.ScriptEngineService.GenerateTypeDefinitionsAsync*"></a>
+  <h4 id="DarkStar_Engine_Services_ScriptEngineService_GenerateTypeDefinitionsAsync" data-uid="DarkStar.Engine.Services.ScriptEngineService.GenerateTypeDefinitionsAsync">GenerateTypeDefinitionsAsync()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;string&gt; GenerateTypeDefinitionsAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_ScriptEngineService_PrepareModuleDirectoryAsync.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.ScriptEngineService.PrepareModuleDirectoryAsync%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L64">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L89">View Source</a>
   </span>
   <a id="DarkStar_Engine_Services_ScriptEngineService_PrepareModuleDirectoryAsync_" data-uid="DarkStar.Engine.Services.ScriptEngineService.PrepareModuleDirectoryAsync*"></a>
   <h4 id="DarkStar_Engine_Services_ScriptEngineService_PrepareModuleDirectoryAsync" data-uid="DarkStar.Engine.Services.ScriptEngineService.PrepareModuleDirectoryAsync">PrepareModuleDirectoryAsync()</h4>
@@ -698,7 +843,7 @@ public class ScriptEngineService : BaseService&lt;IScriptEngineService&gt;, IScr
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_ScriptEngineService_PrepareScriptContextAsync.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.ScriptEngineService.PrepareScriptContextAsync%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L84">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L98">View Source</a>
   </span>
   <a id="DarkStar_Engine_Services_ScriptEngineService_PrepareScriptContextAsync_" data-uid="DarkStar.Engine.Services.ScriptEngineService.PrepareScriptContextAsync*"></a>
   <h4 id="DarkStar_Engine_Services_ScriptEngineService_PrepareScriptContextAsync" data-uid="DarkStar.Engine.Services.ScriptEngineService.PrepareScriptContextAsync">PrepareScriptContextAsync()</h4>
@@ -728,7 +873,7 @@ public class ScriptEngineService : BaseService&lt;IScriptEngineService&gt;, IScr
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_ScriptEngineService_ScanScriptModulesAsync.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.ScriptEngineService.ScanScriptModulesAsync%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L189">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L217">View Source</a>
   </span>
   <a id="DarkStar_Engine_Services_ScriptEngineService_ScanScriptModulesAsync_" data-uid="DarkStar.Engine.Services.ScriptEngineService.ScanScriptModulesAsync*"></a>
   <h4 id="DarkStar_Engine_Services_ScriptEngineService_ScanScriptModulesAsync" data-uid="DarkStar.Engine.Services.ScriptEngineService.ScanScriptModulesAsync">ScanScriptModulesAsync()</h4>
@@ -758,7 +903,7 @@ public class ScriptEngineService : BaseService&lt;IScriptEngineService&gt;, IScr
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_ScriptEngineService_StartAsync.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.ScriptEngineService.StartAsync%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L52">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L77">View Source</a>
   </span>
   <a id="DarkStar_Engine_Services_ScriptEngineService_StartAsync_" data-uid="DarkStar.Engine.Services.ScriptEngineService.StartAsync*"></a>
   <h4 id="DarkStar_Engine_Services_ScriptEngineService_StartAsync" data-uid="DarkStar.Engine.Services.ScriptEngineService.StartAsync">StartAsync()</h4>
@@ -790,7 +935,7 @@ public class ScriptEngineService : BaseService&lt;IScriptEngineService&gt;, IScr
     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_ScriptEngineService_StopAsync.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.ScriptEngineService.StopAsync%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L262">View Source</a>
+    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L309">View Source</a>
   </span>
   <a id="DarkStar_Engine_Services_ScriptEngineService_StopAsync_" data-uid="DarkStar.Engine.Services.ScriptEngineService.StopAsync*"></a>
   <h4 id="DarkStar_Engine_Services_ScriptEngineService_StopAsync" data-uid="DarkStar.Engine.Services.ScriptEngineService.StopAsync">StopAsync()</h4>
@@ -839,7 +984,7 @@ public class ScriptEngineService : BaseService&lt;IScriptEngineService&gt;, IScr
                     <a href="https://github.com/tgiachi/DarkStar/new/main/apiSpec/new?filename=DarkStar_Engine_Services_ScriptEngineService.md&amp;value=---%0Auid%3A%20DarkStar.Engine.Services.ScriptEngineService%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L28" class="contribution-link">View Source</a>
+                    <a href="https://github.com/tgiachi/DarkStar/blob/main/DarkStar.Engine/Services/ScriptEngineService.cs/#L35" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

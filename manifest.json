@@ -275,6 +275,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Data.Blueprint.BlueprintMapInfoContext.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/DarkStar.Api.Engine.Data.Blueprint.yml",
       "output": {
         ".html": {
@@ -579,6 +589,26 @@
       "output": {
         ".html": {
           "relative_path": "api/DarkStar.Api.Engine.Data.Templates.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Events.Commands.GameObjectCommandEvent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Events.Commands.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Events.Commands.html"
         }
       },
       "version": ""
@@ -1199,6 +1229,26 @@
       "output": {
         ".html": {
           "relative_path": "api/DarkStar.Api.Engine.Map.Entities.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Map.Enums.MapGeneratorType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Map.Enums.MapGeneratorType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Api.Engine.Map.Enums.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Api.Engine.Map.Enums.html"
         }
       },
       "version": ""
@@ -2055,6 +2105,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.Models.PlayerStatsObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.Models.PlayerStatsObject.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Client.Models.TextMessageEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Client.Models.TextMessageEntity.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/DarkStar.Client.Models.Tiles.Tile.yml",
       "output": {
         ".html": {
@@ -2739,6 +2809,26 @@
       "output": {
         ".html": {
           "relative_path": "api/DarkStar.Engine.Attributes.ScriptEngine.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.CodeGenerator.TypeScriptCodeGenerator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Engine.CodeGenerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Engine.CodeGenerator.html"
         }
       },
       "version": ""
@@ -3995,6 +4085,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Common.VisibilityPointPosition.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Common.yml",
       "output": {
         ".html": {
@@ -4039,6 +4139,26 @@
       "output": {
         ".html": {
           "relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerDataResponseMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerFovRequestMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerFovRequestMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerFovResponseMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerFovResponseMessage.html"
         }
       },
       "version": ""
@@ -4239,6 +4359,26 @@
       "output": {
         ".html": {
           "relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerSelectResponseMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerStatsRequestMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerStatsRequestMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DarkStar.Network.Protocol.Messages.Players.PlayerStatsResponseMessage.html"
         }
       },
       "version": ""
