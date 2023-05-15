@@ -172,11 +172,10 @@ internal class Program
 
     private static DirectoriesConfig EnsureDirectories()
     {
-        var rootDirectory = Environment.GetEnvironmentVariable("DARKSTAR_ROOT_DIRECTORY")
-                            ?? Path.Join(
-                                Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-                                "DarkStar"
-                            );
+        var envRootDirectory = Environment.GetEnvironmentVariable("DARKSTAR_ROOT_DIRECTORY");
+        var rootDirectory = string.IsNullOrEmpty(envRootDirectory)
+            ? Path.Join(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "DarkStar")
+            : envRootDirectory;
 
         if (string.IsNullOrEmpty(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)))
         {

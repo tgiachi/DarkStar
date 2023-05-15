@@ -53,13 +53,25 @@ public class EventDispatcherService : BaseService<EventDispatcherService>, IEven
         );
     }
 
+    /// <summary>
+    /// This event is triggered when a player login in the world
+    /// </summary>
+    /// <param name="obj"></param>
     private void OnPlayerLoggedMessage(PlayerLoggedEvent obj)
     {
         _ = Task.Run(
             async () =>
             {
                 await Engine.NetworkServer.SendMessageAsync(obj.SessionId, new PlayerLoginResponseMessage(true));
+
                 await Task.Delay(500);
+                await Engine.NetworkServer.SendMessageAsync(
+                    obj.SessionId,
+                    await PlayerDataHelper.BuildPlayerStatsAsync(
+                        Engine,
+                        obj.PlayerId
+                    )
+                );
                 Logger.LogDebug("Sending information of map to player {PlayerId}", obj.PlayerId);
                 Engine.NetworkServer.SendMessageAsync(
                     obj.SessionId,

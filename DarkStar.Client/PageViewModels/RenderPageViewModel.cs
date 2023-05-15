@@ -30,6 +30,8 @@ public class RenderPageViewModel : PageViewModelBase
 {
     private readonly GraphicEngineRender _graphicEngineRender;
 
+    public PlayerStatsObject PlayerStats { get; set; } = new();
+
     private readonly ServiceContext _serviceContext;
     public ReactiveCommand<string, Unit> MoveCharacterCommand { get; set; }
 
@@ -43,6 +45,11 @@ public class RenderPageViewModel : PageViewModelBase
         _serviceContext = serviceContext;
 
         serviceContext.NetworkClient.SubscribeToMessage<MapResponseMessage>(DarkStarMessageType.MapResponse, OnMapResponse);
+        serviceContext.NetworkClient.SubscribeToMessage<PlayerStatsResponseMessage>(
+            DarkStarMessageType.PlayerStatsResponse,
+            OnPlayerStatReceived
+        );
+        serviceContext.NetworkClient.SubscribeToMessage<PlayerInventoryResponseMessage>(DarkStarMessageType.PlayerInventoryResponse, OnPlayerInventoryReceived);
         serviceContext.NetworkClient.SubscribeToMessage<WorldMessageResponseMessage>(
             DarkStarMessageType.WorldMessageResponse,
             OnWorldMessage
@@ -77,6 +84,39 @@ public class RenderPageViewModel : PageViewModelBase
         PerformActionCommand = ReactiveCommand.Create(PerformAction);
     }
 
+    private Task OnPlayerStatReceived(IDarkStarNetworkMessage arg)
+    {
+
+        var message = (PlayerStatsResponseMessage)arg;
+        return Dispatcher.UIThread.InvokeAsync(
+            () =>
+            {
+                PlayerStats.Dexterity = message.Dexterity;
+                PlayerStats.Experience = message.Experience;
+                PlayerStats.Health = message.Health;
+                PlayerStats.Intelligence = message.Intelligence;
+                PlayerStats.Level = message.Level;
+                PlayerStats.Luck = message.Luck;
+                PlayerStats.Mana = message.Mana;
+                PlayerStats.MaxHealth = message.MaxHealth;
+                PlayerStats.MaxMana = message.MaxMana;
+                PlayerStats.Strength = message.Strength;
+            }
+        );
+    }
+
+    private Task OnPlayerInventoryReceived(IDarkStarNetworkMessage arg)
+    {
+        var message = (PlayerInventoryResponseMessage)arg;
+        return Dispatcher.UIThread.InvokeAsync(
+            () =>
+            {
+
+
+            }
+        );
+    }
+
     private Task OnPlayerFovReceived(IDarkStarNetworkMessage arg)
     {
         var message = (PlayerFovResponseMessage)arg;
@@ -91,6 +131,10 @@ public class RenderPageViewModel : PageViewModelBase
         return Dispatcher.UIThread.InvokeAsync(
             () =>
             {
+                if (Messages.Count >= 50)
+                {
+                    Messages.Clear();
+                }
                 Messages.Add(
                     new TextMessageEntity
                     {

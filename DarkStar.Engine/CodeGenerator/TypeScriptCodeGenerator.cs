@@ -1,12 +1,10 @@
 ﻿using System.Reflection;
 using System.Text;
-using DarkStar.Api.Attributes.Services;
 using DarkStar.Api.Engine.Data.Ai;
 using DarkStar.Api.Engine.Data.Blueprint;
 using DarkStar.Api.Engine.Data.ScriptEngine;
-using DarkStar.Api.Utils;
 using FastEnumUtility;
-using TypeLite;
+
 
 namespace DarkStar.Engine.CodeGenerator;
 
@@ -53,12 +51,12 @@ public static class TypeScriptCodeGenerator
             {
                 return "string[]";
             }
+
             return $"{GetTypeScriptType(type.GenericTypeArguments[0])}[]";
         }
 
         else if (type == typeof(List<>))
         {
-
             return "[]";
         }
         else if (type == typeof(object))
@@ -231,64 +229,6 @@ public static class TypeScriptCodeGenerator
         return sb.ToString();
     }
 
-    public static string GenerateInterfacesFromFunctions(List<ScriptFunctionDescriptor> functions)
-    {
-        // var tempInterfaceNames = new List<string>();
-        // var sb = new StringBuilder();
-        // var
-
-        var definition = TypeScript.Definitions();
-        var interfaces = functions.SelectMany(s => s.Parameters)
-            .Select(p => p.RawParameterType)
-            .Where(t => TypeScriptCodeGenerator.GetTypeScriptType(t) == t.Name || IsAction(t) || IsFunc(t))
-            .Distinct();
-        // foreach(var interfaceType in interfaces)
-        // {
-        //     definition.For(interfaceType);
-        // }
-
-        // foreach (var serviceType in   AssemblyUtils.GetAttribute<DarkStarEngineServiceAttribute>())
-        // {
-        //     definition.For(serviceType);
-        // }
-
-        definition.For<AiContext>().For<BlueprintGenerationMapContext>().For<BlueprintMapInfoContext>();
-
-        var generated = definition.Generate();
-
-
-
-        // foreach (var interfaceType in interfaces)
-        // {
-        //     if (tempInterfaceNames.Contains(interfaceType.Name))
-        //     {
-        //         continue;
-        //     }
-        //
-        //     if (IsAction(interfaceType))
-        //     {
-        //         if (interfaceType.GenericTypeArguments != null && interfaceType.GenericTypeArguments.Length > 0)
-        //         {
-        //             GenerateTypeScriptDefinition(interfaceType.GenericTypeArguments[0], sb);
-        //             tempInterfaceNames.Add(interfaceType.GenericTypeArguments[0].Name);
-        //         }
-        //     }
-        //
-        //     if (IsFunc(interfaceType))
-        //     {
-        //         GenerateTypeScriptDefinition(interfaceType.GenericTypeArguments[0], sb);
-        //         tempInterfaceNames.Add(interfaceType.GenericTypeArguments[0].Name);
-        //         GenerateTypeScriptDefinition(interfaceType.GenericTypeArguments[1], sb);
-        //         tempInterfaceNames.Add(interfaceType.GenericTypeArguments[1].Name);
-        //     }
-        //
-        //     tempInterfaceNames.Add(interfaceType.Name);
-        // }
-
-        return generated;
-    }
-
-
 
     public static string GenerateTypeDefinitionOfConstants(Dictionary<string, object> constants)
     {
@@ -365,9 +305,60 @@ public static class TypeScriptCodeGenerator
             sb.AppendLine($"  {property.Name}: {GetTypeScriptType(property.PropertyType)};");
         }
 
+        foreach (var method in type.GetMethods())
+        {
+            sb.Append($"  {method.Name}(");
+            foreach (var parameter in method.GetParameters())
+            {
+                sb.Append($"{parameter.Name}: {GetTypeScriptType(parameter.ParameterType)}, ");
+            }
+
+            sb.AppendLine($"): {GetTypeScriptType(method.ReturnType)};");
+        }
+
         sb.AppendLine("}");
         sb.AppendLine("");
 
         return sb.ToString();
+    }
+
+    public static string GenerateInterfaces(List<Type> types)
+    {
+        var strOutput = new StringBuilder();
+        var generationQueue = new List<Type>(types);
+        foreach (var type in types)
+        {
+            foreach (var method in type.GetMethods())
+            {
+                generationQueue.Add(method.ReturnType);
+                foreach (var parameter in method.GetParameters())
+                {
+                    generationQueue.Add(parameter.ParameterType);
+                }
+            }
+        }
+
+        generationQueue = generationQueue.Where(
+                s => s != typeof(object)
+                     && !s.ToString().Contains("Void")
+                     && s != typeof(string)
+                     && s != typeof(bool)
+                     && s != typeof(Int16)
+                     && s != typeof(Int32)
+                     && s != typeof(Int64)
+                     && s != typeof(int)
+                     && s != typeof(Type)
+                     && s != typeof(object[])
+            )
+            .Distinct()
+            .ToList();
+
+        foreach (var type in generationQueue)
+        {
+            strOutput.AppendLine(GenerateInterface(type));
+        }
+
+
+        return strOutput.ToString();
     }
 }

@@ -3,6 +3,8 @@ using System.Reflection;
 using System.Text;
 using DarkStar.Api.Attributes.Services;
 using DarkStar.Api.Data.Config;
+using DarkStar.Api.Engine.Data.Ai;
+using DarkStar.Api.Engine.Data.Blueprint;
 using DarkStar.Api.Engine.Data.Config;
 using DarkStar.Api.Engine.Data.ScriptEngine;
 using DarkStar.Api.Engine.Events.Engine;
@@ -339,6 +341,8 @@ public class ScriptEngineService : BaseService<IScriptEngineService>, IScriptEng
         sb.AppendLine(TypeScriptCodeGenerator.GenerateTypeDefinitionOfEnum<WorldMessageType>());
         sb.AppendLine(TypeScriptCodeGenerator.GenerateTypeDefinitionOfEnum<EquipLocationType>());
         sb.AppendLine(TypeScriptCodeGenerator.GenerateTypeDefinitionOfEnum<MapGeneratorType>());
+
+        sb.AppendLine(TypeScriptCodeGenerator.GenerateInterfaces(new() { typeof(AiContext), typeof(BlueprintGenerationMapContext), typeof(BlueprintMapInfoContext) }));
 
 
         // sb.AppendLine(TypeScriptCodeGenerator.GenerateInterfacesFromFunctions(Functions));

@@ -28,7 +28,7 @@
                         CommandParameter="NorthWest">
                     ↖️
                 </Button>
-                <Button Grid.Row="0" Grid.Column="1" HotKey="S" Command="{Binding MoveCharacterCommand}"
+                <Button Grid.Row="0" Grid.Column="1" HotKey="W" Command="{Binding MoveCharacterCommand}"
                         CommandParameter="North">
                     ⬆️
                 </Button>
@@ -36,14 +36,20 @@
                         CommandParameter="NorthEast">
                     ↗️
                 </Button>
-                <Button Grid.Row="1" Grid.Column="0" HotKey="A" Command="{Binding MoveCharacterCommand}" CommandParameter="West">⬅️</Button>
+                <Button Grid.Row="1" Grid.Column="0" HotKey="A" Command="{Binding MoveCharacterCommand}"
+                        CommandParameter="West">
+                    ⬅️
+                </Button>
                 <Button Grid.Row="1" Grid.Column="1" Command="{Binding PerformActionCommand}">ACT</Button>
-                <Button Grid.Row="1" Grid.Column="2" HotKey="D" Command="{Binding MoveCharacterCommand}" CommandParameter="East">➡️</Button>
+                <Button Grid.Row="1" Grid.Column="2" HotKey="D" Command="{Binding MoveCharacterCommand}"
+                        CommandParameter="East">
+                    ➡️
+                </Button>
                 <Button Grid.Row="2" Grid.Column="0" HotKey="Q" Command="{Binding MoveCharacterCommand}"
                         CommandParameter="SouthWest">
                     ↙️
                 </Button>
-                <Button Grid.Row="2" Grid.Column="1" HotKey="W" Command="{Binding MoveCharacterCommand}"
+                <Button Grid.Row="2" Grid.Column="1" HotKey="S" Command="{Binding MoveCharacterCommand}"
                         CommandParameter="South">
                     ⬇️
                 </Button>
@@ -53,15 +59,66 @@
                 </Button>
 
             </Grid>
+            <StackPanel>
+                <Grid ColumnDefinitions="*" RowDefinitions="*,*,*,*,*,*,*,*">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Health" />
+                        <ProgressBar Foreground="Red" Maximum="{Binding  PlayerStats.MaxHealth}" ShowProgressText="True"
+                                     Value="{Binding PlayerStats.Health}" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1" Orientation="Horizontal">
+                        <Label Content="Mana" />
+                        <ProgressBar Foreground="Blue" Maximum="{Binding  PlayerStats.MaxMana}" ShowProgressText="True"
+                                     Value="{Binding PlayerStats.Mana}" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="2" Orientation="Horizontal">
+                        <Label Content="STR" />
+                        <TextBlock  VerticalAlignment="Center" Text="{Binding PlayerStats.Strength}" />
+                    </StackPanel>
+                   <StackPanel Grid.Row="3" Orientation="Horizontal">
+                       <Label Content="Dex" />
+                       <TextBlock VerticalAlignment="Center" Text="{Binding PlayerStats.Dexterity}" />
+                   </StackPanel>
+                    <StackPanel Grid.Row="4" Orientation="Horizontal">
+                        <Label Content="Luck" />
+                        <TextBlock VerticalAlignment="Center" Text="{Binding PlayerStats.Luck}" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="5" Orientation="Horizontal">
+                        <Label Content="Intelligence" />
+                        <TextBlock VerticalAlignment="Center" Text="{Binding PlayerStats.Intelligence}" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="6" Orientation="Horizontal">
+                        <Label Content="Level" />
+                        <TextBlock VerticalAlignment="Center" Text="{Binding PlayerStats.Level}" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="7" Orientation="Horizontal">
+                        <Label Content="XP" />
+                        <TextBlock VerticalAlignment="Center" Text="{Binding PlayerStats.Experience}" />
+                    </StackPanel>
+
+
+                </Grid>
+
+            </StackPanel>
+
+            <ItemsControl>
+
+
+            </ItemsControl>
             <ItemsControl BorderThickness="0.5" Margin="5" Items="{Binding Messages}">
-               <ItemsControl.ItemTemplate>
-                   <DataTemplate>
-                       <Grid ColumnDefinitions="*, Auto">
-                           <TextBlock Foreground="Red" Grid.Column="0" />
-                           <TextBlock Grid.Column="1" />
-                       </Grid>
-                   </DataTemplate>
-               </ItemsControl.ItemTemplate>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid ColumnDefinitions="*, Auto">
+                            <TextBlock Foreground="Red" Grid.Column="0" Text="{Binding Name}" />
+                            <TextBlock Grid.Column="1" Text="{Binding Message }" />
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
             </ItemsControl>
 
         </StackPanel>
