@@ -2,7 +2,7 @@
 
 ![Dark Star Logo](/imgs/DarkStarLogoSmall.png)
 
-# Milestones: 0.10.0
+# Milestones: 0.11.0
 In this month I got to work on the project in my spare time. We are starting to see the project take shape!
 
 Breaking changes:
