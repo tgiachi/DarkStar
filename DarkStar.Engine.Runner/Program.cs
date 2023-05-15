@@ -53,7 +53,7 @@ internal class Program
             .Enrich.FromLogContext()
             .WriteTo.Console();
 
-        Log.Logger = loggerConfiguration.CreateLogger();
+        //Log.Logger = loggerConfiguration.CreateBootstrapLogger();
 
         var directoryConfig = EnsureDirectories();
         var engineConfig = LoadConfig(directoryConfig);
@@ -181,7 +181,7 @@ internal class Program
             ? Path.Join(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "DarkStar")
             : envRootDirectory;
 
-        if (string.IsNullOrEmpty(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)))
+        if (string.IsNullOrEmpty(rootDirectory))
         {
             rootDirectory = Path.Join(Directory.GetCurrentDirectory(), "DarkStar");
         }
