@@ -39,7 +39,7 @@
         <PackageReference Include="Dotnet.Bundle" Version="0.9.13" />
         <PackageReference Include="Aura.UI" Version="0.1.4.2" />
         <PackageReference Include="Aura.UI.FluentTheme" Version="0.1.4.2" />
-        <PackageReference Include="Avalonia" Version="0.10.19" />
+        <PackageReference Include="Avalonia" Version="11.0.0" />
         <PackageReference Include="Avalonia.Desktop" Version="0.10.21" />
         <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
         <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="0.10.21" />
